@@ -37,7 +37,7 @@
 
 <xsl:template match="tei:titlePart">
   <xsl:choose>
-    <xsl:when test='@type="main"'><h1><xsl:value-of select='../tei:titlePart[@type="number"]'/><xsl:value-of select="catalyst:uml(.)"/></h1></xsl:when>
+    <xsl:when test='@type="main"'><h1><xsl:value-of select='../tei:titlePart[@type="number"]'/>&#160;<xsl:value-of select="catalyst:uml(.)"/></h1></xsl:when>
     <xsl:when test='@type="sub"'><h2><xsl:value-of select="catalyst:uml(.)"/></h2></xsl:when>
   </xsl:choose>
 </xsl:template>
