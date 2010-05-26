@@ -1,0 +1,4 @@
+---
+name: Dingler
+# Pfad zum XML-Repository
+svn: /home/fw/src/kuwi/dingler

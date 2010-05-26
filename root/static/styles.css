@@ -1,0 +1,6 @@
+body { font-family:sans-serif; margin:0 }
+td { vertical-align:top }
+
+
+#head { background:#2D5781; color:#ddd; padding:5px; font-size:1.2em; text-align:center }
+#head a { color:#ddd; text-decoration:none }
