@@ -4,6 +4,9 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use Dingler::Index;
+use HTML::TagCloud;
+
 =head1 NAME
 
 Dingler::Controller::Article - Catalyst Controller
@@ -40,6 +43,13 @@ sub index :Path :Args(2) {
     $c->stash->{template} = 'article-plain.xsl';
     $c->forward('Dingler::View::XSLT');
     my $plain = $c->res->body;
+    my $index = Dingler::Index->new({ text => $plain });
+    my %words = %{ $index->words };
+    my $cloud = HTML::TagCloud->new( levels => 30 );
+    while ( my ($key, $value) = each %words ) {
+        $cloud->add( $key, undef, $value );
+    }
+    $c->stash( cloud => $cloud );
     $c->res->body( undef );
 
     # page
