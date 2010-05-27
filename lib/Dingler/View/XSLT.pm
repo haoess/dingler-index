@@ -22,6 +22,7 @@ __PACKAGE__->config(
                         s/a\x{0364}/ä/g;
                         s/o\x{0364}/ö/g;
                         s/u\x{0364}/ü/g;
+                        s/\s+/ /g;
                     }   
                     return $str;
                 },  

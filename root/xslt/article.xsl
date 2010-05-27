@@ -22,17 +22,43 @@
 
 <xsl:template match="tei:titlePart">
   <xsl:choose>
-    <xsl:when test='@type="main"'><h1><xsl:value-of select='../tei:titlePart[@type="number"]'/>&#160;<xsl:value-of select="catalyst:uml(.)"/></h1></xsl:when>
-    <xsl:when test='@type="sub"'><h2><xsl:value-of select="catalyst:uml(.)"/></h2></xsl:when>
+    <xsl:when test='@type="main"'><h1><xsl:value-of select='../tei:titlePart[@type="number"]'/>&#160;<xsl:apply-templates/></h1></xsl:when>
+    <xsl:when test='@type="sub"'><h2><xsl:apply-templates/></h2></xsl:when>
   </xsl:choose>
 </xsl:template>
 
+<xsl:template match="tei:note">
+  <sup>
+    <xsl:text disable-output-escaping="yes">&lt;a class="fn" title=&quot;</xsl:text>
+    <xsl:value-of select="catalyst:uml(.)"/>
+    <xsl:text disable-output-escaping="yes">&quot;&gt;</xsl:text>
+    <xsl:value-of select="@n"/>
+    <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+  </sup>
+</xsl:template>
+
 <xsl:template match="tei:p">
-  <p><xsl:value-of select="catalyst:uml(.)" /></p>
+  <p><xsl:apply-templates/></p>
 </xsl:template>
 
 <xsl:template match="tei:table">
-  <p class="small"><xsl:value-of select="catalyst:uml(.)" /></p>
+  <p class="small"><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match="tei:head">
+  <h2><xsl:apply-templates/></h2>
+</xsl:template>
+
+<xsl:template match="tei:list">
+  <ul>
+  <xsl:for-each select="tei:item">
+    <li><xsl:apply-templates/></li>
+  </xsl:for-each>
+  </ul>
+</xsl:template>
+
+<xsl:template match="text()">
+  <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
 
 </xsl:stylesheet>

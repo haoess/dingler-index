@@ -4,6 +4,8 @@ h2 { font-size:1.1em }
 p { font-size:1em }
 td { vertical-align:top }
 
+a.fn { color:#c00 }
+
 #head { background:#2D5781; color:#ddd; padding:5px; font-size:1.2em; text-align:center }
 #head a { color:#ddd; text-decoration:none }
 

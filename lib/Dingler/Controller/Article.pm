@@ -36,7 +36,13 @@ sub index :Path :Args(2) {
     $c->stash->{xsl} = $c->res->body;
     $c->res->body( undef );
 
-    #
+    # plain article
+    $c->stash->{template} = 'article-plain.xsl';
+    $c->forward('Dingler::View::XSLT');
+    my $plain = $c->res->body;
+    $c->res->body( undef );
+
+    # page
     $c->stash(
         template => 'article/view.tt',
     )
