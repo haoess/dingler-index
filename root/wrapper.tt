@@ -13,20 +13,26 @@
   <a href="http://www.polytechnischesjournal.de/">Polytechnisches Journal</a>
 </div>
 
-<table>
+<table id="maintable">
+  <colgroup>
+    <col width="200" />
+    <col width="600" />
+    <col width="200" />
+  </colgroup>
   <tr>
     <td>
       Band auswählen:&nbsp;
       <select name="" onchange="window.location='journal/' + this.value;">
         <option value="">...</option>
         [% FOREACH v IN volumes %]
-          <option value="[% v %]">[% v %]</option>
+          <option value="[% v %]"[% ' selected="selected"' IF v == journal %]>[% v %]</option>
         [% END %]
       </select>
       <br /><br />
 
     </td>
     <td>[% content %]</td>
+    <td>&nbsp;</td>
   </tr>
 </table>
 

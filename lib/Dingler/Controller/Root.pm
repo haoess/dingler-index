@@ -23,6 +23,11 @@ Dingler::Controller::Root - Root Controller for Dingler
 sub auto :Private {
     my ($self, $c) = @_;
     $c->stash->{base} = $c->req->base;
+    $c->stash->{volumes} = [
+        map { s/@{[$c->config->{svn}]}\///; $_ }
+        grep { $_ !~ 'pj000' }
+        glob $c->config->{svn} . '/pj*'
+    ];
     return 1;
 }
 
@@ -34,7 +39,6 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    $c->stash->{volumes} = [ map { s/@{[$c->config->{svn}]}\///; $_ } glob $c->config->{svn} . '/pj*' ];
     $c->stash( template => 'start.tt' );
 }
 

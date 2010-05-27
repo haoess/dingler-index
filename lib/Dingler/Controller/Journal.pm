@@ -22,13 +22,19 @@ Catalyst Controller.
 
 sub index :Path :Args(1) {
     my ( $self, $c, $journal ) = @_;
+    
+    # build the article list via XSLT
     $c->stash->{template} = 'article-list.xsl';
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
     $c->stash->{xml} = $xml;
     $c->stash->{journal} = $journal;
     $c->forward('Dingler::View::XSLT');
-    $c->res->content_encoding( 'utf-8' );
-    $c->res->content_type( 'text/html' ); 
+    $c->stash->{xsl} = $c->res->body;
+    $c->res->body( undef );
+
+    $c->stash(
+        template => 'article/list.tt',
+    )
 }
 
 =head1 AUTHOR

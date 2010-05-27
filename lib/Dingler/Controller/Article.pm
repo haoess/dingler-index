@@ -23,15 +23,24 @@ Catalyst Controller.
 
 sub index :Path :Args(2) {
     my ( $self, $c, $journal, $article ) = @_;
+    
+    # build the article via XSLT
     $c->stash->{template} = 'article.xsl';
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
     $c->stash->{xml} = $xml;
-    $c->stash->{article} = $article;
+    $c->stash(
+        article => $article,
+        journal => $journal,
+    );
     $c->forward('Dingler::View::XSLT');
-    $c->res->content_encoding( 'utf-8' );
-    $c->res->content_type( 'text/html' );
-}
+    $c->stash->{xsl} = $c->res->body;
+    $c->res->body( undef );
 
+    #
+    $c->stash(
+        template => 'article/view.tt',
+    )
+}
 
 =head1 AUTHOR
 

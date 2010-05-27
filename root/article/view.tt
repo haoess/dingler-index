@@ -1,0 +1,3 @@
+<p class="small" style="text-align:right"><a href="journal/[% journal %]">Inhaltsverzeichnis für [% journal %]</a></p>
+
+[% xsl %]
