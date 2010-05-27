@@ -9,4 +9,5 @@ td { vertical-align:top }
 
 #maintable { width:1000px; margin-left:auto; margin-right:auto }
 
-.small { font-size:0.9em }
+.right { text-align:right }
+.small { font-size:0.8em }

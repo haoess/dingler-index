@@ -4,12 +4,10 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
   xmlns:tei="http://www.tei-c.org/ns/1.0"
   xmlns:catalyst="urn:catalyst"
-  xmlns="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
 <xsl:output
-  method="xml" media-type="text/html" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-  doctype-system="DTD/xhtml1-strict.dtd"
+  method="xml" media-type="text/html"
   cdata-section-elements="script style"
   indent="yes"
   encoding="utf-8"/>
@@ -19,20 +17,7 @@
 </xsl:template>
 
 <xsl:template match='tei:text'>
-  <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-      <xsl:element name="base">
-        <xsl:attribute name="href"><xsl:value-of select="$base" /></xsl:attribute>
-      </xsl:element>
-      <style type="text/css">
-        * { font-family:"Arial" }
-        td.right { text-align:right }
-      </style>
-    </head>
-    <body>
-       <xsl:apply-templates />
-    </body>
-  </html>
+  <xsl:apply-templates />
 </xsl:template>
 
 <xsl:template match="tei:titlePart">
@@ -44,6 +29,10 @@
 
 <xsl:template match="tei:p">
   <p><xsl:value-of select="catalyst:uml(.)" /></p>
+</xsl:template>
+
+<xsl:template match="tei:table">
+  <p class="small"><xsl:value-of select="catalyst:uml(.)" /></p>
 </xsl:template>
 
 </xsl:stylesheet>
