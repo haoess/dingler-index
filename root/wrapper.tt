@@ -20,7 +20,7 @@
     <col width="200" />
   </colgroup>
   <tr>
-    <td class="left">
+    <td class="mainleft">
       Band auswählen:&nbsp;
       <select name="" onchange="window.location='journal/' + this.value;">
         <option value="">...</option>
@@ -31,8 +31,8 @@
       <br /><br />
 
     </td>
-    <td class="middle">[% content %]</td>
-    <td class="right">
+    <td class="mainmiddle">[% content %]</td>
+    <td class="mainright">
       <div id="htmltagcloud">
         [% FOREACH tag IN cloud.tags(20) %]
           <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
