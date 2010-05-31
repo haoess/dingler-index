@@ -1,3 +1,7 @@
-<p class="small right"><a href="journal/[% journal %]">Inhaltsverzeichnis für [% journal %]</a></p>
+<p class="small center">
+  [% IF prev_article %]<a href="article/[% journal %]/[% prev_article %]">vorheriger Artikel</a> &middot; [% END %]
+  <a href="journal/[% journal %]">Inhaltsverzeichnis für [% journal %]</a>
+  [% IF next_article %]&middot; <a href="article/[% journal %]/[% next_article %]">nächster Artikel</a>[% END %]
+</p>
 
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]

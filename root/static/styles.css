@@ -15,6 +15,7 @@ td.mainleft   { padding-top:10px }
 td.mainmiddle {}
 td.mainright  { padding-top:40px }
 
+.center { text-align:center }
 .right { text-align:right }
 .small { font-size:0.8em }
 
