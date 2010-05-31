@@ -9,54 +9,7 @@ has 'text' => (
     is  => 'rw',
 );
 
-my @stop = qw(
-    aber
-    als
-    am
-    auch
-    auf
-    aus
-    bei
-    das
-    daß
-    dem
-    den
-    der
-    des
-    die
-    ein
-    eine
-    einem
-    einen
-    eines
-    er
-    es
-    fig
-    hat
-    hrn
-    ich
-    in
-    ist
-    kann
-    man
-    mehr
-    mit
-    nach
-    nicht
-    sehr
-    sich
-    so
-    um
-    und
-    von
-    wenn
-    werden
-    welcher
-    wird
-    zu
-    zum
-);
-my %stop = map { $_ => 1 } @stop;
+my %stop = map { utf8::encode $_; chomp; $_ => 1 } <DATA>;
 
 sub words {
     my $self = shift;
@@ -73,4 +26,79 @@ sub words {
     return \%words;
 }
 
+__PACKAGE__->meta->make_immutable;
+
 1;
+__DATA__
+aber
+als
+also
+am
+auch
+auf
+aus
+bei
+bis
+das
+daß
+dem
+den
+der
+des
+die
+diese
+dieser
+dieses
+durch
+ein
+eine
+einem
+einen
+einer
+eines
+er
+es
+etwas
+fig
+für
+gegen
+hat
+hrn
+hier
+ich
+in
+indem
+irgend
+ist
+jeder
+kann
+man
+mehr
+mit
+nach
+nicht
+noch
+nun
+nur
+oder
+sein
+seine
+seiner
+sehr
+sich
+sie
+so
+über
+um
+und
+von
+wenn
+werden
+welche
+welcher
+welches
+wie
+wird
+wodurch
+zu
+zum
