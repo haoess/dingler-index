@@ -20,6 +20,7 @@ requires 'Config::General'; # This should reflect the config file format you've 
 requires 'Catalyst::View::XSLT';
 requires 'Catalyst::TraitFor::Request::ProxyBase';
 requires 'HTML::TagCloud';
+requires 'Catalyst::Plugin::Unicode::Encoding';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
