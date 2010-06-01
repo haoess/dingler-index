@@ -25,8 +25,12 @@
   </h1>
 </xsl:template>
 
-<xsl:template match='tei:birth|tei:death'>
+<xsl:template match='tei:birth'>
   <p>geboren: <xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match='tei:death'>
+  <p>gestorben: <xsl:apply-templates/></p>
 </xsl:template>
 
 <xsl:template match='@when'>
