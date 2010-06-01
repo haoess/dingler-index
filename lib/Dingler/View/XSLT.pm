@@ -13,7 +13,7 @@ __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.xsl',
     LibXSLT => {
         register_function => [
-            { 
+            {
                 uri => 'urn:catalyst',
                 name => 'uml',
                 subref => sub {
@@ -23,10 +23,10 @@ __PACKAGE__->config(
                         s/o\x{0364}/ö/g;
                         s/u\x{0364}/ü/g;
                         s/\s+/ /g;
-                    }   
+                    }
                     return $str;
-                },  
-            }   
+                },
+            }
         ],
     },
 #    DUMP_CONFIG => 1,

@@ -15,6 +15,7 @@ use Catalyst::Runtime 5.80;
 use Catalyst qw/
     ConfigLoader
     Static::Simple
+    Unicode::Encoding
 /;
 use CatalystX::RoleApplicator;
 
@@ -38,6 +39,7 @@ __PACKAGE__->apply_request_class_roles(qw/
 
 __PACKAGE__->config(
     name => 'Dingler',
+    encoding => 'UTF-8',
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
 );

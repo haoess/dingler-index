@@ -18,6 +18,8 @@ Dingler::Controller::Root - Root Controller for Dingler
 
 =head1 METHODS
 
+=head2 auto
+
 =cut
 
 sub auto :Private {
@@ -58,7 +60,7 @@ sub default :Path {
 
 =cut
 
-sub end : Private {
+sub end :Private {
     my ($self, $c) = @_;
     return 1 if $c->response->status =~ /^(?:3\d\d)|(?:204)$/;
     return 1 if $c->response->body || $c->stash->{_output};
@@ -70,6 +72,10 @@ sub end : Private {
     }
 }
 
+__PACKAGE__->meta->make_immutable;
+
+1;
+__END__
 
 =head1 AUTHOR
 
@@ -81,7 +87,3 @@ This library is free software. You can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-
-__PACKAGE__->meta->make_immutable;
-
-1;

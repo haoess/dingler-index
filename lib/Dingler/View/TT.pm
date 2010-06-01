@@ -8,6 +8,7 @@ use warnings;
 __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.tt',
     WRAPPER            => 'wrapper.tt',
+    ENCODING           => 'utf-8',
     render_die         => 1,
 );
 

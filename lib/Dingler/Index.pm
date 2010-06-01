@@ -1,8 +1,10 @@
 package Dingler::Index;
 use Moose;
 
-use locale;
 use utf8;
+
+use Memoize;
+memoize('grundform');
 
 has 'text' => (
     isa => 'Str',
@@ -13,17 +15,30 @@ my %stop = map { utf8::encode $_; chomp; $_ => 1 } <DATA>;
 
 sub words {
     my $self = shift;
-    for ( $self->text ) {
+    my $text = $self->text;
+    utf8::decode($text);
+    for ( $text ) {
         s/\s+/ /;
     }
     my %words;
-    foreach my $word ( split /[\s,.=–:\d();?×<>\/]+/, $self->text ) {
+    foreach my $word ( split /[\s,.=–:\d();?×<>\/]+/, $text ) {
         next if $stop{lc $word};
         next unless $word =~ /\A[A-Z]/;
         next if length $word < 3;
+        for ( $word ) {
+            s/\AAe/Ä/;
+            s/\AOe/Ö/;
+            s/\AUe/Ü/;
+        }
+        my $gf = grundform( $word );
         $words{$word}++;
     }
     return \%words;
+}
+
+sub grundform {
+    my $word = shift;
+    return $word;
 }
 
 __PACKAGE__->meta->make_immutable;
