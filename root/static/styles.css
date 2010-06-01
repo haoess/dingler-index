@@ -1,76 +1,83 @@
-body { font-family:sans-serif; margin:0 }
-h1 { font-size:1.2em }
-h2 { font-size:1.1em }
-p { font-size:1em }
+body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; margin:0 }
+h1 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
+h2 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
+p { line-height:1.7em; margin:0 0 0.5em 0 }
 td { vertical-align:top }
 
-a.fn { color:#c00 }
+a.fn { color:#069 }
+a { text-decoration:none; color:#68A }
+a:hover { text-decoration:underline }
 
-#head { background:#2D5781; color:#ddd; padding:5px; font-size:1.2em; text-align:center }
+#head { background:url(images/headerbg.gif) repeat-x 0px 0px; padding:5px; height:130px }
+#head .project { position:absolute; color:#f00 }
 #head a { color:#ddd; text-decoration:none }
+#head .logo { margin-top:2.3em; text-indent:9em }
+
+#head .partner { position:absolute; right:15em; top:3.6em }
+.partner img { margin-left:30px }
 
 #maintable { width:1000px; margin-left:auto; margin-right:auto }
 
 td.mainleft   { padding-top:10px }
-td.mainmiddle {}
+td.mainmiddle { padding-left:2em; font-size:1.4em }
 td.mainright  { padding-top:40px }
 
 .center { text-align:center }
 .right { text-align:right }
 .small { font-size:0.8em }
 
-.person { text-decoration:underline }
+.person { border-bottom: dashed 1px #68a; cursor:pointer }
 
 .ui-dialog { font-size:1em }
 
 #htmltagcloud { text-align:center; line-height:1 }
-span.tagcloud0 { font-size: 12px;}
+span.tagcloud0 { font-size: 1em;}
 span.tagcloud0 a {text-decoration: none;}
-span.tagcloud1 { font-size: 13px;}
+span.tagcloud1 { font-size: 1.1em;}
 span.tagcloud1 a {text-decoration: none;}
-span.tagcloud2 { font-size: 14px;}
+span.tagcloud2 { font-size: 1.2em;}
 span.tagcloud2 a {text-decoration: none;}
-span.tagcloud3 { font-size: 15px;}
+span.tagcloud3 { font-size: 1.3em;}
 span.tagcloud3 a {text-decoration: none;}
-span.tagcloud4 { font-size: 16px;}
+span.tagcloud4 { font-size: 1.4em;}
 span.tagcloud4 a {text-decoration: none;}
-span.tagcloud5 { font-size: 17px;}
+span.tagcloud5 { font-size: 1.5em;}
 span.tagcloud5 a {text-decoration: none;}
-span.tagcloud6 { font-size: 18px;}
+span.tagcloud6 { font-size: 1.6em;}
 span.tagcloud6 a {text-decoration: none;}
-span.tagcloud7 { font-size: 19px;}
+span.tagcloud7 { font-size: 1.7em;}
 span.tagcloud7 a {text-decoration: none;}
-span.tagcloud8 { font-size: 20px;}
+span.tagcloud8 { font-size: 1.8em;}
 span.tagcloud8 a {text-decoration: none;}
-span.tagcloud9 { font-size: 21px;}
+span.tagcloud9 { font-size: 1.9em;}
 span.tagcloud9 a {text-decoration: none;}
-span.tagcloud10 { font-size: 22px;}
+span.tagcloud10 { font-size: 2.0em;}
 span.tagcloud10 a {text-decoration: none;}
-span.tagcloud11 { font-size: 23px;}
+span.tagcloud11 { font-size: 2.1em;}
 span.tagcloud11 a {text-decoration: none;}
-span.tagcloud12 { font-size: 24px;}
+span.tagcloud12 { font-size: 2.2em;}
 span.tagcloud12 a {text-decoration: none;}
-span.tagcloud13 { font-size: 25px;}
+span.tagcloud13 { font-size: 2.3em;}
 span.tagcloud13 a {text-decoration: none;}
-span.tagcloud14 { font-size: 26px;}
+span.tagcloud14 { font-size: 2.4em;}
 span.tagcloud14 a {text-decoration: none;}
-span.tagcloud15 { font-size: 27px;}
+span.tagcloud15 { font-size: 2.5em;}
 span.tagcloud15 a {text-decoration: none;}
-span.tagcloud16 { font-size: 28px;}
+span.tagcloud16 { font-size: 2.6em;}
 span.tagcloud16 a {text-decoration: none;}
-span.tagcloud17 { font-size: 29px;}
+span.tagcloud17 { font-size: 2.7em;}
 span.tagcloud17 a {text-decoration: none;}
-span.tagcloud18 { font-size: 30px;}
+span.tagcloud18 { font-size: 2.8em;}
 span.tagcloud18 a {text-decoration: none;}
-span.tagcloud19 { font-size: 31px;}
+span.tagcloud19 { font-size: 2.9em;}
 span.tagcloud19 a {text-decoration: none;}
-span.tagcloud20 { font-size: 32px;}
+span.tagcloud20 { font-size: 3em;}
 span.tagcloud20 a {text-decoration: none;}
-span.tagcloud21 { font-size: 33px;}
+span.tagcloud21 { font-size: 3.1em;}
 span.tagcloud21 a {text-decoration: none;}
-span.tagcloud22 { font-size: 34px;}
+span.tagcloud22 { font-size: 3.2em;}
 span.tagcloud22 a {text-decoration: none;}
-span.tagcloud23 { font-size: 35px;}
+span.tagcloud23 { font-size: 3.3em;}
 span.tagcloud23 a {text-decoration: none;}
-span.tagcloud24 { font-size: 36px;}
+span.tagcloud24 { font-size: 3.4em;}
 span.tagcloud24 a {text-decoration: none;}

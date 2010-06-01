@@ -11,15 +11,21 @@
 <body>
 
 <div id="head">
-  <a href="/">Verschlagwortung Dingler</a>
-  &middot;
-  <a href="http://www.polytechnischesjournal.de/">Polytechnisches Journal</a>
+  <div class="project">Interne Projektseite</div>
+  <div class="logo">
+    <a href="[% base %]"><img src="[% base %]static/images/dinglerlogo.gif" /></a>
+  </div>
+  <div class="partner">
+    <a href="http://www.dfg.de/"><img src="[% base %]static/images/partner_dfg.gif" /></a>
+    <a href="http://www.slub-dresden.de/"><img src="[% base %]static/images/partner_slub.gif" /></a>
+    <a href="http://www.hu-berlin.de/"><img src="[% base %]static/images/partner_huberlin.gif" /></a>
+  </div>
 </div>
 
 <table id="maintable">
   <colgroup>
     <col width="200" />
-    <col width="600" />
+    <col width="800" />
     <col width="200" />
   </colgroup>
   <tr>
