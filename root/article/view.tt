@@ -15,6 +15,7 @@
       width: 600,
       modal: true,
       position: 'top',
+      title: 'Personeninformationen',
     });
     return false;
   }
