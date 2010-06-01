@@ -26,6 +26,15 @@ __PACKAGE__->config(
                     }
                     return $str;
                 },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'personref',
+                subref => sub {
+                    my $str = shift;
+                    $str =~ /#(\w+)\z/;
+                    return $1 ? $1 : $str;
+                },
             }
         ],
     },

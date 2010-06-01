@@ -19,6 +19,10 @@ td.mainright  { padding-top:40px }
 .right { text-align:right }
 .small { font-size:0.8em }
 
+.person { text-decoration:underline }
+
+.ui-dialog { font-size:1em }
+
 #htmltagcloud { text-align:center; line-height:1 }
 span.tagcloud0 { font-size: 12px;}
 span.tagcloud0 a {text-decoration: none;}

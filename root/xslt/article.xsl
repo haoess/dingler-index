@@ -57,6 +57,15 @@
   </ul>
 </xsl:template>
 
+<xsl:template match="tei:persName">
+  <xsl:element name="span">
+    <!-- <xsl:attribute name="href"><xsl:value-of select="$base" />person/<xsl:value-of select="catalyst:personref(./@ref)" /></xsl:attribute> -->
+    <xsl:attribute name="class">person</xsl:attribute>
+    <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />'); return false;</xsl:attribute>
+    <xsl:apply-templates/>
+  </xsl:element>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
