@@ -35,7 +35,20 @@ __PACKAGE__->config(
                     $str =~ /#(\w+)\z/;
                     return $1 ? $1 : $str;
                 },
-            }
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'faclink',
+                subref => sub {
+                    my $id = shift;
+                    # 32258227Z/00000051
+                    #  =>
+                    # http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=32258227Z&tx_slubdigitallibrary[image]=51
+                    $id =~ /(\w+)\/(\w+)/;
+                    return sprintf 'http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=%s&tx_slubdigitallibrary[image]=%d',
+                               $1, $2;
+                },
+            },
         ],
     },
 #    DUMP_CONFIG => 1,

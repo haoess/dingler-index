@@ -1,9 +1,11 @@
 body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; margin:0 }
 h1 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
 h2 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
+img { border:none }
 p { line-height:1.7em; margin:0 0 0.5em 0 }
 td { vertical-align:top }
 
+sup.fn { cursor:pointer }
 a.fn { color:#069 }
 a { text-decoration:none; color:#68A }
 a:hover { text-decoration:underline }

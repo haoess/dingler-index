@@ -4,18 +4,32 @@
   [% IF next_article %]&middot; <a href="article/[% journal %]/[% next_article %]">nächster Artikel</a>[% END %]
 </p>
 
+<script type="text/javascript">
+  jQuery(function() {
+    jQuery('.fn div').dialog({
+      autoOpen: false,
+      hide: 'explode'
+    });
+    jQuery('.fn span').click(function(e) {
+      var elem = jQuery('#' + jQuery(e.target).attr('idref'));
+      elem.dialog('option', 'title', 'Fußnote ' + jQuery(e.target).html());
+      elem.dialog('open');
+      return false;
+    });
+  });
+</script>
+
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
-<div id="dialog">asdf</div>
+<div id="dialog"></div>
 
 <script type="text/javascript">
   function showperson(id) {
-    $('#dialog').load('[% base %]person/' + id + ' #data');
-    $("#dialog").dialog({
+    jQuery('#dialog').load('[% base %]person/' + id + ' #data');
+    jQuery("#dialog").dialog({
       width: 600,
-      modal: true,
-      position: 'top',
       title: 'Personeninformationen',
+      hide: 'explode',
     });
     return false;
   }

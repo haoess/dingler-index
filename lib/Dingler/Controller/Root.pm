@@ -24,7 +24,11 @@ Dingler::Controller::Root - Root Controller for Dingler
 
 sub auto :Private {
     my ($self, $c) = @_;
-    $c->stash->{base} = $c->req->base;
+    $c->stash(
+        base => $c->req->base,
+        requri => $c->req->uri,
+    );
+
     $c->stash->{volumes} = [
         map { s/@{[$c->config->{svn}]}\///; $_ }
         grep { $_ !~ 'pj000' }

@@ -14,10 +14,20 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]'/>
+  <xsl:apply-templates select='//tei:text[@xml:id=$article]/front/tei:pb'/>
 </xsl:template>
 
 <xsl:template match='tei:text'>
   <xsl:apply-templates />
+</xsl:template>
+
+<xsl:template match='tei:front/tei:pb'>
+  <div style="text-align:right">
+  <xsl:element name="a">
+    <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
+    zum Facsimile
+  </xsl:element>
+  </div>
 </xsl:template>
 
 <xsl:template match="tei:titlePart">
@@ -28,13 +38,24 @@
 </xsl:template>
 
 <xsl:template match="tei:note">
-  <sup>
-    <xsl:text disable-output-escaping="yes">&lt;a class="fn" title=&quot;</xsl:text>
-    <xsl:value-of select="catalyst:uml(.)"/>
-    <xsl:text disable-output-escaping="yes">&quot;&gt;</xsl:text>
-    <xsl:value-of select="@n"/>
-    <xsl:text disable-output-escaping="yes">&lt;/a&gt;</xsl:text>
+  <sup class="fn">
+    <xsl:element name="span">
+      <xsl:attribute name="idref"><xsl:value-of select="./tei:pb/@xml:id"/></xsl:attribute>
+      <xsl:value-of select="@n"/>
+    </xsl:element>
+    <xsl:element name="div">
+      <xsl:attribute name="id"><xsl:value-of select="./tei:pb/@xml:id"/></xsl:attribute>
+      <xsl:apply-templates/>
+    </xsl:element>
   </sup>
+</xsl:template>
+
+<xsl:template match='tei:bibl[@type="source"]'>
+  <xsl:element name="a">
+    <xsl:attribute name="href"><xsl:value-of select="./@ref"/></xsl:attribute>
+    <xsl:attribute name="class">fn</xsl:attribute>
+    <xsl:apply-templates/>
+  </xsl:element>
 </xsl:template>
 
 <xsl:template match="tei:p">
@@ -59,7 +80,6 @@
 
 <xsl:template match="tei:persName">
   <xsl:element name="span">
-    <!-- <xsl:attribute name="href"><xsl:value-of select="$base" />person/<xsl:value-of select="catalyst:personref(./@ref)" /></xsl:attribute> -->
     <xsl:attribute name="class">person</xsl:attribute>
     <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />'); return false;</xsl:attribute>
     <xsl:apply-templates/>
