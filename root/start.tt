@@ -1,1 +1,7 @@
+<h1>Dingler-Online | Das digitalisierte Polytechnische Journal</h1>
 
+<p>Folgende Bände liegen bereits digitalisiert vor:</p>
+
+<table class="journallist">
+  [% xsl %]
+</table>

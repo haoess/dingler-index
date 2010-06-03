@@ -44,9 +44,12 @@ __PACKAGE__->config(
                     # 32258227Z/00000051
                     #  =>
                     # http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=32258227Z&tx_slubdigitallibrary[image]=51
-                    $id =~ /(\w+)\/(\w+)/;
-                    return sprintf 'http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=%s&tx_slubdigitallibrary[image]=%d',
-                               $1, $2;
+                    $id =~ /(\w+)(?:\/(\w+))?/;
+                    my $ret = "http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=$1";
+                    if ( defined $2 ) {
+                        $ret .= "&tx_slubdigitallibrary[image]=$2";
+                    }
+                    return $ret;
                 },
             },
         ],

@@ -22,10 +22,11 @@
 </xsl:template>
 
 <xsl:template match='tei:front/tei:pb'>
-  <div style="text-align:right">
+  <div>
   <xsl:element name="a">
     <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
-    zum Facsimile
+    <xsl:attribute name="class">faclink</xsl:attribute>
+    zum Faksimile &#x2026;
   </xsl:element>
   </div>
 </xsl:template>

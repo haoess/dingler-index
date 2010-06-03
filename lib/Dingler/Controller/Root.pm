@@ -2,6 +2,8 @@ package Dingler::Controller::Root;
 use Moose;
 use namespace::autoclean;
 
+use XML::Simple;
+
 BEGIN { extends 'Catalyst::Controller' }
 
 # Sets the actions in this controller to be registered with no prefix
@@ -22,6 +24,9 @@ Dingler::Controller::Root - Root Controller for Dingler
 
 =cut
 
+my $journal_xml;
+my $journal_map;
+
 sub auto :Private {
     my ($self, $c) = @_;
     $c->stash(
@@ -34,6 +39,31 @@ sub auto :Private {
         grep { $_ !~ 'pj000' }
         glob $c->config->{svn} . '/pj*'
     ];
+    
+    if ( !$journal_xml ) {
+        $journal_xml = "<journals>\n";
+        foreach my $vol ( @{ $c->stash->{volumes} } ) {
+            $c->forward('journal_list_pre', [$vol]);
+            my $body = $c->res->body;
+            utf8::decode $body;
+            $journal_xml .= $body;
+            $c->res->body( undef );
+        }
+        $journal_xml .= "\n</journals>";
+        $journal_map = XMLin($journal_xml)->{journal};
+    }
+    $c->stash->{journal_map} = $journal_map;
+
+    $c->stash->{ journal_number } = sub {
+        my $file = shift;
+        foreach my $entry ( @{$c->stash->{journal_map}} ) {
+            if ( $entry->{file} eq $file ) {
+                return $entry->{volume};
+            }
+        }
+        return '';
+    };
+
     return 1;
 }
 
@@ -45,7 +75,40 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    $c->stash( template => 'start.tt' );
+    $c->forward('journal_list');
+    $c->stash(
+        template => 'start.tt',
+    );
+}
+
+=head2 journal_list
+
+=cut
+
+sub journal_list :Private {
+    my ($self, $c) = @_;
+    
+    $c->stash->{template} = 'journal-list.xsl';
+    $c->stash->{xml} = $journal_xml;
+    $c->forward('Dingler::View::XSLT');
+    my $xsl = $c->res->body;
+    utf8::decode $xsl;
+    $c->stash( xsl => $xsl );
+    $c->res->body( undef );
+}
+
+=head2 journal_list_pre
+
+=cut
+
+sub journal_list_pre :Private {
+    my ($self, $c, $journal) = @_;
+
+    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    $c->stash->{xml} = $xml;
+    $c->stash->{journal} = $journal;
+    $c->stash->{template} = 'journal-list-pre.xsl';
+    $c->forward('Dingler::View::XSLT');
 }
 
 =head2 default

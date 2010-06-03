@@ -25,30 +25,12 @@
 
 <table id="maintable">
   <colgroup>
-    <col width="200" />
     <col width="800" />
     <col width="200" />
   </colgroup>
   <tr>
-    <td class="mainleft">
-      Band auswählen:&nbsp;
-      <select name="" onchange="window.location='journal/' + this.value;">
-        <option value="">...</option>
-        [% FOREACH v IN volumes %]
-          <option value="[% v %]"[% ' selected="selected"' IF v == journal %]>[% v %]</option>
-        [% END %]
-      </select>
-      <br /><br />
-
-    </td>
     <td class="mainmiddle">[% content %]</td>
-    <td class="mainright">
-      <div id="htmltagcloud">
-        [% FOREACH tag IN cloud.tags(20) %]
-          <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
-        [% END %]
-      </div>
-    </td>
+    <td class="mainright">[% TRY; PROCESS right; CATCH; ''; END %]</td>
   </tr>
 </table>
 

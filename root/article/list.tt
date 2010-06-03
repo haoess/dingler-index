@@ -1,1 +1,5 @@
 [% xsl %]
+
+[% BLOCK right %]
+  <a href="[% base %]">zur Bandauswahl &hellip;</a>
+[% END %]

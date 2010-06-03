@@ -13,7 +13,6 @@
   encoding="utf-8"/>
 
 <xsl:template match="/">
-  <h1><xsl:value-of select='//tei:titleStmt/tei:title[@type="main"]'/></h1>
   <h2><xsl:value-of select='//tei:titleStmt/tei:title[@type="sub"]'/></h2>
   <table>
     <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent"]'>
