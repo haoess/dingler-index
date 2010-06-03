@@ -21,6 +21,7 @@ requires 'Catalyst::View::XSLT';
 requires 'Catalyst::TraitFor::Request::ProxyBase';
 requires 'HTML::TagCloud';
 requires 'Catalyst::Plugin::Unicode::Encoding';
+requires 'XML::Simple';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
