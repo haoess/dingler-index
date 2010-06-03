@@ -33,8 +33,8 @@
   <p>gestorben: <xsl:apply-templates/></p>
 </xsl:template>
 
-<xsl:template match='@when'>
-  <xsl:apply-templates/>
+<xsl:template match='tei:date'>
+  <xsl:value-of select="@when"/>
 </xsl:template>
 
 <xsl:template match='tei:placeName'>
