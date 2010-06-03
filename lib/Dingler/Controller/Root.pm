@@ -41,16 +41,10 @@ sub auto :Private {
     ];
     
     if ( !$journal_xml ) {
-        $journal_xml = "<journals>\n";
-        foreach my $vol ( @{ $c->stash->{volumes} } ) {
-            $c->forward('journal_list_pre', [$vol]);
-            my $body = $c->res->body;
-            utf8::decode $body;
-            $journal_xml .= $body;
-            $c->res->body( undef );
-        }
-        $journal_xml .= "\n</journals>";
-        $journal_map = XMLin($journal_xml)->{journal};
+        my $volumes_file = $c->path_to( 'var', 'volumes.xml' )->stringify;
+        open( my $fh, '<', $volumes_file ) or die $!;
+        $journal_xml = do { local $/, <$fh> };
+        $journal_map = XMLin( $journal_xml )->{journal};
     }
     $c->stash->{journal_map} = $journal_map;
 
@@ -95,20 +89,6 @@ sub journal_list :Private {
     utf8::decode $xsl;
     $c->stash( xsl => $xsl );
     $c->res->body( undef );
-}
-
-=head2 journal_list_pre
-
-=cut
-
-sub journal_list_pre :Private {
-    my ($self, $c, $journal) = @_;
-
-    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
-    $c->stash->{xml} = $xml;
-    $c->stash->{journal} = $journal;
-    $c->stash->{template} = 'journal-list-pre.xsl';
-    $c->forward('Dingler::View::XSLT');
 }
 
 =head2 default
