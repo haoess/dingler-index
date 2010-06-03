@@ -18,7 +18,7 @@
     <tr>
       <td class="right">
         <xsl:element name="a">
-          <xsl:attribute name="href"><xsl:select value-of="$base"/>/journal/<xsl:value-of select="./file"/></xsl:attribute>
+          <xsl:attribute name="href"><xsl:value-of select="$base"/>journal/<xsl:value-of select="./file"/></xsl:attribute>
           Band <xsl:value-of select='./volume'/>
         </xsl:element>
       </td>
