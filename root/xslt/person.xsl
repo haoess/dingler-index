@@ -55,16 +55,17 @@
   <xsl:apply-templates/>
   <xsl:for-each select='./tei:ref'>
     <xsl:if test="position()=1">
-      <br/>Quellen:
+      <br /><br />Quellen:
     </xsl:if>
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select='@target'/></xsl:attribute>
-      <xsl:value-of select="position()" />
+      <xsl:apply-templates/>
     </xsl:element>
     <xsl:if test="position()!=last()">, </xsl:if>
   </xsl:for-each>
 </xsl:template>
 
+<xsl:template match='tei:ref'/>
 <xsl:template match='tei:note'/>
 <xsl:template match='tei:floruit'/>
 
