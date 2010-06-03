@@ -65,6 +65,9 @@
   </xsl:for-each>
 </xsl:template>
 
+<xsl:template match='tei:note'/>
+<xsl:template match='tei:floruit'/>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
