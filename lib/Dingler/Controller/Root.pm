@@ -24,9 +24,6 @@ Dingler::Controller::Root - Root Controller for Dingler
 
 =cut
 
-my $journal_xml;
-my $journal_map;
-
 sub auto :Private {
     my ($self, $c) = @_;
     $c->stash(

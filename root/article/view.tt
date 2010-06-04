@@ -18,8 +18,8 @@
 <div id="dialog"></div>
 
 <script type="text/javascript">
-  function showperson(id) {
-    jQuery('#dialog').load('[% base %]person/' + id + ' #data');
+  function showperson(id, article) {
+    jQuery('#dialog').load('[% base %]person/' + id + '/' + article +' #data');
     jQuery("#dialog").dialog({
       width: 600,
       title: 'Personeninformationen',

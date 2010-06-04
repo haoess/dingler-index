@@ -18,14 +18,16 @@ Catalyst Controller.
 
 =cut
 
-sub index :Path :Args(1) {
-    my ( $self, $c, $person ) = @_;
+sub index :Path :Args(2) {
+    my ( $self, $c, $person, $article ) = @_;
 
     my $xml = $c->config->{svn} . '/database/persons/persons.xml';
     $c->stash->{xml} = $xml;
     $c->stash->{template} = 'person.xsl';
     $c->stash(
-        person => $person,
+        article => $article,
+        person  => $person,
+        ptrs    => $c->path_to( 'var', 'ptrs.xml' )->stringify,
     );
     $c->forward('Dingler::View::XSLT');
     my $xsl = $c->res->body;

@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# output of this script should go into var/volumes.xml
+
+use utf8;
+
 use warnings;
 use strict;
 
@@ -13,11 +17,10 @@ my @volumes = map { s{$svn/}{}; $_ }
               grep { $_ !~ 'pj000' }
               glob "$svn/pj*";
 
-my $journal_xml = "<journals>\n";
+my $journal_xml = "<?xml version='1.0' encoding='UTF-8'?>\n<journals>\n";
 foreach my $vol ( @volumes ) {
     $journal_xml .= process_journal($vol);
 }
-
 $journal_xml .= "\n</journals>";
 
 print $journal_xml;
@@ -33,9 +36,8 @@ sub process_journal {
     my $style_doc  = XML::LibXML->load_xml( location => getcwd . '/root/xslt/journal-list-pre.xsl', no_cdata => 1 );
     my $stylesheet = XML::LibXSLT->new
                                  ->parse_stylesheet( $style_doc );
-
-    my %params  = XML::LibXSLT::xpath_to_string( journal => $journal  );
-    my $results = $stylesheet->transform( $source, %params );
+    my %params     = XML::LibXSLT::xpath_to_string( journal => $journal  );
+    my $results    = $stylesheet->transform( $source, %params );
     
     return $stylesheet->output_as_bytes( $results );
 }

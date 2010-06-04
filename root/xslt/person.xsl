@@ -14,6 +14,21 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:person[@xml:id=$person]'/>
+  <xsl:for-each select="document($ptrs)//ptr[@person=$person]/ref[. != $article]">
+    <xsl:if test="position()=1">
+      <h2>Weitere Fundstellen im &#x201E;Polytechnischen Journal&#x201C;</h2>
+      <xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
+    </xsl:if>
+    <li>
+      <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="$base"/>article/<xsl:value-of select="catalyst:art2jour(.)"/>/<xsl:value-of select="."/></xsl:attribute>
+        <xsl:value-of select="catalyst:art2title(.)"/>
+      </xsl:element>
+    </li>
+    <xsl:if test="position()=last()">
+      <xsl:text disable-output-escaping="yes">&lt;/ul&gt;</xsl:text>
+    </xsl:if>
+  </xsl:for-each>
 </xsl:template>
 
 <xsl:template match='tei:persName'>

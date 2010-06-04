@@ -89,7 +89,7 @@
 <xsl:template match="tei:persName">
   <xsl:element name="span">
     <xsl:attribute name="class">person</xsl:attribute>
-    <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />'); return false;</xsl:attribute>
+    <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />', '<xsl:value-of select="$article"/>'); return false;</xsl:attribute>
     <xsl:apply-templates/>
   </xsl:element>
 </xsl:template>
