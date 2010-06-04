@@ -7,8 +7,8 @@ td { vertical-align:top }
 
 sup.fn { cursor:pointer }
 a.fn { color:#069 }
-a { text-decoration:none; color:#68A }
-a:hover { text-decoration:underline }
+a, .ui-widget-content a { text-decoration:none; color:#68A }
+a:hover, .ui-widget-content a:hover { text-decoration:underline }
 
 #head { background:url(images/headerbg.gif) repeat-x 0px 0px; padding:5px; height:130px }
 #head .project { position:absolute; color:#f00 }
