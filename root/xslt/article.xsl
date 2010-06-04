@@ -53,7 +53,7 @@
 
 <xsl:template match='tei:bibl[@type="source"]'>
   <xsl:choose>
-    <xsl:when test="./@ref != null">
+    <xsl:when test="string-length(./@ref) != 0">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="./@ref"/></xsl:attribute>
         <xsl:attribute name="class">fn</xsl:attribute>
