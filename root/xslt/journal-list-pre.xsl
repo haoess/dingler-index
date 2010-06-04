@@ -19,6 +19,15 @@
     <volume><xsl:value-of select='//tei:imprint/tei:biblScope'/></volume>
     <year><xsl:value-of select='//tei:imprint/tei:date'/></year>
     <faclink><xsl:value-of select='catalyst:faclink(//tei:sourceDesc//tei:idno)'/></faclink>
+    <articles>
+    <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_misc"]'>
+      <article>
+        <number><xsl:value-of select='tei:front/tei:titlePart[@type="number"]'/></number>
+        <id><xsl:value-of select="@xml:id"/></id>
+        <title><xsl:value-of select="catalyst:uml(tei:front/tei:titlePart[@type='column'])"/></title>
+      </article>
+    </xsl:for-each>
+    </articles>
   </journal>
 </xsl:template>
 

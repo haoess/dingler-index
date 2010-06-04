@@ -17,7 +17,7 @@ __PACKAGE__->config(
                 uri => 'urn:catalyst',
                 name => 'uml',
                 subref => sub {
-                    my $str = shift;
+                    my $str = shift || '';
                     for ($str) {
                         s/a\x{0364}/ä/g;
                         s/o\x{0364}/ö/g;

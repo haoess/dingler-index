@@ -52,11 +52,18 @@
 </xsl:template>
 
 <xsl:template match='tei:bibl[@type="source"]'>
-  <xsl:element name="a">
-    <xsl:attribute name="href"><xsl:value-of select="./@ref"/></xsl:attribute>
-    <xsl:attribute name="class">fn</xsl:attribute>
-    <xsl:apply-templates/>
-  </xsl:element>
+  <xsl:choose>
+    <xsl:when test="./@ref != null">
+      <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="./@ref"/></xsl:attribute>
+        <xsl:attribute name="class">fn</xsl:attribute>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:apply-templates/>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template match="tei:p">

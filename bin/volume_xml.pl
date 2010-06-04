@@ -25,12 +25,18 @@ print $journal_xml;
 sub process_journal {
     my $journal = shift;
     my ($xml) = glob "$svn/$journal/*Z.xml";
-    my $xslt = XML::LibXSLT->new;
+    
     XML::LibXSLT->register_function( 'urn:catalyst', 'faclink', \&faclink );
-    my $source = XML::LibXML->load_xml( location => $xml );
-    my $style_doc = XML::LibXML->load_xml( location => getcwd . '/root/xslt/journal-list-pre.xsl', no_cdata => 1 );
-    my $stylesheet = $xslt->parse_stylesheet( $style_doc );
-    my $results = $stylesheet->transform( $source, journal => $journal );
+    XML::LibXSLT->register_function( 'urn:catalyst', 'uml', \&uml );
+    
+    my $source     = XML::LibXML->load_xml( location => $xml );
+    my $style_doc  = XML::LibXML->load_xml( location => getcwd . '/root/xslt/journal-list-pre.xsl', no_cdata => 1 );
+    my $stylesheet = XML::LibXSLT->new
+                                 ->parse_stylesheet( $style_doc );
+
+    my %params  = XML::LibXSLT::xpath_to_string( journal => $journal  );
+    my $results = $stylesheet->transform( $source, %params );
+    
     return $stylesheet->output_as_bytes( $results );
 }
 
@@ -42,4 +48,15 @@ sub faclink {
         $ret .= "&tx_slubdigitallibrary[image]=$2";
     }
     return $ret;
+}
+
+sub uml {
+    my $str = shift || '';
+    for ($str) {
+        s/a\x{0364}/ä/g;
+        s/o\x{0364}/ö/g;
+        s/u\x{0364}/ü/g;
+        s/\s+/ /g;
+    }
+    return $str;
 }

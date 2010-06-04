@@ -39,23 +39,11 @@ sub auto :Private {
         grep { $_ !~ 'pj000' }
         glob $c->config->{svn} . '/pj*'
     ];
-    
-    if ( !$journal_xml ) {
-        my $volumes_file = $c->path_to( 'var', 'volumes.xml' )->stringify;
-        open( my $fh, '<', $volumes_file ) or die $!;
-        $journal_xml = do { local $/, <$fh> };
-        $journal_map = XMLin( $journal_xml )->{journal};
-    }
-    $c->stash->{journal_map} = $journal_map;
 
     $c->stash->{ journal_number } = sub {
         my $file = shift;
-        foreach my $entry ( @{$c->stash->{journal_map}} ) {
-            if ( $entry->{file} eq $file ) {
-                return $entry->{volume};
-            }
-        }
-        return '';
+        $file =~ /(\d+)/;
+        return $1 ? sprintf( "%d", $1 ) : '';
     };
 
     return 1;
@@ -81,9 +69,9 @@ sub index :Path :Args(0) {
 
 sub journal_list :Private {
     my ($self, $c) = @_;
-    
+
     $c->stash->{template} = 'journal-list.xsl';
-    $c->stash->{xml} = $journal_xml;
+    $c->stash->{xml} = $c->path_to( 'var', 'volumes.xml' );
     $c->forward('Dingler::View::XSLT');
     my $xsl = $c->res->body;
     utf8::decode $xsl;

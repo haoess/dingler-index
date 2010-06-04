@@ -29,8 +29,8 @@ sub index :Path :Args(2) {
     $c->forward('article_xslt', [$journal, $article]);
     $c->forward('article_plain', [$journal, $article]);
 
-    my $prev_article = $c->forward( 'step_article', ['preceding', $xml, $article] );
-    my $next_article = $c->forward( 'step_article', ['following', $xml, $article] );
+    my $prev_article = $c->forward( 'step_article', ['preceding', $article] );
+    my $next_article = $c->forward( 'step_article', ['following', $article] );
 
     # page
     $c->stash(
@@ -86,15 +86,13 @@ sub article_plain :Private {
 =cut
 
 sub step_article :Private {
-    my ($self, $c, $way, $xml, $article) = @_;
+    my ($self, $c, $way, $article) = @_;
 
-    my $ns_uri = 'http://www.tei-c.org/ns/1.0';
-    my $parser = XML::LibXML->new();
-    my $doc = $parser->parse_file($xml) or die $!;
+    my $doc = XML::LibXML->new
+                         ->parse_file( $c->path_to('var', 'volumes.xml')->stringify )
+                  or die $!;
     my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-    $xpc->registerNs( 'tei', $ns_uri );
-
-    my $ret = $xpc->find( '//tei:text[@xml:id="' . $article . '"]/' . $way . '-sibling::tei:text[@type="art_undef" or @type="art_patent"][1]/@xml:id' );
+    my $ret = $xpc->find( "//article[id='$article']/$way-sibling::article[1]/id" );
     return $ret;
 }
 
