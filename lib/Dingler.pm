@@ -42,11 +42,27 @@ __PACKAGE__->config(
     encoding => 'UTF-8',
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
+    static => {
+        include_path => [
+            __PACKAGE__->config->{root},
+            \&incpath_generator,
+        ],
+        ignore_extensions => [ qw(tt xslt) ],
+#        debug => 1,
+#        logging => 1,
+    },
 );
+
+sub incpath_generator {
+    my $c = shift;
+    return [ $c->config->{svn} ];
+}
 
 # Start the application
 __PACKAGE__->setup();
 
+1;
+__END__
 
 =head1 NAME
 
@@ -74,5 +90,3 @@ This library is free software. You can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-
-1;

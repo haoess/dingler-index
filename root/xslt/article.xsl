@@ -94,6 +94,20 @@
   </xsl:element>
 </xsl:template>
 
+<xsl:template match="tei:ref">
+  <xsl:choose>
+    <xsl:when test="@target and starts-with(@target, '#tab')">
+      <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="$journal"/>/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html</xsl:attribute>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:apply-templates/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
