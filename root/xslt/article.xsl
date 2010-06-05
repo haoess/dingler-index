@@ -118,6 +118,16 @@
   <span class="wide"><xsl:apply-templates/></span>
 </xsl:template>
 
+<xsl:template match="tei:hi[contains(@rendition, '#roman')]">
+  <span class="roman"><xsl:apply-templates/></span>
+</xsl:template>
+
+<xsl:template match="tei:formula">
+  <xsl:element name="img">
+    <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
+  </xsl:element>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
