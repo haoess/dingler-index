@@ -75,7 +75,7 @@
 </xsl:template>
 
 <xsl:template match="tei:head">
-  <h2><xsl:apply-templates/></h2>
+  <h2 class="@"><xsl:apply-templates/></h2>
 </xsl:template>
 
 <xsl:template match="tei:list">
@@ -102,10 +102,20 @@
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
+    <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
+      <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="$journal"/>/<xsl:value-of select="catalyst:replace(@target, '.xml', '.html')"/></xsl:attribute>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:when>
     <xsl:otherwise>
       <xsl:apply-templates/>
     </xsl:otherwise>
   </xsl:choose>
+</xsl:template>
+
+<xsl:template match="tei:hi[contains(@rendition, '#wide')]">
+  <span class="wide"><xsl:apply-templates/></span>
 </xsl:template>
 
 <xsl:template match="text()">

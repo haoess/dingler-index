@@ -78,6 +78,15 @@ __PACKAGE__->config(
                     return $ret;
                 },
             },
+            {
+                uri => 'urn:catalyst',
+                name => 'replace',
+                subref => sub {
+                    my ($str, $pattern, $replacement) = @_;
+                    $str =~ s/$pattern/$replacement/g;
+                    return $str;
+                }
+            },
         ],
     },
 #    DUMP_CONFIG => 1,
