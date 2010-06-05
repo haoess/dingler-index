@@ -128,6 +128,25 @@
   </xsl:element>
 </xsl:template>
 
+<xsl:template match="tei:table">
+  <table style="margin-left:auto; margin-right:auto">
+  <xsl:for-each select="tei:row">
+    <tr>
+    <xsl:for-each select="tei:cell">
+      <xsl:choose>
+        <xsl:when test="../@role='label'">
+          <th><xsl:apply-templates/></th>
+        </xsl:when>
+        <xsl:otherwise>
+          <td><xsl:apply-templates/></td>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+    </tr>
+  </xsl:for-each>
+  </table>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
