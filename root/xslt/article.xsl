@@ -164,6 +164,10 @@
   </xsl:element>
 </xsl:template>
 
+<xsl:template match="tei:q">
+  <q><xsl:apply-templates/></q>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
