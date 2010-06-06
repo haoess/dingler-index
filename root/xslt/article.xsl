@@ -70,16 +70,12 @@
   <p><xsl:apply-templates/></p>
 </xsl:template>
 
-<xsl:template match="tei:table">
-  <p class="small"><xsl:apply-templates/></p>
-</xsl:template>
-
 <xsl:template match="tei:head">
   <h2 class="@"><xsl:apply-templates/></h2>
 </xsl:template>
 
 <xsl:template match="tei:list">
-  <ul>
+  <ul style="list-style-type:none">
   <xsl:for-each select="tei:item">
     <li><xsl:apply-templates/></li>
   </xsl:for-each>
