@@ -14,12 +14,12 @@
 <div id="head">
   <div class="project">Interne Projektseite</div>
   <div class="logo">
-    <a href="[% base %]"><img src="[% base %]static/images/dinglerlogo.gif" /></a>
+    <a href="[% base %]"><img src="[% base %]static/images/dinglerlogo.gif" alt="Logo Dingler" /></a>
   </div>
   <div class="partner">
-    <a href="http://www.dfg.de/"><img src="[% base %]static/images/partner_dfg.gif" /></a>
-    <a href="http://www.slub-dresden.de/"><img src="[% base %]static/images/partner_slub.gif" /></a>
-    <a href="http://www.hu-berlin.de/"><img src="[% base %]static/images/partner_huberlin.gif" /></a>
+    <a href="http://www.dfg.de/"><img src="[% base %]static/images/partner_dfg.gif" alt="Logo DFG"/></a>
+    <a href="http://www.slub-dresden.de/"><img src="[% base %]static/images/partner_slub.gif" alt="Logo SLUB" /></a>
+    <a href="http://www.hu-berlin.de/"><img src="[% base %]static/images/partner_huberlin.gif" alt="Logo HU Berlin" /></a>
   </div>
 </div>
 

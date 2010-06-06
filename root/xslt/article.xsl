@@ -69,15 +69,9 @@
 <xsl:template match="tei:p">
   <xsl:element name="p">
     <xsl:attribute name="class">
-      <xsl:if test="contains(@rendition,'#small')">
-        small
-      </xsl:if>
-      <xsl:if test="not(contains(@rendition,'#no_indent')) and not(contains(@rendition,'#center'))">
-        indent
-      </xsl:if>
-      <xsl:if test="contains(@rendition,'#center')">
-        center
-      </xsl:if>
+      <xsl:if test="contains(@rendition,'#small')">small</xsl:if>
+      <xsl:if test="not(contains(@rendition,'#no_indent')) and not(contains(@rendition,'#center'))">indent</xsl:if>
+      <xsl:if test="contains(@rendition,'#center')">center</xsl:if>
     </xsl:attribute>
     <xsl:apply-templates/>
   </xsl:element>
