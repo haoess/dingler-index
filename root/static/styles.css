@@ -30,6 +30,7 @@ td.mainright  { padding-top:0px }
 .wide { letter-spacing:0.5em; margin-right:-0.2em; font-family:monospace,serif; font-size:1em }
 .roman { font-style:italic; font-family:"Times New Roman",serif }
 .corr { border-bottom:dotted 1px #68a }
+.indent { text-indent:2em }
 
 .person { border-bottom: dashed 1px #68a; cursor:pointer }
 
