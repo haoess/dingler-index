@@ -147,6 +147,14 @@
   </table>
 </xsl:template>
 
+<xsl:template match="tei:choice">
+  <xsl:element name="span">
+    <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
+    <xsl:attribute name="class">corr</xsl:attribute>
+    <xsl:value-of select="tei:corr"/>
+  </xsl:element>
+</xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>

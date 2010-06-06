@@ -29,6 +29,7 @@ td.mainright  { padding-top:0px }
 .small { font-size:0.8em }
 .wide { letter-spacing:0.5em; margin-right:-0.2em; font-family:monospace,serif; font-size:1em }
 .roman { font-style:italic; font-family:"Times New Roman",serif }
+.corr { border-bottom:dotted 1px #68a }
 
 .person { border-bottom: dashed 1px #68a; cursor:pointer }
 
