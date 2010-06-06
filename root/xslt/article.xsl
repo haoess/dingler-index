@@ -10,6 +10,7 @@
   method="xml" media-type="text/html"
   cdata-section-elements="script style"
   indent="yes"
+  omit-xml-declaration="yes"
   encoding="utf-8"/>
 
 <xsl:template match='/'>
