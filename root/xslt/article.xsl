@@ -67,7 +67,12 @@
 </xsl:template>
 
 <xsl:template match="tei:p">
-  <p><xsl:apply-templates/></p>
+  <xsl:element name="p">
+    <xsl:if test="contains(@rendition,'#small')">
+      <xsl:attribute name="class">small</xsl:attribute>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:element>
 </xsl:template>
 
 <xsl:template match="tei:head">
