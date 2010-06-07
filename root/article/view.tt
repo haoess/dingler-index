@@ -1,10 +1,10 @@
 <script type="text/javascript">
   jQuery(function() {
-    jQuery('.fn div').dialog({
+    jQuery('div.fn').dialog({
       autoOpen: false,
       hide: 'explode'
     });
-    jQuery('.fn span').click(function(e) {
+    jQuery('.fnref span').click(function(e) {
       var elem = jQuery('#' + jQuery(e.target).attr('idref'));
       elem.dialog('option', 'title', 'Fußnote ' + jQuery(e.target).html());
       elem.dialog('open');

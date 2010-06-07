@@ -7,8 +7,8 @@ q:before { content:"" }
 q:after  { content:"" }
 td { vertical-align:top }
 
-sup.fn { cursor:pointer }
-a.fn { color:#069 }
+sup.fnref { cursor:pointer }
+a.fnref { color:#069 }
 a, .ui-widget-content a { text-decoration:none; color:#68A }
 a:hover, .ui-widget-content a:hover { text-decoration:underline }
 

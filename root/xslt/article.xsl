@@ -4,6 +4,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
   xmlns:tei="http://www.tei-c.org/ns/1.0"
   xmlns:catalyst="urn:catalyst"
+  exclude-result-prefixes="catalyst tei"
   xpath-default-namespace="http://www.tei-c.org/ns/1.0">
 
 <xsl:output
@@ -16,6 +17,7 @@
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]'/>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]/front/tei:pb'/>
+  <xsl:apply-templates select='//tei:note' mode="notecontent"/>
 </xsl:template>
 
 <xsl:template match='tei:text'>
@@ -40,16 +42,20 @@
 </xsl:template>
 
 <xsl:template match="tei:note">
-  <sup class="fn">
+  <sup class="fnref">
     <xsl:element name="span">
       <xsl:attribute name="idref"><xsl:value-of select="./tei:pb/@xml:id"/></xsl:attribute>
       <xsl:value-of select="@n"/>
     </xsl:element>
-    <xsl:element name="div">
-      <xsl:attribute name="id"><xsl:value-of select="./tei:pb/@xml:id"/></xsl:attribute>
-      <xsl:apply-templates/>
-    </xsl:element>
   </sup>
+</xsl:template>
+
+<xsl:template match="tei:note" mode="notecontent">
+  <xsl:element name="div">
+    <xsl:attribute name="class">fn</xsl:attribute>
+    <xsl:attribute name="id"><xsl:value-of select="./tei:pb/@xml:id"/></xsl:attribute>
+    <xsl:apply-templates/>
+  </xsl:element>
 </xsl:template>
 
 <xsl:template match='tei:bibl[@type="source"]'>
