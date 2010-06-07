@@ -114,7 +114,7 @@
     </xsl:when>
     <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
       <xsl:element name="a">
-        <xsl:attribute name="href"><xsl:value-of select="$journal"/>/<xsl:value-of select="catalyst:replace(@target, '.xml', '.html')"/></xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/></xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
