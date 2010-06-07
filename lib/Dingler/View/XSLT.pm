@@ -33,7 +33,7 @@ __PACKAGE__->config(
                 subref => sub {
                     my $str = shift;
                     $str =~ /#(\w+)\z/;
-                    return $1 ? $1 : $str;
+                    return $1 ? $1 : '';
                 },
             },
             {
