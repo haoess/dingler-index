@@ -17,16 +17,36 @@
   <table>
     <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent"]'>
     <tr>
-      <td class="right"><xsl:value-of select='tei:front/tei:titlePart[@type="number"]' /></td>
+      <td class="right"><xsl:apply-templates select='tei:front/tei:titlePart[@type="number"]'/></td>
       <td>
         <xsl:element name="a">
           <xsl:attribute name="href"><xsl:value-of select="$base" />article/<xsl:value-of select="$journal" />/<xsl:value-of select="@xml:id" /></xsl:attribute>
-          <xsl:value-of select="catalyst:uml(tei:front/tei:titlePart[@type='column'])" />
+          <xsl:apply-templates select='tei:front/tei:titlePart[@type="column"]'/>
         </xsl:element>
     </td>
     </tr>
     </xsl:for-each>
   </table>
+</xsl:template>
+
+<xsl:template match='tei:front/tei:titlePart[@type="number"]'>
+  <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match='tei:front/tei:titlePart[@type="column"]'>
+  <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match="tei:choice">
+  <xsl:element name="span">
+    <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
+    <xsl:attribute name="class">corr</xsl:attribute>
+    <xsl:value-of select="tei:corr"/>
+  </xsl:element>
+</xsl:template>
+
+<xsl:template match="text()">
+  <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
 
 </xsl:stylesheet>
