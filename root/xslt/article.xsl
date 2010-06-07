@@ -41,6 +41,10 @@
   </xsl:choose>
 </xsl:template>
 
+<xsl:template match="tei:byline">
+  <p><xsl:apply-templates/></p>
+</xsl:template>
+
 <xsl:template match="tei:note">
   <sup class="fnref">
     <xsl:element name="span">
@@ -85,7 +89,7 @@
 </xsl:template>
 
 <xsl:template match="tei:head">
-  <h2 class="@"><xsl:apply-templates/></h2>
+  <h2><xsl:apply-templates/></h2>
 </xsl:template>
 
 <xsl:template match="tei:list">
