@@ -1,5 +1,12 @@
 [% xsl %]
 
+<script type="text/javascript">
+  function expand(artid) {
+    var elem = jQuery(artid);
+    elem.css('display') == 'none' ? elem.show() : elem.hide();
+  }
+</script>
+
 [% BLOCK right %]
   <a href="[% base %]">zur Bandauswahl &hellip;</a>
 [% END %]

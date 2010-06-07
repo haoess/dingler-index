@@ -9,8 +9,8 @@ td { vertical-align:top }
 
 sup.fnref { cursor:pointer }
 a.fnref { color:#069 }
-a, .ui-widget-content a { text-decoration:none; color:#68A }
-a:hover, .ui-widget-content a:hover { text-decoration:underline }
+a, .ui-widget-content a, .clickable { text-decoration:none; color:#68A }
+a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underline }
 
 #head { background:url(images/headerbg.gif) repeat-x 0px 0px; padding:5px; height:130px }
 #head .project { position:absolute; color:#f00 }
@@ -33,6 +33,7 @@ td.mainright  { padding-top:0px }
 .roman { font-style:italic }
 .corr { border-bottom:dotted 1px #68a }
 .indent { text-indent:2em }
+.pointer { cursor:pointer }
 
 .person { border-bottom: dashed 1px #68a; cursor:pointer }
 
