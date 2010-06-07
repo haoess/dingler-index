@@ -147,6 +147,7 @@
     <xsl:element name="img">
       <xsl:attribute name="src">http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
       <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
+      <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
     </xsl:element>
     <br />
     <xsl:apply-templates select="./tei:figDesc"/>
