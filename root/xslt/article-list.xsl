@@ -59,11 +59,22 @@
 </xsl:template>
 
 <xsl:template match="tei:choice">
-  <xsl:element name="span">
-    <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
-    <xsl:attribute name="class">corr</xsl:attribute>
-    <xsl:value-of select="tei:corr"/>
-  </xsl:element>
+  <xsl:choose>
+    <xsl:when test="./tei:reg">
+      <xsl:element name="span">
+        <xsl:attribute name="title">gemeint: <xsl:value-of select="tei:reg"/></xsl:attribute>
+        <xsl:attribute name="class">corr</xsl:attribute>
+        <xsl:value-of select="tei:orig"/>
+      </xsl:element>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:element name="span">
+        <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
+        <xsl:attribute name="class">corr</xsl:attribute>
+        <xsl:value-of select="tei:corr"/>
+      </xsl:element>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template match="text()">
