@@ -42,4 +42,7 @@
       <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
     [% END %]
   </div>
+  <hr />
+  Zitierangaben<br />
+  [% bibtex %]
 [% END %]

@@ -32,12 +32,19 @@ sub index :Path :Args(2) {
     my $prev_article = $c->forward( 'step_article', ['preceding', $article] );
     my $next_article = $c->forward( 'step_article', ['following', $article] );
 
+    $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
+
     # page
     $c->stash(
         prev_article => $prev_article,
         next_article => $next_article,
         template     => 'article/view.tt',
     );
+}
+
+sub bibtex :Private {
+    my ( $self, $c, $xml, $article ) = @_;
+
 }
 
 =head2 article_xslt
