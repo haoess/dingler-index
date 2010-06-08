@@ -198,6 +198,9 @@
   <q><xsl:apply-templates/></q>
 </xsl:template>
 
+<xsl:template match="tei:unclear"></xsl:template>
+<xsl:template match="tei:add"></xsl:template>
+
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
