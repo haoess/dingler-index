@@ -138,6 +138,10 @@
   <span class="roman"><xsl:apply-templates/></span>
 </xsl:template>
 
+<xsl:template match="tei:hi[contains(@rendition, '#superscript')]">
+  <sup><xsl:apply-templates/></sup>
+</xsl:template>
+
 <xsl:template match="tei:formula">
   <xsl:element name="img">
     <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
