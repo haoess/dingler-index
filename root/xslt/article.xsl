@@ -16,7 +16,6 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]'/>
-  <xsl:apply-templates select='//tei:text[@xml:id=$article]/front/tei:pb'/>
   <xsl:apply-templates select='//tei:note' mode="notecontent"/>
 </xsl:template>
 
@@ -31,6 +30,16 @@
     <xsl:attribute name="class">faclink</xsl:attribute>
     zum Faksimile &#x2026;
   </xsl:element>
+  </div>
+</xsl:template>
+
+<xsl:template match='tei:body//tei:pb'>
+  <div style="margin-left:-100px;float:left">
+    <xsl:element name="a">
+      <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
+      <xsl:attribute name="class">faclink</xsl:attribute>
+      Faks. S. <xsl:value-of select="@n"/>
+    </xsl:element>
   </div>
 </xsl:template>
 
