@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use Cache::FileCache;
 use Dingler::Index;
 use HTML::TagCloud;
 use Text::BibTeX qw(:metatypes);
@@ -26,7 +27,11 @@ Catalyst Controller.
 sub index :Path :Args(2) {
     my ( $self, $c, $journal, $article ) = @_;
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
-    $c->stash->{xml} = $xml;
+    $c->stash(
+        xml     => $xml,
+        article => $article,
+        journal => $journal,
+    );
 
     $c->forward('set_meta', [$journal, $article]);
     $c->forward('article_xslt', [$journal, $article]);
@@ -97,14 +102,18 @@ sub bibtex :Private {
 sub article_xslt :Private {
     my ($self, $c, $journal, $article) = @_;
 
-    $c->stash->{template} = 'article.xsl';
-    $c->stash(
-        article => $article,
-        journal => $journal,
-    );
-    $c->forward('Dingler::View::XSLT');
+    my $cache = Cache::FileCache->new({
+        cache_root => $c->path_to( 'var', 'cache' )."",
+        namespace  => 'dingler-articles'
+    });
+    my $xsl = $cache->get( $article );
+    if ( not defined $xsl ) {
+        $c->stash->{template} = 'article.xsl';
+        $c->forward('Dingler::View::XSLT');
+        $xsl = $c->res->body;
+    }
+    $cache->set( $article, $xsl );
 
-    my $xsl = $c->res->body;
     utf8::decode($xsl);
     $c->stash( xsl => $xsl );
     $c->res->body( undef );

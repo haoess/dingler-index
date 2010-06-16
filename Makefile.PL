@@ -25,6 +25,7 @@ requires 'XML::Simple';
 requires 'XML::LibXML' => '1.70';
 requires 'XML::LibXSLT' => '1.70';
 requires 'Text::BibTeX';
+requires 'Cache::FileCache';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
