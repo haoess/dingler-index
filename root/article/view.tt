@@ -13,6 +13,44 @@
   });
 </script>
 
+<div class="nav">
+  <table>
+    <tr>
+      <td>
+        Sie sind hier: <a href="[% base %]">Startseite</a> &rarr;
+        <a href="journal/[% journal | html %]">Band [% volume | html %]</a> &rarr;
+        Artikel [% number | html %]
+      </td>
+      <td class="right">
+        [% IF prev_article %]<a href="article/[% journal %]/[% prev_article %]"><b>&larr;</b></a>[% END %]
+        [% IF next_article %]<a href="article/[% journal %]/[% next_article %]"><b>&rarr;</b></a>[% END %]
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="meta">
+  <table>
+    <tr>
+      <td class="caption right">Titel:</td>
+      <td>[% title | html %]</td>
+    </tr>
+    <tr>
+      <td class="caption right">Autor:</td>
+      <td>Johann Gottfried Dingler</td>
+    </tr>
+    <tr>
+      <td class="caption right">Fundstelle:</td>
+      <td>[% year | html %], Band [% volume | html %], Nr. [% number | html %], S. [% p_start | html %]&ndash;[% p_end | html %]</td>
+    </tr>
+    <tr>
+      <td class="caption right">URL:</td>
+      <td>[% c.req.uri %]</td>
+    </tr>
+  </table>
+</div>
+
+<div style="margin-left:-100px;float:left"><a href="[% facsimile %]" class="faclink">Faksimile</a></div>
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
 <div id="dialog"></div>
@@ -30,21 +68,24 @@
 </script>
 
 [% BLOCK right %]
-  <p class="center">
-    <a href="journal/[% journal %]">Inhaltsverzeichnis Band [% journal_number(journal) %]</a>
-    <br />
-    [% IF prev_article %]<a href="article/[% journal %]/[% prev_article %]">&larr;</a>[% END %]
-    [% IF next_article %]<a href="article/[% journal %]/[% next_article %]">&rarr;</a>[% END %]
-  </p>
-  <hr />
-  <div id="htmltagcloud">
-    [% FOREACH tag IN cloud.tags(20) %]
-      <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
-    [% END %]
+  <div class="rightbox">
+    <div class="rightboxhead">Schlagwortwolke</div>
+    <div class="rightboxcontent">
+      <div id="htmltagcloud">
+        [% FOREACH tag IN cloud.tags(20) %]
+          <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
+        [% END %]
+      </div>
+    </div>
   </div>
-  <hr />
-  Zitierangaben: <span class="pointer" onclick="showbibtex()">BibTeX</span>
-  <div id="bibtex"><pre>[% bibtex %]</pre></div>
+  
+  <div class="rightbox">
+    <div class="rightboxhead">Zitierangaben</div>
+    <div class="rightboxcontent">
+      <span class="pointer" onclick="showbibtex()">BibTeX</span>
+      <div id="bibtex"><pre>[% bibtex | html %]</pre></div>
+    </div>
+  </div>
 
 <script type="text/javascript">
   function showbibtex() {

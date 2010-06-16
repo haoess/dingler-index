@@ -24,23 +24,16 @@
 </xsl:template>
 
 <xsl:template match='tei:front/tei:pb'>
-  <div>
-  <xsl:element name="a">
-    <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
-    <xsl:attribute name="class">faclink</xsl:attribute>
-    zum Faksimile &#x2026;
-  </xsl:element>
-  </div>
 </xsl:template>
 
 <xsl:template match='tei:body//tei:pb'>
-  <div style="margin-left:-100px;float:left">
+  <span style="margin-left:-100px;float:left">
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
       <xsl:attribute name="class">faclink</xsl:attribute>
-      Faks. S. <xsl:value-of select="@n"/>
+      S. <xsl:value-of select="@n"/>
     </xsl:element>
-  </div>
+  </span>
 </xsl:template>
 
 <xsl:template match="tei:titlePart">

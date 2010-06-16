@@ -36,6 +36,16 @@
           </xsl:choose>
         </pagestart>
         <pageend><xsl:value-of select="following::*/preceding::tei:pb[1]/@n"/></pageend>
+        <facsimile>
+          <xsl:choose>
+            <xsl:when test="tei:front/tei:pb[1]">
+              <xsl:value-of select="catalyst:faclink(tei:front/tei:pb[1]/@facs)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="catalyst:faclink(preceding::tei:pb[1]/@facs)" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </facsimile>
       </article>
     </xsl:for-each>
     </articles>

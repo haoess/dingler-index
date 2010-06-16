@@ -7,6 +7,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 use Dingler::Index;
 use HTML::TagCloud;
 use Text::BibTeX qw(:metatypes);
+use XML::LibXML;
 
 =head1 NAME
 
@@ -27,6 +28,7 @@ sub index :Path :Args(2) {
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
     $c->stash->{xml} = $xml;
 
+    $c->forward('set_meta', [$journal, $article]);
     $c->forward('article_xslt', [$journal, $article]);
     $c->forward('article_plain', [$journal, $article]);
 
@@ -43,40 +45,47 @@ sub index :Path :Args(2) {
     );
 }
 
+=head2 set_meta
+
+=cut
+
+sub set_meta :Private {
+    my ( $self, $c, $journal, $article ) = @_;
+    my $doc = XML::LibXML->new->parse_file( $c->path_to('var', 'volumes.xml')->stringify ) or die $!;
+    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
+
+    my $volume    = $xpc->find( "//journal[file='$journal']/volume[1]" );
+    my $title     = $xpc->find( "//article[id='$article']/title[1]" );
+    my $number    = $xpc->find( "//article[id='$article']/number[1]" );
+    my $year      = $xpc->find( "//journal[file='$journal']/year[1]" );
+    my $p_start   = $xpc->find( "//article[id='$article']/pagestart[1]" );
+    my $p_end     = $xpc->find( "//article[id='$article']/pageend[1]" );
+    my $facsimile = $xpc->find( "//article[id='$article']/facsimile[1]" );
+
+    $c->stash(
+        volume    => "$volume",
+        title     => "$title",
+        number    => "$number",
+        year      => "$year",
+        p_start   => "$p_start",
+        p_end     => "$p_end",
+        facsimile => "$facsimile",
+    );
+}
+
 sub bibtex :Private {
     my ( $self, $c, $xml, $article ) = @_;
     my $entry = Text::BibTeX::Entry->new;
     $entry->set_metatype( BTE_REGULAR );
     $entry->set_type( 'article' );
     $entry->set_key( "dingler:$article" );
-
-    # editor
-    $entry->set( editor => 'Dingler, Johann Gottfried' );
-
-    my $doc = XML::LibXML->new
-                         ->parse_file( $c->path_to('var', 'volumes.xml')->stringify )
-                  or die $!;
-    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-
-    # journal
+    $entry->set( editor  => 'Dingler, Johann Gottfried' );
     $entry->set( journal => 'Polytechnisches Journal' );
-
-    # volume
-    my $volume = $xpc->find( "//journal[file='" . $c->stash->{journal} . "']/volume[1]" );
-    $entry->set( volume => "$volume" );
-
-    # title
-    my $title = $xpc->find( "//article[id='$article']/title[1]" );
-    $entry->set( title => "$title" );
-
-    # year
-    my $year = $xpc->find( "//journal[file='" . $c->stash->{journal} . "']/year[1]" );
-    $entry->set( year => "$year" );
-
-    # pages
-    my $p_start = $xpc->find( "//article[id='$article']/pagestart[1]" );
-    my $p_end   = $xpc->find( "//article[id='$article']/pageend[1]" );
-    $entry->set( pages => "$p_start" ne "$p_end" ? "$p_start--$p_end" : "$p_start" );
+    $entry->set( volume  => $c->stash->{volume} );
+    $entry->set( title   => $c->stash->{title} );
+    $entry->set( year    => $c->stash->{year} );
+    $entry->set( pages   => $c->stash->{p_start} ne $c->stash->{p_end} ?
+                            sprintf "%s--%s", $c->stash->{p_start}, $c->stash->{p_end} : $c->stash->{p_start} );
 
     return $entry->print_s;
 }

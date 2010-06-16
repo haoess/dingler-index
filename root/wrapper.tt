@@ -26,8 +26,8 @@
 
 <table id="maintable">
   <colgroup>
-    <col width="800" />
-    <col width="200" />
+    <col width="700" />
+    <col width="300" />
   </colgroup>
   <tr>
     <td class="mainmiddle">[% content %]</td>
