@@ -126,10 +126,18 @@ sub article_xslt :Private {
 sub article_plain :Private {
     my ($self, $c, $journal, $article) = @_;
 
-    $c->stash->{template} = 'article-plain.xsl';
-    $c->forward('Dingler::View::XSLT');
+    my $cache = Cache::FileCache->new({
+        cache_root => $c->path_to( 'var', 'cache' )."",
+        namespace  => 'dingler-articles-plain'
+    });
+    my $plain = $cache->get( $article );
+    if ( not defined $plain ) {
+        $c->stash->{template} = 'article-plain.xsl';
+        $c->forward('Dingler::View::XSLT');
+        $plain = $c->res->body;
+    }
+    $cache->set( $article, $plain);
 
-    my $plain = $c->res->body;
     my $index = Dingler::Index->new({ text => $plain });
     my %words = %{ $index->words };
     my $cloud = HTML::TagCloud->new( levels => 30 );
