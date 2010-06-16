@@ -78,7 +78,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="rightbox">
     <div class="rightboxhead">Zitierangaben</div>
     <div class="rightboxcontent">
@@ -86,6 +86,17 @@
       <div id="bibtex"><pre>[% bibtex | html %]</pre></div>
     </div>
   </div>
+
+  [% IF figures.size %]
+  <div class="rightbox">
+    <div class="rightboxhead">Tafeln</div>
+    <div class="rightboxcontent" style="text-align:center">
+      [% FOREACH figure IN figures %]
+        <a href="[% figure_to_markup(figure) %]"><img src="[% figure %]" width="250" /></a><br /><br />
+      [% END %]
+    </div>
+  </div>
+  [% END %]
 
 <script type="text/javascript">
   function showbibtex() {

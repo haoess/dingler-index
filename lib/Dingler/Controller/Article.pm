@@ -7,6 +7,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 use Cache::FileCache;
 use Dingler::Index;
 use HTML::TagCloud;
+use List::MoreUtils qw(uniq);
 use Text::BibTeX qw(:metatypes);
 use XML::LibXML;
 
@@ -76,7 +77,18 @@ sub set_meta :Private {
         p_end     => "$p_end",
         facsimile => "$facsimile",
     );
+
+    my @figures;
+    foreach my $figure ( $xpc->findnodes( "//article[id='$article']/figures/figure" ) ) {
+        push @figures, $figure->to_literal;
+    }
+    @figures = uniq @figures;
+    $c->stash->{figures} = \@figures;
 }
+
+=head2 bibtex
+
+=cut
 
 sub bibtex :Private {
     my ( $self, $c, $xml, $article ) = @_;

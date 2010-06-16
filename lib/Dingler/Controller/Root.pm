@@ -43,6 +43,12 @@ sub auto :Private {
         return $1 ? sprintf( "%d", $1 ) : '';
     };
 
+    $c->stash->{ figure_to_markup } = sub {
+        my $str = shift;
+        $str =~ s/_wv_.*\z/.html/;
+        return $str;
+    };
+
     return 1;
 }
 

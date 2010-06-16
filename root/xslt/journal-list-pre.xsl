@@ -46,6 +46,11 @@
             </xsl:otherwise>
           </xsl:choose>
         </facsimile>
+        <figures>
+          <xsl:for-each select='.//tei:ref[starts-with(@target, "#tab")]'>
+            <figure>http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>_wv_<xsl:value-of select="substring-after(@target, '#')"/>.jpg</figure>
+          </xsl:for-each>
+        </figures>
       </article>
     </xsl:for-each>
     </articles>
