@@ -19,6 +19,7 @@ my @volumes = map { s{$svn/}{}; $_ }
 
 my $journal_xml = "<?xml version='1.0' encoding='UTF-8'?>\n<journals>\n";
 foreach my $vol ( @volumes ) {
+    debug( "Verarbeite $vol ...\n" );
     $journal_xml .= process_journal($vol);
 }
 $journal_xml .= "\n</journals>";
@@ -32,7 +33,12 @@ sub process_journal {
     XML::LibXSLT->register_function( 'urn:catalyst', 'faclink', \&faclink );
     XML::LibXSLT->register_function( 'urn:catalyst', 'uml', \&uml );
     
-    my $source     = XML::LibXML->load_xml( location => $xml );
+    my $source;
+    eval { $source = XML::LibXML->load_xml( location => $xml ); 1 };
+    if ( $@ ) {
+        debug( $@, "\n" );
+        return '';
+    }
     my $style_doc  = XML::LibXML->load_xml( location => getcwd . '/root/xslt/journal-list-pre.xsl', no_cdata => 1 );
     my $stylesheet = XML::LibXSLT->new
                                  ->parse_stylesheet( $style_doc );
@@ -61,4 +67,8 @@ sub uml {
         s/\s+/ /g;
     }
     return $str;
+}
+
+sub debug {
+    print STDERR @_;
 }

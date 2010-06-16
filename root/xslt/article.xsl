@@ -16,7 +16,6 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]'/>
-  <xsl:apply-templates select='//tei:text[@xml:id=$article]/front/tei:pb'/>
   <xsl:apply-templates select='//tei:note' mode="notecontent"/>
 </xsl:template>
 
@@ -31,6 +30,16 @@
     <xsl:attribute name="class">faclink</xsl:attribute>
     zum Faksimile &#x2026;
   </xsl:element>
+  </div>
+</xsl:template>
+
+<xsl:template match='tei:body//tei:pb'>
+  <div style="margin-left:-100px;float:left">
+    <xsl:element name="a">
+      <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
+      <xsl:attribute name="class">faclink</xsl:attribute>
+      Faks. S. <xsl:value-of select="@n"/>
+    </xsl:element>
   </div>
 </xsl:template>
 
@@ -138,6 +147,10 @@
   <span class="roman"><xsl:apply-templates/></span>
 </xsl:template>
 
+<xsl:template match="tei:hi[contains(@rendition, '#superscript')]">
+  <sup><xsl:apply-templates/></sup>
+</xsl:template>
+
 <xsl:template match="tei:formula">
   <xsl:element name="img">
     <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
@@ -176,16 +189,30 @@
 </xsl:template>
 
 <xsl:template match="tei:choice">
-  <xsl:element name="span">
-    <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
-    <xsl:attribute name="class">corr</xsl:attribute>
-    <xsl:value-of select="tei:corr"/>
-  </xsl:element>
+  <xsl:choose>
+    <xsl:when test="./tei:reg">
+      <xsl:element name="span">
+        <xsl:attribute name="title">gemeint: <xsl:value-of select="tei:reg"/></xsl:attribute>
+        <xsl:attribute name="class">corr</xsl:attribute>
+        <xsl:value-of select="tei:orig"/>
+      </xsl:element>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:element name="span">
+        <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
+        <xsl:attribute name="class">corr</xsl:attribute>
+        <xsl:value-of select="tei:corr"/>
+      </xsl:element>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template match="tei:q">
   <q><xsl:apply-templates/></q>
 </xsl:template>
+
+<xsl:template match="tei:unclear"></xsl:template>
+<xsl:template match="tei:add"></xsl:template>
 
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>

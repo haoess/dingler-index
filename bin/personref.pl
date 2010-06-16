@@ -15,9 +15,16 @@ my $libxslt = XML::LibXSLT->new;
 $libxslt->register_function( 'urn:catalyst', 'idonly', \&idonly );
 
 my $out;
-foreach my $journal ( glob "$svn/*/*Z.xml" ) {
-    print STDERR "Processing $journal ...\n";
-    my $source     = XML::LibXML->load_xml( location => $journal );
+
+JOURNAL:
+  foreach my $journal ( glob "$svn/*/*Z.xml" ) {
+    debug( "Processing $journal ...\n" );
+    my $source;    
+    eval { $source = XML::LibXML->load_xml( location => $journal ); 1 };
+    if ( $@ ) {
+        debug( $@, "\n" );
+        next JOURNAL;
+    }
     my $style_doc  = XML::LibXML->load_xml( location => 'root/xslt/person-ref.xsl' );
     my $stylesheet = $libxslt->parse_stylesheet( $style_doc );
     my $results    = $stylesheet->transform( $source );
@@ -50,4 +57,8 @@ sub idonly {
     else {
         return $id;
     }
+}
+
+sub debug {
+    print STDERR @_;
 }
