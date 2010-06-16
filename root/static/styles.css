@@ -43,6 +43,8 @@ table.journallist { padding-left:40px }
 
 .ui-dialog { font-size:1em }
 
+#bibtex { display:none; font-family:monospace }
+
 #htmltagcloud { text-align:center; line-height:1 }
 span.tagcloud0 { font-size: 1em;}
 span.tagcloud0 a {text-decoration: none;}

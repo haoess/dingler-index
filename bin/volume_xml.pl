@@ -29,10 +29,10 @@ print $journal_xml;
 sub process_journal {
     my $journal = shift;
     my ($xml) = glob "$svn/$journal/*Z.xml";
-    
+
     XML::LibXSLT->register_function( 'urn:catalyst', 'faclink', \&faclink );
     XML::LibXSLT->register_function( 'urn:catalyst', 'uml', \&uml );
-    
+
     my $source;
     eval { $source = XML::LibXML->load_xml( location => $xml ); 1 };
     if ( $@ ) {
@@ -44,7 +44,7 @@ sub process_journal {
                                  ->parse_stylesheet( $style_doc );
     my %params     = XML::LibXSLT::xpath_to_string( journal => $journal  );
     my $results    = $stylesheet->transform( $source, %params );
-    
+
     return $stylesheet->output_as_bytes( $results );
 }
 

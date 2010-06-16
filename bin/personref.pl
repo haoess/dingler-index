@@ -19,7 +19,7 @@ my $out;
 JOURNAL:
   foreach my $journal ( glob "$svn/*/*Z.xml" ) {
     debug( "Processing $journal ...\n" );
-    my $source;    
+    my $source;
     eval { $source = XML::LibXML->load_xml( location => $journal ); 1 };
     if ( $@ ) {
         debug( $@, "\n" );

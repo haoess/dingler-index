@@ -25,6 +25,17 @@
         <number><xsl:value-of select='tei:front/tei:titlePart[@type="number"]'/></number>
         <id><xsl:value-of select="@xml:id"/></id>
         <title><xsl:value-of select="catalyst:uml(tei:front/tei:titlePart[@type='column'])"/></title>
+        <pagestart>
+          <xsl:choose>
+            <xsl:when test="tei:front/tei:pb[1]">
+              <xsl:value-of select="tei:front/tei:pb[1]/@n"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="preceding::tei:pb[1]/@n" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </pagestart>
+        <pageend><xsl:value-of select="following::*/preceding::tei:pb[1]/@n"/></pageend>
       </article>
     </xsl:for-each>
     </articles>

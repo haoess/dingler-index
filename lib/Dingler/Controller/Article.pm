@@ -6,6 +6,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 
 use Dingler::Index;
 use HTML::TagCloud;
+use Text::BibTeX qw(:metatypes);
 
 =head1 NAME
 
@@ -44,7 +45,40 @@ sub index :Path :Args(2) {
 
 sub bibtex :Private {
     my ( $self, $c, $xml, $article ) = @_;
+    my $entry = Text::BibTeX::Entry->new;
+    $entry->set_metatype( BTE_REGULAR );
+    $entry->set_type( 'article' );
+    $entry->set_key( "dingler:$article" );
 
+    # editor
+    $entry->set( editor => 'Dingler, Johann Gottfried' );
+
+    my $doc = XML::LibXML->new
+                         ->parse_file( $c->path_to('var', 'volumes.xml')->stringify )
+                  or die $!;
+    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
+
+    # journal
+    $entry->set( journal => 'Polytechnisches Journal' );
+
+    # volume
+    my $volume = $xpc->find( "//journal[file='" . $c->stash->{journal} . "']/volume[1]" );
+    $entry->set( volume => "$volume" );
+
+    # title
+    my $title = $xpc->find( "//article[id='$article']/title[1]" );
+    $entry->set( title => "$title" );
+
+    # year
+    my $year = $xpc->find( "//journal[file='" . $c->stash->{journal} . "']/year[1]" );
+    $entry->set( year => "$year" );
+
+    # pages
+    my $p_start = $xpc->find( "//article[id='$article']/pagestart[1]" );
+    my $p_end   = $xpc->find( "//article[id='$article']/pageend[1]" );
+    $entry->set( pages => "$p_start" ne "$p_end" ? "$p_start--$p_end" : "$p_start" );
+
+    return $entry->print_s;
 }
 
 =head2 article_xslt

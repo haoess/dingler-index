@@ -43,6 +43,18 @@
     [% END %]
   </div>
   <hr />
-  Zitierangaben<br />
-  [% bibtex %]
+  Zitierangaben: <span class="pointer" onclick="showbibtex()">BibTeX</span>
+  <div id="bibtex"><pre>[% bibtex %]</pre></div>
+
+<script type="text/javascript">
+  function showbibtex() {
+    jQuery('#bibtex').dialog({
+      width: 400,
+      title: 'BibTeX',
+      hide: 'explode',
+    });
+    return false;
+  }
+</script>
+
 [% END %]
