@@ -57,6 +57,13 @@ table.journallist { padding-left:40px }
 #bibtex { display:none }
 #bibtex pre { font-family:"DejaVu Sans Mono",monospace; font-size:1.2em }
 
+#bugform { display:none }
+#bugform table { width:100% }
+#bugform table td.caption { text-align:right; font-weight:bold; padding-right:10px }
+#bugform table td { padding-top:10px }
+#bugform input, #bugform select, #bugform textarea { width:100% }
+#bugform .feedback { color:red }
+
 #htmltagcloud { text-align:center; line-height:1 }
 span.tagcloud0 { font-size: 1em;}
 span.tagcloud0 a {text-decoration: none;}

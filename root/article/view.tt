@@ -81,16 +81,13 @@
 
   <div class="rightbox">
     <div class="rightboxhead">Zitierangaben</div>
-    <div class="rightboxcontent">
+    <div class="rightboxcontent center">
       <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
       <div id="bibtex"><pre>[% bibtex | html %]</pre></div>
     </div>
   </div>
 
   <script type="text/javascript">
-    jQuery( function() {
-      jQuery('button').button();
-    });
     function showbibtex() {
       jQuery('#bibtex').dialog({
         width: 600,
@@ -104,7 +101,7 @@
   [% IF figures.size %]
   <div class="rightbox">
     <div class="rightboxhead">Tafeln</div>
-    <div class="rightboxcontent" style="text-align:center">
+    <div class="rightboxcontent center">
       [% FOREACH figure IN figures %]
         <a href="[% figure_to_markup(figure) %]"><img src="[% figure %]" width="250" /></a><br /><br />
       [% END %]
@@ -114,8 +111,102 @@
 
   <div class="rightbox">
     <div class="rightboxhead">Feedback</div>
-    <div class="rightboxcontent">
+    <div class="rightboxcontent center">
+      <button onclick="bugform()">Fehler melden</button><br />
+      <div id="bugfeedback"></div>
     </div>
   </div>
+
+  <div id="bugform">
+    <form>
+      <table>
+        <colgroup>
+          <col width="140" />
+          <col width="*" />
+        </colgroup>
+        <tr>
+          <td class="caption">Art des Fehlers:</td>
+          <td>
+            <select id="bug-bugtype" name="bugtype" class="ui-widget-content ui-corner-all" onchange="showocr(this.value)">
+              <option value="">auswählen &hellip;</option>
+              <option value="ocr">OCR-Fehler</option>
+              <option value="display">Darstellungsfehler</option>
+              <option value="misc">Sonstiges</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="ocrfield" style="display:none">
+          <td class="caption">Betreffendes Wort:</td>
+          <td><input id="bug-ocrword" type="text" name="ocrword" class="ui-widget-content ui-corner-all" /></td>
+        </tr>
+        <tr>
+          <td class="caption">Kontaktadresse:</td>
+          <td><input id="bug-email" type="text" name="email" class="ui-widget-content ui-corner-all" /></td>
+        </tr>
+        <tr>
+          <td class="caption">Anmerkungen:</td>
+          <td><textarea id="bug-note" name="note" rows="" cols="" style="height:80px" class="ui-widget-content ui-corner-all"></textarea></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+
+  <script type="text/javascript">
+    function bugform() {
+      jQuery('#bugform').dialog({
+        modal: true,
+        width: 400,
+        height: 300,
+        title: 'Fehler melden',
+        hide: 'explode',
+        buttons: {
+          'Abbrechen': function() {
+            jQuery(this).dialog('close');
+          },
+          'Fehler melden': function() {
+            var bugtype = jQuery('#bug-bugtype');
+            var ocrword = jQuery('#bug-ocrword');
+            var note    = jQuery('#bug-note');
+            if ( bugtype.val() == '' ) {
+              alert('Angaben unvollständig.');
+              return;
+            }
+            if ( bugtype.val() == 'ocr' && ocrword.val() == '' ) {
+              alert('Welches Wort wurde falsch erkannt?');
+              return;
+            }
+            if ( (bugtype.val() == 'display' || bugtype.val() == 'misc') && note.val() == '' ) {
+              alert('Genaue Angaben fehlen.');
+              return;
+            }
+            jQuery.post( '[% base %]bug/report/[% article %]', jQuery('#bugform form').serialize(), function(data) {
+              jQuery('#bugfeedback').html( data );
+              jQuery('#bugfeedback').show();
+              window.setTimeout("jQuery('#bugfeedback').hide();", 3000);
+            } );
+
+            // reset form
+            jQuery('#bugform form')[0].reset();
+            jQuery('#ocrfield').hide();
+
+            jQuery(this).dialog('close');
+          },
+        },
+      });
+      return false;
+    }
+
+    function showocr(bugtype) {
+      bugtype == 'ocr' ? jQuery('#ocrfield').show() : jQuery('#ocrfield').hide();
+      return false;
+    }
+  </script>
+
+  <script type="text/javascript">
+    jQuery( function() {
+      jQuery('button').button();
+    });
+  </script>
 
 [% END %]
