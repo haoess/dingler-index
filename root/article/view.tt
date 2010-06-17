@@ -82,10 +82,24 @@
   <div class="rightbox">
     <div class="rightboxhead">Zitierangaben</div>
     <div class="rightboxcontent">
-      <span class="pointer" onclick="showbibtex()">BibTeX</span>
+      <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
       <div id="bibtex"><pre>[% bibtex | html %]</pre></div>
     </div>
   </div>
+
+  <script type="text/javascript">
+    jQuery( function() {
+      jQuery('button').button();
+    });
+    function showbibtex() {
+      jQuery('#bibtex').dialog({
+        width: 400,
+        title: 'BibTeX',
+        hide: 'explode',
+      });
+      return false;
+    }
+  </script>
 
   [% IF figures.size %]
   <div class="rightbox">
@@ -97,16 +111,5 @@
     </div>
   </div>
   [% END %]
-
-<script type="text/javascript">
-  function showbibtex() {
-    jQuery('#bibtex').dialog({
-      width: 400,
-      title: 'BibTeX',
-      hide: 'explode',
-    });
-    return false;
-  }
-</script>
 
 [% END %]
