@@ -24,7 +24,6 @@ my $journal_xml = "<?xml version='1.0' encoding='UTF-8'?>\n<journals>\n";
 foreach my $vol ( @volumes ) {
     debug( "Verarbeite $vol ...\n" );
     $journal_xml .= process_journal($vol);
-    last;
 }
 $journal_xml .= "\n</journals>";
 
