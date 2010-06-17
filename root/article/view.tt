@@ -93,8 +93,8 @@
     });
     function showbibtex() {
       jQuery('#bibtex').dialog({
-        width: 400,
-        title: 'BibTeX',
+        width: 600,
+        title: 'Zitierangaben im BibTeX-Format',
         hide: 'explode',
       });
       return false;
@@ -111,5 +111,11 @@
     </div>
   </div>
   [% END %]
+
+  <div class="rightbox">
+    <div class="rightboxhead">Feedback</div>
+    <div class="rightboxcontent">
+    </div>
+  </div>
 
 [% END %]
