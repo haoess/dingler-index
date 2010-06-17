@@ -16,15 +16,15 @@
 <xsl:template match="/">
   <journal>
     <file><xsl:value-of select="$journal"/></file>
-    <volume><xsl:value-of select='//tei:imprint/tei:biblScope'/></volume>
-    <year><xsl:value-of select='//tei:imprint/tei:date'/></year>
+    <volume><xsl:apply-templates select='//tei:imprint/tei:biblScope'/></volume>
+    <year><xsl:apply-templates select='//tei:imprint/tei:date'/></year>
     <faclink><xsl:value-of select='catalyst:faclink(//tei:sourceDesc//tei:idno)'/></faclink>
     <articles>
     <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_misc"]'>
       <article>
-        <number><xsl:value-of select='tei:front/tei:titlePart[@type="number"]'/></number>
+        <number><xsl:apply-templates select='tei:front/tei:titlePart[@type="number"]'/></number>
         <id><xsl:value-of select="@xml:id"/></id>
-        <title><xsl:value-of select="catalyst:uml(tei:front/tei:titlePart[@type='column'])"/></title>
+        <title><xsl:apply-templates select="tei:front/tei:titlePart[@type='column']"/></title>
         <pagestart>
           <xsl:choose>
             <xsl:when test="tei:front/tei:pb[1]">
@@ -55,6 +55,21 @@
     </xsl:for-each>
     </articles>
   </journal>
+</xsl:template>
+
+<xsl:template match="tei:choice">
+  <xsl:choose>
+    <xsl:when test="./tei:reg">
+      <xsl:apply-templates select="tei:orig"/>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:apply-templates select="tei:corr"/>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template match="text()">
+  <xsl:value-of select="catalyst:uml(.)"/>
 </xsl:template>
 
 </xsl:stylesheet>

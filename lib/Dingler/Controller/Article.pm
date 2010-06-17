@@ -68,14 +68,16 @@ sub set_meta :Private {
     my $p_end     = $xpc->find( "//article[id='$article']/pageend[1]" );
     my $facsimile = $xpc->find( "//article[id='$article']/facsimile[1]" );
 
+    my $strip = \&Dingler::Util::strip;
+
     $c->stash(
-        volume    => "$volume",
-        title     => "$title",
-        number    => "$number",
-        year      => "$year",
-        p_start   => "$p_start",
-        p_end     => "$p_end",
-        facsimile => "$facsimile",
+        volume    => $strip->("$volume"),
+        title     => $strip->("$title"),
+        number    => $strip->("$number"),
+        year      => $strip->("$year"),
+        p_start   => $strip->("$p_start"),
+        p_end     => $strip->("$p_end"),
+        facsimile => $strip->("$facsimile"),
     );
 
     my @figures;
@@ -99,6 +101,7 @@ sub bibtex :Private {
     $entry->set( editor  => 'Dingler, Johann Gottfried' );
     $entry->set( journal => 'Polytechnisches Journal' );
     $entry->set( volume  => $c->stash->{volume} );
+    $entry->set( number  => $c->stash->{number} );
     $entry->set( title   => $c->stash->{title} );
     $entry->set( year    => $c->stash->{year} );
     $entry->set( pages   => $c->stash->{p_start} ne $c->stash->{p_end} ?

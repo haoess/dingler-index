@@ -2,12 +2,15 @@
 
 # output of this script should go into var/volumes.xml
 
+use lib 'lib';
+
 use utf8;
 
 use warnings;
 use strict;
 
 use Cwd;
+use Dingler::Util;
 use XML::LibXSLT;
 use XML::LibXML;
 
@@ -21,6 +24,7 @@ my $journal_xml = "<?xml version='1.0' encoding='UTF-8'?>\n<journals>\n";
 foreach my $vol ( @volumes ) {
     debug( "Verarbeite $vol ...\n" );
     $journal_xml .= process_journal($vol);
+    last;
 }
 $journal_xml .= "\n</journals>";
 
@@ -31,7 +35,7 @@ sub process_journal {
     my ($xml) = glob "$svn/$journal/*Z.xml";
 
     XML::LibXSLT->register_function( 'urn:catalyst', 'faclink', \&faclink );
-    XML::LibXSLT->register_function( 'urn:catalyst', 'uml', \&uml );
+    XML::LibXSLT->register_function( 'urn:catalyst', 'uml', \&Dingler::Util::uml );
 
     my $source;
     eval { $source = XML::LibXML->load_xml( location => $xml ); 1 };
@@ -56,17 +60,6 @@ sub faclink {
         $ret .= "&tx_slubdigitallibrary[image]=$2";
     }
     return $ret;
-}
-
-sub uml {
-    my $str = shift || '';
-    for ($str) {
-        s/a\x{0364}/ä/g;
-        s/o\x{0364}/ö/g;
-        s/u\x{0364}/ü/g;
-        s/\s+/ /g;
-    }
-    return $str;
 }
 
 sub debug {
