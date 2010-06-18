@@ -64,6 +64,9 @@ table.journallist { padding-left:40px }
 #bugform input, #bugform select, #bugform textarea { width:100% }
 #bugform .feedback { color:red }
 
+#ticketlist td.cut { max-width:100px; overflow:hidden }
+.nowrap { white-space:nowrap }
+
 #htmltagcloud { text-align:center; line-height:1 }
 span.tagcloud0 { font-size: 1em;}
 span.tagcloud0 a {text-decoration: none;}

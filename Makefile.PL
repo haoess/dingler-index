@@ -27,6 +27,9 @@ requires 'XML::LibXSLT' => '1.70';
 requires 'Text::BibTeX';
 requires 'Cache::FileCache';
 requires 'List::MoreUtils';
+requires 'DateTime';
+requires 'DBIx::Class::Schema';
+requires 'Catalyst::Model::DBIC::Schema';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

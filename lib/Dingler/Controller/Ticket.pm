@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use DateTime;
+
 =head1 NAME
 
 Dingler::Controller::Ticket - Catalyst Controller
@@ -13,6 +15,18 @@ Dingler::Controller::Ticket - Catalyst Controller
 Catalyst Controller.
 
 =head1 METHODS
+
+=head2 index
+
+=cut
+
+sub index :Path :Args(0) {
+    my ( $self, $c ) = @_;
+    $c->stash(
+        template => 'ticket/list.tt',
+        tickets  => [ $c->model('Ticket::Ticket')->all ],
+    );
+}
 
 =head2 report
 
@@ -24,8 +38,21 @@ sub report :Local {
     my $ocrword = $c->req->params->{ocrword};
     my $email   = $c->req->params->{email};
     my $note    = $c->req->params->{note};
+
+    my $ticket = $c->model('Ticket::Ticket')->create({
+        bugtype => $bugtype,
+        article => $article,
+        ocrword => $ocrword,
+        email   => $email,
+        note    => $note,
+        created => DateTime->now,
+        changed => DateTime->now,
+        status  => 'open',
+        comment => undef,
+    });
+
     $c->res->content_type('text/plain');
-    $c->res->body('Feedback erhalten.');
+    $c->res->body("Ticket #" . $ticket->id ." angelegt.");
 }
 
 __PACKAGE__->meta->make_immutable;

@@ -1,0 +1,46 @@
+<h1>Ticket-Übersicht</h1>
+
+<table id="ticketlist" class="tablesorter">
+  <colgroup>
+    <col width="40" />
+    <col width="70" />
+    <col width="100" />
+    <col width="75" />
+    <col width="65" />
+    <col width="100" />
+    <col width="150" />
+    <col width="150" />
+  </colgroup>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Status</th>
+    <th>Datum</th>
+    <th>Artikel</th>
+    <th>Typ</th>
+    <th>Wort</th>
+    <th>Kontakt</th>
+    <th class="{sorter: false}">Kommentar</th>
+  </tr>
+  </thead>
+  <tbody>
+[% FOREACH ticket IN tickets %]
+  <tr class="ticket-row-[% ticket.status | html %]">
+    <td class="right"><a href="bug/view/[% ticket.id | html %]">[% ticket.id | html %]</a></td>
+    <td class="nowrap">[% ticket.status | html %]</td>
+    <td class="nowrap">[% ticket.changed.set_time_zone('Europe/Berlin').strftime('%Y-%m-%d %H:%M:%S') %]</td>
+    <td class="nowrap">[% ticket.article | html %]</td>
+    <td class="nowrap">[% ticket.bugtype | html %]</td>
+    <td class="nowrap cut">[% ticket.ocrword | html %]</td>
+    <td class="nowrap cut">[% ticket.email | html %]</td>
+    <td class="nowrap cut">[% ticket.note | html %]</td>
+  </tr>
+[% END %]
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  jQuery( document ).ready( function() { 
+    jQuery("#ticketlist").tablesorter({sortList: [[0,0]]}); 
+  } );
+</script>
