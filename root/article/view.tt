@@ -180,7 +180,7 @@
               alert('Genaue Angaben fehlen.');
               return;
             }
-            jQuery.post( '[% base %]bug/report/[% article %]', jQuery('#bugform form').serialize(), function(data) {
+            jQuery.post( '[% base %]ticket/report/[% article %]', jQuery('#bugform form').serialize(), function(data) {
               jQuery('#bugfeedback').html( data );
               jQuery('#bugfeedback').show();
               window.setTimeout("jQuery('#bugfeedback').hide();", 3000);

@@ -1,4 +1,4 @@
-package Dingler::Controller::Bug;
+package Dingler::Controller::Ticket;
 use Moose;
 use namespace::autoclean;
 
@@ -6,23 +6,13 @@ BEGIN {extends 'Catalyst::Controller'; }
 
 =head1 NAME
 
-Dingler::Controller::Bug - Catalyst Controller
+Dingler::Controller::Ticket - Catalyst Controller
 
 =head1 DESCRIPTION
 
 Catalyst Controller.
 
 =head1 METHODS
-
-=head2 index
-
-=cut
-
-sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
-
-    $c->response->body('Matched Dingler::Controller::Bug in Bug.');
-}
 
 =head2 report
 
