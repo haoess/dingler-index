@@ -1,18 +1,44 @@
 <h1>Suchergebnisse</h1>
 
-<p><b>[% q | html %]</b>: [% matches.count %] Treffer gefunden.</p>
+<p>
+  <b>[% q | html %]</b>: [% matches.count %] Treffer gefunden (max. 20 angezeigt).
+  <span class="small"><a href="search/help">Hilfe</a></span>
+</p>
 
-[% WHILE ( match = matches.next ) %]
-<div class="hit">
-  <p>
-    <a href="article/[% match.journal.id %]/[% match.id %]">[% match.title | html %]</a>
-    (Bd. [% match.journal.volume | html %], [% match.journal.year | html %], Nr. [% match.number | html %])
-  </p>
-  <p class="small">... [% match.get_column('headline') %] ...</p>
-  <hr />
-</div>
-[% END %]
+<table>
+[% i = 0; WHILE ( match = matches.next ); i = i + 1 %]
+  <tr>
+    <td class="right"><p>[% i %].</p></td>
+    <td>
+      <div class="hit">
+        <p style="background:#fafafa">
+          <b><a href="article/[% match.journal.id %]/[% match.id %]">[% match.title | html %]</a></b><br />
+          Jahrgang [% match.journal.year | html %],
+          Band [% match.journal.volume | html %],
+          Nr. [% match.number | html %]
+        </p>
+        <p class="small">... [% match.get_column('headline') %] ... [<a href="article/[% match.journal.id %]/[% match.id %]">mehr</a>]</p>
+      </div>
+    </td>
+  </tr>
+[% LAST IF i == 20; END %]
+</table>
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
+
+  <div class="rightbox">
+    <div class="rightboxhead">Treffergruppierung</div>
+    <div class="rightboxcontent">
+      <p><b>Jahrgänge</b></p>
+      [% FOREACH year IN years.keys.sort %]
+        [% year %] ([% years.$year %])<br />
+      [% END %]
+      <br />
+      <p><b>Textsorte</b></p>
+      [% FOREACH type IN types.keys.sort %]
+        [% type %] ([% types.$type %])<br />
+      [% END %]
+    </div>
+  </div>
 [% END %]

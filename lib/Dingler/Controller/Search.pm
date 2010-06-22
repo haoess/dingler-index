@@ -14,6 +14,17 @@ Catalyst Controller.
 
 =head1 METHODS
 
+=head2 help
+
+=cut
+
+sub help :Local {
+    my ( $self, $c ) = @_;
+    $c->stash(
+        template => 'search/help.tt',
+    );
+}
+
 =head2 search
 
 =cut
@@ -49,14 +60,28 @@ sub search :Global {
             from => \qq[ article me, $query_func('german', $q) query, journal ],
             where => \q[ query @@ tsv AND me.journal = journal.id ],
             order_by => 'rank DESC',
-            rows => 20,
+            #rows => 20,
         },
     );
+
+    my %years;
+    while ( my $match = $matches->next ) {
+        $years{ $match->journal->year }++;
+    }
+    $matches->reset;
+
+    my %types;
+    while ( my $match = $matches->next ) {
+        $types{ $match->type }++;
+    }
+    $matches->reset;
 
     $c->stash(
         template => 'search/result.tt',
         matches => $matches,
         q => $search,
+        years => \%years,
+        types => \%types,
     );
 }
 

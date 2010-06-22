@@ -67,6 +67,9 @@ table.journallist { padding-left:40px }
 #ticketlist td.cut { max-width:100px; overflow:hidden }
 .nowrap { white-space:nowrap }
 
+.code { background:#fafafa; font-family:monospace }
+div.code { border:1px solid #eee; padding-left:10px }
+
 #htmltagcloud { text-align:center; line-height:1 }
 span.tagcloud0 { font-size: 1em;}
 span.tagcloud0 a {text-decoration: none;}

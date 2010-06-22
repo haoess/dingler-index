@@ -1,0 +1,46 @@
+<h1>Suchhilfe</h1>
+
+<p>
+  Durchsucht werden Titel und Inhalte der einzelnen Artikel. Die Ergebnisse
+  werden nach ihrer Relevanz sortiert.
+</p>
+
+<p>
+  Einzelne Suchworte werden mittels UND-Verknüpfung gesucht. Wenn Sie boolesche
+  Operatoren verwenden möchten, dann wie folgt:
+</p>
+
+<p>UND-Verknüpfung mittels <span class="code">&amp;</span> (Standard):</p>
+<div class="code">
+  apfel &amp; kirsche
+</div>
+<br />
+
+<p>ODER-Verknüpfung mittels <span class="code">|</span>:</p>
+<div class="code">
+  apfel | kirsche
+</div>
+<br />
+
+<p>NEGATION mittels <span class="code">!</span>:</p>
+<div class="code">
+  apfel &amp; !kirsche
+</div>
+<br />
+
+<p>GRUPPIERUNG mittels <span class="code">()</span>:</p>
+<div class="code">
+  apfel &amp; (kirsche | banane)
+</div>
+<br />
+
+<p>PREFIX-Suche mittels <span class="code">:*</span>:</p>
+<div class="code">
+  apfel:*
+</div>
+<br />
+
+<p>WORTGRUPPEN-Bildung mittels <span class="code">''</span>:</p>
+<div class="code">
+  'roter apfel'
+</div>
