@@ -56,6 +56,6 @@ CREATE TABLE figure (
 
 CREATE TABLE person (
   id  TEXT,
-  ref TEXT REFERENCES article (id),
+  ref TEXT,
   PRIMARY KEY (id, ref)
 );
