@@ -8,5 +8,6 @@
 </script>
 
 [% BLOCK right %]
+  [% INCLUDE 'search/form.tt' %]
   <a href="[% base %]">zur Bandauswahl &hellip;</a>
 [% END %]

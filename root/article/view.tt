@@ -68,15 +68,7 @@
 </script>
 
 [% BLOCK right %]
-  <div class="rightbox">
-    <div class="rightboxhead">Suche</div>
-    <div class="rightboxcontent">
-      <form method="get" action="[% base %]search">
-        <input type="text" name="q" class="ui-widget-content ui-corner-all" />
-        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
-      </form>
-    </div>
-  </div>
+  [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox">
     <div class="rightboxhead">Schlagwortwolke</div>

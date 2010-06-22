@@ -15,3 +15,7 @@
   </tr>
 [% END %]
 </table>
+
+[% BLOCK right %]
+  [% INCLUDE 'search/form.tt' %]
+[% END %]
