@@ -1,0 +1,18 @@
+<h1>Suchergebnisse</h1>
+
+<p><b>[% q | html %]</b>: [% matches.count %] Treffer gefunden.</p>
+
+[% WHILE ( match = matches.next ) %]
+<div class="hit">
+  <p>
+    <a href="article/[% match.journal.id %]/[% match.id %]">[% match.title | html %]</a>
+    (Bd. [% match.journal.volume | html %], [% match.journal.year | html %], Nr. [% match.number | html %])
+  </p>
+  <p class="small">... [% match.get_column('headline') %] ...</p>
+  <hr />
+</div>
+[% END %]
+
+[% BLOCK right %]
+  [% INCLUDE 'search/form.tt' %]
+[% END %]

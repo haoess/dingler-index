@@ -22,8 +22,8 @@
         Artikel [% number | html %]
       </td>
       <td class="right">
-        [% IF prev_article %]<a href="article/[% journal %]/[% prev_article %]"><b>&larr;</b></a>[% END %]
-        [% IF next_article %]<a href="article/[% journal %]/[% next_article %]"><b>&rarr;</b></a>[% END %]
+        [% IF prev_article %]<a href="article/[% journal %]/[% prev_article.id %]"><b>&larr;</b></a>[% END %]
+        [% IF next_article %]<a href="article/[% journal %]/[% next_article.id %]"><b>&rarr;</b></a>[% END %]
       </td>
     </tr>
   </table>
@@ -68,6 +68,16 @@
 </script>
 
 [% BLOCK right %]
+  <div class="rightbox">
+    <div class="rightboxhead">Suche</div>
+    <div class="rightboxcontent">
+      <form method="get" action="[% base %]search">
+        <input type="text" name="q" class="ui-widget-content ui-corner-all" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
+      </form>
+    </div>
+  </div>
+
   <div class="rightbox">
     <div class="rightboxhead">Schlagwortwolke</div>
     <div class="rightboxcontent">

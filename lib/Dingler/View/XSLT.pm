@@ -50,12 +50,8 @@ __PACKAGE__->config(
                 name => 'art2jour',
                 subref => sub {
                     my $article = shift;
-                    my $doc = XML::LibXML->new
-                                         ->parse_file( Dingler->path_to('var', 'volumes.xml')->stringify )
-                              or die $!;
-                    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-                    my $ret = $xpc->find( "//article[id='$article']/ancestor::*/file" );
-                    return $ret;
+                    my $ar = Dingler->model('Dingler::Article')->find({ id => $article });
+                    return $ar->journal->id;
                 },
             },
             {
@@ -63,12 +59,8 @@ __PACKAGE__->config(
                 name => 'art2title',
                 subref => sub {
                     my $article = shift;
-                    my $doc = XML::LibXML->new
-                                         ->parse_file( Dingler->path_to('var', 'volumes.xml')->stringify )
-                              or die $!;
-                    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-                    my $ret = $xpc->findvalue( "//article[id='$article']/title" );
-                    return $ret;
+                    my $ar = Dingler->model('Dingler::Article')->find({ id => $article });
+                    return $ar->title;
                 },
             },
             {

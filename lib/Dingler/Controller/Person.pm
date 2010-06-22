@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use File::Temp qw(tempfile);
+
 =head1 NAME
 
 Dingler::Controller::Person - Catalyst Controller
@@ -20,16 +22,30 @@ Catalyst Controller.
 
 sub index :Path :Args(2) {
     my ( $self, $c, $person, $article ) = @_;
-
     my $xml = $c->config->{svn} . '/database/persons/persons.xml';
     $c->stash->{xml} = $xml;
     $c->stash->{template} = 'person.xsl';
+
+    my $rs = $c->model('Dingler::Person')->search({
+        id  => $person,
+        ref => { '!=' => $article },
+    });
+    my $p_xml = "<refs>\n";
+    while ( my $p = $rs->next ) {
+        $p_xml .= sprintf "  <ref>%s</ref>\n", $p->get_column('ref');
+    }
+    $p_xml .= "</refs>";
+    my ($tempfh, $tempname) = tempfile;
+    print $tempfh $p_xml;
+    close $tempfh;
+
     $c->stash(
         article => $article,
         person  => $person,
-        ptrs    => $c->path_to( 'var', 'ptrs.xml' )->stringify,
+        ptrs    => $tempname,
     );
     $c->forward('Dingler::View::XSLT');
+    unlink $tempname;
     my $xsl = $c->res->body;
     utf8::decode($xsl);
     $c->stash( xsl => $xsl );

@@ -60,26 +60,11 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    $c->forward('journal_list');
+    my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
     $c->stash(
+        journals => $journals,
         template => 'start.tt',
     );
-}
-
-=head2 journal_list
-
-=cut
-
-sub journal_list :Private {
-    my ($self, $c) = @_;
-
-    $c->stash->{template} = 'journal-list.xsl';
-    $c->stash->{xml} = $c->path_to( 'var', 'volumes.xml' );
-    $c->forward('Dingler::View::XSLT');
-    my $xsl = $c->res->body;
-    utf8::decode $xsl;
-    $c->stash( xsl => $xsl );
-    $c->res->body( undef );
 }
 
 =head2 default

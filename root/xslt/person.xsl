@@ -14,7 +14,7 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:person[@xml:id=$person]'/>
-  <xsl:for-each select="document($ptrs)//ptr[@person=$person]/ref[. != $article]">
+  <xsl:for-each select="document($ptrs)//ref">
     <xsl:if test="position()=1">
       <h2>Weitere Fundstellen im &#x201E;Polytechnischen Journal&#x201C;</h2>
       <xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>

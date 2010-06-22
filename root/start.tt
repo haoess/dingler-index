@@ -3,5 +3,15 @@
 <p>Folgende Bände liegen bereits digitalisiert vor:</p>
 
 <table class="journallist">
-  [% xsl %]
+[% WHILE ( journal = journals.next ) %]
+  <tr>
+    <td class="right">
+      <a href="journal/[% journal.id %]">Band [% journal.volume %]</a>
+    </td>
+    <td>([% journal.year %])</td>
+    <td style="padding-left:20px">
+      <a href="[% journal.facsimile %]"> &#x2192; Faksimile</a>
+    </td>
+  </tr>
+[% END %]
 </table>

@@ -31,6 +31,8 @@ requires 'DateTime';
 requires 'DBIx::Class::Schema';
 requires 'Catalyst::Model::DBIC::Schema';
 requires 'DateTime::Format::SQLite';
+requires 'File::Temp';
+requires 'DBD::Pg';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

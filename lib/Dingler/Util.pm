@@ -42,6 +42,33 @@ sub strip {
     return $str;
 }
 
+=head2 faclink
+
+=cut
+
+sub faclink {
+    my $id = shift;
+    # 32258227Z/00000051
+    #  =>
+    # http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=32258227Z&tx_slubdigitallibrary[image]=51
+    $id =~ /(\w+)(?:\/(\w+))?/;
+    my $ret = "http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=$1";
+    if ( defined $2 ) {
+        $ret .= "&tx_slubdigitallibrary[image]=$2";
+    }
+    return $ret;
+}
+
+=head2 figlink
+
+=cut
+
+sub figlink {
+    my ( $figure, $facsimile ) = @_;
+    my ($target) = $figure =~ /#(.*)/;
+    my $ret = sprintf 'http://www.polytechnischesjournal.de/fileadmin/data/%s/editura/image_markup/%s_wv_%s.jpg', $facsimile, $target, $target;
+    return $ret;
+}
 1;
 __END__
 

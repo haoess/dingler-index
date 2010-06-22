@@ -38,8 +38,8 @@ sub index :Path :Args(2) {
     $c->forward('article_xslt', [$journal, $article]);
     $c->forward('article_plain', [$journal, $article]);
 
-    my $prev_article = $c->forward( 'step_article', ['preceding', $article] );
-    my $next_article = $c->forward( 'step_article', ['following', $article] );
+    my $prev_article = $c->forward( 'step_article', [-1, $article] );
+    my $next_article = $c->forward( 'step_article', [1, $article] );
 
     $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
 
@@ -57,33 +57,25 @@ sub index :Path :Args(2) {
 
 sub set_meta :Private {
     my ( $self, $c, $journal, $article ) = @_;
-    my $doc = XML::LibXML->new->parse_file( $c->path_to('var', 'volumes.xml')->stringify ) or die $!;
-    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-
-    my $volume    = $xpc->find( "//journal[file='$journal']/volume[1]" );
-    my $title     = $xpc->find( "//article[id='$article']/title[1]" );
-    my $number    = $xpc->find( "//article[id='$article']/number[1]" );
-    my $year      = $xpc->find( "//journal[file='$journal']/year[1]" );
-    my $p_start   = $xpc->find( "//article[id='$article']/pagestart[1]" );
-    my $p_end     = $xpc->find( "//article[id='$article']/pageend[1]" );
-    my $facsimile = $xpc->find( "//article[id='$article']/facsimile[1]" );
+    my $ar = $c->model('Dingler::Article')->find({ id => $article });
 
     my $strip = \&Dingler::Util::strip;
 
     $c->stash(
-        volume    => $strip->("$volume"),
-        title     => $strip->("$title"),
-        number    => $strip->("$number"),
-        year      => $strip->("$year"),
-        p_start   => $strip->("$p_start"),
-        p_end     => $strip->("$p_end"),
-        facsimile => $strip->("$facsimile"),
+        volume    => $strip->( $ar->volume ),
+        title     => $strip->( $ar->title ),
+        number    => $strip->( $ar->number ),
+        year      => $strip->( $ar->journal->year ),
+        p_start   => $strip->( $ar->pagestart ),
+        p_end     => $strip->( $ar->pageend ),
+        facsimile => $strip->( $ar->facsimile ),
     );
 
     my @figures;
-    foreach my $figure ( $xpc->findnodes( "//article[id='$article']/figures/figure" ) ) {
-        push @figures, $figure->to_literal;
+    foreach my $figure ( $ar->figures ) {
+        push @figures, $figure->url;
     }
+
     @figures = uniq @figures;
     $c->stash->{figures} = \@figures;
 }
@@ -168,14 +160,9 @@ sub article_plain :Private {
 =cut
 
 sub step_article :Private {
-    my ($self, $c, $way, $article) = @_;
-
-    my $doc = XML::LibXML->new
-                         ->parse_file( $c->path_to('var', 'volumes.xml')->stringify )
-                  or die $!;
-    my $xpc = XML::LibXML::XPathContext->new( $doc ) or die $!;
-    my $ret = $xpc->find( "//article[id='$article']/$way-sibling::article[1]/id" );
-    return $ret;
+    my ($self, $c, $steps, $article) = @_;
+    my $ar = $c->model('Dingler::Article')->find({ id => $article });
+    return $c->model('Dingler::Article')->search({ position => $ar->position + $steps })->first;
 }
 
 __PACKAGE__->meta->make_immutable;
