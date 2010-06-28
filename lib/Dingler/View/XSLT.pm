@@ -76,9 +76,21 @@ __PACKAGE__->config(
                 uri => 'urn:catalyst',
                 name => 'resolveref',
                 subref => sub {
-                    my $target = shift;
-                    my ($journal, $what) = $target =~ /#(.*)_(.*)/;
-                    #if ( $what =~ XXX
+                    my $target = shift->to_literal;
+                    my ($journal, $page) = $target =~ /#(.*)_pb(.*)/;
+                    return unless $journal && $page;
+                    my $rs = Dingler->model('Dingler::Article')->search(
+                        {
+                            journal => $journal,
+                            $page   => { -between => [ \'pagestart::int', \'pageend::int' ] },
+                        },
+                    );
+                    if ( $rs->count ) {
+                        return sprintf 'article/%s/%s#pb%s', $rs->first->get_column('journal'), $rs->first->id, $page;
+                    }
+                    else {
+                        return;
+                    }
                 },
             },
         ],
