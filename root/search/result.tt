@@ -62,12 +62,12 @@
     <div class="rightboxcontent">
       <p><b>Jahrgänge</b></p>
       [% FOREACH year IN years.keys.sort %]
-        [% year %]er: <a href="[% c.uri_for('search', { q => q, decade => year }) %]">[% years.$year %]</a><br />
+        [% year %]er: <a href="[% c.uri_for('/search', { q => q, decade => year }) %]">[% years.$year %]</a><br />
       [% END %]
       <br />
       <p><b>Textsorte</b></p>
       [% FOREACH type IN types.keys.sort %]
-        [% type %]: <a href="[% c.uri_for('search', { q => q, texttype => type }) %]">[% types.$type %]</a><br />
+        [% type %]: <a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a><br />
       [% END %]
     </div>
   </div>

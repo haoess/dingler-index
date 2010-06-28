@@ -71,53 +71,30 @@ table.journallist { padding-left:40px }
 div.code { border:1px solid #eee; padding-left:10px }
 
 #htmltagcloud { text-align:center; line-height:1 }
+#htmltagcloud a { text-decoration:none }
+#htmltagcloud a:hover { text-decoration:underline }
 span.tagcloud0 { font-size: 1em;}
-span.tagcloud0 a {text-decoration: none;}
-span.tagcloud1 { font-size: 1.1em;}
-span.tagcloud1 a {text-decoration: none;}
-span.tagcloud2 { font-size: 1.2em;}
-span.tagcloud2 a {text-decoration: none;}
-span.tagcloud3 { font-size: 1.3em;}
-span.tagcloud3 a {text-decoration: none;}
-span.tagcloud4 { font-size: 1.4em;}
-span.tagcloud4 a {text-decoration: none;}
-span.tagcloud5 { font-size: 1.5em;}
-span.tagcloud5 a {text-decoration: none;}
-span.tagcloud6 { font-size: 1.6em;}
-span.tagcloud6 a {text-decoration: none;}
-span.tagcloud7 { font-size: 1.7em;}
-span.tagcloud7 a {text-decoration: none;}
-span.tagcloud8 { font-size: 1.8em;}
-span.tagcloud8 a {text-decoration: none;}
-span.tagcloud9 { font-size: 1.9em;}
-span.tagcloud9 a {text-decoration: none;}
-span.tagcloud10 { font-size: 2.0em;}
-span.tagcloud10 a {text-decoration: none;}
-span.tagcloud11 { font-size: 2.1em;}
-span.tagcloud11 a {text-decoration: none;}
-span.tagcloud12 { font-size: 2.2em;}
-span.tagcloud12 a {text-decoration: none;}
-span.tagcloud13 { font-size: 2.3em;}
-span.tagcloud13 a {text-decoration: none;}
-span.tagcloud14 { font-size: 2.4em;}
-span.tagcloud14 a {text-decoration: none;}
-span.tagcloud15 { font-size: 2.5em;}
-span.tagcloud15 a {text-decoration: none;}
-span.tagcloud16 { font-size: 2.6em;}
-span.tagcloud16 a {text-decoration: none;}
-span.tagcloud17 { font-size: 2.7em;}
-span.tagcloud17 a {text-decoration: none;}
-span.tagcloud18 { font-size: 2.8em;}
-span.tagcloud18 a {text-decoration: none;}
-span.tagcloud19 { font-size: 2.9em;}
-span.tagcloud19 a {text-decoration: none;}
-span.tagcloud20 { font-size: 3em;}
-span.tagcloud20 a {text-decoration: none;}
-span.tagcloud21 { font-size: 3.1em;}
-span.tagcloud21 a {text-decoration: none;}
-span.tagcloud22 { font-size: 3.2em;}
-span.tagcloud22 a {text-decoration: none;}
-span.tagcloud23 { font-size: 3.3em;}
-span.tagcloud23 a {text-decoration: none;}
-span.tagcloud24 { font-size: 3.4em;}
-span.tagcloud24 a {text-decoration: none;}
+span.tagcloud1 { font-size: 1.1em }
+span.tagcloud2 { font-size: 1.2em }
+span.tagcloud3 { font-size: 1.3em }
+span.tagcloud4 { font-size: 1.4em }
+span.tagcloud5 { font-size: 1.5em }
+span.tagcloud6 { font-size: 1.6em }
+span.tagcloud7 { font-size: 1.7em }
+span.tagcloud8 { font-size: 1.8em }
+span.tagcloud9 { font-size: 1.9em }
+span.tagcloud10 { font-size: 2.0em }
+span.tagcloud11 { font-size: 2.1em }
+span.tagcloud12 { font-size: 2.2em }
+span.tagcloud13 { font-size: 2.3em }
+span.tagcloud14 { font-size: 2.4em }
+span.tagcloud15 { font-size: 2.5em }
+span.tagcloud16 { font-size: 2.6em }
+span.tagcloud17 { font-size: 2.7em }
+span.tagcloud18 { font-size: 2.8em }
+span.tagcloud19 { font-size: 2.9em }
+span.tagcloud20 { font-size: 3em }
+span.tagcloud21 { font-size: 3.1em }
+span.tagcloud22 { font-size: 3.2em }
+span.tagcloud23 { font-size: 3.3em }
+span.tagcloud24 { font-size: 3.4em }

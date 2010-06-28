@@ -75,7 +75,7 @@
     <div class="rightboxcontent">
       <div id="htmltagcloud">
         [% FOREACH tag IN cloud.tags(20) %]
-          <span class="tagcloud[% tag.level %]">[% tag.name %]</span>
+          <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => tag.name }) %]">[% tag.name | html %]</a></span>
         [% END %]
       </div>
     </div>
