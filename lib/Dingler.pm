@@ -14,6 +14,7 @@ use Catalyst::Runtime 5.80;
 
 use Catalyst qw/
     ConfigLoader
+    AccessLog
     Static::Simple
     Unicode::Encoding
 /;
@@ -37,11 +38,21 @@ __PACKAGE__->apply_request_class_roles(qw/
 # with an external configuration file acting as an override for
 # local deployment.
 
+open( LOGFH, '>>', __PACKAGE__->path_to( 'var', 'logfile' )->stringify ) or die $!;
+binmode( LOGFH, ":unix" );
+
 __PACKAGE__->config(
     name => 'Dingler',
     encoding => 'UTF-8',
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
+    'Plugin::AccessLog' => {
+        target => \*LOGFH,
+        formatter => {
+            time_format => '%c',
+            time_zone => 'Europe/Berlin',
+        },
+    },
     static => {
         include_path => [
             __PACKAGE__->config->{root},
