@@ -168,23 +168,41 @@
       <xsl:attribute name="src">http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
       <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
+      <xsl:attribute name="class">figure</xsl:attribute>
     </xsl:element>
     <br />
     <xsl:apply-templates select="./tei:figDesc"/>
   </div>
 </xsl:template>
 
+<!--<g ref="#z0001"/>-->
+<xsl:template match="tei:g">
+  <xsl:element name="img">
+    <xsl:attribute name="src"><xsl:value-of select="catalyst:ext_ent(substring-after(@ref, '#'))"/></xsl:attribute>
+    <xsl:attribute name="style">float:left</xsl:attribute>
+  </xsl:element>
+</xsl:template>
+
+<xsl:template match="tei:lb"><br /></xsl:template>
+
 <xsl:template match="tei:table">
-  <table style="margin-left:auto; margin-right:auto">
+  <table style="margin-left:auto; margin-right:auto" class="middlealign">
   <xsl:for-each select="tei:row">
     <tr>
     <xsl:for-each select="tei:cell">
       <xsl:choose>
         <xsl:when test="../@role='label'">
-          <th><xsl:apply-templates/></th>
+          <xsl:element name="th">
+            <xsl:apply-templates/>
+          </xsl:element>
         </xsl:when>
         <xsl:otherwise>
-          <td><xsl:apply-templates/></td>
+          <xsl:element name="td">
+            <xsl:if test="@cols">
+              <xsl:attribute name="colspan"><xsl:value-of select="@cols"/></xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+          </xsl:element>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:for-each>

@@ -46,6 +46,9 @@ td.mainright  { padding-top:0px }
 .indent { text-indent:2em }
 .pointer { cursor:pointer }
 
+.figure { max-width:800px }
+table.middlealign td { vertical-align:middle }
+
 .person { border-bottom: dashed 1px #68a; cursor:pointer }
 
 table.journallist { padding-left:40px }

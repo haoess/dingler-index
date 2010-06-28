@@ -93,6 +93,14 @@ __PACKAGE__->config(
                     }
                 },
             },
+            {
+                uri => 'urn:catalyst',
+                name => 'ext_ent',
+                subref => sub {
+                    my $ent = shift;
+                    return "http://www.culture.hu-berlin.de/dingler_static/sonderzeichen/$ent.png";
+                }
+            },
         ],
     },
 #    DUMP_CONFIG => 1,
