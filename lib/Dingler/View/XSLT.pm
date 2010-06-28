@@ -70,7 +70,16 @@ __PACKAGE__->config(
                     my ($str, $pattern, $replacement) = @_;
                     $str =~ s/$pattern/$replacement/g;
                     return $str;
-                }
+                },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'resolveref',
+                subref => sub {
+                    my $target = shift;
+                    my ($journal, $what) = $target =~ /#(.*)_(.*)/;
+                    #if ( $what =~ XXX
+                },
             },
         ],
     },

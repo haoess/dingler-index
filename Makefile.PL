@@ -33,6 +33,7 @@ requires 'Catalyst::Model::DBIC::Schema';
 requires 'DateTime::Format::SQLite';
 requires 'File::Temp';
 requires 'DBD::Pg';
+requires 'Data::Page';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
