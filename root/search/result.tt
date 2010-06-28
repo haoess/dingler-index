@@ -1,15 +1,11 @@
-<h1>Suchergebnisse</h1>
-
-<p>
-  Suche: <b>[% q | html %]</b>
-  <span class="small"><a href="search/help">Hilfe</a></span><br />
+[% BLOCK pager_html %]
   [% pager.total_entries %] Treffer gefunden ([% pager.first %]&ndash;[% pager.last %] angezeigt).
   Seite:
   [% IF pager.current_page != pager.first_page %]
-    <a href="[% c.req.uri_with({ page => pager.first_page }) %]">«</a>
+    <a href="[% c.req.uri_with({ p => pager.first_page }) %]">«</a>
   [% END %]
   [% IF pager.current_page != pager.first_page %]
-    <a href="[% c.req.uri_with({ page => pager.previous_page }) %]">‹</a>
+    <a href="[% c.req.uri_with({ p => pager.previous_page }) %]">‹</a>
   [% END %]
   [% first = ( pager.current_page > 5 ? (pager.current_page - 5) : 1 )%]
   [% last  = ( pager.current_page + 5 < pager.last_page ? (pager.current_page + 5) : pager.last_page ) %]
@@ -17,15 +13,23 @@
     [% IF pager.current_page == page %]
       [% page %]
     [% ELSE %]
-      <a href="[% c.req.uri_with({ page => page }) %]">[% page %]</a>
+      <a href="[% c.req.uri_with({ p => page }) %]">[% page %]</a>
     [% END %]
   [% END %]
   [% IF pager.current_page != pager.last_page %]
-    <a href="[% c.req.uri_with({ page => pager.next_page })%]">›</a>
+    <a href="[% c.req.uri_with({ p => pager.next_page })%]">›</a>
   [% END %]
   [% IF pager.current_page != pager.last_page %]
-    <a href="[% c.req.uri_with({ page => pager.last_page })%]">»</a>
+    <a href="[% c.req.uri_with({ p => pager.last_page })%]">»</a>
   [% END %]
+[% END %]
+
+<h1>Suchergebnisse</h1>
+
+<p>
+  Suche: <b>[% q | html %]</b>
+  <span class="small"><a href="search/help">Hilfe</a></span><br />
+  [% PROCESS pager_html %]
 </p>
 
 <table>
@@ -46,6 +50,9 @@
   </tr>
 [% i = i + 1; END %]
 </table>
+
+<br />
+<p>[% PROCESS pager_html %]</p>
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]

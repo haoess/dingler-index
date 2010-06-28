@@ -77,7 +77,7 @@ sub search :Global {
 
     # set up pager
     my $limit = 20;
-    my $page = $c->req->params->{page} || 1;
+    my $page = $c->req->params->{p} || 1;
     $page = 1 if $page !~ /\A[0-9]+\z/;
     my $pager = Data::Page->new;
     $pager->total_entries( $count );
