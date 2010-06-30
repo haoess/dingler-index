@@ -109,7 +109,7 @@
     <div class="rightboxhead">Tafeln</div>
     <div class="rightboxcontent center">
       [% FOREACH figure IN figures %]
-        <a href="[% figure_to_markup(figure) %]"><img src="[% figure %]" width="250" /></a><br /><br />
+        <img src="[% figure %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(figure) %]')" /><br /><br />
       [% END %]
     </div>
   </div>
@@ -117,12 +117,7 @@
 
   <script type="text/javascript">
     function showtab(tab) {
-      jQuery('#dialog').load(tab);
-      jQuery("#dialog").dialog({
-        width: 1100,
-        title: 'Tafel',
-        hide: 'explode',
-      });
+      window.open(tab, '_blank', 'height=600,location=yes,menubar=no,resizable=yes,status=no,toolbar=no,width1000');
       return false;
     }
   </script>

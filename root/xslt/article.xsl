@@ -122,13 +122,15 @@
   <xsl:choose>
     <xsl:when test="@target and starts-with(@target, '#tab')">
       <xsl:element name="a">
-        <xsl:attribute name="href"><xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html</xsl:attribute>
+        <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html'); return false;</xsl:attribute>
+        <xsl:attribute name="class">pointer</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
     <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
       <xsl:element name="a">
-        <xsl:attribute name="href"><xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/></xsl:attribute>
+        <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/>'); return false;</xsl:attribute>
+        <xsl:attribute name="class">pointer</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
