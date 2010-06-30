@@ -1,1 +1,5 @@
+1. Install dependencies:
+
+  % cpanm --installdeps .
+
 Run script/dingler_server.pl to test the application.

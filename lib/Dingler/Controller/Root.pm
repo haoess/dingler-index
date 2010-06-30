@@ -45,7 +45,10 @@ sub auto :Private {
 
     $c->stash->{ figure_to_markup } = sub {
         my $str = shift;
-        $str =~ s/_wv_.*\z/.html/;
+        # http://www.culture.hu-berlin.de/dingler_static/pj044/image_markup/tab044493_wv_tab044493.jpg
+        #   =>
+        # /pj044/image_markup/tab044493.html
+        $str =~ s{.*(/pj\d{3}/image_markup/\w+)_wv_.*\z}{$1.html};
         return $str;
     };
 

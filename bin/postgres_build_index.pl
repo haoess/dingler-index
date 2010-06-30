@@ -55,7 +55,7 @@ JOURNAL:
 
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
             $sth = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
-            my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $facsimile );
+            my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
             $sth->execute( $id, $figlink );
         }
         $pos++;

@@ -64,9 +64,9 @@ sub faclink {
 =cut
 
 sub figlink {
-    my ( $figure, $facsimile ) = @_;
+    my ( $figure, $journal ) = @_;
     my ($target) = $figure =~ /#(.*)/;
-    my $ret = sprintf 'http://www.polytechnischesjournal.de/fileadmin/data/%s/editura/image_markup/%s_wv_%s.jpg', $facsimile, $target, $target;
+    my $ret = sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/image_markup/%s_wv_%s.jpg', $journal, $target, $target;
     return $ret;
 }
 1;

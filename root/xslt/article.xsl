@@ -122,13 +122,13 @@
   <xsl:choose>
     <xsl:when test="@target and starts-with(@target, '#tab')">
       <xsl:element name="a">
-        <xsl:attribute name="href">http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html</xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
     <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
       <xsl:element name="a">
-        <xsl:attribute name="href">http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/></xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/></xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
@@ -165,7 +165,7 @@
 <xsl:template match="tei:figure">
   <div class="center small" style="margin:10px 0">
     <xsl:element name="img">
-      <xsl:attribute name="src">http://www.polytechnischesjournal.de/fileadmin/data/<xsl:value-of select="//tei:biblStruct/tei:monogr/tei:idno"/>/editura/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+      <xsl:attribute name="src">http://www.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
       <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="class">figure</xsl:attribute>
