@@ -39,7 +39,7 @@
       <td class="caption right">Autor:</td>
       <td>
         [% FOREACH author IN authors %]
-          [% author | html %]
+          [% author | html %]<br />
         [% END %]
       </td>
     </tr>
@@ -89,7 +89,7 @@
     <div class="rightboxhead">Zitierangaben</div>
     <div class="rightboxcontent center">
       <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
-      <div id="bibtex"><pre>[% bibtex | html %]</pre></div>
+      <div id="bibtex"><textarea style="width:90%;height:90%" rows="10" cols="50">[% bibtex | html %]</textarea></div>
     </div>
   </div>
 

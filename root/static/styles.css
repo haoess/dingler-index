@@ -58,7 +58,7 @@ table.journallist { padding-left:40px }
 .ui-dialog { font-size:1em }
 
 #bibtex { display:none }
-#bibtex pre { font-family:"DejaVu Sans Mono",monospace; font-size:1.2em }
+#bibtex textarea { font-family:"DejaVu Sans Mono",monospace; font-size:1.2em }
 
 #bugform { display:none }
 #bugform table { width:100% }

@@ -83,6 +83,7 @@ sub set_meta :Private {
     foreach my $author ( $ar->authors->all ) {
         push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->person );
     }
+    push @authors, 'Anonymus' if !@authors;
     $c->stash->{authors} = \@authors;
 }
 
