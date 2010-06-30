@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS journal CASCADE;
 DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
+DROP TABLE IF EXISTS author CASCADE;
 DROP FUNCTION IF EXISTS article_trigger();
 
 -- --------------------------
@@ -58,4 +59,12 @@ CREATE TABLE person (
   id  TEXT,
   ref TEXT,
   PRIMARY KEY (id, ref)
+);
+
+-- --------------------------
+
+CREATE TABLE author (
+  person  TEXT,
+  article TEXT REFERENCES article(id),
+  PRIMARY KEY (person, article)
 );

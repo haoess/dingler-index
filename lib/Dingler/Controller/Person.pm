@@ -5,6 +5,7 @@ use namespace::autoclean;
 BEGIN { extends 'Catalyst::Controller'; }
 
 use File::Temp qw(tempfile);
+use XML::LibXML;
 
 =head1 NAME
 

@@ -151,6 +151,20 @@ __PACKAGE__->belongs_to(
   { join_type => "LEFT" },
 );
 
+=head2 authors
+
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Author>
+
+=cut
+
+__PACKAGE__->has_many(
+  "authors",
+  "Dingler::Schema::Result::Author",
+  { "foreign.article" => "self.id" },
+);
+
 =head2 figures
 
 Type: has_many
@@ -165,23 +179,9 @@ __PACKAGE__->has_many(
   { "foreign.article" => "self.id" },
 );
 
-=head2 people
 
-Type: has_many
-
-Related object: L<Dingler::Schema::Result::Person>
-
-=cut
-
-__PACKAGE__->has_many(
-  "people",
-  "Dingler::Schema::Result::Person",
-  { "foreign.ref" => "self.id" },
-);
-
-
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-22 12:10:34
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:A4jarCNHLGvGgVE2zpI54A
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-30 15:15:12
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:aLLwVZdMfQVg1pNAhhNw1Q
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

@@ -69,6 +69,20 @@ sub figlink {
     my $ret = sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/image_markup/%s_wv_%s.jpg', $journal, $target, $target;
     return $ret;
 }
+
+sub fullname {
+    my ( $person_xml, $id ) = @_;
+    my $xml; eval { $xml = XML::LibXML->new->parse_file( $person_xml ); 1 };
+    if ( $@ ) { die $@ }
+    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+    my $ret = sprintf '%s, %s',
+        $xpc->find( '//tei:person[@xml:id="' . $id . '"]/tei:persName/tei:surname' ),
+        $xpc->find( '//tei:person[@xml:id="' . $id . '"]/tei:persName/tei:forename' );
+    print STDERR $ret, "\n";
+    return $ret;
+}
+
 1;
 __END__
 

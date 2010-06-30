@@ -37,7 +37,11 @@
     </tr>
     <tr>
       <td class="caption right">Autor:</td>
-      <td>Johann Gottfried Dingler</td>
+      <td>
+        [% FOREACH author IN authors %]
+          [% author | html %]
+        [% END %]
+      </td>
     </tr>
     <tr>
       <td class="caption right">Fundstelle:</td>
@@ -110,6 +114,18 @@
     </div>
   </div>
   [% END %]
+
+  <script type="text/javascript">
+    function showtab(tab) {
+      jQuery('#dialog').load(tab);
+      jQuery("#dialog").dialog({
+        width: 1100,
+        title: 'Tafel',
+        hide: 'explode',
+      });
+      return false;
+    }
+  </script>
 
   <div class="rightbox">
     <div class="rightboxhead">Feedback</div>

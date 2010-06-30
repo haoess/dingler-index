@@ -23,16 +23,16 @@ JOURNAL:
     }
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
     $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-    
+
     my ($jid)     = $journal =~ /(pj[0-9]{3})/;
     my $year      = $xpc->find( '//tei:imprint/tei:date' );
     my $volume    = $xpc->find( '//tei:imprint/tei:biblScope' );
     my $facsimile = $xpc->find( '//tei:sourceDesc//tei:idno' );
     my $j_facsimile = Dingler::Util::faclink($facsimile);
-    
+
     my $sth = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
     $sth->execute( $jid, $volume, $year, $j_facsimile );
-    
+
     my $pos = 1;
     foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_misc"]') ) {
         my $id     = $xpc->find( '@xml:id', $article );
@@ -58,6 +58,13 @@ JOURNAL:
             my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
             $sth->execute( $id, $figlink );
         }
+        foreach my $author ( $xpc->findnodes('tei:front//tei:persName[@role="originator"]', $article) ) {
+            $sth = $dbh->prepare( 'INSERT INTO author (person, article) VALUES (?, ?)' );
+            my $ref = idonly( $xpc->find('@ref', $author) );
+            next if $ref eq '-';
+            $sth->execute( $ref, $id );
+        }
+
         $pos++;
     }
 

@@ -6,6 +6,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 
 use Cache::FileCache;
 use Dingler::Index;
+use Dingler::Util;
 use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
 use Text::BibTeX qw(:metatypes);
@@ -43,8 +44,15 @@ sub index :Path :Args(2) {
 
     $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
 
+    my $ar = $c->model('Dingler::Article')->find($article);
+    my @authors;
+    foreach my $author ( $ar->authors->all ) {
+        push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->person );
+    }
+
     # page
     $c->stash(
+        authors      => \@authors,
         prev_article => $prev_article,
         next_article => $next_article,
         template     => 'article/view.tt',
