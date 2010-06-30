@@ -44,15 +44,8 @@ sub index :Path :Args(2) {
 
     $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
 
-    my $ar = $c->model('Dingler::Article')->find($article);
-    my @authors;
-    foreach my $author ( $ar->authors->all ) {
-        push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->person );
-    }
-
     # page
     $c->stash(
-        authors      => \@authors,
         prev_article => $prev_article,
         next_article => $next_article,
         template     => 'article/view.tt',
@@ -83,9 +76,14 @@ sub set_meta :Private {
     foreach my $figure ( $ar->figures ) {
         push @figures, $figure->url;
     }
-
     @figures = uniq @figures;
     $c->stash->{figures} = \@figures;
+
+    my @authors;
+    foreach my $author ( $ar->authors->all ) {
+        push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->person );
+    }
+    $c->stash->{authors} = \@authors;
 }
 
 =head2 bibtex
@@ -106,6 +104,8 @@ sub bibtex :Private {
     $entry->set( year    => $c->stash->{year} );
     $entry->set( pages   => $c->stash->{p_start} ne $c->stash->{p_end} ?
                             sprintf "%s--%s", $c->stash->{p_start}, $c->stash->{p_end} : $c->stash->{p_start} );
+
+    $entry->set( author  => join ' and ', @{$c->stash->{authors}} );
 
     return $entry->print_s;
 }
