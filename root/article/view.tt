@@ -61,6 +61,7 @@
 
 <script type="text/javascript">
   function showperson(id, article) {
+    jQuery('#dialog').html( '' );
     jQuery('#dialog').load('[% base %]person/' + id + '/' + article +' #data');
     jQuery("#dialog").dialog({
       width: 600,
