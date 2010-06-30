@@ -58,7 +58,7 @@ JOURNAL:
             my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
             $sth->execute( $id, $figlink );
         }
-        foreach my $author ( $xpc->findnodes('tei:front//tei:persName[@role="originator"]', $article) ) {
+        foreach my $author ( $xpc->findnodes('tei:front//tei:persName[@role="author" or @role="author_orig"]', $article) ) {
             $sth = $dbh->prepare( 'INSERT INTO author (person, article) VALUES (?, ?)' );
             my $ref = idonly( $xpc->find('@ref', $author) );
             next if $ref eq '-';

@@ -48,7 +48,7 @@ sub auto :Private {
         # http://www.culture.hu-berlin.de/dingler_static/pj044/image_markup/tab044493_wv_tab044493.jpg
         #   =>
         # /pj044/image_markup/tab044493.html
-        $str =~ s{.*(/pj\d{3}/image_markup/\w+)_wv_.*\z}{$1.html};
+        $str =~ s{.*/(pj\d{3}/image_markup/\w+)_wv_.*\z}{@{[ $c->req->base ]}$1.html};
         return $str;
     };
 
