@@ -31,14 +31,50 @@ sub words {
             s/\AUe/Ü/;
         }
         my $gf = grundform( $word );
-        $words{$word}++;
+        $words{$gf}++;
     }
     return \%words;
 }
 
 sub grundform {
     my $word = shift;
-    return $word;
+    my %list = (
+        Achsen => 'Achse',
+        Canales => 'Canal',
+        Druckrohrs => 'Druckrohr',
+        Enden => 'Ende',
+        Farben => 'Farbe',
+        Fixsternes => 'Fixstern',
+        Ketten => 'Kette',
+        Kettenräder => 'Kettenrad',
+        Krapps => 'Krapp',
+        Leisten => 'Leiste',
+        Löcher => 'Loch',
+        Pfeile => 'Pfeil',
+        Pfeiles => 'Pfeil',
+        Planeten => 'Planet',
+        Räder => 'Rad',
+        Ränder => 'Rand',
+        Reflectoren => 'Reflector',
+        Reflectors => 'Reflector',
+        Ringe => 'Ring',
+        Ringes => 'Ring',
+        Schrauben => 'Schraube',
+        Stechrollen => 'Stechrolle',
+        Sternes => 'Stern',
+        Stifte => 'Stift',
+        Stiften => 'Stift',
+        Stunden => 'Stunde',
+        Teleskope => 'Teleskop',
+        Thores => 'Thor',
+        Unzen => 'Unze',
+        Versuche => 'Versuch',
+        Walzen => 'Walze',
+        Wasserdämpfe => 'Wasserdampf',
+        Wassers => 'Wasser',
+    );
+    $word =~ s/'s\z//;
+    return exists $list{$word} ? $list{$word} : $word;
 }
 
 __PACKAGE__->meta->make_immutable;
