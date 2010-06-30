@@ -171,7 +171,7 @@ sub article_plain :Private {
 sub step_article :Private {
     my ($self, $c, $steps, $article) = @_;
     my $ar = $c->model('Dingler::Article')->find({ id => $article });
-    return $c->model('Dingler::Article')->search({ position => $ar->position + $steps })->first;
+    return $c->model('Dingler::Article')->search({ position => $ar->position + $steps, journal => $ar->get_column('journal') })->first;
 }
 
 __PACKAGE__->meta->make_immutable;
