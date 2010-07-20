@@ -2,6 +2,7 @@ package Dingler::Controller::Root;
 use Moose;
 use namespace::autoclean;
 
+use Cache::FileCache;
 use XML::Simple;
 
 BEGIN { extends 'Catalyst::Controller' }
@@ -64,8 +65,28 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
     my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
+    my $articles = $c->model('Dingler::Article')->search;
+    my $figures  = $c->model('Dingler::Figure')->search,
+    my $persons  = $c->model('Dingler::Person')->search,
+
+    my $cache = Cache::FileCache->new({
+        cache_root => $c->path_to( 'var', 'cache' )."",
+        namespace  => 'dingler-stats'
+    });
+    my $chars = $cache->get( 'total_chars' );
+    if ( not defined $chars ) {
+        $chars    = $c->model('Dingler::Article')->search( undef, {
+            'select' => [ { sum => \'LENGTH(content) + LENGTH(front)' } ],
+            as       => 'chars',
+        } )->first->get_column('chars');
+        $cache->set( 'total_chars', $chars );
+    }
     $c->stash(
         journals => $journals,
+        articles => $articles,
+        chars    => $chars,
+        figures  => $figures,
+        persons  => $persons,
         template => 'start.tt',
     );
 }

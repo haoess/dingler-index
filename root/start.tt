@@ -18,4 +18,32 @@
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
+
+  <div class="rightbox">
+    <div class="rightboxhead">Statistiken</div>
+    <div class="rightboxcontent">
+      <table>
+        <tr>
+          <td class="right">[% journals.count %]</td>
+          <td>Bände</td>
+        </tr>
+        <tr>
+          <td class="right">[% articles.count %]</td>
+          <td>Artikel</td>
+        </tr>
+        <tr>
+          <td class="right">[% chars %]</td>
+          <td>Zeichen</td>
+        </tr>
+        <tr>
+          <td class="right">[% figures.count %]</td>
+          <td>Abbildungen</td>
+        </tr>
+        <tr>
+          <td class="right">[% persons.count %]</td>
+          <td>Personen</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 [% END %]
