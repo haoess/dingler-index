@@ -39,7 +39,10 @@ JOURNAL:
         my $type   = $xpc->find( '@type', $article );
         my $number = $xpc->find( 'tei:front/tei:titlePart[@type="number"]', $article );
         my $title  = $xpc->find( 'tei:front/tei:titlePart[@type="column"]', $article );
-        $title = Dingler::Util::uml(normalize($title->to_literal));
+        $title = Dingler::Util::uml( normalize($title->to_literal) );
+
+        my $front = $xpc->find( 'tei:front', $article );
+        $front = Dingler::Util::uml( normalize($front->to_literal) );
 
         my $pagestart = $xpc->find( 'tei:front/tei:pb[1]/@n', $article ) || $xpc->find( 'preceding::tei:pb[1]/@n', $article );
         my $pageend = $xpc->find( 'following::*[1]/preceding::tei:pb[1]/@n', $article);
@@ -47,11 +50,11 @@ JOURNAL:
         my $ar_facsimile = $xpc->find( 'tei:front/tei:pb[1]/@facs', $article) || $xpc->find( 'preceding::tei:pb[1]/@facs', $article );
         $ar_facsimile = Dingler::Util::faclink($ar_facsimile);
 
-        my $body   = $xpc->find( 'tei:body', $article );
-        $body = Dingler::Util::uml(normalize($body->to_literal));
+        my $body = $xpc->find( 'tei:body', $article );
+        $body = Dingler::Util::uml( normalize($body->to_literal) );
 
-        $sth = $dbh->prepare( 'INSERT INTO article(id, journal, type, volume, number, title, pagestart, pageend, facsimile, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
-        $sth->execute( $id, $jid, $type, $volume, $number, $title, $pagestart, $pageend, $ar_facsimile, $body, $pos );
+        $sth = $dbh->prepare( 'INSERT INTO article(id, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
+        $sth->execute( $id, $jid, $type, $volume, $number, $title, $pagestart, $pageend, $ar_facsimile, $front, $body, $pos );
 
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
             $sth = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
@@ -64,7 +67,6 @@ JOURNAL:
             next if $ref eq '-';
             $sth->execute( $ref, $id );
         }
-
         $pos++;
     }
 

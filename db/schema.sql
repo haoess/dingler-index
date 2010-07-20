@@ -26,6 +26,7 @@ CREATE TABLE article (
   pagestart TEXT,
   pageend   TEXT,
   facsimile TEXT,
+  front     TEXT,
   content   TEXT,
   position  INT,
   tsv       TSVECTOR
@@ -36,7 +37,7 @@ CREATE INDEX article_tsv_idx ON article USING gin(tsv);
 CREATE FUNCTION article_trigger() RETURNS trigger AS $$
 begin
   new.tsv :=
-     setweight(to_tsvector('german', coalesce(new.title,'')), 'A') ||
+     setweight(to_tsvector('german', coalesce(new.front,'')), 'A') ||
      setweight(to_tsvector('german', coalesce(new.content,'')), 'D');
   return new;
 end
