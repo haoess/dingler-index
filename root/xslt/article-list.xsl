@@ -15,6 +15,24 @@
 <xsl:template match="/">
   <h2><xsl:value-of select='//tei:titleStmt/tei:title[@type="sub"]'/></h2>
   <table>
+    <xsl:if test='//tei:div[@type="preface"]'>
+      <tr>
+        <td></td>
+        <td>
+          <xsl:element name="a">
+            <xsl:attribute name="href"><xsl:value-of select="$base" />journal/preface/<xsl:value-of select="$journal" /></xsl:attribute>
+            <xsl:choose>
+              <xsl:when test='//tei:div[@type="preface"]/tei:head'>
+                <xsl:value-of select='//tei:div[@type="preface"]/tei:head'/>
+              </xsl:when>
+              <xsl:otherwise>
+                [Vorwort]
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:element>
+        </td>
+      </tr>
+    </xsl:if>
     <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea"]'>
     <tr>
       <td class="right"><xsl:apply-templates select='tei:front/tei:titlePart[@type="number"]'/></td>

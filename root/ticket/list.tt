@@ -44,3 +44,7 @@
     jQuery("#ticketlist").tablesorter({sortList: [[0,0]]}); 
   } );
 </script>
+
+[% BLOCK head %]
+  <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="[% c.uri_for('/ticket/rss') %]" />
+[% END %]

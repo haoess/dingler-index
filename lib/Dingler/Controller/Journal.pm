@@ -47,6 +47,29 @@ sub article_list :Private {
     $c->res->body( undef );
 }
 
+=head2 preface
+
+=cut
+
+sub preface :Local {
+    my ( $self, $c, $journal ) = @_;
+
+    $c->stash->{template} = 'preface.xsl';
+    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    $c->stash->{xml} = $xml;
+    $c->stash->{journal} = $journal;
+    $c->forward('Dingler::View::XSLT');
+
+    my $xsl = $c->res->body;
+    utf8::decode $xsl;
+    $c->stash( xsl => $xsl );
+    $c->res->body( undef );
+
+    $c->stash(
+        template => 'article/view.tt',
+    );
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;
