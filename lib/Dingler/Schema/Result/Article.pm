@@ -26,6 +26,13 @@ __PACKAGE__->table("article");
   default_value: undef
   is_nullable: 0
 
+=head2 parent
+
+  data_type: text
+  default_value: undef
+  is_foreign_key: 1
+  is_nullable: 1
+
 =head2 journal
 
   data_type: text
@@ -75,6 +82,12 @@ __PACKAGE__->table("article");
   default_value: undef
   is_nullable: 1
 
+=head2 front
+
+  data_type: text
+  default_value: undef
+  is_nullable: 1
+
 =head2 content
 
   data_type: text
@@ -99,6 +112,13 @@ __PACKAGE__->table("article");
 __PACKAGE__->add_columns(
   "id",
   { data_type => "text", default_value => undef, is_nullable => 0 },
+  "parent",
+  {
+    data_type      => "text",
+    default_value  => undef,
+    is_foreign_key => 1,
+    is_nullable    => 1,
+  },
   "journal",
   {
     data_type      => "text",
@@ -120,6 +140,8 @@ __PACKAGE__->add_columns(
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "facsimile",
   { data_type => "text", default_value => undef, is_nullable => 1 },
+  "front",
+  { data_type => "text", default_value => undef, is_nullable => 1 },
   "content",
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "position",
@@ -135,6 +157,35 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
+
+=head2 parent
+
+Type: belongs_to
+
+Related object: L<Dingler::Schema::Result::Article>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "parent",
+  "Dingler::Schema::Result::Article",
+  { id => "parent" },
+  { join_type => "LEFT" },
+);
+
+=head2 articles
+
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Article>
+
+=cut
+
+__PACKAGE__->has_many(
+  "articles",
+  "Dingler::Schema::Result::Article",
+  { "foreign.parent" => "self.id" },
+);
 
 =head2 journal
 
@@ -180,8 +231,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-30 15:15:12
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:aLLwVZdMfQVg1pNAhhNw1Q
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-22 17:39:24
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:rnWgmCPHMod+UIYhoiJJBA
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

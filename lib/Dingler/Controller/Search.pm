@@ -70,7 +70,7 @@ sub search :Global {
             select => [ 'me.id', 'me.type', 'journal.year' ],
             as     => [ 'id', 'type', 'year' ],
             from   => \qq[ article me, $query_func('german', $q) query, journal journal ],
-            where  => \qq[ query @@ tsv AND me.journal = journal.id $add ],
+            where  => \qq[ query @@ tsv AND me.journal = journal.id AND me.type != 'art_miscellanea' $add ],
         }
     );
     my $count = $hits->count;
@@ -91,12 +91,12 @@ sub search :Global {
             select => [
                 qw(id journal title number type rank),
                 \q[ ts_headline(content, query, 'MaxFragments=2') ],
-                qw(journal year volume),
+                qw(journal year volume parent position),
             ],
             as => [
                 qw(id journal title number type),
                 qw(rank headline),
-                qw(journal year volume),
+                qw(journal year volume parent position),
             ],
             from => [
                 {
@@ -104,12 +104,12 @@ sub search :Global {
                         {},
                         {
                             select   => \q[
-                                me.id, me.journal, me.title, me.number, me.type, me.content,
+                                me.id, me.journal, me.title, me.number, me.type, me.content, me.parent, me.position,
                                 journal.year, journal.volume,
                                 ts_rank_cd(tsv, query) rank, query
                             ],
                             from     => \qq[ article me, journal, $query_func('german', $q) query ],
-                            where    => \qq[ query @@ tsv AND me.journal = journal.id $add ],
+                            where    => \qq[ query @@ tsv AND me.journal = journal.id AND me.type != 'art_miscellanea' $add ],
                             order_by => 'rank DESC',
                             rows     => $limit,
                             offset   => ($page - 1) * $limit,
@@ -144,6 +144,18 @@ sub facets :Private {
         $c->stash->{types}{ $match->type }++;
     }
     $matches->reset; # don't forget
+
+    $c->stash->{typename} = sub {
+        my $type = shift;
+        use Data::Dumper; warn Dumper $type;
+        my %types = (
+            art_patent => 'Patent',
+            art_undef  => 'Artikel',
+            misc_undef => 'Miszelle',
+        );
+        return exists $types{$type} ? $types{$type} : $type;
+    };
+
     return;
 }
 

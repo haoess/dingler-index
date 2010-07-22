@@ -42,7 +42,7 @@
           <b><a href="article/[% match.get_column('journal') %]/[% match.id %]">[% match.title | html %]</a></b><br />
           Jahrgang [% match.get_column('year') | html %],
           Band [% match.get_column('volume') | html %],
-          Nr. [% match.number | html %]
+          Nr. [% IF match.number %][% match.number | html ; ELSE; match.parent.number | html; '/Miszelle ' _ match.position; END %]
         </p>
         <p class="small">... [% match.get_column('headline') %] ... [<a href="article/[% match.get_column('journal') %]/[% match.id %]">mehr</a>]</p>
       </div>
@@ -67,7 +67,7 @@
       <br />
       <p><b>Textsorte</b></p>
       [% FOREACH type IN types.keys.sort %]
-        [% type %]: <a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a><br />
+        [% typename(type) %]: <a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a><br />
       [% END %]
     </div>
   </div>

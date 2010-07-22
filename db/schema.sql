@@ -18,6 +18,7 @@ CREATE TABLE journal (
 
 CREATE TABLE article (
   id        TEXT PRIMARY KEY,
+  parent    TEXT REFERENCES article (id),
   journal   TEXT REFERENCES journal (id),
   type      TEXT,
   volume    TEXT,

@@ -54,7 +54,12 @@
               <xsl:attribute name="style">margin-top:0; display:none</xsl:attribute>
               <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
               <xsl:for-each select="./tei:body/tei:div[@type='misc_undef']">
-                <li><xsl:apply-templates select="tei:head"/></li>
+                <li>
+                  <xsl:element name="a">
+                    <xsl:attribute name="href"><xsl:value-of select="$base" />article/<xsl:value-of select="$journal" />/<xsl:value-of select="@xml:id" /></xsl:attribute>
+                    <xsl:apply-templates select="tei:head"/>
+                  </xsl:element>
+                </li>
               </xsl:for-each>
             </xsl:element>
           </xsl:when>
