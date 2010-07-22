@@ -42,10 +42,11 @@ sub rss :Local {
     while( my $entry = $tickets->next ) {
         my $feed_entry = XML::Feed::Entry->new('Atom');
         $feed_entry->title( sprintf '[%s] %s', $entry->bugtype, $entry->article );
-        $feed_entry->link( $c->uri_for('/ticket/view', [ $entry->id]) );
+        $feed_entry->link( $c->uri_for('/ticket/view', $entry->id) );
         $feed_entry->issued( $entry->created );
         $feed->add_entry( $feed_entry );
     }
+    $c->res->content_type( 'application/atom+xml' );
     $c->res->body( $feed->as_xml );
 }
 
