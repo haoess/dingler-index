@@ -35,6 +35,7 @@ requires 'File::Temp';
 requires 'DBD::Pg';
 requires 'Data::Page';
 requires 'Catalyst::Plugin::AccessLog';
+requires 'XML::Feed';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

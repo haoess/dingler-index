@@ -5,6 +5,7 @@ use namespace::autoclean;
 BEGIN {extends 'Catalyst::Controller'; }
 
 use DateTime;
+use XML::Feed;
 
 =head1 NAME
 
@@ -26,6 +27,26 @@ sub index :Path :Args(0) {
         template => 'ticket/list.tt',
         tickets  => [ $c->model('Ticket::Ticket')->all ],
     );
+}
+
+=head2 rss
+
+=cut
+
+sub rss :Local {
+    my ( $self, $c ) = @_;
+    my $tickets = $c->model('Ticket::Ticket')->search( undef, { order_by => 'created DESC' } );
+    my $feed = XML::Feed->new('Atom');
+    $feed->title( 'Dingler-Online Ticket Feed' );
+    $feed->link( $c->req->base );
+    while( my $entry = $tickets->next ) {
+        my $feed_entry = XML::Feed::Entry->new('Atom');
+        $feed_entry->title( sprintf '[%s] %s', $entry->bugtype, $entry->article );
+        $feed_entry->link( $c->uri_for('/ticket/view', [ $entry->id]) );
+        $feed_entry->issued( $entry->created );
+        $feed->add_entry( $feed_entry );
+    }
+    $c->res->body( $feed->as_xml );
 }
 
 =head2 report
