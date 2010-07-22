@@ -91,7 +91,15 @@ JOURNAL:
 }
 
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '464', 'ar002043' );
+$dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '382', 'ar003069' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '362', 'ar008041' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '244', 'mi075045_9' );
+$dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '244', 'mi075045_10' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '434', 'ar077109' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '376', 'ar088095' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '234', 'mi093065_4' );
+$dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '234', 'mi093065_5' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '348', 'ar100062' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '356', 'ar104079' );
 
 $dbh->disconnect;
