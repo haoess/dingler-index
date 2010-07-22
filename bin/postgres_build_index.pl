@@ -87,6 +87,11 @@ JOURNAL:
 
     debug( '-'x30, "\n" );
 }
+
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '464', 'ar002043' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '362', 'ar008041' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '356', 'ar104079' );
+
 $dbh->disconnect;
 
 sub normalize {
