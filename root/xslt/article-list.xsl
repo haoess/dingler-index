@@ -13,7 +13,7 @@
   encoding="utf-8"/>
 
 <xsl:template match="/">
-  <h2><xsl:value-of select='//tei:titleStmt/tei:title[@type="sub"]'/></h2>
+  <xsl:apply-templates select='//tei:titlePage[@type="volume"]'/>
   <table>
     <xsl:if test='//tei:div[@type="preface"]'>
       <tr>
@@ -63,6 +63,46 @@
     </tr>
     </xsl:for-each>
   </table>
+</xsl:template>
+
+<xsl:template match='//tei:titlePage[@type="volume"]'>
+  <xsl:apply-templates/>
+</xsl:template>
+
+<xsl:template match='tei:titlePart[@type="main"]'>
+  <h1><xsl:apply-templates/></h1>
+</xsl:template>
+
+<xsl:template match='tei:titlePart[@type="sub"]'>
+  <p><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match='tei:titlePart[@type="volume"]'>
+  <h2><xsl:apply-templates/></h2>
+</xsl:template>
+
+<xsl:template match='tei:titlePart[@type="year"]'>
+  <h2><xsl:apply-templates/></h2>
+</xsl:template>
+
+<xsl:template match='tei:docImprint'>
+  <p><xsl:apply-templates/></p>
+</xsl:template>
+
+<xsl:template match='//tei:docTitle//tei:lb'>
+  <xsl:text> </xsl:text>
+</xsl:template>
+
+<xsl:template match='//tei:docImprint//tei:lb'>
+  <br />
+</xsl:template>
+
+<xsl:template match="tei:hi[contains(@rendition, '#wide')]">
+  <span class="wide"><xsl:apply-templates/></span>
+</xsl:template>
+
+<xsl:template match="tei:hi[contains(@rendition, '#roman')]">
+  <span class="roman"><xsl:apply-templates/></span>
 </xsl:template>
 
 <xsl:template match='tei:front/tei:titlePart[@type="number"]'>
