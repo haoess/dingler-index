@@ -198,6 +198,7 @@ sub step_article :Private {
         return $rs ? $rs : $c->model('Dingler::Article')->search({
             parent   => undef,
             position => $ar->parent->position + $steps,
+            journal  => $ar->get_column('journal'),
         })->first;
     }
     else {
