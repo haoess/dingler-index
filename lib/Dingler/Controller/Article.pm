@@ -209,6 +209,7 @@ sub step_article :Private {
             parent   => undef,
         })->first;
         # check if rs is misc -> find first/last entry
+        return unless $rs;
         my $misc = $c->model('Dingler::Article')->search(
             {
                 parent => $rs->id,
