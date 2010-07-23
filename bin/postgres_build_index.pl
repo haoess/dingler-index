@@ -34,7 +34,7 @@ JOURNAL:
     $sth->execute( $jid, $volume, $year, $j_facsimile );
 
     my $pos = 1;
-    foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea"]') ) {
+    foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]') ) {
         my $data = prepare_article( $article, $xpc );
         $sth = $dbh->prepare( 'INSERT INTO article(id, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
         $sth->execute( $data->{id}, $jid, $data->{type}, $volume, $data->{number}, $data->{title}, $data->{pagestart}, $data->{pageend}, $data->{facsimile}, $data->{front}, $data->{content}, $pos );

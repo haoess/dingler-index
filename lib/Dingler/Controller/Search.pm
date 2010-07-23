@@ -147,11 +147,11 @@ sub facets :Private {
 
     $c->stash->{typename} = sub {
         my $type = shift;
-        use Data::Dumper; warn Dumper $type;
         my %types = (
-            art_patent => 'Patent',
-            art_undef  => 'Artikel',
-            misc_undef => 'Miszelle',
+            art_patent  => 'Patent',
+            art_patents => 'Patentverzeichnis',
+            art_undef   => 'Artikel',
+            misc_undef  => 'Miszelle',
         );
         return exists $types{$type} ? $types{$type} : $type;
     };
