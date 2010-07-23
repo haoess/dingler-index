@@ -2,7 +2,7 @@
 * Editura-Entities
 * Fortsetzungslinks
 * PDF-Ausgabe
-* Miszellen
 * rendition="#subscript"
-* Artikel-Autoren
 * in Tabellenzellen: s/(\d+)(\s)(\w)/$1&nbsp;$3/g;
+* Miszellentitel: Fussnoten aussondern
+* Suchergebnisse: Abbildung vorhanden

@@ -125,7 +125,7 @@ sub prepare_article {
         pageend   => $pageend,
         facsimile => $facsimile,
         front     => $front,
-        content   => $body,
+        content   => ($type eq 'art_miscellanea' ? '' : $body),
     };
 }
 
