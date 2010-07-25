@@ -29,11 +29,10 @@
 <xsl:template match='tei:body//tei:pb'>
   <xsl:element name="span">
     <xsl:attribute name="id">pb<xsl:value-of select="@n"/></xsl:attribute>
-    <xsl:attribute name="style">margin-left:-100px;float:left</xsl:attribute>
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
-      <xsl:attribute name="class">faclink</xsl:attribute>
-      S. <xsl:value-of select="@n"/>
+      <xsl:attribute name="target">_blank</xsl:attribute>
+      [S. <xsl:value-of select="@n"/>]
     </xsl:element>
   </xsl:element>
 </xsl:template>

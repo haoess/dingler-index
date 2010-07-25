@@ -54,7 +54,7 @@
   </table>
 </div>
 
-<div style="margin-left:-100px;float:left"><a href="[% facsimile %]" class="faclink">Faksimile</a></div>
+<span><a href="[% facsimile %]" target="_blank">[Faksimile]</a></span>
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
 <div id="dialog"></div>
@@ -75,7 +75,7 @@
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
 
-  <div class="rightbox">
+  <div class="rightbox nolab">
     <div class="rightboxhead">Schlagwortwolke</div>
     <div class="rightboxcontent">
       <div id="htmltagcloud">
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <div class="rightbox">
+  <div class="rightbox nolab">
     <div class="rightboxhead">Zitierangaben</div>
     <div class="rightboxcontent center">
       <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
@@ -123,7 +123,7 @@
     }
   </script>
 
-  <div class="rightbox">
+  <div class="rightbox nolab">
     <div class="rightboxhead">Feedback</div>
     <div class="rightboxcontent center">
       <button onclick="bugform()">Fehler melden</button><br />

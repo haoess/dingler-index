@@ -11,12 +11,13 @@
   <script type="text/javascript" src="static/jquery/jquery.metadata.js"></script>
   <link rel="stylesheet" type="text/css" href="static/jquery/tablesorter/style.css" />
   <link rel="stylesheet" type="text/css" href="static/styles.css" />
+  <link rel="stylesheet" type="text/css" href="static/custom.css" />
   [% TRY; PROCESS head; CATCH; ''; END %]
 </head>
 
 <body>
 
-<div id="head">
+<div id="head" class="nolab">
   <div class="project">Interne Projektseite</div>
   <div class="logo">
     <a href="[% base %]"><img src="[% base %]static/images/dinglerlogo.gif" alt="Logo Dingler" /></a>
@@ -29,13 +30,18 @@
 </div>
 
 <table id="maintable">
-  <colgroup>
-    <col width="700" />
-    <col width="300" />
+  <colgroup class="maincol">
+    <col />
+  </colgroup>
+  <colgroup class="rightcol">
+    <col />
   </colgroup>
   <tr>
     <td class="mainmiddle">[% content %]</td>
-    <td class="mainright">[% TRY; PROCESS right; CATCH; ''; END %]</td>
+    <td class="mainright">
+      <div class="labtitle">Labor-Webseite</div>
+      [% TRY; PROCESS right; CATCH; ''; END %]
+    </td>
   </tr>
 </table>
 

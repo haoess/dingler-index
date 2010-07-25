@@ -20,7 +20,12 @@ a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underlin
 #head .partner { position:absolute; right:15em; top:3.6em }
 .partner img { margin-left:30px }
 
+.labtitle { display:none }
+
 #maintable { width:1000px; margin-left:auto; margin-right:auto }
+
+.maincol { width:700px }
+.rightcol { width:300px }
 
 td.mainleft   { padding-top:10px }
 td.mainmiddle { padding-left:2em; font-size:1.4em }

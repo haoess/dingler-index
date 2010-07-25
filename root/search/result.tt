@@ -57,7 +57,7 @@
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
 
-  <div class="rightbox">
+  <div class="rightbox nolab">
     <div class="rightboxhead">Treffergruppierung</div>
     <div class="rightboxcontent">
       <p><b>Jahrgänge</b></p>
