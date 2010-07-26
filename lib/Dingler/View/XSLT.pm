@@ -22,6 +22,40 @@ __PACKAGE__->config(
             },
             {
                 uri => 'urn:catalyst',
+                name => 'persondate',
+                subref => sub {
+                    my $date = $_[0]."";
+                    use DateTime::Format::Strptime;
+                    my $dt;
+                    if ( $dt = DateTime::Format::Strptime->new( pattern => '%Y-%m-%d', locale => 'de_DE' )->parse_datetime( $date ) ) {
+                        return $dt->strftime('%e. %B %Y');
+                    }
+                    elsif ( $dt = DateTime::Format::Strptime->new( pattern => '%Y-%m' )->parse_datetime( $date ) ) {
+                        return $dt->strftime('%B %Y');
+                    }
+                    elsif ( $dt = DateTime::Format::Strptime->new( pattern => '%Y' )->parse_datetime( $date ) ) {
+                        return $dt->strftime('%Y');
+                    }
+                },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'starts-with',
+                subref => sub {
+                    my ($node, $char) = @_;
+                    if ( $char eq '~' && "$node" !~ /\A[a-z]/i ) {
+                        return $node;
+                    }
+                    elsif ( index("$node", $char) == 0 ) {
+                        return $node;
+                    }
+                    else {
+                        return;
+                    }
+                }
+            },
+            {
+                uri => 'urn:catalyst',
                 name => 'personref',
                 subref => sub {
                     my $str = shift;

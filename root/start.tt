@@ -41,7 +41,7 @@
         </tr>
         <tr>
           <td class="right">[% persons.count %]</td>
-          <td>Personen</td>
+          <td><a href="person/list">Personen</a></td>
         </tr>
       </table>
     </div>

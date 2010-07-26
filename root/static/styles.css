@@ -58,6 +58,9 @@ table.middlealign td { vertical-align:middle }
 
 table.journallist { padding-left:40px }
 
+.personlist h2 { font-family:Georgia,Times,serif,Times-New-Roman; font-size:1.4em; font-weight:normal; margin:0 0 0.5em 0 }
+.personlist h3 { font-weight:bold; font-size:1.1em; margin:1em 0 0 0 !important }
+
 .faclink { color:red }
 
 .ui-dialog { font-size:1em }
