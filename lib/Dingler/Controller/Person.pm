@@ -59,18 +59,17 @@ sub index :Path :Args(2) {
 sub list :Local {
     my ( $self, $c, $letter ) = @_;
     my $xml = $c->config->{svn} . '/database/persons/persons.xml';
-    if ( $letter ) {
-        $c->stash(
-            letter => $letter,
-            xml    => $xml,
-        );
-        $c->stash->{template} = 'person-list.xsl';
-        $c->forward('Dingler::View::XSLT');
-        my $xsl = $c->res->body;
-        utf8::decode($xsl);
-        $c->stash( xsl => $xsl );
-        $c->res->body( undef );
-    }
+    $letter ||= 'A';
+    $c->stash(
+        letter => $letter,
+        xml    => $xml,
+    );
+    $c->stash->{template} = 'person-list.xsl';
+    $c->forward('Dingler::View::XSLT');
+    my $xsl = $c->res->body;
+    utf8::decode($xsl);
+    $c->stash( xsl => $xsl );
+    $c->res->body( undef );
     $c->stash(
         template => 'person/list.tt',
     );
