@@ -35,7 +35,7 @@ sub index :Path :Args(2) {
         article => $article,
         journal => $journal,
         item    => $c->model('Dingler::Article')->find( $article ),
-        misc    => ($article =~ /^mi/),
+        misc    => ($article =~ /^mi/) ? 1 : 0,
     );
 
     $c->forward('set_meta', [$journal, $article]);
