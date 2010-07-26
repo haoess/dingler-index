@@ -40,7 +40,7 @@
           <td>Abbildungen</td>
         </tr>
         <tr>
-          <td class="right">[% persons.count %]</td>
+          <td class="right">[% persons %]</td>
           <td><a href="person/list">Personen</a></td>
         </tr>
       </table>

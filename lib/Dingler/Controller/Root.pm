@@ -67,7 +67,12 @@ sub index :Path :Args(0) {
     my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
     my $articles = $c->model('Dingler::Article')->search;
     my $figures  = $c->model('Dingler::Figure')->search,
-    my $persons  = $c->model('Dingler::Person')->search,
+
+    # count persons
+    my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
+    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+    my $persons = $xpc->findnodes('//tei:person')->size;
 
     my $cache = Cache::FileCache->new({
         cache_root => $c->path_to( 'var', 'cache' )."",

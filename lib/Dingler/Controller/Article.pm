@@ -10,7 +10,6 @@ use Dingler::Util;
 use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
 use Text::BibTeX qw(:metatypes);
-use XML::LibXML;
 
 =head1 NAME
 
