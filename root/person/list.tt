@@ -2,19 +2,25 @@
 
 <p>Register der Personen, vornehmlich der Artikel-Autoren im Polytechnischen Journal.</p>
 
-<p>
-[% FOREACH l IN [ 'A' .. 'Z' ] %]
-  [% IF l == letter %]
-    [% l %]
-  [% ELSE %]
-    <a href="[% c.action %]/[% l %]">[% l %]</a>
+[% BLOCK alphabet %]
+  <p>
+  [% FOREACH l IN [ 'A' .. 'Z' ] %]
+    [% IF l == letter %]
+      [% l %]
+    [% ELSE %]
+      <a href="[% c.action %]/[% l %]">[% l %]</a>
+    [% END %]
   [% END %]
+  [% IF letter == '~' %]
+    ~
+  [% ELSE %]
+    <a href="[% c.action %]/~">~</a>
+  [% END %]
+  </p>
 [% END %]
-[% IF letter == '~' %]
-  ~
-[% ELSE %]
-  <a href="[% c.action %]/~">~</a>
-[% END %]
-</p>
+
+[% PROCESS alphabet %]
 
 [% xsl %]
+
+[% PROCESS alphabet %]
