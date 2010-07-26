@@ -147,10 +147,15 @@ __PACKAGE__->config(
                     if ( $rs->count ) {
                         $out = '<h3>Fundstellen im »Polytechnischen Journal«</h3><ul style="margin-top:0">';
                         while ( my $person = $rs->next ) {
-                            $out .= sprintf '<li><a href="article/%s/%s">%s</a></li>',
-                                    $person->ref->get_column('journal'),
+                            $out .= sprintf '<li><a href="article/%s/%s">%s</a> (Jg. %s, Bd. %s, Nr. %s, S. %s)</li>',
+                                    $person->ref->journal->id,
                                     $person->ref->id,
-                                    $person->ref->title;
+                                    $person->ref->title,
+                                    $person->ref->journal->year,
+                                    $person->ref->journal->volume,
+                                    $person->ref->number,
+                                    $person->ref->pagestart eq $person->ref->pageend ? $person->ref->pagestart
+                                                                                     : $person->ref->pagestart.'&ndash;'.$person->ref->pageend;
                         }
                         $out .= '</ul>';
                     }
