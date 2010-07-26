@@ -18,7 +18,10 @@
     <xsl:sort select="tei:persName/tei:surname"/>
     <xsl:sort select="tei:persName/tei:forename"/>
     <xsl:apply-templates select="tei:persName" mode="name"/>
-    <div style="margin-left:2em; margin-bottom:1em"><xsl:apply-templates/></div>
+    <div style="margin-left:2em; margin-bottom:1em">
+      <xsl:apply-templates/>
+      <xsl:value-of select="catalyst:personarticles(@xml:id)" disable-output-escaping="yes"/>
+    </div>
   </xsl:for-each>
   </div>
 </xsl:template>

@@ -135,6 +135,28 @@ __PACKAGE__->config(
                     return "http://www.culture.hu-berlin.de/dingler_static/sonderzeichen/$ent.png";
                 }
             },
+            {
+                uri => 'urn:catalyst',
+                name => 'personarticles',
+                subref => sub {
+                    my $id = shift;
+                    my $rs = Dingler->model('Dingler::Person')->search({
+                        id => $id,
+                    });
+                    my $out = '';
+                    if ( $rs->count ) {
+                        $out = '<h3>Fundstellen im »Polytechnischen Journal«</h3><ul style="margin-top:0">';
+                        while ( my $person = $rs->next ) {
+                            $out .= sprintf '<li><a href="article/%s/%s">%s</a></li>',
+                                    $person->ref->get_column('journal'),
+                                    $person->ref->id,
+                                    $person->ref->title;
+                        }
+                        $out .= '</ul>';
+                    }
+                    return $out;
+                },
+            },
         ],
     },
 #    DUMP_CONFIG => 1,

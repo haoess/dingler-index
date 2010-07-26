@@ -230,9 +230,23 @@ __PACKAGE__->has_many(
   { "foreign.article" => "self.id" },
 );
 
+=head2 people
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-22 17:39:24
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:rnWgmCPHMod+UIYhoiJJBA
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Person>
+
+=cut
+
+__PACKAGE__->has_many(
+  "people",
+  "Dingler::Schema::Result::Person",
+  { "foreign.ref" => "self.id" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-26 22:28:05
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:yFodruyiyEpkyqNUS2urZA
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

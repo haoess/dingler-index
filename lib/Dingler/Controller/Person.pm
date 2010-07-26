@@ -56,6 +56,10 @@ sub index :Path :Args(2) {
     );
 }
 
+=head2 list
+
+=cut
+
 sub list :Local {
     my ( $self, $c, $letter ) = @_;
     my $xml = $c->config->{svn} . '/database/persons/persons.xml';
