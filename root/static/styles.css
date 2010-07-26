@@ -1,6 +1,6 @@
 body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; margin:0 }
-h1 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
-h2 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
+h1 { color:#069; font-family:'Cardo',Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
+h2 { color:#069; font-family:'Cardo',Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
 img { border:none }
 p { line-height:1.7em; margin:0 0 0.5em 0 }
 q:before { content:"" }
@@ -58,7 +58,7 @@ table.middlealign td { vertical-align:middle }
 
 table.journallist { padding-left:40px }
 
-.personlist h2 { font-family:Georgia,Times,serif,Times-New-Roman; font-size:1.4em; font-weight:normal; margin:0 0 0.5em 0 }
+.personlist h2 { font-family:'Cardo',Georgia,Times,serif,Times-New-Roman; font-size:1.4em; font-weight:normal; margin:0 0 0.5em 0 }
 .personlist h3 { font-weight:bold; font-size:1.1em; margin:1em 0 0 0 !important }
 
 .faclink { color:red }
