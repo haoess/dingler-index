@@ -10,7 +10,6 @@
   <script type="text/javascript" src="static/jquery/jquery.tablesorter.min.js"></script>
   <script type="text/javascript" src="static/jquery/jquery.metadata.js"></script>
   <link rel="stylesheet" type="text/css" href="static/jquery/tablesorter/style.css" />
-  <link href='http://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css' />
   <link rel="stylesheet" type="text/css" href="static/styles.css" />
   <link rel="stylesheet" type="text/css" href="static/custom.css" />
   [% TRY; PROCESS head; CATCH; ''; END %]

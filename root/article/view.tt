@@ -19,7 +19,7 @@
       <td>
         Sie sind hier: <a href="[% base %]">Startseite</a> &rarr;
         <a href="journal/[% journal | html %]">Band [% volume | html %]</a> &rarr;
-        Artikel [% number | html %][% IF misc %]/Miszelle [% item.position %][% END %]
+        [% IF number %]Artikel [% number | html %][% END %][% IF misc && number  %]/[% END; IF misc %]Miszelle [% item.position %][% END %]
       </td>
       <td class="right">
         [% IF prev_article %]<a href="article/[% journal %]/[% prev_article.id %]"><b>&larr;</b></a>[% END %]
