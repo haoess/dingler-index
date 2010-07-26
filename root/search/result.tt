@@ -44,7 +44,12 @@
           Band [% match.get_column('volume') | html %],
           Nr. [% IF match.number %][% match.number | html ; ELSE; match.parent.number | html; '/Miszelle ' _ match.position; END %]
         </p>
-        <p class="small">... [% match.get_column('headline') %] ... [<a href="article/[% match.get_column('journal') %]/[% match.id %]">mehr</a>]</p>
+        <p class="small">
+          [% IF match.figures.first.url %]
+            <img src="[% match.figures.first.url %]" width="100" style="float:left; margin-right:10px" />
+          [% END %]
+          ... [% match.get_column('headline') %] ... [<a href="article/[% match.get_column('journal') %]/[% match.id %]">mehr</a>]
+        </p>
       </div>
     </td>
   </tr>
@@ -66,9 +71,17 @@
       [% END %]
       <br />
       <p><b>Textsorte</b></p>
+      <table>
       [% FOREACH type IN types.keys.sort %]
-        [% typename(type) %]: <a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a><br />
+        <tr>
+          <td class="right">[% typename(type) %]:</td>
+          <td><a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a></td>
+        </tr>
       [% END %]
+      </table>
+      <br />
+      <p><b>Abbildungen</b></p>
+      Mit Abbildung: [% figures %]
     </div>
   </div>
 [% END %]

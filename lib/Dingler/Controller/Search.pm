@@ -142,6 +142,7 @@ sub facets :Private {
         $year =~ /\A([0-9]{3})/;
         $c->stash->{years}{ $1 . "0" }++;
         $c->stash->{types}{ $match->type }++;
+        $c->stash->{figures}++ if $match->figures->count;
     }
     $matches->reset; # don't forget
 
