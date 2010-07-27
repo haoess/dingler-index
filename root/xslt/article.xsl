@@ -16,7 +16,7 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:text[@xml:id=$article]'/>
-  <xsl:apply-templates select='//tei:note' mode="notecontent"/>
+  <xsl:apply-templates select='//tei:text[@xml:id=$article]//tei:note' mode="notecontent"/>
 </xsl:template>
 
 <xsl:template match='tei:text'>
@@ -82,6 +82,10 @@
       <xsl:apply-templates/>
     </xsl:otherwise>
   </xsl:choose>
+</xsl:template>
+
+<xsl:template match='tei:div[@type="section"]/tei:bibl'>
+  <h3><xsl:apply-templates/></h3>
 </xsl:template>
 
 <xsl:template match="tei:p">
