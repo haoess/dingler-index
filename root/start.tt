@@ -51,11 +51,11 @@
           <td class="right">[% patentlists.count * 3 %]</td>
           <td>Patentverzeichnisse</td>
         </tr>
-        <tr>
+        <tr class="nolab">
           <td class="right">[% persons %]</td>
           <td><a href="person/list">Personen</a></td>
         </tr>
-        <tr>
+        <tr class="nolab">
           <td class="right">[% sources %]</td>
           <td><a href="source/list">Quellen</a></td>
         </tr>

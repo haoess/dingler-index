@@ -69,7 +69,7 @@ sub index :Path :Args(0) {
     my $articles    = $c->model('Dingler::Article')->search({ type => 'art_undef' });
     my $patents     = $c->model('Dingler::Article')->search({ type => 'art_patent' });
     my $patentlists = $c->model('Dingler::Article')->search({ type => 'art_patents' });
-    my $miscs       = $c->model('Dingler::Article')->search({ type => 'art_miscellanea' });
+    my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' });
     
     my $figures  = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } );
 
