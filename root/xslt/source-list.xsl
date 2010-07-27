@@ -14,9 +14,9 @@
 
 <xsl:template match='/'>
   <div class="personlist">
-  <xsl:for-each select="//tei:bibl[catalyst:starts-with(tei:title[@level='j'], $letter)]">  
+  <xsl:for-each select="//tei:bibl[catalyst:starts-with(tei:title[@level='j' or @level='m'], $letter)]">  
     <xsl:sort select='tei:title[@level="j"]'/>
-    <xsl:apply-templates select="tei:title[@level='j']" mode="name"/>
+    <xsl:apply-templates select="tei:title[@level='j' or @level='m']" mode="name"/>
     <div style="margin-left:2em; margin-bottom:1em">
       <xsl:apply-templates/>
     </div>
@@ -24,10 +24,10 @@
   </div>
 </xsl:template>
 
-<xsl:template match='tei:title[@level="j"]' mode="name">
+<xsl:template match='tei:title[@level="j" or @level="m"]' mode="name">
   <h2><xsl:apply-templates/></h2>
 </xsl:template>
-<xsl:template match='tei:title[@level="j"]'/>
+<xsl:template match="tei:title[@level='j' or @level='m']"/>
 
 <xsl:template match='tei:title[@prev]'/>
 <xsl:template match='tei:title[@next]'/>
