@@ -45,8 +45,8 @@
           Nr. [% IF match.number %][% match.number | html ; ELSE; match.parent.number | html; '/Miszelle ' _ match.position; END %]
         </p>
         <p class="small">
-          [% IF match.figures.first.url %]
-            <img src="[% match.figures.first.url %]" width="100" style="float:left; margin-right:10px" />
+          [% IF match.figures_rs.first.url %]
+            <img src="[% match.figures_rs.first.url %]" width="100" style="float:left; margin-right:10px" />
           [% END %]
           ... [% match.get_column('headline') %] ... [<a href="article/[% match.get_column('journal') %]/[% match.id %]">mehr</a>]
         </p>
