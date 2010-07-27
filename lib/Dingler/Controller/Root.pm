@@ -109,7 +109,7 @@ sub stats :Private {
         # count patents
         my $patents = 0;
       JOURNAL:
-        foreach my $journal ( glob $c->config->{svn} . '/pj010/*Z.xml' ) {
+        foreach my $journal ( glob $c->config->{svn} . '/*/*Z.xml' ) {
             eval { $xml = XML::LibXML->new->parse_file( $journal ); 1 };
             next JOURNAL if $@;
             $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
