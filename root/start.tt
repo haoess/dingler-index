@@ -32,24 +32,28 @@
           <td>Zeichen</td>
         </tr>
         <tr>
-          <td class="right">[% figures.count %]</td>
+          <td class="right">[% figures %]</td>
           <td>Tafeln</td>
         </tr>
         <tr>
-          <td class="right">[% articles.count %]</td>
+          <td class="right">[% articles %]</td>
           <td>Artikel</td>
         </tr>
         <tr>
-          <td class="right">[% patents.count %]</td>
-          <td>Patente</td>
+          <td class="right">[% patentdescs %]</td>
+          <td>Patentbeschreibungen</td>
         </tr>
         <tr>
-          <td class="right">[% miscs.count %]</td>
+          <td class="right">[% miscs %]</td>
           <td>Miszellen</td>
         </tr>
         <tr>
-          <td class="right">[% patentlists.count * 3 %]</td>
+          <td class="right">[% patentlists %]</td>
           <td>Patentverzeichnisse</td>
+        </tr>
+        <tr>
+          <td class="right">[% patents %]</td>
+          <td>Patente</td>
         </tr>
         <tr class="nolab">
           <td class="right">[% persons %]</td>

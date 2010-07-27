@@ -53,7 +53,7 @@
             <xsl:element name="ol">
               <xsl:attribute name="style">margin-top:0; display:none</xsl:attribute>
               <xsl:attribute name="id"><xsl:value-of select="@xml:id" /></xsl:attribute>
-              <xsl:for-each select="./tei:body/tei:div[@type='misc_undef']">
+              <xsl:for-each select="./tei:body/tei:div[@type='misc_undef' or @type='misc_patents']">
                 <li>
                   <xsl:element name="a">
                     <xsl:attribute name="href"><xsl:value-of select="$base" />article/<xsl:value-of select="$journal" />/<xsl:value-of select="@xml:id" /></xsl:attribute>

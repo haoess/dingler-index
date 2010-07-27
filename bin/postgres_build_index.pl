@@ -41,7 +41,7 @@ JOURNAL:
 
         if ( $data->{type} eq 'art_miscellanea' ) {
             my $miscpos = 1;
-            foreach my $misc ( $xpc->findnodes('//tei:text[@xml:id="' . $data->{id} . '"]//tei:div[@type="misc_undef"]') ) {
+            foreach my $misc ( $xpc->findnodes('//tei:text[@xml:id="' . $data->{id} . '"]//tei:div[@type="misc_undef" or @type="misc_patents"]') ) {
                 my $miscid       = $xpc->find( '@xml:id', $misc );
                 my $type         = $xpc->find( '@type', $misc );
                 my $title        = $xpc->find( 'tei:head', $misc );
@@ -51,7 +51,6 @@ JOURNAL:
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );
                 $mi_facsimile = Dingler::Util::faclink($facsimile);
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
-
                 my $sth = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, volume, number, title, pagestart, pageend, facsimile, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
                 $sth->execute( $miscid, $data->{id}, $jid, $type, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, $content, $miscpos );
                 $miscpos++;

@@ -150,10 +150,11 @@ sub facets :Private {
     $c->stash->{typename} = sub {
         my $type = shift;
         my %types = (
-            art_patent  => 'Patent',
-            art_patents => 'Patentverzeichnis',
-            art_undef   => 'Artikel',
-            misc_undef  => 'Miszelle',
+            art_patent   => 'Patent',
+            art_patents  => 'Patentverzeichnis',
+            art_undef    => 'Artikel',
+            misc_patents => 'Patentverzeichnis',
+            misc_undef   => 'Miszelle',
         );
         return exists $types{$type} ? $types{$type} : $type;
     };

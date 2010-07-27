@@ -65,49 +65,85 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
     my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
-    
-    my $articles    = $c->model('Dingler::Article')->search({ type => 'art_undef' });
-    my $patents     = $c->model('Dingler::Article')->search({ type => 'art_patent' });
-    my $patentlists = $c->model('Dingler::Article')->search({ type => 'art_patents' });
-    my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' });
-    
-    my $figures  = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } );
+    $c->stash(
+        journals    => $journals,
+        template    => 'start.tt',
+    );
+    $c->forward('stats');
+}
 
-    # count persons
-    my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
-    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-    my $persons = $xpc->findnodes('//tei:person')->size;
+=head2 stats
 
-    # count sources
-    $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/journals/journals.xml' );
-    $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-    my $sources = $xpc->findnodes('//tei:bibl')->size;
+=cut
+
+sub stats :Private {
+    my ( $self, $c ) = @_;
 
     my $cache = Cache::FileCache->new({
         cache_root => $c->path_to( 'var', 'cache' )."",
         namespace  => 'dingler-stats'
     });
-    my $chars = $cache->get( 'total_chars' );
-    if ( not defined $chars ) {
-        $chars    = $c->model('Dingler::Article')->search( undef, {
+
+    my $stats = $cache->get('stats');
+    if ( not defined $stats ) {
+
+        my $articles    = $c->model('Dingler::Article')->search({ type => 'art_undef' })->count;
+        my $patentdescs = $c->model('Dingler::Article')->search({ type => 'art_patent' })->count;
+        my $patentlists = $c->model('Dingler::Article')->search({ -or => [ type => ['art_patents', 'misc_patents'] ] })->count;
+        my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' })->count;
+
+        my $figures  = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } )->count;
+
+        # count persons
+        my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
+        my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+        $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+        my $persons = $xpc->findnodes('//tei:person')->size;
+
+        # count sources
+        $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/journals/journals.xml' );
+        $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+        $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+        my $sources = $xpc->findnodes('//tei:bibl')->size;
+
+        # count patents
+        my $patents = 0;
+      JOURNAL:
+        foreach my $journal ( glob $c->config->{svn} . '/pj010/*Z.xml' ) {
+            eval { $xml = XML::LibXML->new->parse_file( $journal ); 1 };
+            next JOURNAL if $@;
+            $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+            $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+            $patents += $xpc->findnodes('//tei:div[@type="patent"]')->size;
+        }
+
+        my $chars = $c->model('Dingler::Article')->search( undef, {
             'select' => [ { sum => \'LENGTH(content) + LENGTH(front)' } ],
             as       => 'chars',
         } )->first->get_column('chars');
-        $cache->set( 'total_chars', $chars );
+
+        $cache->set( articles    => $articles );
+        $cache->set( patentdescs => $patentdescs );
+        $cache->set( patentlists => $patentlists );
+        $cache->set( miscs       => $miscs );
+        $cache->set( chars       => $chars );
+        $cache->set( figures     => $figures );
+        $cache->set( persons     => $persons );
+        $cache->set( sources     => $sources );
+        $cache->set( patents     => $patents );
+        $cache->set( stats       => 1 );
     }
+
     $c->stash(
-        journals => $journals,
-        articles => $articles,
-        patents  => $patents,
-        patentlists => $patentlists,
-        miscs    => $miscs,
-        chars    => $chars,
-        figures  => $figures,
-        persons  => $persons,
-        sources  => $sources,
-        template => 'start.tt',
+        articles    => $cache->get('articles'),
+        patentdescs => $cache->get('patentdescs'),
+        patentlists => $cache->get('patentlists'),
+        miscs       => $cache->get('miscs'),
+        chars       => $cache->get('chars'),
+        figures     => $cache->get('figures'),
+        persons     => $cache->get('persons'),
+        sources     => $cache->get('sources'),
+        patents     => $cache->get('patents'),
     );
 }
 
