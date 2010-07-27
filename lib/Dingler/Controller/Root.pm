@@ -79,6 +79,12 @@ sub index :Path :Args(0) {
     $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
     my $persons = $xpc->findnodes('//tei:person')->size;
 
+    # count sources
+    $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/journals/journals.xml' );
+    $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+    my $sources = $xpc->findnodes('//tei:bibl')->size;
+
     my $cache = Cache::FileCache->new({
         cache_root => $c->path_to( 'var', 'cache' )."",
         namespace  => 'dingler-stats'
@@ -100,6 +106,7 @@ sub index :Path :Args(0) {
         chars    => $chars,
         figures  => $figures,
         persons  => $persons,
+        sources  => $sources,
         template => 'start.tt',
     );
 }

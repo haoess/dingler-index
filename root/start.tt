@@ -55,6 +55,10 @@
           <td class="right">[% persons %]</td>
           <td><a href="person/list">Personen</a></td>
         </tr>
+        <tr>
+          <td class="right">[% sources %]</td>
+          <td><a href="source/list">Quellen</a></td>
+        </tr>
       </table>
     </div>
   </div>

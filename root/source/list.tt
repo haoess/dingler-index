@@ -1,0 +1,30 @@
+<h1>Quellenverzeichnis</h1>
+
+<p>
+  Register der im Polytechnischen Journal genannten Quellen. Es handelt sich
+  dabei vornehmlich um Zeitschriften, denen die Herausgeber die Artikel
+  entnommen haben.
+</p>
+
+[% BLOCK alphabet %]
+  <p>
+  [% FOREACH l IN [ 'A' .. 'Z' ] %]
+    [% IF l == letter %]
+      [% l %]
+    [% ELSE %]
+      <a href="[% c.action %]/[% l %]">[% l %]</a>
+    [% END %]
+  [% END %]
+  [% IF letter == '~' %]
+    ~
+  [% ELSE %]
+    <a href="[% c.action %]/~">~</a>
+  [% END %]
+  </p>
+[% END %]
+
+[% PROCESS alphabet %]
+
+[% xsl %]
+
+[% PROCESS alphabet %]
