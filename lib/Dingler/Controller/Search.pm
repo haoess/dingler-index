@@ -141,7 +141,9 @@ sub facets :Private {
         my $year = $match->get_column('year');
         $year =~ /\A([0-9]{3})/;
         $c->stash->{years}{ $1 . "0" }++;
-        $c->stash->{types}{ $match->type }++;
+        my $type = $match->type;
+        $type = 'art_patents' if $type eq 'misc_patents';
+        $c->stash->{types}{ $type }++;
         #my $figures = $match->figures->search( undef, { group_by => 'url' } )->count;
         #$c->stash->{figures} += $figures;
     }
@@ -150,10 +152,10 @@ sub facets :Private {
     $c->stash->{typename} = sub {
         my $type = shift;
         my %types = (
-            art_patent   => 'Patent',
+            art_patent   => 'Patentbeschreibung',
             art_patents  => 'Patentverzeichnis',
             art_undef    => 'Artikel',
-            misc_patents => 'Patentverzeichnis',
+#            misc_patents => 'Patentverzeichnis',
             misc_undef   => 'Miszelle',
         );
         return exists $types{$type} ? $types{$type} : $type;
