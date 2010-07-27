@@ -15,7 +15,7 @@
 <xsl:template match='/'>
   <div class="personlist">
   <xsl:for-each select="//tei:bibl[catalyst:starts-with(tei:title[@level='j' or @level='m'], $letter)]">  
-    <xsl:sort select='tei:title[@level="j"]'/>
+    <xsl:sort select='tei:title[@level="j" or @level="m"]'/>
     <xsl:apply-templates select="tei:title[@level='j' or @level='m']" mode="name"/>
     <div style="margin-left:2em; margin-bottom:1em">
       <xsl:apply-templates/>
@@ -89,6 +89,8 @@
     </xsl:element>
   </p>
 </xsl:template>
+
+<xsl:template match='tei:note'/>
 
 <xsl:template match="text()">
   <xsl:value-of select="catalyst:uml(.)"/>
