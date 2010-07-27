@@ -67,6 +67,17 @@
       </td>
     </tr>
     </xsl:for-each>
+    <xsl:if test='//tei:div[@type="index"]'>
+      <tr>
+        <td></td>
+        <td>
+          <xsl:element name="a">
+            <xsl:attribute name="href"><xsl:value-of select="$base" />journal/register/<xsl:value-of select="$journal" /></xsl:attribute>
+            <xsl:value-of select='//tei:div[@type="index"]/tei:head'/>
+          </xsl:element>
+        </td>
+      </tr>
+    </xsl:if>
   </table>
 </xsl:template>
 

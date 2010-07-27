@@ -70,6 +70,39 @@ sub preface :Local {
     );
 }
 
+=head2 register
+
+=cut
+
+sub register :Local {
+    my ( $self, $c, $journal ) = @_;
+
+    my $cache = Cache::FileCache->new({
+        cache_root => $c->path_to( 'var', 'cache' )."",
+        namespace  => 'dingler-register'
+    });
+
+    $c->stash->{journal} = $journal;
+    my $xsl = $cache->get( $journal );
+    if ( not defined $xsl ) {
+        $c->stash->{template} = 'register.xsl';
+        my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+        $c->stash->{xml} = $xml;
+        $c->forward('Dingler::View::XSLT');
+
+        my $xsl = $c->res->body;
+        utf8::decode $xsl;
+        $cache->set( $journal, $xsl );
+    }
+
+    $c->stash( xsl => $xsl );
+    $c->res->body( undef );
+
+    $c->stash(
+        template => 'article/view.tt',
+    );
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;
