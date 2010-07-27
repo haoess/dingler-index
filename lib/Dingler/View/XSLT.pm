@@ -42,11 +42,13 @@ __PACKAGE__->config(
                 uri => 'urn:catalyst',
                 name => 'starts-with',
                 subref => sub {
-                    my ($node, $char) = @_;
-                    if ( $char eq '~' && "$node" !~ /\A[a-z]/i ) {
+                    my ( $node, $char ) = @_;
+                    my $text = "$node";
+                    $text =~ s/\AThe\s// unless $char =~ /t/i;
+                    if ( $char eq '~' && $text !~ /\A[a-z]/i ) {
                         return $node;
                     }
-                    elsif ( index("$node", $char) == 0 ) {
+                    elsif ( index($text, $char) == 0 ) {
                         return $node;
                     }
                     else {
