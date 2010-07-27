@@ -28,16 +28,28 @@
           <td>Bände</td>
         </tr>
         <tr>
-          <td class="right">[% articles.count %]</td>
-          <td>Artikel</td>
-        </tr>
-        <tr>
           <td class="right">[% chars %]</td>
           <td>Zeichen</td>
         </tr>
         <tr>
           <td class="right">[% figures.count %]</td>
-          <td>Abbildungen</td>
+          <td>Tafeln</td>
+        </tr>
+        <tr>
+          <td class="right">[% articles.count %]</td>
+          <td>Artikel</td>
+        </tr>
+        <tr>
+          <td class="right">[% patents.count %]</td>
+          <td>Patente</td>
+        </tr>
+        <tr>
+          <td class="right">[% miscs.count %]</td>
+          <td>Miszellen</td>
+        </tr>
+        <tr>
+          <td class="right">[% patentlists.count * 3 %]</td>
+          <td>Patentverzeichnisse</td>
         </tr>
         <tr>
           <td class="right">[% persons %]</td>

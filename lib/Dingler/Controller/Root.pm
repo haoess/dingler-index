@@ -65,8 +65,13 @@ The root page (/)
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
     my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
-    my $articles = $c->model('Dingler::Article')->search;
-    my $figures  = $c->model('Dingler::Figure')->search,
+    
+    my $articles    = $c->model('Dingler::Article')->search({ type => 'art_undef' });
+    my $patents     = $c->model('Dingler::Article')->search({ type => 'art_patent' });
+    my $patentlists = $c->model('Dingler::Article')->search({ type => 'art_patents' });
+    my $miscs       = $c->model('Dingler::Article')->search({ type => 'art_miscellanea' });
+    
+    my $figures  = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } );
 
     # count persons
     my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
@@ -89,6 +94,9 @@ sub index :Path :Args(0) {
     $c->stash(
         journals => $journals,
         articles => $articles,
+        patents  => $patents,
+        patentlists => $patentlists,
+        miscs    => $miscs,
         chars    => $chars,
         figures  => $figures,
         persons  => $persons,

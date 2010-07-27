@@ -79,9 +79,9 @@
         </tr>
       [% END %]
       </table>
-      <br />
+      <!--<br />
       <p><b>Abbildungen</b></p>
-      Mit Abbildung: [% figures %]
+      Mit Abbildung: [% figures %]-->
     </div>
   </div>
 [% END %]
