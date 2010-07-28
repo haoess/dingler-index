@@ -32,8 +32,12 @@
           <td>Zeichen</td>
         </tr>
         <tr>
-          <td class="right">[% figures %]</td>
+          <td class="right">[% tables %]</td>
           <td>Tafeln</td>
+        </tr>
+        <tr>
+          <td class="right">[% figures %]</td>
+          <td>Figuren</td>
         </tr>
         <tr>
           <td class="right">[% articles %]</td>

@@ -86,13 +86,11 @@ sub stats :Private {
 
     my $stats = $cache->get('stats');
     if ( not defined $stats ) {
-
         my $articles    = $c->model('Dingler::Article')->search({ type => 'art_undef' })->count;
         my $patentdescs = $c->model('Dingler::Article')->search({ type => 'art_patent' })->count;
         my $patentlists = $c->model('Dingler::Article')->search({ -or => [ type => ['art_patents', 'misc_patents'] ] })->count;
         my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' })->count;
-
-        my $figures  = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } )->count;
+        my $tables      = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } )->count;
 
         # count persons
         my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
@@ -117,16 +115,29 @@ sub stats :Private {
             $patents += $xpc->findnodes('//tei:div[@type="patent"]')->size;
         }
 
+        # count characters
         my $chars = $c->model('Dingler::Article')->search( undef, {
             'select' => [ { sum => \'LENGTH(content) + LENGTH(front)' } ],
             as       => 'chars',
         } )->first->get_column('chars');
+
+        # count figures
+        my $figures = 0;
+      IMAGE_MARKUP:
+        foreach my $imt ( glob $c->config->{svn} . '/*/image_markup/*.xml' ) {
+            eval { $xml = XML::LibXML->new->parse_file( $imt ); 1 };
+            next IMAGE_MARKUP if $@;
+            $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+            $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+            $figures += $xpc->findnodes('/tei:TEI/tei:text/tei:body/tei:div/tei:div')->size;
+        }
 
         $cache->set( articles    => $articles );
         $cache->set( patentdescs => $patentdescs );
         $cache->set( patentlists => $patentlists );
         $cache->set( miscs       => $miscs );
         $cache->set( chars       => $chars );
+        $cache->set( tables      => $tables );
         $cache->set( figures     => $figures );
         $cache->set( persons     => $persons );
         $cache->set( sources     => $sources );
@@ -140,6 +151,7 @@ sub stats :Private {
         patentlists => $cache->get('patentlists'),
         miscs       => $cache->get('miscs'),
         chars       => $cache->get('chars'),
+        tables      => $cache->get('tables'),
         figures     => $cache->get('figures'),
         persons     => $cache->get('persons'),
         sources     => $cache->get('sources'),
