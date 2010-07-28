@@ -36,6 +36,18 @@
 </xsl:template>
 <xsl:template match='tei:persName'/>
 
+<xsl:template match='tei:sex'>
+  <p>
+    Geschlecht:
+    <xsl:choose>
+      <xsl:when test='@value=0'>⚬</xsl:when>
+      <xsl:when test='@value=1'>♂</xsl:when>
+      <xsl:when test='@value=2'>♀</xsl:when>
+      <xsl:when test='@value=9'>nicht bestimmbar</xsl:when>
+    </xsl:choose>
+  </p>
+</xsl:template>
+
 <xsl:template match='tei:birth'>
   <p>
     *
