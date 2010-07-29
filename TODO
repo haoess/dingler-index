@@ -6,3 +6,57 @@
 * in Tabellenzellen: s/(\d+)(\s)(\w)/$1&nbsp;$3/g;
 * Miszellentitel: Fussnoten aussondern
 * Suchergebnisse: Abbildung vorhanden
+* Bilder in Fussnoten
+
+============
+
+Statistiken:
+
+1) Patentverzeichnisse kann weg
+
+2) Patente verlinken auf »Patentverzeichnis«:
+
+a) Zugriff nach Land: Englische Patente, Französische Patente etc.
+XPATH: //text[type='art_patents'][subtype='english'] etc.
+b) chronologischer Zugriff (Dekade): 1820er, 1830er
+c) chronologischer Zugriff (Jahr): 1820, 1821 ...
+
+
+3) add »Figuren«
+- Anzahl aller per Koordinaten ausgezeichneten Figuren
+count(/TEI/text/body/div/div) in */*Z.xml
+
+
+
+------------------
+
+Artikelansicht:
+
+1) art_literature berücksichtigen
+2) wenn Miszellen keine Nummern haben im Original, dann einfach durchzählen und per [] kenntlich machen
+
+
+-------------------
+
+Personenverzeichnis:
+
+- differenzierter Zugriff per "role", also:
+Autor | Patentträger | Alle
+
+---------------------
+
+
+Treffergruppierung:
+
+1) Allgemein
+»Einschränkung aufheben« ermöglichen
+
+2) Abbildungen
+- Artikel mit Abbildung verlinken, um damit Einschränkung zu ermöglichen
+
+
+--------------------------
+
+
+IMT:
+- columntitle in annotations

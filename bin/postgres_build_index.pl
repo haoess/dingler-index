@@ -13,6 +13,12 @@ use XML::LibXML;
 
 my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler' ) or die $DBI::errstr;
 
+my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
+my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
+my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
+my $sth_author = $dbh->prepare( 'INSERT INTO author (person, article) VALUES (?, ?)' );
+my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref) VALUES (?, ?)' );
+
 JOURNAL:
   foreach my $journal ( @ARGV ) {
     debug( "Processing $journal ...\n" );
@@ -30,14 +36,17 @@ JOURNAL:
     my $facsimile = $xpc->find( '//tei:sourceDesc//tei:idno' );
     my $j_facsimile = Dingler::Util::faclink($facsimile);
 
-    my $sth = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
-    $sth->execute( $jid, $volume, $year, $j_facsimile );
+    $sth_journal->execute( $jid, $volume, $year, $j_facsimile );
 
     my $pos = 1;
     foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]') ) {
         my $data = prepare_article( $article, $xpc );
-        $sth = $dbh->prepare( 'INSERT INTO article(id, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
-        $sth->execute( $data->{id}, $jid, $data->{type}, $volume, $data->{number}, $data->{title}, $data->{pagestart}, $data->{pageend}, $data->{facsimile}, $data->{front}, $data->{content}, $pos );
+        $sth_article->execute(
+            $data->{id},      undef,              $jid,           $data->{type},
+            $volume,          $data->{number},    $data->{title}, $data->{pagestart},
+            $data->{pageend}, $data->{facsimile}, $data->{front}, $data->{content},
+            $pos
+        );
 
         if ( $data->{type} eq 'art_miscellanea' ) {
             my $miscpos = 1;
@@ -51,22 +60,19 @@ JOURNAL:
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );
                 $mi_facsimile = Dingler::Util::faclink($facsimile);
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
-                my $sth = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, volume, number, title, pagestart, pageend, facsimile, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
-                $sth->execute( $miscid, $data->{id}, $jid, $type, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, $content, $miscpos );
+                $sth_article->execute( $miscid, $data->{id}, $jid, $type, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
                 $miscpos++;
             }
         }
 
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
-            $sth = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
             my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
-            $sth->execute( $data->{id}, $figlink );
+            $sth_figure->execute( $data->{id}, $figlink );
         }
         foreach my $author ( $xpc->findnodes('tei:front//tei:persName[@role="author" or @role="author_orig"]', $article) ) {
-            $sth = $dbh->prepare( 'INSERT INTO author (person, article) VALUES (?, ?)' );
             my $ref = idonly( $xpc->find('@ref', $author) );
             next if $ref eq '-';
-            $sth->execute( $ref, $data->{id} );
+            $sth_author->execute( $ref, $data->{id} );
         }
         $pos++;
     }
@@ -81,8 +87,7 @@ JOURNAL:
     while ( my ($k, $v) = each %refs ) {
         next if $k eq '-';
         foreach my $ref ( @$v ) {
-            $sth = $dbh->prepare( 'INSERT INTO person (id, ref) VALUES (?, ?)' );
-            $sth->execute( $k, $ref );
+            $sth_person->execute( $k, $ref );
         }
     }
 

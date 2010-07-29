@@ -1,0 +1,20 @@
+<h1>Patentverzeichnis</h1>
+
+<h2>Zugriff nach Land</h2>
+
+<ul>
+  <li><a href="patent/c/english">England</a></li>
+  <li><a href="patent/c/french">Frankreich</a></li>
+  <li><a href="patent/c/austrian">Österreich</a></li>
+  <li><a href="patent/c/prussian">Österreich</a></li>
+  <li><a href="patent/c/scottish">Schottland</a></li>
+  <li><a href="patent/c/american">USA</a></li>
+</ul>
+
+<h2>Zugriff nach Dekade</h2>
+
+<ul>
+  [% FOREACH i IN [ 1820 .. 1930 ]; NEXT UNLESS i % 10 == 0 %]
+    <li><a href="patent/d/[% i %]">[% i %]er Jahre</a></li>
+  [% END %]
+</ul>

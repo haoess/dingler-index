@@ -4,6 +4,9 @@ DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
 DROP TABLE IF EXISTS author CASCADE;
 DROP FUNCTION IF EXISTS article_trigger();
+DROP TABLE IF EXISTS patent CASCADE;
+DROP FUNCTION IF EXISTS patent_trigger();
+DROP TABLE IF EXISTS patent_app CASCADE;
 
 -- --------------------------
 
@@ -67,6 +70,39 @@ CREATE TABLE person (
 
 CREATE TABLE author (
   person  TEXT,
-  article TEXT REFERENCES article(id),
+  article TEXT REFERENCES article (id),
   PRIMARY KEY (person, article)
+);
+
+-- --------------------------
+
+CREATE TABLE patent (
+  id      TEXT PRIMARY KEY,
+  article TEXT REFERENCES article (id),
+  subtype TEXT,
+  date    DATE,
+  xml     TEXT,
+  content TEXT,
+  tsv     TSVECTOR
+);
+
+CREATE INDEX patent_tsv_idx ON patent USING gin(tsv);
+
+CREATE FUNCTION patent_trigger() RETURNS trigger AS $$
+begin
+  new.tsv := to_tsvector('german', coalesce(new.content,''));
+  return new;
+end
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
+ON patent FOR EACH ROW EXECUTE PROCEDURE patent_trigger();
+
+-- --------------------------
+
+CREATE TABLE patent_app (
+  id       SERIAL PRIMARY KEY,
+  patent   TEXT REFERENCES patent (id),
+  personid TEXT,
+  name     TEXT
 );

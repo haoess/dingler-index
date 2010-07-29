@@ -230,6 +230,20 @@ __PACKAGE__->has_many(
   { "foreign.article" => "self.id" },
 );
 
+=head2 patents
+
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Patent>
+
+=cut
+
+__PACKAGE__->has_many(
+  "patents",
+  "Dingler::Schema::Result::Patent",
+  { "foreign.article" => "self.id" },
+);
+
 =head2 people
 
 Type: has_many
@@ -245,8 +259,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-26 22:28:05
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:yFodruyiyEpkyqNUS2urZA
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-29 21:38:39
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:bNcUhx0rcZEt9UND80X4nQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

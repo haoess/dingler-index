@@ -1,0 +1,5 @@
+<h1>Patentverzeichnis</h1>
+
+[% WHILE (patent = rs.next) %]
+  <h3>[% patent.date.strftime('%d.%m.%Y') %]</h3>
+[% END %]
