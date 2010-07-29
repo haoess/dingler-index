@@ -157,6 +157,10 @@ sub stats :Private {
         sources     => $cache->get('sources'),
         patents     => $cache->get('patents'),
     );
+    my $favcookie = $c->req->cookie('dinglerfav');
+    if ( $favcookie ) {
+        $c->stash->{favs} = $c->model('Fav::Cookie')->search({ uniqid  => $favcookie->value })->count;
+    }
 }
 
 =head2 default

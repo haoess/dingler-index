@@ -37,6 +37,14 @@ sub index :Path :Args(2) {
         misc    => ($article =~ /^mi/) ? 1 : 0,
     );
 
+    my $favcookie = $c->req->cookie('dinglerfav');
+    if ( $favcookie ) {
+        $c->stash->{fav} = $c->model('Fav::Cookie')->search({
+            article => $article,
+            uniqid  => $favcookie->value,
+        })->first;
+    }
+
     $c->forward('set_meta', [$journal, $article]);
     $c->forward('article_xslt', [$journal, $article]);
     $c->forward('article_plain', [$journal, $article]);

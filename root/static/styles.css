@@ -32,12 +32,14 @@ td.mainleft   { padding-top:10px }
 td.mainmiddle { padding-left:2em; font-size:1.4em }
 td.mainright  { padding-top:0px }
 
-.nav { border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
+.nav { position:relative; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
 .nav table { width:100% }
 
 .meta { border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#fafafa; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
 .meta table { padding-left:10px; padding-right:10px }
 .meta table .caption { color:#069 }
+
+#starrater { position:absolute; left:5px; top:5px; cursor:pointer }
 
 .rightbox        { margin-bottom:2em }
 .rightboxhead    { padding:2px 1em; border-top:1px solid #ccc; border-bottom:1px solid #ccc; font-weight:bold; background:#eee }

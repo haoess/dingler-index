@@ -1,0 +1,7 @@
+<h1>Favoriten</h1>
+
+<ul>
+[% FOREACH fav IN favs %]
+  <li><a href="article/[% fav.item('article').journal.id %]/[% fav.article %]">[% fav.item('article').title | html %]</a></li>
+[% END %]
+</ul>

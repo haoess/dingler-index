@@ -17,6 +17,25 @@
   <table>
     <tr>
       <td>
+  <div id="starrater">
+    <img src="static/images/[% 'no' UNLESS fav %]fav.png" alt="" />
+  </div>
+  <script type="text/javascript">
+    jQuery('#starrater img').mouseenter(
+      function() { jQuery(this).attr('src', 'static/images/' + (jQuery(this).attr('src').match(/no/) ? '' : 'no') + 'fav.png') }
+    );
+    jQuery('#starrater img').mouseleave(
+      function() { jQuery(this).attr('src', 'static/images/' + (jQuery(this).attr('src').match(/no/) ? '' : 'no') + 'fav.png') }
+    );
+    jQuery('#starrater img').click(
+      function() {
+        var nofav = jQuery(this).attr('src').match(/no/);
+        var mode = nofav ? 'delete' : 'add';
+        jQuery.post( '[% base %]fav/' + mode + '/[% article %]' );
+        jQuery(this).attr('src', 'static/images/' + (jQuery(this).attr('src').match(/no/) ? '' : 'no') + 'fav.png');
+      }
+    );
+  </script>
         Sie sind hier: <a href="[% base %]">Startseite</a> &rarr;
         <a href="journal/[% journal | html %]">Band [% volume | html %]</a> &rarr;
         [% IF number %]Artikel [% number | html %][% END %][% IF misc && number  %]/[% END; IF misc %]Miszelle [% item.position %][% END %]

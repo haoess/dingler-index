@@ -67,6 +67,10 @@
           <td class="right">[% sources %]</td>
           <td><a href="source/list">Quellen</a></td>
         </tr>
+        <tr class="nolab">
+          <td class="right">[% favs OR 0 %]</td>
+          <td><a href="fav/list">Favoriten</a></td>
+        </tr>
       </table>
     </div>
   </div>
