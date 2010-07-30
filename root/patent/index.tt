@@ -3,12 +3,9 @@
 <h2>Zugriff nach Land</h2>
 
 <ul>
-  <li><a href="patent/c/english">England</a></li>
-  <li><a href="patent/c/french">Frankreich</a></li>
-  <li><a href="patent/c/austrian">Österreich</a></li>
-  <li><a href="patent/c/prussian">Österreich</a></li>
-  <li><a href="patent/c/scottish">Schottland</a></li>
-  <li><a href="patent/c/american">USA</a></li>
+  [% FOREACH lang IN langmap %]
+    <li><a href="patent/c/[% lang.0 | html %]">[% lang.1 | html %]</a></li>
+  [% END %]
 </ul>
 
 <h2>Zugriff nach Dekade</h2>

@@ -1,5 +1,8 @@
 <h1>Patentverzeichnis</h1>
 
+[% PROCESS 'pager.tt' %]
+
 [% WHILE (patent = rs.next) %]
-  <h3>[% patent.date.strftime('%d.%m.%Y') %]</h3>
+  <h3>[% patent.date.strftime('%d.&thinsp;%m.&thinsp;%Y') %]</h3>
+  <p>[% patent.content | html %]</p>
 [% END %]

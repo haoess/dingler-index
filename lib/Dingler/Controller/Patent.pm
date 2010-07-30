@@ -4,6 +4,16 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use utf8;
+my @langmap = (
+    [ qw(english England) ],
+    [ qw(french Frankreich) ],
+    [ qw(austrian Österreich) ],
+    [ qw(prussian Preußen) ],
+    [ qw(scottish Schottland) ],
+    [ qw(american USA) ],
+);
+
 =head1 NAME
 
 Dingler::Controller::Patent - Catalyst Controller
@@ -13,6 +23,16 @@ Dingler::Controller::Patent - Catalyst Controller
 Catalyst Controller.
 
 =head1 METHODS
+
+=head2 auto
+
+=cut
+
+sub auto :Private {
+    my ( $self, $c ) = @_;
+    $c->stash( langmap => \@langmap );
+    return 1;
+}
 
 =head2 index
 
@@ -31,10 +51,28 @@ Browse patents by country.
 sub c :Local {
     my ( $self, $c, $subtype ) = @_;
 
-    my $rs = $c->model('Dingler::Patent')->search({ subtype => $subtype }, { order_by => 'date' });
+    my $limit = 20;
+    my $page = $c->req->params->{p} || 1;
+    $page = 1 if $page !~ /\A[0-9]+\z/;
+    my $pager = Data::Page->new;
+    $pager->total_entries( $c->model('Dingler::Patent')->search({ subtype => $subtype })->count );
+    $pager->entries_per_page( $limit );
+    $pager->current_page( $page );
+
+    my $rs = $c->model('Dingler::Patent')->search(
+        {
+            subtype => $subtype
+        },
+        {
+            order_by => 'date',
+            rows     => $limit,
+            offset   => ($page - 1) * $limit,
+        }
+    );
 
     $c->stash(
-        rs => $rs,
+        pager => $pager,
+        rs    => $rs,
     );
 }
 
