@@ -61,7 +61,7 @@ sub c :Local {
 
     my $rs = $c->model('Dingler::Patent')->search(
         {
-            subtype => $subtype
+            subtype => $subtype,
         },
         {
             order_by => 'date',
@@ -71,8 +71,9 @@ sub c :Local {
     );
 
     $c->stash(
-        pager => $pager,
-        rs    => $rs,
+        pager   => $pager,
+        rs      => $rs,
+        subtype => (grep { $_->[0] eq $subtype } @langmap)[0],
     );
 }
 
