@@ -1,6 +1,6 @@
 <h1>Patentverzeichnis</h1>
 
-[% PROCESS 'pager.tt' %]
+[% PROCESS 'search/pager.tt' %]
 
 [% WHILE (patent = rs.next) %]
   <h3>[% patent.date.strftime('%d.&thinsp;%m.&thinsp;%Y') %]</h3>

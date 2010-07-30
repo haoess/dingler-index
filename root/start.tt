@@ -67,11 +67,14 @@
           <td class="right">[% sources %]</td>
           <td><a href="source/list">Quellen</a></td>
         </tr>
-        <tr class="nolab">
-          <td class="right">[% favs OR 0 %]</td>
-          <td><a href="fav/list">Favoriten</a></td>
-        </tr>
       </table>
+    </div>
+  </div>
+
+  <div class="rightbox" class="nolab">
+    <div class="rightboxhead">Mein Dingler</div>
+    <div class="rightboxcontent">
+      <a href="fav/list">[% favs OR 0 %] Favorit[% 'en' UNLESS favs == 1 %]</a>
     </div>
   </div>
 [% END %]
