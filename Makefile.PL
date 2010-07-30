@@ -37,6 +37,7 @@ requires 'Data::Page';
 requires 'Catalyst::Plugin::AccessLog';
 requires 'XML::Feed';
 requires 'Digest::SHA';
+requires 'DateTime::Format::Pg';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
