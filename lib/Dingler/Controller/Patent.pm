@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use Scalar::Util qw(weaken);
+
 use utf8;
 my @langmap = (
     [ qw(english England) ],
@@ -31,6 +33,22 @@ Catalyst Controller.
 sub auto :Private {
     my ( $self, $c ) = @_;
     $c->stash( langmap => \@langmap );
+    $c->stash(
+        render_patent => sub {
+            my ($id, $xml) = @_;
+            weaken $c;
+            $c->stash(
+                id       => $id,
+                template => 'unit.xsl',
+                xml      => $xml,
+            );
+            $c->forward('Dingler::View::XSLT');
+            my $xsl = $c->res->body;
+            utf8::decode($xsl);
+            $c->res->body( undef );
+            return $xsl;
+        },
+    );
     return 1;
 }
 
@@ -51,18 +69,51 @@ Browse patents by country.
 sub c :Local {
     my ( $self, $c, $subtype ) = @_;
 
+    my $search = { subtype => $subtype };
+
+    $c->forward('build_rs', [$search]);
+
+    $c->stash(
+        facet    => (grep { $_->[0] eq $subtype } @langmap)[0][1],
+        template => 'patent/list.tt',
+    );
+}
+
+=head2 d
+
+Browse patents by decade.
+
+=cut
+
+sub d :Local {
+    my ( $self, $c, $decade ) = @_;
+
+    my $search = { date => { -between => [ "$decade-01-01", ($decade+9)."-12-31" ] } };
+
+    $c->forward('build_rs', [$search]);
+
+    $c->stash(
+        facet    => sprintf( 'Dekade: %ser', $decade ),
+        template => 'patent/list.tt',
+    );
+}
+
+=head2 build_rs
+
+=cut
+
+sub build_rs :Private {
+    my ( $self, $c, $search ) = @_;
     my $limit = 20;
     my $page = $c->req->params->{p} || 1;
     $page = 1 if $page !~ /\A[0-9]+\z/;
     my $pager = Data::Page->new;
-    $pager->total_entries( $c->model('Dingler::Patent')->search({ subtype => $subtype })->count );
+    $pager->total_entries( $c->model('Dingler::Patent')->search( $search )->count );
     $pager->entries_per_page( $limit );
     $pager->current_page( $page );
 
     my $rs = $c->model('Dingler::Patent')->search(
-        {
-            subtype => $subtype,
-        },
+        $search,
         {
             order_by => 'date',
             rows     => $limit,
@@ -71,9 +122,31 @@ sub c :Local {
     );
 
     $c->stash(
-        pager   => $pager,
+        pager => $pager,
+        rs    => $rs,
+    );
+}
+
+=head2 XXX
+
+=cut
+
+sub sineapp :Local {
+    my ( $self, $c, $subtype ) = @_;
+
+    my $rs = $c->model('Dingler::Patent')->search(
+        {
+            'patent_apps.id' => undef,
+        },
+        {
+            order_by => 'date',
+            join => [ 'patent_apps' ],
+            rows => 20,
+        }
+    );
+
+    $c->stash(
         rs      => $rs,
-        subtype => (grep { $_->[0] eq $subtype } @langmap)[0],
     );
 }
 

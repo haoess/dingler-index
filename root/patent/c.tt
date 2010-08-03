@@ -1,9 +1,0 @@
-<h1>Patentverzeichnis</h1>
-<h2>[% subtype.1 %]</h2>
-
-[% PROCESS 'search/pager.tt' %]
-
-[% WHILE (patent = rs.next) %]
-  <h3>[% patent.date.strftime('%d.&thinsp;%m.&thinsp;%Y') %]</h3>
-  <p>[% patent.content | html %]</p>
-[% END %]

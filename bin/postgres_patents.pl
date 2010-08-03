@@ -17,7 +17,7 @@ my $sth_patent = $dbh->prepare( 'INSERT INTO patent (id, article, subtype, date,
 my $sth_app    = $dbh->prepare( 'INSERT INTO patent_app (patent, personid, name) VALUES (?, ?, ?)' );
 
 my $parser = XML::LibXML->new;
-$parser->expand_entities(0);
+$parser->expand_entities(1);
 
 JOURNAL:
   foreach my $journal ( @ARGV ) {
@@ -37,9 +37,21 @@ JOURNAL:
         my $subtype   = $xpc->find( '@subtype', $list )."";
         foreach my $patent ( $xpc->findnodes("//*[\@xml:id='$articleid']//tei:div[\@type='patent']") ) {
             my $id   = $xpc->find( '@xml:id', $patent )."";
-            my $date = $xpc->find( '*//tei:date/@when', $patent )."" || undef;
+            my ($date) = $xpc->findnodes( '*//tei:date/@when', $patent )->get_node(1);
+            $date = $date ? $date->to_literal : undef;
             my $content = Dingler::Util::uml( normalize($patent->to_literal) );
+
             my $xml = $patent->toString;
+            $xml = <<"EOT";
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="/home/fw/src/kuwi/dingler/Schema/dingler.rnc" type="compact"?>
+<!DOCTYPE TEI SYSTEM "/home/fw/src/kuwi/dingler/Schema/dingler.dtd"[
+%externe_zeichendefinition;
+]>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="de-DE">
+  $xml
+</TEI>
+EOT
             $sth_patent->execute( $id, $articleid, $subtype, $date, $xml, $content );
 
             foreach my $app ( $xpc->findnodes("//*[\@xml:id='$id']//tei:persName[\@role='patent_app']") ) {

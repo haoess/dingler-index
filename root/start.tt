@@ -52,12 +52,8 @@
           <td>Miszellen</td>
         </tr>
         <tr>
-          <td class="right">[% patentlists %]</td>
-          <td>Patentverzeichnisse</td>
-        </tr>
-        <tr>
           <td class="right">[% patents %]</td>
-          <td>Patente</td>
+          <td><a href="patent">Patente</a></td>
         </tr>
         <tr class="nolab">
           <td class="right">[% persons %]</td>

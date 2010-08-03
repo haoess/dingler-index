@@ -25,11 +25,6 @@ b) chronologischer Zugriff (Dekade): 1820er, 1830er
 c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
 
-3) add »Figuren«
-- Anzahl aller per Koordinaten ausgezeichneten Figuren
-count(/TEI/text/body/div/div) in */*Z.xml
-
-
 
 ------------------
 

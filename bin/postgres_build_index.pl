@@ -11,7 +11,7 @@ use Dingler::Util;
 use DBI;
 use XML::LibXML;
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler' ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1 } ) or die $DBI::errstr;
 
 my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
 my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );

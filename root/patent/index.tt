@@ -11,7 +11,7 @@
 <h2>Zugriff nach Dekade</h2>
 
 <ul>
-  [% FOREACH i IN [ 1820 .. 1930 ]; NEXT UNLESS i % 10 == 0 %]
+  [% FOREACH i IN [ 1810 .. 1930 ]; NEXT UNLESS i % 10 == 0 %]
     <li><a href="patent/d/[% i %]">[% i %]er Jahre</a></li>
   [% END %]
 </ul>
