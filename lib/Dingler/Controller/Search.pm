@@ -6,6 +6,13 @@ BEGIN {extends 'Catalyst::Controller'; }
 
 use Data::Page;
 
+my @typemap = (
+    [ qw(art_patent Patentbeschreibung) ],
+    [ qw(art_patents Patentverzeichnis) ],
+    [ qw(art_undef Artikel) ],
+    [ qw(misc_undef Miszelle) ],
+);
+
 =head1 NAME
 
 Dingler::Controller::Search - Catalyst Controller
@@ -15,6 +22,16 @@ Dingler::Controller::Search - Catalyst Controller
 Catalyst Controller.
 
 =head1 METHODS
+
+=head2 auto
+
+=cut
+
+sub auto :Private {
+    my ( $self, $c ) = @_;
+    $c->stash( typemap => \@typemap );
+    return 1;
+}
 
 =head2 help
 
@@ -58,8 +75,8 @@ sub search :Global {
     }
 
     my $texttype = $c->req->params->{texttype};
-    if ( defined $texttype && $texttype =~ /\A(art_(?:patent|undef))\z/ ) {
-        $add .= " AND me.type = " . $dbh->quote($1);
+    if ( defined $texttype && grep { $_->[0] eq $texttype } @typemap ) {
+        $add .= " AND me.type = " . $dbh->quote($texttype);
         push @facets, [ texttype => $texttype ];
     }
 
@@ -140,10 +157,11 @@ sub facets :Private {
     while ( my $match = $matches->next ) {
         my $year = $match->get_column('year');
         $year =~ /\A([0-9]{3})/;
-        $c->stash->{years}{ $1 . "0" }++;
+        $c->stash->{facet}{decade}{ $1 }++;
+
         my $type = $match->type;
         $type = 'art_patents' if $type eq 'misc_patents';
-        $c->stash->{types}{ $type }++;
+        $c->stash->{facet}{texttype}{ $type }++;
         #my $figures = $match->figures->search( undef, { group_by => 'url' } )->count;
         #$c->stash->{figures} += $figures;
     }

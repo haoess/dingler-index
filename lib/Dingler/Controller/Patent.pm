@@ -106,10 +106,9 @@ sub build_rs :Private {
         my $subtype = $match->subtype;
         $c->stash->{facet}{subtype}{$subtype}++;
 
-        my $date = $match->date;
+        my $date = $match->get_column('date');
         if ( $date ) {
-            my $year = $date->strftime('%Y');
-            $year =~ /\A(\d{3})/;
+            $date =~ /\A(\d{3})/;
             $c->stash->{facet}{decade}{$1}++;
         }
     }

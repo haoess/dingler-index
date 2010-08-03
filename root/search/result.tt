@@ -65,19 +65,42 @@
   <div class="rightbox nolab">
     <div class="rightboxhead">Treffergruppierung</div>
     <div class="rightboxcontent">
-      <p><b>Jahrgänge</b></p>
-      [% FOREACH year IN years.keys.sort %]
-        [% year %]er: <a href="[% c.uri_for('/search', { q => q, decade => year }) %]">[% years.$year %]</a><br />
-      [% END %]
-      <br />
-      <p><b>Textsorte</b></p>
+      <p>
+        <b>Dekade</b>
+        [% IF c.req.params.decade %](<a href="[% c.req.uri_with({ decade => undef }) %]">Filter aufheben</a>)[% END %]
+      </p>
       <table>
-      [% FOREACH type IN types.keys.sort %]
+        [% FOREACH i IN [ 181 .. 193 ] %]
         <tr>
-          <td class="right">[% typename(type) %]:</td>
-          <td><a href="[% c.uri_for('/search', { q => q, texttype => type }) %]">[% types.$type %]</a></td>
+          <td>[% i %]0er:</td>
+          <td class="right">
+            [% IF facet.decade.$i %]
+              <a href="[% c.req.uri_with({ decade => i _ 0 }) %]">[% facet.decade.$i + 0 %]</a>
+            [% ELSE %]
+              0
+            [% END %]
+          </td>
         </tr>
-      [% END %]
+        [% END %]
+      </table>
+      <br />
+      <p>
+        <b>Textsorte</b>
+        [% IF c.req.params.texttype %](<a href="[% c.req.uri_with({ texttype => undef }) %]">Filter aufheben</a>)[% END %]
+      </p>
+      <table>
+        [% FOREACH type IN typemap %]
+        <tr>
+          <td class="right">[% type.1 | html %]:</td>
+          <td class="right">
+            [% IF facet.texttype.${type.0} %]
+              <a href="[% c.req.uri_with({ texttype => type.0 }) %]">[% facet.texttype.${type.0} %]</a>
+            [% ELSE %]
+              0
+            [% END %]
+          </td>
+        </tr>
+        [% END %]
       </table>
       <!--<br />
       <p><b>Abbildungen</b></p>
