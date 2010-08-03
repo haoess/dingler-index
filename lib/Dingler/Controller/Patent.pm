@@ -36,7 +36,6 @@ sub auto :Private {
     $c->stash(
         render_patent => sub {
             my ($id, $xml) = @_;
-            weaken $c;
             $c->stash(
                 id       => $id,
                 template => 'unit.xsl',
