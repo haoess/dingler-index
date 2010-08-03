@@ -66,43 +66,21 @@ sub auto :Private {
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-}
 
-=head2 c
+    my $search = {};
 
-Browse patents by country.
+    if ( my $subtype = $c->req->params->{subtype} ) {
+        $search->{subtype} = $subtype;
+    }
 
-=cut
-
-sub c :Local {
-    my ( $self, $c, $subtype ) = @_;
-
-    my $search = { subtype => $subtype };
+    if ( my $decade = $c->req->params->{decade} ) {
+        $search->{date} = { -between => [ "$decade-01-01", ($decade+9)."-12-31" ] };
+    }
 
     $c->forward('build_rs', [$search]);
 
     $c->stash(
-        facet    => (grep { $_->[0] eq $subtype } @langmap)[0][1],
-        template => 'patent/list.tt',
-    );
-}
-
-=head2 d
-
-Browse patents by decade.
-
-=cut
-
-sub d :Local {
-    my ( $self, $c, $decade ) = @_;
-
-    my $search = { date => { -between => [ "$decade-01-01", ($decade+9)."-12-31" ] } };
-
-    $c->forward('build_rs', [$search]);
-
-    $c->stash(
-        facet    => sprintf( 'Dekade: %ser', $decade ),
-        template => 'patent/list.tt',
+        template => keys %$search ? 'patent/list.tt' : 'patent/index.tt',
     );
 }
 
@@ -120,7 +98,22 @@ sub build_rs :Private {
     $pager->entries_per_page( $limit );
     $pager->current_page( $page );
 
-    my $rs = $c->model('Dingler::Patent')->search(
+    my $rs = $c->model('Dingler::Patent')->search( $search );
+
+    while ( my $match = $rs->next ) {
+        my $subtype = $match->subtype;
+        $c->stash->{facet}{subtype}{$subtype}++;
+
+        my $date = $match->date;
+        if ( $date ) {
+            my $year = $date->strftime('%Y');
+            $year =~ /\A(\d{3})/;
+            $c->stash->{facet}{decade}{$1}++;
+        }
+    }
+    $rs->reset; # don't forget
+
+    $rs = $rs->search(
         $search,
         {
             order_by => 'date',
@@ -128,7 +121,6 @@ sub build_rs :Private {
             offset   => ($page - 1) * $limit,
         }
     );
-
     $c->stash(
         pager => $pager,
         rs    => $rs,

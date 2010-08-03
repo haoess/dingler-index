@@ -1,5 +1,4 @@
 <h1><a href="patent">Patentverzeichnis</a></h1>
-<h2>[% facet | html %]</h2>
 
 [% PROCESS 'search/pager.tt' %]
 
@@ -37,3 +36,48 @@
   });
 </script>
 <!-- //common! -->
+
+[% BLOCK right %]
+  <div class="rightbox nolab">
+    <div class="rightboxhead">Treffergruppierung</div>
+    <div class="rightboxcontent">
+      <p>
+        <b>Länder</b>
+        [% IF c.req.params.subtype %](<a href="[% c.req.uri_with({ subtype => undef }) %]">Filter aufheben</a>)[% END %]
+      </p>
+      <table>
+        [% FOREACH lang IN langmap %]
+        <tr>
+          <td>[% lang.1 | html %]:</td>
+          <td class="right">
+            [% IF facet.subtype.${lang.0} %]
+              <a href="[% c.req.uri_with({ subtype => lang.0 }) %]">[% facet.subtype.${lang.0} + 0 %]</a>
+            [% ELSE %]
+              0
+            [% END %]
+          </td>
+        </tr>
+        [% END %]
+      </table>
+      <br />
+      <p>
+        <b>Dekade</b>
+        [% IF c.req.params.decade %](<a href="[% c.req.uri_with({ decade => undef }) %]">Filter aufheben</a>)[% END %]
+      </p>
+      <table>
+        [% FOREACH i IN [ 181 .. 193 ] %]
+        <tr>
+          <td>[% i %]0er:</td>
+          <td class="right">
+            [% IF facet.decade.$i %]
+              <a href="[% c.req.uri_with({ decade => i _ 0 }) %]">[% facet.decade.$i + 0 %]</a>
+            [% ELSE %]
+              0
+            [% END %]
+          </td>
+        </tr>
+        [% END %]
+      </table>
+    </div>
+  </div>
+[% END %]

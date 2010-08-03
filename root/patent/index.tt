@@ -4,7 +4,7 @@
 
 <ul>
   [% FOREACH lang IN langmap %]
-    <li><a href="patent/c/[% lang.0 | html %]">[% lang.1 | html %]</a></li>
+    <li><a href="patent/?subtype=[% lang.0 | html %]">[% lang.1 | html %]</a></li>
   [% END %]
 </ul>
 
@@ -12,6 +12,6 @@
 
 <ul>
   [% FOREACH i IN [ 1810 .. 1930 ]; NEXT UNLESS i % 10 == 0 %]
-    <li><a href="patent/d/[% i %]">[% i %]er Jahre</a></li>
+    <li><a href="patent/?decade=[% i %]">[% i %]er Jahre</a></li>
   [% END %]
 </ul>
