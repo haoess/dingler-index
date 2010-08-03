@@ -35,16 +35,25 @@ sub auto :Private {
     $c->stash( langmap => \@langmap );
     $c->stash(
         render_patent => sub {
-            my ($id, $xml) = @_;
-            $c->stash(
-                id       => $id,
-                template => 'unit.xsl',
-                xml      => $xml,
-            );
-            $c->forward('Dingler::View::XSLT');
-            my $xsl = $c->res->body;
-            utf8::decode($xsl);
-            $c->res->body( undef );
+            my ( $id, $xml ) = @_;
+
+            my $cache = Cache::FileCache->new({
+                cache_root => $c->path_to( 'var', 'cache' )."",
+                namespace  => 'dingler-patents'
+            });
+            my $xsl = $cache->get( $id );
+            if ( not defined $xsl ) {
+                $c->stash(
+                    id       => $id,
+                    template => 'unit.xsl',
+                    xml      => $xml,
+                );
+                $c->forward('Dingler::View::XSLT');
+                $xsl = $c->res->body;
+                utf8::decode($xsl);
+                $c->res->body( undef );
+            }
+            $cache->set( $id, $xsl );
             return $xsl;
         },
     );

@@ -24,7 +24,7 @@ XPATH: //text[type='art_patents'][subtype='english'] etc.
 b) chronologischer Zugriff (Dekade): 1820er, 1830er
 c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
-
+-> bisher wird nur das erste <date type="dd"> gespeichert
 
 ------------------
 
