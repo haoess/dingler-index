@@ -77,11 +77,13 @@ sub index :Path :Args(0) {
         $search->{date} = { -between => [ "$decade-01-01", ($decade+9)."-12-31" ] };
     }
 
-    $c->forward('build_rs', [$search]);
-
-    $c->stash(
-        template => keys %$search ? 'patent/list.tt' : 'patent/index.tt',
-    );
+    if ( keys %$search ) {
+        $c->forward('build_rs', [$search]);
+        $c->stash( template => 'patent/list.tt' );
+    }
+    else {
+        $c->stash( template => 'patent/index.tt' );
+    }
 }
 
 =head2 build_rs
