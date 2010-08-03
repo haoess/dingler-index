@@ -91,6 +91,7 @@ sub stats :Private {
         my $patentlists = $c->model('Dingler::Article')->search({ -or => [ type => ['art_patents', 'misc_patents'] ] })->count;
         my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' })->count;
         my $tables      = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } )->count;
+        my $patents     = $c->model('Dingler::Patent')->search->count;
 
         # count persons
         my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
@@ -103,17 +104,6 @@ sub stats :Private {
         $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
         $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
         my $sources = $xpc->findnodes('//tei:bibl')->size;
-
-        # count patents
-        my $patents = 0;
-      JOURNAL:
-        foreach my $journal ( glob $c->config->{svn} . '/*/*Z.xml' ) {
-            eval { $xml = XML::LibXML->new->parse_file( $journal ); 1 };
-            next JOURNAL if $@;
-            $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-            $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-            $patents += $xpc->findnodes('//tei:div[@type="patent"]')->size;
-        }
 
         # count characters
         my $chars = $c->model('Dingler::Article')->search( undef, {
