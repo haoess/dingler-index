@@ -105,6 +105,7 @@ $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '234', 'mi093065
 $dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '234', 'mi093065_5' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '348', 'ar100062' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '356', 'ar104079' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '294', 'ar132085' );
 
 $dbh->disconnect;
 
