@@ -90,8 +90,11 @@ sub set_meta :Private {
     $c->stash->{figures} = \@figures;
 
     my @authors;
-    foreach my $author ( $ar->authors->all ) {
-        push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->person );
+    foreach my $author ( $ar->people ) {
+        next unless $author->role eq 'author' or
+                    $author->role eq 'originator' or
+                    $author->role eq 'author_orig';
+        push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->id );
     }
     push @authors, 'Anonymus' if !@authors;
     $c->stash->{authors} = \@authors;

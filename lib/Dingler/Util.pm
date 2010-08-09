@@ -66,7 +66,7 @@ sub faclink {
 sub figlink {
     my ( $figure, $journal ) = @_;
     my $target;
-    if ( $figure =~ /#(.*)/ ) {
+    if ( $figure =~ /\A#(.*)/ ) {
         $target = $1;
     }
     elsif ( $figure =~ /image_markup\/(tab\d+)\.xml/ ) {

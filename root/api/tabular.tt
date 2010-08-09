@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <description>foo</description>
+  <link>http://admin.culture.hu-berlin.de/dingler</link>
+  <title>foo</title>
+  [% FOREACH item IN tabulars %]
+  <item>
+     <title>[% item.name | html %]</title>
+     <media:description>[% item.name | html %]</media:description>
+     <link>[% item.journal | url %]</link>
+     <media:thumbnail url="[% item.url | url %]250.jpg"/>
+     <media:content url="[% item.url | url %]800.jpg"/>
+  </item>
+  [% END %]
+</channel>
+</rss>

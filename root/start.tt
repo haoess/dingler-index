@@ -33,7 +33,7 @@
         </tr>
         <tr>
           <td class="right">[% tables %]</td>
-          <td>Tafeln</td>
+          <td><a href="tabular">Tafeln</a></td>
         </tr>
         <tr>
           <td class="right">[% figures %]</td>

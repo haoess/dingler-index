@@ -76,6 +76,11 @@ JOURNAL:
             $sth_figure->execute( $data->{id}, $figlink );
         }
 
+        foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "image_markup/")]', $article) ) {
+            my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
+            $sth_figure->execute( $data->{id}, $figlink );
+        }
+
         if ( $data->{type} ne 'art_miscellanea' ) {
             foreach my $person ( $xpc->findnodes('.//tei:persName', $article) ) {
                 my $ref = idonly( $xpc->find('@ref', $person) );
