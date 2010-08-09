@@ -65,7 +65,13 @@ sub faclink {
 
 sub figlink {
     my ( $figure, $journal ) = @_;
-    my ($target) = $figure =~ /#(.*)/;
+    my $target;
+    if ( $figure =~ /#(.*)/ ) {
+        $target = $1;
+    }
+    elsif ( $figure =~ /image_markup\/(tab\d+)\.xml/ ) {
+        $target = $1;
+    }
     my $ret = sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/image_markup/%s_wv_%s.jpg', $journal, $target, $target;
     return $ret;
 }
