@@ -14,10 +14,9 @@ use XML::LibXML;
 my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1 } ) or die $DBI::errstr;
 
 my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
-my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
+my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, subtype, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
 my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
-my $sth_author = $dbh->prepare( 'INSERT INTO author (person, article) VALUES (?, ?)' );
-my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref) VALUES (?, ?)' );
+my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref, role) VALUES (?, ?, ?)' );
 
 JOURNAL:
   foreach my $journal ( @ARGV ) {
@@ -42,7 +41,7 @@ JOURNAL:
     foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]') ) {
         my $data = prepare_article( $article, $xpc );
         $sth_article->execute(
-            $data->{id},      undef,              $jid,           $data->{type},
+            $data->{id},      undef,              $jid,           $data->{type},      undef,
             $volume,          $data->{number},    $data->{title}, $data->{pagestart},
             $data->{pageend}, $data->{facsimile}, $data->{front}, $data->{content},
             $pos
@@ -60,7 +59,14 @@ JOURNAL:
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );
                 $mi_facsimile = Dingler::Util::faclink($facsimile);
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
-                $sth_article->execute( $miscid, $data->{id}, $jid, $type, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
+                $sth_article->execute( $miscid, $data->{id}, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
+
+                foreach my $person ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:persName') ) {
+                    my $ref = idonly( $xpc->find('@ref', $person) );
+                    next if $ref eq '-';
+                    my $role = $xpc->find('@role', $person);
+                    $sth_person->execute( $ref, $miscid, $role );
+                }
                 $miscpos++;
             }
         }
@@ -69,28 +75,17 @@ JOURNAL:
             my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
             $sth_figure->execute( $data->{id}, $figlink );
         }
-        foreach my $author ( $xpc->findnodes('tei:front//tei:persName[@role="author" or @role="author_orig"]', $article) ) {
-            my $ref = idonly( $xpc->find('@ref', $author) );
-            next if $ref eq '-';
-            $sth_author->execute( $ref, $data->{id} );
+
+        if ( $data->{type} ne 'art_miscellanea' ) {
+            foreach my $person ( $xpc->findnodes('.//tei:persName', $article) ) {
+                my $ref = idonly( $xpc->find('@ref', $person) );
+                next if $ref eq '-';
+                my $role = $xpc->find('@role', $person);
+                $sth_person->execute( $ref, $data->{id}, $role );
+            }
         }
         $pos++;
     }
-
-    my %refs;
-    foreach my $persname ( $xpc->findnodes('//tei:titlePart[@type="main"]/tei:persName') ) {
-        push @{ $refs{ idonly($xpc->find('@ref', $persname)) } }, $xpc->find('ancestor::tei:text[1]/@xml:id', $persname)."";
-    }
-    foreach my $persname ( $xpc->findnodes('//tei:div[@type="misc_undef"]//tei:head/tei:persName') ) {
-        push @{ $refs{ idonly($xpc->find('@ref', $persname)) } }, $xpc->find('ancestor::tei:text[1]/@xml:id', $persname)."";
-    }
-    while ( my ($k, $v) = each %refs ) {
-        next if $k eq '-';
-        foreach my $ref ( @$v ) {
-            $sth_person->execute( $k, $ref );
-        }
-    }
-
     debug( '-'x30, "\n" );
 }
 
@@ -113,6 +108,7 @@ sub prepare_article {
     my ( $article, $xpc ) = @_;
     my $id     = $xpc->find( '@xml:id', $article );
     my $type   = $xpc->find( '@type', $article ) . "";
+    my $subtype = $xpc->find( '@subtype', $article ) . "";
     my $number = $xpc->find( 'tei:front/tei:titlePart[@type="number"]', $article );
     my $title  = $xpc->find( 'tei:front/tei:titlePart[@type="column"]', $article );
     $title = Dingler::Util::uml( normalize($title->to_literal) );
@@ -132,6 +128,7 @@ sub prepare_article {
     return {
         id        => $id,
         type      => $type,
+        subtype   => $subtype,
         number    => $number,
         title     => $title,
         pagestart => $pagestart,

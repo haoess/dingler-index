@@ -15,13 +15,6 @@
 
 Statistiken:
 
-1) Patentverzeichnisse kann weg
-
-2) Patente verlinken auf »Patentverzeichnis«:
-
-a) Zugriff nach Land: Englische Patente, Französische Patente etc.
-XPATH: //text[type='art_patents'][subtype='english'] etc.
-b) chronologischer Zugriff (Dekade): 1820er, 1830er
 c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
 -> bisher wird nur das erste <date type="dd"> gespeichert
@@ -40,6 +33,10 @@ Personenverzeichnis:
 
 - differenzierter Zugriff per "role", also:
 Autor | Patentträger | Alle
+
+1) Autor (author, author_orig)
+2) Patentträger (patent_app)
+3) Alle (der Rest)
 
 ---------------------
 

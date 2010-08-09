@@ -46,6 +46,12 @@ __PACKAGE__->table("article");
   default_value: undef
   is_nullable: 1
 
+=head2 subtype
+
+  data_type: text
+  default_value: undef
+  is_nullable: 1
+
 =head2 volume
 
   data_type: text
@@ -128,6 +134,8 @@ __PACKAGE__->add_columns(
   },
   "type",
   { data_type => "text", default_value => undef, is_nullable => 1 },
+  "subtype",
+  { data_type => "text", default_value => undef, is_nullable => 1 },
   "volume",
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "number",
@@ -202,20 +210,6 @@ __PACKAGE__->belongs_to(
   { join_type => "LEFT" },
 );
 
-=head2 authors
-
-Type: has_many
-
-Related object: L<Dingler::Schema::Result::Author>
-
-=cut
-
-__PACKAGE__->has_many(
-  "authors",
-  "Dingler::Schema::Result::Author",
-  { "foreign.article" => "self.id" },
-);
-
 =head2 figures
 
 Type: has_many
@@ -259,8 +253,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-29 21:38:39
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:bNcUhx0rcZEt9UND80X4nQ
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-09 10:16:59
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:kCxosmxphSaUXv21G7yj6A
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

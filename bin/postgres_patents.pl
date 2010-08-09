@@ -54,7 +54,7 @@ JOURNAL:
 EOT
             $sth_patent->execute( $id, $articleid, $subtype, $date, $xml, $content );
 
-            foreach my $app ( $xpc->findnodes("//*[\@xml:id='$id']//tei:persName[\@role='patent_app']") ) {
+            foreach my $app ( $xpc->findnodes("//*[\@xml:id='$id']//tei:persName") ) {
                 $sth_app->execute( $id, idonly( $xpc->find('@ref'), $app ), Dingler::Util::uml( normalize($app->to_literal) ) );
             }
         }

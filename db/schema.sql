@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS journal CASCADE;
 DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
-DROP TABLE IF EXISTS author CASCADE;
 DROP FUNCTION IF EXISTS article_trigger();
 DROP TABLE IF EXISTS patent CASCADE;
 DROP FUNCTION IF EXISTS patent_trigger();
@@ -24,6 +23,7 @@ CREATE TABLE article (
   parent    TEXT REFERENCES article (id),
   journal   TEXT REFERENCES journal (id),
   type      TEXT,
+  subtype   TEXT,
   volume    TEXT,
   number    TEXT,
   title     TEXT,
@@ -61,17 +61,10 @@ CREATE TABLE figure (
 -- --------------------------
 
 CREATE TABLE person (
-  id  TEXT,
-  ref TEXT REFERENCES article (id),
+  id   TEXT,
+  ref  TEXT REFERENCES article (id),
+  role TEXT,
   PRIMARY KEY (id, ref)
-);
-
--- --------------------------
-
-CREATE TABLE author (
-  person  TEXT,
-  article TEXT REFERENCES article (id),
-  PRIMARY KEY (person, article)
 );
 
 -- --------------------------

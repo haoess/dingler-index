@@ -24,3 +24,25 @@
 [% xsl %]
 
 [% PROCESS alphabet %]
+
+[% BLOCK right %]
+  <div class="rightbox nolab">
+    <div class="rightboxhead">Einschränkung</div>
+    <div class="rightboxcontent">
+      <table>
+        <tr>
+          <td>Autoren:</td>
+          <td>[% author.count + 0 %]</td>
+        </tr>
+        <tr>
+          <td>Patentträger:</td>
+          <td>[% patent_app.count + 0 %]</td>
+        </tr>
+        <tr>
+          <td>Rest:</td>
+          <td>[% other.count + 0 %]</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+[% END %]

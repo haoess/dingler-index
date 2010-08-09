@@ -74,6 +74,13 @@ sub list :Local {
     utf8::decode($xsl);
     $c->stash( xsl => $xsl );
     $c->res->body( undef );
+
+    $c->stash(
+        author     => $c->model('Dingler::Person')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
+        patent_app => $c->model('Dingler::Person')->search_rs({ role => 'patent_app' }),
+        other      => $c->model('Dingler::Person')->search_rs({ role => { -not_in => ['author',  'author_orig', 'patent_app'] } }),
+    );
+
     $c->stash(
         template => 'person/list.tt',
     );
