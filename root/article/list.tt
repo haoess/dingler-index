@@ -8,6 +8,22 @@
 </script>
 
 [% BLOCK right %]
-  [% INCLUDE 'search/form.tt' %]
   <a href="[% base %]">zur Bandauswahl &hellip;</a>
+  [% INCLUDE 'search/form.tt' %]
+
+  <div class="rightbox">
+    <div class="rightboxhead">Tafeln</div>
+    <div class="rightboxcontent">
+      [% WHILE ( tab = tabulars.next ) %]
+        <img src="[% tab.url %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(tab.url) %]')" /><br /><br />
+      [% END %]
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function showtab(tab) {
+      window.open(tab, '_blank', 'height=600,location=yes,menubar=no,resizable=yes,status=no,toolbar=no,width1000');
+      return false;
+    }
+  </script>
 [% END %]
