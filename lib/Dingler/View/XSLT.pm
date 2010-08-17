@@ -113,19 +113,26 @@ __PACKAGE__->config(
                 name => 'resolveref',
                 subref => sub {
                     my $target = shift->to_literal;
-                    my ($journal, $page) = $target =~ /#(.*)_pb(.*)/;
-                    return unless $journal && $page;
-                    my $rs = Dingler->model('Dingler::Article')->search(
-                        {
-                            journal => $journal,
-                            $page   => { -between => [ \'pagestart::int', \'pageend::int' ] },
-                        },
-                    );
-                    if ( $rs->count ) {
-                        return sprintf 'article/%s/%s#pb%s', $rs->first->get_column('journal'), $rs->first->id, $page;
+
+                    if ( $target =~ /#(.*)_pb(.*)/ ) {
+                        my ($journal, $page) = $target =~ /#(.*)_pb(.*)/;
+                        return unless $journal && $page;
+                        my $rs = Dingler->model('Dingler::Article')->search(
+                            {
+                                journal => $journal,
+                                $page   => { -between => [ \'pagestart::int', \'pageend::int' ] },
+                            },
+                        );
+                        if ( $rs->count ) {
+                            return sprintf 'article/%s/%s#pb%s', $rs->first->get_column('journal'), $rs->first->id, $page;
+                        }
+                        else {
+                            return;
+                        }
                     }
-                    else {
-                        return;
+                    elsif ( $target =~ /\A#(ar[0-9]{6})\z/ ) {
+                        my $rs = Dingler->model('Dingler::Article')->find( id => $1 );
+                        return sprintf 'article/%s/%s', $rs->get_column('journal'), $rs->id;
                     }
                 },
             },
