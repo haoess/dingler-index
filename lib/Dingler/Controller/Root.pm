@@ -93,7 +93,7 @@ sub stats :Private {
         my $patentdescs = $c->model('Dingler::Article')->search({ type => 'art_patent' })->count;
         my $patentlists = $c->model('Dingler::Article')->search({ -or => [ type => ['art_patents', 'misc_patents'] ] })->count;
         my $miscs       = $c->model('Dingler::Article')->search({ type => 'misc_undef' })->count;
-        my $tables      = $c->model('Dingler::Figure')->search( undef, { group_by => ['url'] } )->count;
+        my $tables      = $c->model('Dingler::Figure')->search({ reftype => 'tabular' }, { group_by => ['ref'] } )->count;
         my $patents     = $c->model('Dingler::Patent')->search->count;
 
         # count persons
