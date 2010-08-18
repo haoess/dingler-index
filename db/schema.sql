@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS patent_app CASCADE;
 CREATE TABLE journal (
   id        TEXT PRIMARY KEY,
   volume    TEXT,
+  barcode   TEXT,
   year      TEXT,
   facsimile TEXT
 );
@@ -52,10 +53,16 @@ ON article FOR EACH ROW EXECUTE PROCEDURE article_trigger();
 
 -- --------------------------
 
+-- all images associated with an article
+--  #figXXXYYY_ZZZ => vol. XXX, tab. YYY, fig. ZZZ
+--  #tabXXXYYY     => vol. XXX, tab. YYY
+--  #txXXXYYY      => vol. XXX, fig. YYY
+
 CREATE TABLE figure (
-  id      SERIAL PRIMARY KEY,
   article TEXT REFERENCES article(id),
-  url     TEXT
+  ref     TEXT,
+  reftype TEXT,
+  PRIMARY KEY (article, ref)
 );
 
 -- --------------------------

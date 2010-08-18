@@ -83,8 +83,8 @@ sub set_meta :Private {
     );
 
     my @figures;
-    foreach my $figure ( $ar->figures ) {
-        push @figures, $figure->url;
+    foreach my $figure ( $ar->figures->search({ reftype => 'tabular' }) ) {
+        push @figures, $figure->ref;
     }
     @figures = uniq @figures;
     $c->stash->{figures} = \@figures;

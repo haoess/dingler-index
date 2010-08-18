@@ -11,11 +11,11 @@ use Dingler::Util;
 use DBI;
 use XML::LibXML;
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1 } ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 0 } ) or die $DBI::errstr;
 
-my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, year, facsimile) VALUES (?, ?, ?, ?)' );
+my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, barcode, year, facsimile) VALUES (?, ?, ?, ?, ?)' );
 my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, subtype, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
-my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, url) VALUES (?, ?)' );
+my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, ref, reftype) VALUES (?, ?, ?)' );
 my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref, role) VALUES (?, ?, ?)' );
 
 JOURNAL:
@@ -29,13 +29,13 @@ JOURNAL:
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
     $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
 
-    my ($jid)     = $journal =~ /(pj[0-9]{3})/;
-    my $year      = $xpc->find( '//tei:imprint/tei:date' );
-    my $volume    = $xpc->find( '//tei:imprint/tei:biblScope' );
-    my $facsimile = $xpc->find( '//tei:sourceDesc//tei:idno' );
-    my $j_facsimile = Dingler::Util::faclink($facsimile);
+    my ($jid)   = $journal =~ /(pj[0-9]{3})/;
+    my $year    = $xpc->find( '//tei:imprint/tei:date' );
+    my $volume  = $xpc->find( '//tei:imprint/tei:biblScope' );
+    my $barcode = $xpc->find( '//tei:sourceDesc//tei:idno' );
+    my $j_facsimile = Dingler::Util::faclink($barcode);
 
-    $sth_journal->execute( $jid, $volume, $year, $j_facsimile );
+    $sth_journal->execute( $jid, $volume, $barcode, $year, $j_facsimile );
 
     my $pos = 1;
     foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]') ) {
@@ -57,7 +57,7 @@ JOURNAL:
                 my $pagestart    = $xpc->find( 'preceding::tei:pb[1]/@n', $misc );
                 my $pageend      = $xpc->find( 'following::*[1]/preceding::tei:pb[1]/@n', $misc );
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );
-                $mi_facsimile = Dingler::Util::faclink($facsimile);
+                $mi_facsimile = Dingler::Util::faclink($barcode); # XXX
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
                 $sth_article->execute( $miscid, $data->{id}, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
 
@@ -71,14 +71,27 @@ JOURNAL:
             }
         }
 
+        # links to tabulars
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
-            my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
-            $sth_figure->execute( $data->{id}, $figlink );
+            my ($ref) = $xpc->find('@target', $figure) =~ /^#(.+)/;
+            $sth_figure->execute( $data->{id}, $ref, 'tabular' );
         }
 
+        # links to figures on tabulars
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "image_markup/")]', $article) ) {
-            my $figlink = Dingler::Util::figlink( $xpc->find('@target', $figure), $jid );
-            $sth_figure->execute( $data->{id}, $figlink );
+            my ($ref) = $xpc->find('@target', $figure) =~ /#(fig.+)/;
+            $sth_figure->execute( $data->{id}, $ref, 'figure' );
+        }
+
+        # <ref target="#tx..."
+        foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tx")]', $article) ) {
+            my ($ref) = $xpc->find('@target', $figure) =~ /#(.+)/;
+            $sth_figure->execute( $data->{id}, $ref, 'inline' );
+        }
+        # <figure xml:id="tx..."
+        foreach my $figure ( $xpc->findnodes('.//tei:figure[starts-with(@xml:id, "tx")]', $article) ) {
+            my $ref = $xpc->find('@xml:id', $figure)."";
+            $sth_figure->execute( $data->{id}, $ref, 'inline' );
         }
 
         if ( $data->{type} ne 'art_miscellanea' ) {

@@ -129,7 +129,7 @@
     <div class="rightboxhead">Tafeln</div>
     <div class="rightboxcontent center">
       [% FOREACH figure IN figures %]
-        <img src="[% figure %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(figure) %]')" /><br /><br />
+        <img src="[% figure_link(figure, journal, 250) %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(figure, journal) %]')" /><br /><br />
       [% END %]
     </div>
   </div>
@@ -183,7 +183,6 @@
       </table>
     </form>
   </div>
-
 
   <script type="text/javascript">
     function bugform() {
@@ -242,4 +241,10 @@
     });
   </script>
 
+  <div class="rightbox nolab">
+    <div class="rightboxhead">Weitere Informationen</div>
+    <div class="rightboxcontent">
+      <a href="timeline/dta/[% year %]">Zeitleiste aus dem DTA</a>
+    </div>
+  </div>
 [% END %]

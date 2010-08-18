@@ -45,12 +45,15 @@ sub auto :Private {
     };
 
     $c->stash->{ figure_to_markup } = sub {
-        my $str = shift;
-        # http://www.culture.hu-berlin.de/dingler_static/pj044/image_markup/tab044493_wv_tab044493.jpg
-        #   =>
-        # /pj044/image_markup/tab044493.html
-        $str =~ s{.*/(pj\d{3}/image_markup/\w+)_wv_.*\z}{@{[ $c->req->base ]}$1.html};
-        return $str;
+        my ( $ref, $journal ) = @_;
+        return sprintf '%s%s/image_markup/%s.html', $c->req->base, $journal, $ref;
+    };
+
+    $c->stash->{ figure_link } = sub {
+        my ( $ref, $journal, $size ) = @_;
+        if ( $size ) {
+            return sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_250.jpg', $journal, $ref, $size;
+        }
     };
 
     return 1;

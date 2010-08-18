@@ -20,21 +20,20 @@ __PACKAGE__->table("figure");
 
 =head1 ACCESSORS
 
-=head2 id
-
-  data_type: integer
-  default_value: nextval('figure_id_seq'::regclass)
-  is_auto_increment: 1
-  is_nullable: 0
-
 =head2 article
 
   data_type: text
   default_value: undef
   is_foreign_key: 1
-  is_nullable: 1
+  is_nullable: 0
 
-=head2 url
+=head2 ref
+
+  data_type: text
+  default_value: undef
+  is_nullable: 0
+
+=head2 reftype
 
   data_type: text
   default_value: undef
@@ -43,24 +42,19 @@ __PACKAGE__->table("figure");
 =cut
 
 __PACKAGE__->add_columns(
-  "id",
-  {
-    data_type         => "integer",
-    default_value     => \"nextval('figure_id_seq'::regclass)",
-    is_auto_increment => 1,
-    is_nullable       => 0,
-  },
   "article",
   {
     data_type      => "text",
     default_value  => undef,
     is_foreign_key => 1,
-    is_nullable    => 1,
+    is_nullable    => 0,
   },
-  "url",
+  "ref",
+  { data_type => "text", default_value => undef, is_nullable => 0 },
+  "reftype",
   { data_type => "text", default_value => undef, is_nullable => 1 },
 );
-__PACKAGE__->set_primary_key("id");
+__PACKAGE__->set_primary_key("article", "ref");
 
 =head1 RELATIONS
 
@@ -76,12 +70,12 @@ __PACKAGE__->belongs_to(
   "article",
   "Dingler::Schema::Result::Article",
   { id => "article" },
-  { join_type => "LEFT" },
+  {},
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-22 12:02:21
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ANMi7LbGeKj/CPrpO3KXJg
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-18 17:55:06
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8hSKXWNGDN9fxHSh6Y+0QQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

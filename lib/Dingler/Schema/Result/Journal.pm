@@ -32,6 +32,12 @@ __PACKAGE__->table("journal");
   default_value: undef
   is_nullable: 1
 
+=head2 barcode
+
+  data_type: text
+  default_value: undef
+  is_nullable: 1
+
 =head2 year
 
   data_type: text
@@ -50,6 +56,8 @@ __PACKAGE__->add_columns(
   "id",
   { data_type => "text", default_value => undef, is_nullable => 0 },
   "volume",
+  { data_type => "text", default_value => undef, is_nullable => 1 },
+  "barcode",
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "year",
   { data_type => "text", default_value => undef, is_nullable => 1 },
@@ -75,8 +83,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-22 12:00:39
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+JlGoFyNr+uTlmshYXik+w
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-18 17:55:06
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:57mRTdrvt/r72ke7wcTjUQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

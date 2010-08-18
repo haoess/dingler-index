@@ -24,16 +24,20 @@ sub index :Path :Args(1) {
     $c->forward('article_list', [$journal]);
 
     my $tabulars = $c->model('Dingler::Figure')->search(
-        { 'article.journal' => $journal, },
         {
-            select => 'url',
+            'article.journal' => $journal,
+            'me.reftype'      => 'tabular',
+        },
+        {
+            select => 'ref',
             join => 'article',
-            group_by => 'me.url',
-            order_by => 'url',
+            group_by => 'me.ref',
+            order_by => 'ref',
         }
     );
 
     $c->stash(
+        journal  => $journal,
         tabulars => $tabulars,
         template => 'article/list.tt',
     );
