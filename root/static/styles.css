@@ -84,6 +84,8 @@ table.journallist { padding-left:40px }
 .code { background:#fafafa; font-family:monospace }
 div.code { border:1px solid #eee; padding-left:10px }
 
+.timeline-band-inner { cursor:pointer }
+
 #htmltagcloud { text-align:center; line-height:1 }
 #htmltagcloud a { text-decoration:none }
 #htmltagcloud a:hover { text-decoration:underline }
