@@ -21,7 +21,15 @@ Catalyst Controller.
 sub dta :Local {
     my ( $self, $c, $year ) = @_;
     $c->stash(
-        template => 'timeline.tt',
+        template => 'timeline/dta.tt',
+        year     => $year,
+    );
+}
+
+sub patent :Local {
+    my ( $self, $c, $year ) = @_;
+    $c->stash(
+        template => 'timeline/patent.tt',
         year     => $year,
     );
 }
