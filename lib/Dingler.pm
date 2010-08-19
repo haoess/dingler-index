@@ -66,7 +66,10 @@ __PACKAGE__->config(
 
 sub incpath_generator {
     my $c = shift;
-    return [ $c->config->{svn} ];
+    return [
+        $c->config->{svn},
+        __PACKAGE__->path_to( 'var', 'timeline-search' )."",
+    ];
 }
 
 # Start the application

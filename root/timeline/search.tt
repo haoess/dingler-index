@@ -1,0 +1,56 @@
+<h1>Zeitliste für die Suche nach [% q | html %]</h1>
+
+<p class="small">
+  Anmerkungen: Eventuelle Facetten sind aufgehoben. Gelistet werden keine Miszellen und keine Einträge aus Patentlisten.
+</p>
+
+<div id="my-timeline" style="width:1000px;height:800px;border:1px solid #aaa;font-size:.8em"></div>
+<p>
+  <img src="http://media.dwds.de/dta/media/img/blue-circle.png" alt="Symbol Werk" /> Jahr der Publikation&nbsp;&nbsp;&nbsp;
+  <img src="http://media.dwds.de/dta/media/img/green-circle.png" alt="Symbol Geburtsdatum" /> Geburtsjahr&nbsp;&nbsp;&nbsp;
+  <img src="http://media.dwds.de/dta/media/img/red-circle.png" alt="Symbol Sterbedatum" /> Sterbejahr der Autoren
+</p>
+
+<script type="text/javascript">
+  jQuery( document ).ready( onLoad() );
+</script>
+
+[% BLOCK head %]
+  <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+  <script type="text/javascript">
+    var tl;
+    function onLoad() {
+      var eventSource = new Timeline.DefaultEventSource();
+      var bandInfos = [
+        Timeline.createBandInfo({
+          eventSource:    eventSource,
+          date:           "Jan 01 [% year || 1850 %] 00:00:00 GMT",
+          width:          "95%",
+          intervalUnit:   Timeline.DateTime.YEAR,
+          intervalPixels: 200
+        }),
+        Timeline.createBandInfo({
+          overview:       true,
+          eventSource:    eventSource,
+          date:           "Jan 01 [% year || 1850 %] 00:00:00 GMT",
+          width:          "5%",
+          intervalUnit:   Timeline.DateTime.DECADE,
+          intervalPixels: 400
+        })
+      ];
+      bandInfos[1].syncWith = 0;
+      bandInfos[1].highlight = true;
+      tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
+      Timeline.loadXML("[% base %][% tlxml %]", function(xml, url) { eventSource.loadXML(xml, url); });
+    }
+    var resizeTimerID = null;
+    function onResize() {
+      if (resizeTimerID == null) {
+        resizeTimerID = window.setTimeout(function() {
+          resizeTimerID = null;
+          tl.layout();
+        }, 500);
+      }
+    }
+  </script>
+[% END %]
