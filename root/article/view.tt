@@ -244,7 +244,10 @@
   <div class="rightbox nolab">
     <div class="rightboxhead">Weitere Informationen</div>
     <div class="rightboxcontent">
-      <a href="timeline/dta/[% year %]">Zeitleiste aus dem DTA</a>
+      <div style="text-align:center">
+        <a href="timeline/dta/[% year %]"><img src="static/images/dta.png" alt="Zeitleiste Deutsches Textarchiv" /></a><br />
+        <a href="timeline/dta/[% year %]">Zeitleiste Deutsches Textarchiv</a>
+      </div>
     </div>
   </div>
 [% END %]
