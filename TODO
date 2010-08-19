@@ -27,18 +27,37 @@ c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
 Dingler Records:
 
-  - längster Artikel
-  - kürzester Artikel
-  - Artikel mit den meisten Abbildungen
-  - Tafel mit den meisten Figuren
-  - Person mit den meisten <persname>-Tags
-  - meister Ort
-  - meiste Quelle
-  - Artikel auf den am meisten verwiesen wird    
-  - Artikel der auf die meisten anderen verweist
-  - Person mit den meisten patenten
-  - größte und kleinste figure
+- Band
+  - mit meisten Artikeln
+  - mit meisten Tafeln
+
+- Artikel  
+  - längste
+  - kürzester
+  - mit den meisten Abbildungen
+  - mit meisten Verweisen
+  - auf den am meisten verwiesen wird
   - Der Artikel, der mit seinen Placenames den weitestens Kreis auf der Erdkugel beschreibt.
+
+- Tafel  
+  - mit den meisten Figuren
+  - groesste Tafel
+
+- Figur
+  - groesste Figur
+  - kleinste Figur
+
+- Person
+  - Autor mit den meisten Artikeln
+  - Person mit den meisten <persname>-Tags
+  - Person mit den meisten patenten
+
+- Quelle
+  - meistgenutzte Quelle
+
+- Orte
+  - meist genannter Ort
+
 
 ------------------
 
