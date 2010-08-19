@@ -63,6 +63,11 @@
           <td class="right">[% sources %]</td>
           <td><a href="source/list">Quellen</a></td>
         </tr>
+        <tr><td colspan="2"></td></tr>
+        <tr>
+          <td></td>
+          <td><a href="records">Dingler Records</a></td>
+        </tr>
       </table>
     </div>
   </div>

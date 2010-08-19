@@ -1,0 +1,116 @@
+<h1>Dingler Records</h1>
+
+<h2>Bände</h2>
+
+<p>
+  Insgesamt sind [% journal.total %] Bände mit [% journal.articles %] Artikeln
+  (⌀ [% journal.articles / journal.total | format('%d') %] Artikel pro Band)
+  verfügbar.
+</p>
+
+<h3>Der Band mit meisten Artikeln</h3>
+
+<p>
+  <a href="[% c.uri_for('/journal', journal.most_articles.id) %]">Band [% journal.most_articles.volume %]</a>
+  ([% journal.most_articles.year %]) hat [% journal.most_articles.get_column('a_count') %] Artikel.
+</p>
+
+<h3>Der Band mit wenigsten Artikeln</h3>
+
+<p>
+  <a href="[% c.uri_for('/journal', journal.least_articles.id) %]">Band [% journal.least_articles.volume %]</a>
+  ([% journal.least_articles.year %]) hat [% journal.least_articles.get_column('a_count') %] Artikel.
+</p>
+
+<h3>Der Band mit meisten Tafeln</h3>
+
+<p>
+  <a href="[% c.uri_for('/journal', journal.most_tabs.id) %]">Band [% journal.most_tabs.volume %]</a>
+  ([% journal.most_tabs.year %]) hat [% journal.most_tabs_count %] Tafeln.
+</p>
+
+
+<h2>Artikel</h2>
+
+<h3>Der längste Artikel</h3>
+
+<p>
+  <a href="article/[% articles.longest.journal.id %]/[% articles.longest.id %]">[% articles.longest.title | html %]</a>
+  aus Band [% articles.longest.journal.volume %] ([% articles.longest.journal.year %]) hat [% articles.longest.get_column('chars') %] Zeichen.
+</p>
+
+<h3>Der kürzeste Artikel</h3>
+
+<p>
+  <a href="article/[% articles.shortest.journal.id %]/[% articles.shortest.id %]">[% articles.shortest.title | html %]</a>
+  aus Band [% articles.shortest.journal.volume %] ([% articles.shortest.journal.year %]) hat [% articles.shortest.get_column('chars') %] Zeichen.
+</p>
+
+<h3>Der Artikel mit den meisten Abbildungen</h3>
+
+<p>
+  <a href="article/[% articles.most_figures.journal.id %]/[% articles.most_figures.id %]">[% articles.most_figures.title | html %]</a>
+  aus Band [% articles.most_figures.journal.volume %] ([% articles.most_figures.journal.year %]) hat [% articles.most_figures.get_column('f_count') %] Figuren.
+</p>
+
+<h3>Der Artikel mit den meisten Verweisen</h3>
+
+[% PROCESS tbd %]
+
+<h3>Der Artikel auf den am meisten innerhalb des Polytechnischen Journals verwiesen wird</h3>
+
+[% PROCESS tbd %]
+
+<h3>Der Artikel, der mit seinen Ortsnennungen den größten Kreis auf einer Landkarte beschreibt</h3>
+
+[% PROCESS tbd %]
+
+<h2>Tafeln</h2>
+
+<h3>Die Tafel mit den meisten Figuren</h3>
+
+[% PROCESS tbd %]
+
+<h3>Die größte Tafel</h3>
+
+[% PROCESS tbd %]
+
+<h2>Figuren</h2>
+
+<h3>Die größte Figur</h3>
+
+[% PROCESS tbd %]
+
+<h3>Die kleinste Figur</h3>
+
+[% PROCESS tbd %]
+
+<h2>Personen
+
+<h3>Der Autor mit den meisten Artikeln</h3>
+
+[% PROCESS tbd %]
+
+<h3>Die Person mit den meisten (getaggten) Erwähnungen im Polytechnischen Journal</h3>
+
+[% PROCESS tbd %]
+
+<h3>Die Person mit den meisten Patenten</h3>
+
+[% PROCESS tbd %]
+
+<h2>Quellen</h2>
+
+<h3>Die meistgenutzte Quelle</h3>
+
+[% PROCESS tbd %]
+
+<h2>Orte</h2>
+
+<h3>Der meistgenannte Ort</h3>
+
+[% PROCESS tbd %]
+
+[% BLOCK tbd %]
+  <p>Der Code zur Berechnung muss noch geschrieben werden.</p>
+[% END %]
