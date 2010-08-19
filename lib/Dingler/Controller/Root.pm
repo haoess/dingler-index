@@ -52,7 +52,7 @@ sub auto :Private {
     $c->stash->{ figure_link } = sub {
         my ( $ref, $journal, $size ) = @_;
         if ( $size ) {
-            return sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_250.jpg', $journal, $ref, $size;
+            return sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_%s.jpg', $journal, $ref, $size;
         }
     };
 

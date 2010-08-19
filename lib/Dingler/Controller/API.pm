@@ -38,18 +38,14 @@ sub tabular :Local {
     my @tabulars;
     my %vol_seen;
     while ( my $tabular = $rs->next ) {
-        my ($journal) = $tabular->reftype =~ /(tab\d{3})/;
-        $journal = "pj$journal";
-        $journal = $c->uri_for( '/journal', $journal );
+        my ($volume) = $tabular->ref =~ /tab(\d{3})/;
+        my $journal = "pj$volume";
 
-        my ($volume) = $journal =~ /(\d+)/;
         $vol_seen{$volume}++;
-        my $name = sprintf 'Band %d, Tafel %d', $volume, $vol_seen{$volume};
-        my $url = sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_250.jpg', $journal, $tabular->ref;
-        $name .= " ($1)";
+        my $name = sprintf 'Band %d, Tafel %d (%s)', $volume, $vol_seen{$volume}, $tabular->ref;
 
         push @tabulars, {
-            url     => $url,
+            ref     => $tabular->ref,
             name    => $name,
             journal => $journal,
         };

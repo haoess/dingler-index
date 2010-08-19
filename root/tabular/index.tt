@@ -3,17 +3,17 @@
   <param name="allowFullScreen" value="true"/>
   <param name="allowScriptAccess" value="always"/>
   <param name="bgColor" value="#121212" />
-  <param name="flashvars" value="feed=http%3A%2F%2Fadmin.culture.hu-berlin.de%2Fdingler%2Fapi%2Ftabular&amp;backgroundcolor=%23FFFFFF&amp;style=light&amp;glowcolor=%23000000&amp;showembed=false&amp;showitemembed=false&amp;showchrome=true&amp;showreflections=false" />
+  <param name="flashvars" value="feed=[% c.uri_for('/api/tabular') | uri %]&amp;backgroundcolor=%23FFFFFF&amp;style=light&amp;glowcolor=%23000000&amp;showembed=false&amp;showitemembed=false&amp;showchrome=true&amp;showreflections=false" />
   <embed id="ci_53254_e" type="application/x-shockwave-flash"
     src="http://apps.cooliris.com/embed/cooliris.swf"
     width="1000" height="500"
     allowFullScreen="true"
     allowScriptAccess="always"
     bgColor="#121212"
-    flashvars="feed=http%3A%2F%2Fadmin.culture.hu-berlin.de%2Fdingler%2Fapi%2Ftabular&amp;backgroundcolor=%23FFFFFF&amp;style=light&amp;glowcolor=%23000000&amp;showembed=false&amp;showitemembed=false&amp;showchrome=true&amp;showreflections=false">
+    flashvars="feed=[% c.uri_for('/api/tabular') | uri %]&amp;backgroundcolor=%23FFFFFF&amp;style=light&amp;glowcolor=%23000000&amp;showembed=false&amp;showitemembed=false&amp;showchrome=true&amp;showreflections=false">
   </embed>
 </object>
 
 [% BLOCK head %]
-<link rel="alternate" href="http://admin.culture.hu-berlin.de/dingler/api/tabular" type="application/rss+xml" title="" id="gallery" />
+<link rel="alternate" href="[% c.uri_for('/api/tabular') %]" type="application/rss+xml" title="" id="gallery" />
 [% END %]
