@@ -23,6 +23,23 @@ c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
 -> bisher wird nur das erste <date type="dd"> gespeichert
 
+-------------
+
+Dingler Records:
+
+  - längster Artikel
+  - kürzester Artikel
+  - Artikel mit den meisten Abbildungen
+  - Tafel mit den meisten Figuren
+  - Person mit den meisten <persname>-Tags
+  - meister Ort
+  - meiste Quelle
+  - Artikel auf den am meisten verwiesen wird    
+  - Artikel der auf die meisten anderen verweist
+  - Person mit den meisten patenten
+  - größte und kleinste figure
+  - Der Artikel, der mit seinen Placenames den weitestens Kreis auf der Erdkugel beschreibt.
+
 ------------------
 
 Artikelansicht:
