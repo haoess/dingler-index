@@ -8,21 +8,21 @@
   verfügbar.
 </p>
 
-<h3>Der Band mit meisten Artikeln</h3>
+<h3>Der Band mit den meisten Artikeln</h3>
 
 <p>
   <a href="[% c.uri_for('/journal', journal.most_articles.id) %]">Band [% journal.most_articles.volume %]</a>
   ([% journal.most_articles.year %]) hat [% journal.most_articles.get_column('a_count') %] Artikel.
 </p>
 
-<h3>Der Band mit wenigsten Artikeln</h3>
+<h3>Der Band mit den wenigsten Artikeln</h3>
 
 <p>
   <a href="[% c.uri_for('/journal', journal.least_articles.id) %]">Band [% journal.least_articles.volume %]</a>
   ([% journal.least_articles.year %]) hat [% journal.least_articles.get_column('a_count') %] Artikel.
 </p>
 
-<h3>Der Band mit meisten Tafeln</h3>
+<h3>Der Band mit den meisten Tafeln</h3>
 
 <p>
   <a href="[% c.uri_for('/journal', journal.most_tabs.id) %]">Band [% journal.most_tabs.volume %]</a>
@@ -57,7 +57,7 @@
 
 [% PROCESS tbd %]
 
-<h3>Der Artikel auf den am meisten innerhalb des Polytechnischen Journals verwiesen wird</h3>
+<h3>Der Artikel, auf den am meisten innerhalb des Polytechnischen Journals verwiesen wird</h3>
 
 [% PROCESS tbd %]
 
