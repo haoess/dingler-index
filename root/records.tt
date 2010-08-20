@@ -69,11 +69,24 @@
 
 <h3>Die Tafel mit den meisten Figuren</h3>
 
-[% PROCESS tbd %]
+<p>
+  Die Tafel [% tabulars.most_figures %] hat [% tabulars.most_figures_count %] Figuren.<br />
+  <img src="[% figure_link(tabulars.most_figures, tabulars.most_figures_journal, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.most_figures, tabulars.most_figures_journal) %]')" /><br /><br />
+</p>
 
 <h3>Die größte Tafel</h3>
 
-[% PROCESS tbd %]
+<p>
+  Die Tafel [% tabulars.biggest_tab %] ist [% tabulars.most_figures_count %] cm² groß.<br />
+  <img src="[% figure_link(tabulars.biggest_tab, tabulars.biggest_tab_journal, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.biggest_tab, tabulars.biggest_tab_journal) %]')" /><br /><br />
+</p>
+
+<script type="text/javascript">
+  function showtab(tab) {
+    window.open(tab, '_blank', 'height=600,location=yes,menubar=no,resizable=yes,status=no,toolbar=no,width1000');
+    return false;
+  }
+</script>
 
 <h2>Figuren</h2>
 
@@ -89,7 +102,9 @@
 
 <h3>Der Autor mit den meisten Artikeln</h3>
 
-[% PROCESS tbd %]
+<p>
+  <!--<a href="[% people.most_articles.id %]">-->[% people.most_articles_name | html %]<!--</a>--> hat [% people.most_articles.get_column('article_count') %] Artikel geschrieben.
+</p>
 
 <h3>Die Person mit den meisten (getaggten) Erwähnungen im Polytechnischen Journal</h3>
 
@@ -97,7 +112,9 @@
 
 <h3>Die Person mit den meisten Patenten</h3>
 
-[% PROCESS tbd %]
+<p>
+  <!--<a href="[% people.most_patents.id %]">-->[% people.most_patents_name | html %]<!--</a>--> hat [% people.most_patents.get_column('article_count') %] Patente angemeldet.
+</p>
 
 <h2>Quellen</h2>
 

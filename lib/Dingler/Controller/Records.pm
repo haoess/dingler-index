@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use File::Basename qw(basename);
 use List::Util qw(reduce sum);
 
 =head1 NAME
@@ -24,6 +25,8 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
     $c->forward('journals');
     $c->forward('articles');
+    $c->forward('tabulars');
+    $c->forward('people');
     $c->stash(
         template => 'records.tt',
     );
@@ -137,8 +140,96 @@ sub articles :Private {
     );
 }
 
-sub person :Private {
+=head2 people
+
+People statistics.
+
+=cut
+
+sub people :Private {
     my ( $self, $c ) = @_;
+
+    my $most_articles = $c->model('Dingler::Person')->search(
+        {
+            role => { -in => [ qw(author author_add author_orig) ] },
+        },
+        {
+            'select' => [ 'me.id', { count => 'me.ref', -as => 'article_count' } ],
+            'as'     => [ 'id', 'article_count' ],
+            distinct  => 1,
+            order_by  => 'article_count DESC',
+            rows      => 1,
+        }
+    );
+    my $most_articles_name = Dingler::Util::fullname( $c->config->{svn} . '/database/persons/persons.xml', $most_articles->first->id );
+    $most_articles_name =~ s/(.*), (.*)/$2 $1/;
+
+    my $most_patents = $c->model('Dingler::Person')->search(
+        {
+            role => 'patent_app',
+        },
+        {
+            'select' => [ 'me.id', { count => 'me.ref', -as => 'article_count' } ],
+            'as'     => [ 'id', 'article_count' ],
+            distinct  => 1,
+            order_by  => 'article_count DESC',
+            rows      => 1,
+        }
+    );
+    my $most_patents_name = Dingler::Util::fullname( $c->config->{svn} . '/database/persons/persons.xml', $most_patents->first->id );
+    $most_patents_name =~ s/(.*), (.*)/$2 $1/;
+
+    $c->stash(
+        people => {
+            most_articles      => $most_articles->first,
+            most_articles_name => $most_articles_name,
+            most_patents       => $most_patents->first,
+            most_patents_name  => $most_patents_name,
+        }
+    );
+}
+
+=head2 tabulars
+
+Tabular statistics.
+
+=cut
+
+sub tabulars :Private {
+    my ( $self, $c ) = @_;
+
+    my %figures;
+    my %sizes;
+
+  IMAGE_MARKUP:
+    foreach my $imt ( glob $c->config->{svn} . '/*/image_markup/*.xml' ) {
+        my $xml; eval { $xml = XML::LibXML->new->parse_file( $imt ); 1 };
+        next IMAGE_MARKUP if $@;
+        my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+        $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+
+        $figures{ basename $imt, '.xml' } = $xpc->findnodes('//tei:zone')->size;
+        $sizes{ basename $imt, '.xml' } = [ $xpc->findnodes('//tei:graphic/@width')."", $xpc->findnodes('//tei:graphic/@height')."" ];
+    }
+
+    my $most_tabs = reduce { $figures{$a} > $figures{$b} ? $a : $b } keys %figures;
+    my ($most_figures_journal) = $most_tabs =~ /tab([0-9]{3})/;
+
+    %sizes = map { s/px// for @{ $sizes{$_} }; $_ => $sizes{$_} } keys %sizes;
+    my $biggest_tab = reduce { $sizes{$a}->[0]*$sizes{$a}->[1] > $sizes{$b}->[0]*$sizes{$b}->[1] ? $a : $b } keys %sizes;
+    my ($biggest_tab_journal) = $biggest_tab =~ /tab([0-9]{3})/;
+
+
+    $c->stash(
+        tabulars => {
+            most_figures         => $most_tabs,
+            most_figures_count   => $figures{$most_tabs},
+            most_figures_journal => "pj$most_figures_journal",
+            biggest_tab          => $biggest_tab,
+            biggest_tab_size     => ($sizes{$biggest_tab}->[0] * $sizes{$biggest_tab}->[1] * 2.54)/600,
+            biggest_tab_journal  => "pj$biggest_tab_journal",
+        }
+    );
 }
 
 __PACKAGE__->meta->make_immutable;
