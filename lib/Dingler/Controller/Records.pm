@@ -219,6 +219,7 @@ sub tabulars :Private {
     my $biggest_tab = reduce { $sizes{$a}->[0]*$sizes{$a}->[1] > $sizes{$b}->[0]*$sizes{$b}->[1] ? $a : $b } keys %sizes;
     my ($biggest_tab_journal) = $biggest_tab =~ /tab([0-9]{3})/;
 
+    use Data::Dumper; warn Dumper $sizes{$biggest_tab};
 
     $c->stash(
         tabulars => {
@@ -226,7 +227,7 @@ sub tabulars :Private {
             most_figures_count   => $figures{$most_tabs},
             most_figures_journal => "pj$most_figures_journal",
             biggest_tab          => $biggest_tab,
-            biggest_tab_size     => ($sizes{$biggest_tab}->[0] * $sizes{$biggest_tab}->[1] * 2.54)/600,
+            biggest_tab_size     => ($sizes{$biggest_tab}->[0] * $sizes{$biggest_tab}->[1] * 2.54)/600/100/100, # m²
             biggest_tab_journal  => "pj$biggest_tab_journal",
         }
     );
