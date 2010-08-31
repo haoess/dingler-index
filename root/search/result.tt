@@ -27,8 +27,7 @@
 <h1>Suchergebnisse</h1>
 
 <p>
-  Suche: <b>[% q | html %]</b>
-  <span class="small"><a href="search/help">Hilfe</a></span><br />
+  Suche: <b>[% q | html %]</b><br />
   [% PROCESS pager_html %]
 </p>
 

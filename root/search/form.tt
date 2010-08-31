@@ -1,5 +1,8 @@
 <div class="rightbox">
-  <div class="rightboxhead">Suche</div>
+  <div class="rightboxhead">
+    Suche
+    <span style="font-weight:normal">(<a href="search/help">Hilfe</a>)</span>
+  </div>
   <div class="rightboxcontent">
     <form method="get" action="[% base %]search">
       <input type="text" name="q" class="ui-widget-content ui-corner-all qbox" value="[% q | html %]" />
