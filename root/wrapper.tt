@@ -39,7 +39,6 @@
   <tr>
     <td class="mainmiddle">[% content %]</td>
     <td class="mainright">
-      <div class="labtitle">Labor-Webseite</div>
       [% TRY; PROCESS right; CATCH; ''; END %]
     </td>
   </tr>

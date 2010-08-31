@@ -1,5 +1,6 @@
 <h1 class="nolab">Dingler-Online | Das digitalisierte Polytechnische Journal</h1>
-
+<h1 class="labtitle">Vorliegende Volltexte</h1>
+<div class="small">
 <p>
   Hier finden Sie alle bereits vorliegenden Volltexte. Nach der Auswahl eines
   bestimmten Bandes wird über ein Inhaltsverzeichnis (aus den Kolumnentiteln des
@@ -25,7 +26,9 @@
   Die Suche läuft über alle vorhandenen Volltexte, wobei die Ergebnisse nach
   Relevanz sortiert werden. Weitere Informationen finden Sie in der <a href="search/help">Suchhilfe</a>.
 </p>
+</div>
 
+<br />
 <p>Folgende Bände liegen bereits digitalisiert vor:</p>
 
 <table class="journallist">
