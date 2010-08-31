@@ -117,6 +117,7 @@ __PACKAGE__->config(
                     if ( $target =~ /#(.*)_pb(.*)/ ) {
                         my ($journal, $page) = $target =~ /#(.*)_pb(.*)/;
                         return unless $journal && $page;
+                        return unless $page =~ /\A\d{3}\z/;
                         my $rs = Dingler->model('Dingler::Article')->search(
                             {
                                 journal => $journal,
