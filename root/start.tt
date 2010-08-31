@@ -1,5 +1,31 @@
 <h1 class="nolab">Dingler-Online | Das digitalisierte Polytechnische Journal</h1>
 
+<p>
+  Hier finden Sie alle bereits vorliegenden Volltexte. Nach der Auswahl eines
+  bestimmten Bandes wird über ein Inhaltsverzeichnis (aus den Kolumnentiteln des
+  Originals) der Zugriff auf die Artikel ermöglicht. Außerdem erhalten Sie eine
+  Voransicht der dazugehörigen Tafeln. Wenn Sie einen Artikel bookmarken möchten,
+  klicken Sie einfach auf den Stern in der aktuellen Navigationsleiste. Sie
+  finden die markierten Artikeln wieder unter <a href="fav/list">Mein Dingler</a>.
+</p>
+
+<p>
+  Die Statistiken in der rechten Seitenleiste werden dynamisch generiert und
+  ermöglichen einen Direktzugriff auf alle bereits bearbeiteten Tafeln. Außerdem
+  werden die umfangreichen Patentverzeichnisse gelistet und ein geographischer
+  und chronologischer Zugriff ermöglicht.
+</p>
+
+<p>
+  <a href="records">Dingler Records</a> wird jeweils live erstellt und liefert Informationen zu ganz
+  unterschiedlichen Kategorien: Längster Artikel, meist genannte Person etc.
+</p>
+
+<p>
+  Die Suche läuft über alle vorhandenen Volltexte, wobei die Ergebnisse nach
+  Relevanz sortiert werden. Weitere Informationen finden Sie in der <a href="search/help">Suchhilfe</a>.
+</p>
+
 <p>Folgende Bände liegen bereits digitalisiert vor:</p>
 
 <table class="journallist">
