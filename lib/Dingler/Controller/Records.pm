@@ -227,7 +227,7 @@ sub tabulars :Private {
             most_figures_count   => $figures{$most_tabs},
             most_figures_journal => "pj$most_figures_journal",
             biggest_tab          => $biggest_tab,
-            biggest_tab_size     => ($sizes{$biggest_tab}->[0] * $sizes{$biggest_tab}->[1] * 2.54)/600/100/100, # m²
+            biggest_tab_size     => [$sizes{$biggest_tab}->[0] * 4 * 0.0042335, $sizes{$biggest_tab}->[1] * 4 * 0.0042335],
             biggest_tab_journal  => "pj$biggest_tab_journal",
         }
     );
