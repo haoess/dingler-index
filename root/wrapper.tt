@@ -17,7 +17,6 @@
 
 <body>
 
-<!--
 <div id="head" class="nolab">
   <div class="project">Interne Projektseite</div>
   <div class="logo">
@@ -29,8 +28,10 @@
     <a href="http://www.hu-berlin.de/"><img src="[% base %]static/images/partner_huberlin.gif" alt="Logo HU Berlin" /></a>
   </div>
 </div>
--->
+
+<div class="labtitle">
 [% INCLUDE 'polyhead.tt' %]
+</div>
 
 <table id="maintable">
   <colgroup class="maincol">
