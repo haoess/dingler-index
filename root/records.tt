@@ -128,6 +128,17 @@
 
 [% PROCESS tbd %]
 
+<h2>Quellcode</h2>
+
+<h3>Perl</h3>
+
+<p>
+  Die Präsentationssoftware für das »Polytechnische Journal« ist in der
+  Programmiersprache <a href="http://www.perl.org/" target="_blank">Perl</a>
+  geschrieben, aktuell besteht sie insgesamt aus [% sloc.lines %] Zeilen
+  Perl-Code (lt. <a href="http://www.dwheeler.com/sloccount/" target="_blank">SLOCCount</a>).
+</p>
+
 [% BLOCK tbd %]
   <p>Der Code zur Berechnung muss noch geschrieben werden.</p>
 [% END %]

@@ -27,6 +27,7 @@ sub index :Path :Args(0) {
     $c->forward('articles');
     $c->forward('tabulars');
     $c->forward('people');
+    $c->forward('sloc');
     $c->stash(
         template => 'records.tt',
     );
@@ -219,8 +220,6 @@ sub tabulars :Private {
     my $biggest_tab = reduce { $sizes{$a}->[0]*$sizes{$a}->[1] > $sizes{$b}->[0]*$sizes{$b}->[1] ? $a : $b } keys %sizes;
     my ($biggest_tab_journal) = $biggest_tab =~ /tab([0-9]{3})/;
 
-    use Data::Dumper; warn Dumper $sizes{$biggest_tab};
-
     $c->stash(
         tabulars => {
             most_figures         => $most_tabs,
@@ -230,6 +229,25 @@ sub tabulars :Private {
             biggest_tab_size     => [$sizes{$biggest_tab}->[0] * 4 * 0.0042335, $sizes{$biggest_tab}->[1] * 4 * 0.0042335],
             biggest_tab_journal  => "pj$biggest_tab_journal",
         }
+    );
+}
+
+=head2 sloc
+
+Source lines of code.
+
+=cut
+
+sub sloc :Private {
+    my ( $self, $c ) = @_;
+    my $sloccount = '/usr/bin/sloccount';
+    my $codedir   = $c->path_to( 'lib' );
+    my $sloc      = `$sloccount $codedir | grep '^perl:'`;
+    my $lines     = (split /\s+/, $sloc)[1];
+    $c->stash(
+        sloc => {
+            lines => $lines,
+        },
     );
 }
 
