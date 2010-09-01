@@ -1,7 +1,7 @@
 body { font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; margin:0 }
-h1 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
-h2 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
-h3 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:1.5em; font-weight:normal; margin:0.5em 0 0.2em 0 }
+h1 { color:#900; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4em; font-weight:normal; margin:0 0 0.5em 0 }
+h2 { color:#900; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
+h3 { color:#900; font-family:Georgia,Times,serif,Times-New-Roman; font-size:1.5em; font-weight:normal; margin:0.5em 0 0.2em 0 }
 img { border:none }
 p { line-height:1.7em; margin:0 0 0.5em 0 }
 q:before { content:"" }
@@ -9,8 +9,8 @@ q:after  { content:"" }
 td { vertical-align:top }
 
 sup.fnref { cursor:pointer }
-a.fnref { color:#069 }
-a, .ui-widget-content a, .clickable { text-decoration:none; color:#68A }
+a.fnref { color:#900 }
+a, .ui-widget-content a, .clickable { text-decoration:none; color:#c66 }
 a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underline }
 
 #head { background:url(images/headerbg.gif) repeat-x 0px 0px; padding:5px; height:130px }
@@ -37,7 +37,7 @@ td.mainright  { padding-top:0px }
 
 .meta { border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#fafafa; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
 .meta table { padding-left:10px; padding-right:10px }
-.meta table .caption { color:#069 }
+.meta table .caption { color:#900 }
 
 #starrater { position:absolute; left:5px; top:5px; cursor:pointer }
 
@@ -50,7 +50,7 @@ td.mainright  { padding-top:0px }
 .small { font-size:0.8em }
 .wide { letter-spacing:0.1em; margin-right:-0.2em; font-family:'Inconsolata',monospace,serif; font-size:1em }
 .roman { font-style:italic }
-.corr { border-bottom:dotted 1px #68a }
+.corr { border-bottom:dotted 1px #c66 }
 .indent { text-indent:2em }
 .pointer { cursor:pointer }
 
