@@ -36,21 +36,21 @@
 
 <p>
   <a href="article/[% articles.longest.journal.id %]/[% articles.longest.id %]">[% articles.longest.title | html %]</a>
-  aus Band [% articles.longest.journal.volume %] ([% articles.longest.journal.year %]) hat [% articles.longest.get_column('chars') %] Zeichen.
+  aus Band [% articles.longest.journal.volume %] ([% articles.longest.journal.year %]) hat [% articles.longest.chars %] Zeichen.
 </p>
 
 <h3>Der kürzeste Artikel</h3>
 
 <p>
   <a href="article/[% articles.shortest.journal.id %]/[% articles.shortest.id %]">[% articles.shortest.title | html %]</a>
-  aus Band [% articles.shortest.journal.volume %] ([% articles.shortest.journal.year %]) hat [% articles.shortest.get_column('chars') %] Zeichen.
+  aus Band [% articles.shortest.journal.volume %] ([% articles.shortest.journal.year %]) hat [% articles.shortest.chars %] Zeichen.
 </p>
 
 <h3>Der Artikel mit den meisten Abbildungen</h3>
 
 <p>
   <a href="article/[% articles.most_figures.journal.id %]/[% articles.most_figures.id %]">[% articles.most_figures.title | html %]</a>
-  aus Band [% articles.most_figures.journal.volume %] ([% articles.most_figures.journal.year %]) hat [% articles.most_figures.get_column('f_count') %] Figuren.
+  aus Band [% articles.most_figures.journal.volume %] ([% articles.most_figures.journal.year %]) hat [% articles.most_figures.f_count %] Figuren.
 </p>
 
 <h3>Der Artikel mit den meisten Verweisen</h3>
@@ -103,7 +103,7 @@
 <h3>Der Autor mit den meisten Artikeln</h3>
 
 <p>
-  <!--<a href="[% people.most_articles.id %]">-->[% people.most_articles_name | html %]<!--</a>--> hat [% people.most_articles.get_column('article_count') %] Artikel geschrieben.
+  <!--<a href="[% people.most_articles.id %]">-->[% people.most_articles.name | html %]<!--</a>--> hat [% people.most_articles.count %] Artikel geschrieben.
 </p>
 
 <h3>Die Person mit den meisten (getaggten) Erwähnungen im Polytechnischen Journal</h3>
@@ -113,7 +113,7 @@
 <h3>Die Person mit den meisten Patenten</h3>
 
 <p>
-  <!--<a href="[% people.most_patents.id %]">-->[% people.most_patents_name | html %]<!--</a>--> hat [% people.most_patents.get_column('article_count') %] Patente angemeldet.
+  <!--<a href="[% people.most_patents.id %]">-->[% people.most_patents.name | html %]<!--</a>--> hat [% people.most_patents.count %] Patente angemeldet.
 </p>
 
 <h2>Quellen</h2>
