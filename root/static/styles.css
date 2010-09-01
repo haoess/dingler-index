@@ -3,7 +3,7 @@ h1 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2.4e
 h2 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:2em; font-weight:normal; margin:0.5em 0 0.5em 0 }
 h3 { color:#069; font-family:Georgia,Times,serif,Times-New-Roman; font-size:1.5em; font-weight:normal; margin:0.5em 0 0.2em 0 }
 img { border:none }
-p { line-height:1.7em; margin:0 0 0.5em 0 }
+p { line-height:1.9em; margin:0 0 0.5em 0 }
 q:before { content:"" }
 q:after  { content:"" }
 td { vertical-align:top }
@@ -23,13 +23,13 @@ a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underlin
 
 .labtitle { display:none }
 
-#maintable { width:1000px; margin-left:auto; margin-right:auto }
+#maintable { width:935px; margin-left:150px; margin-right:auto }
 
-.maincol { width:700px }
-.rightcol { width:300px }
+.maincol { width:620px }
+.rightcol { width:315px }
 
 td.mainleft   { padding-top:10px }
-td.mainmiddle { padding-left:2em; font-size:1.4em }
+td.mainmiddle { padding-left:2em; padding-right:1em; font-size:1.4em }
 td.mainright  { padding-top:0px }
 
 .nav { position:relative; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
