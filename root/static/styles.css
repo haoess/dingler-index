@@ -10,7 +10,7 @@ td { vertical-align:top }
 
 sup.fnref { cursor:pointer }
 a.fnref { color:#900 }
-a, .ui-widget-content a, .clickable { text-decoration:none; color:#c66 }
+a, .ui-widget-content a, .clickable { text-decoration:none; color:#900 }
 a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underline }
 
 #head { background:url(images/headerbg.gif) repeat-x 0px 0px; padding:5px; height:130px }
@@ -50,7 +50,7 @@ td.mainright  { padding-top:0px }
 .small { font-size:0.8em }
 .wide { letter-spacing:0.1em; margin-right:-0.2em; font-family:'Inconsolata',monospace,serif; font-size:1em }
 .roman { font-style:italic }
-.corr { border-bottom:dotted 1px #c66 }
+.corr { border-bottom:dotted 1px #900 }
 .indent { text-indent:2em }
 .pointer { cursor:pointer }
 
