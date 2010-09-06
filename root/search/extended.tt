@@ -14,7 +14,8 @@
         <input type="checkbox" name="" value="" checked="checked" /> Artikel<br />
         <input type="checkbox" name="" value="" checked="checked" /> Miszelle<br />
         <input type="checkbox" name="" value="" checked="checked" /> Patentbeschreibung<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Patentverzeichnis
+        <input type="checkbox" name="" value="" checked="checked" /> Patentverzeichnis<br />
+        <input type="checkbox" name="" value="" checked="checked" /> Index 
       </td>
     </tr>
     <tr>
