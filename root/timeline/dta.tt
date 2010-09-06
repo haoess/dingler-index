@@ -48,5 +48,9 @@
         }, 500);
       }
     }
+    Timeline.OriginalEventPainter.prototype._onClickInstantEvent = function(icon, domEvt, evt) {
+      window.location.href = evt._link;
+      return false;
+    };
   </script>
 [% END %]
