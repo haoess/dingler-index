@@ -1,35 +1,43 @@
 <h1>Erweiterte Suche</h1>
 
-<form method="post">
+<form method="get" action="[% base %]search">
   <table>
     <tr>
-      <td>Suchbegriff(e):</td>
+      <td class="right">Suchbegriff(e):</td>
       <td>
-        <input type="text" />
+        <input type="text" name="q" class="ui-widget-content ui-corner-all qbox" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
       </td>
     </tr>
     <tr>
-      <td>Einschränkung Textsorte:</td>
+      <td>&nbsp;</td>
+      <td>
+        <input type="radio" name="" value="" checked="checked" /> alles durchsuchen<br />
+        <input type="radio" name="" value="" /> nur Titel durchsuchen<br />
+        <input type="radio" name="" value="" /> nur Schlagworte durchsuchen
+      </td>
+    </tr>
+    <tr>
+      <td class="right">Einschränkung Textsorte:</td>
       <td>
         <input type="checkbox" name="" value="" checked="checked" /> Artikel<br />
         <input type="checkbox" name="" value="" checked="checked" /> Miszelle<br />
         <input type="checkbox" name="" value="" checked="checked" /> Patentbeschreibung<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Patentverzeichnis
+        <input type="checkbox" name="" value="" checked="checked" /> Patentverzeichnis<br />
+        <input type="checkbox" name="" value="" checked="checked" /> Index<br />
+        <input type="checkbox" name="" value="" checked="checked" /> Sonstiges (Vorworte, Widmungen, Anzeigen etc.)<br />
       </td>
     </tr>
     <tr>
-      <td>Einschränkung Zeitraum:</td>
+      <td class="right">Einschränkung Zeitraum:</td>
       <td>
-        von
         <select>
-          <option></option>
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
           [% END %]
         </select>
         bis
         <select>
-          <option></option>
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
           [% END %]
@@ -37,13 +45,15 @@
       </td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
+      <td class="right">Treffersortierung:</td>
       <td>
-        <input type="checkbox" name="" value="" /> nur Titeltexte durchsuchen
+        <input type="radio" name="" checked="checked" /> Relevanz<br />
+        <input type="radio" name="" /> Autor<br />
+        <input type="radio" name="" /> Erscheinungsjahr
       </td>
     </tr>
     <tr>
-      <td>Präsentation:</td>
+      <td class="right">Ergebnispräsentation:</td>
       <td>
         <input type="radio" name="" value="" checked="checked" /> Artikel (Teaser)
         <input type="radio" name="" value="" /> Figuren
