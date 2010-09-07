@@ -162,9 +162,11 @@
 </xsl:template>
 
 <xsl:template match="tei:formula">
+  <div class="center">
   <xsl:element name="img">
     <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
   </xsl:element>
+  </div>
 </xsl:template>
 
 <xsl:template match="tei:figure">
