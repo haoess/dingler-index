@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
+use utf8;
 use Data::Page;
 
 my @typemap = (
@@ -11,6 +12,15 @@ my @typemap = (
     [ qw(art_patents Patentverzeichnis) ],
     [ qw(art_undef Artikel) ],
     [ qw(misc_undef Miszelle) ],
+);
+
+my @langmap = (
+    [ qw(english England) ],
+    [ qw(french Frankreich) ],
+    [ qw(austrian Österreich) ],
+    [ qw(prussian Preußen) ],
+    [ qw(scottish Schottland) ],
+    [ qw(american USA) ],
 );
 
 =head1 NAME
@@ -29,7 +39,10 @@ Catalyst Controller.
 
 sub auto :Private {
     my ( $self, $c ) = @_;
-    $c->stash( typemap => \@typemap );
+    $c->stash(
+        langmap => \@langmap,
+        typemap => \@typemap,
+    );
     return 1;
 }
 
@@ -41,6 +54,17 @@ sub help :Local {
     my ( $self, $c ) = @_;
     $c->stash(
         template => 'search/help.tt',
+    );
+}
+
+=head2 extended
+
+=cut
+
+sub extended :Local {
+    my ( $self, $c ) = @_;
+    $c->stash(
+        template => 'search/extended.tt',
     );
 }
 

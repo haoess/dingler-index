@@ -1,11 +1,12 @@
 <h1>Erweiterte Suche</h1>
+<h2>In Texten suchen</h2>
 
 <form method="get" action="[% base %]search">
   <table>
     <tr>
       <td class="right">Suchbegriff(e):</td>
       <td>
-        <input type="text" name="q" class="ui-widget-content ui-corner-all qbox" />
+        <input type="text" name="q" class="ui-widget-content ui-corner-all" />
         <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
       </td>
     </tr>
@@ -55,8 +56,64 @@
     <tr>
       <td class="right">Ergebnispräsentation:</td>
       <td>
-        <input type="radio" name="" value="" checked="checked" /> Artikel (Teaser)
+        <input type="radio" name="" value="" checked="checked" /> Titel und Texte (Teaser)<br />
         <input type="radio" name="" value="" /> Figuren
+      </td>
+    </tr>
+  </table>
+</form>
+
+<h2>Nach Personen suchen</h2>
+
+<form>
+  <table>
+    <tr>
+      <td class="right">
+        Suchbegriff(e):
+      </td>
+      <td>
+        <input type="text" name="" class="ui-widget-content ui-corner-all" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
+      </td>
+    </tr>
+  </table>
+</form>
+
+<h2>Nach Patenten suchen</h2>
+
+<form>
+  <table>
+    <tr>
+      <td class="right">
+        Suchbegriff(e):
+      </td>
+      <td>
+        <input type="text" name="" class="ui-widget-content ui-corner-all" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
+      </td>
+    </tr>
+    <tr>
+      <td class="right">Einschränkung Land:</td>
+      <td>
+        [% FOREACH lang IN langmap %]
+          <input type="checkbox" name="" value="[% lang.0 | html %]" checked="checked" /> [% lang.1 | html %]<br />
+        [% END %]
+      </td>
+    </tr>
+    <tr>
+      <td class="right">Einschränkung Zeitraum:</td>
+      <td>
+        <select>
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
+          [% END %]
+        </select>
+        bis
+        <select>
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
+          [% END %]
+        </select>
       </td>
     </tr>
   </table>
