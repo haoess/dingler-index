@@ -224,14 +224,14 @@
       <xsl:element name="span">
         <xsl:attribute name="title">gemeint: <xsl:value-of select="tei:reg"/></xsl:attribute>
         <xsl:attribute name="class">corr</xsl:attribute>
-        <xsl:value-of select="tei:orig"/>
+        <xsl:apply-templates select="tei:orig"/>
       </xsl:element>
     </xsl:when>
     <xsl:otherwise>
       <xsl:element name="span">
         <xsl:attribute name="title">Original: <xsl:value-of select="tei:orig"/></xsl:attribute>
         <xsl:attribute name="class">corr</xsl:attribute>
-        <xsl:value-of select="tei:corr"/>
+        <xsl:apply-templates select="tei:corr"/>
       </xsl:element>
     </xsl:otherwise>
   </xsl:choose>
