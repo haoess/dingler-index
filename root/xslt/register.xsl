@@ -110,6 +110,14 @@
   </ul>
 </xsl:template>
 
+<xsl:template match="tei:listBibl">
+  <ul style="list-style-type:circle">
+  <xsl:for-each select="tei:bibl">
+    <li><xsl:apply-templates/></li>
+  </xsl:for-each>
+  </ul>
+</xsl:template>
+
 <xsl:template match="tei:persName">
   <xsl:element name="span">
     <xsl:attribute name="class">person</xsl:attribute>
