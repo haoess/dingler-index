@@ -1,7 +1,7 @@
 <h1>Erweiterte Suche</h1>
 <h2>In Texten suchen</h2>
 
-<form method="get" action="[% base %]search">
+<form method="get" action="[% base %]search2">
   <table>
     <tr>
       <td class="right">Suchbegriff(e):</td>
@@ -13,32 +13,34 @@
     <tr>
       <td>&nbsp;</td>
       <td>
-        <input type="radio" name="" value="" checked="checked" /> alles durchsuchen<br />
-        <input type="radio" name="" value="" /> nur Titel durchsuchen<br />
-        <input type="radio" name="" value="" /> nur Schlagworte durchsuchen
+        <input type="radio" name="in" value="" checked="checked" /> alles durchsuchen<br />
+        <input type="radio" name="in" value="" /> nur Titel durchsuchen<br />
+        <input type="radio" name="in" value="" /> nur Schlagworte durchsuchen<br />
+        <input type="radio" name="in" value="" /> nur Fußnoten durchsuchen<br />
       </td>
     </tr>
     <tr>
       <td class="right">Einschränkung Textsorte:</td>
       <td>
-        <input type="checkbox" name="" value="" checked="checked" /> Artikel<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Miszelle<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Patentbeschreibung<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Patentverzeichnis<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Index<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Sonstiges (Vorworte, Widmungen, Anzeigen etc.)<br />
+        <input type="checkbox" name="ts" value="art" checked="checked" /> Artikel<br />
+        <input type="checkbox" name="ts" value="misc" checked="checked" /> Miszelle<br />
+        <input type="checkbox" name="ts" value="pat" checked="checked" /> Patentbeschreibung<br />
+        <input type="checkbox" name="ts" value="patlist" checked="checked" /> Patentverzeichnis<br />
+        <input type="checkbox" name="ts" value="idx" checked="checked" /> Index<br />
+        <input type="checkbox" name="ts" value="other" checked="checked" /> Sonstiges (Vorworte, Widmungen, Anzeigen etc.)<br />
+        <input type="checkbox" name="ts" value="add" checked="checked" /> Herausgeberergänzungen<br />
       </td>
     </tr>
     <tr>
       <td class="right">Einschränkung Zeitraum:</td>
       <td>
-        <select>
+        <select name="from">
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
           [% END %]
         </select>
         bis
-        <select>
+        <select name="to">
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
           [% END %]
@@ -48,16 +50,17 @@
     <tr>
       <td class="right">Treffersortierung:</td>
       <td>
-        <input type="radio" name="" checked="checked" /> Relevanz<br />
-        <input type="radio" name="" /> Autor<br />
-        <input type="radio" name="" /> Erscheinungsjahr
+        <input type="radio" name="sort" value="rank" checked="checked" /> Relevanz<br />
+        <input type="radio" name="sort" value="author" /> Autor<br />
+        <input type="radio" name="sort" value="title" /> Kolumnentitel<br />
+        <input type="radio" name="sort" value="date" /> Erscheinungsjahr
       </td>
     </tr>
     <tr>
       <td class="right">Ergebnispräsentation:</td>
       <td>
-        <input type="radio" name="" value="" checked="checked" /> Titel und Texte (Teaser)<br />
-        <input type="radio" name="" value="" /> Figuren
+        <input type="radio" name="pres" value="text" checked="checked" /> Titel und Texte (Teaser)<br />
+        <input type="radio" name="pres" value="fig" /> Figuren
       </td>
     </tr>
   </table>
@@ -76,6 +79,32 @@
         <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
       </td>
     </tr>
+    <tr>
+      <td class="right">
+        Einschränkung Rolle:
+      </td>
+      <td>
+        <input type="checkbox" name="" value="" checked="checked" /> Autor<br />
+        <input type="checkbox" name="" value="" checked="checked" /> Patentträger<br />
+      </td>
+    </tr>
+    <tr>
+      <td class="right">
+        Einschränkung Zeitraum:
+      </td>
+      <td>
+        <select name="">
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
+          [% END %]
+        </select>
+        bis
+        <select name="">
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
+          [% END %]
+        </select>
+      </td>
   </table>
 </form>
 
