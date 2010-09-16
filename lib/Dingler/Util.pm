@@ -24,6 +24,7 @@ sub uml {
         s/A\x{0364}/Ä/g;
         s/O\x{0364}/Ö/g;
         s/U\x{0364}/Ü/g;
+        s/&#x2010;/-/g;
         s/\s+/ /g;
     }
     return $str;
