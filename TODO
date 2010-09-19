@@ -1,13 +1,20 @@
-* Seitenumbrüche/-zahlen einbinden -> Ausrichtung!
-* Editura-Entities
-* Fortsetzungslinks
-* PDF-Ausgabe
+===========
+
+Faksimilelinks:
+  * Vorwort, Register: Hauptlink setzen
+  * Miszelle: Hauptlink ist unvollständig
+
+===========
+
+Andere Ausgabeformen:
+  * PDF
+  * XML-Ausschnitt
+  * Band-XML
+
 * rendition="#subscript"
 * in Tabellenzellen: s/(\d+)(\s)(\w)/$1&nbsp;$3/g;
 * Miszellentitel: Fussnoten aussondern
-* Suchergebnisse: Abbildung vorhanden
 * Bilder in Fussnoten
-* postgres_patents.pl-Probleme: Bd. 11, 15
 
 * Tools: Einheitenrechner
 
@@ -17,11 +24,24 @@
 
 Suche:
 
-* Ergebnisse sortieren nach Jahr, Autor, Titel (richtiger, nicht Kolumnen-)
+* Dingler Instant
 
 Bildersuche:
 
 * passende Figuren listen
+
+============
+
+DB-Schema - Ergänzungen:
+
+  * article -> absolute Position im Band (fuer Reihenfolge)
+  * article -> autorname
+  * article -> fulltext index auf title only -> DONE
+
+fussnoten -> DONE
+
+Facade-Search:
+  * Zeitraum als Chart
 
 ============
 
@@ -33,47 +53,9 @@ c) chronologischer Zugriff (Jahr): 1820, 1821 ...
 
 -------------
 
-Dingler Records:
-
-- Band
-  - mit meisten Artikeln
-  - mit meisten Tafeln
-
-- Artikel
-  - längste
-  - kürzester
-  - mit den meisten Abbildungen
-  - mit meisten Verweisen
-  - auf den am meisten verwiesen wird
-  - Der Artikel, der mit seinen Placenames den weitestens Kreis auf der Erdkugel beschreibt.
-
-- Tafel
-  - mit den meisten Figuren
-  - groesste Tafel
-
-- Figur
-  - groesste Figur
-  - kleinste Figur
-
-- Person
-  - Autor mit den meisten Artikeln
-  - Person mit den meisten <persname>-Tags
-  - Person mit den meisten patenten
-
-- Quelle
-  - meistgenutzte Quelle
-
-- Orte
-  - meist genannter Ort
-
-
-------------------
-
 Artikelansicht:
 
 1) art_literature berücksichtigen
-2) wenn Miszellen keine Nummern haben im Original, dann einfach durchzählen und per [] kenntlich machen
-
 
 -------------------
 

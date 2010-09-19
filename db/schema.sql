@@ -3,6 +3,9 @@ DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
 DROP FUNCTION IF EXISTS article_trigger();
+DROP FUNCTION IF EXISTS article_title_trigger();
+DROP TABLE IF EXISTS footnote CASCADE;
+DROP FUNCTION IF EXISTS footnote_trigger();
 DROP TABLE IF EXISTS patent CASCADE;
 DROP FUNCTION IF EXISTS patent_trigger();
 DROP TABLE IF EXISTS patent_app CASCADE;
@@ -34,10 +37,12 @@ CREATE TABLE article (
   front     TEXT,
   content   TEXT,
   position  INT,
-  tsv       TSVECTOR
+  tsv       TSVECTOR,
+  titletsv  TSVECTOR
 );
 
 CREATE INDEX article_tsv_idx ON article USING gin(tsv);
+CREATE INDEX article_titletsv_idx ON article USING gin(titletsv);
 
 CREATE FUNCTION article_trigger() RETURNS trigger AS $$
 begin
@@ -48,8 +53,40 @@ begin
 end
 $$ LANGUAGE plpgsql;
 
+CREATE FUNCTION article_title_trigger() RETURNS trigger AS $$
+begin
+  new.titletsv := to_tsvector('german', coalesce(new.front,''));
+  return new;
+end
+$$ LANGUAGE plpgsql;
+
 CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
 ON article FOR EACH ROW EXECUTE PROCEDURE article_trigger();
+
+CREATE TRIGGER tsvectorupdate_title BEFORE INSERT OR UPDATE
+ON article FOR EACH ROW EXECUTE PROCEDURE article_title_trigger();
+
+-- --------------------------
+
+CREATE TABLE footnote (
+  id      SERIAL PRIMARY KEY,
+  n       TEXT,
+  article TEXT REFERENCES article (id),
+  content TEXT,
+  tsv     TSVECTOR
+);
+
+CREATE INDEX footnote_tsv_idx ON article USING gin(tsv);
+
+CREATE FUNCTION footnote_trigger() RETURNS trigger AS $$
+begin
+  new.tsv := to_tsvector('german', coalesce(new.content,''));
+  return new;
+end
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
+ON footnote FOR EACH ROW EXECUTE PROCEDURE footnote_trigger();
 
 -- --------------------------
 

@@ -164,7 +164,7 @@ sub articles :Private {
                     id     => $shortest->first->journal->id,
                     volume => $shortest->first->journal->volume,
                     year   => $shortest->first->journal->year,
-                },  
+                },
                 id      => $shortest->first->id,
                 title   => $shortest->first->title,
                 chars   => $shortest->first->get_column('chars'),

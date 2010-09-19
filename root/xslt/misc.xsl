@@ -23,16 +23,18 @@
   <xsl:apply-templates />
 </xsl:template>
 
-<xsl:template match='tei:front/tei:pb'>
-</xsl:template>
+<xsl:template match='tei:ab'></xsl:template>
 
-<xsl:template match='tei:body//tei:pb'>
+<xsl:template match='tei:pb'>
   <xsl:element name="span">
-    <xsl:attribute name="id">pb<xsl:value-of select="@n"/></xsl:attribute>
+    <xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute>
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
       <xsl:attribute name="target">_blank</xsl:attribute>
-      [S. <xsl:value-of select="@n"/>]
+      <xsl:element name="img">
+        <xsl:attribute name="src">static/images/pb.gif</xsl:attribute>
+        <xsl:attribute name="title">Orig. S. <xsl:value-of select="@n"/></xsl:attribute>
+      </xsl:element>
     </xsl:element>
   </xsl:element>
 </xsl:template>

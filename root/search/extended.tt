@@ -1,149 +1,46 @@
 <h1>Erweiterte Suche</h1>
-<h2>In Texten suchen</h2>
 
-<form method="get" action="[% base %]search2">
-  <table>
-    <tr>
-      <td class="right">Suchbegriff(e):</td>
-      <td>
-        <input type="text" name="q" class="ui-widget-content ui-corner-all" />
-        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>
-        <input type="radio" name="in" value="" checked="checked" /> alles durchsuchen<br />
-        <input type="radio" name="in" value="" /> nur Titel durchsuchen<br />
-        <input type="radio" name="in" value="" /> nur Schlagworte durchsuchen<br />
-        <input type="radio" name="in" value="" /> nur Fußnoten durchsuchen<br />
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Einschränkung Textsorte:</td>
-      <td>
-        <input type="checkbox" name="ts" value="art" checked="checked" /> Artikel<br />
-        <input type="checkbox" name="ts" value="misc" checked="checked" /> Miszelle<br />
-        <input type="checkbox" name="ts" value="pat" checked="checked" /> Patentbeschreibung<br />
-        <input type="checkbox" name="ts" value="patlist" checked="checked" /> Patentverzeichnis<br />
-        <input type="checkbox" name="ts" value="idx" checked="checked" /> Index<br />
-        <input type="checkbox" name="ts" value="other" checked="checked" /> Sonstiges (Vorworte, Widmungen, Anzeigen etc.)<br />
-        <input type="checkbox" name="ts" value="add" checked="checked" /> Herausgeberergänzungen<br />
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Einschränkung Zeitraum:</td>
-      <td>
-        <select name="from">
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
-          [% END %]
-        </select>
-        bis
-        <select name="to">
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
-          [% END %]
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Treffersortierung:</td>
-      <td>
-        <input type="radio" name="sort" value="rank" checked="checked" /> Relevanz<br />
-        <input type="radio" name="sort" value="author" /> Autor<br />
-        <input type="radio" name="sort" value="title" /> Kolumnentitel<br />
-        <input type="radio" name="sort" value="date" /> Erscheinungsjahr
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Ergebnispräsentation:</td>
-      <td>
-        <input type="radio" name="pres" value="text" checked="checked" /> Titel und Texte (Teaser)<br />
-        <input type="radio" name="pres" value="fig" /> Figuren
-      </td>
-    </tr>
-  </table>
-</form>
+<div id="tabs">
+  <ul>
+    <li><a href="#tab-text">Texte</a></li>
+    <li><a href="#tab-person">Personen</a></li>
+    <li><a href="#tab-patent">Patente</a></li>
+    <li><a href="#tab-help">Hilfe</a></li>
+  </ul>
+  <div id="tab-text">
+    [% INCLUDE 'search/text.tt' %]
+  </div>
 
-<h2>Nach Personen suchen</h2>
+  <div id="tab-person">
+    [% INCLUDE 'search/person.tt' %]
+  </div>
 
-<form>
-  <table>
-    <tr>
-      <td class="right">
-        Suchbegriff(e):
-      </td>
-      <td>
-        <input type="text" name="" class="ui-widget-content ui-corner-all" />
-        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
-      </td>
-    </tr>
-    <tr>
-      <td class="right">
-        Einschränkung Rolle:
-      </td>
-      <td>
-        <input type="checkbox" name="" value="" checked="checked" /> Autor<br />
-        <input type="checkbox" name="" value="" checked="checked" /> Patentträger<br />
-      </td>
-    </tr>
-    <tr>
-      <td class="right">
-        Einschränkung Zeitraum:
-      </td>
-      <td>
-        <select name="">
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
-          [% END %]
-        </select>
-        bis
-        <select name="">
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
-          [% END %]
-        </select>
-      </td>
-  </table>
-</form>
+  <div id="tab-patent">
+    [% INCLUDE 'search/patent.tt' %]
+  </div>
 
-<h2>Nach Patenten suchen</h2>
+  <div id="tab-help">
+    [% INCLUDE 'search/help.tt' %]
+  </div>
+</div>
 
-<form>
-  <table>
-    <tr>
-      <td class="right">
-        Suchbegriff(e):
-      </td>
-      <td>
-        <input type="text" name="" class="ui-widget-content ui-corner-all" />
-        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Einschränkung Land:</td>
-      <td>
-        [% FOREACH lang IN langmap %]
-          <input type="checkbox" name="" value="[% lang.0 | html %]" checked="checked" /> [% lang.1 | html %]<br />
-        [% END %]
-      </td>
-    </tr>
-    <tr>
-      <td class="right">Einschränkung Zeitraum:</td>
-      <td>
-        <select>
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
-          [% END %]
-        </select>
-        bis
-        <select>
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
-          [% END %]
-        </select>
-      </td>
-    </tr>
-  </table>
-</form>
+[% BLOCK head %]
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    var show_tab = location.hash;
+    var divs = [];
+    var index;
+    jQuery('.tabs > div').each(function() { divs.push('#'+this.id); });
+    for (i=0; i < divs.length; i++) {
+      if (show_tab == divs[i]) {
+        index = i;
+        break; // found a match, break
+      }
+      else {
+        index = 0; // default tab
+      }
+    }
+    jQuery('#tabs').tabs({ selected: index });
+  });
+</script>
+[% END %]

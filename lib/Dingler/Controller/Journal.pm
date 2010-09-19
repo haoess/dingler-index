@@ -81,7 +81,10 @@ sub preface :Local {
     $c->res->body( undef );
 
     $c->stash(
-        template => 'article/view.tt',
+        preface    => 1,
+        journal_rs => $c->model('Dingler::Journal')->find($journal),
+        template   => 'article/view.tt',
+        title      => 'Vorbericht',
     );
 }
 
@@ -105,16 +108,19 @@ sub register :Local {
         $c->stash->{xml} = $xml;
         $c->forward('Dingler::View::XSLT');
 
-        my $xsl = $c->res->body;
+        $xsl = $c->res->body;
         utf8::decode $xsl;
+        $c->res->body( undef );
         $cache->set( $journal, $xsl );
     }
 
     $c->stash( xsl => $xsl );
-    $c->res->body( undef );
 
     $c->stash(
-        template => 'article/view.tt',
+        register   => 1,
+        journal_rs => $c->model('Dingler::Journal')->find($journal),
+        template   => 'article/view.tt',
+        title      => 'Register',
     );
 }
 

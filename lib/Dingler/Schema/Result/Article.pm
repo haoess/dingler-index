@@ -113,6 +113,13 @@ __PACKAGE__->table("article");
   is_nullable: 1
   size: undef
 
+=head2 titletsv
+
+  data_type: tsvector
+  default_value: undef
+  is_nullable: 1
+  size: undef
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -155,6 +162,13 @@ __PACKAGE__->add_columns(
   "position",
   { data_type => "integer", default_value => undef, is_nullable => 1 },
   "tsv",
+  {
+    data_type => "tsvector",
+    default_value => undef,
+    is_nullable => 1,
+    size => undef,
+  },
+  "titletsv",
   {
     data_type => "tsvector",
     default_value => undef,
@@ -224,6 +238,20 @@ __PACKAGE__->has_many(
   { "foreign.article" => "self.id" },
 );
 
+=head2 footnotes
+
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Footnote>
+
+=cut
+
+__PACKAGE__->has_many(
+  "footnotes",
+  "Dingler::Schema::Result::Footnote",
+  { "foreign.article" => "self.id" },
+);
+
 =head2 patents
 
 Type: has_many
@@ -253,8 +281,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-09 10:16:59
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:kCxosmxphSaUXv21G7yj6A
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-09-18 21:26:27
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:01tK9TLN3RXgXVlhMT1Q+w
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

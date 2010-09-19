@@ -115,21 +115,7 @@ __PACKAGE__->config(
                     my $target = shift->to_literal;
 
                     if ( $target =~ /#(.*)_pb(.*)/ ) {
-                        my ($journal, $page) = $target =~ /#(.*)_pb(.*)/;
-                        return unless $journal && $page;
-                        return unless $page =~ /\A\d{3}\z/;
-                        my $rs = Dingler->model('Dingler::Article')->search(
-                            {
-                                journal => $journal,
-                                $page   => { -between => [ \'pagestart::int', \'pageend::int' ] },
-                            },
-                        );
-                        if ( $rs->count ) {
-                            return sprintf 'article/%s/%s#pb%s', $rs->first->get_column('journal'), $rs->first->id, $page;
-                        }
-                        else {
-                            return;
-                        }
+                        return sprintf 'page/%s/%s', $1, $2;
                     }
                     elsif ( $target =~ /\A#(ar[0-9]{6})\z/ ) {
                         my $rs = Dingler->model('Dingler::Article')->find( id => $1 );

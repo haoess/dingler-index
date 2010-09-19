@@ -1,0 +1,59 @@
+[% BLOCK pager_html %]
+  [% pager.total_entries %] Treffer gefunden ([% pager.first %]&ndash;[% pager.last %] angezeigt).
+  Seite:
+  [% IF pager.current_page != pager.first_page %]
+    <a href="[% c.req.uri_with({ p => pager.first_page }) | html %]">«</a>
+  [% END %]
+  [% IF pager.current_page != pager.first_page %]
+    <a href="[% c.req.uri_with({ p => pager.previous_page }) | html %]">‹</a>
+  [% END %]
+  [% first = ( pager.current_page > 5 ? (pager.current_page - 5) : 1 )%]
+  [% last  = ( pager.current_page + 5 < pager.last_page ? (pager.current_page + 5) : pager.last_page ) %]
+  [% FOREACH page IN  [first .. last] %]
+    [% IF pager.current_page == page %]
+      [% page %]
+    [% ELSE %]
+      <a href="[% c.req.uri_with({ p => page }) | html %]">[% page %]</a>
+    [% END %]
+  [% END %]
+  [% IF pager.current_page != pager.last_page %]
+    <a href="[% c.req.uri_with({ p => pager.next_page }) | html %]">›</a>
+  [% END %]
+  [% IF pager.current_page != pager.last_page %]
+    <a href="[% c.req.uri_with({ p => pager.last_page }) | html %]">»</a>
+  [% END %]
+[% END %]
+
+<h1>Suchergebnisse Patentsuche</h1>
+
+<p>
+  Suche: <b>[% q | html %]</b><br />
+  [% PROCESS pager_html %]
+</p>
+
+[% WHILE ( patent = matches.next ) %]
+  <h3>[% patent.date.strftime('%d.&thinsp;%m.&thinsp;%Y') %]</h3>
+  <p>[% render_patent(patent.id, patent.xml) %]</p>
+[% END %]
+
+<div id="dialog"></div>
+
+<script type="text/javascript">
+  function showperson(id, article) {
+    jQuery('#dialog').html( '' );
+    jQuery('#dialog').load('[% base %]person/' + id + '/' + article +' #data');
+    jQuery("#dialog").dialog({
+      width: 600,
+      title: 'Personeninformationen',
+      hide: 'explode',
+    });
+    return false;
+  }
+</script>
+
+<br />
+<p>[% PROCESS pager_html %]</p>
+
+[% BLOCK right %]
+  <p>Facettensuche etc. stehen demnächst zur Verfügung.</p>
+[% END %]

@@ -33,12 +33,12 @@
         </td>
       </tr>
     </xsl:if>
-    <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]'>
+    <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents" or @type="art_literature"]'>
     <tr>
       <td class="right"><xsl:apply-templates select='tei:front/tei:titlePart[@type="number"]'/></td>
       <td>
         <xsl:choose>
-          <xsl:when test='@type="art_undef" or @type="art_patent" or @type="art_patents"'>
+          <xsl:when test='@type="art_undef" or @type="art_patent" or @type="art_patents" or @type="art_literature"'>
             <xsl:element name="a">
               <xsl:attribute name="href"><xsl:value-of select="$base" />article/<xsl:value-of select="$journal" />/<xsl:value-of select="@xml:id" /></xsl:attribute>
               <xsl:apply-templates select='tei:front/tei:titlePart[@type="column"]'/>
@@ -73,7 +73,7 @@
         <td>
           <xsl:element name="a">
             <xsl:attribute name="href"><xsl:value-of select="$base" />journal/register/<xsl:value-of select="$journal" /></xsl:attribute>
-            <xsl:value-of select='//tei:div[@type="index"]/tei:head'/>
+            <xsl:apply-templates select='//tei:div[@type="index"]/tei:head'/>
           </xsl:element>
         </td>
       </tr>

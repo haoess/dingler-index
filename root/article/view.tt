@@ -37,8 +37,14 @@
     );
   </script>
         Sie sind hier: <a href="[% base %]">Startseite</a> &rarr;
+      [% IF preface %]
+        <a href="journal/[% journal | html %]">Band [% journal_rs.volume | html %]</a> &rarr; Vorbericht
+      [% ELSIF register %]
+        <a href="journal/[% journal | html %]">Band [% journal_rs.volume | html %]</a> &rarr; Register
+      [% ELSE %]
         <a href="journal/[% journal | html %]">Band [% volume | html %]</a> &rarr;
         [% IF number %]Artikel [% number | html %][% END %][% IF misc && number  %]/[% END; IF misc %]Miszelle [% item.position %][% END %]
+      [% END %]
       </td>
       <td class="right">
         [% IF prev_article %]<a href="article/[% journal %]/[% prev_article.id %]"><b>&larr;</b></a>[% END %]
@@ -54,6 +60,7 @@
       <td class="caption right">Titel:</td>
       <td>[% title | html %]</td>
     </tr>
+    [% IF !preface AND !register %]
     <tr>
       <td class="caption right">Autor:</td>
       <td>
@@ -62,9 +69,21 @@
         [% END %]
       </td>
     </tr>
+    [% END %]
     <tr>
       <td class="caption right">Fundstelle:</td>
-      <td>[% year | html %], Band [% volume | html %], Nr. [% number | html %][% IF misc %]/Miszelle [% item.position %][% END %], S. [% IF p_start != p_end %][% p_start | html %]&ndash;[% p_end | html %][% ELSE; p_start | html; END %]</td>
+      <td>
+        [% IF preface OR register %]
+          [% journal_rs.year | html %], Band [% journal_rs.volume | html %]
+        [% ELSE %]
+          [% year | html %],
+          Band [% volume | html %],
+          [% IF number %]Nr. [% number | html %][% END -%]
+          [%- '/' IF misc AND number -%]
+          [%- IF misc %]Miszelle[% END %]
+          (S. [% IF p_start != p_end %][% p_start | html %]&ndash;[% p_end | html %][% ELSE; p_start | html; END %])
+        [% END %]
+      </td>
     </tr>
     <tr>
       <td class="caption right">URL:</td>
@@ -73,7 +92,9 @@
   </table>
 </div>
 
-<span><a href="[% facsimile %]" target="_blank">[Faksimile]</a></span>
+[% IF !preface AND !register %]
+  <span><a href="[% facsimile %]" target="_blank">[Faksimile]</a></span>
+[% END %]
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
 <div id="dialog"></div>
@@ -94,6 +115,7 @@
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
 
+  [% IF !preface AND !register %]
   <div class="rightbox nolab">
     <div class="rightboxhead">Schlagwortwolke</div>
     <div class="rightboxcontent">
@@ -123,6 +145,7 @@
       return false;
     }
   </script>
+  [% END %]
 
   [% IF figures.size %]
   <div class="rightbox">
@@ -241,6 +264,7 @@
     });
   </script>
 
+<!--
   <div class="rightbox nolab">
     <div class="rightboxhead">Weitere Informationen</div>
     <div class="rightboxcontent">
@@ -250,4 +274,5 @@
       </div>
     </div>
   </div>
+-->
 [% END %]

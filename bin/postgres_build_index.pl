@@ -17,6 +17,7 @@ my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, barcode, year,
 my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, subtype, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
 my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, ref, reftype) VALUES (?, ?, ?)' );
 my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref, role) VALUES (?, ?, ?)' );
+my $sth_footnote = $dbh->prepare( 'INSERT INTO footnote (n, article, content) VALUES (?, ?, ?)' );
 
 JOURNAL:
   foreach my $journal ( @ARGV ) {
@@ -38,7 +39,7 @@ JOURNAL:
     $sth_journal->execute( $jid, $volume, $barcode, $year, $j_facsimile );
 
     my $pos = 1;
-    foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents"]') ) {
+    foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents" or @type="art_literature"]') ) {
         my $data = prepare_article( $article, $xpc );
         $sth_article->execute(
             $data->{id},      undef,              $jid,           $data->{type},      undef,
@@ -66,6 +67,12 @@ JOURNAL:
                     next if $ref eq '-';
                     my $role = $xpc->find('@role', $person);
                     $sth_person->execute( $ref, $miscid, $role );
+                }
+
+                foreach my $fn ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:note') ) {
+                    my $n = $xpc->find('@n', $fn);
+                    my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
+                    $sth_footnote->execute( $n, $miscid, $content );
                 }
                 $miscpos++;
             }
@@ -100,6 +107,12 @@ JOURNAL:
                 next if $ref eq '-';
                 my $role = $xpc->find('@role', $person);
                 $sth_person->execute( $ref, $data->{id}, $role );
+            }
+
+            foreach my $fn ( $xpc->findnodes('.//tei:note', $article) ) {
+                my $n = $xpc->find('@n', $fn);
+                my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
+                $sth_footnote->execute( $n, $data->{id}, $content );
             }
         }
         $pos++;

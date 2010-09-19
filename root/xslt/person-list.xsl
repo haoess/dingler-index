@@ -28,6 +28,12 @@
 
 <xsl:template match='tei:persName' mode="name">
   <h2>
+    <xsl:if test='../tei:figure'>
+      <xsl:element name="img">
+        <xsl:attribute name="class">portrait</xsl:attribute>
+        <xsl:attribute name="src"><xsl:value-of select="../tei:figure/tei:graphic/@url" /></xsl:attribute>
+      </xsl:element>
+    </xsl:if>
     <xsl:value-of select="./tei:surname"/>
     <xsl:if test="string(./tei:forename)">,</xsl:if>
     <xsl:text> </xsl:text><xsl:value-of select="./tei:addName"/>

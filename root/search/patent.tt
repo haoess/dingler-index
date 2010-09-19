@@ -1,0 +1,39 @@
+<h3>Nach Patenten suchen</h3>
+
+<form method="get" action="[% base %]patent/search">
+  <table>
+    <tr>
+      <td class="right">
+        Suchbegriff(e):
+      </td>
+      <td>
+        <input type="text" name="q" class="ui-widget-content ui-corner-all" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
+      </td>
+    </tr>
+    <tr>
+      <td class="right">Einschränkung Land:</td>
+      <td>
+        [% FOREACH lang IN langmap %]
+          <input type="checkbox" name="subtype" value="[% lang.0 | html %]" checked="checked" /> [% lang.1 | html %]<br />
+        [% END %]
+      </td>
+    </tr>
+    <tr>
+      <td class="right">Einschränkung Zeitraum:</td>
+      <td>
+        <select name="from">
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
+          [% END %]
+        </select>
+        bis
+        <select name="to">
+          [% FOR i IN [ 182 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
+          [% END %]
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>

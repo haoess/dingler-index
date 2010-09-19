@@ -29,11 +29,15 @@ sub index :Path :Args(2) {
     my ( $self, $c, $journal, $article ) = @_;
 
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    my $item  = $c->model('Dingler::Article')->find( $article );
+    $c->detach('/default') if !$item;
+
     $c->stash(
         xml     => $xml,
+        id      => $article,
         article => $article,
         journal => $journal,
-        item    => $c->model('Dingler::Article')->find( $article ),
+        item    => $item,
         misc    => ($article =~ /^mi/) ? 1 : 0,
     );
 
@@ -68,7 +72,7 @@ sub index :Path :Args(2) {
 
 sub set_meta :Private {
     my ( $self, $c, $journal, $article ) = @_;
-    my $ar = $c->model('Dingler::Article')->find({ id => $article });
+    my $ar = $c->stash->{item};
 
     my $strip = \&Dingler::Util::strip;
 
@@ -114,7 +118,9 @@ sub bibtex :Private {
     $entry->set( journal => 'Polytechnisches Journal' );
     $entry->set( volume  => $c->stash->{volume} );
     if ( $c->stash->{misc} ) {
-        $entry->set( number  => sprintf '%s/Miszelle %s', $c->stash->{number}, $c->stash->{item}->position );
+        if ( $c->stash->{number} ) {
+            $entry->set( number  => sprintf '%s/Miszelle %s', $c->stash->{number}, $c->stash->{item}->position );
+        }
     }
     else {
         $entry->set( number  => $c->stash->{number} );
@@ -146,7 +152,7 @@ sub article_xslt :Private {
             $c->stash->{template} = 'misc.xsl';
         }
         else {
-            $c->stash->{template} = 'article.xsl';
+            $c->stash->{template} = 'unit.xsl';
         }
         $c->forward('Dingler::View::XSLT');
         $xsl = $c->res->body;

@@ -2,10 +2,10 @@
   [% pager.total_entries %] Treffer gefunden ([% pager.first %]&ndash;[% pager.last %] angezeigt).
   Seite:
   [% IF pager.current_page != pager.first_page %]
-    <a href="[% c.req.uri_with({ p => pager.first_page }) %]">«</a>
+    <a href="[% c.req.uri_with({ p => pager.first_page }) | html %]">«</a>
   [% END %]
   [% IF pager.current_page != pager.first_page %]
-    <a href="[% c.req.uri_with({ p => pager.previous_page }) %]">‹</a>
+    <a href="[% c.req.uri_with({ p => pager.previous_page }) | html %]">‹</a>
   [% END %]
   [% first = ( pager.current_page > 5 ? (pager.current_page - 5) : 1 )%]
   [% last  = ( pager.current_page + 5 < pager.last_page ? (pager.current_page + 5) : pager.last_page ) %]
@@ -13,14 +13,14 @@
     [% IF pager.current_page == page %]
       [% page %]
     [% ELSE %]
-      <a href="[% c.req.uri_with({ p => page }) %]">[% page %]</a>
+      <a href="[% c.req.uri_with({ p => page }) | html %]">[% page %]</a>
     [% END %]
   [% END %]
   [% IF pager.current_page != pager.last_page %]
-    <a href="[% c.req.uri_with({ p => pager.next_page })%]">›</a>
+    <a href="[% c.req.uri_with({ p => pager.next_page }) | html %]">›</a>
   [% END %]
   [% IF pager.current_page != pager.last_page %]
-    <a href="[% c.req.uri_with({ p => pager.last_page })%]">»</a>
+    <a href="[% c.req.uri_with({ p => pager.last_page }) | html %]">»</a>
   [% END %]
 [% END %]
 
@@ -41,7 +41,12 @@
           <b><a href="article/[% match.get_column('journal') %]/[% match.id %]">[% match.title | html %]</a></b><br />
           Jahrgang [% match.get_column('year') | html %],
           Band [% match.get_column('volume') | html %],
-          Nr. [% IF match.number %][% match.number | html ; ELSE; match.parent.number | html; '/Miszelle ' _ match.position; END %]
+          [% IF match.number %]
+            Nr. [% match.number | html %]
+          [% ELSE %]
+            Miszelle
+          [% END %]
+          (S. [% match.pagestart %])
         </p>
         <p class="small">
           [% figure = match.figures_rs.search({ reftype => 'tabular' }).first; IF figure %]
@@ -66,15 +71,25 @@
     <div class="rightboxcontent">
       <p>
         <b>Dekade</b>
-        [% IF c.req.params.decade %](<a href="[% c.req.uri_with({ decade => undef }) %]">Filter aufheben</a>)[% END %]
+        [% IF c.req.params.from OR c.req.params.to %](<a href="[% c.req.uri_with({ from => undef, to => undef }) | html %]">Filter aufheben</a>)[% END %]
       </p>
       <table>
-        [% FOREACH i IN [ 181 .. 193 ] %]
+        [% FOREACH i IN [ 182, 184, 186, 188, 190, 192 ] %]
         <tr>
           <td>[% i %]0er:</td>
           <td class="right">
             [% IF facet.decade.$i %]
-              <a href="[% c.req.uri_with({ decade => i _ 0 }) %]">[% facet.decade.$i + 0 %]</a>
+              <a href="[% c.req.uri_with({ from => i _ 0, to => (i+1) _ 0 }) | html %]">[% facet.decade.$i + 0 %]</a>
+            [% ELSE %]
+              0
+            [% END %]
+          </td>
+          <td>&nbsp;</td>
+          [% i = i + 1 %]
+          <td>[% i %]0er:</td>
+          <td class="right">
+            [% IF facet.decade.$i %]
+              <a href="[% c.req.uri_with({ from => i _ 0, to => (i+1) _ 0 }) | html %]">[% facet.decade.$i + 0 %]</a>
             [% ELSE %]
               0
             [% END %]
@@ -83,17 +98,18 @@
         [% END %]
       </table>
       <br />
+
       <p>
         <b>Textsorte</b>
-        [% IF c.req.params.texttype %](<a href="[% c.req.uri_with({ texttype => undef }) %]">Filter aufheben</a>)[% END %]
+        [% IF c.req.params.ts %](<a href="[% c.req.uri_with({ ts => undef }) | html %]">Filter aufheben</a>)[% END %]
       </p>
       <table>
-        [% FOREACH type IN typemap %]
+        [% FOREACH type IN texttypes %]
         <tr>
           <td class="right">[% type.1 | html %]:</td>
           <td class="right">
             [% IF facet.texttype.${type.0} %]
-              <a href="[% c.req.uri_with({ texttype => type.0 }) %]">[% facet.texttype.${type.0} %]</a>
+              <a href="[% c.req.uri_with({ ts => type.0 }) | html %]">[% facet.texttype.${type.0} %]</a>
             [% ELSE %]
               0
             [% END %]
