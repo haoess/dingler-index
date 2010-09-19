@@ -224,7 +224,6 @@ sub facets :Private {
         #my $figures = $match->figures->search( undef, { group_by => 'url' } )->count;
         #$c->stash->{figures} += $figures;
     }
-    use Data::Dumper; warn Dumper $c->stash->{facet};
     $matches->reset; # don't forget
     return;
 }
