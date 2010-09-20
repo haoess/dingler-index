@@ -155,7 +155,7 @@ sub search :Global {
     my $count = $hits->count;
 
     # set up pager
-    my $limit = 200;
+    my $limit = 20;
     my $page = $c->req->params->{p} || 1;
     $page = 1 if $page !~ /\A[0-9]+\z/;
     my $pager = Data::Page->new;
