@@ -79,7 +79,7 @@
           <td>[% i %]0er:</td>
           <td class="right">
             [% IF facet.decade.$i %]
-              <a href="[% c.req.uri_with({ from => i _ 0, to => (i+1) _ 0 }) | html %]">[% facet.decade.$i + 0 %]</a>
+              <a href="[% c.req.uri_with({ from => i _ 0, to => ((i+1) _ 0) - 1 }) | html %]">[% facet.decade.$i + 0 %]</a>
             [% ELSE %]
               0
             [% END %]
@@ -89,7 +89,7 @@
           <td>[% i %]0er:</td>
           <td class="right">
             [% IF facet.decade.$i %]
-              <a href="[% c.req.uri_with({ from => i _ 0, to => (i+1) _ 0 }) | html %]">[% facet.decade.$i + 0 %]</a>
+              <a href="[% c.req.uri_with({ from => i _ 0, to => ((i+1) _ 0) - 1 }) | html %]">[% facet.decade.$i + 0 %]</a>
             [% ELSE %]
               0
             [% END %]

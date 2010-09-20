@@ -30,14 +30,14 @@
       <td class="right">Einschränkung Zeitraum:</td>
       <td>
         <select name="from">
-          [% FOR i IN [ 182 .. 194 ] %]
+          [% FOR i IN [ 182 .. 193 ] %]
             <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
           [% END %]
         </select>
         bis
         <select name="to">
-          [% FOR i IN [ 182 .. 194 ] %]
-            <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
+          [% FOR i IN [ 183 .. 194 ] %]
+            <option [% 'selected="selected"' IF loop.last %]>[% (i _ 0) - 1 %]</option>
           [% END %]
         </select>
       </td>
