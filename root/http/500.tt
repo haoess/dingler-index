@@ -1,0 +1,11 @@
+<h1>500 &ndash; Server-Fehler</h1>
+
+[% IF c.debug %]
+  <div style="font-family:monospace;background:#eee">
+  [% FOREACH error IN errors %]
+    [% error | html %]<br />
+  [% END %]
+  </div>
+[% ELSE %]
+  <p>Es ist ein Fehler aufgetreten, der nicht hätte passieren sollen. Wir kümmern uns darum.</p>
+[% END %]

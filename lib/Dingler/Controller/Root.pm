@@ -164,7 +164,9 @@ Standard 404 error page
 
 sub default :Path {
     my ( $self, $c ) = @_;
-    $c->response->body( 'Page not found' );
+    $c->stash(
+        template => 'http/404.tt',
+    );
     $c->response->status(404);
 }
 
@@ -181,6 +183,20 @@ sub end :Private {
         my $view = $c->stash->{view} || 'TT';
         $c->forward( $c->view($view) );
         $c->fillform( $c->stash->{form} ) if $c->stash->{form};
+    }
+
+    # custom 500 page
+    if ( my @errors = @{$c->error} ) {
+        foreach my $error (@errors) {
+            $c->log->error( $error );
+        }
+        $c->clear_errors;
+        $c->stash(
+            template => 'http/500.tt',
+            errors   => \@errors,
+        );
+        $c->response->status(500);
+        $c->forward( $c->view('TT') );
     }
 }
 
