@@ -93,7 +93,7 @@
 </div>
 
 [% IF !preface AND !register %]
-  <span><a href="[% facsimile %]" target="_blank">[Faksimile]</a></span>
+  <span><a href="[% facsimile | html %]" target="_blank">[Faksimile]</a></span>
 [% END %]
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
