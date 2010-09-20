@@ -20,7 +20,21 @@ Catalyst Controller.
 
 sub index :Path :Args(2) {
     my ( $self, $c, $journal, $page ) = @_;
-    my $rs = Dingler->model('Dingler::Article')->search(
+    
+    # first, we try to find an article that starts at $page
+    my $rs = $c->model('Dingler::Article')->search(
+        {
+            journal => $journal,
+            pagestart => $page,
+        }
+    );
+    if ( $rs->count ) {
+        $c->res->redirect( $c->uri_for("/article", $journal, $rs->first->id ) ); #, "#$journal" . "pb_$page"
+        $c->detach;
+    }
+
+    # second, $page is within an article (not startpage)
+    $rs = Dingler->model('Dingler::Article')->search(
         {
             journal => $journal,
             $page   => { -between => [ \'pagestart::int', \'pageend::int' ] },
