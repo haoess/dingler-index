@@ -21,6 +21,9 @@ Catalyst Controller.
 sub index :Path :Args(1) {
     my ( $self, $c, $journal ) = @_;
 
+    my $item = $c->model('Dingler::Journal')->find( $journal );
+    $c->detach('/default') if !$item;
+
     $c->forward('article_list', [$journal]);
 
     my $tabulars = $c->model('Dingler::Figure')->search(
