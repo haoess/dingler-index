@@ -51,9 +51,14 @@ JOURNAL:
         if ( $data->{type} eq 'art_miscellanea' ) {
             my $miscpos = 1;
             foreach my $misc ( $xpc->findnodes('//tei:text[@xml:id="' . $data->{id} . '"]//tei:div[@type="misc_undef" or @type="misc_patents"]') ) {
-                my $miscid       = $xpc->find( '@xml:id', $misc );
-                my $type         = $xpc->find( '@type', $misc );
-                my $title        = $xpc->find( 'tei:head', $misc );
+                my $miscid  = $xpc->find( '@xml:id', $misc );
+                my $type    = $xpc->find( '@type', $misc );
+                my ($title) = $xpc->findnodes( 'tei:head', $misc );
+
+                # eliminate possible notes
+                my @notes = $xpc->findnodes('tei:note', $title);
+                $title->removeChild($_) for @notes;
+
                 $title = Dingler::Util::uml( normalize($title->to_literal) );
                 my $pagestart    = $xpc->find( 'preceding::tei:pb[1]/@n', $misc );
                 my $pageend      = $xpc->find( 'following::*[1]/preceding::tei:pb[1]/@n', $misc );
