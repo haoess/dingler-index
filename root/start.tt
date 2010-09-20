@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="rightbox" class="nolab">
+  <div class="rightbox nolab">
     <div class="rightboxhead">Mein Dingler</div>
     <div class="rightboxcontent">
       <a href="fav/list">[% favs OR 0 %] Favorit[% 'en' UNLESS favs == 1 %]</a>
