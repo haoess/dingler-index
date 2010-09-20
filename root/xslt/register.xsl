@@ -107,7 +107,7 @@
 <xsl:template match="tei:list">
   <ul style="list-style-type:none">
   <xsl:for-each select="tei:item">
-    <li><xsl:apply-templates/></li>
+    <li style="text-indent:-1em; padding-left:1em"><xsl:apply-templates/></li>
   </xsl:for-each>
   </ul>
 </xsl:template>
