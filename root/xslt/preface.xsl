@@ -16,6 +16,7 @@
 
 <xsl:template match='/'>
   <xsl:apply-templates select='//tei:div[@type="preface"]'/>
+  <xsl:apply-templates select='//tei:div[@type="preface"]//tei:note' mode="notecontent"/>
 </xsl:template>
 
 <xsl:template match='tei:ab'></xsl:template>
