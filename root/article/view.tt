@@ -54,6 +54,8 @@
   </table>
 </div>
 
+[% coins.span %]
+
 <div class="meta">
   <table>
     <tr>

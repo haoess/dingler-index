@@ -9,6 +9,7 @@ use Dingler::Index;
 use Dingler::Util;
 use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
+use Metadata::COinS;
 use Text::BibTeX qw(:metatypes);
 
 =head1 NAME
@@ -38,7 +39,7 @@ sub index :Path :Args(2) {
         article => $article,
         journal => $journal,
         item    => $item,
-        misc    => ($article =~ /^mi/) ? 1 : 0,
+        misc    => ($article =~ /^mi.*_/) ? 1 : 0,
     );
 
     my $favcookie = $c->req->cookie('dinglerfav');
@@ -57,6 +58,22 @@ sub index :Path :Args(2) {
     my $next_article = $c->forward( 'step_article', [1, $article] );
 
     $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
+
+    my $coins = Metadata::COinS->new;
+    $coins->set( 'atitle' => $item->title )
+          ->set( 'title'  => 'Polytechnisches Journal' )
+          ->set( 'jtitle' => 'Polytechnisches Journal' )
+          ->set( 'date'   => $item->journal->year )
+          ->set( 'volume' => $item->volume )
+          ->set( 'spage'  => $item->pagestart )
+          ->set( 'epage'  => $item->pageend )
+          ->set( 'artnum' => $item->number || $item->parent->number )
+          ->set( 'genre'  => 'article' );
+
+    foreach my $author ( @{$c->stash->{authors}} ) {
+        $coins->set( 'au' => $author );
+    }
+    $c->stash->{coins} = $coins;
 
     # page
     $c->stash(
