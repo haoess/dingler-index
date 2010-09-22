@@ -40,6 +40,7 @@ sub index :Path :Args(1) {
     );
 
     $c->stash(
+        item     => $item,
         journal  => $journal,
         tabulars => $tabulars,
         template => 'article/list.tt',

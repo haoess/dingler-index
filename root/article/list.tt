@@ -1,3 +1,14 @@
+<div class="nav">
+  <table>
+    <tr>
+      <td>
+        Sie sind hier: <a href="[% base %]">Bandübersicht</a> &rarr;
+        Band [% item.volume | html %]
+      </td>
+    </tr>
+  </table>
+</div>
+
 [% xsl %]
 
 <script type="text/javascript">
@@ -8,7 +19,6 @@
 </script>
 
 [% BLOCK right %]
-  <a href="[% base %]">zur Bandauswahl &hellip;</a>
   [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox">

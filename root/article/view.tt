@@ -36,7 +36,7 @@
       }
     );
   </script>
-        Sie sind hier: <a href="[% base %]">Startseite</a> &rarr;
+        Sie sind hier: <a href="[% base %]">Bandübersicht</a> &rarr;
       [% IF preface %]
         <a href="journal/[% journal | html %]">Band [% journal_rs.volume | html %]</a> &rarr; Vorbericht
       [% ELSIF register %]
