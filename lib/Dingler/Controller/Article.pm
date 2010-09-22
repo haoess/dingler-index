@@ -11,6 +11,8 @@ use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
 use Metadata::COinS;
 use Text::BibTeX qw(:metatypes);
+use Text::VimColor;
+use XML::LibXML;
 
 =head1 NAME
 
@@ -59,6 +61,7 @@ sub index :Path :Args(2) {
 
     $c->stash->{bibtex} = $c->forward( 'bibtex', [$xml, $article] );
 
+    # TODO: move to private action (or model)
     my $coins = Metadata::COinS->new;
     $coins->set( 'atitle' => $item->title )
           ->set( 'title'  => 'Polytechnisches Journal' )
@@ -254,6 +257,48 @@ sub step_article :Private {
         )->first;
         return $misc ? $misc : $rs;
     }
+}
+
+=head2 xml
+
+=cut
+
+sub xml :Local {
+    my ( $self, $c, $id ) = @_;
+
+    my $item = $c->model('Dingler::Article')->find( $id );
+    $c->detach('/default') if !$item;
+
+    my ($xml) = glob $c->config->{svn} . "/" . $item->journal->id . "/*Z.xml";
+
+    my $parser = XML::LibXML->new;
+    $parser->expand_entities(0);
+
+    my $xmldoc; eval { $xmldoc = $parser->parse_file( $xml ); 1 };
+    my $xpc = XML::LibXML::XPathContext->new( $xmldoc ) or die $!;
+    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+    my $snippet = $xpc->findnodes( "//*[\@xml:id='$id']" )->shift->toString;
+    utf8::encode($snippet);
+    my $syntax = Text::VimColor->new(
+        string   => $snippet,
+        filetype => 'xml',
+    )->html;
+    utf8::decode($syntax);
+
+    my $lineno = 1;
+    $syntax =~ s/\r?\n/<br \/>\n/g;
+    $syntax =~ s/^(\s+)/"&nbsp;"x (length($1)\/4)/emg;
+    $syntax =~ s/^/sprintf "<span class='synLinenumber'>%s<\/span> ", _pad($lineno++)/emg;
+    $syntax =~ s/^(\s+)/"&nbsp;"x length($1)/emg;
+    $c->res->content_type( 'text/html; charset=utf-8' );
+    $c->res->body($syntax);
+}
+
+sub _pad {
+    my $n = shift;
+    my $ret = sprintf '%3d', $n;
+    $ret =~ s/\s/&nbsp;/g;
+    return $ret;
 }
 
 __PACKAGE__->meta->make_immutable;

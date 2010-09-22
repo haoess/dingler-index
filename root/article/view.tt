@@ -96,6 +96,15 @@
 
 [% IF !preface AND !register %]
   <span><a href="[% facsimile | html %]" target="_blank">[Faksimile]</a></span>
+  <a href="" onclick="showxml('[% article %]'); return false">[XML]</a>
+
+  <div id="xmlsnippet">
+    <div id="xmlsnippethead">
+      Dieser XML-Auszug (TEI P5) stellt die Grundlage für diesen Artikel. Es dauert einen Moment,
+      bis die Daten geladen sind.
+    </div>
+    <div id="xmlsnippetcode"></div>
+  </div>
 [% END %]
 [% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
 
@@ -111,6 +120,18 @@
       hide: 'explode',
     });
     return false;
+  }
+
+  function showxml(article) {
+    jQuery('#xmlsnippetcode').html( '' );
+    jQuery('#xmlsnippetcode').load('[% base %]article/xml/' + article);
+    jQuery('#xmlsnippet').dialog({
+      position: [100, 100],
+      width: 1000,
+      title: 'XML-Auszug',
+      hide: 'explode',
+      modal: true
+    });
   }
 </script>
 
