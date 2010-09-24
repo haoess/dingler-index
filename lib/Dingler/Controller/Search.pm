@@ -22,9 +22,9 @@ my @texttypes = (
     [ lit     => 'Literatur',          'art_literature' ],
     [ pat     => 'Patentbeschreibung', 'art_patent' ],
     [ patlist => 'Patentverzeichnis',  'art_patents', 'misc_patents' ],
-    [ idx     => 'Register',           'XXX' ],
-    [ add     => 'Hg.-Ergänzung',      'XXX' ],
-    [ other   => 'Sonstiges',          'XXX', 'YYY' ], # Vorworte, Widmungen, Anzeigen etc.
+#    [ idx     => 'Register',           'XXX' ],
+#    [ add     => 'Hg.-Ergänzung',      'XXX' ],
+#    [ other   => 'Sonstiges',          'XXX', 'YYY' ], # Vorworte, Widmungen, Anzeigen etc.
 );
 
 my %tt_reverse;
