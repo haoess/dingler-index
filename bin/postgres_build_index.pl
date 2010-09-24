@@ -63,7 +63,8 @@ JOURNAL:
                 my $pagestart    = $xpc->find( 'preceding::tei:pb[1]/@n', $misc );
                 my $pageend      = $xpc->find( 'following::*[1]/preceding::tei:pb[1]/@n', $misc );
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );
-                $mi_facsimile = Dingler::Util::faclink($barcode); # XXX
+                $mi_facsimile = Dingler::Util::faclink($mi_facsimile."");
+
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
                 $sth_article->execute( $miscid, $data->{id}, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
 
