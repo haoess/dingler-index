@@ -33,9 +33,3 @@
 <div class="code">
   apfel:*
 </div>
-<br />
-
-<p>WORTGRUPPEN-Bildung mittels <span class="code">''</span>:</p>
-<div class="code">
-  'roter apfel'
-</div>
