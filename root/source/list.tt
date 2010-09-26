@@ -28,3 +28,7 @@
 [% xsl %]
 
 [% PROCESS alphabet %]
+
+[% BLOCK head %]
+  <meta name="robots" content="noindex,nofollow" />
+[% END %]

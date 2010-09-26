@@ -46,3 +46,7 @@
     </div>
   </div>
 [% END %]
+
+[% BLOCK head %]
+  <meta name="robots" content="noindex,nofollow" />
+[% END %]

@@ -5,3 +5,7 @@
   <li><a href="article/[% fav.item('article').journal.id %]/[% fav.article %]">[% fav.item('article').title | html %]</a></li>
 [% END %]
 </ul>
+
+[% BLOCK head %]
+  <meta name="robots" content="noindex,nofollow" />
+[% END %]
