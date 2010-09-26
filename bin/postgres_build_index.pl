@@ -59,7 +59,7 @@ JOURNAL:
                 my @notes = $xpc->findnodes('tei:note', $title);
                 $title->removeChild($_) for @notes;
 
-                $title = Dingler::Util::uml( normalize($title->to_literal) );
+                $title = Dingler::Util::uml( normalize( defined $title ? $title->to_literal : '[ohne Titel]') );
                 my $pagestart    = $xpc->find( 'preceding::tei:pb[1]/@n', $misc );
                 my $pageend      = $xpc->find( 'following::*[1]/preceding::tei:pb[1]/@n', $misc );
                 my $mi_facsimile = $xpc->find( 'preceding::tei:pb[1]/@facs', $misc );

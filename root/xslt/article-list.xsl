@@ -57,7 +57,12 @@
                 <li>
                   <xsl:element name="a">
                     <xsl:attribute name="href"><xsl:value-of select="$base" />article/<xsl:value-of select="$journal" />/<xsl:value-of select="@xml:id" /></xsl:attribute>
-                    <xsl:apply-templates select="tei:head"/>
+                    <xsl:choose>
+                      <xsl:when test="tei:head">
+                        <xsl:apply-templates select="tei:head"/>
+                      </xsl:when>
+                      <xsl:otherwise>[ohne Titel]</xsl:otherwise>
+                    </xsl:choose>
                   </xsl:element>
                 </li>
               </xsl:for-each>
