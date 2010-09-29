@@ -46,7 +46,7 @@
   [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox">
-    <div class="rightboxhead">Statistiken</div>
+    <div class="rightboxhead">Zugriff auf &hellip;</div>
     <div class="rightboxcontent">
       <table>
         <tr>
