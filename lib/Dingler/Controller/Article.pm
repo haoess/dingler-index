@@ -70,7 +70,7 @@ sub index :Path :Args(2) {
           ->set( 'volume' => $item->volume )
           ->set( 'spage'  => $item->pagestart )
           ->set( 'epage'  => $item->pageend )
-          ->set( 'artnum' => $item->number || $item->parent->number )
+          ->set( 'artnum' => $item->number || ( $item->parent ? $item->parent->number : '' ) )
           ->set( 'genre'  => 'article' );
 
     foreach my $author ( @{$c->stash->{authors}} ) {
@@ -99,7 +99,7 @@ sub set_meta :Private {
     $c->stash(
         volume    => $strip->( $ar->volume ),
         title     => $strip->( $ar->title ),
-        number    => $strip->( $ar->number || $ar->parent->number ),
+        number    => $strip->( $ar->number || ( $ar->parent ? $ar->parent->number : '' ) ),
         year      => $strip->( $ar->journal->year ),
         p_start   => $strip->( $ar->pagestart ),
         p_end     => $strip->( $ar->pageend ),
