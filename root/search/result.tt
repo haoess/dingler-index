@@ -123,6 +123,7 @@
     </div>
   </div>
 
+<!--
   <div class="rightbox nolab">
     <div class="rightboxhead">Zeitleiste</div>
     <div class="rightboxcontent" style="text-align:center">
@@ -130,4 +131,6 @@
       <a href="timeline/?q=[% q | uri %]"><b>[% q | html %]</b> auf Zeitleiste visualisieren</a>
     </div>
   </div>
+-->
+
 [% END %]
