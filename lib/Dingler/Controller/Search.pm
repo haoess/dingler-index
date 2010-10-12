@@ -138,6 +138,7 @@ sub search :Global {
     ###################################
     # ordering hits
     my $sort = $c->req->params->{sort} || 'rank';
+    $c->stash->{sort} = $sort;
     my $order_by = $sort eq 'author' ? '' : # XXX
                    $sort eq 'title'  ? 'title' :
                    $sort eq 'date'   ? 'journal.year, me.number' : 'rank DESC';
@@ -219,11 +220,21 @@ sub facets :Private {
         my $year = $match->get_column('year');
         $year =~ /\A([0-9]{3})/;
         $c->stash->{facet}{decade}{ $1 }++;
+        $c->stash->{facet}{year}{ $year }++;
 
         $c->stash->{facet}{texttype}{ $tt_reverse{$match->type} }++;
         #my $figures = $match->figures->search( undef, { group_by => 'url' } )->count;
         #$c->stash->{figures} += $figures;
     }
+
+    foreach my $decade ( 182 .. 193 ) {
+        $c->stash->{facet}{decade}{ $decade } = 0 unless $c->stash->{facet}{decade}{ $decade };
+    }
+
+    foreach my $year ( 1820 .. 1931 ) {
+        $c->stash->{facet}{year}{ $year } = 0 unless $c->stash->{facet}{year}{ $year };
+    }
+
     $matches->reset; # don't forget
     return;
 }
