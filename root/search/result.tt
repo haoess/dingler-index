@@ -68,7 +68,30 @@
   [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox nolab">
-    <div class="rightboxhead">Treffergruppierung</div>
+    <div class="rightboxhead">Treffersortierung</div>
+    <div class="rightboxcontent">
+      [% IF sort == 'rank' %]
+        <b>Relevanz</b>
+      [% ELSE %]
+        <a href="[% c.req.uri_with({ sort => 'rank' }) %]">Relevanz</a>
+      [% END %]
+      |
+      [% IF sort == 'title' %]
+        <b>Kolumnentitel</b>
+      [% ELSE %]
+        <a href="[% c.req.uri_with({ sort => 'title' }) %]">Kolumnentitel</a>
+      [% END %]
+      |
+      [% IF sort == 'date' %]
+        <b>Erscheinungsjahr</b>
+      [% ELSE %]
+        <a href="[% c.req.uri_with({ sort => 'date' }) %]">Erscheinungsjahr</a>
+      [% END %]
+    </div>
+  </div>
+
+  <div class="rightbox nolab">
+    <div class="rightboxhead">Trefferverteilung</div>
     <div class="rightboxcontent">
       <p>
         <b>Dekade</b>
@@ -98,7 +121,64 @@
         </tr>
         [% END %]
       </table>
-      <br />
+      
+      <table id="spreading-decade" style="display:none">
+        <caption>Verteilung nach Dekade</caption>
+        <thead>
+          <tr>
+            [% FOREACH i IN [ 1820, '', 1840, '', 1860, '', 1880, '', 1900 ] %]
+              <th>[% i %]</th>
+            [% END %]
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            [% FOREACH i IN [ 182 .. 190 ] %]
+              <td>[% facet.decade.$i %]</td>
+            [% END %]
+          </tr>
+        </tbody>
+      </table>
+
+      <table id="spreading-year" style="display:none">
+        <caption>Verteilung nach Jahr</caption>
+        <thead>
+          <tr>
+            [% FOREACH i IN [ 1820, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+                              1840, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+                              1860, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+                              1880, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+                              1900 ] %]
+              <th>[% i %]</th>
+            [% END %]
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            [% FOREACH i IN [ 1820 .. 1900 ] %]
+              <td>[% facet.year.$i %]</td>
+            [% END %]
+          </tr>
+        </tbody>
+      </table>
+
+      <script type="text/javascript">
+        jQuery('#spreading-decade').visualize({
+          type: 'bar',
+          lineWeight: 1,
+          width: 260,
+          height: 100
+        });
+      </script>
+
+      <script type="text/javascript">
+        jQuery('#spreading-year').visualize({
+          type: 'line',
+          lineWeight: 1,
+          width: 260,
+          height: 100
+        });
+      </script>
 
       <p>
         <b>Textsorte</b>
@@ -134,4 +214,8 @@
   </div>
 -->
 
+[% END %]
+
+[% BLOCK head %]
+  <script type="text/javascript" src="static/jquery/visualize.jquery.js"></script>
 [% END %]
