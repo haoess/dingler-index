@@ -20,15 +20,22 @@ __PACKAGE__->table("article");
 
 =head1 ACCESSORS
 
+=head2 uid
+
+  data_type: integer
+  default_value: nextval('article_uid_seq'::regclass)
+  is_auto_increment: 1
+  is_nullable: 0
+
 =head2 id
 
   data_type: text
   default_value: undef
-  is_nullable: 0
+  is_nullable: 1
 
 =head2 parent
 
-  data_type: text
+  data_type: integer
   default_value: undef
   is_foreign_key: 1
   is_nullable: 1
@@ -106,28 +113,21 @@ __PACKAGE__->table("article");
   default_value: undef
   is_nullable: 1
 
-=head2 tsv
-
-  data_type: tsvector
-  default_value: undef
-  is_nullable: 1
-  size: undef
-
-=head2 titletsv
-
-  data_type: tsvector
-  default_value: undef
-  is_nullable: 1
-  size: undef
-
 =cut
 
 __PACKAGE__->add_columns(
+  "uid",
+  {
+    data_type         => "integer",
+    default_value     => \"nextval('article_uid_seq'::regclass)",
+    is_auto_increment => 1,
+    is_nullable       => 0,
+  },
   "id",
-  { data_type => "text", default_value => undef, is_nullable => 0 },
+  { data_type => "text", default_value => undef, is_nullable => 1 },
   "parent",
   {
-    data_type      => "text",
+    data_type      => "integer",
     default_value  => undef,
     is_foreign_key => 1,
     is_nullable    => 1,
@@ -161,22 +161,8 @@ __PACKAGE__->add_columns(
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "position",
   { data_type => "integer", default_value => undef, is_nullable => 1 },
-  "tsv",
-  {
-    data_type => "tsvector",
-    default_value => undef,
-    is_nullable => 1,
-    size => undef,
-  },
-  "titletsv",
-  {
-    data_type => "tsvector",
-    default_value => undef,
-    is_nullable => 1,
-    size => undef,
-  },
 );
-__PACKAGE__->set_primary_key("id");
+__PACKAGE__->set_primary_key("uid");
 
 =head1 RELATIONS
 
@@ -191,7 +177,7 @@ Related object: L<Dingler::Schema::Result::Article>
 __PACKAGE__->belongs_to(
   "parent",
   "Dingler::Schema::Result::Article",
-  { id => "parent" },
+  { uid => "parent" },
   { join_type => "LEFT" },
 );
 
@@ -206,7 +192,7 @@ Related object: L<Dingler::Schema::Result::Article>
 __PACKAGE__->has_many(
   "articles",
   "Dingler::Schema::Result::Article",
-  { "foreign.parent" => "self.id" },
+  { "foreign.parent" => "self.uid" },
 );
 
 =head2 journal
@@ -235,7 +221,7 @@ Related object: L<Dingler::Schema::Result::Figure>
 __PACKAGE__->has_many(
   "figures",
   "Dingler::Schema::Result::Figure",
-  { "foreign.article" => "self.id" },
+  { "foreign.article" => "self.uid" },
 );
 
 =head2 footnotes
@@ -249,7 +235,7 @@ Related object: L<Dingler::Schema::Result::Footnote>
 __PACKAGE__->has_many(
   "footnotes",
   "Dingler::Schema::Result::Footnote",
-  { "foreign.article" => "self.id" },
+  { "foreign.article" => "self.uid" },
 );
 
 =head2 patents
@@ -263,7 +249,7 @@ Related object: L<Dingler::Schema::Result::Patent>
 __PACKAGE__->has_many(
   "patents",
   "Dingler::Schema::Result::Patent",
-  { "foreign.article" => "self.id" },
+  { "foreign.article" => "self.uid" },
 );
 
 =head2 people
@@ -277,12 +263,12 @@ Related object: L<Dingler::Schema::Result::Person>
 __PACKAGE__->has_many(
   "people",
   "Dingler::Schema::Result::Person",
-  { "foreign.ref" => "self.id" },
+  { "foreign.ref" => "self.uid" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-09-18 21:26:27
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:01tK9TLN3RXgXVlhMT1Q+w
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xYHw5MAKLgBC4c9iHidXPA
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

@@ -2,8 +2,6 @@ DROP TABLE IF EXISTS journal CASCADE;
 DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
-DROP FUNCTION IF EXISTS article_trigger();
-DROP FUNCTION IF EXISTS article_title_trigger();
 DROP TABLE IF EXISTS footnote CASCADE;
 DROP FUNCTION IF EXISTS footnote_trigger();
 DROP TABLE IF EXISTS patent CASCADE;
@@ -23,8 +21,9 @@ CREATE TABLE journal (
 -- --------------------------
 
 CREATE TABLE article (
-  id        TEXT PRIMARY KEY,
-  parent    TEXT REFERENCES article (id),
+  uid       SERIAL PRIMARY KEY,
+  id        TEXT,
+  parent    INTEGER REFERENCES article (uid),
   journal   TEXT REFERENCES journal (id),
   type      TEXT,
   subtype   TEXT,
@@ -36,47 +35,20 @@ CREATE TABLE article (
   facsimile TEXT,
   front     TEXT,
   content   TEXT,
-  position  INT,
-  tsv       TSVECTOR,
-  titletsv  TSVECTOR
+  position  INT
 );
-
-CREATE INDEX article_tsv_idx ON article USING gin(tsv);
-CREATE INDEX article_titletsv_idx ON article USING gin(titletsv);
-
-CREATE FUNCTION article_trigger() RETURNS trigger AS $$
-begin
-  new.tsv :=
-     setweight(to_tsvector('german', coalesce(new.front,'')), 'A') ||
-     setweight(to_tsvector('german', coalesce(new.content,'')), 'D');
-  return new;
-end
-$$ LANGUAGE plpgsql;
-
-CREATE FUNCTION article_title_trigger() RETURNS trigger AS $$
-begin
-  new.titletsv := to_tsvector('german', coalesce(new.front,''));
-  return new;
-end
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-ON article FOR EACH ROW EXECUTE PROCEDURE article_trigger();
-
-CREATE TRIGGER tsvectorupdate_title BEFORE INSERT OR UPDATE
-ON article FOR EACH ROW EXECUTE PROCEDURE article_title_trigger();
 
 -- --------------------------
 
 CREATE TABLE footnote (
   id      SERIAL PRIMARY KEY,
   n       TEXT,
-  article TEXT REFERENCES article (id),
+  article INTEGER REFERENCES article (uid),
   content TEXT,
   tsv     TSVECTOR
 );
 
-CREATE INDEX footnote_tsv_idx ON article USING gin(tsv);
+CREATE INDEX footnote_tsv_idx ON footnote USING gin(tsv);
 
 CREATE FUNCTION footnote_trigger() RETURNS trigger AS $$
 begin
@@ -96,7 +68,7 @@ ON footnote FOR EACH ROW EXECUTE PROCEDURE footnote_trigger();
 --  #txXXXYYY      => vol. XXX, fig. YYY
 
 CREATE TABLE figure (
-  article TEXT REFERENCES article(id),
+  article INTEGER REFERENCES article(uid),
   ref     TEXT,
   reftype TEXT,
   PRIMARY KEY (article, ref)
@@ -106,7 +78,7 @@ CREATE TABLE figure (
 
 CREATE TABLE person (
   id   TEXT,
-  ref  TEXT REFERENCES article (id),
+  ref  INTEGER REFERENCES article (uid),
   role TEXT,
   PRIMARY KEY (id, ref)
 );
@@ -115,7 +87,7 @@ CREATE TABLE person (
 
 CREATE TABLE patent (
   id      TEXT PRIMARY KEY,
-  article TEXT REFERENCES article (id),
+  article INTEGER REFERENCES article (uid),
   subtype TEXT,
   date    DATE,
   xml     TEXT,

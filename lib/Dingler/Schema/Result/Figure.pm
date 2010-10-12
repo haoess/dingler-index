@@ -22,7 +22,7 @@ __PACKAGE__->table("figure");
 
 =head2 article
 
-  data_type: text
+  data_type: integer
   default_value: undef
   is_foreign_key: 1
   is_nullable: 0
@@ -44,7 +44,7 @@ __PACKAGE__->table("figure");
 __PACKAGE__->add_columns(
   "article",
   {
-    data_type      => "text",
+    data_type      => "integer",
     default_value  => undef,
     is_foreign_key => 1,
     is_nullable    => 0,
@@ -69,13 +69,13 @@ Related object: L<Dingler::Schema::Result::Article>
 __PACKAGE__->belongs_to(
   "article",
   "Dingler::Schema::Result::Article",
-  { id => "article" },
+  { uid => "article" },
   {},
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-18 17:55:06
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8hSKXWNGDN9fxHSh6Y+0QQ
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+brNDQ2PWam3TQDUCNtBYg
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

@@ -28,7 +28,7 @@ __PACKAGE__->table("person");
 
 =head2 ref
 
-  data_type: text
+  data_type: integer
   default_value: undef
   is_foreign_key: 1
   is_nullable: 0
@@ -46,7 +46,7 @@ __PACKAGE__->add_columns(
   { data_type => "text", default_value => undef, is_nullable => 0 },
   "ref",
   {
-    data_type      => "text",
+    data_type      => "integer",
     default_value  => undef,
     is_foreign_key => 1,
     is_nullable    => 0,
@@ -66,11 +66,11 @@ Related object: L<Dingler::Schema::Result::Article>
 
 =cut
 
-__PACKAGE__->belongs_to("ref", "Dingler::Schema::Result::Article", { id => "ref" }, {});
+__PACKAGE__->belongs_to("ref", "Dingler::Schema::Result::Article", { uid => "ref" }, {});
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-08-04 14:05:52
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:HtfAu674j4EOezM2tVsAsA
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:f3eNJK+LwYdeFupTzemFeg
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

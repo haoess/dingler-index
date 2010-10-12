@@ -39,8 +39,8 @@
       <div class="hit">
         <p style="background:#fafafa">
           <b><a href="article/[% match.get_column('journal') %]/[% match.id %]">[% match.title | html %]</a></b><br />
-          Jahrgang [% match.get_column('year') | html %],
-          Band [% match.get_column('volume') | html %],
+          Jahrgang [% match.journal.year | html %],
+          Band [% match.journal.volume | html %],
           [% IF match.number %]
             Nr. [% match.number | html %]
           [% ELSE %]
@@ -50,9 +50,10 @@
         </p>
         <p class="small">
           [% figure = match.figures_rs.search({ reftype => 'tabular' }).first; IF figure %]
-            <img src="[% figure_link(figure.ref, match.get_column('journal'), 250) %]" width="100" style="float:left; margin-right:10px" />
+            <img src="[% figure_link(figure.ref, match.journal.id, 250) %]" width="100" style="float:left; margin-right:10px" />
           [% END %]
-          ... [% match.get_column('headline') %] ... [<a href="article/[% match.get_column('journal') %]/[% match.id %]">mehr</a>]
+          [% excerpt(match.content) %]
+          [<a href="article/[% match.journal.id %]/[% match.id %]">mehr</a>]
         </p>
       </div>
     </td>

@@ -47,6 +47,7 @@ JOURNAL:
             $data->{pageend}, $data->{facsimile}, $data->{front}, $data->{content},
             $pos
         );
+        my $last_id = $dbh->last_insert_id( undef, undef, undef, undef, { sequence => 'article_uid_seq' } );
 
         if ( $data->{type} eq 'art_miscellanea' ) {
             my $miscpos = 1;
@@ -66,19 +67,20 @@ JOURNAL:
                 $mi_facsimile = Dingler::Util::faclink($mi_facsimile."");
 
                 my $content      = Dingler::Util::uml( normalize($misc->to_literal) );
-                $sth_article->execute( $miscid, $data->{id}, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
+                $sth_article->execute( $miscid, $last_id, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
+                my $ins_id = $dbh->last_insert_id( undef, undef, undef, undef, { sequence => 'article_uid_seq' } );
 
                 foreach my $person ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:persName') ) {
                     my $ref = idonly( $xpc->find('@ref', $person) );
                     next if $ref eq '-';
                     my $role = $xpc->find('@role', $person);
-                    $sth_person->execute( $ref, $miscid, $role );
+                    $sth_person->execute( $ref, $ins_id, $role );
                 }
 
                 foreach my $fn ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:note') ) {
                     my $n = $xpc->find('@n', $fn);
                     my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
-                    $sth_footnote->execute( $n, $miscid, $content );
+                    $sth_footnote->execute( $n, $ins_id, $content );
                 }
                 $miscpos++;
             }
@@ -87,24 +89,24 @@ JOURNAL:
         # links to tabulars
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
             my ($ref) = $xpc->find('@target', $figure) =~ /^#(.+)/;
-            $sth_figure->execute( $data->{id}, $ref, 'tabular' );
+            $sth_figure->execute( $last_id, $ref, 'tabular' );
         }
 
         # links to figures on tabulars
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "image_markup/")]', $article) ) {
             my ($ref) = $xpc->find('@target', $figure) =~ /#(fig.+)/;
-            $sth_figure->execute( $data->{id}, $ref, 'figure' );
+            $sth_figure->execute( $last_id, $ref, 'figure' );
         }
 
         # <ref target="#tx..."
         foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tx")]', $article) ) {
             my ($ref) = $xpc->find('@target', $figure) =~ /#(.+)/;
-            $sth_figure->execute( $data->{id}, $ref, 'inline' );
+            $sth_figure->execute( $last_id, $ref, 'inline' );
         }
         # <figure xml:id="tx..."
         foreach my $figure ( $xpc->findnodes('.//tei:figure[starts-with(@xml:id, "tx")]', $article) ) {
             my $ref = $xpc->find('@xml:id', $figure)."";
-            $sth_figure->execute( $data->{id}, $ref, 'inline' );
+            $sth_figure->execute( $last_id, $ref, 'inline' );
         }
 
         if ( $data->{type} ne 'art_miscellanea' ) {
@@ -112,13 +114,13 @@ JOURNAL:
                 my $ref = idonly( $xpc->find('@ref', $person) );
                 next if $ref eq '-';
                 my $role = $xpc->find('@role', $person);
-                $sth_person->execute( $ref, $data->{id}, $role );
+                $sth_person->execute( $ref, $last_id, $role );
             }
 
             foreach my $fn ( $xpc->findnodes('.//tei:note', $article) ) {
                 my $n = $xpc->find('@n', $fn);
                 my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
-                $sth_footnote->execute( $n, $data->{id}, $content );
+                $sth_footnote->execute( $n, $last_id, $content );
             }
         }
         $pos++;

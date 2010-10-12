@@ -28,7 +28,7 @@ __PACKAGE__->table("patent");
 
 =head2 article
 
-  data_type: text
+  data_type: integer
   default_value: undef
   is_foreign_key: 1
   is_nullable: 1
@@ -71,7 +71,7 @@ __PACKAGE__->add_columns(
   { data_type => "text", default_value => undef, is_nullable => 0 },
   "article",
   {
-    data_type      => "text",
+    data_type      => "integer",
     default_value  => undef,
     is_foreign_key => 1,
     is_nullable    => 1,
@@ -107,7 +107,7 @@ Related object: L<Dingler::Schema::Result::Article>
 __PACKAGE__->belongs_to(
   "article",
   "Dingler::Schema::Result::Article",
-  { id => "article" },
+  { uid => "article" },
   { join_type => "LEFT" },
 );
 
@@ -126,8 +126,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-29 21:38:39
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:OOGcn5uLTcZFV2d6LTEyRw
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:JcuLWwm4PMWmReNUKQDHJg
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

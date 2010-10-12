@@ -14,14 +14,9 @@ Catalyst Controller.
 
 =head1 METHODS
 
-=head2 index
+=head2 tabular
 
 =cut
-
-sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
-    $c->response->body('Matched Dingler::Controller::API in API.');
-}
 
 sub tabular :Local {
     my ( $self, $c ) = @_;

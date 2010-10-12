@@ -6,6 +6,7 @@ BEGIN {extends 'Catalyst::Controller'; }
 
 use utf8;
 use Data::Page;
+use Sphinx::Search;
 
 my @langmap = (
     [ qw(english England) ],
@@ -76,6 +77,76 @@ sub extended :Local {
     my ( $self, $c ) = @_;
     $c->stash(
         template => 'search/extended.tt',
+    );
+}
+
+sub search2 :Global {
+    my ( $self, $c ) = @_;
+
+    my $query = $c->req->params->{q};
+    my @query_words = map { s/^=//; $_ } grep { /^[^-]/ } split /\s+/, $query;
+
+    my $sph = Sphinx::Search->new({ port => 9312, debug => 1 });
+
+    my $limit = 20;
+    my $page = $c->req->params->{p} || 1;
+    $page = 1 if $page !~ /\A[0-9]+\z/;
+
+    ###################################
+    # text types to search in
+    my @ts = grep { defined } ref $c->req->params->{ts} ? @{$c->req->params->{ts}} : $c->req->params->{ts};
+
+    my $result = $sph->SetMatchMode( SPH_MATCH_EXTENDED2 )
+                     ->SetSortMode( SPH_SORT_RELEVANCE )
+                     ->SetLimits( ($page - 1) * $limit, $limit )
+                     ->Query( $query );
+
+    my $count = $result->{total_found};
+    my $matches = $c->model('Dingler::Article')->search({
+        uid => { -in => [ map { $_->{doc} } @{$result->{matches}} ] },
+    });
+
+    $result = $sph->ResetFilters
+                  ->ResetGroupBy
+                  ->ResetOverrides
+                  ->SetMatchMode( SPH_MATCH_EXTENDED2 )
+                  ->SetGroupBy( 'i_year', SPH_GROUPBY_ATTR )
+                  ->SetLimits( 0, 1940 - 1820 )
+                  ->Query( $query );
+
+    foreach my $match ( @{$result->{matches}} ) {
+        my $year = $c->model('Dingler::Article')->find( $match->{doc} )->journal->year;
+        $year =~ /\A([0-9]{3})/;
+        $c->stash->{facet}{decade}{ $1 } += $match->{'@count'};
+    }
+
+    $result = $sph->ResetFilters
+                  ->ResetGroupBy
+                  ->ResetOverrides
+                  ->SetMatchMode( SPH_MATCH_EXTENDED2 )
+                  ->SetGroupBy( 'i_type', SPH_GROUPBY_ATTR )
+                  ->Query( $query );
+
+    foreach my $match ( @{$result->{matches}} ) {
+        my $type = $c->model('Dingler::Article')->find( $match->{doc} )->type;
+        $c->stash->{facet}{texttype}{ $tt_reverse{$type} } += $match->{'@count'};
+    };
+
+    my $pager = Data::Page->new;
+    $pager->total_entries( $count );
+    $pager->entries_per_page( $limit );
+    $pager->current_page( $page );
+    
+    $c->stash(
+        template => 'search/result.tt',
+        q        => $query,
+        pager    => $pager,
+        matches  => $matches,
+        excerpt  => sub {
+            my $content = shift;
+            my $excerpt = $sph->BuildExcerpts( [$content], 'dingler', join( ' ', @query_words ), { limit_passages => 2, exact_phrase => 1 } );
+            return $excerpt->[0];
+        },
     );
 }
 
