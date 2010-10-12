@@ -32,7 +32,7 @@ sub index :Path :Args(2) {
     my ( $self, $c, $journal, $article ) = @_;
 
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
-    my $item  = $c->model('Dingler::Article')->find( $article );
+    my $item  = $c->model('Dingler::Article')->find({ id => $article });
     $c->detach('/default') if !$item;
 
     $c->stash(
@@ -70,7 +70,7 @@ sub index :Path :Args(2) {
           ->set( 'volume' => $item->volume )
           ->set( 'spage'  => $item->pagestart )
           ->set( 'epage'  => $item->pageend )
-          ->set( 'artnum' => $item->number || $item->parent->number )
+          ->set( 'artnum' => $item->number || ( $item->parent ? $item->parent->number : '' ) )
           ->set( 'genre'  => 'article' );
 
     foreach my $author ( @{$c->stash->{authors}} ) {
@@ -99,7 +99,7 @@ sub set_meta :Private {
     $c->stash(
         volume    => $strip->( $ar->volume ),
         title     => $strip->( $ar->title ),
-        number    => $strip->( $ar->number || $ar->parent->number ),
+        number    => $strip->( $ar->number || ( $ar->parent ? $ar->parent->number : '' ) ),
         year      => $strip->( $ar->journal->year ),
         p_start   => $strip->( $ar->pagestart ),
         p_end     => $strip->( $ar->pageend ),
@@ -248,7 +248,7 @@ sub step_article :Private {
         return unless $rs;
         my $misc = $c->model('Dingler::Article')->search(
             {
-                parent => $rs->id,
+                parent => $rs->uid,
             },
             {
                 order_by => 'position ' . ($steps > 0 ? 'ASC' : 'DESC'),
@@ -266,7 +266,7 @@ sub step_article :Private {
 sub xml :Local {
     my ( $self, $c, $id ) = @_;
 
-    my $item = $c->model('Dingler::Article')->find( $id );
+    my $item = $c->model('Dingler::Article')->find({ id => $id });
     $c->detach('/default') if !$item;
 
     my ($xml) = glob $c->config->{svn} . "/" . $item->journal->id . "/*Z.xml";
