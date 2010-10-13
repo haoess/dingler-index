@@ -27,13 +27,18 @@ sub index :Path :Args(2) {
     $c->stash->{xml} = $xml;
     $c->stash->{template} = 'person.xsl';
 
-    my $rs = $c->model('Dingler::Person')->search({
-        id  => $person,
-        ref => { '!=' => $article },
-    });
+    my $rs = $c->model('Dingler::Person')->search(
+        {
+            'me.id'      => $person,
+            'ref.id' => { '!=' => $article },
+        },
+        {
+            join => [ 'ref' ],
+        },
+    );
     my $p_xml = "<refs>\n";
     while ( my $p = $rs->next ) {
-        $p_xml .= sprintf "  <ref>%s</ref>\n", $p->get_column('ref');
+        $p_xml .= sprintf "  <ref>%s</ref>\n", $p->ref->id;
     }
     $p_xml .= "</refs>";
     my ($tempfh, $tempname) = tempfile;

@@ -1,9 +1,17 @@
 #!/bin/bash
 
+echo "start basic database build ..."
 for i in "$@"; do
   bin/postgres_build_index.pl "$i"
+done
+
+echo "start patent database setup ..."
+for i in "$@"; do
   bin/postgres_patents.pl "$i"
 done
+
+echo "rebuild sphinx index ..."
+indexer --config sphinx.conf --all
 
 echo "rebuild stats cache ..."
 rm -rf var/cache/dingler-records

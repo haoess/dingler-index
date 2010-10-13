@@ -5,13 +5,13 @@ use namespace::autoclean;
 BEGIN { extends 'Catalyst::Controller'; }
 
 use Cache::FileCache;
+use Dingler::Highlight;
 use Dingler::Index;
 use Dingler::Util;
 use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
 use Metadata::COinS;
 use Text::BibTeX qw(:metatypes);
-use Text::VimColor;
 use XML::LibXML;
 
 =head1 NAME
@@ -278,20 +278,25 @@ sub xml :Local {
     my $xpc = XML::LibXML::XPathContext->new( $xmldoc ) or die $!;
     $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
     my $snippet = $xpc->findnodes( "//*[\@xml:id='$id']" )->shift->toString;
-    utf8::encode($snippet);
-    my $syntax = Text::VimColor->new(
-        string   => $snippet,
-        filetype => 'xml',
-    )->html;
-    utf8::decode($syntax);
+    my $syntax = Dingler::Highlight::parse( $snippet );
 
-    my $lineno = 1;
-    $syntax =~ s/\r?\n/<br \/>\n/g;
-    $syntax =~ s/^(\s+)/"&nbsp;"x (length($1)\/4)/emg;
-    $syntax =~ s/^/sprintf "<span class='synLinenumber'>%s<\/span> ", _pad($lineno++)/emg;
-    $syntax =~ s/^(\s+)/"&nbsp;"x length($1)/emg;
+    # idea: grep the indentation ($sign) of the second line
+    #       remove $sign-4 spaces from the beginning of all lines
+    #       half the spaces at the beginning of all lines
+    my ($sign) = $syntax =~ /.*\n(\s+)/;
+    $sign = length( $sign ) - 4;
+    $syntax =~ s/^\s{$sign}//mg;
+    $syntax =~ s/^(\s+)/"&nbsp;"x (length($1)\/4*2)/emg;
+
+    my $out = '<table cellspacing="0" cellpadding="0">';
+    my $i = 1;
+    foreach my $line ( split /\n/, $syntax ) {
+        $out .= sprintf '<tr><td class="lineno">%s</td><td class="linecode">%s</td></tr>', $i, $line;
+        $i++;
+    }
+
     $c->res->content_type( 'text/html; charset=utf-8' );
-    $c->res->body($syntax);
+    $c->res->body( $out );
 }
 
 sub _pad {

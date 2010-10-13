@@ -6,6 +6,7 @@ BEGIN {extends 'Catalyst::Controller'; }
 
 use utf8;
 use Data::Page;
+use Digest::MD5 qw( md5_hex );
 use Sphinx::Search;
 
 my @langmap = (
@@ -80,76 +81,6 @@ sub extended :Local {
     );
 }
 
-sub search2 :Global {
-    my ( $self, $c ) = @_;
-
-    my $query = $c->req->params->{q};
-    my @query_words = map { s/^=//; $_ } grep { /^[^-]/ } split /\s+/, $query;
-
-    my $sph = Sphinx::Search->new({ port => 9312, debug => 1 });
-
-    my $limit = 20;
-    my $page = $c->req->params->{p} || 1;
-    $page = 1 if $page !~ /\A[0-9]+\z/;
-
-    ###################################
-    # text types to search in
-    my @ts = grep { defined } ref $c->req->params->{ts} ? @{$c->req->params->{ts}} : $c->req->params->{ts};
-
-    my $result = $sph->SetMatchMode( SPH_MATCH_EXTENDED2 )
-                     ->SetSortMode( SPH_SORT_RELEVANCE )
-                     ->SetLimits( ($page - 1) * $limit, $limit )
-                     ->Query( $query );
-
-    my $count = $result->{total_found};
-    my $matches = $c->model('Dingler::Article')->search({
-        uid => { -in => [ map { $_->{doc} } @{$result->{matches}} ] },
-    });
-
-    $result = $sph->ResetFilters
-                  ->ResetGroupBy
-                  ->ResetOverrides
-                  ->SetMatchMode( SPH_MATCH_EXTENDED2 )
-                  ->SetGroupBy( 'i_year', SPH_GROUPBY_ATTR )
-                  ->SetLimits( 0, 1940 - 1820 )
-                  ->Query( $query );
-
-    foreach my $match ( @{$result->{matches}} ) {
-        my $year = $c->model('Dingler::Article')->find( $match->{doc} )->journal->year;
-        $year =~ /\A([0-9]{3})/;
-        $c->stash->{facet}{decade}{ $1 } += $match->{'@count'};
-    }
-
-    $result = $sph->ResetFilters
-                  ->ResetGroupBy
-                  ->ResetOverrides
-                  ->SetMatchMode( SPH_MATCH_EXTENDED2 )
-                  ->SetGroupBy( 'i_type', SPH_GROUPBY_ATTR )
-                  ->Query( $query );
-
-    foreach my $match ( @{$result->{matches}} ) {
-        my $type = $c->model('Dingler::Article')->find( $match->{doc} )->type;
-        $c->stash->{facet}{texttype}{ $tt_reverse{$type} } += $match->{'@count'};
-    };
-
-    my $pager = Data::Page->new;
-    $pager->total_entries( $count );
-    $pager->entries_per_page( $limit );
-    $pager->current_page( $page );
-    
-    $c->stash(
-        template => 'search/result.tt',
-        q        => $query,
-        pager    => $pager,
-        matches  => $matches,
-        excerpt  => sub {
-            my $content = shift;
-            my $excerpt = $sph->BuildExcerpts( [$content], 'dingler', join( ' ', @query_words ), { limit_passages => 2, exact_phrase => 1 } );
-            return $excerpt->[0];
-        },
-    );
-}
-
 =head2 search
 
 =cut
@@ -157,157 +88,120 @@ sub search2 :Global {
 sub search :Global {
     my ( $self, $c ) = @_;
 
-    my $dbh = $c->model('Dingler::Article')->result_source->schema->storage->dbh;
-
-    my $add_to_where = '';
-
-    ###################################
-    # search terms
-    my $search = $c->req->params->{q};
-
-    # XXX move out to Dingler::Util
-    for ($search) {
-        s/\A\s+//;
-        s/\s+\z//;
-        s/\s+/ /g;
-    }
-    my $q = $dbh->quote($search);
-
-    # test query if it fits to to_tsquery
-    my $query_func = 'to_tsquery';
-    eval { $dbh->do( "SELECT to_tsquery($q)" ); 1 };
-    $query_func = 'plainto_tsquery' if $@;
+    my $query = $c->req->params->{q};
+    my @query_words = map   { s/^=//; s/\*$//; $_ }
+                      grep  { !/^[@!-]/ && !/^[&|]$/ }
+                      split /\s+/, $query;
 
     ###################################
-    # content fields (text, titles etc.) to search in XXX
-    my $in = $c->req->params->{in} || '';
-    my $search_index = $in eq 'title' ? 'titletsv' :
-                                        'tsv';
+    # paging
+    my $limit = 20;
+    my $page = $c->req->params->{p} || 1;
+    $page = 1 if $page !~ /\A[0-9]+\z/;
 
     ###################################
-    # text types to search in
+    # sorts of text to search in
     my @ts = grep { defined } ref $c->req->params->{ts} ? @{$c->req->params->{ts}} : $c->req->params->{ts};
-    my @add;
+    my @ts_fields;
     foreach my $texttype ( @ts ) {
-        push @add, map { 'me.type = ' . $dbh->quote($_) }
-                   map { @$_[2 .. $#$_] }
-                   grep { $_->[0] eq $texttype } @texttypes;
+        push @ts_fields, map { @$_[2 .. $#$_] }
+                         grep { $_->[0] eq $texttype } @texttypes;
     }
-    $add_to_where .= ' AND (' . (join " OR $_ ", @add) . ')' if @add;
 
     ###################################
     # period of time
     my $from = $c->req->params->{from};
     my $to   = $c->req->params->{to};
-    if ( $from && $from =~ /\A1[89][0-9][0-9]\z/ ) {
-        $add_to_where .= ' AND journal.year >= ' . $dbh->quote($from);
-    }
-    if ( $to && $to =~ /\A1[89][0-9][0-9]\z/ ) {
-        $add_to_where .= ' AND journal.year <= ' . $dbh->quote($to);
-    }
 
     ###################################
-    # ordering hits
+    # result sorting
     my $sort = $c->req->params->{sort} || 'rank';
     $c->stash->{sort} = $sort;
-    my $order_by = $sort eq 'author' ? '' : # XXX
-                   $sort eq 'title'  ? 'title' :
-                   $sort eq 'date'   ? 'journal.year, me.number' : 'rank DESC';
+    # TODO: sort by author
+    my @order_by = $sort eq 'title'  ? (SPH_SORT_ATTR_ASC, 'i_title')
+                 : $sort eq 'year'   ? (SPH_SORT_ATTR_ASC, 'i_year')
+                 :                     (SPH_SORT_RELEVANCE);
 
-    # all hits
-    my $hits = $c->model('Dingler::Article')->search(
-        { },
+    # finished setup
+    my $sph = Sphinx::Search->new({ port => 9312, debug => 1 });
+
+    # find all matching documents
+    $sph->SetMatchMode( SPH_MATCH_EXTENDED2 )
+        ->SetSortMode( @order_by )
+        ->SetLimits( ($page - 1) * $limit, $limit )
+        ->SetFieldWeights({ title => 1, content => 4 });
+    $sph->SetFilter( 'i_type', [ map { hex(substr( md5_hex($_), 0, 7 )) } @ts_fields ] ) if @ts_fields;
+    $sph->SetFilterRange( 'i_year', $from, $to ) if $from && $to;
+    my $result = $sph->Query( $query );
+
+    my $count = $result->{total_found};
+
+    my @id_list = map { $_->{doc} } @{$result->{matches}};
+    my $matches = $c->model('Dingler::Article')->search(
         {
-            select => [ 'me.id', 'me.type', 'journal.year' ],
-            as     => [ 'id', 'type', 'year' ],
-            from   => \qq[ article me, $query_func('german', $q) query, journal journal ],
-            where  => \qq[ query @@ $search_index AND me.journal = journal.id AND me.type != 'art_miscellanea' $add_to_where ],
-        }
+            uid => { -in => \@id_list },
+        },
+        {
+            order_by => \qq~find_in_array( uid, '{@{[ join(",", @id_list) ]}}' )~,
+        },
     );
-    my $count = $hits->count;
+
+    # grouping: year
+    $sph->ResetFilters
+        ->ResetGroupBy
+        ->ResetOverrides
+        ->SetMatchMode( SPH_MATCH_EXTENDED2 )
+        ->SetGroupBy( 'i_year', SPH_GROUPBY_ATTR )
+        ->SetLimits( 0, 1940 - 1820 ); # pass by the default of 20 returned results
+    $sph->SetFilter( 'i_type', [ map { hex(substr( md5_hex($_), 0, 7 )) } @ts_fields ] ) if @ts_fields;
+    $sph->SetFilterRange( 'i_year', $from, $to ) if $from && $to;
+    $result = $sph->Query( $query );
+
+    foreach my $match ( @{$result->{matches}} ) {
+        my $year = $c->model('Dingler::Article')->find( $match->{doc} )->journal->year;
+        $year =~ /\A([0-9]{3})/;
+        $c->stash->{facet}{decade}{ $1 } += $match->{'@count'};
+        $c->stash->{facet}{year}{ $year } += $match->{'@count'};
+    }
+    foreach my $decade ( 182 .. 193 ) {
+        $c->stash->{facet}{decade}{ $decade } = 0 unless $c->stash->{facet}{decade}{ $decade };
+    }
+    foreach my $year ( 1820 .. 1931 ) {
+        $c->stash->{facet}{year}{ $year } = 0 unless $c->stash->{facet}{year}{ $year };
+    }
+
+    # grouping: type
+    $sph->ResetFilters
+        ->ResetGroupBy
+        ->ResetOverrides
+        ->SetMatchMode( SPH_MATCH_EXTENDED2 )
+        ->SetGroupBy( 'i_type', SPH_GROUPBY_ATTR );
+    $sph->SetFilter( 'i_type', [ map { hex(substr( md5_hex($_), 0, 7 )) } @ts_fields ] ) if @ts_fields;
+    $sph->SetFilterRange( 'i_year', $from, $to ) if $from && $to;
+    $result = $sph->Query( $query );
+
+    foreach my $match ( @{$result->{matches}} ) {
+        my $type = $c->model('Dingler::Article')->find( $match->{doc} )->type;
+        $c->stash->{facet}{texttype}{ $tt_reverse{$type} } += $match->{'@count'};
+    };
 
     # set up pager
-    my $limit = 20;
-    my $page = $c->req->params->{p} || 1;
-    $page = 1 if $page !~ /\A[0-9]+\z/;
     my $pager = Data::Page->new;
     $pager->total_entries( $count );
     $pager->entries_per_page( $limit );
     $pager->current_page( $page );
 
-    # DBIC at its best
-    my $matches = $c->model('Dingler::Article')->search(
-        {},
-        {
-            select => [
-                qw(id journal title number pagestart type rank),
-                \q[ ts_headline(content, query, 'MaxFragments=2') ],
-                qw(journal year volume parent position),
-            ],
-            as => [
-                qw(id journal title number pagestart type),
-                qw(rank headline),
-                qw(journal year volume parent position),
-            ],
-            from => [
-                {
-                    xx => $c->model('Dingler::Article')->search(
-                        {},
-                        {
-                            select   => \qq[
-                                me.id, me.journal, me.title, me.number, me.pagestart, me.type, me.content, me.parent, me.position,
-                                journal.year, journal.volume,
-                                ts_rank_cd($search_index, query) rank, query
-                            ],
-                            from     => \qq[ article me, journal, $query_func('german', $q) query ],
-                            where    => \qq[ query @@ $search_index AND me.journal = journal.id AND me.type != 'art_miscellanea' $add_to_where ],
-                            order_by => $order_by,
-                            rows     => $limit,
-                            offset   => ($page - 1) * $limit,
-                        }
-                    )->as_query,
-                },
-            ],
-        },
-    );
-
-    $c->forward('facets', [$hits]);
-
     $c->stash(
         template => 'search/result.tt',
-        q        => $search,
+        q        => $query,
         pager    => $pager,
         matches  => $matches,
+        excerpt  => sub {
+            my $content = shift;
+            my $excerpt = $sph->BuildExcerpts( [$content], 'dingler', join( ' ', @query_words ) );
+            return $excerpt->[0];
+        },
     );
-}
-
-=head2 facets
-
-=cut
-
-sub facets :Private {
-    my ($self, $c, $matches) = @_;
-    while ( my $match = $matches->next ) {
-        my $year = $match->get_column('year');
-        $year =~ /\A([0-9]{3})/;
-        $c->stash->{facet}{decade}{ $1 }++;
-        $c->stash->{facet}{year}{ $year }++;
-
-        $c->stash->{facet}{texttype}{ $tt_reverse{$match->type} }++;
-        #my $figures = $match->figures->search( undef, { group_by => 'url' } )->count;
-        #$c->stash->{figures} += $figures;
-    }
-
-    foreach my $decade ( 182 .. 193 ) {
-        $c->stash->{facet}{decade}{ $decade } = 0 unless $c->stash->{facet}{decade}{ $decade };
-    }
-
-    foreach my $year ( 1820 .. 1931 ) {
-        $c->stash->{facet}{year}{ $year } = 0 unless $c->stash->{facet}{year}{ $year };
-    }
-
-    $matches->reset; # don't forget
-    return;
 }
 
 __PACKAGE__->meta->make_immutable;

@@ -3,10 +3,25 @@ DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
 DROP TABLE IF EXISTS footnote CASCADE;
-DROP FUNCTION IF EXISTS footnote_trigger();
 DROP TABLE IF EXISTS patent CASCADE;
-DROP FUNCTION IF EXISTS patent_trigger();
 DROP TABLE IF EXISTS patent_app CASCADE;
+
+CREATE OR REPLACE FUNCTION hex_to_int( text ) RETURNS int AS '
+  return hex( shift );
+' LANGUAGE plperl;
+
+CREATE OR REPLACE FUNCTION find_in_array( needle anyelement, haystack anyarray) RETURNS integer AS $$
+DECLARE
+  i integer;
+BEGIN
+  for i in 1..array_upper(haystack, 1) loop
+    if haystack[i] = needle then
+      return i;
+    end if;
+  end loop;
+  raise exception 'find_in_array: % not found in %', needle, haystack;
+END;
+$$ LANGUAGE 'plpgsql';
 
 -- --------------------------
 
@@ -44,21 +59,8 @@ CREATE TABLE footnote (
   id      SERIAL PRIMARY KEY,
   n       TEXT,
   article INTEGER REFERENCES article (uid),
-  content TEXT,
-  tsv     TSVECTOR
+  content TEXT
 );
-
-CREATE INDEX footnote_tsv_idx ON footnote USING gin(tsv);
-
-CREATE FUNCTION footnote_trigger() RETURNS trigger AS $$
-begin
-  new.tsv := to_tsvector('german', coalesce(new.content,''));
-  return new;
-end
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-ON footnote FOR EACH ROW EXECUTE PROCEDURE footnote_trigger();
 
 -- --------------------------
 
@@ -91,21 +93,8 @@ CREATE TABLE patent (
   subtype TEXT,
   date    DATE,
   xml     TEXT,
-  content TEXT,
-  tsv     TSVECTOR
+  content TEXT
 );
-
-CREATE INDEX patent_tsv_idx ON patent USING gin(tsv);
-
-CREATE FUNCTION patent_trigger() RETURNS trigger AS $$
-begin
-  new.tsv := to_tsvector('german', coalesce(new.content,''));
-  return new;
-end
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-ON patent FOR EACH ROW EXECUTE PROCEDURE patent_trigger();
 
 -- --------------------------
 

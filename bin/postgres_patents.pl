@@ -13,6 +13,17 @@ use XML::LibXML;
 
 my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler' ) or die $DBI::errstr;
 
+###########################
+# map article xml:id' to internal uid's
+my %ids;
+my $sth_idmap = $dbh->prepare( 'SELECT uid, id FROM article' );
+$sth_idmap->execute;
+while ( my @row = $sth_idmap->fetchrow_array ) {
+    $ids{ $row[1] } = $row[0];
+}
+
+###########################
+
 my $sth_patent = $dbh->prepare( 'INSERT INTO patent (id, article, subtype, date, xml, content) VALUES (?, ?, ?, ?, ?, ?)' );
 my $sth_app    = $dbh->prepare( 'INSERT INTO patent_app (patent, personid, name) VALUES (?, ?, ?)' );
 
@@ -52,7 +63,7 @@ JOURNAL:
   $xml
 </TEI>
 EOT
-            $sth_patent->execute( $id, $articleid, $subtype, $date, $xml, $content );
+            $sth_patent->execute( $id, $ids{$articleid}, $subtype, $date, $xml, $content );
 
             foreach my $app ( $xpc->findnodes("//*[\@xml:id='$id']//tei:persName") ) {
                 $sth_app->execute( $id, idonly( $xpc->find('@ref'), $app ), Dingler::Util::uml( normalize($app->to_literal) ) );

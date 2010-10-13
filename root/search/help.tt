@@ -29,7 +29,44 @@
 </div>
 <br />
 
-<p>PREFIX-Suche mittels <span class="code">:*</span>:</p>
+<p>PREFIX-Suche mittels <span class="code">*</span>:</p>
 <div class="code">
-  apfel:*
+  apfel*
+</div>
+<br />
+
+<p>PHRASEN-Suche mittels <span class="code">""</span>:</p>
+<div class="code">
+  "roter apfel"
+</div>
+<br />
+
+<p>FELD-Suche mittels <span class="code">@</span>:</p>
+<div class="code">
+  @title apfel<br />
+  @content !kirsche
+</div>
+<p>zur Verfügung stehen:</p>
+<ul>
+  <li><span class="code">@title</span>: Artikeltitel</li>
+  <li><span class="code">@content</span>: Artikelinhalt</li>
+  <li><span class="code">@year</span>: Erscheinungsjahr</li>
+  <li><span class="code">@*</span>: alle Felder</li>
+</ul>
+
+<p>NACHBARSCHAFTs-Suche mittels <span class="code">~</span>:</p>
+<div class="code">
+  "roter Apfel"~3
+</div>
+<br />
+
+<p>STRIKTE REIHENFOLGE mittels <span class="code">&lt;&lt;&lt;</span>:</p>
+<div class="code">
+  aaa &lt;&lt;&lt; bbb &lt;&lt;&lt; ccc
+</div>
+<br />
+
+<p>EXAKTe Suche mittels <span class="code">=</span>:</p>
+<div class="code">
+  =Apfel
 </div>

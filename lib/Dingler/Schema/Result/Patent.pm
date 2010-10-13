@@ -57,13 +57,6 @@ __PACKAGE__->table("patent");
   default_value: undef
   is_nullable: 1
 
-=head2 tsv
-
-  data_type: tsvector
-  default_value: undef
-  is_nullable: 1
-  size: undef
-
 =cut
 
 __PACKAGE__->add_columns(
@@ -84,13 +77,6 @@ __PACKAGE__->add_columns(
   { data_type => "text", default_value => undef, is_nullable => 1 },
   "content",
   { data_type => "text", default_value => undef, is_nullable => 1 },
-  "tsv",
-  {
-    data_type => "tsvector",
-    default_value => undef,
-    is_nullable => 1,
-    size => undef,
-  },
 );
 __PACKAGE__->set_primary_key("id");
 
@@ -126,8 +112,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:JcuLWwm4PMWmReNUKQDHJg
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-12 19:45:37
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:NcK/VopaB0w+YmC/7mTX3Q
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

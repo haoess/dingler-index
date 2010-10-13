@@ -4,7 +4,7 @@
     <span style="font-weight:normal">&nbsp;&nbsp;&rarr; <a href="search/extended#tab-help">Hilfe</a></span>
   </div>
   <div class="rightboxcontent">
-    <form method="get" action="[% base %]search2">
+    <form method="get" action="[% base %]search">
       <input type="text" name="q" class="ui-widget-content ui-corner-all qbox" value="[% q | html %]" />
       <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
       <a href="search/extended">erweitert</a>

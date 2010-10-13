@@ -46,13 +46,6 @@ __PACKAGE__->table("footnote");
   default_value: undef
   is_nullable: 1
 
-=head2 tsv
-
-  data_type: tsvector
-  default_value: undef
-  is_nullable: 1
-  size: undef
-
 =cut
 
 __PACKAGE__->add_columns(
@@ -74,13 +67,6 @@ __PACKAGE__->add_columns(
   },
   "content",
   { data_type => "text", default_value => undef, is_nullable => 1 },
-  "tsv",
-  {
-    data_type => "tsvector",
-    default_value => undef,
-    is_nullable => 1,
-    size => undef,
-  },
 );
 __PACKAGE__->set_primary_key("id");
 
@@ -102,8 +88,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:srES8tIB9NKcGas/jn6acA
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-12 19:45:37
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:DzFTnGWCJ4ru82/9oGWvxw
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

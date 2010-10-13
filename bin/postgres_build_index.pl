@@ -11,6 +11,8 @@ use Dingler::Util;
 use DBI;
 use XML::LibXML;
 
+my $teins = 'http://www.tei-c.org/ns/1.0';
+
 my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 0 } ) or die $DBI::errstr;
 
 my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, barcode, year, facsimile) VALUES (?, ?, ?, ?, ?)' );
@@ -28,7 +30,7 @@ JOURNAL:
         next JOURNAL;
     }
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+    $xpc->registerNs( 'tei', $teins );
 
     my ($jid)   = $journal =~ /(pj[0-9]{3})/;
     my $year    = $xpc->find( '//tei:imprint/tei:date' );
@@ -148,8 +150,21 @@ sub prepare_article {
     my $id     = $xpc->find( '@xml:id', $article );
     my $type   = $xpc->find( '@type', $article ) . "";
     my $subtype = $xpc->find( '@subtype', $article ) . "";
-    my $number = $xpc->find( 'tei:front/tei:titlePart[@type="number"]', $article );
-    my $title  = $xpc->find( 'tei:front/tei:titlePart[@type="column"]', $article );
+
+    my ($number) = $xpc->findnodes( 'tei:front/tei:titlePart[@type="number"]', $article );
+    my @choices = $xpc->findnodes( 'tei:choice', $number );
+    foreach my $choice ( @choices ) {
+        my @origs = $xpc->findnodes( 'tei:orig', $choice );
+        $choice->removeChild($_) for @origs;
+    }
+    $number = $number->to_literal;
+
+    my ($title) = $xpc->findnodes( 'tei:front/tei:titlePart[@type="column"]', $article );
+    @choices = $xpc->findnodes( 'tei:choice', $title );
+    foreach my $choice ( @choices ) {
+        my @origs = $xpc->findnodes('tei:orig', $choice);
+        $choice->removeChild($_) for @origs;
+    }
     $title = Dingler::Util::uml( normalize($title->to_literal) );
 
     my $front = $xpc->find( 'tei:front', $article );

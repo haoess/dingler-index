@@ -87,22 +87,23 @@ div.code { border:1px solid #eee; padding-left:10px }
 
 .timeline-band-inner { cursor:pointer }
 
-#xmlsnippet { display:none; background:#2C2C2C }
+#xmlsnippet     { display:none; background:#fff; font-weight:bold }
 #xmlsnippethead { font-weight:bold; background:#fff; padding:5px }
-#xmlsnippetcode { height:400px; font-family:monospace; padding:5px; font-size:1.2em; color:#dcdccc }
+#xmlsnippetcode { height:400px; font-family:monospace; padding:5px; font-size:1.2em }
+
+.lineno { text-align:right; padding:0 10px; background:#fafafa; font-weight:normal }
 
 /* syntax highlighting */
-.synComment    { color:#e0e070 }
-.synConstant   { color:#705050 }
-.synIdentifier { color:#ffa0ff }
-.synStatement  { color:#00d8f8 ; font-weight: bold }
-.synPreProc    { color:#40ffa0 }
-.synType       { color:#bbaaff ; font-weight: bold }
-.synSpecial    { color:#40f8f8 }
-.synUnderlined { color:#f0f0f8 ; text-decoration: underline }
-.synError      { color:#ffffff ; background: #FF0000 none }
-.synTodo       { color:#00ffe0 ; background: #FFFF00 none }
-.synLinenumber { color:#787894 }
+.xmlsh-bracket   { font-weight:normal; color:black }
+.xmlsh-doctype   { font-weight:normal; color:#6495ED }
+.xmlsh-comment   { font-weight:normal; color:#aaa !important; font-style:italic }
+.xmlsh-entity    { font-weight:normal; color:#8B008B }
+.xmlsh-tag       { font-weight:normal; color:#191970 }
+.xmlsh-aname     { font-weight:normal; color:green }
+.xmlsh-avalue    { font-weight:normal; color:#8B0000 }
+.xmlsh-namespace { font-weight:normal; color:#DAA520 }
+.xmlsh-equal     { font-weight:normal }
+.xmlsh-quote     { font-weight:normal }
 
 /* visualize.jquery.js */
 /*plugin styles*/

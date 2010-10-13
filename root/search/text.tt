@@ -10,15 +10,6 @@
       </td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-      <td>
-        <input type="radio" name="in" value="all" checked="checked" /> alles durchsuchen<br />
-        <input type="radio" name="in" value="title" /> nur Titel durchsuchen<br />
-        <input type="radio" name="in" value="tag" disabled="disabled" /> nur Schlagworte durchsuchen<br />
-        <input type="radio" name="in" value="fn" disabled="disabled" /> nur Fußnoten durchsuchen<br />
-      </td>
-    </tr>
-    <tr>
       <td class="right">Einschränkung Textsorte:</td>
       <td>
         [% FOREACH type IN texttypes %]
@@ -48,7 +39,7 @@
         <input type="radio" name="sort" value="rank" checked="checked" /> Relevanz<br />
         <input type="radio" name="sort" value="author" disabled="disabled" /> Autor<br />
         <input type="radio" name="sort" value="title" /> Kolumnentitel<br />
-        <input type="radio" name="sort" value="date" /> Erscheinungsjahr
+        <input type="radio" name="sort" value="year" /> Erscheinungsjahr
       </td>
     </tr>
     <tr>

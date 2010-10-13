@@ -73,19 +73,19 @@
       [% IF sort == 'rank' %]
         <b>Relevanz</b>
       [% ELSE %]
-        <a href="[% c.req.uri_with({ sort => 'rank' }) %]">Relevanz</a>
+        <a href="[% c.req.uri_with({ sort => 'rank', p => undef }) %]">Relevanz</a>
       [% END %]
       |
       [% IF sort == 'title' %]
         <b>Kolumnentitel</b>
       [% ELSE %]
-        <a href="[% c.req.uri_with({ sort => 'title' }) %]">Kolumnentitel</a>
+        <a href="[% c.req.uri_with({ sort => 'title', p => undef }) %]">Kolumnentitel</a>
       [% END %]
       |
-      [% IF sort == 'date' %]
+      [% IF sort == 'year' %]
         <b>Erscheinungsjahr</b>
       [% ELSE %]
-        <a href="[% c.req.uri_with({ sort => 'date' }) %]">Erscheinungsjahr</a>
+        <a href="[% c.req.uri_with({ sort => 'year', p => undef }) %]">Erscheinungsjahr</a>
       [% END %]
     </div>
   </div>
