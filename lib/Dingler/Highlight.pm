@@ -29,7 +29,7 @@ sub parse {
 
 sub attr {
     my $str = shift;
-    $str =~ s/(\s*)(\w+:)?(\w+)(=)(['"])([^\5]*?)(\5)/$1 . ( $2 ? span($2, 'xmlsh-namespace') : '' ) . span($3, 'xmlsh-aname') . span($4, 'xmlsh-equal') . span($5, 'xmlsh-         quote') . span($6, 'xmlsh-avalue') . span($7, 'xmlsh-quote')/seg;
+    $str =~ s/(\s*)(\w+:)?(\w+)(=)(['"])([^\5]*?)(\5)/$1 . ( $2 ? span($2, 'xmlsh-namespace') : '' ) . span($3, 'xmlsh-aname') . span($4, 'xmlsh-equal') . span($5, 'xmlsh-quote') . span($6, 'xmlsh-avalue') . span($7, 'xmlsh-quote')/seg;
     return $str;
 }
 
