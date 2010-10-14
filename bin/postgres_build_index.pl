@@ -157,7 +157,7 @@ sub prepare_article {
         my @origs = $xpc->findnodes( 'tei:orig', $choice );
         $choice->removeChild($_) for @origs;
     }
-    $number = $number->to_literal;
+    $number = $number ? $number->to_literal : '';
 
     my ($title) = $xpc->findnodes( 'tei:front/tei:titlePart[@type="column"]', $article );
     @choices = $xpc->findnodes( 'tei:choice', $title );
