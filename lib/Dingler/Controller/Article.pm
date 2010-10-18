@@ -32,7 +32,7 @@ sub index :Path :Args(2) {
     my ( $self, $c, $journal, $article ) = @_;
 
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
-    my $item  = $c->model('Dingler::Article')->find({ id => $article });
+    my $item  = $c->model('Dingler::Article')->find({ id => $article, journal => $journal });
     $c->detach('/default') if !$item;
 
     $c->stash(
