@@ -306,6 +306,16 @@ sub _pad {
     return $ret;
 }
 
+=head2 random
+
+=cut
+
+sub random :Local {
+    my ( $self, $c ) = @_;
+    my $article = $c->model('Dingler::Article')->search(undef, { order_by => \'random()', rows => 1 })->first;
+    $c->res->redirect( $c->uri_for('/article/' . $article->journal->id . '/' . $article->id) );
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;
