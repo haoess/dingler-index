@@ -7,6 +7,7 @@
   ermöglicht. Außerdem erhalten Sie eine Voransicht der dazugehörigen Tafeln.
 </p>
 
+<!--
 <p>
   Die Statistiken in der rechten Seitenleiste werden dynamisch generiert und
   ermöglichen einen Direktzugriff auf alle bereits bearbeiteten Tafeln. Außerdem
@@ -23,11 +24,44 @@
   Die Suche läuft über alle vorhandenen Volltexte, wobei die Ergebnisse nach
   Relevanz sortiert werden. Weitere Informationen finden Sie in der <a href="search/extended/#tab-help">Suchhilfe</a>.
 </p>
+-->
 </div>
 
 <br />
 <p>Folgende Bände liegen bereits digitalisiert vor:</p>
 
+<div id="coverflow" class="ContentFlow" style="">
+  <div class="loadIndicator"><div class="indicator"></div></div>
+  <div class="flow">
+    [% FOREACH cover IN covers %]
+      <a class="item" href="journal/pj[% loop.count | format('%03d') %]" title="Band [% loop.count %]"><img class="content" src="[% cover %]" title="Band [% loop.count %]" /></a>
+    [% END %]
+  </div>
+  <div class="globalCaption"></div>
+  <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
+</div>
+
+<script type="text/javascript">
+  var coverFlow = new ContentFlow('coverflow', { circularFlow: false, startItem: 0 });
+</script>
+
+[% BLOCK head %]
+  <script type="text/javascript" src="static/jquery/contentflow/contentflow.js" load="white"></script>
+[% END %]
+
+<br />
+
+<div style="text-align:center">
+<form method="post" action="[% base %]journal/view">
+  Band
+  <input type="text" name="v" class="ui-widget-content ui-corner-all" style="width:30px" />
+  <input type="submit" value="anschauen" />
+</form>
+<br />
+<a href="article/random">Zufälligen Artikel anschauen</a>
+</div>
+
+<!--
 <table class="journallist">
 [% WHILE ( journal = journals.next ) %]
   <tr>
@@ -41,6 +75,7 @@
   </tr>
 [% END %]
 </table>
+-->
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]

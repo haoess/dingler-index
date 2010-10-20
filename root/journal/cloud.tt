@@ -1,0 +1,5 @@
+<div id="htmltagcloud">
+  [% FOREACH tag IN cloud.tags(1000) %]
+    <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
+  [% END %]
+</div>

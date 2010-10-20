@@ -14,6 +14,22 @@ Catalyst Controller.
 
 =head1 METHODS
 
+=head2 view
+
+=cut
+
+sub view :Local {
+    my ( $self, $c ) = @_;
+    my $vol = $c->req->params->{v};
+    my $journal = $c->model('Dingler::Journal')->find({ volume => $vol });
+    if ( $journal ) {
+        $c->forward('index', [$journal->id]);
+    }
+    else {
+        $c->detach('/default');
+    }
+}
+
 =head2 index
 
 =cut
@@ -64,6 +80,28 @@ sub article_list :Private {
     utf8::decode $xsl;
     $c->stash( xsl => $xsl );
     $c->res->body( undef );
+}
+
+sub tags :Local {
+    my ( $self, $c, $journal ) = @_;
+
+    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    $c->stash->{xml} = $xml;
+    $c->stash->{template} = 'journal-plain.xsl';
+    $c->forward('Dingler::View::XSLT');
+    my $plain = $c->res->body;
+    $c->res->body( undef );
+
+    my $index = Dingler::Index->new({ text => $plain });
+    my %words = %{ $index->words };
+    my $cloud = HTML::TagCloud->new( levels => 30 );
+    while ( my ($key, $value) = each %words ) {
+        $cloud->add( $key, undef, $value );
+    }
+    $c->stash(
+        template => 'journal/cloud.tt',
+        cloud    => $cloud,
+    );
 }
 
 =head2 preface
