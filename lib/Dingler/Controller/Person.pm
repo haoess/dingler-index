@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use Dingler::Index;
 use File::Temp qw(tempfile);
 use XML::LibXML;
 
@@ -36,9 +37,11 @@ sub index :Path :Args(2) {
             join => [ 'ref' ],
         },
     );
+    my @texts;
     my $p_xml = "<refs>\n";
     while ( my $p = $rs->next ) {
         $p_xml .= sprintf "  <ref>%s</ref>\n", $p->ref->id;
+        push @texts, $p->ref->front, $p->ref->content;
     }
     $p_xml .= "</refs>";
     my ($tempfh, $tempname) = tempfile;
@@ -56,7 +59,16 @@ sub index :Path :Args(2) {
     utf8::decode($xsl);
     $c->stash( xsl => $xsl );
     $c->res->body( undef );
+
+    my $index = Dingler::Index->new({ text => join( ' ', @texts ) });
+    my %words = %{ $index->words };
+    my $cloud = HTML::TagCloud->new( levels => 30 );
+    while ( my ($key, $value) = each %words ) {
+        $cloud->add( $key, undef, $value );
+    }
+
     $c->stash(
+        cloud    => $cloud,
         template => 'person/view.tt',
     );
 }

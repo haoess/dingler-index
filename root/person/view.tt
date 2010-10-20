@@ -1,1 +1,10 @@
-<div id="data">[% xsl %]</div>
+<div id="data">
+  [% xsl %]
+  <hr />
+  <h2>Schlagworte zur Person</h2>
+  <div id="htmltagcloud">
+    [% FOREACH tag IN cloud.tags(20) %]
+      <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
+    [% END %]
+  </div>
+</div>

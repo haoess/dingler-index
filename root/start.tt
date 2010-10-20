@@ -28,7 +28,7 @@
 </div>
 
 <br />
-<p>Folgende Bände liegen bereits digitalisiert vor:</p>
+<p>Folgende Bände liegen bereits texterkannt vor:</p>
 
 <div id="coverflow" class="ContentFlow" style="">
   <div class="loadIndicator"><div class="indicator"></div></div>
