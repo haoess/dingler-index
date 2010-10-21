@@ -1,8 +1,6 @@
 <h1>Trendergebnisse</h1>
 
-<p>
-  Suche: <b>[% q | html %]</b>
-</p>
+[% INCLUDE 'search/trendform.tt' %]
 
 <table id="spreading-decade" style="display:none">
   <caption>Verteilung nach Dekade</caption>

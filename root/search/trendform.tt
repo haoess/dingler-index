@@ -1,0 +1,5 @@
+<form method="get" action="[% base %]search/trendsearch">
+  <input type="text" name="q" class="ui-widget-content ui-corner-all" value="[% q | html %]" style="width:400px" />
+  <input type="submit" value="Trends suchen" class="ui-widget-content ui-corner-all" />
+  <div class="small">Tip: mehrere Suchanfragen durch Komma getrennt eingeben</div>
+</form>

@@ -1,7 +1,3 @@
 <h1>Dingler Trends</h1>
 
-<form method="post" action="[% base %]search/trendsearch">
-  <input type="text" name="q" />
-  <input type="submit" value="Trends suchen" />
-  <div>Tip: mehrere Suchanfragen durch Komma getrennt eingeben</div>
-</form>
+[% INCLUDE 'search/trendform.tt' %]

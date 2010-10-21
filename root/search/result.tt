@@ -93,6 +93,8 @@
   <div class="rightbox nolab">
     <div class="rightboxhead">Trefferverteilung</div>
     <div class="rightboxcontent">
+      <div>Probieren Sie auch unsere <a href="[% c.uri_for('/search/trendsearch', { q => q }) %]">Trendsuche</a>!</div>
+      <br />
       <p>
         <b>Dekade</b>
         [% IF c.req.params.from OR c.req.params.to %](<a href="[% c.req.uri_with({ from => undef, to => undef }) | html %]">Filter aufheben</a>)[% END %]
