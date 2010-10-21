@@ -204,6 +204,53 @@ sub search :Global {
     );
 }
 
+=head2 trend
+
+=cut
+
+sub trend :Local {}
+
+=head2 trendsearch
+
+=cut
+
+sub trendsearch :Local {
+    my ( $self, $c ) = @_;
+
+    my $q = $c->req->params->{q};
+    my @queries = split /\s*,\s*/, $q;
+
+    my $sph = Sphinx::Search->new({ port => 9312, debug => 1 });
+
+    foreach my $query ( @queries ) {
+        $sph->ResetFilters
+            ->ResetGroupBy
+            ->ResetOverrides
+            ->SetMatchMode( SPH_MATCH_EXTENDED2 )
+            ->SetGroupBy( 'i_year', SPH_GROUPBY_ATTR )
+            ->SetLimits( 0, 1940 - 1820 ); # pass by the default of 20 returned results
+        my $result = $sph->Query( $query );
+
+        foreach my $match ( @{$result->{matches}} ) {
+            my $year = $c->model('Dingler::Article')->find( $match->{doc} )->journal->year;
+            $year =~ /\A([0-9]{3})/;
+            $c->stash->{result}{$query}{decade}{ $1 } += $match->{'@count'};
+            $c->stash->{result}{$query}{year}{ $year } += $match->{'@count'};
+        }
+        foreach my $decade ( 182 .. 193 ) {
+            $c->stash->{result}{$query}{decade}{ $decade } = 0 unless $c->stash->{result}{$query}{decade}{ $decade };
+        }
+        foreach my $year ( 1820 .. 1931 ) {
+            $c->stash->{result}{$query}{year}{ $year } = 0 unless $c->stash->{result}{$query}{year}{ $year };
+        }
+    }
+
+    $c->stash(
+        template => 'search/trendresult.tt',
+        q        => $q,
+    );
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;

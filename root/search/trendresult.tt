@@ -1,0 +1,77 @@
+<h1>Trendergebnisse</h1>
+
+<p>
+  Suche: <b>[% q | html %]</b>
+</p>
+
+<table id="spreading-decade" style="display:none">
+  <caption>Verteilung nach Dekade</caption>
+  <thead>
+    <tr>
+      <td></td>
+      [% FOREACH i IN [ 1820, 1830, 1840, 1850, 1860, 1870, 1880, 1890, 1900 ] %]
+        <th scope="col">[% i %]</th>
+      [% END %]
+    </tr>
+  </thead>
+  <tbody>
+    [% FOREACH query IN result.keys %]
+      <tr>
+        <th scope="row">[% query | html %]</th>
+        [% FOREACH i IN [ 182 .. 190 ] %]
+          <td>[% result.$query.decade.$i %]</td>
+        [% END %]
+      </tr>
+    [% END %]
+  </tbody>
+</table>
+
+<br /><br />
+
+<table id="spreading-year" style="display:none">
+  <caption>Verteilung nach Jahr</caption>
+  <thead>
+    <tr>
+      <td></td>
+      [% FOREACH i IN [ 1820, '', '', '', '', '', '', '', '', '', '1830', '', '', '', '', '', '', '', '', '', '',
+                        1840, '', '', '', '', '', '', '', '', '', '1850', '', '', '', '', '', '', '', '', '', '',
+                        1860, '', '', '', '', '', '', '', '', '', '1870', '', '', '', '', '', '', '', '', '', '',
+                        1880, '', '', '', '', '', '', '', '', '', '1890', '', '', '', '', '', '', '', '', '', '',
+                        1900 ] %]
+        <th>[% i %]</th>
+      [% END %]
+    </tr>
+  </thead>
+  <tbody>
+    [% FOREACH query IN result.keys %]
+      <tr>
+        <th scope="row">[% query | html %]</th>
+        [% FOREACH i IN [ 1820 .. 1900 ] %]
+          <td>[% result.$query.year.$i %]</td>
+        [% END %]
+      </tr>
+    [% END %]
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  jQuery('#spreading-decade').visualize({
+    type: 'bar',
+    lineWeight: 1,
+    width: 700,
+    height: 200
+  });
+</script>
+
+<script type="text/javascript">
+  jQuery('#spreading-year').visualize({
+    type: 'line',
+    lineWeight: 1,
+    width: 700,
+    height: 200
+  });
+</script>
+
+[% BLOCK head %]
+  <script type="text/javascript" src="static/jquery/visualize.jquery.js"></script>
+[% END %]
