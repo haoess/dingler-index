@@ -89,6 +89,9 @@ sub search :Global {
     my ( $self, $c ) = @_;
 
     my $query = $c->req->params->{q};
+
+    $c->detach('extended') unless $query;
+
     my @query_words = map   { s/^=//; s/\*$//; $_ }
                       grep  { !/^[@!-]/ && !/^[&|]$/ }
                       split /\s+/, $query;
