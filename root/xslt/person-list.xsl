@@ -18,6 +18,8 @@
     <xsl:sort select="tei:persName/tei:surname"/>
     <xsl:sort select="tei:persName/tei:forename"/>
     <xsl:apply-templates select="tei:persName" mode="name"/>
+    <xsl:apply-templates select="tei:note[@type='pnd']" mode="pnd"/>
+    <xsl:apply-templates select="tei:note[@type='viaf']" mode="viaf"/>
     <div style="margin-left:2em; margin-bottom:1em">
       <xsl:apply-templates/>
       <xsl:value-of select="catalyst:personarticles(@xml:id)" disable-output-escaping="yes"/>
@@ -102,8 +104,31 @@
   </xsl:for-each>
 </xsl:template>
 
-<xsl:template match='tei:ref'/>
+<xsl:template match='tei:note[@type="pnd"]' mode="pnd">
+  <p>
+    PND:
+    <xsl:element name="a">
+      <xsl:attribute name="href">http://d-nb.info/gnd/<xsl:value-of select="."/></xsl:attribute>
+      <xsl:attribute name="target">_blank</xsl:attribute>
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </p>
+</xsl:template>
+
+<xsl:template match='tei:note[@type="viaf"]' mode="viaf">
+  <p>
+    VIAF:
+    <xsl:element name="a">
+      <xsl:attribute name="href">http://viaf.org/viaf/<xsl:value-of select="."/></xsl:attribute>
+      <xsl:attribute name="target">_blank</xsl:attribute>
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </p>
+</xsl:template>
+
 <xsl:template match='tei:note'/>
+
+<xsl:template match='tei:ref'/>
 <xsl:template match='tei:floruit'/>
 
 <xsl:template match="text()">
