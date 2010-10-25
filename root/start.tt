@@ -41,8 +41,6 @@
   <input type="text" name="v" class="ui-widget-content ui-corner-all" style="width:30px" />
   <input type="submit" value="anschauen" />
 </form>
-<br />
-<a href="article/random">Zufälligen Artikel anschauen</a>
 </div>
 
 <!--
