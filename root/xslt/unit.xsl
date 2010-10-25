@@ -125,8 +125,8 @@
 
 <xsl:template match="tei:persName">
   <xsl:element name="span">
-    <xsl:attribute name="class">person</xsl:attribute>
-    <xsl:if test="string-length(catalyst:personref(./@ref)) > 0">
+    <xsl:if test="string-length(catalyst:personref(./@ref)) > 4">
+      <xsl:attribute name="class">person</xsl:attribute>
       <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />', '<xsl:value-of select="$id"/>'); return false;</xsl:attribute>
     </xsl:if>
     <xsl:apply-templates/>
