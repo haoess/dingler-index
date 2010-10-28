@@ -43,9 +43,10 @@
 </form>
 </div>
 
-<!--
-<table class="journallist">
-[% WHILE ( journal = journals.next ) %]
+<div style="margin:20px 0"><a href="#" onclick="jQuery('.journallist').show(); return false">Komplette Bandliste anzeigen &hellip;</a></div>
+
+<table class="journallist" style="display:none">
+[% foo = journals.reset; WHILE ( journal = journals.next ) %]
   <tr>
     <td class="right">
       <a href="journal/[% journal.id %]">Band [% journal.volume %]</a>
@@ -57,7 +58,8 @@
   </tr>
 [% END %]
 </table>
--->
+
+<div style="height:20px"></div>
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
