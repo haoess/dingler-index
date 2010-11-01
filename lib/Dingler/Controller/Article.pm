@@ -116,7 +116,7 @@ sub set_meta :Private {
     my @authors;
     foreach my $author ( $ar->people ) {
         next unless $author->role eq 'author' or
-                    $author->role eq 'originator' or
+                    $author->role eq 'translator' or # only if no author
                     $author->role eq 'author_orig';
         push @authors, Dingler::Util::fullname( glob($c->config->{svn} . "/database/persons/persons.xml"), $author->id );
     }
@@ -208,13 +208,26 @@ sub article_plain :Private {
     }
     $cache->set( $article, $plain);
 
-    my $index = Dingler::Index->new({ text => $plain });
-    my %words = %{ $index->words };
+    # tag cloud
     my $cloud = HTML::TagCloud->new( levels => 30 );
-    while ( my ($key, $value) = each %words ) {
+
+    # title
+    my $title_index = Dingler::Index->new({ text => $c->stash->{title} });
+    my %title_words = %{ $title_index->words };
+    while ( my ($key, $value) = each %title_words ) {
+        $cloud->add( $key, undef, $value*3 );
+    }
+
+    # body
+    my $body_index = Dingler::Index->new({ text => $plain });
+    my %body_words = %{ $body_index->words };
+    # filter out words with one occurence
+    %body_words = map { $_ => $body_words{$_} } grep { $body_words{$_} > 1 } keys %body_words;
+    while ( my ($key, $value) = each %body_words ) {
         $cloud->add( $key, undef, $value );
     }
     $c->stash( cloud => $cloud );
+
     $c->res->body( undef );
 }
 
