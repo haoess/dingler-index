@@ -1,0 +1,5 @@
+<div class="nav">Sie sind hier: <a href="[% base %]tools">Dingler Tools</a> &rarr; Bemerkenswerte Artikel</div>
+
+<h1>Ein Verzeichnis bemerkenswerter Artikel</h1>
+
+[% xsl %]

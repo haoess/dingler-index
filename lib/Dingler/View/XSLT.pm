@@ -117,7 +117,7 @@ __PACKAGE__->config(
                     if ( $target =~ /#(.*)_pb(.*)/ ) {
                         return sprintf 'page/%s/%s', $1, $2;
                     }
-                    elsif ( $target =~ /\A#(ar[0-9]{6})\z/ ) {
+                    elsif ( $target =~ /#((?:ar|mi)[0-9]{6}(?:_[0-9]+)?)\z/ ) {
                         my $rs = Dingler->model('Dingler::Article')->find({ id => $1 });
                         return sprintf 'article/%s/%s', $rs->get_column('journal'), $rs->id;
                     }
