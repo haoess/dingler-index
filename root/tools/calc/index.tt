@@ -1,0 +1,57 @@
+<div class="nav">Sie sind hier: <a href="[% base %]tools">Dingler Tools</a> &rarr; Einheitenrechner</div>
+
+<h1>Einheitenrechner</h1>
+
+[%
+  secnames = {
+    area        => 'Fläche',
+    temperature => 'Temperatur',
+    mass        => 'Masse (Gewicht)',
+    length      => 'Länge',
+    volume      => 'Volumen',
+    time        => 'Zeit',
+    amount      => 'Substanzmenge',
+    money       => 'Geld'
+  }
+%]
+
+[% FOREACH section IN [ 'temperature', 'area', 'mass', 'length', 'volume', 'time', 'amount', 'money' ] %]
+<h2>[% secnames.$section %]</h2>
+
+<form id="[% section %]" onsubmit="return calcit('[% section %]')">
+  <table width="100%">
+    <tr>
+      <td>
+        <input type="text" name="value" class="value" size="4" onkeyup="calcit('[% section %]')" />
+        <select name="unit" class="unit" onchange="calcit('[% section %]')">
+          [% FOREACH key IN calc.$section.keys.sort %]
+            <option value="[% key %]">[% calc.$section.$key.name | html %]</option>
+          [% END %]
+        </select>
+      </td>
+      <td class="result" style="width:200px"></td>
+    </tr>
+  </table>
+</form>
+[% END %]
+
+<script type="text/javascript">
+  function calcit(section) {
+    jQuery.getJSON('[% base %]tools/calc/do',
+      {
+        value:   jQuery('#' + section + ' .value').val(),
+        unit:    jQuery('#' + section + ' .unit').val(),
+        section: section
+      },
+      function(data) {
+        var out = '<table>';
+        for ( var result in data ) {
+          out += '<tr style="white-space:nowrap"><td class="right" style="width:200px">' + data[result]['result'] + '</td><td>' + data[result]['unit'] + '</td><td>(<a href="' + data[result]['wp'] + '">' + data[result]['name'] + '</a>)</td></tr>';
+        }
+        out += '</table>';
+        jQuery('#' + section + ' .result').html( out );
+      }
+    );
+    return false;
+  }
+</script>

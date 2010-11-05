@@ -1,0 +1,140 @@
+---
+temperature:
+  celsius:
+    name: Grad Celsius
+    unit: °C
+    wp: http://de.wikipedia.org/wiki/Grad_Celsius
+    conversions:
+      fahrenheit: x * 1.8 + 32
+      kelvin: x + 273.15
+      reaumur: x * 0.8
+  fahrenheit:
+    name: Grad Fahrenheit
+    unit: °F
+    wp: http://de.wikipedia.org/wiki/Grad_Fahrenheit
+    conversions:
+      celsius: (x - 32) * 5/9
+      kelvin: (x + 459.67) * 5/9
+      reaumur: (x - 32) * 4/9
+  kelvin:
+    name: Kelvin
+    unit: K
+    wp: http://de.wikipedia.org/wiki/Kelvin
+    conversions:
+      celsius: x - 273.15
+      fahrenheit: x * 1.8 - 459.67
+      reaumur: (x - 273.15) * 0.8
+  reaumur:
+    name: Grad Réaumur
+    unit: °R
+    wp: http://de.wikipedia.org/wiki/R%C3%A9aumur-Skala
+    conversions:
+      celsius: x * 1.25
+      kelvin: x * 1.25 + 273.15
+      fahrenheit: x * 1.8 + 32
+area:
+  squarefoot:
+    name: Quadratfuß
+    unit: square ft
+    wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
+    conversions:
+      squareyard: x / 9
+  squareinch:
+    name: square inch
+    unit: sq inches
+    wp: http://de.wikipedia.org/wiki/Square_inch
+  squareyard:
+    name: square yard
+    unit: sq yard
+    wp: http://de.wikipedia.org/wiki/Square_yard
+    conversions:
+      squarefoot: x * 9
+      squareinch: x * 1296
+      quadratzentimeter: x * 8361.2736
+  squaremile:
+    name: Quadratmeile
+    unit: sq. mi.
+    wp: http://de.wikipedia.org/wiki/Square_mile
+    conversions:
+      acre: x * 640
+      squareyard: x * 3097600
+      squarefoot: x * 27878400
+      squareinch: x * 4014489600
+      quadratmeter: x * 2589988.110336
+  acre:
+    name: Acre
+    unit: a.
+    wp: http://de.wikipedia.org/wiki/Acre_(Einheit)
+    conversions:
+      quadratmeter: x * 4046.8564224
+      squareyard: x * 4840
+  ar:
+    name: Ar/Are
+    unit: a
+    wp: http://de.wikipedia.org/wiki/Ar_(Einheit)
+    conversions:
+      quadratmeter: x * 100
+  hectare:
+    name: Hektar
+    unit: ha
+    wp: http://de.wikipedia.org/wiki/Hektar
+    conversions:
+      ar: x * 100
+      quadratmeter: x * 10000
+  quadratmeter:
+    name: Quadratmeter
+    unit: m²
+    wp: http://de.wikipedia.org/wiki/Quadratmeter
+    conversions:
+      ar: x * 0.01
+  quadratdezimeter:
+    name: Quadratdezimeter
+    unit: dm²
+    wp: http://de.wikipedia.org/wiki/Quadratmeter#Quadratdezimeter
+    conversions:
+      quadratmeter: x * 0.01
+  quadratzentimeter:
+    name: Quadratzentimeter
+    unit: cm²
+    wp: http://de.wikipedia.org/wiki/Quadratmeter#Quadratzentimeter
+    conversions:
+      quadratmeter: x * 0.0001
+  bayerischerquadratfuss:
+    name: Bayerischer Quadrat-Fuß
+    unit: Bayr. Qu.-Fuß
+    wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
+    conversions:
+      quadratmeter: x * 0.086475
+  preussischerquadratfuss:
+    name: Preussischer Quadrat-Fuß
+    unit: Preuss. Qu.-Fuß
+    wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
+    conversions:
+      quadratmeter: x * 0.098504
+  wienerquadratfuss:
+    name: Wiener Quadrat-Fuß
+    unit: Wiener Qu.-Fuß
+    wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
+    conversions:
+      quadratmeter: x * 0.099921
+  pariserquadratfuss:
+    name: Pariser Quadrat-Fuß
+    unit: Par. Qu.-Fuß
+    wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
+    conversions:
+      quadratmeter: x * 0.105521
+mass:
+  avoirdupois:
+    name: Pound (Pfund)
+    wp: http://de.wikipedia.org/wiki/Avoirdupois
+  ounce:
+    name: Unze
+    wp: http://de.wikipedia.org/wiki/Unze
+  grain:
+    name: Gran
+    wp: http://de.wikipedia.org/wiki/Gran_(Einheit)
+length:
+volume:
+time:
+amount:
+money:

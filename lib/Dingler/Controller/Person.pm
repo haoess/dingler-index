@@ -152,7 +152,6 @@ sub pnd :Local {
         my $id = $xpc->find( '@xml:id', $entry );
         my $person = $c->model('Dingler::Person')->search({ person => $id });
         $c->forward('index', [ $id, '' ]);
-        use Data::Dumper; warn Dumper $c->res->body;
     }
 }
 

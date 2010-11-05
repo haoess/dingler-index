@@ -1,0 +1,25 @@
+<div class="nav">Sie sind hier: Dingler Tools</div>
+
+<h1>Dingler Tools</h1>
+
+<h2><a href="tools/calc">Einheitenrechner</a></h2>
+
+<p>
+  Mit dem <a href="tools/calc">Einheitenrechner</a> können Sie alte, historische
+  bzw. ungebräuchliche Einheiten in moderne, vorzugsweise metrische Angaben
+  umrechnen.
+</p>
+
+<h2><a href="search/trend">Dingler Trends</a></h2>
+
+<p>
+  Mit der <a href="search/trend">Trendsuche</a> können Sie zeitliche Verläufe
+  ihrer Suchergebnisse visualisieren.
+</p>
+
+<h2><a href="beacon">PND Beacon</a></h2>
+
+<p>
+  Unsere <a href="beacon">PND Beacon</a>-Datei listet im Polytechnischen Journal
+  erwähnte Personen. Weitere Informationen zum Format bei <a href="http://de.wikipedia.org/wiki/Wikipedia:PND/BEACON">Wikipedia</a>.
+</p>
