@@ -1,3 +1,5 @@
+[% htmltitle = title %]
+
 <script type="text/javascript">
   jQuery(function() {
     jQuery('div.fn').dialog({

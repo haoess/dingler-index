@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
 <head>
   <base href="[% base %]" />
-  <title>Projektseite Polytechnisches Journal</title>
+  <title>Polytechnisches Journal[% IF htmltitle; ' - '; htmltitle | html; END %]</title>
   <link rel="stylesheet" type="text/css" href="static/jquery/jquery-ui-1.8.1.custom.css" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
