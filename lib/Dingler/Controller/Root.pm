@@ -356,6 +356,21 @@ EOT
     $c->forward('stats');
 }
 
+=head2 brokenlinks
+
+Somewhere our links to articles are broken, this action tries to redirect
+our customers.
+
+=cut
+
+sub brokenlinks :Regex('^((?:ar|mi)([0-9]{3}).*)') {
+    my ( $self, $c ) = @_;
+    my $article = $c->req->captures->[0];
+    my $journal = $c->req->captures->[1];
+    # 301: Moved permanently
+    $c->res->redirect( $c->uri_for("/article/pj$journal/$article"), 301 );
+}
+
 =head2 stats
 
 =cut
