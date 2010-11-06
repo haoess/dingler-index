@@ -3,6 +3,7 @@ use Moose;
 
 use utf8;
 
+use Roman;
 use Memoize;
 memoize('grundform');
 
@@ -11,7 +12,7 @@ has 'text' => (
     is  => 'rw',
 );
 
-my %stop = map { utf8::encode $_; chomp; $_ => 1 } <DATA>;
+my %stop = map { chomp; $_ => 1 } <DATA>;
 
 sub words {
     my $self = shift;
@@ -24,6 +25,7 @@ sub words {
     foreach my $word ( split /[\s,.=–:\d();?×<>\/]+/, $text ) {
         next unless $word =~ /\A[A-Z]/;
         next if length $word < 3;
+        next if Roman::isroman( $word );
         for ( $word ) {
             s/\AAe/Ä/;
             s/\AOe/Ö/;
@@ -57,27 +59,34 @@ sub grundform {
         Bilder => 'Bild',
         Bleche => 'Blech',
         Blechen => 'Blech',
+        Brüken => 'Brüke',
         Canales => 'Canal',
         Cylindern => 'Cylinder',
         Dächer => 'Dach',
         Dämpfe => 'Dampf',
         Dampfes => 'Dampf',
         Dampfmaschinen => 'Dampfmaschine',
+        Dekels => 'Dekel',
         Draths => 'Drath',
         Druckrohrs => 'Druckrohr',
+        Druke => 'Druk',
         Eisenbahnen => 'Eisenbahn',
+        Ellipsen => 'Ellipse',
         Enden => 'Ende',
         Explosionen => 'Explosion',
         Farben => 'Farbe',
         Fixsternes => 'Fixstern',
         Gase => 'Gas',
+        Gases => 'Gas',
         Grade => 'Grad',
         Gebäuden => 'Gebäude',
+        Gefäßes => 'Gefäß',
         Gegenstandes => 'Gegenstand',
         Gewichte => 'Gewicht',
         Gräben => 'Graben',
         Grundsazes => 'Grundsaz',
         Halblöchern => 'Halbloch',
+        Hängebrüken => 'Hängebrüke',
         Industrieausstellungen => 'Industrieausstellung',
         Instrumente => 'Instrument',
         Jahre => 'Jahr',
@@ -86,14 +95,19 @@ sub grundform {
         Kessels => 'Kessel',
         Ketten => 'Kette',
         Kettenräder => 'Kettenrad',
+        Knöpfe => 'Knopf',
+        Knopfes => 'Knopf',
         Konkurrenten => 'Konkurrent',
         Krapps => 'Krapp',
         Kupfers => 'Kupfer',
+        Lampen => 'Lampe',
         Leisten => 'Leiste',
+        Linien => 'Linie',
         Löcher => 'Loch',
         Maaße => 'Maaß',
         Maschinen => 'Maschine',
         Messungen => 'Messung',
+        Mittelpunkte => 'Mittelpunkt',
         Möhren => 'Möhre',
         Nägel => 'Nagel',
         Nullpunkte => 'Nullpunkt',
@@ -104,6 +118,8 @@ sub grundform {
         Pfeiles => 'Pfeil',
         Pflanzenfasern => 'Pflanzenfaser',
         Planeten => 'Planet',
+        Platten => 'Platte',
+        Punkte => 'Punkt',
         Rades => 'Rad',
         Räder => 'Rad',
         Ränder => 'Rand',
@@ -119,6 +135,7 @@ sub grundform {
         Säulen => 'Säule',
         Schiebers => 'Schieber',
         Schrauben => 'Schraube',
+        Schwierigkeiten => 'Schwierigkeit',
         Seile => 'Seil',
         Seiten => 'Seite',
         Stechrollen => 'Stechrolle',
@@ -128,6 +145,7 @@ sub grundform {
         Stifte => 'Stift',
         Stiften => 'Stift',
         Stunden => 'Stunde',
+        Systeme => 'System',
         Teleskope => 'Teleskop',
         Teleskopes => 'Teleskop',
         Theile => 'Theil',
@@ -137,6 +155,7 @@ sub grundform {
         Verbesserungen => 'Verbesserung',
         Verhältniße => 'Verhältniß',
         Versuche => 'Versuch',
+        Viereke => 'Vierek',
         Volum => 'Volumen',
         Vortheile => 'Vortheil',
         Walzen => 'Walze',

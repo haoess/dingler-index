@@ -38,6 +38,7 @@ requires 'Catalyst::Plugin::AccessLog';
 requires 'XML::Feed';
 requires 'Digest::SHA';
 requires 'DateTime::Format::Pg';
+requires 'Roman';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
