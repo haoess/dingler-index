@@ -344,6 +344,7 @@ sub index :Path :Args(0) {
 08
 08
 08
+08
 EOT
 
     my @covers = map { int $_ } grep { !/^$/ }grep { !/^#/ } split /\n/, $covers;
