@@ -46,12 +46,14 @@ sub words {
 sub grundform {
     my $word = shift;
     my %list = (
+        Abbildungen => 'Abbildung',
         Achsen => 'Achse',
         Arme => 'Arm',
         Atmosphären => 'Atmosphäre',
         Baches => 'Bach',
         Bahnen => 'Bahn',
         Bedingungen => 'Bedingung',
+        Bienen => 'Biene',
         Bilder => 'Bild',
         Bleche => 'Blech',
         Blechen => 'Blech',
@@ -92,6 +94,7 @@ sub grundform {
         Maaße => 'Maaß',
         Maschinen => 'Maschine',
         Messungen => 'Messung',
+        Möhren => 'Möhre',
         Nägel => 'Nagel',
         Nullpunkte => 'Nullpunkt',
         Öfen => 'Ofen',
@@ -104,6 +107,7 @@ sub grundform {
         Rades => 'Rad',
         Räder => 'Rad',
         Ränder => 'Rand',
+        Raupen => 'Raupe',
         Reflectoren => 'Reflector',
         Reflectors => 'Reflector',
         Reperaturen => 'Reperatur',

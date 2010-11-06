@@ -41,6 +41,7 @@ sub index :Path :Args(1) {
     $c->detach('/default') if !$item;
 
     $c->forward('article_list', [$journal]);
+    $c->forward('cloud', [$journal]);
 
     my $tabulars = $c->model('Dingler::Figure')->search(
         {
@@ -82,7 +83,11 @@ sub article_list :Private {
     $c->res->body( undef );
 }
 
-sub tags :Local {
+=head2 cloud
+
+=cut
+
+sub cloud :Local {
     my ( $self, $c, $journal ) = @_;
 
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
@@ -99,7 +104,6 @@ sub tags :Local {
         $cloud->add( $key, undef, $value );
     }
     $c->stash(
-        template => 'journal/cloud.tt',
         cloud    => $cloud,
     );
 }

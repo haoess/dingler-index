@@ -22,6 +22,17 @@
   [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox">
+    <div class="rightboxhead">Schlagwortwolke</div>
+    <div class="rightboxcontent">
+      <div id="htmltagcloud">
+        [% FOREACH tag IN cloud.tags(20) %]
+          <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
+        [% END %]
+      </div>
+    </div>
+  </div>
+
+  <div class="rightbox">
     <div class="rightboxhead">Tafeln</div>
     <div class="rightboxcontent">
       [% WHILE ( tab = tabulars.next ) %]
