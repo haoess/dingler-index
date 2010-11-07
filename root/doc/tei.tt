@@ -1,0 +1,423 @@
+<div class="doc">
+
+<h1>Projekt-Dokumentation</h1>
+
+<h2>Digitalisierung</h2>
+
+<h3>Zeichenumsetzung</h3>
+
+<p>
+  Soweit möglich, wurden sämtliche Textzeichen im Original in ihr Unicode-Pendant übertragen.
+</p>
+
+<h3>Anmerkungen zur Zeichenumsetzung</h3>
+
+<ul>
+  <li>hochgestellte e's über Umlauten (<code>a&#x0364;</code>, <code>o&#x0364;</code>, <code>u&#x0364;</code> usf.) wurden beibehalten,</li>
+  <li>Ligaturen wie <code>ﬀ</code> (ff), <code>ﬅ</code> (ft), <code>ꜩ</code> (tz) usf. wurden konsequent aufgelöst,</li>
+  <li>langes s (<code>ſ</code>) wurde konsequent nach <code>s</code> transkribiert,</li>
+  <li><code>-</code>-Verbindungen an Zeilenenden wurden aufgelöst (Silbentrennung).</li>
+</ul>
+
+<h2>TEI-Strukturdaten</h2>
+
+<h3>Text-Sorten</h3>
+
+<p>
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">type</a></code>-Attribut in <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-text.html">text</a></code>-Elementen werden benutzt:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@type</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">volume</td>
+    <td>Einzelband</td>
+  </tr>
+  <tr>
+    <td class="code">issue</td>
+    <td>Einzelheft</td>
+  </tr>
+  <tr>
+    <td class="code">ri_partition</td>
+    <td>Abtheilungen in den Realindices</td>
+  </tr>
+  <tr>
+    <td class="code">art_undef</td>
+    <td>Nicht weiter spezifizierter Artikel</td>
+  </tr>
+  <tr>
+    <td class="code">art_patent</td>
+    <td>Artikel als Besprechung eines Patents</td>
+  </tr>
+  <tr>
+    <td class="code">art_patents</td>
+    <td>Patentverzeichnis auf Artikelebene</td>
+  </tr>
+  <tr>
+    <td class="code">art_patentlist</td>
+    <td>Patentliste auf Artikelebene</td>
+  </tr>
+  <tr>
+    <td class="code">art_literature</td>
+    <td>Literaturverzeichnis auf Artikelebene</td>
+  </tr>
+  <tr>
+    <td class="code">art_miscellanea</td>
+    <td>Miszellen</td>
+  </tr>
+</table>
+
+<p>
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">subtype</a></code>-Attribut in <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-text.html">text</a></code>-Elementen werden benutzt:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@subtype</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">publ_primary</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">publ_secondary</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">age-group</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">series</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">american</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">austrian</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">english</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">french</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">italian</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">prussian</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">scottish</td>
+    <td></td>
+  </tr>
+</table>
+
+<h3>Abschnittsarten</h3>
+
+<p>
+  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">div</a></code>-Elements werden benutzt:
+</p>
+
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@type</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">ad</td>
+    <td>Verlagswerbung, am Ende oder zu Beginn von Heften</td>
+  </tr>
+  <tr>
+    <td class="code">addendum</td>
+    <td>Zusätze am Ende von Artikeln, z.&nbsp;B. von Herausgeberseite</td>
+  </tr>
+  <tr>
+    <td class="code">contents</td>
+    <td>Inhaltsverzeichnis</td>
+  </tr>
+  <tr>
+    <td class="code">continuation</td>
+    <td>Hinweis auf Fortsetzung am Ende von Artikel</td>
+  </tr>
+  <tr>
+    <td class="code">corrigenda</td>
+    <td>Abschnitt mit Berichtigungen und Angaben zu Druckfehlern</td>
+  </tr>
+  <tr>
+    <td class="code">dedication</td>
+    <td>Widmungstexte</td>
+  </tr>
+  <tr>
+    <td class="code">index</td>
+    <td>Indices u.&nbsp;ä.</td>
+  </tr>
+  <tr>
+    <td class="code">misc_literature</td>
+    <td>Literaturverzeichnis auf Ebene der Miszellen</td>
+  </tr>
+  <tr>
+    <td class="code">misc_patentlist</td>
+    <td>Patentliste auf Ebene der Miszellen</td>
+  </tr>
+  <tr>
+    <td class="code">misc_patents</td>
+    <td>Patentverzeichnis auf Ebene der Miszellen</td>
+  </tr>
+  <tr>
+    <td class="code">misc_undef</td>
+    <td>Miszellen, nicht weiter spezifiziert</td>
+  </tr>
+  <tr>
+    <td class="code">patent</td>
+    <td>Einzelnes Patent</td>
+  </tr>
+  <tr>
+    <td class="code">preface</td>
+    <td>Vorwort, Einleitung</td>
+  </tr>
+  <tr>
+    <td class="code">sec_literature</td>
+    <td>Literaturverzeichnis als Unterabschnitt eines Artikels</td>
+  </tr>
+  <tr>
+    <td class="code">section</td>
+    <td>Textabschnitt innerhalb eines längeren Textes, 1. Ebene</td>
+  </tr>
+  <tr>
+    <td class="code">subsection</td>
+    <td>Textabschnitt innerhalb eines längeren Textes, 2. Ebene</td>
+  </tr>
+  <tr>
+    <td class="code">tab</td>
+    <td>Tafelanhang</td>
+  </tr>
+  <tr>
+    <td class="code">volume_end</td>
+    <td>Leerseiten, Ledereinband</td>
+  </tr>
+  <tr>
+    <td class="code">volume_start</td>
+    <td>Ledereinband, Leerseitenvorlauf</td>
+  </tr>
+</table>
+
+<p>
+  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">titlePage</a></code>-Elements werden benutzt:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@type</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">issue</td>
+    <td>Titelblatt des Heftes</td>
+  </tr>
+  <tr>
+    <td class="code">series</td>
+    <td>Einzelbandtitelblatt in der Logik der Reihen-/Folgenzählung</td>
+  </tr>
+  <tr>
+    <td class="code">volume</td>
+    <td>Einzelbandtitelblatt in der Logik der fortlaufenden Bandzählung</td>
+  </tr>
+</table>
+
+<p>
+  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">titlePart</a></code>-Elements werden benutzt:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@type</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">column</td>
+    <td>Kurztitel, der in Kolumne verwandt wird</td>
+  </tr>
+  <tr>
+    <td class="code">main</td>
+    <td>Hauptitel auf Band- oder Artikelebene</td>
+  </tr>
+  <tr>
+    <td class="code">number</td>
+    <td>R&#xF6;mische Nummer der Artikel</td>
+  </tr>
+  <tr>
+    <td class="code">series_number</td>
+    <td>Textzeile(n) mit Angabe der Bandnummer innerhalb der Reihe - in Attribut n die Zahl aufnehmen</td>
+  </tr>
+  <tr>
+    <td class="code">series</td>
+    <td>Textzeile(n) mit Angabe der Reihennummer - in Attribut n die Zahl aufnehmen</td>
+  </tr>
+  <tr>
+    <td class="code">sub</td>
+    <td>Titelzeile, nicht weiter definiert</td>
+  </tr>
+  <tr>
+    <td class="code">volume</td>
+    <td>Textzeile(n) mit Angabe der Bandnummer - in Attribut n die Zahl aufnehmen</td>
+  </tr>
+  <tr>
+    <td class="code">year</td>
+    <td>Textzeile zum Erscheinungsjahr, in Attribut n das Jahr aufnehmen</td>
+  </tr>
+</table>
+
+<h3>Abbildungen</h3>
+
+<p>
+  <code><a href="">rend</a></code>-Attribut des <code><a href="">figure</a></code>-Elements:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@rend</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">full-page</td>
+    <td>Textabbildung, seitenfüllend</td>
+  </tr>
+  <tr>
+    <td class="code">tab</td>
+    <td>Tafel</td>
+  </tr>
+  <tr>
+    <td class="code">text</td>
+    <td>Textabbildung, klein</td>
+  </tr>
+</table>
+
+<h3></h3>
+
+<p>
+  <code><a href="">n</a></code>-Attribut des <code><a href="">pb</a></code>-Elements:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@n</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">binding_recto</td>
+    <td>Ledereinband-Vorderseite</td>
+  </tr>
+  <tr>
+    <td class="code">binding_verso</td>
+    <td>Ledereinband-Rückseite</td>
+  </tr>
+  <tr>
+    <td class="code">interleaf</td>
+    <td>Vakat</td>
+  </tr>
+  <tr>
+    <td class="code">titlepage_recto</td>
+    <td>Titelseite-Vorderseite</td>
+  </tr>
+  <tr>
+    <td class="code">titlepage_verso</td>
+    <td>Titelseite-Rückseite</td>
+  </tr>
+</table>
+
+<h3>Namen und Personen</h3>
+
+<p>
+  <code><a href="">role</a></code>-Attribute des <code><a href="">persName</a></code>-Elements:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@role</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">author</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">author_add</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">author_orig</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">editor</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">originator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">patent_app</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">subscriber</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">translator</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="code">undef</td>
+    <td></td>
+  </tr>
+</table>
+
+</div>
