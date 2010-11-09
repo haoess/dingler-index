@@ -18,7 +18,6 @@ my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_pr
 my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, barcode, year, facsimile) VALUES (?, ?, ?, ?, ?)' );
 my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, subtype, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );
 my $sth_figure = $dbh->prepare( 'INSERT INTO figure (article, ref, reftype) VALUES (?, ?, ?)' );
-my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref, role) VALUES (?, ?, ?)' );
 my $sth_footnote = $dbh->prepare( 'INSERT INTO footnote (n, article, content) VALUES (?, ?, ?)' );
 
 JOURNAL:
@@ -72,13 +71,6 @@ JOURNAL:
                 $sth_article->execute( $miscid, $last_id, $jid, $type, undef, $volume, '', $title, $pagestart, $pageend, $mi_facsimile, undef, $content, $miscpos );
                 my $ins_id = $dbh->last_insert_id( undef, undef, undef, undef, { sequence => 'article_uid_seq' } );
 
-                foreach my $person ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:persName') ) {
-                    my $ref = idonly( $xpc->find('@ref', $person) );
-                    next if $ref eq '-';
-                    my $role = $xpc->find('@role', $person);
-                    $sth_person->execute( $ref, $ins_id, $role );
-                }
-
                 foreach my $fn ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:note') ) {
                     my $n = $xpc->find('@n', $fn);
                     my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
@@ -112,13 +104,6 @@ JOURNAL:
         }
 
         if ( $data->{type} ne 'art_miscellanea' ) {
-            foreach my $person ( $xpc->findnodes('.//tei:persName', $article) ) {
-                my $ref = idonly( $xpc->find('@ref', $person) );
-                next if $ref eq '-';
-                my $role = $xpc->find('@role', $person);
-                $sth_person->execute( $ref, $last_id, $role );
-            }
-
             foreach my $fn ( $xpc->findnodes('.//tei:note', $article) ) {
                 my $n = $xpc->find('@n', $fn);
                 my $content = Dingler::Util::uml( normalize( $fn->to_literal ) );
