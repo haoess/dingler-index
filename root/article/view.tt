@@ -183,7 +183,10 @@
   [% END %]
 
   <div id="figuredialog" style="display:none">
-    <img id="figureimage" src="" />
+    <div style="position:relative">
+      <img id="figurecontextimage" src="" style="opacity:0.1" />
+      <img id="figureimage" src="" style="position:absolute;left:50px;top:50px" />
+    </div>
   </div>
   <script type="text/javascript">
     function showtab(tab) {
@@ -192,8 +195,11 @@
     }
 
     function showfigure(figure) {
+      var context = figure.replace(/\/([^\/]+)$/, '/context_$1');
       figureDialog = jQuery('#figuredialog');
-      figureImage  = jQuery('#figureimage');
+      figureContextImage = jQuery('#figurecontextimage');
+      figureContextImage.attr( 'src', context );
+      figureImage = jQuery('#figureimage');
       figureImage.attr( 'src', figure );
       figureImage.load( function() {
         figureDialog.dialog({
