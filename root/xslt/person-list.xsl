@@ -36,10 +36,11 @@
         <xsl:attribute name="src"><xsl:value-of select="../tei:figure/tei:graphic/@url" /></xsl:attribute>
       </xsl:element>
     </xsl:if>
-    <xsl:value-of select="./tei:surname"/>
+    <xsl:apply-templates select="./tei:surname"/>
     <xsl:if test="string(./tei:forename)">,</xsl:if>
-    <xsl:text> </xsl:text><xsl:value-of select="./tei:addName"/>
-    <xsl:text> </xsl:text><xsl:value-of select="./tei:forename"/>
+    <xsl:text> </xsl:text><xsl:apply-templates select="./tei:addName"/>
+    <xsl:text> </xsl:text><xsl:apply-templates select="./tei:forename"/>
+    <xsl:text> </xsl:text><xsl:apply-templates select="./tei:nameLink"/>
   </h2>
 </xsl:template>
 <xsl:template match='tei:persName'/>
