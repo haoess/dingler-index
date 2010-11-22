@@ -21,6 +21,31 @@
 
 <h2>TEI-Strukturdaten</h2>
 
+<h3>Angaben zur Zählung der Jahrgänge</h3>
+
+<p>
+  <code>Folgende Werte für das <a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">subtype</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-milestone.html">milestone</a></code>-Elements:
+</p>
+
+<table>
+  <colgroup>
+    <col width="200" />
+    <col width="*" />
+  </colgroup>
+  <tr>
+    <th>@subtype</th>
+    <th>Beschreibung</th>
+  </tr>
+  <tr>
+    <td class="code">age-group</td>
+    <td>Alternative Zählung der Jahrgänge, chronologisch nach ihrer Reihenfolge</td>
+  </tr>
+  <tr>
+    <td class="code">series</td>
+    <td>Alternative Zählung: Reihe/Folge</td>
+  </tr>
+</table>
+
 <h3>Text-Sorten</h3>
 
 <p>
@@ -136,9 +161,8 @@
 <h3>Abschnittsarten</h3>
 
 <p>
-  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">div</a></code>-Elements werden benutzt:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">type</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html">div</a></code>-Elements werden benutzt:
 </p>
-
 
 <table>
   <colgroup>
@@ -227,8 +251,10 @@
   </tr>
 </table>
 
+<h3>Titelseiten</h3>
+
 <p>
-  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">titlePage</a></code>-Elements werden benutzt:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">type</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePage.html">titlePage</a></code>-Elements werden benutzt:
 </p>
 
 <table>
@@ -254,8 +280,10 @@
   </tr>
 </table>
 
+<h3>Titelei</h3>
+
 <p>
-  Folgende Werte für das <code><a href="">type</a></code>-Attribut des <code><a href="">titlePart</a></code>-Elements werden benutzt:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">type</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePart.html">titlePart</a></code>-Elements werden benutzt:
 </p>
 
 <table>
@@ -304,7 +332,7 @@
 <h3>Abbildungen</h3>
 
 <p>
-  <code><a href="">rend</a></code>-Attribut des <code><a href="">figure</a></code>-Elements:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html">rend</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html">figure</a></code>-Elements werden benutzt:
 </p>
 
 <table>
@@ -330,10 +358,10 @@
   </tr>
 </table>
 
-<h3></h3>
+<h3>Seitenzählung</h3>
 
 <p>
-  <code><a href="">n</a></code>-Attribut des <code><a href="">pb</a></code>-Elements:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html">n</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">pb</a></code>-Elements werden benutzt:
 </p>
 
 <table>
@@ -370,7 +398,7 @@
 <h3>Namen und Personen</h3>
 
 <p>
-  <code><a href="">role</a></code>-Attribute des <code><a href="">persName</a></code>-Elements:
+  Folgende Werte für das <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.naming.html">role</a></code>-Attribut des <code><a href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html">persName</a></code>-Elements werden benutzt:
 </p>
 
 <table>
