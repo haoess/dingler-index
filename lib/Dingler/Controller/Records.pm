@@ -26,10 +26,10 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->forward('journals');
-    $c->forward('articles');
-    $c->forward('tabulars');
-    $c->forward('people');
-    $c->forward('sloc');
+#    $c->forward('articles');
+#    $c->forward('tabulars');
+#    $c->forward('people');
+#    $c->forward('sloc');
 
     $c->stash(
         template => 'records.tt',
@@ -84,8 +84,8 @@ sub journals :Private {
         $records = {
             total           => $rs->count,
             articles        => $articles,
-            most_articles   => $rs->first,
-            least_articles  => $least,
+            most_articles   => $rs->first->{_column_},
+            least_articles  => $least->{_column_data},
             most_tabs       => $c->model('Dingler::Journal')->find({ id => "pj$most_tabs" }),
             most_tabs_count => $journal_tabs{$most_tabs},
         };
@@ -203,43 +203,43 @@ sub people :Private {
     });
     my $records = $cache->get('people');
     if ( !$records ) {
-        my $most_articles = $c->model('Dingler::Person')->search(
+        my $most_articles = $c->model('Dingler::Personref')->search(
             {
                 role => { -in => [ qw(author author_add author_orig) ] },
             },
             {
                 'select' => [ 'me.id', { count => 'me.ref', -as => 'article_count' } ],
                 'as'     => [ 'id', 'article_count' ],
-                distinct  => 1,
-                order_by  => 'article_count DESC',
-                rows      => 1,
+                distinct => 1,
+                order_by => 'article_count DESC',
+                rows     => 1,
             }
         );
-        my $most_articles_name = Dingler::Util::fullname( $c->config->{svn} . '/database/persons/persons.xml', $most_articles->first->id );
+        my $most_articles_name = Dingler::Util::fullname( $most_articles->first->id );
         $most_articles_name =~ s/(.*), (.*)/$2 $1/;
 
-        my $most_patents = $c->model('Dingler::Person')->search(
+        my $most_patents = $c->model('Dingler::Personref')->search(
             {
                 role => 'patent_app',
             },
             {
                 'select' => [ 'me.id', { count => 'me.ref', -as => 'article_count' } ],
                 'as'     => [ 'id', 'article_count' ],
-                distinct  => 1,
-                order_by  => 'article_count DESC',
-                rows      => 1,
+                distinct => 1,
+                order_by => 'article_count DESC',
+                rows     => 1,
             }
         );
-        my $most_patents_name = Dingler::Util::fullname( $c->config->{svn} . '/database/persons/persons.xml', $most_patents->first->id );
+        my $most_patents_name = Dingler::Util::fullname( $most_patents->first->id );
         $most_patents_name =~ s/(.*), (.*)/$2 $1/;
         $records = {
-            most_articles      => {
-                id    => $most_articles->first->id,
+            most_articles => {
+                id    => $most_articles->first->get_column('id'),
                 count => $most_articles->first->get_column('article_count'),
                 name  => $most_articles_name,
             },
-            most_patents       => {
-                id    => $most_patents->first->id,
+            most_patents => {
+                id    => $most_patents->first->get_column('id'),
                 count => $most_patents->first->get_column('article_count'),
                 name  => $most_patents_name,
             },

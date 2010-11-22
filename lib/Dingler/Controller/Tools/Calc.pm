@@ -30,6 +30,10 @@ sub index :Path :Args(0) {
     $c->stash( calc => $yaml );
 }
 
+=head2 do
+
+=cut
+
 sub do :Local {
     my ( $self, $c ) = @_;
     my $value   = $c->req->params->{value};

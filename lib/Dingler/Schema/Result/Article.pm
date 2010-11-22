@@ -252,23 +252,23 @@ __PACKAGE__->has_many(
   { "foreign.article" => "self.uid" },
 );
 
-=head2 people
+=head2 personrefs
 
 Type: has_many
 
-Related object: L<Dingler::Schema::Result::Person>
+Related object: L<Dingler::Schema::Result::Personref>
 
 =cut
 
 __PACKAGE__->has_many(
-  "people",
-  "Dingler::Schema::Result::Person",
+  "personrefs",
+  "Dingler::Schema::Result::Personref",
   { "foreign.ref" => "self.uid" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:xYHw5MAKLgBC4c9iHidXPA
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-11-11 22:29:29
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:3n7LadR5rQnu8FRfSzescQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

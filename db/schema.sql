@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS journal CASCADE;
 DROP TABLE IF EXISTS article CASCADE;
 DROP TABLE IF EXISTS figure CASCADE;
 DROP TABLE IF EXISTS person CASCADE;
+DROP TABLE IF EXISTS personref CASCADE;
 DROP TABLE IF EXISTS footnote CASCADE;
 DROP TABLE IF EXISTS patent CASCADE;
 DROP TABLE IF EXISTS patent_app CASCADE;
@@ -79,10 +80,24 @@ CREATE TABLE figure (
 -- --------------------------
 
 CREATE TABLE person (
-  id   TEXT,
+  uid      SERIAL PRIMARY KEY,
+  id       TEXT UNIQUE,
+  rolename TEXT,
+  addname  TEXT,
+  forename TEXT,
+  namelink TEXT,
+  surname  TEXT,
+  pnd      TEXT,
+  viaf     TEXT
+);
+
+-- --------------------------
+
+CREATE TABLE personref (
+  id   TEXT REFERENCES person (id),
   ref  INTEGER REFERENCES article (uid),
   role TEXT,
-  PRIMARY KEY (id, ref)
+  PRIMARY KEY (id, ref, role)
 );
 
 -- --------------------------

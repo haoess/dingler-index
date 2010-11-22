@@ -1,16 +1,14 @@
 <h3>Nach Personen suchen</h3>
 
-<p>Die Personensuche steht demnächst zur Verfügung.</p>
-
-<form>
+<form action="[% base %]person/search" method="get">
   <table>
     <tr>
       <td class="right">
         Suchbegriff(e):
       </td>
       <td>
-        <input type="text" name="" class="ui-widget-content ui-corner-all" disabled="disabled" />
-        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" disabled="disabled" />
+        <input type="text" name="q" id="person-searchfield" class="ui-widget-content ui-corner-all" />
+        <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
       </td>
     </tr>
     <tr>
@@ -18,8 +16,8 @@
         Einschränkung Rolle:
       </td>
       <td>
-        <input type="checkbox" name="" value="" checked="checked" disabled="disabled" /> Autor<br />
-        <input type="checkbox" name="" value="" checked="checked" disabled="disabled" /> Patentträger<br />
+        <input type="checkbox" name="filter" value="author" checked="checked" /> Autor<br />
+        <input type="checkbox" name="filter" value="patent_app" checked="checked" /> Patentträger<br />
       </td>
     </tr>
     <tr>
@@ -27,17 +25,22 @@
         Einschränkung Zeitraum:
       </td>
       <td>
-        <select name="" disabled="disabled">
+        <select name="from">
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.first %]>[% i %]0</option>
           [% END %]
         </select>
         bis
-        <select name="" disabled="disabled">
+        <select name="to">
           [% FOR i IN [ 182 .. 194 ] %]
             <option [% 'selected="selected"' IF loop.last %]>[% i %]0</option>
           [% END %]
         </select>
       </td>
+    </tr>
   </table>
 </form>
+
+<script type="text/javascript">
+  jQuery('#person-searchfield').autocomplete('[% base %]person/search_ac');
+</script>

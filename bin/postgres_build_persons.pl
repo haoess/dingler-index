@@ -15,61 +15,31 @@ my $teins = 'http://www.tei-c.org/ns/1.0';
 
 my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 1 } ) or die $DBI::errstr;
 
-my $sth_article = $dbh->prepare( 'SELECT uid, id, type FROM article WHERE id = ?' );
-my $sth_person = $dbh->prepare( 'INSERT INTO person (id, ref, role) VALUES (?, ?, ?)' );
+my $xml; eval { $xml = XML::LibXML->new->parse_file( '/home/fw/src/kuwi/dingler/database/persons/persons.xml' ); 1 };
+die $@ if $@;
+my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+$xpc->registerNs( 'tei', $teins );
 
-JOURNAL:
-  foreach my $journal ( @ARGV ) {
-    debug( "Processing $journal ...\n" );
-    my $xml; eval { $xml = XML::LibXML->new->parse_file( $journal ); 1 };
-    if ( $@ ) {
-        debug( $@ );
-        next JOURNAL;
-    }
-    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', $teins );
+$dbh->do( 'DELETE FROM person' ) or die $DBI::errstr;
+$dbh->do( "SELECT setval('person_uid_seq', 1, false)" ) or die $DBI::errstr;
 
-    foreach my $article ( $xpc->findnodes('//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents" or @type="art_literature"]') ) {
-        my $id = $xpc->find( '@xml:id', $article );
-        my $uid = $dbh->selectcol_arrayref( $sth_article, undef, $id )->[0];
-        $dbh->do( 'DELETE FROM person WHERE ref = ?', undef, $uid );
-        foreach my $person ( $xpc->findnodes('*//tei:persName', $article) ) {
-            my $ref = idonly( $xpc->find('@ref', $person) );
-            next if $ref eq '-';
-            my $role = $xpc->find('@role', $person) . "";
-            $sth_person->execute( $ref, $uid, $role );
-        }
+my $sth = $dbh->prepare( 'INSERT INTO person (id, rolename, addname, forename, namelink, surname, pnd, viaf) VALUES (?, ?, ?, ?, ?, ?, ?, ?)' ) or die $DBI::errstr;
 
-        my $type = $xpc->find( '@type', $article ) . "";
-        if ( $type eq 'art_miscellanea' ) {
-            foreach my $misc ( $xpc->findnodes('//tei:text[@xml:id="' . $id . '"]//tei:div[@type="misc_undef" or @type="misc_patents"]') ) {
-                my $miscid  = $xpc->find( '@xml:id', $misc );
-                $uid = $dbh->selectcol_arrayref( $sth_article, undef, $miscid )->[0];
-                $dbh->do( 'DELETE FROM person WHERE ref = ?', undef, $uid );
-                foreach my $person ( $xpc->findnodes('//*[@xml:id="' . $miscid . '"]//tei:persName') ) {
-                    my $ref = idonly( $xpc->find('@ref', $person) );
-                    next if $ref eq '-';
-                    my $role = $xpc->find('@role', $person) . "";
-                    $sth_person->execute( $ref, $uid, $role );
-                }
-            }
-        }
-    }
-    debug( '-'x30, "\n" );
+sub uml { Dingler::Util::uml(@_) }
+
+foreach my $person ( $xpc->findnodes('//tei:person') ) {
+    my $id       = $xpc->find( '@xml:id', $person )."";
+    my $rolename = uml( $xpc->find( 'tei:persName/tei:roleName[1]', $person )."" );
+    my $addname  = uml( $xpc->find( 'tei:persName/tei:addName[1]', $person )."" );
+    my $forename = uml( $xpc->find( 'tei:persName/tei:forename[1]', $person )."" );
+    my $namelink = uml( $xpc->find( 'tei:persName/tei:nameLink[1]', $person )."" );
+    my $surname  = uml( $xpc->find( 'tei:persName/tei:surname[1]', $person )."" );
+    my $pnd      = uml( $xpc->find( 'tei:note[@type="pnd"][1]', $person )."" );
+    my $viaf     = uml( $xpc->find( 'tei:note[@type="viaf"][1]', $person )."" );
+    $sth->execute( $id, $rolename, $addname, $forename, $namelink, $surname, $pnd, $viaf ) or die $DBI::errstr;
 }
 
 $dbh->disconnect;
-
-sub idonly {
-    my $id = shift;
-    $id =~ s/.*#//;
-    if ( !$id || $id.'' eq 'pers' ) {
-        return '-';
-    }
-    else {
-        return $id;
-    }
-}
 
 sub debug {
     print STDERR @_;

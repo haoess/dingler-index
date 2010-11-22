@@ -1,5 +1,6 @@
 <div id="data">
-  [% xsl %]
+  <h1>[% person.surname | html %][% IF person.forename %],[% END %] [% person.addname | html %] [% person.forename | html %] [% person.namelink | html %]</h1>
+  [% personarticles %]
   <hr />
   <h2>Schlagworte zur Person</h2>
   <div id="htmltagcloud">

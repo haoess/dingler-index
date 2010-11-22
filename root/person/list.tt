@@ -1,6 +1,6 @@
 <h1>Personenverzeichnis</h1>
 
-<p>Register der Personen, vornehmlich der Artikel-Autoren im Polytechnischen Journal.</p>
+<p>Register der Personen im Polytechnischen Journal.</p>
 
 [% BLOCK alphabet %]
   <p>
@@ -21,7 +21,21 @@
 
 [% PROCESS alphabet %]
 
-[% xsl %]
+<div class="personlist">
+[% WHILE (name = names.next) %]
+  <h2>[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</h2>
+  <div style="margin-left:2em; margin-bottom:1em">
+    [% IF name.pnd || name.viaf %]
+      <h3>Andere Quellen</h3>
+      <ul>
+        [% IF name.pnd %]<li><a href="http://d-nb.info/gnd/[% name.pnd | html %]" target="_blank">PND [% name.pnd | html %]</a></li>[% END %]
+        [% IF name.viaf %]<li><a href="http://viaf.org/viaf/[% name.viaf | html %]" target="_blank">VIAF [% name.viaf | html %]</a></li>[% END %]
+      </ul>
+    [% END %]
+    [% personarticles(name.id) %]
+  </div>
+[% END %]
+</div>
 
 [% PROCESS alphabet %]
 
@@ -32,15 +46,15 @@
       <table>
         <tr>
           <td>Autoren:</td>
-          <td>[% author.count + 0 %]</td>
+          <td><a href="[% c.req.uri_with({ filter => 'author' }) %]">[% author.count + 0 %]</a></td>
         </tr>
         <tr>
           <td>Patentträger:</td>
-          <td>[% patent_app.count + 0 %]</td>
+          <td><a href="[% c.req.uri_with({ filter => 'patent_app' }) %]">[% patent_app.count + 0 %]</a></td>
         </tr>
         <tr>
           <td>Rest:</td>
-          <td>[% other.count + 0 %]</td>
+          <td><a href="[% c.req.uri_with({ filter => 'other' }) %]">[% other.count + 0 %]</a></td>
         </tr>
       </table>
     </div>

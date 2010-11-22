@@ -87,6 +87,14 @@ table.journallist { padding-left:40px }
 .code { background:#fafafa; font-family:monospace }
 div.code { border:1px solid #eee; padding-left:10px }
 
+/* auto completion */
+.ac_results { padding:0px; border:1px solid #000; background:#fff; overflow:hidden; z-index:99999 }
+.ac_results ul { width:100%; list-style-position:outside; list-style:none; padding:0; margin:0 }
+.ac_results li { margin:0px; padding:2px 5px; cursor:default; display:block; font:menu; font-size:1.1em; line-height:16px; overflow:hidden }
+.ac_loading { background: white url('images/indicator.gif') right center no-repeat }
+.ac_odd { background:#f3f3f3 }
+.ac_over { background:#07a; color:white }
+
 .timeline-band-inner { cursor:pointer }
 
 #xmlsnippet     { display:none; background:#fff; font-weight:bold }

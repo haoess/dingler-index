@@ -6,7 +6,7 @@ BEGIN { extends 'Catalyst::Controller'; }
 
 use Dingler::Index;
 use File::Temp qw(tempfile);
-use XML::LibXML;
+use JSON;
 
 =head1 NAME
 
@@ -23,46 +23,30 @@ Catalyst Controller.
 =cut
 
 sub index :Path :Args(2) {
-    my ( $self, $c, $person, $article ) = @_;
-    my $xml = $c->config->{svn} . '/database/persons/persons.xml';
-    $c->stash->{xml} = $xml;
-    $c->stash->{template} = 'person.xsl';
+    my ( $self, $c, $persid, $skipid ) = @_;
 
-    my $search_args = {
-        'me.id' => $person,
-    };
-    if ( $article ) {
-        $search_args->{ 'ref.id' } = { '!=' => $article };
+    my $person = $c->model('Dingler::Person')->find({ id => $persid });
+    $c->detach('/default') unless $person;
+    $c->stash->{person} = $person;
+
+    # the person's articles
+    if ( $skipid ) {
+        my $article = $c->model('Dingler::Article')->find({ id => $skipid });
+        $c->stash->{personarticles} = Dingler::Util::personarticles( $persid, $article->uid );
     }
-    my $rs = $c->model('Dingler::Person')->search(
-        $search_args,
-        {
-            join => [ 'ref' ],
-        },
+    else {
+        $c->stash->{personarticles} = Dingler::Util::personarticles( $persid );
+    }
+
+    # the person's tag cloud
+    my $rs = $c->model('Dingler::Personref')->search(
+        { 'me.id' => $persid },
+        { join => [ 'ref' ] },
     );
     my @texts;
-    my $p_xml = "<refs>\n";
     while ( my $p = $rs->next ) {
-        $p_xml .= sprintf "  <ref>%s</ref>\n", $p->ref->id;
         push @texts, $p->ref->front, $p->ref->content;
     }
-    $p_xml .= "</refs>";
-    my ($tempfh, $tempname) = tempfile;
-    print $tempfh $p_xml;
-    close $tempfh;
-
-    $c->stash(
-        article => $article,
-        person  => $person,
-        ptrs    => $tempname,
-    );
-    $c->forward('Dingler::View::XSLT');
-    unlink $tempname;
-    my $xsl = $c->res->body;
-    utf8::decode($xsl);
-    $c->stash( xsl => $xsl );
-    $c->res->body( undef );
-
     my $index = Dingler::Index->new({ text => join( ' ', @texts ) });
     my %words = %{ $index->words };
     my $cloud = HTML::TagCloud->new( levels => 30 );
@@ -82,27 +66,34 @@ sub index :Path :Args(2) {
 
 sub list :Local {
     my ( $self, $c, $letter ) = @_;
-    my $xml = $c->config->{svn} . '/database/persons/persons.xml';
     $letter ||= 'A';
-    $c->stash(
-        letter => $letter,
-        xml    => $xml,
+
+    my $filter = $c->req->params->{filter};
+    my %search = $filter eq 'author'     ? ( 'personrefs.role' => { '=' => ['author', 'author_orig'] } )
+               : $filter eq 'patent_app' ? ( 'personrefs.role' => 'patent_app')
+               : $filter eq 'other'      ? ( 'personrefs.role' => { -not_in => ['author',  'author_orig', 'patent_app'] } )
+               :                           ();
+
+    my $names = $c->model('Dingler::Person')->search(
+        {
+            surname => { like => "$letter%" },
+            %search,
+        },
+        {
+            order_by => 'surname, forename',
+            join     => [ 'personrefs' ],
+            prefetch => [ 'personrefs' ],
+        }
     );
-    $c->stash->{template} = 'person-list.xsl';
-    $c->forward('Dingler::View::XSLT');
-    my $xsl = $c->res->body;
-    utf8::decode($xsl);
-    $c->stash( xsl => $xsl );
-    $c->res->body( undef );
 
     $c->stash(
-        author     => $c->model('Dingler::Person')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
-        patent_app => $c->model('Dingler::Person')->search_rs({ role => 'patent_app' }),
-        other      => $c->model('Dingler::Person')->search_rs({ role => { -not_in => ['author',  'author_orig', 'patent_app'] } }),
-    );
-
-    $c->stash(
-        template => 'person/list.tt',
+        names      => $names,
+        personarticles => \&Dingler::Util::personarticles,
+        author     => $c->model('Dingler::Personref')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
+        patent_app => $c->model('Dingler::Personref')->search_rs({ role => 'patent_app' }),
+        other      => $c->model('Dingler::Personref')->search_rs({ role => { -not_in => ['author',  'author_orig', 'patent_app'] } }),
+        letter     => $letter,
+        template   => 'person/list.tt',
     );
 }
 
@@ -112,18 +103,12 @@ sub list :Local {
 
 sub beacon :Global {
     my ( $self, $c ) = @_;
-    my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
-    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-
     my %pnds;
-    foreach my $person ( $xpc->findnodes('//tei:person') ) {
-        my $pnd = $xpc->find( 'tei:note[@type="pnd"]', $person );
-        next unless $pnd;
-        my $id = $xpc->find( '@xml:id', $person );
-        my $count = $c->model('Dingler::Person')->search({ id => $id })->count;
-        next unless $count;
-        $pnds{$pnd} = $count;
+    my $rs = $c->model('Dingler::Person')->search(
+        { -and => [ 'me.pnd' => { '!=' => undef }, 'me.pnd' => { '!=' => '' } ] },
+    );
+    while ( my $row = $rs->next ) {
+        $pnds{ $row->pnd } = $row->personrefs->count if $row->personrefs->count;
     }
     $c->res->content_type( 'text/plain' );
     my $out = <<"EOT";
@@ -144,15 +129,98 @@ EOT
 
 sub pnd :Local {
     my ( $self, $c, $pnd ) = @_;
-    my $xml = XML::LibXML->new->parse_file( $c->config->{svn} . '/database/persons/persons.xml' );
-    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-    my ( $entry ) = $xpc->findnodes("//tei:person[tei:note[\@type='pnd'] = '$pnd']");
-    if ( $entry ) {
-        my $id = $xpc->find( '@xml:id', $entry );
-        my $person = $c->model('Dingler::Person')->search({ person => $id });
-        $c->forward('index', [ $id, '' ]);
+    my $person = $c->model('Dingler::Person')->find({ pnd => $pnd });
+    $c->detach('/default') unless $person;
+    $c->forward('index', [ $person->id, '' ]);
+}
+
+=head2 search
+
+=cut
+
+sub search :Local {
+    my ( $self, $c ) = @_;
+    my $q = $c->req->params->{q} || '';
+
+    my %cond = _prepare_cond( $q );
+    my %attrs = (
+        order_by => 'surname, forename',
+    );
+    my $names = $c->model('Dingler::Person')->search( \%cond, \%attrs );
+
+    $c->stash(
+        names    => $names,
+        personarticles => \&Dingler::Util::personarticles,
+        template => 'person/list.tt',
+    );
+}
+
+=head2 search_ac
+
+=cut
+
+sub search_ac :Local {
+    my ( $self, $c ) = @_;
+    my $q = $c->req->params->{q} || '';
+
+    if ( length $q <= 2 ) {
+        $c->res->content_type( 'application/json; charset=utf-8' );
+        $c->res->body( '' );
     }
+
+    my %cond = _prepare_cond( $q );
+    my %attrs = (
+        order_by => 'surname, forename',
+    );
+    my $names = $c->model('Dingler::Person')->search( \%cond, \%attrs );
+
+    my @result;
+    while ( my $person = $names->next ) {
+        my $name = sprintf '%s, %s %s %s', $person->surname, $person->addname, $person->forename, $person->namelink;
+        $name =~ s/\s+/ /g;
+        $name =~ s/,\s+$//g;
+        push @result, $name;
+    }
+    my $out = join "\n", @result;
+    $c->res->content_type( 'text/plain; charset=utf-8' );
+    $c->res->body( $out || ' ' );
+}
+
+sub _prepare_cond {
+    my $q = shift;
+
+    # normalize spaces
+    for ( $q ) {
+        s/^\s+//;
+        s/\s+$//;
+        s/\s+/ /g;
+    }
+
+    my %cond;
+
+    if ( $q =~ /^1[0-9]{7}[0-9X]$/ ) { # PND
+        $cond{pnd} = $q;
+    }
+    #elsif ( ) { # VIAF
+    #
+    #}
+    elsif ( $q =~ /,/ ) {
+        my ( $surname, $forename ) = split /\s*,\s*/, $q, 2;
+        $cond{surname}  = { ilike => $surname };
+        $cond{forename} = { ilike => substr( $forename, 0, 5 ) . '%' };
+    }
+    elsif ( $q =~ /\s/ ) {
+        my @parts = split /\s+/, $q;
+        my $surname = pop @parts;
+        my $forename = join ' ', @parts;
+        $cond{surname}  = { ilike => "$surname%" };
+        $cond{forename} = { ilike => substr( $forename, 0, 5 ) . '%' };
+    }
+    else {
+        $cond{surname} = { ilike => "$q%" };
+    }
+
+    return %cond;
 }
 
 __PACKAGE__->meta->make_immutable;

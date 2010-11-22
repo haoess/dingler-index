@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "persons.xml to sql ..."
+bin/postgres_build_persons.pl
+
 echo "start basic database build ..."
 for i in "$@"; do
   bin/postgres_build_index.pl "$i"
@@ -8,6 +11,11 @@ done
 echo "start patent database setup ..."
 for i in "$@"; do
   bin/postgres_patents.pl "$i"
+done
+
+echo "map person references ..."
+for i in "$@"; do
+  bin/postgres_build_personrefs.pl "$i"
 done
 
 echo "rebuild sphinx index ..."

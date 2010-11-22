@@ -78,17 +78,35 @@ sub figlink {
 }
 
 sub fullname {
-    my ( $person_xml, $id ) = @_;
-    my $xml; eval { $xml = XML::LibXML->new->parse_file( $person_xml ); 1 };
-    if ( $@ ) { die $@ }
-    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
-    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
-    my $ret = sprintf '%s, %s',
-        $xpc->find( '//tei:person[@xml:id="' . $id . '"]/tei:persName/tei:surname' ),
-        $xpc->find( '//tei:person[@xml:id="' . $id . '"]/tei:persName/tei:forename' );
-    print STDERR $ret, "\n";
+    my $person = shift;
+    my $ret = sprintf '%s, %s', $person->surname, $person->forename;
     return $ret;
 }
+
+sub personarticles {
+    my ( $id, @skip ) = @_;
+    my $rs = Dingler->model('Dingler::Personref')->search({
+        id  => $id,
+        ref => { -not_in => [ @skip ] },
+    });
+    my $out = '';
+    if ( $rs->count ) {
+        $out = '<h3>Fundstellen im Polytechnischen Journal</h3><ul style="margin-top:0">';
+        while ( my $person = $rs->next ) {
+            $out .= sprintf '<li><a href="article/%s/%s">%s</a> <span class="small">(Jg.&nbsp;%s, Bd.&nbsp;%s, Nr.&nbsp;%s, S.&nbsp;%s)</span></li>',
+                    $person->ref->journal->id,
+                    $person->ref->id,
+                    $person->ref->title,
+                    $person->ref->journal->year,
+                    $person->ref->journal->volume,
+                    $person->ref->number,
+                    $person->ref->pagestart eq $person->ref->pageend ? $person->ref->pagestart
+                                                                     : $person->ref->pagestart.'&ndash;'.$person->ref->pageend;
+        }
+        $out .= '</ul>';
+    }
+    return $out;
+};
 
 1;
 __END__
