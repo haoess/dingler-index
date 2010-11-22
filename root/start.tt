@@ -38,7 +38,11 @@
 <div style="text-align:center">
 <form method="post" action="[% base %]journal/view">
   Band
-  <input type="text" name="v" class="ui-widget-content ui-corner-all" style="width:30px" />
+  <select name="v" class="ui-widget-content ui-corner-all">
+    [% foo = journals.reset; WHILE ( journal = journals.next ) %]
+      <option>[% journal.volume | html %]</option>
+    [% END %]
+  </select>
   <input type="submit" value="anschauen" />
 </form>
 </div>
