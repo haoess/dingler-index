@@ -74,9 +74,15 @@ sub list :Local {
                : $filter eq 'other'      ? ( 'personrefs.role' => { -not_in => ['author',  'author_orig', 'patent_app'] } )
                :                           ();
 
+    if ( $letter eq '~' ) {
+        $search{surname} = { '!~' => '^[a-zA-Z]' };
+    }
+    else {
+        $search{surname} = { like => "$letter%" };
+    }
+
     my $names = $c->model('Dingler::Person')->search(
         {
-            surname => { like => "$letter%" },
             %search,
         },
         {
@@ -119,7 +125,7 @@ sub beacon :Global {
 #CONTACT: Frank Wiegand <frank.wiegand\@gmail.com>
 #INSTITUTION: Digitalisierung des Polytechnischen Journals (Institut fuer Kulturwissenschaft, Humboldt-Universitaet zu Berlin)
 EOT
-    $out .= join "\n", map { sprintf "%s|%d", $_, $pnds{$_} } sort keys %pnds;
+    $out .= join "\n", map { sprintf "%s|%d", $_, $pnds{$_} } sort { $pnds{$b} <=> $pnds{$a} } keys %pnds;
     $c->res->body( $out );
 }
 
