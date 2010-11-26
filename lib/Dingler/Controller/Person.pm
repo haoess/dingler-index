@@ -68,7 +68,7 @@ sub list :Local {
     my ( $self, $c, $letter ) = @_;
     $letter ||= 'A';
 
-    my $filter = $c->req->params->{filter};
+    my $filter = $c->req->params->{filter} || '';
     my %search = $filter eq 'author'     ? ( 'personrefs.role' => { '=' => ['author', 'author_orig'] } )
                : $filter eq 'patent_app' ? ( 'personrefs.role' => 'patent_app')
                : $filter eq 'other'      ? ( 'personrefs.role' => { -not_in => ['author',  'author_orig', 'patent_app'] } )
@@ -78,7 +78,7 @@ sub list :Local {
         $search{surname} = { '!~' => '^[a-zA-Z]' };
     }
     else {
-        $search{surname} = { like => "$letter%" };
+        $search{surname} = { ilike => "$letter%" };
     }
 
     my $names = $c->model('Dingler::Person')->search(
@@ -92,6 +92,7 @@ sub list :Local {
         }
     );
 
+    $Template::Directive::WHILE_MAX = 2000; # XXX better: page results
     $c->stash(
         names      => $names,
         personarticles => \&Dingler::Util::personarticles,
@@ -111,7 +112,12 @@ sub beacon :Global {
     my ( $self, $c ) = @_;
     my %pnds;
     my $rs = $c->model('Dingler::Person')->search(
-        { -and => [ 'me.pnd' => { '!=' => undef }, 'me.pnd' => { '!=' => '' } ] },
+        {
+            -and => [ 'me.pnd' => { '!=' => undef }, 'me.pnd' => { '!=' => '' } ]
+        },
+        {
+            prefetch => [ 'personrefs' ],
+        }
     );
     while ( my $row = $rs->next ) {
         $pnds{ $row->pnd } = $row->personrefs->count if $row->personrefs->count;
@@ -148,6 +154,15 @@ sub search :Local {
     my ( $self, $c ) = @_;
     my $q = $c->req->params->{q} || '';
 
+    my @filters = grep { defined } ref $c->req->params->{filter} ? @{$c->req->params->{filter}} : $c->req->params->{filter};
+
+=for pod
+    my $filter = $c->req->params->{filter} || '';
+    my %search = $filter eq 'author'     ? ( 'personrefs.role' => { '=' => ['author', 'author_orig'] } )
+               : $filter eq 'patent_app' ? ( 'personrefs.role' => 'patent_app')
+               : $filter eq 'other'      ? ( 'personrefs.role' => { -not_in => ['author',  'author_orig', 'patent_app'] } )
+               :                           ();
+=cut
     my %cond = _prepare_cond( $q );
     my %attrs = (
         order_by => 'surname, forename',
@@ -173,6 +188,8 @@ sub search_ac :Local {
         $c->res->content_type( 'application/json; charset=utf-8' );
         $c->res->body( '' );
     }
+
+=for pod
 
     my %cond = _prepare_cond( $q );
     my %attrs = (

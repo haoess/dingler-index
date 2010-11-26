@@ -85,10 +85,15 @@ sub fullname {
 
 sub personarticles {
     my ( $id, @skip ) = @_;
-    my $rs = Dingler->model('Dingler::Personref')->search({
-        id  => $id,
-        ref => { -not_in => [ @skip ] },
-    });
+    my $rs = Dingler->model('Dingler::Personref')->search(
+        {
+            'me.id'  => $id,
+            'me.ref' => { -not_in => [ @skip ] },
+        },
+        {
+            prefetch => [ { 'ref' => 'journal' } ],
+        },
+    );
     my $out = '';
     if ( $rs->count ) {
         $out = '<h3>Fundstellen im Polytechnischen Journal</h3><ul style="margin-top:0">';

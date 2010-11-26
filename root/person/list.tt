@@ -22,6 +22,9 @@
 [% PROCESS alphabet %]
 
 <div class="personlist">
+
+  <p style="margin-bottom:20px">[% names.count %] Person[% 'en' UNLESS names.count == 1 %], deren Nachname mit <b>[% letter | html %]</b> beginnt</p>
+
 [% WHILE (name = names.next) %]
   <h2>[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</h2>
   <div style="margin-left:2em; margin-bottom:1em">
