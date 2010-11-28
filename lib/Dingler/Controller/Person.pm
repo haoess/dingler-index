@@ -189,8 +189,6 @@ sub search_ac :Local {
         $c->res->body( '' );
     }
 
-=for pod
-
     my %cond = _prepare_cond( $q );
     my %attrs = (
         order_by => 'surname, forename',
