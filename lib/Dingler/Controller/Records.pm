@@ -26,10 +26,10 @@ sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
     $c->forward('journals');
-#    $c->forward('articles');
-#    $c->forward('tabulars');
-#    $c->forward('people');
-#    $c->forward('sloc');
+    $c->forward('articles');
+    $c->forward('tabulars');
+    $c->forward('people');
+    $c->forward('sloc');
 
     $c->stash(
         template => 'records.tt',
@@ -84,9 +84,9 @@ sub journals :Private {
         $records = {
             total           => $rs->count,
             articles        => $articles,
-            most_articles   => $rs->first->{_column_},
+            most_articles   => $rs->first->{_column_data},
             least_articles  => $least->{_column_data},
-            most_tabs       => $c->model('Dingler::Journal')->find({ id => "pj$most_tabs" }),
+            most_tabs       => $c->model('Dingler::Journal')->find({ id => "pj$most_tabs" })->{_column_data},
             most_tabs_count => $journal_tabs{$most_tabs},
         };
         $cache->set( 'journals', $records );
@@ -180,7 +180,7 @@ sub articles :Private {
                 f_count => $most_figures->first->get_column('f_count'),
             },
         };
-        $cache->set( 'articles', $records );
+       $cache->set( 'articles', $records );
     }
 
     $c->stash(

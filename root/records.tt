@@ -29,7 +29,6 @@
   ([% journal.most_tabs.year %]) hat [% journal.most_tabs_count %] Tafeln.
 </p>
 
-
 <h2>Artikel</h2>
 
 <h3>Der längste Artikel</h3>
