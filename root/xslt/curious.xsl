@@ -13,15 +13,17 @@
   encoding="utf-8"/>
 
 <xsl:template match='/'>
+  <ul>
   <xsl:for-each select="//tei:list[@type='curious']/tei:item">
     <xsl:sort select='tei:note'/>
-    <p>
+      <li style="margin-bottom:3px">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="catalyst:resolveref(tei:ref/@target)"/></xsl:attribute>
         <xsl:apply-templates select="tei:note"/>
       </xsl:element>
-    </p>
+      </li>
   </xsl:for-each>
+  </ul>
 </xsl:template>
 
 <xsl:template match="text()">
