@@ -7,9 +7,16 @@ DROP TABLE IF EXISTS footnote CASCADE;
 DROP TABLE IF EXISTS patent CASCADE;
 DROP TABLE IF EXISTS patent_app CASCADE;
 
-CREATE OR REPLACE FUNCTION hex_to_int( text ) RETURNS int AS '
-  return hex( shift );
-' LANGUAGE plperl;
+CREATE OR REPLACE FUNCTION hex_to_int(hexval varchar) RETURNS integer AS $$
+DECLARE
+   result  int;
+BEGIN
+ EXECUTE 'SELECT x''' || hexval || '''::int' INTO result;
+ RETURN result;
+END;
+$$
+LANGUAGE 'plpgsql' IMMUTABLE STRICT;
+
 
 CREATE OR REPLACE FUNCTION find_in_array( needle anyelement, haystack anyarray) RETURNS integer AS $$
 DECLARE
