@@ -136,8 +136,9 @@ sub search :Global {
     $sph->SetFilter( 'i_type', [ map { hex(substr( md5_hex($_), 0, 7 )) } @ts_fields ] ) if @ts_fields;
     $sph->SetFilterRange( 'i_year', $from, $to ) if $from && $to;
     my $result = $sph->Query( $query );
+    $c->stash->{sphinx_error} = $result->{error};
 
-    my $count = $result->{total_found};
+    my $count = $result->{total_found} || 0;
 
     my @id_list = map { $_->{doc} } @{$result->{matches}};
     my $matches = $c->model('Dingler::Article')->search(
