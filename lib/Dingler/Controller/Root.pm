@@ -372,6 +372,8 @@ sub brokenlinks :Regex('^((?:ar|mi)([0-9]{3}).*)') {
     $c->res->redirect( $c->uri_for("/article/pj$journal/$article"), 301 );
 }
 
+sub terms :Global {}
+
 =head2 stats
 
 =cut
