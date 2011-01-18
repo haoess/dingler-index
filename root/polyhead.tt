@@ -9,11 +9,45 @@
       und der
       <a href="http://www.hu-berlin.de/" id="partner_huberlin" title="zur Webseite der Humboldt-Universit&auml;t zu Berlin">Humboldt-Universit&auml;t zu Berlin</a>.
     </p>
-    <ul id="sitenav"><li><a href="http://www.polytechnischesjournal.de/startseite/" accesskey="1">zur Startseite springen</a>&nbsp;(Taste: <kbd>1</kbd>)</li><li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_content" accesskey="2">zum Inhaltsbereich springen</a>&nbsp;(Taste: <kbd>2</kbd>)</li><li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_nav" accesskey="3">zum Hauptmenü springen</a>&nbsp;(Taste: <kbd>3</kbd>)</li><li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_sidebar" accesskey="4">zur Seitenleiste springen</a>&nbsp;(Taste: <kbd>4</kbd>)</li><li><a href="http://www.polytechnischesjournal.de/kontakt/" accesskey="5">zum Impressum springen</a>&nbsp;(Taste: <kbd>5</kbd>)</li></ul>
+    <ul id="sitenav">
+      <li><a href="http://www.polytechnischesjournal.de/startseite/" accesskey="1">zur Startseite springen</a>&nbsp;(Taste: <kbd>1</kbd>)</li>
+      <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_content" accesskey="2">zum Inhaltsbereich springen</a>&nbsp;(Taste: <kbd>2</kbd>)</li>
+      <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_nav" accesskey="3">zum Hauptmenü springen</a>&nbsp;(Taste: <kbd>3</kbd>)</li>
+      <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/#a_sidebar" accesskey="4">zur Seitenleiste springen</a>&nbsp;(Taste: <kbd>4</kbd>)</li>
+      <li><a href="http://www.polytechnischesjournal.de/kontakt/" accesskey="5">zum Impressum springen</a>&nbsp;(Taste: <kbd>5</kbd>)</li>
+    </ul>
     <div id="nav">
       <div id="navstart"></div>
       <div id="navend"></div>
-      <ul><li id="b_start"><a href="http://www.polytechnischesjournal.de/startseite/" title="Startseite (ALT+S)" accesskey="S">Startseite</a></li><li id="b_journal" class="act"><a href="http://www.polytechnischesjournal.de/journal/" title="Journal (ALT+O)" accesskey="O">Journal</a><div class="subnav"><div class="subnavbg"></div><ul><li><a href="http://www.polytechnischesjournal.de/journal/faksimile/" title="Faksimile (ALT+A)" accesskey="A">Faksimile</a></li><li><a href="http://www.polytechnischesjournal.de/journal/viewer/" title="DFG-Viewer (ALT+D)" accesskey="D">DFG-Viewer</a></li><li><a href="http://dingler.culture.hu-berlin.de/" title="Volltext (ALT+V)" accesskey="V">Volltext</a></li></ul></div></li><li id="b_projekt"><a href="http://www.polytechnischesjournal.de/projekt/" title="Projekt (ALT+R)" accesskey="R">Projekt</a><div class="subnav"><div class="subnavbg"></div><ul><li><a href="http://www.polytechnischesjournal.de/projekt/polytechnisches-journal/" title="Polytechnisches Journal (ALT+L)" accesskey="L">Polytechnisches Journal</a></li><li><a href="http://www.polytechnischesjournal.de/projekt/workflow/" title="Workflow (ALT+W)" accesskey="W">Workflow</a></li><li><a href="http://www.polytechnischesjournal.de/projekt/dingler-online/" title="Dingler-Online (ALT+I)" accesskey="I">Dingler-Online</a></li><li><a href="http://www.polytechnischesjournal.de/projekt/metadaten/" title="Metadaten (ALT+M)" accesskey="M">Metadaten</a></li><li><a href="http://www.polytechnischesjournal.de/projekt/publikationen/" title="Publikationen (ALT+U)" accesskey="U">Publikationen</a><li><a href="http://www.polytechnischesjournal.de/projekt/zeitplan/" title="Zeitplan (ALT+Z)" accesskey="Z">Zeitplan</a></li></ul></div></li><li id="b_kontakt"><a href="http://www.polytechnischesjournal.de/kontakt/" title="Kontakt (ALT+K)" accesskey="K">Kontakt</a></li></ul>
+      <ul>
+        <li id="b_start"><a href="http://www.polytechnischesjournal.de/startseite/" title="Startseite (ALT+S)" accesskey="S">Startseite</a></li>
+        <li id="b_journal" class="act">
+          <a href="http://www.polytechnischesjournal.de/journal/" title="Journal (ALT+O)" accesskey="O">Journal</a>
+          <div class="subnav">
+            <div class="subnavbg"></div>
+            <ul>
+              <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/" title="Faksimile (ALT+A)" accesskey="A">Faksimile</a></li>
+              <li><a href="http://www.polytechnischesjournal.de/journal/viewer/" title="DFG-Viewer (ALT+D)" accesskey="D">DFG-Viewer</a></li>
+              <li><a href="http://dingler.culture.hu-berlin.de/" title="Volltext (ALT+V)" accesskey="V">Volltext</a></li>
+            </ul>
+          </div>
+        </li>
+        <li id="b_projekt">
+          <a href="http://www.polytechnischesjournal.de/projekt/" title="Projekt (ALT+R)" accesskey="R">Projekt</a>
+          <div class="subnav">
+            <div class="subnavbg"></div>
+            <ul>
+              <li><a href="http://www.polytechnischesjournal.de/projekt/das-polytechnische-journal/" title="Das Polytechnische Journal (ALT+L)" accesskey="L">Das Polytechnische Journal</a></li>
+              <li><a href="http://www.polytechnischesjournal.de/projekt/workflow/" title="Workflow (ALT+W)" accesskey="W">Workflow</a></li>
+              <li><a href="http://www.polytechnischesjournal.de/projekt/dingler-online/" title="Dingler-Online (ALT+I)" accesskey="I">Dingler-Online</a></li>
+              <!--<li><a href="http://www.polytechnischesjournal.de/projekt/metadaten/" title="Metadaten (ALT+M)" accesskey="M">Metadaten</a></li>-->
+              <li><a href="http://www.polytechnischesjournal.de/projekt/publikationen/" title="Publikationen (ALT+U)" accesskey="U">Publikationen</a></li>
+              <!--<li><a href="http://www.polytechnischesjournal.de/projekt/zeitplan/" title="Zeitplan (ALT+Z)" accesskey="Z">Zeitplan</a></li>-->
+            </ul>
+          </div>
+        </li>
+        <li id="b_kontakt"><a href="http://www.polytechnischesjournal.de/kontakt/" title="Kontakt (ALT+K)" accesskey="K">Kontakt</a></li>
+      </ul>
     </div>
     <div class="floatclearing"></div>
   </div>
