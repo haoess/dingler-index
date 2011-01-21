@@ -39,6 +39,7 @@ requires 'XML::Feed';
 requires 'Digest::SHA';
 requires 'DateTime::Format::Pg';
 requires 'Roman';
+requires 'YAML::XS';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
