@@ -144,6 +144,8 @@ sub grundform {
         Steuerungen => 'Steuerung',
         Stifte => 'Stift',
         Stiften => 'Stift',
+        Stücke => 'Stück',
+        Stückes => 'Stück',
         Stunden => 'Stunde',
         Systeme => 'System',
         Teleskope => 'Teleskop',
