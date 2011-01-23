@@ -44,9 +44,10 @@ sub auto :Private {
         return $1 ? sprintf( "%d", $1 ) : '';
     };
 
+    my $base = $c->req->base;
     $c->stash->{ figure_to_markup } = sub {
         my ( $ref, $journal ) = @_;
-        return sprintf '%s%s/image_markup/%s.html', $c->req->base, $journal, $ref;
+        return sprintf '%s%s/image_markup/%s.html', $base, $journal, $ref;
     };
 
     $c->stash->{ figure_link } = sub {
