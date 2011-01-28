@@ -1,5 +1,14 @@
 <data>
+    <!-- Dingler -->
   <event start="1777-01-02" end="1855-05-19" isDuration="true" title="Johann Gottfried Dingler"></event>
   <event start="1806-03-10" end="1874-10-09" isDuration="true" title="Emil Maximilian Dingler"></event>
   <event start="1820" title="1. Band Polytechnisches Journal"></event>
+    <!-- 1820er --> 
+    <event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg"></event>
+    <event start="1827" title="Beethoven stirbt"></event>
+    <!-- 1830er --> 
+    <event start="1830" title="Julirevolution in Frankreich"></event>
+    <event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner; Gründung der New England Anti-Slavery Society"></event>
+    <event start="1832" title="Hambacher Fest"></event>
+    <event start="1836" title="Der Bund der Gerechten wird gegründet"></event>
 </data>
