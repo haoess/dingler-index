@@ -9,42 +9,43 @@
 <!--           -->
 
 
-<event start="1820" title="Entdeckung der Venus von Milo"></event>
-<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes."></event>
-<event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien."></event>
-<event start="1827-03-26" title="Ludwig v. Beethoven stirbt in Wien."></event> 
+<event start="1820" title="Entdeckung der Venus von Milo"
+    icon="images/circle-red.png"></event>
+<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes." icon="images/circle-red.png"></event>
+<event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." icon="images/circle-red.png"></event>
+<event start="1827-03-26" title="Ludwig v. Beethoven stirbt in Wien." icon="images/circle-red.png"></event> 
 
 
-<event start="1833" title="Richard Wagners erste Oper (Die Feen)."></event>
-<event start="1831-11-14" title="Georg Fr. W. Hegel stirbt in Berlin."></event>
-<event start="1832-03-22" title="Johann Wolfgang v. Goethe stirbt in Weimar."></event>
+<event start="1833" title="Richard Wagners erste Oper (Die Feen)." icon="images/circle-red.png"></event>
+<event start="1831-11-14" title="Georg Fr. W. Hegel stirbt in Berlin." icon="images/circle-red.png"></event>
+<event start="1832-03-22" title="Johann Wolfgang v. Goethe stirbt in Weimar." icon="images/circle-red.png"></event>
 
-<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest."></event>
-<event start="1849-10-17" title="Chopin stirbt mit 39 Jahren in Paris."></event>
-<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere."></event>
+<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." icon="images/circle-red.png"></event>
+<event start="1849-10-17" title="Chopin stirbt mit 39 Jahren in Paris." icon="images/circle-red.png"></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png"></event>
 
 
-<event start="1851" title="Herman Melville: Moby Dick."></event>
-<event start="1857" title="Gustave Flaubert: Madame Bovary."></event>
+<event start="1851" title="Herman Melville: Moby Dick." icon="images/circle-red.png"></event>
+<event start="1857" title="Gustave Flaubert: Madame Bovary." icon="images/circle-red.png"></event>
 
-<event start="1868" title="Leo Tolstoi: Krieg und Frieden."></event>
-<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne."></event>
-<event start="1863" title="Lewis Carroll: Alice im Wunderland."></event>
-<event start="1867" title="Karl Marx: Das Kapital."></event>
+<event start="1868" title="Leo Tolstoi: Krieg und Frieden." icon="images/circle-red.png"></event>
+<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne." icon="images/circle-red.png"></event>
+<event start="1863" title="Lewis Carroll: Alice im Wunderland." icon="images/circle-red.png"></event>
+<event start="1867" title="Karl Marx: Das Kapital." icon="images/circle-red.png"></event>
 
-<event start="1871"title="Lewis Carroll: Through the Looking-Glass."></event>
-<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen."></event>
-<event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs« for the purpose of exhibiting their artworks independently.">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
-<event start="1879" title="Henrik Ibsen: A Doll's House."></event>
+<event start="1871"title="Lewis Carroll: Through the Looking-Glass." icon="images/circle-red.png"></event>
+<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen." icon="images/circle-red.png"></event>
+<event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs« for the purpose of exhibiting their artworks independently." icon="images/circle-red.png">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
+<event start="1879" title="Henrik Ibsen: A Doll's House." icon="images/circle-red.png"></event>
 
-<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra."></event>
-<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn."></event>
-<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow."></event>
-<event start="1888" title="Edward Bellamy: Looking Backward."></event>
-<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde."></event>
-<event start="1884" title="Erste Ausgabe des Oxford English Dictionary publiziert."></event>
-<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes."></event>
-<event start="1883-02-13" title="Richard Wagner stirbt in Venedig."></event>
+<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra." icon="images/circle-red.png"></event>
+<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn." icon="images/circle-red.png"></event>
+<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow." icon="images/circle-red.png"></event>
+<event start="1888" title="Edward Bellamy: Looking Backward." icon="images/circle-red.png"></event>
+<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde." icon="images/circle-red.png"></event>
+<event start="1884" title="Erste Ausgabe des Oxford English Dictionary publiziert." icon="images/circle-red.png"></event>
+<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." icon="images/circle-red.png"></event>
+<event start="1883-02-13" title="Richard Wagner stirbt in Venedig." icon="images/circle-red.png"></event>
 
 
 
@@ -173,57 +174,57 @@
 <!-- science and technology-->
 <!--        -->
 
-<event start="1820-01-28" title="A Russian expedition led by Fabian Gottlieb von Bellingshausen and Mikhail Petrovich Lazarev approaches the Antarctic coast."></event>
-<event start="1820-01-30" title="Edward Bransfield lands on the Antarctic mainland."></event>  
-<event start="1820-04" title="Hans Christian Ørsted discovers the relationship between electricity and magnetism."></event>
-<event start="1820" title="The 6th edition of the Encyclopædia Britannica appears."></event>  
-<event start="1825" title="World's first modern railway, the Stockton and Darlington Railway, opens to the public."></event>
-<event start="1826" title="Invention of the photograph and the first still existing photograph taken."></event>
+<event start="1820-01-28" title="A Russian expedition led by Fabian Gottlieb von Bellingshausen and Mikhail Petrovich Lazarev approaches the Antarctic coast." icon="images/circle-blue.png"></event>
+<event start="1820-01-30" title="Edward Bransfield lands on the Antarctic mainland." icon="images/circle-blue.png"></event>  
+<event start="1820-04" title="Hans Christian Ørsted discovers the relationship between electricity and magnetism." icon="images/circle-blue.png"></event>
+<event start="1820" title="The 6th edition of the Encyclopædia Britannica appears." icon="images/circle-blue.png"></event>  
+<event start="1825" title="World's first modern railway, the Stockton and Darlington Railway, opens to the public." icon="images/circle-blue.png"></event>
+<event start="1826" title="Invention of the photograph and the first still existing photograph taken." icon="images/circle-blue.png"></event>
 
 
-<event start="1830" end="1839" title="Innovations in roller printing on textiles introduced new dress fabrics."></event>
-<event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion."></event>
-<event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies."></event>
-<event start="1831" title="Evolutionary theorist Charles Darwin's expedition on the HMS Beagle."></event>
+<event start="1830" end="1839" title="Innovations in roller printing on textiles introduced new dress fabrics." icon="images/circle-blue.png"></event>
+<event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion." icon="images/circle-blue.png"></event>
+<event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies." icon="images/circle-blue.png"></event>
+<event start="1831" title="Evolutionary theorist Charles Darwin's expedition on the HMS Beagle." icon="images/circle-blue.png"></event>
 
 
-<event start="1841" title="Der Belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon."></event>
-<event start="1842-03-30" title="Crawford Williamson Long: First use of general anesthesia in an operation."></event>
-<event start="1844-05-24" title="The first electrical telegraph sent by Samuel Morse from Baltimore to Washington, D.C."></event> 
+<event start="1841" title="Der Belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon." icon="images/circle-blue.png"></event>
+<event start="1842-03-30" title="Crawford Williamson Long: First use of general anesthesia in an operation." icon="images/circle-blue.png"></event>
+<event start="1844-05-24" title="The first electrical telegraph sent by Samuel Morse from Baltimore to Washington, D.C." icon="images/circle-blue.png"></event> 
 
 
-<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion."></event>
-<event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology."></event>
-<event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal."></event>
-<event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne."></event>
+<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion." icon="images/circle-blue.png"></event>
+<event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology." icon="images/circle-blue.png"></event>
+<event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal." icon="images/circle-blue.png"></event>
+<event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne." icon="images/circle-blue.png"></event>
 
-<event start="1855" title="Henry Bessemer: Production of steel revolutionized by socalled Bessemer process."></event>
-<event start="1854" title="Benjamin Silliman: first person to fractionate petroleum by distillation."></event>
-<event start="1854" title="Elisha Otis: First safety elevator."></event>
-<event start="1851" title="Isaac Singer: First commercially successful sewing machine."></event>
-
-
-<event start="1864" title="James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist."></event>
-<event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels."></event>
-<event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden.">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
-<event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken."></event>
-<event start="1867"title="Alfred Nobel erhält ein Patent auf Dynamit."></event>
-<event start="1868-08-18" title="Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.">It was the first eclipse expedition in which a spectroscope was used.</event>
-<event start="1869" title="First Transcontinental Railroad in the USA was completed."></event>
-<event start="1869" title="Erfindung des Unterwasserboots."></event>
-<event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente."></event>
+<event start="1855" title="Henry Bessemer: Production of steel revolutionized by socalled Bessemer process." icon="images/circle-blue.png"></event>
+<event start="1854" title="Benjamin Silliman: first person to fractionate petroleum by distillation." icon="images/circle-blue.png"></event>
+<event start="1854" title="Elisha Otis: First safety elevator." icon="images/circle-blue.png"></event>
+<event start="1851" title="Isaac Singer: First commercially successful sewing machine." icon="images/circle-blue.png"></event>
 
 
-<event start="1876" title="The prototype telephone was invented by Alexander Graham Bell."></event>
-<event start="1879" title="A version of the light bulb was invented by Thomas Edison."></event>
-<event start="1877-07-18" title="The phonograph is invented by Thomas Edison."></event>
-<event start="1879" title="The steam drill is invented."></event>
+<event start="1864" title="James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist." icon="images/circle-blue.png"></event>
+<event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels." icon="images/circle-blue.png"></event>
+<event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden." icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
+<event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken." icon="images/circle-blue.png"></event>
+<event start="1867"title="Alfred Nobel erhält ein Patent auf Dynamit." icon="images/circle-blue.png"></event>
+<event start="1868-08-18" title="Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt." icon="images/circle-blue.png">It was the first eclipse expedition in which a spectroscope was used.</event>
+<event start="1869" title="First Transcontinental Railroad in the USA was completed." icon="images/circle-blue.png"></event>
+<event start="1869" title="Erfindung des Unterwasserboots." icon="images/circle-blue.png"></event>
+<event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente." icon="images/circle-blue.png"></event>
 
 
-<event start="1885" title="Home Insurance Building, the first skyscraper in history, officially opended."></event>
-<event start="1886" title="Heinrich Hertz: discovered the photoelectric effect."></event>
-<event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant."></event>
-<event start="1884" title="James-Lange-Theorie der Körperreaktionen."></event>
+<event start="1876" title="The prototype telephone was invented by Alexander Graham Bell." icon="images/circle-blue.png"></event>
+<event start="1879" title="A version of the light bulb was invented by Thomas Edison." icon="images/circle-blue.png"></event>
+<event start="1877-07-18" title="The phonograph is invented by Thomas Edison." icon="images/circle-blue.png"></event>
+<event start="1879" title="The steam drill is invented." icon="images/circle-blue.png"></event>
+
+
+<event start="1885" title="Home Insurance Building, the first skyscraper in history, officially opended." icon="images/circle-blue.png"></event>
+<event start="1886" title="Heinrich Hertz: discovered the photoelectric effect." icon="images/circle-blue.png"></event>
+<event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant." icon="images/circle-blue.png"></event>
+<event start="1884" title="James-Lange-Theorie der Körperreaktionen." icon="images/circle-blue.png"></event>
 
 <!--           -->
 <!-- Economics -->
