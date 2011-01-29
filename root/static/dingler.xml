@@ -1,14 +1,258 @@
 <data>
-    <!-- Dingler -->
-  <event start="1777-01-02" end="1855-05-19" isDuration="true" title="Johann Gottfried Dingler"></event>
-  <event start="1806-03-10" end="1874-10-09" isDuration="true" title="Emil Maximilian Dingler"></event>
-  <event start="1820" title="1. Band Polytechnisches Journal"></event>
-    <!-- 1820er --> 
-    <event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg"></event>
-    <event start="1827" title="Beethoven stirbt"></event>
-    <!-- 1830er --> 
-    <event start="1830" title="Julirevolution in Frankreich"></event>
-    <event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner; Gründung der New England Anti-Slavery Society"></event>
-    <event start="1832" title="Hambacher Fest"></event>
-    <event start="1836" title="Der Bund der Gerechten wird gegründet"></event>
+
+<!-- Dingler --> 
+    <event start="1777-01-02" end="1855-05-19" isDuration="true" title="Johann Gottfried Dingler"></event> 
+    <event start="1806-03-10" end="1874-10-09" isDuration="true" title="Emil Maximilian Dingler"></event>
+    
+<!--           -->
+<!-- literatur/kunst/musik -->
+<!--           -->
+
+
+<event start="1820" title="Entdeckung der Venus von Milo"></event>
+<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes."></event>
+<event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien."></event>
+<event start="1827-03-26" title="Ludwig v. Beethoven stirbt in Wien."></event> 
+
+
+<event start="1833" title="Richard Wagners erste Oper (Die Feen)."></event>
+<event start="1831-11-14" title="Georg Fr. W. Hegel stirbt in Berlin."></event>
+<event start="1832-03-22" title="Johann Wolfgang v. Goethe stirbt in Weimar."></event>
+
+<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest."></event>
+<event start="1849-10-17" title="Chopin stirbt mit 39 Jahren in Paris."></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere."></event>
+
+
+<event start="1851" title="Herman Melville: Moby Dick."></event>
+<event start="1857" title="Gustave Flaubert: Madame Bovary."></event>
+
+<event start="1868" title="Leo Tolstoi: Krieg und Frieden."></event>
+<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne."></event>
+<event start="1863" title="Lewis Carroll: Alice im Wunderland."></event>
+<event start="1867" title="Karl Marx: Das Kapital."></event>
+
+<event start="1871"title="Lewis Carroll: Through the Looking-Glass."></event>
+<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen."></event>
+<event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs« for the purpose of exhibiting their artworks independently.">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
+<event start="1879" title="Henrik Ibsen: A Doll's House."></event>
+
+<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra."></event>
+<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn."></event>
+<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow."></event>
+<event start="1888" title="Edward Bellamy: Looking Backward."></event>
+<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde."></event>
+<event start="1884" title="Erste Ausgabe des Oxford English Dictionary publiziert."></event>
+<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes."></event>
+<event start="1883-02-13" title="Richard Wagner stirbt in Venedig."></event>
+
+
+
+<!--           -->
+<!-- politik   -->
+<!--           -->
+
+
+<event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons."></event>
+<event start="1812-06-18" end="1814-12-24" title="Britisch-Amerikanischer Krieg."></event>
+
+<event start="1813" title="Beginn der Befreiungskriege (Europa gegen Napoleon)."></event>
+<event start="1813-10-16" end="1813-10-19" title="Völkerschlacht bei Leipzig"></event>
+
+<event start="1814-03-31" title="Alliierte besetzen Paris."></event>
+<event start="1814-04" title="Napoleon wird nach Elba verbannt."></event>
+<event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"></event>
+
+<event start="1815-03-01" title="Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück."></event>
+<event start="1815-06-18" title="Schlacht bei Waterloo">Napoleon wird endgültig besiegt.</event>
+<event start="1815" title="Napoleons Herrschaft der Hundert Tage."></event>
+<event start="1815" title="zweite Verbannung Napoleons (nach St. Helena)."></event>
+<event start="1815" title="Frieden zwischen Großbritannien und den USA."></event>
+<event start="1815" title="Gründung des Deutschen Bundes."></event>
+<event start="1815" title="erste Burschenschaften"></event>
+
+<event start="1817" title="Wartburgfest."></event>
+
+<event start="1819" title="Karlsbader Beschlüsse."></event>
+
+
+<event start="1820-01-01" title="constitutionalist military insurrection at Cádiz"></event>
+<event start="1820-01-29" title="George IV of the United Kingdom ascends the throne, ending the period known as the British Regency."></event>
+<event start="1820-02-23" title="The Cato Street conspiracy is exposed.">The principals are executed on May 1.</event>
+<event start="1820-03-09" title="King Ferdinand VII of Spain accepts the new constitution, beginning the Liberal Triennium"></event>
+<event start="1820-04" title="The Radical War is fought in Scotland."></event>
+<event start="1820-07" title="A Constitutionalist revolution occurs in the Kingdom of the Two Sicilies."></event>
+<event start="1820-08-24" title="A Constitutionalist insurrection breaks out at Oporto, Portugal."></event>
+<event start="1820-09-15" title="A revolution breaks out in Lisbon."></event>
+<event start="1820-10-25" end="1820-11" title="The Congress of Troppau (Opava) is convened between the rulers of Russia, Austria and Prussia."></event>
+
+<event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg"></event>
+<event start="1821-05-05" title="Emperor Napoléon I dies in exile on Saint Helena."></event>
+<event start="1821-06-19" title="The Philikí Etaireía are decisively defeated by the Ottomans at Drăgăşani (in Wallachia)."></event>
+<event start="1821-07-19" title="George IV is crowned king of the United Kingdom of Great Britain and Ireland."></event>
+
+<event start="1829" end="1829" title="Russisch-türkischer Krieg."></event>
+
+
+<event start="1830" title="Belgische Revolution führt zur Unabhängigkeit von den Niederlanden."></event>
+<event start="1830" title="Julirevolution in Frankreich"></event> 
+<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner; Gründung der New England Anti-Slavery Society"></event> 
+<event start="1832" title="Hambacher Fest"></event> 
+<event start="1835-03-02" title="Franz II. (letzter Kaiser des Heiligen Römischen Reiches Deutscher Nation) stirbt in Wien."></event>
+<event start="1836" title="Der Bund der Gerechten wird gegründet"></event>
+<event start="1839" end="1842-08-29" title="The First Opium War between the United Kingdom and the Qing Empire of China. It would end with the signing of the Treaty of Nanking on 1842-08-29."></event>
+
+
+<event start="1840-06-17" title="Friedrich Wilhelm III. stirbt in Berlin."></event>
+<event start="1840-02-06" title="First signing of the Treaty of Waitangi.">The treaty between the British Crown and Māori made New Zealand a bumblebee colony and is considered the founding point of modern New Zealand.</event>
+<event start="1842-08-09" title="Webster-Ashburton Treaty.">the treaty settled the dispute over the location of the Maine-New Brunswick border between the United States and Canada.</event>
+<event start="1842-08-29" title="the first of two Opium Wars ended between China and Britain with the Treaty of Nanking.">One of the consequences was the cession of parts of modern day Hong Kong to the British. Hong Kong would eventually be returned to China in 1997.</event>
+<event start="1846" end="1848" title="Mexican-American War.">Fought between Mexico and the United States of America. The latter emerged victorious and gained undisputed control over Texas while annexing portions of Arizona, California and New Mexico.</event>
+<event start="1847" title="Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind."></event>
+<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg zwischen Preußen und Dänemark."></event>
+<event start="1848" title="Deutsche Revolution 1848/49."></event>
+<event start="1848" end="1849" title="Revolution und Freiheitskampf in Ungarn."></event>
+<event start="1848" title="Revolution von 1848.">Wave of revolutions in Europe. Collectively known as the Revolution of 1848. This led to mass immigration of these refugees into industrial cities of the United States as well as to other locations around the world.</event>
+<event start="1848" title="Seneca Falls Convention (first convention for women's rights) in Seneca Falls, New York."></event>
+<event start="1849-03-28" title="Paulskirchenverfassung"></event>
+
+
+<event start="1850-07-02" title="Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark."></event>
+<event start="1852" title="Der 1848 zum Staatspräsidenten Frankreichs gewählte Louis Napoleon lässt sich 1852 zum Kaiser Napoléon III. ausrufen und begründet das Zweite französische Kaiserreich."></event>
+<event start="1853" end="1856" title="Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien."></event>
+<event start="1853" title="Japanische Häfen werden für den Handel mit dem Westen geöffnet."></event>
+<event start="1854" end="1856" title="Krimkrieg.">fought between Imperial Russia and an alliance consisting of the United Kingdom of Great Britain and Ireland, the Second French Empire, the Kingdom of Sardinia and the Ottoman Empire."</event>
+<event start="1854" end="1859" title="Bleeding Kansas: battles erupt in Kansas Territory between proslavery and »Free-State« settlers, directly precipitating the American Civil War."></event>
+<event start="1856" title="Der Pariser Frieden als Folge des Krimkriegs führt zu einer Neuordnung Europas."></event>
+<event start="1856-10-08" title="Second Opium War between several western powers and China begins with the Arrow Incident on the Pearl River."></event>
+<event start="1857" end="1859" title="Erste Weltwirtschaftskrise."></event>
+<event start"1859" title="Zweiter Italienischer Unabhängigkeitskrieg.">also known as Franco-Austrian War, or Austro-Sardinian War.</event>
+
+
+<event start="1860-10-18" title="The first Convention of Peking formally ended the Second Opium War."></event>
+<event start="1861-04-12" end="1865-04-09" title="US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten."></event>
+<event start="1861" end="1867" title="Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko."></event>
+<event start="1861-03-17" end="1870-09-20" title="Wars for expansion and national unity continue until the incorporation of the Papal States."></event>
+<event start="1864" title="Deutsch-Dänischer Krieg."></event>
+<event start="1864-07-19" title="the fall of Nanjing formally ended the 14-year Taiping Rebellion."></event>
+<event start="1864" end="1870" title="Tripel-Allianz-Krieg (Argentinien, Brasilien und Uruguay gegen Paraguay)."></event>
+<event start="1865-04-14" title="President of the United States Abraham Lincoln is assassinated by John Wilkes Booth."></event>
+<event start="1866" title="Deutscher Krieg zwischen Österreich und Preußen."></event>
+<event start="1866" title="Gründung des Norddeutschen Bundes, Vorgänger des Deutschen Reiches."></event>
+<event start="1866" end="1869" title="Meiji Restoration in Japan."></event>
+<event start="1867-07-01" title="The Dominion of Canada is created by the British North America Act."></event>
+<event start="1869" title="Eröffnung des Suezkanals, der den Seeweg von Europa nach Indien/Asien so verkürzt, dass man nicht mehr um das Kap der guten Hoffnung fahren muss."></event>
+
+<event start="1870" end="1871" title="Deutsch-Französischer Krieg."></event>
+<event start="1871" title="Erste sozialistische Revolution in Frankreich."></event> 
+<event start="1871-01-18" title="Gründung des Deutschen Reichs."></event>
+<event start="1872" end="1876" title="The Third Carlist War  was the last Carlist War in Spain."></event>
+<event start="1873" title="Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen."></event>
+<event start="1873" end="1904" title="Aceh War"></event>
+<event start="1875" title="Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde."></event>
+<event start="1876" title="Schlacht am Little Bighorn River.">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
+<event start="1877" end="1878" title="Russisch-Türkischer Krieg."></event>
+<event start="1878" title="Sozialistengesetz Bismarcks gegen die Sozialdemokratie."></event>
+<event start="1878" title="Österreich besetzt Bosnien und Herzegowina."></event>
+<event start="1878-03-03" title="Unabhängigkeit Bulgariens vom Osmanischen Reich."></event>
+<event start="1879" title="Bulgaria and Romania declared independence following a war against the Ottoman Empire."></event>
+<event start="1879" end="1884" title="War of the Pacific."></event>
+
+
+<event start="1881" end="1889" title="Einführung der Bismarckschen Sozialgesetze in Deutschland: Kranken-, Unfall-, Renten- und Invaliditätsversicherung."></event>
+<event start="1881-08-03" title="The Pretoria Convention peace treaty is signed, officially ending the war between the Boers and Britain."></event>
+<event start="1882" title="Der 1879 zwischen Deutschland und Österreich geschlossene Zweibund wird durch den Beitritt Italiens zum Dreibund erweitert."></event>
+<event start="1882" title="Anglo-Egyptian War."></event>
+<event start="1884" title="International Meridian Conference in Washington D.C., held to determine the Prime Meridian of the world."></event>
+<event start="1884" end="1885" title="Berlin Conference, when the western powers divided Africa."></event>
+
+
+<event start="1860" end="1901" title="Viktorianische Ära."></event>
+
+<!--        -->
+<!-- science and technology-->
+<!--        -->
+
+<event start="1820-01-28" title="A Russian expedition led by Fabian Gottlieb von Bellingshausen and Mikhail Petrovich Lazarev approaches the Antarctic coast."></event>
+<event start="1820-01-30" title="Edward Bransfield lands on the Antarctic mainland."></event>  
+<event start="1820-04" title="Hans Christian Ørsted discovers the relationship between electricity and magnetism."></event>
+<event start="1820" title="The 6th edition of the Encyclopædia Britannica appears."></event>  
+<event start="1825" title="World's first modern railway, the Stockton and Darlington Railway, opens to the public."></event>
+<event start="1826" title="Invention of the photograph and the first still existing photograph taken."></event>
+
+
+<event start="1830" end="1839" title="Innovations in roller printing on textiles introduced new dress fabrics."></event>
+<event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion."></event>
+<event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies."></event>
+<event start="1831" title="Evolutionary theorist Charles Darwin's expedition on the HMS Beagle."></event>
+
+
+<event start="1841" title="Der Belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon."></event>
+<event start="1842-03-30" title="Crawford Williamson Long: First use of general anesthesia in an operation."></event>
+<event start="1844-05-24" title="The first electrical telegraph sent by Samuel Morse from Baltimore to Washington, D.C."></event> 
+
+
+<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion."></event>
+<event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology."></event>
+<event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal."></event>
+<event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne."></event>
+
+<event start="1855" title="Henry Bessemer: Production of steel revolutionized by socalled Bessemer process."></event>
+<event start="1854" title="Benjamin Silliman: first person to fractionate petroleum by distillation."></event>
+<event start="1854" title="Elisha Otis: First safety elevator."></event>
+<event start="1851" title="Isaac Singer: First commercially successful sewing machine."></event>
+
+
+<event start="1864" title="James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist."></event>
+<event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels."></event>
+<event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden.">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
+<event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken."></event>
+<event start="1867"title="Alfred Nobel erhält ein Patent auf Dynamit."></event>
+<event start="1868-08-18" title="Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.">It was the first eclipse expedition in which a spectroscope was used.</event>
+<event start="1869" title="First Transcontinental Railroad in the USA was completed."></event>
+<event start="1869" title="Erfindung des Unterwasserboots."></event>
+<event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente."></event>
+
+
+<event start="1876" title="The prototype telephone was invented by Alexander Graham Bell."></event>
+<event start="1879" title="A version of the light bulb was invented by Thomas Edison."></event>
+<event start="1877-07-18" title="The phonograph is invented by Thomas Edison."></event>
+<event start="1879" title="The steam drill is invented."></event>
+
+
+<event start="1885" title="Home Insurance Building, the first skyscraper in history, officially opended."></event>
+<event start="1886" title="Heinrich Hertz: discovered the photoelectric effect."></event>
+<event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant."></event>
+<event start="1884" title="James-Lange-Theorie der Körperreaktionen."></event>
+
+<!--           -->
+<!-- Economics -->
+<!--           -->
+
+
+<event start="1830" end="1839" title="A period of economic prosperity in America and Europe, mainly due to increasing trade, the mass production of railroads, and the Erie Canal."></event>
+<event start="1830" end="1839" title="Dutch-speaking farmers known as Voortrekkers emigrate northwards from the Cape Colony."></event>
+<event start="1836" title="The destruction of the Second Bank of the United States."></event>
+<event start="1837" end="1845" title="A Panic triggered by the failing banks in America is followed by a severe depression lasting until 1845."></event>
+
+
+<event start="1840" end="1849" title="Hungerkrisen, soziale Unruhen und Revolutionen in Irland, Polen, Frankreich, Österreich und Deutschland, Chartistenbewegung in England."></event>
+<event start="1840-05-01" title="Introduction of the postage stamp. The first of them is Penny Black, issued by the United Kingdom."></event>
+<event start="1845" end="1849" title="Great Irish Famine">caused a quarter of Ireland's population to die or emigrate to the United States and Canada.</event>
+<event start="1848" end="1855" title="The California Gold Rush">Bringing tens of thousands of immigrants to California and eliminating the United States' dependence on foreign gold.</event>
+
+
+
+<!--      -->
+<!-- misc -->
+<!--      -->
+
+<event start="1860" title="Florence Nightingale founds school for nurses."></event>
+<event start="1862" title="The sport of skiing is invented."></event>
+<event start="1863" title="The Football Association is formed in the United Kingdom of Great Britain and Ireland."></event>
+<event start="1865" title="Gründung der »London Fire Brigade«."></event>
+
+<event start="1886-05-08" title="Coca-Cola was invented."></event>
+<event start="1886" title="Freiheitsstatue eingeweiht."></event>
+<event start="1888" title="Whitechapel murders by the infamous Jack the Ripper."></event>
 </data>
