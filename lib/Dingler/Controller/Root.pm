@@ -44,15 +44,16 @@ sub auto :Private {
         return $1 ? sprintf( "%d", $1 ) : '';
     };
 
+    my $base = $c->req->base;
     $c->stash->{ figure_to_markup } = sub {
         my ( $ref, $journal ) = @_;
-        return sprintf '%s%s/image_markup/%s.html', $c->req->base, $journal, $ref;
+        return sprintf '%s%s/image_markup/%s.html', $base, $journal, $ref;
     };
 
     $c->stash->{ figure_link } = sub {
         my ( $ref, $journal, $size ) = @_;
         if ( $size ) {
-            return sprintf 'http://www.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_%s.jpg', $journal, $ref, $size;
+            return sprintf 'http://141.20.150.36/dingler_static/%s/thumbs/%s_%s.jpg', $journal, $ref, $size;
         }
     };
 

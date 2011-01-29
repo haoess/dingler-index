@@ -18,16 +18,11 @@ use Catalyst qw/
     Static::Simple
     Unicode::Encoding
 /;
-use CatalystX::RoleApplicator;
 
 extends 'Catalyst';
 
 our $VERSION = '0.01';
 $VERSION = eval $VERSION;
-
-__PACKAGE__->apply_request_class_roles(qw/
-    Catalyst::TraitFor::Request::ProxyBase
-/);
 
 # Configure the application.
 #
