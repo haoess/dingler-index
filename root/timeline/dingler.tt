@@ -1,6 +1,6 @@
 <h1>Zeitliste Polytechnisches Journal</h1>
 
-<div id="my-timeline" style="width:800px;height:400px;border:1px solid #aaa;font-size:.8em"></div>
+<div id="my-timeline" style="width:800px;height:600px;border:1px solid #aaa;font-size:.8em"></div>
 
 <script type="text/javascript">
   jQuery( document ).ready( onLoad() );
@@ -9,6 +9,37 @@
 [% BLOCK head %]
   <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
   <script type="text/javascript">
+
+    Timeline.DefaultEventSource.Event.prototype.fillTime = function(elmt, labeller) {
+      var sDate = this._start;
+      var eDate = this._end;
+      var sDated = new Date(sDate);
+      var eDated = new Date(eDate);
+      Date.MONTH_NAMES = [ "Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember" ];
+      Date.prototype.getMonthName = function() { return Date.MONTH_NAMES[this.getMonth()] };
+      var startString = sDated.getDate() + ". " + sDated.getMonthName() + " " + sDated.getFullYear();
+      var endString = eDated.getDate() + ". " + sDated.getMonthName() + " " + eDated.getFullYear();
+      if (this._instant) {
+        if (this.isImprecise()) {
+          elmt.appendChild(elmt.ownerDocument.createTextNode(startString+ " - " + endString));
+        }
+        else {
+          elmt.appendChild(elmt.ownerDocument.createTextNode(startString));
+        }
+      }
+      else {
+        if (this.isImprecise()) {
+          elmt.appendChild(elmt.ownerDocument.createTextNode(labeller.labelPrecise(this._start) + " ~ " + labeller.labelPrecise(this._latestStart)));
+          elmt.appendChild(elmt.ownerDocument.createElement("br"));
+          elmt.appendChild(elmt.ownerDocument.createTextNode(labeller.labelPrecise(this._earliestEnd) + " ~ " + labeller.labelPrecise(this._end)));
+        }
+        else {
+          elmt.appendChild(elmt.ownerDocument.createTextNode(startString+ " - " + endString));
+          elmt.appendChild(elmt.ownerDocument.createElement("br"));
+        }
+      } 
+    };
+
     var tl;
     function onLoad() {
       var eventSource = new Timeline.DefaultEventSource();

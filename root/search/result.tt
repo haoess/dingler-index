@@ -1,5 +1,5 @@
 [% BLOCK pager_html %]
-  [% pager.total_entries %] Treffer gefunden ([% pager.first %]&ndash;[% pager.last %] angezeigt).
+  [% pager.total_entries %] Treffer gefunden[% RETURN IF pager.total_entries == 0 %] ([% pager.first %]&ndash;[% pager.last %] angezeigt).
   Seite:
   [% IF pager.current_page != pager.first_page %]
     <a href="[% c.req.uri_with({ p => pager.first_page }) | html %]">«</a>
@@ -61,8 +61,12 @@
 [% i = i + 1; END %]
 </table>
 
-<br />
-<p>[% PROCESS pager_html %]</p>
+[% IF pager.total_entries > 0 %]
+  <br />
+  <p>[% PROCESS pager_html %]</p>
+[% ELSIF sphinx_error %]
+  Fehler: [% sphinx_error.replace('^index \w+:(.*)', '$1') | html %]
+[% END %]
 
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]

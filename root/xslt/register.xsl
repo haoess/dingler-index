@@ -121,6 +121,8 @@
   </ul>
 </xsl:template>
 
+<!--
+  XXX: this is borked, $article not defined &c.
 <xsl:template match="tei:persName">
   <xsl:element name="span">
     <xsl:attribute name="class">person</xsl:attribute>
@@ -130,6 +132,7 @@
     <xsl:apply-templates/>
   </xsl:element>
 </xsl:template>
+-->
 
 <xsl:template match="tei:ref">
   <xsl:choose>
@@ -182,7 +185,7 @@
 <xsl:template match="tei:figure">
   <div class="center small" style="margin:10px 0">
     <xsl:element name="img">
-      <xsl:attribute name="src">http://www.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+      <xsl:attribute name="src">http://141.20.150.36/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
       <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="class">figure</xsl:attribute>

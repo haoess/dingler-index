@@ -127,6 +127,18 @@ $dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '234', 'mi0930
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '348', 'ar100062' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '356', 'ar104079' );
 $dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '294', 'ar132085' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '324', 'ar145073' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '186', 'ar146042' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '396', 'mi149mi05_2' );
+$dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '396', 'mi149mi05_3' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '136', 'ar153032' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '310', 'ar169076' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '450', 'mi170mi06_11' );
+$dbh->do( 'UPDATE article SET pagestart = ? WHERE id = ?', undef, '450', 'mi170mi06_12' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '284', 'ar185081' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '42', 'ar172014' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '234', 'ar214058' );
+$dbh->do( 'UPDATE article SET pageend = ? WHERE id = ?', undef, '80', 'ar223026' );
 
 $dbh->disconnect;
 
