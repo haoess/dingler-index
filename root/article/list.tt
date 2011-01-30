@@ -47,4 +47,11 @@
       return false;
     }
   </script>
+
+  <div class="rightbox">
+    <div class="rightboxhead">Formate</div>
+    <div class="rightboxcontent">
+      <a href="[% c.uri_for('/journal/plain', journal) %]">Textversion</a>
+    </div>
+  </div>
 [% END %]

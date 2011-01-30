@@ -30,6 +30,24 @@ sub uml {
     return $str;
 }
 
+sub uml2 {
+    my $str = shift || '';
+    for ($str) {
+        s/a\x{0364}/ä/g;
+        s/o\x{0364}/ö/g;
+        s/u\x{0364}/ü/g;
+        s/A\x{0364}/Ä/g;
+        s/O\x{0364}/Ö/g;
+        s/U\x{0364}/Ü/g;
+        s/&#x2010;/-/g;
+        s/\n( *\S[^\n]*)\n/ $1 /g;
+        s/[ \t]+/ /g;
+        s/^[ \t]+//gm;
+        s/\n\n\n\n+/\n\n\n/g;
+    }
+    return $str;
+}
+
 =head2 strip
 
 =cut

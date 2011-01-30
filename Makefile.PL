@@ -40,6 +40,7 @@ requires 'Digest::SHA';
 requires 'DateTime::Format::Pg';
 requires 'Roman';
 requires 'YAML::XS';
+requires 'Text::Wrap';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

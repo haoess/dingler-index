@@ -12,6 +12,7 @@ use HTML::TagCloud;
 use List::MoreUtils qw(uniq);
 use Metadata::COinS;
 use Text::BibTeX qw(:metatypes);
+use Text::Wrap;
 use XML::LibXML;
 
 =head1 NAME
@@ -182,6 +183,35 @@ sub article_xslt :Private {
     utf8::decode($xsl);
     $c->stash( xsl => $xsl );
     $c->res->body( undef );
+}
+
+=head2 plain
+
+Text-only version of an article.
+
+TODO:
+    * caching
+    * better wrapping
+
+=cut
+
+sub plain :Local {
+    my ( $self, $c, $journal, $article ) = @_;
+
+    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    $c->stash(
+        id       => $article,
+        xml      => $xml,
+        template => 'article-plain.xsl',
+    );
+    $c->forward('Dingler::View::XSLT');
+    my $body = $c->res->body;
+    utf8::decode( $body );
+    $body = Dingler::Util::uml2( $body );
+    $body = join "\n\n", map { wrap '', '', $_ } split /\n\n/, $body;
+    $body =~ s/^\s+//g;
+    $c->res->body( $body );
+    $c->res->content_type( 'text/plain' );
 }
 
 =head2 article_plain

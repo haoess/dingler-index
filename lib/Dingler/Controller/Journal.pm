@@ -4,6 +4,8 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use Text::Wrap;
+
 =head1 NAME
 
 Dingler::Controller::Journal - Catalyst Controller
@@ -104,8 +106,36 @@ sub cloud :Local {
         $cloud->add( $key, undef, $value );
     }
     $c->stash(
-        cloud    => $cloud,
+        cloud => $cloud,
     );
+}
+
+=head2 plain
+
+Text-only version of an article.
+
+TODO:
+    * caching
+    * better wrapping
+
+=cut
+
+sub plain :Local {
+    my ( $self, $c, $journal ) = @_;
+
+    my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
+    $c->stash(
+        xml      => $xml,
+        template => 'journal-plain.xsl',
+    );
+    $c->forward('Dingler::View::XSLT');
+    my $body = $c->res->body;
+    utf8::decode( $body );
+    $body = Dingler::Util::uml2( $body );
+    $body = join "\n\n", map { wrap '', '', $_ } split /\n\n/, $body;
+    $body =~ s/^\s+//g;
+    $c->res->body( $body );
+    $c->res->content_type( 'text/plain' );
 }
 
 =head2 preface
