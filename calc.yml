@@ -125,7 +125,7 @@ area:
       quadratmeter: x * 0.105521
 mass:
   avoirdupois:
-    name: Pound 
+    name: Pound
     wp: http://de.wikipedia.org/wiki/Avoirdupois
   ounce:
     name: Unze
@@ -147,13 +147,13 @@ mass:
     wp: http://de.wikipedia.org/wiki/Pfund
   gramm:
     name: Gramm
-    wp: http://de.wikipedia.org/wiki/Gramm 
+    wp: http://de.wikipedia.org/wiki/Gramm
   drachme:
     name: Drachme
-    wp: http://de.wikipedia.org/wiki/Griechische_Drachme 
-  frankfurterzentner: 
+    wp: http://de.wikipedia.org/wiki/Griechische_Drachme
+  frankfurterzentner:
     name: Frankfurter Zentner
-    wp: 
+    wp:
   frankfurterpfund:
     name: Frankfurter Pfund
     wp:
@@ -208,7 +208,7 @@ length:
     wp: http://de.wikipedia.org/wiki/Linie_(Einheit)
   zoll:
     name: Zoll
-    wp: http://de.wikipedia.org/wiki/Zoll_(Einheit)  
+    wp: http://de.wikipedia.org/wiki/Zoll_(Einheit)
   frankfurterstab:
     name: Frankfurter Stab
     wp:
@@ -305,7 +305,7 @@ money:
   groschen:
     name: Groschen
     wp: http://de.wikipedia.org/wiki/Groschen
-  silbergroschen: 
+  silbergroschen:
     name: Silbergroschen
     wp: http://de.wikipedia.org/wiki/Silbergroschen
   pfennig:
@@ -338,4 +338,3 @@ money:
   peseta:
     name: Peseta
     wp: http://de.wikipedia.org/wiki/Peseta
-  
