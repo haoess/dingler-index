@@ -187,6 +187,7 @@ mass:
       gramm: x / 500
   gramm:
     name: Gramm
+    unit: g
     wp: http://de.wikipedia.org/wiki/Gramm
   drachme:
     name: Drachme
@@ -294,15 +295,19 @@ length:
       zentimeter: x / 2.54
   kilometer:
     name: Kilometer
+    unit: km
     wp: http://de.wikipedia.org/wiki/Kilometer#km
   meter:
     name: Meter
+    unit: m
     wp: http://de.wikipedia.org/wiki/Meter#m
   dezimeter:
     name: Dezimeter
+    unit: dm
     wp: http://de.wikipedia.org/wiki/Dezimeter#dm
   zentimeter:
     name: Zentimeter
+    unit: cm
     wp: http://de.wikipedia.org/wiki/Zentimeter#cm
   millimeter:
     name: Millimeter
@@ -355,6 +360,7 @@ volume:
     wp: http://de.wikipedia.org/wiki/Liter
   liter:
     name: Liter
+    unit: l
     wp: http://de.wikipedia.org/wiki/Liter
   quart:
     name: Quart
