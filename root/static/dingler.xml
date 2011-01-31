@@ -72,10 +72,10 @@
 <event start="1829" end="1829" title="Russisch-türkischer Krieg."></event>
 
 <event start="1830" title="Belgische Revolution führt zur Unabhängigkeit von den Niederlanden."></event>
-<event start="1830" title="Julirevolution in Frankreich"></event> 
-<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner."></event> 
-<event start="1831" title="Gründung der New England Anti-Slavery Society"></event> 
-<event start="1832-05-27" end="1832-05-30" title="Hambacher Fest"></event> 
+<event start="1830" title="Julirevolution in Frankreich"></event>
+<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner."></event>
+<event start="1831" title="Gründung der New England Anti-Slavery Society"></event>
+<event start="1832-05-27" end="1832-05-30" title="Hambacher Fest"></event>
 <event start="1835-03-02" title="Franz II. stirbt in Wien."></event>
 <event start="1836" title="Der Bund der Gerechten wird gegründet"></event>
 <event start="1839" end="1842-08-29" title="Erster Opiumkrieg.">Erster Opiumkrieg zwischen Großbritannien und dem Kaiserreich China (Qing-Dynastie).</event>
@@ -117,7 +117,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1869" title="Eröffnung des Suezkanals."></event>
 
 <event start="1870" end="1871" title="Deutsch-Französischer Krieg."></event>
-<event start="1871" title="Erste sozialistische Revolution in Frankreich."></event> 
+<event start="1871" title="Erste sozialistische Revolution in Frankreich."></event>
 <event start="1871-01-18" title="Gründung des Deutschen Reichs."></event>
 <event start="1872" end="1876" title="Dritter Carlistenkrieg in Spanien."></event>
 <event start="1873" title="Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen."></event>
@@ -135,52 +135,63 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1884" title="Internationale Meridian Konferenz in Washington D.C."></event>
 <event start="1884" end="1885" title="Berlin Konferenz.">Aufteilung Afrikas durch die Westmächte."></event>
 
-<event start="1860" end="1901" title="Viktorianische Ära."></event>
 
 <!--        -->
 <!-- science and technology-->
 <!--        -->
 
+<event start="1809" title="Soemmerring konstruiert einen elektrischen Telegrafen." icon="images/circle-blue.png"></event>
+
 <event start="1820-01-28" title="Russische Expedition erreicht die Antarktis." icon="images/circle-blue.png">Expedition unter der Führung von Fabian Gottlieb von Bellingshausen und Mikhail Petrovich Lazarev.</event>
 <event start="1820-04" title="Ørsted entdeckt Verhältnis zwischen der Elektrizität und dem Magnetismus." icon="images/circle-blue.png"></event>
-<event start="1820" title="Die 6. Edition der Encyclopædia Britannica erscheint." icon="images/circle-blue.png"></event>  
+<event start="1820" title="Die 6. Edition der Encyclopædia Britannica erscheint." icon="images/circle-blue.png"></event>
 <event start="1825" title="Eröffnung des Stockton and Darlington Railway." icon="images/circle-blue.png"></event>
+<event start="1825-09-27" title="Eröffnung der Stockton and Darlington Railway." icon="images/circle-blue.png"></event>
+<event start="1826" title="Nicéphore Nièpces Fotografie" icon="images/circle-blue.png">Erste bekannte Fotografie, angefertigt im Heliografie-Verfahren.</event>
 
 <event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion." icon="images/circle-blue.png"></event>
 <event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies." icon="images/circle-blue.png"></event>
 <event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." icon="images/circle-blue.png"></event>
+<event start="1833" title="Aristide Cavaillé-Coll erfindet Kreissäge." icon="images/circle-blue.png"></event>
+<event start="1835-07-19" title="Erst Fahrt der Minerva." icon="images/circle-blue.png">Die Minerva war das erste mit einer Dampfmaschine betriebene Schiff auf dem Zürichsee und das erste mit eiserner Schale in Europa.</event>
+<event start="1839" title="Charles Goodyear: Kautschuk." icon="images/circle-blue.png"></event>
 
 <event start="1841" title="Belgischer Instrumentenmacher Adolphe Sax erfindet das Saxophon." icon="images/circle-blue.png"></event>
 <event start="1842-03-30" title="Crawford Williamson Long: Erste Verwendung von Ätherdämpfen als Narkotikum bei einer Operation." icon="images/circle-blue.png"></event>
-<event start="1844-05-24" title="Morse Telegramm" icon="images/circle-blue.png">Samuel Morses erstes elektrisches Telegramm von Baltimore nach Washington, D.C.</event> 
+<event start="1844-05-24" title="Morse Telegramm" icon="images/circle-blue.png">Samuel Morses erstes elektrisches Telegramm von Baltimore nach Washington, D.C.</event>
 
-<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion." icon="images/circle-blue.png"></event>
+<event start="1851" title="Charles Page: Batteriebetriebene Lokomotive." icon="images/circle-blue.png"></event>
+<event start="1851" title="Singer Nähmaschine." icon="images/circle-blue.png">Isaac Singer: Erfindet die erste kommerziell erfolgreiche Nähmaschine.</event>
+<event start="1853" title="Sicherheitsfangvorrichtung für Aufzüge." icon="images/circle-blue.png">Elisha Otis erfindet eine Sicherheitsfangvorrichtung für Aufzüge, welche einen Absturz der Kabine verhindert.</event>
 <event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology." icon="images/circle-blue.png"></event>
+<event start="1855" title="Bessemer Prozess" icon="images/circle-blue.png">Henry Bessemer revolutioniert die Stahlherstellung.</event>
 <event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal." icon="images/circle-blue.png"></event>
 <event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne." icon="images/circle-blue.png"></event>
-
-<event start="1855" title="Bessemer Prozess" icon="images/circle-blue.png">Henry Bessemer revolutioniert die Stahlherstellung.</event>
-<event start="1853" title="Sicherheitsfangvorrichtung für Aufzüge." icon="images/circle-blue.png">Elisha Otis erfindet eine Sicherheitsfangvorrichtung für Aufzüge, welche einen Absturz der Kabine verhindert.</event>
-<event start="1851" title="Singer Nähmaschine." icon="images/circle-blue.png">Isaac Singer: Erfindet die erste kommerziell erfolgreiche Nähmaschine.</event>
+<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion." icon="images/circle-blue.png"></event>
 
 <event start="1864" title="Maxwells elektromagnetische Gleichungen." icon="images/circle-blue.png">James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist.</event>
 <event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels." icon="images/circle-blue.png"></event>
 <event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden." icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
 <event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken." icon="images/circle-blue.png"></event>
 <event start="1867" title="Alfred Nobel erhält ein Patent auf Dynamit." icon="images/circle-blue.png"></event>
+<event start="1867" title="Muybridges Fotoserie aus dem Yosemite-Nationalpark." icon="images/circle-blue.png"></event>
 <event start="1868-08-18" title="Helium wird entdeckt." icon="images/circle-blue.png">Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.</event>
 <event start="1869" title="Fertigstellung der Transkontinentalen Eisenbahn in den USA." icon="images/circle-blue.png"></event>
 <event start="1869" title="Erfindung des Unterwasserboots." icon="images/circle-blue.png"></event>
 <event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente." icon="images/circle-blue.png"></event>
 
+<event start="1871" title="Mauser Modell 71." icon="images/circle-blue.png">Das Mauser Modell 71 war die erste deutsche Repetierbüchse mit Magazin.</event>
 <event start="1876" title="A. G. Bells erstes Telefon." icon="images/circle-blue.png">The prototype telephone was invented by Alexander Graham Bell.</event>
 <event start="1879" title="Thomas Edisons Glühbirne." icon="images/circle-blue.png"></event>
 <event start="1877-07-18" title="Thomas Edisons Phonograph." icon="images/circle-blue.png"></event>
 
-<event start="1886" title="Heinrich Hertz: Photoelektrischer Effect." icon="images/circle-blue.png"></event>
 <event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant." icon="images/circle-blue.png"></event>
 <event start="1884" title="James-Lange-Theorie der Körperreaktionen." icon="images/circle-blue.png"></event>
+<event start="1886" title="Heinrich Hertz: Photoelektrischer Effect." icon="images/circle-blue.png"></event>
+<event start="1886-01-29" title="Carl Benz patentiert den Motorwagen (DRP 37435)." icon="images/circle-blue.png"></event>
 
+<event start="1895-11-08" title="Röntgenstrahlung" icon="images/circle-blue.png">Wilhelm Conrad Röntgen entdeckt die nach ihm benannte Röntgenstrahlung</event>
+<event start="1898" title="Marie und Pierre Curie entdecken Radium und Polonium." icon="images/circle-blue.png">Radioaktivität</event>
 
 
 <!--           -->
@@ -241,15 +252,15 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <!-- Kommunikation/Verkehr -->
 
 
-<event start="1816" title="Ronalds: elektrischer Telegraph." icon="images/circle-grey.png">Francis Ronalds (London) entwickelt einen elektrischen Telegraphen und sendet Nachrichten über acht Meilen."></event> 
-<event start="1843" title="Bains elektro-telegrafische Bildzerlegung." icon="images/circle-grey.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event> 
-<event start="1848" title="Bakewells Kopiertelegraph" icon="images/circle-grey.png">F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung.</event> 
-<event start="1861" title="Reis' Telephon" icon="images/circle-grey.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event> 
-<event start="1862" title="Casellis Pantelegraph" icon="images/circle-grey.png">Giovanni Caselli einfache Zeichnungen per Draht von Amiens nach Paris.</event> 
-<event start="1876" title="Bells Telefon-Patent." icon="images/circle-grey.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event> 
-<event start="1877" title="Erster regelmäßiger Fernsprechdienst." icon="images/circle-grey.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event> 
-<event start="1881" title="Erstes Berliner Fernsprechamt." icon="images/circle-grey.png">Das erste Berliner Fernsprechamt wird mit acht Teilnehmern eröffnet.</event> 
-<event start="1881" title="Shelford Bidwell baut den »Telephotograph«." icon="images/circle-grey.png"></event> 
+<event start="1816" title="Ronalds: elektrischer Telegraph." icon="images/circle-grey.png">Francis Ronalds (London) entwickelt einen elektrischen Telegraphen und sendet Nachrichten über acht Meilen."></event>
+<event start="1843" title="Bains elektro-telegrafische Bildzerlegung." icon="images/circle-grey.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event>
+<event start="1848" title="Bakewells Kopiertelegraph" icon="images/circle-grey.png">F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung.</event>
+<event start="1861" title="Reis' Telefon" icon="images/circle-grey.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event>
+<event start="1862" title="Casellis Pantelegraph" icon="images/circle-grey.png">Giovanni Caselli einfache Zeichnungen per Draht von Amiens nach Paris.</event>
+<event start="1876" title="Bells Telefon-Patent." icon="images/circle-grey.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event>
+<event start="1877" title="Erster regelmäßiger Fernsprechdienst." icon="images/circle-grey.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event>
+<event start="1881" title="Erstes Berliner Fernsprechamt." icon="images/circle-grey.png">Das erste Berliner Fernsprechamt wird mit acht Teilnehmern eröffnet.</event>
+<event start="1881" title="Shelford Bidwell baut den »Telephotograph«." icon="images/circle-grey.png"></event>
 
 <event start="1863-01-10" title="Eröffnung der London Underground" icon="images/circle-grey.png"></event>
 <event start="1902" title="Eröffnung der Berliner U-Bahn" icon="images/circle-grey.png"></event>
@@ -259,6 +270,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <!-- misc -->
 <!--      -->
 
+<event start="1816" title="Jahr ohne Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
 <event start="1840-05-01" title="One Penny Black." icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
 <event start="1848" end="1855" title="Kalifornischer Goldrausch" icon="images/circle-yellow.png"></event>
 <event start="1860" title="Florence Nightingale gründet die Krankenpflegeschule am St. Thomas Hospital, London." icon="images/circle-yellow.png"></event>
@@ -324,17 +336,14 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" icon="images/circle-pink.png"></event>
 <event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" icon="images/circle-pink.png"></event>
 <event start="1879-03-14" end="1955-04-18" title="Albert Einstein" icon="images/circle-pink.png"></event>
-
-
 <event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" icon="images/circle-pink.png"></event>
 <event start="1809-02-12" end="1882-04-19" title="Charles Darwin" icon="images/circle-pink.png"></event>
 <event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" icon="images/circle-pink.png"></event>
 <event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" icon="images/circle-pink.png"></event>
 <event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" icon="images/circle-pink.png"></event>
-
 <event start="1844-11-25" end="1929-04-04" title="Carl Benz" icon="images/circle-pink.png"></event>
 <event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-pink.png"></event>
-
+<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" icon="images/circle-pink.png"></event>
 
 
 <!-- Architekten -->
@@ -373,6 +382,8 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1788-02-22" end="1860-09-21" title="Arthur Schopenhauer"></event>
 <event start="1821-08-09" end="1867-08-31" title="Charles Baudelaire"></event>
 
+<event start="1826-01-17" end="1893-04-05" title="Wilhelm Lübke">deutscher Kunsthistoriker.</event>
+
 <event start="1749-08-28" end="1832-03-22" title="Johann Wolfgang von Goethe"></event>
 <event start="1828-02-08" end="1905-03-24" title="Jules Verne"></event>
 <event start="1775-12-16" end="1817-07-18" title="Jane Austen"></event>
@@ -397,7 +408,6 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1819-05-31" end="1892-03-26" title="Walt Whitman"></event>
 <event start="1835-11-30" end="1910-04-21" title="Marc Twain"></event>
 
-<event start="1826-01-17" end="1893-04-05" title="Wilhelm Lübke">deutscher Kunsthistoriker.</event>
 
 
 <!-- Musiker/Komponist -->
@@ -408,7 +418,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1838-10-25" end="1875-06-03" title="Georges Bizet"></event>
 <event start="1782-10-27" end="1840-05-27" title="Niccolò Paganini"></event>
 <event start="1810-02-22" end="1849-10-17" title="Frédéric Chopin"></event>
-
+<event start="1833-05-07" end="1897-04-03" title="Johannes Brahms"></event>
+<event start="1840-04-25" end="1893-10-25" title="Pjotr Iljitsch Tschaikowski"></event>
+<event start="1810-06-08" end="1856-07-29" title="Robert Schumann"></event>
+<event start="1797-01-31" end="1828-11-19" title="Franz Schubert"></event>
 
 <!-- Politik/Religion -->
 
