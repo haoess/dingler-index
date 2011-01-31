@@ -1,13 +1,9 @@
 <data>
 
-<!-- Dingler --> 
-    <event start="1777-01-02" end="1855-05-19" isDuration="true" title="Johann Gottfried Dingler"></event> 
-    <event start="1806-03-10" end="1874-10-09" isDuration="true" title="Emil Maximilian Dingler"></event>
-    
 
-<!--           -->
+<!--                       -->
 <!-- literatur/kunst/musik -->
-<!--           -->
+<!--                       -->
 
 
 <event start="1820" title="Entdeckung der Venus von Milo" icon="images/circle-red.png"></event>
@@ -192,93 +188,86 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <!--           -->
 
 
-<event start="1830" end="1839" title="Periode wirtschaftlichen Wohlstands in den USA und Europa."></event>
-<event start="1836" title="Auflösung der Second Bank der Vereinigten Staaten."></event>
+<event start="1830" end="1839" title="Periode wirtschaftlichen Wohlstands in den USA und Europa." icon="images/circle-black.png"></event>
+<event start="1836" title="Auflösung der Second Bank der Vereinigten Staaten." icon="images/circle-black.png"></event>
 
-
-<event start="1840" end="1849" title="Hungerkrisen, soziale Unruhen und Revolutionen in Irland, Polen, Frankreich, Österreich und Deutschland."></event>
-<event start="1840" end="1849" title="Chartistenbewegung in England."></event>
-<event start="1840-05-01" title="One Penny Black.">Erste Briefmarke der Welt.></event>
-<event start="1845" end="1849" title="Große Irische Hungersnot"></event>
-<event start="1848" end="1855" title="Kalifornischer Goldrausch"></event>
+<event start="1840" end="1849" title="Hungerkrisen, soziale Unruhen und Revolutionen in Irland, Polen, Frankreich, Österreich und Deutschland." icon="images/circle-black.png"></event>
+<event start="1840" end="1849" title="Chartistenbewegung in England." icon="images/circle-black.png"></event>
+<event start="1845" end="1849" title="Große Irische Hungersnot" icon="images/circle-black.png"></event>
 
 <!-- Weltausstellungen -->
 
-<event start="1851" title="Weltausstellung London, 1851">Kristallpalast</event>
-<event start="1855" title="Weltausstellung Paris, 1855">Betonboot, Espressomaschine, Zündhölzer</event>
-<event start="1862" title="Weltausstellung London, 1862">Nähmaschine</event>
-<event start="1867" title="Weltausstellung Paris, 1867">Eiscreme-Soda, Saugwind-Harmonium, Flugkolbenmotor</event>
-<event start="1873" title="Weltausstellung Wien, 1873">Rotunde</event>
-<event start="1876" title="Weltausstellung Philadelphia, 1876">Telefon</event>
-<event start="1878" title="Weltausstellung Paris, 1878">Eisschrank und Vorläufer des Plattenspielers</event>
-<event start="1883" title="Weltausstellung Amsterdam, 1883">Lippenstift</event>
-<event start="1889" title="Weltausstellung Paris, 1889">Eiffelturm; Galerie des Machines</event>
-<event start="1893" title="Weltausstellung Chicago, 1893">Reißverschluss, Riesenrad, elektrischer Stuhl</event>
-<event start="1900" title="Weltausstellung Paris, 1900">Metro, Vorläufer der Rolltreppe, Oberleitungsbus, Lohner-Porsche, Eisenbahnbrücke von Krasnojarsk"></event>
+<event start="1851" title="Weltausstellung London, 1851" icon="images/circle-orange.png">Kristallpalast</event>
+<event start="1855" title="Weltausstellung Paris, 1855" icon="images/circle-orange.png">Betonboot, Espressomaschine, Zündhölzer</event>
+<event start="1862" title="Weltausstellung London, 1862" icon="images/circle-orange.png">Nähmaschine</event>
+<event start="1867" title="Weltausstellung Paris, 1867" icon="images/circle-orange.png">Eiscreme-Soda, Saugwind-Harmonium, Flugkolbenmotor</event>
+<event start="1873" title="Weltausstellung Wien, 1873" icon="images/circle-orange.png">Rotunde</event>
+<event start="1876" title="Weltausstellung Philadelphia, 1876" icon="images/circle-orange.png">Telefon</event>
+<event start="1878" title="Weltausstellung Paris, 1878" icon="images/circle-orange.png">Eisschrank und Vorläufer des Plattenspielers</event>
+<event start="1883" title="Weltausstellung Amsterdam, 1883" icon="images/circle-orange.png">Lippenstift</event>
+<event start="1889" title="Weltausstellung Paris, 1889" icon="images/circle-orange.png">Eiffelturm; Galerie des Machines</event>
+<event start="1893" title="Weltausstellung Chicago, 1893" icon="images/circle-orange.png">Reißverschluss, Riesenrad, elektrischer Stuhl</event>
+<event start="1900" title="Weltausstellung Paris, 1900" icon="images/circle-orange.png">Metro, Vorläufer der Rolltreppe, Oberleitungsbus, Lohner-Porsche, Eisenbahnbrücke von Krasnojarsk"></event>
 
 
 
 <!-- Architektur/Stadtplanung/Städtebau -->
 
-<event start="1885" title="Erstes Hochhaus der Welt: Home Insurance Building"></event>
-<event start="1902" title="Fuller Building in New York"></event>
-<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross"></event>
-<event start="1854" title="Eröffnung der Paddington Station"></event>
-<event start="1857" title="Eröffnung des Lesesaals der British Library"></event>
-<event start="1845" title="Fertigstellung der ionischen Säulenhalle des British Museums"></event>
-<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St. Petersburg"></event>
+<event start="1885" title="Erstes Hochhaus der Welt: Home Insurance Building" icon="images/circle-green.png"></event>
+<event start="1902" title="Fuller Building in New York" icon="images/circle-green.png"></event>
+<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross" icon="images/circle-green.png"></event>
+<event start="1854" title="Eröffnung der Paddington Station" icon="images/circle-green.png"></event>
+<event start="1857" title="Eröffnung des Lesesaals der British Library" icon="images/circle-green.png"></event>
+<event start="1845" title="Fertigstellung der ionischen Säulenhalle des British Museums" icon="images/circle-green.png"></event>
+<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St. Petersburg" icon="images/circle-green.png"></event>
 
-<event start="1840-04-27" title="Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London"></event>
-<event start="1818" title="Karl Friedrich Schinkel: Schauspielhaus in Berlin"></event>
-<event start="1824" title="Schinkel: Altes Museum in Berlin"></event>
-<event start="1829" title="Schinkel: Schloss Charlottenhof in Potsdam"></event>
-<event start="1830" title="Schinkel: Nicolaikirche Potsdam"></event>
-<event start="1835" title="Schinkel: Neue Berliner Sternwarte"></event>
-<event start="1847" end="1855" title="Gottfried Semper: Gemäldegalerie"></event>
-<event start="1871" end="1878" title="Gottfried Semper: Neues Hoftheater in Dresden (Semperoper)"></event>
-<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum in Zürich (ETH)"></event>
+<event start="1840-04-27" title="Grundsteinlegung für das »Houses of Parliament«." icon="images/circle-green.png">Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London</event>
+<event start="1818" title="Karl Friedrich Schinkel: Schauspielhaus in Berlin" icon="images/circle-green.png"></event>
+<event start="1824" title="Schinkel: Altes Museum in Berlin" icon="images/circle-green.png"></event>
+<event start="1829" title="Schinkel: Schloss Charlottenhof in Potsdam" icon="images/circle-green.png"></event>
+<event start="1830" title="Schinkel: Nicolaikirche Potsdam" icon="images/circle-green.png"></event>
+<event start="1835" title="Schinkel: Neue Berliner Sternwarte" icon="images/circle-green.png"></event>
+<event start="1847" end="1855" title="Gottfried Semper: Gemäldegalerie" icon="images/circle-green.png"></event>
+<event start="1871" end="1878" title="Gottfried Semper: Neues Hoftheater in Dresden (Semperoper)" icon="images/circle-green.png"></event>
+<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum in Zürich (ETH)" icon="images/circle-green.png"></event>
 
-<event start="1853" title="Neue Pinakothek in München (Friedrich von Gärtners und August von Voit)"></event>
-<event start="1864" end="1868" title="Gottfried Neureuther: Polytechnikum in München."></event>
-<event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)."></event>
-
-
-
-
-<!-- Kommunikation -->
-
-
-<event start="1816" title="Francis Ronalds (London) entwickelt einen elektrischen Telegraphen und sendet Nachrichten über acht Meilen."></event> 
-<event start="1843" title="Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung."></event> 
-<event start="1848" title="F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung."></event> 
-<event start="1861" title="Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor."></event> 
-<event start="1862" title="Giovanni Caselli einfache Zeichnungen per Draht von Amiens nach Paris."></event> 
-<event start="1873" title="Willoughby Smith kann beweisen, dass der elektrische Widerstand von Selen lichtabhängig ist, sein Mitarbeiter Joseph May setzt das Element zur Übertragung in der Telegrafie ein."></event> 
-<event start="1875" title="Werner von Siemens beschreibt eine Photozelle aus Selen."></event> 
-<event start="1876" title="Alexander Graham Bell wird das Patent für das erste Telefon erteilt."></event> 
-<event start="1877" title="Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben."></event> 
-<event start="1881" title="Das erste Berliner Fernsprechamt wird mit acht Teilnehmern eröffnet."></event> 
-<event start="1881" title="Shelford Bidwell baut den „Telephotograph“."></event> 
+<event start="1853" title="Neue Pinakothek, München" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
+<event start="1864" end="1868" title="Gottfried Neureuther: Polytechnikum in München." icon="images/circle-green.png"></event>
+<event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)." icon="images/circle-green.png"></event>
 
 
 
 
-<!-- Verkehr -->
+<!-- Kommunikation/Verkehr -->
 
-<event start="1863-01-10" title="Eröffnung der London Underground"></event>
-<event start="1902" title="Eröffnung der Berliner U-Bahn"></event>
+
+<event start="1816" title="Ronalds: elektrischer Telegraph." icon="images/circle-grey.png">Francis Ronalds (London) entwickelt einen elektrischen Telegraphen und sendet Nachrichten über acht Meilen."></event> 
+<event start="1843" title="Bains elektro-telegrafische Bildzerlegung." icon="images/circle-grey.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event> 
+<event start="1848" title="Bakewells Kopiertelegraph" icon="images/circle-grey.png">F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung.</event> 
+<event start="1861" title="Reis' Telephon" icon="images/circle-grey.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event> 
+<event start="1862" title="Casellis Pantelegraph" icon="images/circle-grey.png">Giovanni Caselli einfache Zeichnungen per Draht von Amiens nach Paris.</event> 
+<event start="1876" title="Bells Telefon-Patent." icon="images/circle-grey.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event> 
+<event start="1877" title="Erster regelmäßiger Fernsprechdienst." icon="images/circle-grey.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event> 
+<event start="1881" title="Erstes Berliner Fernsprechamt." icon="images/circle-grey.png">Das erste Berliner Fernsprechamt wird mit acht Teilnehmern eröffnet.</event> 
+<event start="1881" title="Shelford Bidwell baut den »Telephotograph«." icon="images/circle-grey.png"></event> 
+
+<event start="1863-01-10" title="Eröffnung der London Underground" icon="images/circle-grey.png"></event>
+<event start="1902" title="Eröffnung der Berliner U-Bahn" icon="images/circle-grey.png"></event>
+
 
 <!--      -->
 <!-- misc -->
 <!--      -->
 
-<event start="1860" title="Florence Nightingale gründet die Krankenpflegeschule am St. Thomas Hospital, London."></event>
-<event start="1863" title="Gründung der Football Association in Großbritannien."></event>
-<event start="1865" title="Gründung der »London Fire Brigade«."></event>
+<event start="1840-05-01" title="One Penny Black." icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
+<event start="1848" end="1855" title="Kalifornischer Goldrausch" icon="images/circle-yellow.png"></event>
+<event start="1860" title="Florence Nightingale gründet die Krankenpflegeschule am St. Thomas Hospital, London." icon="images/circle-yellow.png"></event>
+<event start="1863" title="Gründung der Football Association in Großbritannien." icon="images/circle-yellow.png"></event>
+<event start="1865" title="Gründung der »London Fire Brigade«." icon="images/circle-yellow.png"></event>
 
-<event start="1892" title="Gründung der Coca-Cola Company."></event>
-<event start="1886-10-28" title="Einweihung der Freiheitsstatue in New York."></event>
-<event start="1888" title="In Whitechapel beginnt die Mordserie des berüchtigten Jack the Ripper."></event>
+<event start="1892" title="Gründung der Coca-Cola Company." icon="images/circle-yellow.png"></event>
+<event start="1886-10-28" title="Einweihung der Freiheitsstatue in New York." icon="images/circle-yellow.png"></event>
+<event start="1888" title="In Whitechapel beginnt die Mordserie des berüchtigten Jack the Ripper." icon="images/circle-yellow.png"></event>
 
 
 <!--         -->
@@ -296,55 +285,55 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!--  Wissenschaftler, Industrielle -->
 
-<event start="1804-06-23" end="1854-07-06" title="August Borsig"></event>
-<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort"></event>
-<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp"></event>
-<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens"></event>
-<event start="1842-05-17" end="1926-04-04" title="August Thyssen"></event>
-<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman"></event>
-<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe"></event>
-<event start="1791-12-26" end="1871-10-18" title="Charles Babbage"></event>
-<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel"></event>
-<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel"></event>
-<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer"></event>
-<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen"></event>
-<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius"></event>
-<event start="1785-04-29" end="1851-12-10" title="Karl Drais"></event>
-<event start="1791-09-22" end="1867-08-25" title="Michael Faraday"></event>
-<event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer"></event>
-<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß"></event>
-<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac"></event>
-<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske"></event>
-<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz"></event>
-<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt"></event>
-<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt"></event>
-<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff"></event>
-<event start="1843-12-11" end="1910-05-27" title="Robert Koch"></event>
-<event start="1803-05-12" end="1873-04-18" title="Justus Liebig"></event>
-<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal"></event>
-<event start="1842-06-11" end="1934-11-16" title="Carl von Linde"></event>
-<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell"></event>
-<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann"></event>
-<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm"></event>
-<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto"></event>
-<event start="1858-04-23" end="1947-10-04" title="Max Planck"></event>
-<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer"></event>
-<event start="1834-01-07" end="1874-01-14" title="Philipp Reis"></event>
-<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann"></event>
-<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen"></event>
-<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow"></event>
-<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt"></event>
-<event start="1879-03-14" end="1955-04-18" title="Albert Einstein"></event>
+<event start="1804-06-23" end="1854-07-06" title="August Borsig" icon="images/circle-pink.png"></event>
+<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" icon="images/circle-pink.png"></event>
+<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" icon="images/circle-pink.png"></event>
+<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" icon="images/circle-pink.png"></event>
+<event start="1842-05-17" end="1926-04-04" title="August Thyssen" icon="images/circle-pink.png"></event>
+<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" icon="images/circle-pink.png"></event>
+<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" icon="images/circle-pink.png"></event>
+<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" icon="images/circle-pink.png"></event>
+<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" icon="images/circle-pink.png"></event>
+<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" icon="images/circle-pink.png"></event>
+<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" icon="images/circle-pink.png"></event>
+<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" icon="images/circle-pink.png"></event>
+<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" icon="images/circle-pink.png"></event>
+<event start="1785-04-29" end="1851-12-10" title="Karl Drais" icon="images/circle-pink.png"></event>
+<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" icon="images/circle-pink.png"></event>
+<event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" icon="images/circle-pink.png"></event>
+<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" icon="images/circle-pink.png"></event>
+<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" icon="images/circle-pink.png"></event>
+<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" icon="images/circle-pink.png"></event>
+<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" icon="images/circle-pink.png"></event>
+<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" icon="images/circle-pink.png"></event>
+<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" icon="images/circle-pink.png"></event>
+<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" icon="images/circle-pink.png"></event>
+<event start="1843-12-11" end="1910-05-27" title="Robert Koch" icon="images/circle-pink.png"></event>
+<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" icon="images/circle-pink.png"></event>
+<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" icon="images/circle-pink.png"></event>
+<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" icon="images/circle-pink.png"></event>
+<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" icon="images/circle-pink.png"></event>
+<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" icon="images/circle-pink.png"></event>
+<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" icon="images/circle-pink.png"></event>
+<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" icon="images/circle-pink.png"></event>
+<event start="1858-04-23" end="1947-10-04" title="Max Planck" icon="images/circle-pink.png"></event>
+<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" icon="images/circle-pink.png"></event>
+<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" icon="images/circle-pink.png"></event>
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" icon="images/circle-pink.png"></event>
+<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" icon="images/circle-pink.png"></event>
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" icon="images/circle-pink.png"></event>
+<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" icon="images/circle-pink.png"></event>
+<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" icon="images/circle-pink.png"></event>
 
 
-<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen"></event>
-<event start="1809-02-12" end="1882-04-19" title="Charles Darwin"></event>
-<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison"></event>
-<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel"></event>
-<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur"></event>
+<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" icon="images/circle-pink.png"></event>
+<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" icon="images/circle-pink.png"></event>
+<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" icon="images/circle-pink.png"></event>
+<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" icon="images/circle-pink.png"></event>
+<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" icon="images/circle-pink.png"></event>
 
-<event start="1844-11-25" end="1929-04-04" title="Carl Benz"></event>
-<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler"></event>
+<event start="1844-11-25" end="1929-04-04" title="Carl Benz" icon="images/circle-pink.png"></event>
+<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-pink.png"></event>
 
 
 
@@ -369,7 +358,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1853-03-30" end="1890-07-29" title="Vincent van Gogh"></event>
 <event start="1848-06-07" end="1903-05-08" title="Paul Gauguin"></event>
 <event start="1863-12-12" end="1944-01-23" title="Edvard Munch"></event>
-<event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich">deutscher Maler der Romantik</event>
+<event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich"></event>
 
 
 
