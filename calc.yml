@@ -125,7 +125,7 @@ area:
       quadratmeter: x * 0.105521
 mass:
   avoirdupois:
-    name: Pound (Pfund)
+    name: Pound 
     wp: http://de.wikipedia.org/wiki/Avoirdupois
   ounce:
     name: Unze
@@ -133,8 +133,209 @@ mass:
   grain:
     name: Gran
     wp: http://de.wikipedia.org/wiki/Gran_(Einheit)
+  tonne:
+    name: Tonne
+    wp: http://de.wikipedia.org/wiki/Tonne_(Einheit)
+  centner:
+    name: Zentner
+    wp: http://de.wikipedia.org/wiki/Zentner
+  kilogramm:
+    name: Kilogramm
+    wp: http://de.wikipedia.org/wiki/Kilogramm
+  pfund:
+    name: Pfund
+    wp: http://de.wikipedia.org/wiki/Pfund
+  gramm:
+    name: Gramm
+    wp: http://de.wikipedia.org/wiki/Gramm 
+  drachme:
+    name: Drachme
+    wp: http://de.wikipedia.org/wiki/Griechische_Drachme 
+  frankfurterzentner: 
+    name: Frankfurter Zentner
+    wp: 
+  frankfurterpfund:
+    name: Frankfurter Pfund
+    wp:
 length:
+  englischemeile:
+    name: Englische Meile
+    wp: http://de.wikipedia.org/wiki/Englische_Meile
+  deutschemeile:
+    name: Deutsche Meile
+    wp:
+  bayrischepostmeile:
+    name: Bayrische Postmeile
+    wp:
+  oesterreichischepostmeile:
+    name: Österreichische Postmeile
+    wp: http://de.wikipedia.org/wiki/Österreichische_Postmeile
+  furlong:
+    name: Furlong
+    wp: http://de.wikipedia.org/wiki/Furlong
+  yard:
+    name: Yard
+    wp: http://de.wikipedia.org/wiki/Yard
+  englischerfuss:
+    name: Englischer Fuß
+    wp:
+  bayrischerfuss:
+    name: Bayrischer Fuß
+    wp:
+  wienerfuss:
+    name: Wiener Fuß
+    wp:
+  frankfurterfuss:
+    name: Frankfurter Fuß
+    wp:
+  altfranzoesischerfuss:
+    name: Altfranzösischer Fuß
+    wp:
+  oesterreichischerfuss:
+    name: Österreichischer Fuß
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
+  elle:
+    name: Elle
+    wp:
+  klafter:
+    name: Klafter
+    wp: http://de.wikipedia.org/wiki/Klafter
+  oesterreichischerklafter:
+    name: Österreichischer Klafter
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
+  linie:
+    name: Linie
+    wp: http://de.wikipedia.org/wiki/Linie_(Einheit)
+  zoll:
+    name: Zoll
+    wp: http://de.wikipedia.org/wiki/Zoll_(Einheit)  
+  frankfurterstab:
+    name: Frankfurter Stab
+    wp:
+  kilometer:
+    name: Kilometer
+    wp: http://de.wikipedia.org/wiki/Kilometer#km
+  meter:
+    name: Meter
+    wp: http://de.wikipedia.org/wiki/Meter#m
+  dezimeter:
+    name: Dezimeter
+    wp: http://de.wikipedia.org/wiki/Dezimeter#dm
+  centimeter:
+    name: Zentimeter
+    wp: http://de.wikipedia.org/wiki/Zentimeter#cm
+  millimeter:
+    name: Millimeter
+    wp: http://de.wikipedia.org/wiki/Millimeter#mm
+
 volume:
+  chaldron:
+    name: Chaldron (Tschadern)
+    wp: http://de.wikipedia.org/wiki/Chaldron
+  sack:
+    name: Sack
+    wp: http://de.wikipedia.org/wiki/Sack_(Einheit)
+  bushel:
+    name: Buschel (Scheffel)
+    wp: http://de.wikipedia.org/wiki/Bushel
+  gallone:
+    name: Gallone
+    wp: http://de.wikipedia.org/wiki/Gallone
+  peck:
+    name: Peck
+    wp: http://de.wikipedia.org/wiki/Peck_(Maßeinheit)
+  quarter:
+    name: Quarter
+    wp: http://de.wikipedia.org/wiki/Quarter_(Maßeinheit)
+  frankfurtermalter:
+    name: Frankfurter Malter
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Hessen)
+  kubikmeter:
+    name: Kubikmeter
+    wp: http://de.wikipedia.org/wiki/Kubikmeter
+  kubikfuss:
+    name: Kubikfuss
+    wp:
+  kubikzoll:
+    name: Kubikzoll
+    wp: http://de.wikipedia.org/wiki/Kubikzoll
+  kubikzentimeter:
+    name: Kubikzentimeter
+    wp: http://de.wikipedia.org/wiki/Kubikmeter
+  hektoliter:
+    name: Hektoliter
+    wp: http://de.wikipedia.org/wiki/Liter
+  liter:
+    name: Liter
+    wp: http://de.wikipedia.org/wiki/Liter
+  quart:
+    name: Quart
+    wp: http://de.wikipedia.org/wiki/Quart_(Maßeinheit)
+  scheffel:
+    name: Scheffel
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+  schoppen:
+    name: Schoppen
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+  loth:
+    name: Loth
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+  quint:
+    name: Quint
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+  maass:
+    name: Maaß
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+
 time:
 amount:
 money:
+  reichstaler:
+    name: Reichstaler
+    wp: http://de.wikipedia.org/wiki/Reichstaler
+  gulden:
+    name: Gulden
+    wp: http://de.wikipedia.org/wiki/Gulden
+  rheinischergulden:
+    name: Rheinischer Gulden
+    wp: http://de.wikipedia.org/wiki/Gulden
+  oesterreichischekrone:
+    name: Österreichische Krone
+    wp: http://de.wikipedia.org/wiki/Österreichische_Krone
+  groschen:
+    name: Groschen
+    wp: http://de.wikipedia.org/wiki/Groschen
+  silbergroschen: 
+    name: Silbergroschen
+    wp: http://de.wikipedia.org/wiki/Silbergroschen
+  pfennig:
+    name: Pfennig
+    wp: http://de.wikipedia.org/wiki/Pfennig
+  dukat:
+    name: Dukat
+    wp: http://de.wikipedia.org/wiki/Dukat
+  mark:
+    name: Mark
+    wp: http://de.wikipedia.org/wiki/Mark_(Währung)
+  poundsterling:
+    name: Pound Sterling
+    wp: http://de.wikipedia.org/wiki/Pound_Sterling
+  shilling:
+    name: Shilling
+    wp: http://de.wikipedia.org/wiki/Shilling
+  pence:
+    name: Pence
+    wp: http://de.wikipedia.org/wiki/Pence
+  franc:
+    name: Französiche Franc
+    wp: http://de.wikipedia.org/wiki/Französischer_Franc
+  centime:
+    name: Französische Centime
+    wp: http://de.wikipedia.org/wiki/Centime
+  livres:
+    name: Livres
+    wp: http://de.wikipedia.org/wiki/Pfund_(Währung)
+  peseta:
+    name: Peseta
+    wp: http://de.wikipedia.org/wiki/Peseta
+  
