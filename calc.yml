@@ -461,26 +461,30 @@ volume:
 time:
 amount:
 money:
-  reichstaler:
-    name: Reichstaler
+  taler:
+    name: Taler (Norddeutschland)
     wp: http://de.wikipedia.org/wiki/Reichstaler
   gulden:
-    name: Gulden
+    name: Silbergulden (Süddeutschland; Österreich)
     wp: http://de.wikipedia.org/wiki/Gulden
   rheinischergulden:
-    name: Rheinischer Gulden
+    name: Rheinischer Goldgulden
     wp: http://de.wikipedia.org/wiki/Gulden
   oesterreichischekrone:
-    name: Österreichische Krone
+    name: Krone (Österreich)
     wp: http://de.wikipedia.org/wiki/Österreichische_Krone
   groschen:
-    name: Groschen
+    name: Groschen 
     wp: http://de.wikipedia.org/wiki/Groschen
+    conversions:
+      pfennig: x / 12
   silbergroschen:
-    name: Silbergroschen
+    name: Silbergroschen (Preußen)
+    unit: Sgr.
     wp: http://de.wikipedia.org/wiki/Silbergroschen
   pfennig:
-    name: Pfennig
+    name: Pfennig 
+    unit: Pf
     wp: http://de.wikipedia.org/wiki/Pfennig
   dukat:
     name: Dukat
@@ -489,23 +493,26 @@ money:
     name: Mark
     wp: http://de.wikipedia.org/wiki/Mark_(Währung)
   poundsterling:
-    name: Pound Sterling
+    name: Pound Sterling (UK)
     wp: http://de.wikipedia.org/wiki/Pound_Sterling
   shilling:
-    name: Shilling
+    name: Shilling (UK)
     wp: http://de.wikipedia.org/wiki/Shilling
   pence:
-    name: Pence
+    name: Pence (UK)
     wp: http://de.wikipedia.org/wiki/Pence
   franc:
-    name: Französiche Franc
+    name: Franc (Frankreich)
     wp: http://de.wikipedia.org/wiki/Französischer_Franc
   centime:
-    name: Französische Centime
+    name: Centime (Frankreich)
     wp: http://de.wikipedia.org/wiki/Centime
-  livres:
-    name: Livres
+  livre:
+    name: Livre (Frankreich)
     wp: http://de.wikipedia.org/wiki/Pfund_(Währung)
+  lira:
+    name: Lira (Italien)
+    wp: http://de.wikipedia.org/wiki/Italienische_Lira
   peseta:
-    name: Peseta
+    name: Peseta (Spanien)
     wp: http://de.wikipedia.org/wiki/Peseta
