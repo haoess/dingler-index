@@ -43,6 +43,8 @@ area:
     name: square inch
     unit: sq inches
     wp: http://de.wikipedia.org/wiki/Square_inch
+    conversions:
+      quadratzentimeter: x / 6.4516
   squareyard:
     name: square yard
     unit: sq yard
@@ -123,6 +125,11 @@ area:
     wp: http://de.wikipedia.org/wiki/Quadratfu%C3%9F
     conversions:
       quadratmeter: x * 0.105521
+  scheffel:
+    name: Scheffel
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversions:
+      quadratmeter: x / 2767.10
 mass:
   avoirdupois:
     name: Pound
@@ -179,6 +186,8 @@ mass:
     name: Kilogramm
     unit: kg
     wp: http://de.wikipedia.org/wiki/Kilogramm
+    conversions:
+      gramm: x / 1000
   pfund:
     name: Pfund
     unit: Pf.
@@ -189,21 +198,29 @@ mass:
     name: Gramm
     unit: g
     wp: http://de.wikipedia.org/wiki/Gramm
+    conversions:
+      kilogramm: x * 1000
   drachme:
     name: Drachme
     unit: dr.
     wp: http://de.wikipedia.org/wiki/Avoirdupois 
     conversions:
       kilogramm: x / 0.0017718451953125
-  frankfurterzentner:
-    name: Frankfurter Zentner
-    wp:
   frankfurterpfund:
     name: Frankfurter Pfund
     unit: Frankf. Pf.
-    wp:
     conversions:
-     avoirdupois: x * 0.96923077 
+      avoirdupois: x * 0.96923077 
+  quint:
+    name: Quint
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversions:
+      gramm: x / 3.65
+  loth:
+    name: Loth
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversions:
+      gramm: x / 14.606
 length:
   englischemeile:
     name: Englische Meile
@@ -211,12 +228,21 @@ length:
     wp: http://de.wikipedia.org/wiki/Englische_Meile
     conversions:
       meter: x / 1609.344
-  deutschemeile:
-    name: Deutsche Meile
-    wp:
-  bayrischepostmeile:
-    name: Bayrische Postmeile
-    wp:
+  bayerischemeile1:
+    name: Bayerische Meile (vor 1811)
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
+    conversions:
+      kilometer: x / 7.414975
+  bayerischemeile2:
+    name: Bayerische Meile (1811–1871)
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
+    conversions:
+      kilometer: x / 7.470903
+  bayerischemeile3:
+    name: Bayerische Meile (ab 1872)
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
+    conversions:
+      kilometer: x / 7.2
   oesterreichischepostmeile:
     name: Österreichische Postmeile
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
@@ -244,32 +270,48 @@ length:
     name: Bayrischer Fuß
     unit: Bayr. Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
-    conversion:
+    conversions:
       millimeter: x / 291.86
   wienerfuss:
     name: Wiener Fuß
     unit: Wiener Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
-    conversion:
+    conversions:
       millimeter: x / 316.08
   frankfurterfuss:
     name: Frankfurter Fuß
     unit: Frankf. Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
-    conversion:
+    conversions:
       millimeter: x / 284.61 
   oesterreichischerfuss:
     name: Österreichischer Fuß
     unit: Öster. Fuß
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
-    conversion:
+    conversions:
       millimeter: x / 316.08
-  elle:
-    name: Elle
-    wp:
-  klafter:
-    name: Klafter
+  bayerischeelle:
+    name: Bayerische Elle
+    unit: Bayer. Elle
+    wp: http://de.wikipedia.org/wiki/Elle_(Einheit)
+    conversions:
+      meter: x / 0.833
+  badischeelle:
+    name: Badische Elle
+    unit: Bad. Elle
+    wp: http://de.wikipedia.org/wiki/Elle_(Einheit)
+    conversions:
+      meter: x / 0.6
+  preussischerklafter:
+    name: Preussischer Klafter
     wp: http://de.wikipedia.org/wiki/Klafter
+    convertions:
+      meter: x / 1.88
+  bayerischerklafter:
+    name: Bayerischer Klafter
+    wp: http://de.wikipedia.org/wiki/Klafter
+    convertions:
+      meter: x / 1.75
   oesterreichischerklafter:
     name: Österreichischer Klafter
     unit: Öster. Klafter
@@ -297,89 +339,124 @@ length:
     name: Kilometer
     unit: km
     wp: http://de.wikipedia.org/wiki/Kilometer#km
+    conversions:
+      meter: x / 1000
   meter:
     name: Meter
     unit: m
     wp: http://de.wikipedia.org/wiki/Meter#m
+    conversions:
+      kilometer: x * 1000
   dezimeter:
     name: Dezimeter
     unit: dm
     wp: http://de.wikipedia.org/wiki/Dezimeter#dm
+    conversions:
+      meter: x * 10
   zentimeter:
     name: Zentimeter
     unit: cm
     wp: http://de.wikipedia.org/wiki/Zentimeter#cm
+    conversions:
+      meter: x * 100
   millimeter:
     name: Millimeter
     wp: http://de.wikipedia.org/wiki/Millimeter#mm
-
+    conversions:
+      zentimeter: x * 10
+      meter: x * 1000
 volume:
   chaldron:
     name: Chaldron (Tschadern)
     unit: Chaldron
     wp: http://de.wikipedia.org/wiki/Chaldron
     conversions:
-      kubikmeter: x / 1.163125
+      liter: x / 1309.2732
   englischersack:
     name: Englischer Sack
     unit: Engl. Sack
     wp: http://de.wikipedia.org/wiki/Sack_(Einheit)
     conversions:
       chaldron: x * 12
-  bushel:
+      bushel: x / 3
+      liter: x / 109.106
+  imperialbushel:
     name: Buschel (Scheffel)
+    unit: Imp.bsh.
     wp: http://de.wikipedia.org/wiki/Bushel
     conversions:
-      liter: x / 46.13
-  gallone:
-    name: Gallone
+      liter: x / 36.3687222559584 
+  imperialgallon:
+    name: Imperiale Gallone
+    unit: Imp.gal
     wp: http://de.wikipedia.org/wiki/Gallone
-  peck:
+    conersions:
+      liter: x / 4.54609
+  imperialpeck:
     name: Peck
+    unit: Imp.pk
     wp: http://de.wikipedia.org/wiki/Peck_(Maßeinheit)
+    conversions:
+      liter: x / 9.0921805639896
   quarter:
     name: Quarter
+    unit: qr.
     wp: http://de.wikipedia.org/wiki/Quarter_(Maßeinheit)
+    conversions:
+      liter: x / 209.9
   frankfurtermalter:
     name: Frankfurter Malter
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Hessen)
+    conversions:
+      liter: x / 114.729
   kubikmeter:
     name: Kubikmeter
+    unit: m3
     wp: http://de.wikipedia.org/wiki/Kubikmeter
-  kubikfuss:
-    name: Kubikfuss
-    wp:
+    conversions:
+      liter: x
   kubikzoll:
     name: Kubikzoll
+    unit: cin
     wp: http://de.wikipedia.org/wiki/Kubikzoll
+    conversions:
+      liter: x / 0.000016387064
   kubikzentimeter:
     name: Kubikzentimeter
+    unit: cm3
     wp: http://de.wikipedia.org/wiki/Kubikmeter
+    conversions:
+      liter: x / 0.001
   hektoliter:
     name: Hektoliter
+    unit: hl
     wp: http://de.wikipedia.org/wiki/Liter
+    conversions:
+      liter: x / 100
   liter:
     name: Liter
     unit: l
     wp: http://de.wikipedia.org/wiki/Liter
-  quart:
-    name: Quart
-    wp: http://de.wikipedia.org/wiki/Quart_(Maßeinheit)
-  scheffel:
-    name: Scheffel
+  bayerischesquart:
+    name: Bayerisches Quart
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversion:
+      liter: x / 0.267
+  preussischesquart:
+    name: Preussisches Quart
+    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversions:
+      liter: x / 1.145
   schoppen:
     name: Schoppen
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
-  loth:
-    name: Loth
+    conversions:
+      liter: x / 0.5
+  badischesmaass:
+    name: Badisches Maaß
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
-  quint:
-    name: Quint
-    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
-  maass:
-    name: Maaß
-    wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
+    conversions:
+      liter: x / 1.5
 
 time:
 amount:
