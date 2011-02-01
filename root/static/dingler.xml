@@ -299,164 +299,165 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!--  Wissenschaftler, Industrielle -->
 
-<event start="1804-06-23" end="1854-07-06" title="August Borsig" icon="images/circle-pink.png"></event>
-<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" icon="images/circle-pink.png"></event>
-<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" icon="images/circle-pink.png"></event>
-<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" icon="images/circle-pink.png"></event>
-<event start="1842-05-17" end="1926-04-04" title="August Thyssen" icon="images/circle-pink.png"></event>
-<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" icon="images/circle-pink.png"></event>
-<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" icon="images/circle-pink.png"></event>
-<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" icon="images/circle-pink.png"></event>
-<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" icon="images/circle-pink.png"></event>
-<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" icon="images/circle-pink.png"></event>
-<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" icon="images/circle-pink.png"></event>
-<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" icon="images/circle-pink.png"></event>
-<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" icon="images/circle-pink.png"></event>
-<event start="1785-04-29" end="1851-12-10" title="Karl Drais" icon="images/circle-pink.png"></event>
-<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" icon="images/circle-pink.png"></event>
+<event start="1804-06-23" end="1854-07-06" title="August Borsig" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/August_Borsig"></event>
+<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Friedrich_Harkort"></event>
+<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Alfred_Krupp"></event>
+<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Werner_von_Siemens"></event>
+<event start="1842-05-17" end="1926-04-04" title="August Thyssen" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/August_Thyssen"></event>
+<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Benjamin_Silliman"></event>
+<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Ernst_Abbe"></event>
+<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Charles_Babbage"></event>
+<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Alexandre_Edmond_Becquerel"></event>
+<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Antoine_Henri_Becquerel"></event>
+<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Henry_Bessemer"></event>
+<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Robert_Wilhelm_Bunsen"></event>
+<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Rudolf_Clausius"></event>
+<event start="1785-04-29" end="1851-12-10" title="Karl Drais" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Karl_Drais"></event>
+<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Michael_Faraday"></event>
 <event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" link="http://de.wikipedia.org/wiki/Joseph_von_Fraunhofer" icon="images/circle-pink.png"></event>
-<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" icon="images/circle-pink.png"></event>
-<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" icon="images/circle-pink.png"></event>
-<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" icon="images/circle-pink.png"></event>
-<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" icon="images/circle-pink.png"></event>
-<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" icon="images/circle-pink.png"></event>
-<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" icon="images/circle-pink.png"></event>
-<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" icon="images/circle-pink.png"></event>
-<event start="1843-12-11" end="1910-05-27" title="Robert Koch" icon="images/circle-pink.png"></event>
-<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" icon="images/circle-pink.png"></event>
-<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" icon="images/circle-pink.png"></event>
-<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" icon="images/circle-pink.png"></event>
-<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" icon="images/circle-pink.png"></event>
-<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" icon="images/circle-pink.png"></event>
-<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" icon="images/circle-pink.png"></event>
-<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" icon="images/circle-pink.png"></event>
-<event start="1858-04-23" end="1947-10-04" title="Max Planck" icon="images/circle-pink.png"></event>
-<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" icon="images/circle-pink.png"></event>
-<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" icon="images/circle-pink.png"></event>
-<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" icon="images/circle-pink.png"></event>
-<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" icon="images/circle-pink.png"></event>
-<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" icon="images/circle-pink.png"></event>
-<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" icon="images/circle-pink.png"></event>
-<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" icon="images/circle-pink.png"></event>
-<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" icon="images/circle-pink.png"></event>
-<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" icon="images/circle-pink.png"></event>
-<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" icon="images/circle-pink.png"></event>
-<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" icon="images/circle-pink.png"></event>
-<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" icon="images/circle-pink.png"></event>
-<event start="1844-11-25" end="1929-04-04" title="Carl Benz" icon="images/circle-pink.png"></event>
-<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-pink.png"></event>
-<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" icon="images/circle-pink.png"></event>
+<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Carl_Friedrich_Gauß"></event>
+<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac"></event>
+<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Johann_Georg_Halske"></event>
+<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Hermann_von_Helmholtz"></event>
+<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Alexander_von_Humboldt"></event>
+<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Wilhelm_von_Humboldt"></event>
+<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Gustav_Robert_Kirchhoff"></event>
+<event start="1843-12-11" end="1910-05-27" title="Robert Koch" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Robert_Koch"></event>
+<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Justus_Liebig"></event>
+<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Otto_Lilienthal"></event>
+<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Carl_von_Linde"></event>
+<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell"></event>
+<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Franz_Ernst_Neumann"></event>
+<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Georg_Simon_Ohm"></event>
+<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Nikolaus_Otto"></event>
+<event start="1858-04-23" end="1947-10-04" title="Max Planck" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Max_Planck"></event>
+<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Max_von_Pettenkofer"></event>
+<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Philipp_Reis"></event>
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann"></event>
+<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Johann_Heinrich_von_Thünen"></event>
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Rudolf_Virchow"></event>
+<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Wilhelm_Wundt"></event>
+<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Albert_Einstein"></event>
+<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen"></event>
+<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Charles_Darwin"></event>
+<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison"></event>
+<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Alfred_Nobel"></event>
+<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Louis_Pasteur"></event>
+<event start="1844-11-25" end="1929-04-04" title="Carl Benz" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Carl_Benz"></event>
+<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Gottlieb_Daimler"></event>
+<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" icon="images/circle-pink.png" link="http://de.wikipedia.org/wiki/Eadweard_Muybridge"></event>
 
 
 <!-- Architekten -->
 
-<event start="1781-03-13" end="1841-10-09" title="Karl Friedrich Schinkel"></event>
-<event start="1803-11-29" end="1879-05-15" title="Gottfried Semper"></event>
+<event start="1781-03-13" end="1841-10-09" title="Karl Friedrich Schinkel" link="http://de.wikipedia.org/wiki/Karl_Friedrich_Schinkel"></event>
+<event start="1803-11-29" end="1879-05-15" title="Gottfried Semper" link="http://de.wikipedia.org/wiki/Gottfried_Semper"></event>
 
 
 
 <!-- Maler -->
 
 
-<event start="1830-07-10" end="1903-11-12" title="Camille Pissarro"></event>
-<event start="1832-01-23" end="1883-04-30" title="Édouard Manet"></event>
-<event start="1834-07-19" end="1917-09-27" title="Edgar Degas"></event>
-<event start="1839-01-19" end="1906-10-22" title="Paul Cézanne"></event>
-<event start="1839-10-30" end="1899-01-29" title="Alfred Sisley"></event>
-<event start="1840-11-14" end="1926-12-05" title="Claude Monet"></event>
-<event start="1841-01-14" end="1895-03-02" title="Berthe Morisot"></event>
-<event start="1841-02-25" end="1919-12-03" title="Pierre-Auguste Renoir"></event>
-<event start="1853-03-30" end="1890-07-29" title="Vincent van Gogh"></event>
-<event start="1848-06-07" end="1903-05-08" title="Paul Gauguin"></event>
-<event start="1863-12-12" end="1944-01-23" title="Edvard Munch"></event>
-<event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich"></event>
+<event start="1830-07-10" end="1903-11-12" title="Camille Pissarro" link="http://de.wikipedia.org/wiki/Camille_Pissarro"></event>
+<event start="1832-01-23" end="1883-04-30" title="Édouard Manet" link="http://de.wikipedia.org/wiki/Édouard_Manet"></event>
+<event start="1834-07-19" end="1917-09-27" title="Edgar Degas" link="http://de.wikipedia.org/wiki/Edgar_Degas"></event>
+<event start="1839-01-19" end="1906-10-22" title="Paul Cézanne" link="http://de.wikipedia.org/wiki/Paul_Cézanne"></event>
+<event start="1839-10-30" end="1899-01-29" title="Alfred Sisley" link="http://de.wikipedia.org/wiki/Alfred_Sisley"></event>
+<event start="1840-11-14" end="1926-12-05" title="Claude Monet" link="http://de.wikipedia.org/wiki/Claude_Monet"></event>
+<event start="1841-01-14" end="1895-03-02" title="Berthe Morisot" link="http://de.wikipedia.org/wiki/Berthe_Morisot"></event>
+<event start="1841-02-25" end="1919-12-03" title="Pierre-Auguste Renoir" link="http://de.wikipedia.org/wiki/Pierre-Auguste_Renoir"></event>
+<event start="1853-03-30" end="1890-07-29" title="Vincent van Gogh" link="http://de.wikipedia.org/wiki/Vincent_van_Gogh"></event>
+<event start="1848-06-07" end="1903-05-08" title="Paul Gauguin" link="http://de.wikipedia.org/wiki/Paul_Gauguin"></event>
+<event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch"></event>
+<event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich" link="http://de.wikipedia.org/wiki/Caspar_David_Friedrich"></event>
 
 
 
 <!-- Philosophen/Schriftsteller -->
 
 
-<event start="1770-08-27" end="1831-11-14" title="Georg Wilhelm Friedrich Hegel"></event>
-<event start="1804-07-28" end="1872-09-13" title="Ludwig Feuerbach"></event>
-<event start="1820-11-28" end="1895-08-05" title="Friedrich Engels"></event>
-<event start="1818-05-05" end="1883-03-14" title="Karl Marx"></event>
-<event start="1844-10-15" end="1900-08-25" title="Friedrich Nietzsche"></event>
-<event start="1788-02-22" end="1860-09-21" title="Arthur Schopenhauer"></event>
-<event start="1821-08-09" end="1867-08-31" title="Charles Baudelaire"></event>
+<event start="1770-08-27" end="1831-11-14" title="Georg Wilhelm Friedrich Hegel" link="http://de.wikipedia.org/wiki/Georg_Wilhelm_Friedrich_Hegel"></event>
+<event start="1804-07-28" end="1872-09-13" title="Ludwig Feuerbach" link="http://de.wikipedia.org/wiki/Ludwig_Feuerbach"></event>
+<event start="1820-11-28" end="1895-08-05" title="Friedrich Engels" link="http://de.wikipedia.org/wiki/Friedrich_Engels"></event>
+<event start="1818-05-05" end="1883-03-14" title="Karl Marx" link="http://de.wikipedia.org/wiki/Karl_Marx"></event>
+<event start="1844-10-15" end="1900-08-25" title="Friedrich Nietzsche" link="http://de.wikipedia.org/wiki/Friedrich_Nietzsche"></event>
+<event start="1788-02-22" end="1860-09-21" title="Arthur Schopenhauer" link="http://de.wikipedia.org/wiki/Arthur_Schopenhauer"></event>
+<event start="1821-08-09" end="1867-08-31" title="Charles Baudelaire" link="http://de.wikipedia.org/wiki/Charles_Baudelaire"></event>
 
-<event start="1826-01-17" end="1893-04-05" title="Wilhelm Lübke">deutscher Kunsthistoriker.</event>
+<event start="1826-01-17" end="1893-04-05" title="Wilhelm Lübke" link="http://de.wikipedia.org/wiki/Wilhelm_Lübke">deutscher Kunsthistoriker.</event>
 
-<event start="1749-08-28" end="1832-03-22" title="Johann Wolfgang von Goethe"></event>
-<event start="1828-02-08" end="1905-03-24" title="Jules Verne"></event>
-<event start="1775-12-16" end="1817-07-18" title="Jane Austen"></event>
-<event start="1786-05-06" end="1837-02-12" title="Ludwig Börne"></event>
-<event start="1818-07-30" end="1848-12-19" title="Emily Brontë"></event>
-<event start="1813-10-17" end="1837-02-19" title="Georg Büchner"></event>
-<event start="1812-02-07" end="1870-06-09" title="Charles Dickens"></event>
-<event start="1804-12-21" end="1881-04-19" title="Benjamin Disraeli"></event>
-<event start="1821-11-11" end="1881-02-09" title="Fjodor Dostojewski"></event>
-<event start="1821-12-12" end="1880-05-08" title="Gustave Flaubert"></event>
-<event start="1819-12-30" end="1898-09-20" title="Theodor Fontane"></event>
-<event start="1813-03-18" end="1863-12-13" title="Friedrich Hebbel"></event>
-<event start="1797-12-13" end="1856-02-17" title="Heinrich Heine"></event>
-<event start="1802-02-26" end="1885-05-22" title="Victor Hugo"></event>
-<event start="1828-03-20" end="1906-05-23" title="Henrik Ibsen"></event>
-<event start="1809-01-19" end="1849-10-07" title="Edgar Allan Poe"></event>
-<event start="1799-05-26" end="1837-01-29" title="Alexander Puschkin"></event>
-<event start="1854-10-20" end="1891-11-10" title="Arthur Rimbaud"></event>
-<event start="1788-05-16" end="1866-01-31" title="Friedrich Rückert"></event>
-<event start="1843-06-09" end="1914-06-21" title="Bertha von Suttner"></event>
-<event start="1828-08-28" end="1910-11-07" title="Leo Tolstoi"></event>
-<event start="1819-05-31" end="1892-03-26" title="Walt Whitman"></event>
-<event start="1835-11-30" end="1910-04-21" title="Marc Twain"></event>
+<event start="1749-08-28" end="1832-03-22" title="Johann Wolfgang von Goethe" link="http://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe"></event>
+<event start="1828-02-08" end="1905-03-24" title="Jules Verne" link="http://de.wikipedia.org/wiki/Jules_Verne"></event>
+<event start="1775-12-16" end="1817-07-18" title="Jane Austen" link="http://de.wikipedia.org/wiki/Jane_Austen"></event>
+<event start="1786-05-06" end="1837-02-12" title="Ludwig Börne" link="http://de.wikipedia.org/wiki/Ludwig_Börne"></event>
+<event start="1818-07-30" end="1848-12-19" title="Emily Brontë" link="http://de.wikipedia.org/wiki/Emily_Brontë"></event>
+<event start="1813-10-17" end="1837-02-19" title="Georg Büchner" link="http://de.wikipedia.org/wiki/Georg_Büchner"></event>
+<event start="1812-02-07" end="1870-06-09" title="Charles Dickens" link="http://de.wikipedia.org/wiki/Charles_Dickens"></event>
+<event start="1804-12-21" end="1881-04-19" title="Benjamin Disraeli" link="http://de.wikipedia.org/wiki/Benjamin_Disraeli"></event>
+<event start="1821-11-11" end="1881-02-09" title="Fjodor Dostojewski" link="http://de.wikipedia.org/wiki/Fjodor_Dostojewski"></event>
+<event start="1821-12-12" end="1880-05-08" title="Gustave Flaubert" link="http://de.wikipedia.org/wiki/Gustave_Flaubert"></event>
+<event start="1819-12-30" end="1898-09-20" title="Theodor Fontane" link="http://de.wikipedia.org/wiki/Theodor_Fontane"></event>
+<event start="1813-03-18" end="1863-12-13" title="Friedrich Hebbel" link="http://de.wikipedia.org/wiki/Friedrich_Hebbel"></event>
+<event start="1797-12-13" end="1856-02-17" title="Heinrich Heine" link="http://de.wikipedia.org/wiki/Heinrich_Heine"></event>
+<event start="1802-02-26" end="1885-05-22" title="Victor Hugo" link="http://de.wikipedia.org/wiki/Victor_Hugo"></event>
+<event start="1828-03-20" end="1906-05-23" title="Henrik Ibsen" link="http://de.wikipedia.org/wiki/Henrik_Ibsen"></event>
+<event start="1809-01-19" end="1849-10-07" title="Edgar Allan Poe" link="http://de.wikipedia.org/wiki/Edgar_Allan_Poe"></event>
+<event start="1799-05-26" end="1837-01-29" title="Alexander Puschkin" link="http://de.wikipedia.org/wiki/Alexander_Puschkin"></event>
+<event start="1854-10-20" end="1891-11-10" title="Arthur Rimbaud" link="http://de.wikipedia.org/wiki/Arthur_Rimbaud"></event>
+<event start="1788-05-16" end="1866-01-31" title="Friedrich Rückert" link="http://de.wikipedia.org/wiki/Friedrich_Rückert"></event>
+<event start="1843-06-09" end="1914-06-21" title="Bertha von Suttner" link="http://de.wikipedia.org/wiki/Bertha_von_Suttner"></event>
+<event start="1828-08-28" end="1910-11-07" title="Leo Tolstoi" link="http://de.wikipedia.org/wiki/Leo_Tolstoi"></event>
+<event start="1819-05-31" end="1892-03-26" title="Walt Whitman" link="http://de.wikipedia.org/wiki/Walt_Whitman"></event>
+<event start="1835-11-30" end="1910-04-21" title="Marc Twain" link="http://de.wikipedia.org/wiki/Marc_Twain"></event>
 
 
 
 <!-- Musiker/Komponist -->
 
-<event start="1813-10-10" end="1901-01-27" title="Giuseppe Verdi"></event>
-<event start="1813-05-22" end="1883-02-13" title="Richard Wagner"></event>
-<event start="1770-12-17" end="1827-03-26" title="Ludwig van Beethoven"></event>
-<event start="1838-10-25" end="1875-06-03" title="Georges Bizet"></event>
-<event start="1782-10-27" end="1840-05-27" title="Niccolò Paganini"></event>
-<event start="1810-02-22" end="1849-10-17" title="Frédéric Chopin"></event>
-<event start="1833-05-07" end="1897-04-03" title="Johannes Brahms"></event>
-<event start="1840-04-25" end="1893-10-25" title="Pjotr Iljitsch Tschaikowski"></event>
-<event start="1810-06-08" end="1856-07-29" title="Robert Schumann"></event>
-<event start="1797-01-31" end="1828-11-19" title="Franz Schubert"></event>
+<event start="1813-10-10" title="Giuseppe Verdi*" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi"></event>
+<event start="1901-01-27" title="Giuseppe Verdi†" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi"></event>
+<event start="1813-05-22" end="1883-02-13" title="Richard Wagner" link="http://de.wikipedia.org/wiki/Richard_Wagner"></event>
+<event start="1770-12-17" end="1827-03-26" title="Ludwig van Beethoven" link="http://de.wikipedia.org/wiki/Ludwig_van_Beethoven"></event>
+<event start="1838-10-25" end="1875-06-03" title="Georges Bizet" link="http://de.wikipedia.org/wiki/Georges_Bizet"></event>
+<event start="1782-10-27" end="1840-05-27" title="Niccolò Paganini" link="http://de.wikipedia.org/wiki/Niccolò_Paganini"></event>
+<event start="1810-02-22" end="1849-10-17" title="Frédéric Chopin" link="http://de.wikipedia.org/wiki/Frédéric_Chopin"></event>
+<event start="1833-05-07" end="1897-04-03" title="Johannes Brahms" link="http://de.wikipedia.org/wiki/Johannes_Brahms"></event>
+<event start="1840-04-25" end="1893-10-25" title="Pjotr Iljitsch Tschaikowski" link="http://de.wikipedia.org/wiki/Pjotr_Iljitsch_Tschaikowski"></event>
+<event start="1810-06-08" end="1856-07-29" title="Robert Schumann" link="http://de.wikipedia.org/wiki/Robert_Schumann"></event>
+<event start="1797-01-31" end="1828-11-19" title="Franz Schubert" link="http://de.wikipedia.org/wiki/Franz_Schubert"></event>
 
 <!-- Politik/Religion -->
 
-<event start="1807-01-09" end="1852" title="Amir Kabir">Ministerpräsident und bedeutender Reformer Persiens</event>
+<event start="1807-01-09" end="1852" title="Amir Kabir" link="http://de.wikipedia.org/wiki/Amir_Kabir">Ministerpräsident und bedeutender Reformer Persiens</event>
 <event start="1817-11-12" end="1892-05-29" title="Baha’u’llah">Religionsstifter der Bahai</event>
-<event start="1814-05-18" end="1876-07-01" title="Michail Bakunin">russischer Anarchist</event>
-<event start="1840-02-22" end="1913-08-13" title="August Bebel">SPD-Mitbegründer</event>
-<event start="1815-04-01" end="1898-07-30" title="Otto von Bismarck">deutscher Reichskanzler</event>
-<event start="1811-10-29" end="1882-12-06" title="Louis Blanc">französischer Sozialist</event>
-<event start="1783-07-24" end="1830-12-17" title="Simón Bolívar">lateinamerikanischer Unabhängigkeitskämpfer</event>
-<event start="1769-08-15" end="1821-05-05" title="Napoléon Bonaparte">Französischer Kaiser</event>
-<event start="1830-08-18" end="1916-11-21" title="Franz Joseph I.">Kaiser von Österreich, König von Ungarn</event>
-<event start="1858-08-21" end="1889-01-30" title="Rudolf Franz Karl Joseph">Kronprinz von Österreich-Ungarn</event>
-<event start="1837-12-24" end="1898-09-10" title="Elisabeth von Österreich-Ungarn">Sisi, Kaiserin von Österreich-Ungarn</event>
-<event start="1810-08-10" end="1861-06-06" title="Camillo Benso Graf von Cavour">sardinischer und italienischer Ministerpräsident</event>
+<event start="1814-05-18" end="1876-07-01" title="Michail Bakunin" link="http://de.wikipedia.org/wiki/Michail_Bakunin">russischer Anarchist</event>
+<event start="1840-02-22" end="1913-08-13" title="August Bebel" link="http://de.wikipedia.org/wiki/August_Bebel">SPD-Mitbegründer</event>
+<event start="1815-04-01" end="1898-07-30" title="Otto von Bismarck" link="http://de.wikipedia.org/wiki/Otto_von_Bismarck">deutscher Reichskanzler</event>
+<event start="1811-10-29" end="1882-12-06" title="Louis Blanc" link="http://de.wikipedia.org/wiki/Louis_Blanc">französischer Sozialist</event>
+<event start="1783-07-24" end="1830-12-17" title="Simón Bolívar" link="http://de.wikipedia.org/wiki/Simón_Bolívar">lateinamerikanischer Unabhängigkeitskämpfer</event>
+<event start="1769-08-15" end="1821-05-05" title="Napoléon Bonaparte" link="http://de.wikipedia.org/wiki/Napoléon_Bonaparte">Französischer Kaiser</event>
+<event start="1830-08-18" end="1916-11-21" title="Franz Joseph I." link="http://de.wikipedia.org/wiki/Franz_Joseph_I.">Kaiser von Österreich, König von Ungarn</event>
+<event start="1858-08-21" end="1889-01-30" title="Rudolf Franz Karl Joseph" link="http://de.wikipedia.org/wiki/Rudolf_Franz_Karl_Joseph">Kronprinz von Österreich-Ungarn</event>
+<event start="1837-12-24" end="1898-09-10" title="Elisabeth von Österreich-Ungarn" link="http://de.wikipedia.org/wiki/Elisabeth_von_Österreich-Ungarn">Sisi, Kaiserin von Österreich-Ungarn</event>
+<event start="1810-08-10" end="1861-06-06" title="Camillo Benso Graf von Cavour" link="http://de.wikipedia.org/wiki/Camillo_Benso_Graf_von_Cavour">sardinischer und italienischer Ministerpräsident</event>
 <event start="1829-06-16" end="1909-02-17" title="Geronimo">Schamane und Apachenhäuptling</event>
-<event start="1807-07-04" end="1882-06-02" title="Giuseppe Garibaldi">italienischer Revolutionär</event>
-<event start="1811-09-28" end="1881-03-24" title="Friedrich Hecker">badischer Revolutionär</event>
-<event start="1783-09-27" end="1824-07-19" title="Agustin de Iturbide">Kaiser von Mexiko</event>
-<event start="1859-09-03" end="1914-07-31" title="Jean Jaurès">französischer Sozialist und Pazifist</event>
-<event start="1802-09-19" end="1894-03-20" title="Lajos Kossuth">ungarischer Nationalheld</event>
-<event start="1825-04-11" end="1864-08-31" title="Ferdinand Lassalle">Gründer des ADAV, der ersten Vorläuferorganisation der SPD</event>
-<event start="1826-03-29" end="1900-08-07" title="Wilhelm Liebknecht">Marxist, Revolutionär und SPD-Mitbegründer</event>
-<event start="1809-02-12" end="1865-04-15" title="Abraham Lincoln">Amerikanischer Präsident</event>
-<event start="1789-08-06" end="1846-11-30" title="Friedrich List">Ökonom und Eisenbahnpionier</event>
-<event start="1805-06-22" end="1872-03-10" title="Giuseppe Mazzini">italienischer Revolutionär</event>
-<event start="1773-05-15" end="1859-06-11" title="Klemens Wenzel Lothar von Metternich">österreichischer Diplomat und Staatskanzler</event>
-<event start="1832-07-06" end="1867-06-19" title="Maximilian I.">Kaiser von Mexiko</event>
-<event start="1814-01-17" end="1878-11-22" title="Ludwik Mieroslawski">polnischer Revolutionär</event>
-<event start="1808-04-20" end="1873-01-09" title="Napoléon III.">französischer Staatspräsident, Diktator und Kaiser von Frankreich</event>
-<event start="1829-03-02" end="1906-05-14" title="Carl Schurz">badischer Revolutionär, US-Innenminister</event>
-<event start="1820-03-14" end="1878-01-09" title="Viktor Emanuel II.">König von Sardinien und Italien</event>
-<event start="1779-08-03" end="1840-06-17" title="Friedrich Wilhelm III."></event>
+<event start="1807-07-04" end="1882-06-02" title="Giuseppe Garibaldi" link="http://de.wikipedia.org/wiki/Giuseppe_Garibaldi">italienischer Revolutionär</event>
+<event start="1811-09-28" end="1881-03-24" title="Friedrich Hecker" link="http://de.wikipedia.org/wiki/Friedrich_Hecker">badischer Revolutionär</event>
+<event start="1783-09-27" end="1824-07-19" title="Agustin de Iturbide" link="http://de.wikipedia.org/wiki/Agustin_de_Iturbide">Kaiser von Mexiko</event>
+<event start="1859-09-03" end="1914-07-31" title="Jean Jaurès" link="http://de.wikipedia.org/wiki/Jean_Jaurès">französischer Sozialist und Pazifist</event>
+<event start="1802-09-19" end="1894-03-20" title="Lajos Kossuth" link="http://de.wikipedia.org/wiki/Lajos_Kossuth">ungarischer Nationalheld</event>
+<event start="1825-04-11" end="1864-08-31" title="Ferdinand Lassalle" link="http://de.wikipedia.org/wiki/Ferdinand_Lassalle">Gründer des ADAV, der ersten Vorläuferorganisation der SPD</event>
+<event start="1826-03-29" end="1900-08-07" title="Wilhelm Liebknecht" link="http://de.wikipedia.org/wiki/Wilhelm_Liebknecht">Marxist, Revolutionär und SPD-Mitbegründer</event>
+<event start="1809-02-12" end="1865-04-15" title="Abraham Lincoln" link="http://de.wikipedia.org/wiki/Abraham_Lincoln">Amerikanischer Präsident</event>
+<event start="1789-08-06" end="1846-11-30" title="Friedrich List" link="http://de.wikipedia.org/wiki/Friedrich_List">Ökonom und Eisenbahnpionier</event>
+<event start="1805-06-22" end="1872-03-10" title="Giuseppe Mazzini" link="http://de.wikipedia.org/wiki/Giuseppe_Mazzini">italienischer Revolutionär</event>
+<event start="1773-05-15" end="1859-06-11" title="Klemens Wenzel Lothar von Metternich" link="http://de.wikipedia.org/wiki/Klemens_Wenzel_Lothar_von_Metternich">österreichischer Diplomat und Staatskanzler</event>
+<event start="1832-07-06" end="1867-06-19" title="Maximilian I." link="http://de.wikipedia.org/wiki/Maximilian_I.">Kaiser von Mexiko</event>
+<event start="1814-01-17" end="1878-11-22" title="Ludwik Mieroslawski" link="http://de.wikipedia.org/wiki/Ludwik_Mieroslawski">polnischer Revolutionär</event>
+<event start="1808-04-20" end="1873-01-09" title="Napoléon III." link="http://de.wikipedia.org/wiki/Napoléon_III.">französischer Staatspräsident, Diktator und Kaiser von Frankreich</event>
+<event start="1829-03-02" end="1906-05-14" title="Carl Schurz" link="http://de.wikipedia.org/wiki/Carl_Schurz">badischer Revolutionär, US-Innenminister</event>
+<event start="1820-03-14" end="1878-01-09" title="Viktor Emanuel II." link="http://de.wikipedia.org/wiki/Viktor_Emanuel_II.">König von Sardinien und Italien</event>
+<event start="1779-08-03" end="1840-06-17" title="Friedrich Wilhelm III." link="http://de.wikipedia.org/wiki/Friedrich_Wilhelm_III."></event>
 
 
 
