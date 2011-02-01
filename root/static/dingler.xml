@@ -6,7 +6,9 @@
 <!--                       -->
 
 
-<event start="1820" title="Entdeckung der Venus von Milo" icon="images/circle-red.png"></event>
+<event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo">
+  Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.
+</event>
 <event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes." icon="images/circle-red.png"></event>
 <event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." icon="images/circle-red.png"></event>
 
