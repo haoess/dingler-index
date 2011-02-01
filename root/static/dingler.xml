@@ -6,37 +6,40 @@
 <!--                       -->
 
 
-<event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo">
-  Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.
-</event>
-<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes." icon="images/circle-red.png"></event>
+<event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo" >Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.</event>
+<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes." icon="images/circle-red.png" ></event>
 <event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." icon="images/circle-red.png"></event>
 
 <event start="1833" title="Uraufführung von Richard Wagners erster Oper (Die Feen)." icon="images/circle-red.png"></event>
 
-<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." icon="images/circle-red.png"></event>
-<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png"></event>
+<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." link="http://de.wikipedia.org/wiki/Kommunistisches_Manifest" icon="images/circle-red.png"></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/d/dd/Dartagnan-musketeers.jpg" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere"></event>
 
-<event start="1851" title="Herman Melville: Moby Dick." icon="images/circle-red.png"></event>
-<event start="1857" title="Gustave Flaubert: Madame Bovary." icon="images/circle-red.png"></event>
+<event start="1851" title="Herman Melville: Moby Dick." link="http://de.wikipedia.org/wiki/Moby_Dick" icon="images/circle-red.png"></event>
+<event start="1857" title="Gustave Flaubert: Madame Bovary." link="http://de.wikipedia.org/wiki/Madame_Bovary" icon="images/circle-red.png"></event>
 
-<event start="1868" title="Leo Tolstoi: Krieg und Frieden." icon="images/circle-red.png"></event>
-<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne." icon="images/circle-red.png"></event>
-<event start="1863" title="Lewis Carroll: Alice im Wunderland." icon="images/circle-red.png"></event>
-<event start="1867" title="Karl Marx: Das Kapital." icon="images/circle-red.png"></event>
+<event start="1868" title="Leo Tolstoi: Krieg und Frieden." link="http://de.wikipedia.org/wiki/Krieg_und_Frieden" icon="images/circle-red.png"></event>
+<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne." link="http://de.wikipedia.org/wiki/Schuld_und_S%C3%BChne" icon="images/circle-red.png"></event>
+<event start="1863" title="Lewis Carroll: Alice im Wunderland." link="http://de.wikipedia.org/wiki/Alice_im_Wunderland" icon="images/circle-red.png"></event>
+<event start="1867" title="Karl Marx: Das Kapital." link="http://de.wikipedia.org/wiki/Das_Kapital" icon="images/circle-red.png"></event>
 
-<event start="1871" title="Lewis Carroll: Through the Looking-Glass." icon="images/circle-red.png"></event>
-<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen." icon="images/circle-red.png"></event>
+<event start="1871" title="Lewis Carroll: Through the Looking-Glass."
+    link="http://de.wikipedia.org/wiki/Lewis_Carroll#Alice_hinter_den_Spiegeln" icon="images/circle-red.png"></event>
+<event start="1873" title="Jules Verne: Reise um die Erde in 80
+    Tagen." link="http://de.wikipedia.org/wiki/Reise_um_die_Erde_in_80_Tagen" icon="images/circle-red.png"></event>
 <event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs«." icon="images/circle-red.png">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
-<event start="1879" title="Henrik Ibsen: A Doll's House." icon="images/circle-red.png"></event>
+<event start="1876" title="Henrik Ibsen: Peer Gynt Uraufführung." link="http://de.wikipedia.org/wiki/Peer_Gynt" icon="images/circle-red.png"></event>
 
-<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra." icon="images/circle-red.png"></event>
-<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn." icon="images/circle-red.png"></event>
-<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow." icon="images/circle-red.png"></event>
-<event start="1888" title="Edward Bellamy: Looking Backward or Life in the Year 2000." icon="images/circle-red.png"></event>
-<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde." icon="images/circle-red.png"></event>
+<event start="1883" title="Friedrich Nietzsche: Also sprach
+    Zarathustra." link="http://de.wikipedia.org/wiki/Also_sprach_Zarathustra" icon="images/circle-red.png"></event>
+<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry
+    Finn." link="http://de.wikipedia.org/wiki/Huckleberry_Finn" icon="images/circle-red.png"></event>
+<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow."
+    link="http://de.wikipedia.org/wiki/Die_Br%C3%BCder_Karamasow" icon="images/circle-red.png"></event>
+<event start="1888" title="Edward Bellamy: Looking Backward or Life in the Year 2000."  icon="images/circle-red.png"></event>
+<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde." link="http://de.wikipedia.org/wiki/Der_seltsame_Fall_des_Dr._Jekyll_und_Mr._Hyde" icon="images/circle-red.png"></event>
 <event start="1884" title="Erste Ausgabe des Oxford English Dictionary publiziert." icon="images/circle-red.png"></event>
-<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." icon="images/circle-red.png"></event>
+<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." link="http://de.wikipedia.org/wiki/Sherlock_Holmes" icon="images/circle-red.png"></event>
 
 
 
@@ -414,8 +417,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Musiker/Komponist -->
 
-<event start="1813-10-10" title="Giuseppe Verdi*" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi"></event>
-<event start="1901-01-27" title="Giuseppe Verdi†" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi"></event>
+<event start="1813-10-10" end="1901-01-27" title="Giuseppe Verdi" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi"></event>
 <event start="1813-05-22" end="1883-02-13" title="Richard Wagner" link="http://de.wikipedia.org/wiki/Richard_Wagner"></event>
 <event start="1770-12-17" end="1827-03-26" title="Ludwig van Beethoven" link="http://de.wikipedia.org/wiki/Ludwig_van_Beethoven"></event>
 <event start="1838-10-25" end="1875-06-03" title="Georges Bizet" link="http://de.wikipedia.org/wiki/Georges_Bizet"></event>
