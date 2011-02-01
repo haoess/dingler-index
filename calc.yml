@@ -203,14 +203,14 @@ mass:
   drachme:
     name: Drachme
     unit: dr.
-    wp: http://de.wikipedia.org/wiki/Avoirdupois 
+    wp: http://de.wikipedia.org/wiki/Avoirdupois
     conversions:
       kilogramm: x / 0.0017718451953125
   frankfurterpfund:
     name: Frankfurter Pfund
     unit: Frankf. Pf.
     conversions:
-      avoirdupois: x * 0.96923077 
+      avoirdupois: x * 0.96923077
   quint:
     name: Quint
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
@@ -283,7 +283,7 @@ length:
     unit: Frankf. Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
     conversions:
-      millimeter: x / 284.61 
+      millimeter: x / 284.61
   oesterreichischerfuss:
     name: Österreichischer Fuß
     unit: Öster. Fuß
@@ -385,7 +385,7 @@ volume:
     unit: Imp.bsh.
     wp: http://de.wikipedia.org/wiki/Bushel
     conversions:
-      liter: x / 36.3687222559584 
+      liter: x / 36.3687222559584
   imperialgallon:
     name: Imperiale Gallone
     unit: Imp.gal
@@ -474,7 +474,7 @@ money:
     name: Krone (Österreich)
     wp: http://de.wikipedia.org/wiki/Österreichische_Krone
   groschen:
-    name: Groschen 
+    name: Groschen
     wp: http://de.wikipedia.org/wiki/Groschen
     conversions:
       pfennig: x / 12
@@ -483,7 +483,7 @@ money:
     unit: Sgr.
     wp: http://de.wikipedia.org/wiki/Silbergroschen
   pfennig:
-    name: Pfennig 
+    name: Pfennig
     unit: Pf
     wp: http://de.wikipedia.org/wiki/Pfennig
   dukat:
