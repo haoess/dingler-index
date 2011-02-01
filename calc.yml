@@ -305,12 +305,12 @@ length:
   preussischerklafter:
     name: Preussischer Klafter
     wp: http://de.wikipedia.org/wiki/Klafter
-    convertions:
+    conversions:
       meter: x / 1.88
   bayerischerklafter:
     name: Bayerischer Klafter
     wp: http://de.wikipedia.org/wiki/Klafter
-    convertions:
+    conversions:
       meter: x / 1.75
   oesterreichischerklafter:
     name: Österreichischer Klafter
@@ -440,7 +440,7 @@ volume:
   bayerischesquart:
     name: Bayerisches Quart
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
-    conversion:
+    conversions:
       liter: x / 0.267
   preussischesquart:
     name: Preussisches Quart
