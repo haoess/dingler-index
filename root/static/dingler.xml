@@ -312,7 +312,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" icon="images/circle-pink.png"></event>
 <event start="1785-04-29" end="1851-12-10" title="Karl Drais" icon="images/circle-pink.png"></event>
 <event start="1791-09-22" end="1867-08-25" title="Michael Faraday" icon="images/circle-pink.png"></event>
-<event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" icon="images/circle-pink.png"></event>
+<event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" link="http://de.wikipedia.org/wiki/Joseph_von_Fraunhofer" icon="images/circle-pink.png"></event>
 <event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" icon="images/circle-pink.png"></event>
 <event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" icon="images/circle-pink.png"></event>
 <event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" icon="images/circle-pink.png"></event>
