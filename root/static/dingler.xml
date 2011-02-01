@@ -3,9 +3,9 @@
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- literatur/philosophie/kunst/musik -->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
 <event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo" >Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.</event>
@@ -114,9 +114,9 @@
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- politik/religion (pink)   -->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
 <event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons." icon="images/circle-pink.png"></event>
@@ -161,7 +161,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1842-08-29" title="Vertrag von Nanking." icon="images/circle-pink.png">Der Vertrag von Nanking beendet den ersten Opiumkrieg zwischen Großbritannien und China. Hong Kong wird offiziell an die britischen Besatzer abgetreten und ist erst sei 1997 wieder unter Kontrolle der Volksrepublik China.</event>
 <event start="1846" end="1848" title="Mexikanisch-Amerikanischer Krieg." icon="images/circle-pink.png">Der anschließende Vertrag von Guadalupe Hidalgo führte zu einem großen Gebietszuwachs für die Vereinigten Staaten und dehnte ihr Territorium bis zum Pazifischen Ozean aus.</event>
 <event start="1847" title="Bund der Kommunisten in London." icon="images/circle-pink.png">Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind.</event>
-<event start="1848" end="1851" title=" icon="images/circle-pink.png"Schleswig-Holsteinischer Krieg zwischen Preußen und Dänemark."></event>
+<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg zwischen Preußen und Dänemark." icon="images/circle-pink.png"></event>
 <event start="1848" title="Deutsche Revolution 1848/49." icon="images/circle-pink.png"></event>
 <event start="1848" end="1849" title="Revolution und Freiheitskampf in Ungarn." icon="images/circle-pink.png"></event>
 <event start="1848" title="Revolution von 1848." icon="images/circle-pink.png"></event>
@@ -170,9 +170,9 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 <event start="1850-07-02" title="Frieden von Berlin." icon="images/circle-pink.png">Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark.</event>
-<event start="1852" title=" icon="images/circle-pink.png"Kaiser Napoléon III. begründet das Zweite französische Kaiserreich."></event>
+<event start="1852" title="Kaiser Napoléon III. begründet das Zweite französische Kaiserreich." icon="images/circle-pink.png"></event>
 <event start="1853" end="1856" title="Krimkrieg" icon="images/circle-pink.png">Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien.</event>
-<event start="1853" title=" icon="images/circle-pink.png"Japanische Häfen werden für den Handel mit dem Westen geöffnet."></event>
+<event start="1853" title="Japanische Häfen werden für den Handel mit dem Westen geöffnet." icon="images/circle-pink.png"></event>
 <event start="1854" end="1859" title="Blutendes Kansas." icon="images/circle-pink.png"></event>
 <event start="1856" title="Pariser Frieden." icon="images/circle-pink.png">Der Pariser Frieden als Folge des Krimkriegs führt zu einer Neuordnung Europas.</event>
 <event start="1856-10-08" title="Beginn des zweiten Opiumkriegs." icon="images/circle-pink.png"></event>
@@ -181,21 +181,21 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 <event start="1861-04-12" end="1865-04-09" title="US-amerikanischer Bürgerkrieg" icon="images/circle-pink.png">US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten.</event>
-<event start="1861" end="1867" title=" icon="images/circle-pink.png"Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko."></event>
+<event start="1861" end="1867" title="Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko." icon="images/circle-pink.png"></event>
 <event start="1864" title="Deutsch-Dänischer Krieg." icon="images/circle-pink.png"></event>
-<event start="1864" end="1870" title=" icon="images/circle-pink.png"Tripel-Allianz-Krieg (Argentinien, Brasilien und Uruguay gegen Paraguay)."></event>
-<event start="1865-04-14" title=" icon="images/circle-pink.png"Ermordung des US-Präsidenten Abraham Lincoln."></event>
-<event start="1866" title=" icon="images/circle-pink.png"Deutscher Krieg zwischen Österreich und Preußen."></event>
-<event start="1866" title=" icon="images/circle-pink.png"Gründung des Norddeutschen Bundes, Vorgänger des Deutschen Reiches."></event>
-<event start="1866" end="1869" title=" icon="images/circle-pink.png"Meiji Restoration in Japan."></event>
-<event start="1867-07-01" title=" icon="images/circle-pink.png"The Dominion of Canada is created by the British North America Act."></event>
+<event start="1864" end="1870" title="Tripel-Allianz-Krieg (Argentinien, Brasilien und Uruguay gegen Paraguay)." icon="images/circle-pink.png"></event>
+<event start="1865-04-14" title="Ermordung des US-Präsidenten Abraham Lincoln." icon="images/circle-pink.png"></event>
+<event start="1866" title="Deutscher Krieg zwischen Österreich und Preußen." icon="images/circle-pink.png"></event>
+<event start="1866" title="Gründung des Norddeutschen Bundes, Vorgänger des Deutschen Reiches." icon="images/circle-pink.png"></event>
+<event start="1866" end="1869" title="Meiji Restoration in Japan." icon="images/circle-pink.png"></event>
+<event start="1867-07-01" title="The Dominion of Canada is created by the British North America Act." icon="images/circle-pink.png"></event>
 <event start="1869" title="Eröffnung des Suezkanals." icon="images/circle-pink.png"></event>
 
 <event start="1870" end="1871" title="Deutsch-Französischer Krieg." icon="images/circle-pink.png"></event>
 <event start="1871" title="Erste sozialistische Revolution in Frankreich." icon="images/circle-pink.png"></event>
 <event start="1871-01-18" title="Gründung des Deutschen Reichs." icon="images/circle-pink.png"></event>
 <event start="1872" end="1876" title="Dritter Carlistenkrieg in Spanien." icon="images/circle-pink.png"></event>
-<event start="1873" title=" icon="images/circle-pink.png"Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen."></event>
+<event start="1873" title="Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen." icon="images/circle-pink.png"></event>
 <event start="1875" title="Gründung der SAP" icon="images/circle-pink.png">Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde.</event>
 <event start="1876" title="Schlacht am Little Bighorn River." icon="images/circle-pink.png">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
 <event start="1877" end="1878" title="Russisch-Türkischer Krieg." icon="images/circle-pink.png"></event>
@@ -251,9 +251,9 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- science and technology (blue)-->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 <event start="1809" title="Soemmerring konstruiert einen elektrischen Telegrafen." icon="images/circle-blue.png"></event>
 
@@ -343,13 +343,13 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Firmengründungen -->
 
-<event start="1810" title="Gründung der Gießerei Henschel & Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-blue.png">Die Gießerei Henschel & Sohn produziert ab 1816 Dampfmaschinen.</event>
+<event start="1810" title="Gründung der Gießerei Henschel &amp; Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-blue.png">Die Gießerei Henschel &amp; Sohn produziert ab 1816 Dampfmaschinen.</event>
 <event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
 <event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-blue.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
 <event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-blue.png"></event>
 <event start="1847-10-12" title="Gründung der Siemens-Halske AG." icon="images/circle-blue.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die
-Telegraphenbau-Anstalt von Siemens & Halske.</event>
-<event start="1867" title="Thyssen-Foussol & Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol & Co“.</event>
+Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
+<event start="1867" title="Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
 
 
 
@@ -410,9 +410,9 @@ Telegraphenbau-Anstalt von Siemens & Halske.</event>
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- Architektur/Stadtplanung/Städtebau (green)-->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 <event start="1885" title="Erstes Hochhaus der Welt: Home Insurance Building" icon="images/circle-green.png"></event>
 <event start="1902" title="Fuller Building in New York" icon="images/circle-green.png"></event>
@@ -446,9 +446,9 @@ Telegraphenbau-Anstalt von Siemens & Halske.</event>
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- misc (yellow) -->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 <event start="1816" title="Jahr ohne Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
 <event start="1840-05-01" title="One Penny Black." icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
@@ -473,9 +473,9 @@ Telegraphenbau-Anstalt von Siemens & Halske.</event>
 
 
 
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- Dingler -->
-<!-- ----------------------------------------------------  -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
 <event start="1778" end="1855" title="Johann Gottfried Dingler"></event>
