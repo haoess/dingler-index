@@ -484,27 +484,44 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <!-- Architektur/Stadtplanung/Städtebau (green)-->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
-<event start="1885" title="Erstes Hochhaus der Welt: Home Insurance Building" icon="images/circle-green.png"></event>
-<event start="1902" title="Fuller Building in New York" icon="images/circle-green.png"></event>
-<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross" icon="images/circle-green.png"></event>
-<event start="1854" title="Eröffnung der Paddington Station" icon="images/circle-green.png"></event>
-<event start="1857" title="Eröffnung des Lesesaals der British Library" icon="images/circle-green.png"></event>
-<event start="1845" title="Fertigstellung der ionischen Säulenhalle des British Museums" icon="images/circle-green.png"></event>
-<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St. Petersburg" icon="images/circle-green.png"></event>
+<event start="1884" title="Erstes Hochhaus der Welt: Home Insurance
+    Building" link="http://en.wikipedia.org/wiki/Home_Insurance_Building" icon="images/circle-green.png"></event>
+<event start="1902" title="Fuller Building in New York" link="http://de.wikipedia.org/wiki/Flatiron_Building" icon="images/circle-green.png"></event>
+<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross"
+    link="http://de.wikipedia.org/wiki/Bahnhof_King%E2%80%99s_Cross" icon="images/circle-green.png"></event>
+<event start="1854" title="Eröffnung der Paddington Station" link="http://de.wikipedia.org/wiki/Bahnhof_Paddington" icon="images/circle-green.png"></event>
+<event start="1857" title="Eröffnung des Lesesaals der British
+    Library" link="http://de.wikipedia.org/wiki/British_Library" icon="images/circle-green.png"></event>
+<event start="1845" title="Fertigstellung der ionischen Säulenhalle
+    des British Museums"
+    link="http://de.wikipedia.org/wiki/British_Museum" icon="images/circle-green.png"></event>
+<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St.
+    Petersburg" link="http://de.wikipedia.org/wiki/Nikolai-Palast" icon="images/circle-green.png"></event>
 
-<event start="1840-04-27" title="Grundsteinlegung für das »Houses of Parliament«." icon="images/circle-green.png">Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London</event>
-<event start="1818" title="Karl Friedrich Schinkel: Schauspielhaus in Berlin" icon="images/circle-green.png"></event>
-<event start="1824" title="Schinkel: Altes Museum in Berlin" icon="images/circle-green.png"></event>
-<event start="1829" title="Schinkel: Schloss Charlottenhof in Potsdam" icon="images/circle-green.png"></event>
-<event start="1830" title="Schinkel: Nicolaikirche Potsdam" icon="images/circle-green.png"></event>
-<event start="1835" title="Schinkel: Neue Berliner Sternwarte" icon="images/circle-green.png"></event>
-<event start="1847" end="1855" title="Gottfried Semper: Gemäldegalerie" icon="images/circle-green.png"></event>
-<event start="1871" end="1878" title="Gottfried Semper: Neues Hoftheater in Dresden (Semperoper)" icon="images/circle-green.png"></event>
-<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum in Zürich (ETH)" icon="images/circle-green.png"></event>
+<event start="1840-04-27" title="Grundsteinlegung für das »Houses of
+    Parliament«"
+    link="http://de.wikipedia.org/wiki/Palace_of_Westminster" icon="images/circle-green.png">Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London</event>
+<event start="1821" title="Karl Friedrich Schinkel: Schauspielhaus in
+    Berlin" link="http://de.wikipedia.org/wiki/Konzerthaus_Berlin" icon="images/circle-green.png"></event>
+<event start="1828" title="Schinkel: Altes Museum in Berlin"
+    link="http://de.wikipedia.org/wiki/Altes_Museum_%28Berlin%29" icon="images/circle-green.png"></event>
+<event start="1830" title="Schinkel: Nicolaikirche Potsdam"
+    link="http://de.wikipedia.org/wiki/St._Nikolaikirche_%28Potsdam%29" icon="images/circle-green.png"></event>
+<event start="1835" title="Schinkel: Neue Berliner Sternwarte" link="http://de.wikipedia.org/wiki/Berliner_Sternwarte#Neue_Berliner_Sternwarte" icon="images/circle-green.png"></event>
+<event start="1847" end="1855" title="Gottfried Semper:
+    Gemäldegalerie"
+    link="http://de.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister" icon="images/circle-green.png"></event>
+<event start="1871" end="1878" title="Gottfried Semper: Neues
+    Hoftheater in Dresden (Semperoper)"
+    link="http://de.wikipedia.org/wiki/Semperoper#Der_zweite_Bau" icon="images/circle-green.png"></event>
+<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum
+    in Zürich (ETH)"
+    link="http://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Technische_Hochschule_Z%C3%BCrich" icon="images/circle-green.png"></event>
 
-<event start="1853" title="Neue Pinakothek, München" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
-<event start="1864" end="1868" title="Gottfried Neureuther: Polytechnikum in München." icon="images/circle-green.png"></event>
-<event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)." icon="images/circle-green.png"></event>
+<event start="1853" title="Neue Pinakothek, München"
+    link="http://de.wikipedia.org/wiki/Neue_Pinakothek" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
+<event start="1864" end="1868" title="Gottfried Neureuther: Polytechnische Schule in München." link="http://de.wikipedia.org/wiki/Technische_Universit%C3%A4t_M%C3%BCnchen" icon="images/circle-green.png"></event>
+<event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)" link="http://de.wikipedia.org/wiki/Martin-Gropius-Bau" icon="images/circle-green.png"></event>
 
 <!-- Architekten -->
 
