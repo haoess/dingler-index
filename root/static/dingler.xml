@@ -302,7 +302,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1809" title="Soemmerrings elektrischer Telegraf" link="http://de.wikipedia.org/wiki/Samuel_Thomas_von_Soemmerring" icon="images/circle-blue.png"></event>
 
 <event start="1820-01-28" title="Russische Expedition erreicht die Antarktis." link="http://de.wikipedia.org/wiki/Fabian_Gottlieb_von_Bellingshausen" icon="images/circle-blue.png">Expedition unter der Führung von Fabian Gottlieb von Bellingshausen und Mikhail Petrovich Lazarev.</event>
-<event start="1820-04" title="Ørsted entdeckt die magnetische Wirkung des elektrischen Stroms." link="http://de.wikipedia.org/wiki/Hans_Christian_%C3%98rsted" icon="images/circle-blue.png"><ref target="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted">Ørsted</ref> im Polytechnischen Journal.</event>
+<event start="1820-04" title="Ørsted entdeckt die magnetische Wirkung
+    des elektrischen Stroms."
+    link="http://de.wikipedia.org/wiki/Hans_Christian_%C3%98rsted"
+    icon="images/circle-blue.png">&lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted"&gt;Ørsted&lt;/a&gt; im Polytechnischen Journal.</event>
 <event start="1820" title="6. Edition der Encyclopædia Britannica" link="http://de.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" icon="images/circle-blue.png"></event>
 <event start="1825-09-27" title="Eröffnung der Stockton and Darlington
     Railway."
