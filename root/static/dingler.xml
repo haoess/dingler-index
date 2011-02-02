@@ -118,6 +118,8 @@
 <!-- politik/religion (pink)   -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
+<event start="1789" end="1799" title="Französische Revolution" link="http://de.wikipedia.org/wiki/Franz%C3%B6sische_Revolution" icon="images/circle-pink.png"></event>
+<event start="1806" title="Ende des Heiligen Römischen Reichs" link="http://de.wikipedia.org/wiki/Heiliges_R%C3%B6misches_Reich" icon="images/circle-pink.png"></event>
 
 <event start="1812-06" end="1812-12" title="Russlandfeldzug
     Napoleons." link="http://de.wikipedia.org/wiki/Napoleon"
@@ -254,6 +256,12 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1884-11-15" end="1885-02-26" title="Kongokonferenz"
     icon="images/circle-pink.png">Die Kongokonferenz fand auf Einladung des deutschen Reichskanzlers Bismarck in Berlin statt und sollte die Handelsfreiheit am Kongo und am Niger regeln.></event>
 
+<event start="1914-07-28" title="Österreich-Ungarns Kriegserklärung an Serbien" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg"
+    icon="images/circle-pink.png">Die Kriegserklärung an Serbien markiert den Beginn des 1. Weltkriegs.</event>
+<event start="1914" end="1918" title="Erster Weltkrieg" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg" icon="images/circle-pink.png"></event>
+
+
+
 
 <!-- Politik/Religion -->
 
@@ -316,7 +324,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     angefertigt im Heliografie-Verfahren.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a
     href="http://www.culture.hu-berlin.de/dingler_test/search?q=Niepces"&gt;Niepces&lt;/a&gt;.</event>
 
-<event start="1831" title="Faraday: Entdeckung der elektromagnetischen Induktion." link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png">Michael Faraday entdeckt die elektromagnetische Induktion. Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=Faraday"&gt;Faraday&lt;/a&gt;.</event>
+<event start="1831" title="Faraday: Elektromagnetische Induktion."
+    link="http://de.wikipedia.org/wiki/Michael_Faraday"
+    icon="images/circle-blue.png">Michael Faraday entdeckt die
+    elektromagnetische Induktion.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=Faraday"&gt;Faraday&lt;/a&gt;.</event>
 <event start="1830" end="1839" title="John Herschel entdeckt Robert's
     Quartet" link="http://de.wikipedia.org/wiki/John_Herschel" icon="images/circle-blue.png"></event>
 <event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." link="http://de.wikipedia.org/wiki/HMS_Beagle_%281820%29" icon="images/circle-blue.png"></event>
@@ -356,7 +367,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1863-01-10" title="Eröffnung der London Underground"
     link="http://de.wikipedia.org/wiki/London_Underground" icon="images/circle-blue.png"></event>
 <event start="1864" title="Maxwells elektromagnetische Gleichungen" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell" icon="images/circle-blue.png">James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist.</event>
-<event start="1864-10-02" title="Monturiols Ictineo II" icon="images/circle-blue.png">Am 2. Oktober 1864 wurde von Narcís Monturiol mit der Ictíneo II das erste U-Boot mit einem maschinellen Antrieb zu Wasser gelassen.</event>
+<event start="1864-10-02" title="Monturiols Ictineo II" link="http://de.wikipedia.org/wiki/Ict%C3%ADneo_II" icon="images/circle-blue.png">Am 2. Oktober 1864 wurde von Narcís Monturiol mit der Ictíneo II das erste U-Boot mit einem maschinellen Antrieb zu Wasser gelassen.</event>
 <event start="1866" title="Verlegung des Transatlantikkabels"
     link="http://de.wikipedia.org/wiki/Transatlantisches_Telefonkabel" icon="images/circle-blue.png"></event>
 <event start="1866" title="Gregor Mendel: Versuche über
@@ -403,18 +414,55 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Weltausstellungen (orange)-->
 
-<event start="1851" title="Weltausstellung London, 1851" link="http://de.wikipedia.org/wiki/Great_Exhibition" icon="images/circle-orange.png">Kristallpalast</event>
-<event start="1855" title="Weltausstellung Paris, 1855" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1855" icon="images/circle-orange.png">Betonboot, Espressomaschine, Zündhölzer</event>
-<event start="1862" title="Weltausstellung London, 1862" link="http://de.wikipedia.org/wiki/Weltausstellung_London_1862" icon="images/circle-orange.png">Nähmaschine</event>
-<event start="1867" title="Weltausstellung Paris, 1867" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1867" icon="images/circle-orange.png">Eiscreme-Soda, Saugwind-Harmonium, Flugkolbenmotor</event>
-<event start="1873" title="Weltausstellung Wien, 1873" link="http://de.wikipedia.org/wiki/Weltausstellung_1873" icon="images/circle-orange.png">Rotunde</event>
-<event start="1876" title="Weltausstellung Philadelphia, 1876" link="http://de.wikipedia.org/wiki/Centennial_Exhibition" icon="images/circle-orange.png">Telefon</event>
-<event start="1878" title="Weltausstellung Paris, 1878" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1878" icon="images/circle-orange.png">Eisschrank und Vorläufer des Plattenspielers</event>
-<event start="1883" title="Weltausstellung Barcelona, 1888" link="http://de.wikipedia.org/wiki/Expo_1888" icon="images/circle-orange.png"></event>
-<event start="1889" title="Weltausstellung Paris, 1889" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1889" icon="images/circle-orange.png">Eiffelturm; Galerie des Machines</event>
-<event start="1893" title="Weltausstellung Chicago, 1893" link="http://de.wikipedia.org/wiki/World%E2%80%99s_Columbian_Exposition" icon="images/circle-orange.png">Reißverschluss, Riesenrad, elektrischer Stuhl</event>
-<event start="1900" title="Weltausstellung Paris, 1900" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1900" icon="images/circle-orange.png">Metro, Vorläufer der Rolltreppe, Oberleitungsbus, Lohner-Porsche, Eisenbahnbrücke von Krasnojarsk</event>
-<event start="1904" title="Weltausstellung St. Louis, 1904" link="http://de.wikipedia.org/wiki/Louisiana_Purchase_Exposition" icon="images/circle-orange.png"></event>
+<event start="1851" title="Weltausstellung London, 1851"
+    link="http://de.wikipedia.org/wiki/Great_Exhibition"
+    icon="images/circle-orange.png">- &lt;a
+    href="http://de.wikipedia.org/wiki/Crystal_Palace_%28Geb%C3%A4ude%29"&gt;Kristallpalast&lt;/a&gt;</event>
+<event start="1855" title="Weltausstellung Paris, 1855"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1855"
+    icon="images/circle-orange.png">- Betonboot&lt;br&gt; -
+    Espressomaschine&lt;br&gt; - Zündhölzer</event>
+<event start="1862" title="Weltausstellung London, 1862"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_London_1862"
+    icon="images/circle-orange.png">- Nähmaschine&lt;br&gt; - Babbages
+    analytical engine&lt;br&gt; - Kautschuk&lt;br&gt; - Bessemer Prozeß </event>
+<event start="1867" title="Weltausstellung Paris, 1867"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1867"
+    icon="images/circle-orange.png">-Eiscreme-Soda&lt;br&gt; -
+    Saugwind-Harmonium&lt;br&gt; - Flugkolbenmotor&lt;br&gt; -
+    Aluminium&lt;br&gt; - Otis' Sicherheitsaufzug</event>
+<event start="1873" title="Weltausstellung Wien, 1873" link="http://de.wikipedia.org/wiki/Weltausstellung_1873" icon="images/circle-orange.png"></event>
+<event start="1876" title="Weltausstellung Philadelphia, 1876"
+    link="http://de.wikipedia.org/wiki/Centennial_Exhibition"
+    icon="images/circle-orange.png">- Alexander Graham Bells Telefon&lt;br&gt; - Die Remington Typographic Machine (Schreibmaschine) &lt;br&gt; - Heinz Ketchup (H. J. Heinz Company) &lt;br&gt; - Der Wallace-Farmer Electric Dynamo, Vorläufer des elektrischen Lichts &lt;br&gt; - Hires Root Beer
+</event>
+<event start="1878" title="Weltausstellung Paris, 1878"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1878"
+    icon="images/circle-orange.png">- Eisschrank &lt;br&gt; - Bell's
+    Telefon&lt;br&gt; - Felix du Temples Monoplane&lt;br&gt; - Edisons
+    Megaphon und Phonograph&lt;br&gt; - elektrische Lichtbogenlampe</event>
+<event start="1883" title="Weltausstellung Barcelona, 1888"
+    link="http://de.wikipedia.org/wiki/Expo_1888"
+    icon="images/circle-orange.png">- Arc de Triomf</event>
+<event start="1889" title="Weltausstellung Paris, 1889"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1889"
+    icon="images/circle-orange.png">- Eiffelturm&lt;br&gt; - Charles
+    Duterts Maschinenhalle&lt;br&gt; - Jean C. Formigés Palais der
+    Schönen Künste&lt;br&gt; - Joseph Bouvards
+    Industriepalast&lt;br&gt; - Rekonstruktion der Bastille&lt;br&gt;
+    - mit Wasserstoff gefüllte Fesselballons</event>
+<event start="1893" title="Weltausstellung Chicago, 1893"
+    link="http://de.wikipedia.org/wiki/World%E2%80%99s_Columbian_Exposition"
+    icon="images/circle-orange.png">- Reißverschluss&lt;br&gt; -
+    Riesenrad&lt;br&gt; - elektrischer Stuhl&lt;br&gt; - Intramural
+    Railway&lt;br&gt; - Stollwercks »Chocolade-Tempel«&lt;br&gt; - Genfer Uhren</event>
+<event start="1900" title="Weltausstellung Paris, 1900"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1900"
+    icon="images/circle-orange.png">- Metro&lt;br&gt; - Vorläufer der Rolltreppe&lt;br&gt; - Oberleitungsbus&lt;br&gt; - Lohner-Porsche&lt;br&gt; - Eisenbahnbrücke von Krasnojarsk</event>
+<event start="1904" title="Weltausstellung St. Louis, 1904"
+    link="http://de.wikipedia.org/wiki/Louisiana_Purchase_Exposition"
+    icon="images/circle-orange.png">- Los Angeles Art Organ Company:
+    weltgrößte Orgel&lt;br&gt; - Dr. Pepper</event>
 
 <!-- Firmengründungen -->
 
@@ -422,8 +470,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
 <event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-blue.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
 <event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-blue.png"></event>
-<event start="1847-10-12" title="Gründung der Siemens-Halske AG." icon="images/circle-blue.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die
+<event start="1839" title="Gründung der Stollwerck GmbH" link="http://de.wikipedia.org/wiki/Stollwerck" icon="images/circle-blue.png"></event>
+<event start="1847-10-12" title="Gründung der Siemens-Halske AG" icon="images/circle-blue.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die
 Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
+<event start="1865-04-16" title="Gründung der BASF" link="http://de.wikipedia.org/wiki/BASF" icon="images/circle-blue.png">Gründung der Badischen Anilin- und Soda-Fabrik in Ludwigshafen.</event>
 <event start="1867" title="Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
 
 
