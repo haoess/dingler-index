@@ -346,19 +346,19 @@ length:
     unit: m
     wp: http://de.wikipedia.org/wiki/Meter#m
     conversions:
-      kilometer: x / 1000
+      kilometer: x * 1000
   dezimeter:
     name: Dezimeter
     unit: dm
     wp: http://de.wikipedia.org/wiki/Dezimeter#dm
     conversions:
-      meter: x / 10
+      meter: x * 10
   zentimeter:
     name: Zentimeter
     unit: cm
     wp: http://de.wikipedia.org/wiki/Zentimeter#cm
     conversions:
-      meter: x / 100
+      meter: x * 100
   millimeter:
     name: Millimeter
     wp: http://de.wikipedia.org/wiki/Millimeter#mm
