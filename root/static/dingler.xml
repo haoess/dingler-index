@@ -305,16 +305,17 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1820-04" title="Ørsted entdeckt die magnetische Wirkung
     des elektrischen Stroms."
     link="http://de.wikipedia.org/wiki/Hans_Christian_%C3%98rsted"
-    icon="images/circle-blue.png">&lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted"&gt;Ørsted&lt;/a&gt; im Polytechnischen Journal.</event>
+    icon="images/circle-blue.png">Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted"&gt;Ørsted&lt;/a&gt;.</event>
 <event start="1820" title="6. Edition der Encyclopædia Britannica" link="http://de.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" icon="images/circle-blue.png"></event>
-<event start="1825-09-27" title="Eröffnung der Stockton and Darlington
-    Railway."
-    link="http://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway" icon="images/circle-blue.png"></event>
-<event start="1826" title="Nicéphore Nièpces Fotografie"
-    link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce" icon="images/circle-blue.png">Erste bekannte Fotografie, angefertigt im Heliografie-Verfahren.</event>
+<event start="1825-09-27" title="Eröffnung der Stockton and Darlington Railway."
+    link="http://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway"
+    icon="images/circle-blue.png">Suche im Polytechnischen Journal nach: &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/search?q=Stockton"&gt;Stockton&lt;/a&gt;.</event>
+<event start="1826" title="Nicéphore Nièpces Fotografie" link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce"
+    icon="images/circle-blue.png">Erste bekannte Fotografie, angefertigt im Heliografie-Verfahren. Suche im Polytechnischen Journal nach: &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/search?q=Niepces"&gt;Niepces&lt;/a&gt;.</event>
 
-<event start="1831" title="Faraday: Entdeckung der elektromagnetischen
-    Induktion." link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png">Michael Faraday entdeckt die elektromagnetische Induktion.</event>
+<event start="1831" title="Faraday: Entdeckung der elektromagnetischen Induktion." link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png">Michael Faraday entdeckt die elektromagnetische Induktion. Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=Faraday"&gt;Faraday&lt;/a&gt;.</event>
 <event start="1830" end="1839" title="John Herschel entdeckt Robert's
     Quartet" link="http://de.wikipedia.org/wiki/John_Herschel" icon="images/circle-blue.png"></event>
 <event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." link="http://de.wikipedia.org/wiki/HMS_Beagle_%281820%29" icon="images/circle-blue.png"></event>
