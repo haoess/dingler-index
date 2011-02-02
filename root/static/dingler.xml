@@ -299,72 +299,97 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <!-- science and technology (blue)-->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
-<event start="1809" title="Soemmerring konstruiert einen elektrischen Telegrafen." icon="images/circle-blue.png"></event>
+<event start="1809" title="Soemmerrings elektrischer Telegraf" link="http://de.wikipedia.org/wiki/Samuel_Thomas_von_Soemmerring" icon="images/circle-blue.png"></event>
 
-<event start="1816" title="Ronalds: elektrischer Telegraph." icon="images/circle-blue.png">Francis Ronalds (London) entwickelt einen elektrischen Telegraphen und sendet Nachrichten über acht Meilen."></event>
+<event start="1820-01-28" title="Russische Expedition erreicht die Antarktis." link="http://de.wikipedia.org/wiki/Fabian_Gottlieb_von_Bellingshausen" icon="images/circle-blue.png">Expedition unter der Führung von Fabian Gottlieb von Bellingshausen und Mikhail Petrovich Lazarev.</event>
+<event start="1820-04" title="Ørsted entdeckt die magnetische Wirkung des elektrischen Stroms." link="http://de.wikipedia.org/wiki/Hans_Christian_%C3%98rsted" icon="images/circle-blue.png"><ref target="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted">Ørsted</ref> im Polytechnischen Journal.</event>
+<event start="1820" title="6. Edition der Encyclopædia Britannica" link="http://de.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" icon="images/circle-blue.png"></event>
+<event start="1825-09-27" title="Eröffnung der Stockton and Darlington
+    Railway."
+    link="http://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway" icon="images/circle-blue.png"></event>
+<event start="1826" title="Nicéphore Nièpces Fotografie"
+    link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce" icon="images/circle-blue.png">Erste bekannte Fotografie, angefertigt im Heliografie-Verfahren.</event>
 
-<event start="1820-01-28" title="Russische Expedition erreicht die Antarktis." icon="images/circle-blue.png">Expedition unter der Führung von Fabian Gottlieb von Bellingshausen und Mikhail Petrovich Lazarev.</event>
-<event start="1820-04" title="Ørsted entdeckt Verhältnis zwischen der Elektrizität und dem Magnetismus." icon="images/circle-blue.png"></event>
-<event start="1820" title="Die 6. Edition der Encyclopædia Britannica erscheint." icon="images/circle-blue.png"></event>
-<event start="1825" title="Eröffnung des Stockton and Darlington Railway." icon="images/circle-blue.png"></event>
-<event start="1825-09-27" title="Eröffnung der Stockton and Darlington Railway." icon="images/circle-blue.png"></event>
-<event start="1826" title="Nicéphore Nièpces Fotografie" icon="images/circle-blue.png">Erste bekannte Fotografie, angefertigt im Heliografie-Verfahren.</event>
+<event start="1831" title="Faraday: Entdeckung der elektromagnetischen
+    Induktion." link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png">Michael Faraday entdeckt die elektromagnetische Induktion.</event>
+<event start="1830" end="1839" title="John Herschel entdeckt Robert's
+    Quartet" link="http://de.wikipedia.org/wiki/John_Herschel" icon="images/circle-blue.png"></event>
+<event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." link="http://de.wikipedia.org/wiki/HMS_Beagle_%281820%29" icon="images/circle-blue.png"></event>
+<event start="1833" title="Aristide Cavaillé-Coll erfindet Kreissäge."
+    link="http://de.wikipedia.org/wiki/Aristide_Cavaill%C3%A9-Coll" icon="images/circle-blue.png"></event>
+<event start="1835-07-19" title="Erst Fahrt der Minerva."
+    link="http://de.wikipedia.org/wiki/Minerva_%281834%29" icon="images/circle-blue.png">Die Minerva war das erste mit einer Dampfmaschine betriebene Schiff auf dem Zürichsee und das erste mit eiserner Schale in Europa.</event>
+<event start="1839" title="Charles Goodyear: Vulkanisation" link="http://de.wikipedia.org/wiki/Charles_Goodyear" icon="images/circle-blue.png"></event>
 
-<event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion." icon="images/circle-blue.png"></event>
-<event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies." icon="images/circle-blue.png"></event>
-<event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." icon="images/circle-blue.png"></event>
-<event start="1833" title="Aristide Cavaillé-Coll erfindet Kreissäge." icon="images/circle-blue.png"></event>
-<event start="1835-07-19" title="Erst Fahrt der Minerva." icon="images/circle-blue.png">Die Minerva war das erste mit einer Dampfmaschine betriebene Schiff auf dem Zürichsee und das erste mit eiserner Schale in Europa.</event>
-<event start="1839" title="Charles Goodyear: Kautschuk." icon="images/circle-blue.png"></event>
-
-<event start="1841" title="Belgischer Instrumentenmacher Adolphe Sax erfindet das Saxophon." icon="images/circle-blue.png"></event>
-<event start="1842-03-30" title="Crawford Williamson Long: Erste Verwendung von Ätherdämpfen als Narkotikum bei einer Operation." icon="images/circle-blue.png"></event>
-<event start="1843" title="Bains elektro-telegrafische Bildzerlegung." icon="images/circle-blue.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event>
-<event start="1844-05-24" title="Morse Telegramm" icon="images/circle-blue.png">Samuel Morses erstes elektrisches Telegramm von Baltimore nach Washington, D.C.</event>
-<event start="1847" title="Herstellung der ersten kruppschen Gussstahlkanone"></event>
+<event start="1841" title="Das Saxophon" link="http://de.wikipedia.org/wiki/Adolphe_Sax" icon="images/circle-blue.png">Der belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon.</event>
+<event start="1842-03-30" title="Entdeckung des Narkotikums" link="http://de.wikipedia.org/wiki/Crawford_Williamson_Long" icon="images/circle-blue.png">Crawford Williamson Long: Erste Verwendung von Ätherdämpfen als Narkotikum bei einer Operation.</event>
+<event start="1843" title="Bains elektro-telegrafische Bildzerlegung"
+    link="http://de.wikipedia.org/wiki/Alexander_Bain_%28Uhrmacher%29" icon="images/circle-blue.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event>
+<event start="1844-05-24" title="Morse Telegramm" link="http://de.wikipedia.org/wiki/Samuel_F._B._Morse" icon="images/circle-blue.png">Samuel Morses erstes elektrisches Telegramm von Baltimore nach Washington, D.C.</event>
+<event start="1847" title="Herstellung der ersten kruppschen Gussstahlkanone" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png"></event>
 <event start="1848" title="Bakewells Kopiertelegraph" icon="images/circle-blue.png">F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung.</event>
 
-<event start="1851" title="Charles Page: Batteriebetriebene Lokomotive." icon="images/circle-blue.png"></event>
-<event start="1851" title="Singer Nähmaschine." icon="images/circle-blue.png">Isaac Singer: Erfindet die erste kommerziell erfolgreiche Nähmaschine.</event>
-<event start="1853" title="Sicherheitsfangvorrichtung für Aufzüge." icon="images/circle-blue.png">Elisha Otis erfindet eine Sicherheitsfangvorrichtung für Aufzüge, welche einen Absturz der Kabine verhindert.</event>
-<event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology." icon="images/circle-blue.png"></event>
-<event start="1855" title="Bessemer Prozess" icon="images/circle-blue.png">Henry Bessemer revolutioniert die Stahlherstellung.</event>
-<event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal." icon="images/circle-blue.png"></event>
-<event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne." icon="images/circle-blue.png"></event>
-<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion." icon="images/circle-blue.png"></event>
+<event start="1851" title="Charles Page: Batteriebetriebene
+    Lokomotive"
+    link="http://de.wikipedia.org/wiki/Charles_Grafton_Page" icon="images/circle-blue.png"></event>
+<event start="1851" title="Singer Nähmaschine"
+    link="http://de.wikipedia.org/wiki/Isaac_Merritt_Singer" icon="images/circle-blue.png">Isaac Singer: Erfindet die erste kommerziell erfolgreiche Nähmaschine.</event>
+<event start="1853" title="Sicherheitsfangvorrichtung für Aufzüge."
+    link="http://de.wikipedia.org/wiki/Elisha_Graves_Otis" icon="images/circle-blue.png">Elisha Otis erfindet eine Sicherheitsfangvorrichtung für Aufzüge, welche einen Absturz der Kabine verhindert.</event>
+<event start="1854" title="John Snow: Epidemiology" link="http://de.wikipedia.org/wiki/John_Snow_%28Arzt%29" icon="images/circle-blue.png">John Snow entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology.</event>
+<event start="1855" title="Bessemer Prozess"
+    link="http://de.wikipedia.org/wiki/Henry_Bessemer" icon="images/circle-blue.png">Henry Bessemer revolutioniert die Stahlherstellung.</event>
+<event start="1856" title="Entdeckung von Fossilien im Neandertal." link="http://de.wikipedia.org/wiki/Neandertaler" icon="images/circle-blue.png"></event>
+<event start="1859" title="Richard Christopher Carrington:
+    Sonneneruption."
+    link="http://de.wikipedia.org/wiki/Richard_Christopher_Carrington" icon="images/circle-blue.png"></event>
+<event start="1859" title="Charles Darwin: Die Entstehung der Arten."
+    link="http://de.wikipedia.org/wiki/Charles_Darwin" icon="images/circle-blue.png"></event>
 
-<event start="1861" title="Reis' Telefon" icon="images/circle-blue.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event>
-<event start="1862" title="Casellis Pantelegraph" icon="images/circle-blue.png">Giovanni Caselli einfache Zeichnungen per Draht von Amiens nach Paris.</event>
-<event start="1863-01-10" title="Eröffnung der London Underground" icon="images/circle-blue.png"></event>
-<event start="1864" title="Maxwells elektromagnetische Gleichungen." icon="images/circle-blue.png">James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist.</event>
-<event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels." icon="images/circle-blue.png"></event>
-<event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden." icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
-<event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken." icon="images/circle-blue.png"></event>
-<event start="1867" title="Alfred Nobel erhält ein Patent auf Dynamit." icon="images/circle-blue.png"></event>
-<event start="1867" title="Muybridges Fotoserie aus dem Yosemite-Nationalpark." icon="images/circle-blue.png"></event>
-<event start="1868-08-18" title="Helium wird entdeckt." icon="images/circle-blue.png">Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.</event>
-<event start="1869" title="Fertigstellung der Transkontinentalen Eisenbahn in den USA." icon="images/circle-blue.png"></event>
-<event start="1869" title="Erfindung des Unterwasserboots." icon="images/circle-blue.png"></event>
-<event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente." icon="images/circle-blue.png"></event>
+<event start="1861" title="Reis' Telefon" link="http://de.wikipedia.org/wiki/Philipp_Reis" icon="images/circle-blue.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event>
+<event start="1862" title="Casellis Pantelegraph" link="http://de.wikipedia.org/wiki/Pantelegraph" icon="images/circle-blue.png">Giovanni Caselli überträgt einfache Zeichnungen per Draht von Amiens nach Paris.</event>
+<event start="1863-01-10" title="Eröffnung der London Underground"
+    link="http://de.wikipedia.org/wiki/London_Underground" icon="images/circle-blue.png"></event>
+<event start="1864" title="Maxwells elektromagnetische Gleichungen" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell" icon="images/circle-blue.png">James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist.</event>
+<event start="1864-10-02" title="Monturiols Ictineo II" icon="images/circle-blue.png">Am 2. Oktober 1864 wurde von Narcís Monturiol mit der Ictíneo II das erste U-Boot mit einem maschinellen Antrieb zu Wasser gelassen.</event>
+<event start="1866" title="Verlegung des Transatlantikkabels"
+    link="http://de.wikipedia.org/wiki/Transatlantisches_Telefonkabel" icon="images/circle-blue.png"></event>
+<event start="1866" title="Gregor Mendel: Versuche über
+    Pflanzenhybriden."
+    link="http://de.wikipedia.org/wiki/Gregor_Mendel" icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
+<event start="1866" title="J. Norman Lockyer: Spektralanalyse von
+    Sonnenflecken."
+    link="http://de.wikipedia.org/wiki/Joseph_Norman_Lockyer" icon="images/circle-blue.png"></event>
+<event start="1867" title="Alfred Nobels Dynamit-Patent"
+    link="http://de.wikipedia.org/wiki/Alfred_Nobel" icon="images/circle-blue.png"></event>
+<event start="1867" title="Muybridges Fotoserie aus dem
+    Yosemite-Nationalpark."
+    link="http://de.wikipedia.org/wiki/Eadweard_Muybridge" icon="images/circle-blue.png"></event>
+<event start="1868-08-18" title="Helium wird entdeckt." link="http://de.wikipedia.org/wiki/Helium" icon="images/circle-blue.png">Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.</event>
+<event start="1869-05-10" title="Fertigstellung der Transkontinentalen Eisenbahn in den USA."
+    link="http://de.wikipedia.org/wiki/Geschichte_der_Eisenbahn_in_Nordamerika" icon="images/circle-blue.png"></event>
+<event start="1869" title="Mendelejew: Periodensystem der Elemente." link="http://de.wikipedia.org/wiki/Dmitri_Iwanowitsch_Mendelejew" icon="images/circle-blue.png"></event>
 
-<event start="1871" title="Mauser Modell 71." icon="images/circle-blue.png">Das Mauser Modell 71 war die erste deutsche Repetierbüchse mit Magazin.</event>
-<event start="1876" title="A. G. Bells erstes Telefon." icon="images/circle-blue.png">The prototype telephone was invented by Alexander Graham Bell.</event>
-<event start="1876" title="Bells Telefon-Patent." icon="images/circle-blue.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event>
-<event start="1877" title="Erster regelmäßiger Fernsprechdienst." icon="images/circle-blue.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event>
-<event start="1879" title="Thomas Edisons Glühbirne." icon="images/circle-blue.png"></event>
-<event start="1877-07-18" title="Thomas Edisons Phonograph." icon="images/circle-blue.png"></event>
+<event start="1871" title="Mauser Modell 71"
+    link="http://de.wikipedia.org/wiki/Mauser_Modell_71" icon="images/circle-blue.png">Das Mauser Modell 71 war die erste deutsche Repetierbüchse mit Magazin.</event>
+<event start="1876" title="A. G. Bells Telefon-Patent" link="http://de.wikipedia.org/wiki/Alexander_Graham_Bell" icon="images/circle-blue.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event>
+<event start="1877" title="Erster regelmäßiger Fernsprechdienst" link="http://de.wikipedia.org/wiki/Telefon" icon="images/circle-blue.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event>
+<event start="1877-07-18" title="Edisons Phonograph" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
+<event start="1879" title="Edisons Glühbirne" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
 
-<event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant." icon="images/circle-blue.png"></event>
-<event start="1881" title="Erstes Berliner Fernsprechamt." icon="images/circle-blue.png">Das erste Berliner Fernsprechamt wird mit acht Teilnehmern eröffnet.</event>
-<event start="1881" title="Shelford Bidwell baut den »Telephotograph«." icon="images/circle-blue.png"></event>
-<event start="1884" title="James-Lange-Theorie der Körperreaktionen." icon="images/circle-blue.png"></event>
-<event start="1886" title="Heinrich Hertz: Photoelektrischer Effect." icon="images/circle-blue.png"></event>
-<event start="1886-01-29" title="Carl Benz patentiert den Motorwagen (DRP 37435)." icon="images/circle-blue.png"></event>
+<event start="1881" title="Michelson-Morley Experiment"
+    link="http://de.wikipedia.org/wiki/Michelson-Morley-Experiment" icon="images/circle-blue.png"></event>
+<event start="1884" title="James-Lange-Theorie der Körperreaktionen"
+    link="http://de.wikipedia.org/wiki/James-Lange-Theorie" icon="images/circle-blue.png"></event>
+<event start="1886" title="Heinrich Hertz: Photoelektrischer Effect"
+    link="http://de.wikipedia.org/wiki/Heinrich_Hertz" icon="images/circle-blue.png"></event>
+<event start="1886-01-29" title="Carl Benz' Motorwagen-Patent (DRP
+    37435)" link="http://de.wikipedia.org/wiki/Carl_Benz" icon="images/circle-blue.png"></event>
 
-<event start="1895-11-08" title="Röntgenstrahlung" icon="images/circle-blue.png">Wilhelm Conrad Röntgen entdeckt die nach ihm benannte Röntgenstrahlung</event>
-<event start="1898" title="Marie und Pierre Curie entdecken Radium und Polonium." icon="images/circle-blue.png">Radioaktivität</event>
+<event start="1895-11-08" title="Röntgenstrahlung" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen" icon="images/circle-blue.png">Wilhelm Conrad Röntgen entdeckt die nach ihm benannte Röntgenstrahlung</event>
+<event start="1898-12-21" title="Marie und Pierre Curie entdecken Radium." link="http://de.wikipedia.org/wiki/Radium" icon="images/circle-blue.png"></event>
 
-<event start="1902" title="Eröffnung der Berliner U-Bahn" icon="images/circle-blue.png"></event>
+<event start="1902" title="Eröffnung der Berliner U-Bahn" link="http://de.wikipedia.org/wiki/Berliner_U-Bahn" icon="images/circle-blue.png"></event>
 
 
 
@@ -373,17 +398,18 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Weltausstellungen (orange)-->
 
-<event start="1851" title="Weltausstellung London, 1851" icon="images/circle-orange.png">Kristallpalast</event>
-<event start="1855" title="Weltausstellung Paris, 1855" icon="images/circle-orange.png">Betonboot, Espressomaschine, Zündhölzer</event>
-<event start="1862" title="Weltausstellung London, 1862" icon="images/circle-orange.png">Nähmaschine</event>
-<event start="1867" title="Weltausstellung Paris, 1867" icon="images/circle-orange.png">Eiscreme-Soda, Saugwind-Harmonium, Flugkolbenmotor</event>
-<event start="1873" title="Weltausstellung Wien, 1873" icon="images/circle-orange.png">Rotunde</event>
-<event start="1876" title="Weltausstellung Philadelphia, 1876" icon="images/circle-orange.png">Telefon</event>
-<event start="1878" title="Weltausstellung Paris, 1878" icon="images/circle-orange.png">Eisschrank und Vorläufer des Plattenspielers</event>
-<event start="1883" title="Weltausstellung Amsterdam, 1883" icon="images/circle-orange.png">Lippenstift</event>
-<event start="1889" title="Weltausstellung Paris, 1889" icon="images/circle-orange.png">Eiffelturm; Galerie des Machines</event>
-<event start="1893" title="Weltausstellung Chicago, 1893" icon="images/circle-orange.png">Reißverschluss, Riesenrad, elektrischer Stuhl</event>
-<event start="1900" title="Weltausstellung Paris, 1900" icon="images/circle-orange.png">Metro, Vorläufer der Rolltreppe, Oberleitungsbus, Lohner-Porsche, Eisenbahnbrücke von Krasnojarsk"></event>
+<event start="1851" title="Weltausstellung London, 1851" link="http://de.wikipedia.org/wiki/Great_Exhibition" icon="images/circle-orange.png">Kristallpalast</event>
+<event start="1855" title="Weltausstellung Paris, 1855" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1855" icon="images/circle-orange.png">Betonboot, Espressomaschine, Zündhölzer</event>
+<event start="1862" title="Weltausstellung London, 1862" link="http://de.wikipedia.org/wiki/Weltausstellung_London_1862" icon="images/circle-orange.png">Nähmaschine</event>
+<event start="1867" title="Weltausstellung Paris, 1867" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1867" icon="images/circle-orange.png">Eiscreme-Soda, Saugwind-Harmonium, Flugkolbenmotor</event>
+<event start="1873" title="Weltausstellung Wien, 1873" link="http://de.wikipedia.org/wiki/Weltausstellung_1873" icon="images/circle-orange.png">Rotunde</event>
+<event start="1876" title="Weltausstellung Philadelphia, 1876" link="http://de.wikipedia.org/wiki/Centennial_Exhibition" icon="images/circle-orange.png">Telefon</event>
+<event start="1878" title="Weltausstellung Paris, 1878" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1878" icon="images/circle-orange.png">Eisschrank und Vorläufer des Plattenspielers</event>
+<event start="1883" title="Weltausstellung Barcelona, 1888" link="http://de.wikipedia.org/wiki/Expo_1888" icon="images/circle-orange.png"></event>
+<event start="1889" title="Weltausstellung Paris, 1889" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1889" icon="images/circle-orange.png">Eiffelturm; Galerie des Machines</event>
+<event start="1893" title="Weltausstellung Chicago, 1893" link="http://de.wikipedia.org/wiki/World%E2%80%99s_Columbian_Exposition" icon="images/circle-orange.png">Reißverschluss, Riesenrad, elektrischer Stuhl</event>
+<event start="1900" title="Weltausstellung Paris, 1900" link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1900" icon="images/circle-orange.png">Metro, Vorläufer der Rolltreppe, Oberleitungsbus, Lohner-Porsche, Eisenbahnbrücke von Krasnojarsk</event>
+<event start="1904" title="Weltausstellung St. Louis, 1904" link="http://de.wikipedia.org/wiki/Louisiana_Purchase_Exposition" icon="images/circle-orange.png"></event>
 
 <!-- Firmengründungen -->
 
@@ -484,7 +510,7 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 
 <event start="1781-03-13" end="1841-10-09" title="Karl Friedrich Schinkel" link="http://de.wikipedia.org/wiki/Karl_Friedrich_Schinkel" icon="images/circle-green.png"></event>
 <event start="1803-11-29" end="1879-05-15" title="Gottfried Semper" link="http://de.wikipedia.org/wiki/Gottfried_Semper" icon="images/circle-green.png"></event>
-
+<event start="1852-06-25" end="1926-06-10" title="Anoni Gaudi" link="http://de.wikipedia.org/wiki/Antoni_Gaud%C3%AD" icon="images/circle-green.png"></event>
 
 
 
