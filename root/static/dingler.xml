@@ -15,7 +15,7 @@
 <event start="1833" title="Uraufführung von Richard Wagners erster Oper (Die Feen)." link="http://de.wikipedia.org/wiki/Die_Feen" icon="images/circle-red.png"></event>
 
 <event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." link="http://de.wikipedia.org/wiki/Kommunistisches_Manifest" icon="images/circle-red.png"></event>
-<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/d/dd/Dartagnan-musketeers.jpg" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere"></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere"></event>
 
 <event start="1851" title="Herman Melville: Moby Dick." link="http://de.wikipedia.org/wiki/Moby_Dick" icon="images/circle-red.png"></event>
 <event start="1857" title="Gustave Flaubert: Madame Bovary." link="http://de.wikipedia.org/wiki/Madame_Bovary" icon="images/circle-red.png"></event>
@@ -121,11 +121,8 @@
 <event start="1789" end="1799" title="Französische Revolution" link="http://de.wikipedia.org/wiki/Franz%C3%B6sische_Revolution" icon="images/circle-pink.png"></event>
 <event start="1806" title="Ende des Heiligen Römischen Reichs" link="http://de.wikipedia.org/wiki/Heiliges_R%C3%B6misches_Reich" icon="images/circle-pink.png"></event>
 
-<event start="1812-06" end="1812-12" title="Russlandfeldzug
-    Napoleons." link="http://de.wikipedia.org/wiki/Napoleon"
-    image="http://upload.wikimedia.org/wikipedia/commons/0/0a/Jacques-Louis_David_017.jpg" icon="images/circle-pink.png"></event>
-<event start="1812-06-18" end="1814-12-24"
-    title="Britisch-Amerikanischer Krieg."
+<event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png"></event>
+<event start="1812-06-18" end="1814-12-24" title="Britisch-Amerikanischer Krieg."
     link="http://de.wikipedia.org/wiki/Britisch-Amerikanischer_Krieg" icon="images/circle-pink.png"></event>
 
 <event start="1813" title="Beginn der Befreiungskriege (Europa gegen
