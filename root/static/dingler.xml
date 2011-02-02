@@ -119,96 +119,140 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
-<event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons." icon="images/circle-pink.png"></event>
-<event start="1812-06-18" end="1814-12-24" title="Britisch-Amerikanischer Krieg." icon="images/circle-pink.png"></event>
+<event start="1812-06" end="1812-12" title="Russlandfeldzug
+    Napoleons." link="http://de.wikipedia.org/wiki/Napoleon"
+    image="http://upload.wikimedia.org/wikipedia/commons/0/0a/Jacques-Louis_David_017.jpg" icon="images/circle-pink.png"></event>
+<event start="1812-06-18" end="1814-12-24"
+    title="Britisch-Amerikanischer Krieg."
+    link="http://de.wikipedia.org/wiki/Britisch-Amerikanischer_Krieg" icon="images/circle-pink.png"></event>
 
-<event start="1813" title="Beginn der Befreiungskriege (Europa gegen Napoleon)." icon="images/circle-pink.png"></event>
-<event start="1813-10-16" end="1813-10-19" title="Völkerschlacht bei Leipzig" icon="images/circle-pink.png"></event>
+<event start="1813" title="Beginn der Befreiungskriege (Europa gegen
+    Napoleon)." link="http://de.wikipedia.org/wiki/Befreiungskriege" icon="images/circle-pink.png"></event>
+<event start="1813-10-16" end="1813-10-19" title="Völkerschlacht bei
+    Leipzig" link="http://de.wikipedia.org/wiki/V%C3%B6lkerschlacht_bei_Leipzig" icon="images/circle-pink.png"></event>
 
-<event start="1814-03-31" title="Alliierte besetzen Paris." icon="images/circle-pink.png"></event>
-<event start="1814-04" title="Napoleon wird nach Elba verbannt." icon="images/circle-pink.png"></event>
-<event start="1814-09-18" end="1815-06-09" title="Wiener Kongress" icon="images/circle-pink.png"></event>
+<event start="1814-03-31" title="Alliierte besetzen Paris."
+    link="http://de.wikipedia.org/wiki/Schlacht_bei_Paris" icon="images/circle-pink.png"></event>
+<event start="1814-04" title="Napoleon wird nach Elba verbannt." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png"></event>
+<event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"
+    link="http://de.wikipedia.org/wiki/Wiener_Kongre%C3%9F" icon="images/circle-pink.png"></event>
 
-<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück."></event>
-<event start="1815-06-18" title="Schlacht bei Waterloo" icon="images/circle-pink.png">Napoleon wird endgültig besiegt.</event>
-<event start="1815" title="Napoleons Herrschaft der Hundert Tage." icon="images/circle-pink.png"></event>
-<event start="1815" title="Frieden zwischen Großbritannien und den USA." icon="images/circle-pink.png"></event>
-<event start="1815" title="Gründung des Deutschen Bundes." icon="images/circle-pink.png"></event>
-<event start="1815" title="erste Burschenschaften" icon="images/circle-pink.png"></event>
+<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück."></event>
+<event start="1815-06-18" title="Schlacht bei Waterloo"
+   link="http://de.wikipedia.org/wiki/Schlacht_bei_Waterloo" icon="images/circle-pink.png">Napoleon wird endgültig besiegt.</event>
+<event start="1814-12-24" title="Frieden von Gent"
+    link="http://de.wikipedia.org/wiki/Britisch-Amerikanischer_Krieg"
+    icon="images/circle-pink.png">Der Britisch-Amerikanische Krieg zwischen den USA und Großbritannien, auch bekannt als zweiter Unabhängigkeitskrieg, wird durch den Frieden von Gent beendet.</event>
+<event start="1815-06-08" title="Gründung des Deutschen Bundes" link="http://de.wikipedia.org/wiki/Deutscher_Bund" icon="images/circle-pink.png">Der Deutsche Bund war ein Staatenbund überwiegend deutschsprachiger Staaten zwischen 1815 und 1866. Er wurde am 8. Juni 1815 auf dem Wiener Kongress ins Leben gerufen.</event>
+<event start="1815" title="Gründung der Urburschenschaft in Jena"
+    link="http://de.wikipedia.org/wiki/Burschenschaften" icon="images/circle-pink.png"></event>
 
-<event start="1817-10-18" title="Wartburgfest." icon="images/circle-pink.png"></event>
-<event start="1819-09-20" title="Karlsbader Beschlüsse." icon="images/circle-pink.png"></event>
+<event start="1817-10-18" title="Wartburgfest" link="http://de.wikipedia.org/wiki/Wartburgfest" icon="images/circle-pink.png"></event>
+<event start="1819-09-20" title="Karlsbader Beschlüsse"
+    link="http://de.wikipedia.org/wiki/Karlsbader_Beschl%C3%BCsse" icon="images/circle-pink.png"></event>
 
-<event start="1820-01-29" title="George IV. wird König des Vereinten Königreichs." icon="images/circle-pink.png"></event>
-<event start="1820-02-23" title="Cato-Street Verschwörung." icon="images/circle-pink.png"></event>
-<event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg" icon="images/circle-pink.png"></event>
-<event start="1821-07-19" title="George IV wird zum König von Großbritannien gekrönt." icon="images/circle-pink.png"></event>
+<event start="1820-02-23" title="Cato-Street Conspiracy" link="http://en.wikipedia.org/wiki/Cato_Street_Conspiracy" icon="images/circle-pink.png"></event>
+<event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg" link="http://de.wikipedia.org/wiki/Griechischer_Unabh%C3%A4ngigkeitskrieg" icon="images/circle-pink.png"></event>
+<event start="1821-07-19" title="Krönung Georges IV." link="http://de.wikipedia.org/wiki/Georg_IV._%28Vereinigtes_K%C3%B6nigreich%29"
+    icon="images/circle-pink.png">In der Westminster Abbey findet die Krönung Georgs IV. statt.</event>
 
-<event start="1829" end="1829" title="Russisch-türkischer Krieg." icon="images/circle-pink.png"></event>
+<event start="1828" end="1829" title="Russisch-türkischer Krieg"
+    link="http://de.wikipedia.org/wiki/Russisch-T%C3%BCrkischer_Krieg_%281828%E2%80%931829%29" icon="images/circle-pink.png"></event>
 
-<event start="1830" title="Belgische Revolution führt zur Unabhängigkeit von den Niederlanden." icon="images/circle-pink.png"></event>
-<event start="1830" title="Julirevolution in Frankreich" icon="images/circle-pink.png"></event>
-<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner." icon="images/circle-pink.png"></event>
-<event start="1831" title="Gründung der New England Anti-Slavery Society" icon="images/circle-pink.png"></event>
-<event start="1832-05-27" end="1832-05-30" title="Hambacher Fest" icon="images/circle-pink.png"></event>
-<event start="1835-03-02" title="Franz II. stirbt in Wien." icon="images/circle-pink.png"></event>
-<event start="1836" title="Der Bund der Gerechten wird gegründet" icon="images/circle-pink.png"></event>
-<event start="1839" end="1842-08-29" title="Erster Opiumkrieg." icon="images/circle-pink.png">Erster Opiumkrieg zwischen Großbritannien und dem Kaiserreich China (Qing-Dynastie).</event>
+<event start="1830" title="Belgische Revolution"
+    link="http://de.wikipedia.org/wiki/Belgische_Revolution" icon="images/circle-pink.png">Die Belgische Revolution von 1830 führt zur Unabhängigkeit von den Niederlanden.</event>
+<event start="1830" title="Julirevolution in Frankreich" link="http://de.wikipedia.org/wiki/Julirevolution_von_1830" icon="images/circle-pink.png"></event>
+<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner." link="http://de.wikipedia.org/wiki/Nat_Turner" icon="images/circle-pink.png"></event>
+<event start="1831" title="Gründung der New England Anti-Slavery
+    Society."
+    link="http://en.wikipedia.org/wiki/New_England_Anti-Slavery_Society" icon="images/circle-pink.png"></event>
+<event start="1832-05-27" end="1832-05-30" title="Hambacher Fest" link="http://de.wikipedia.org/wiki/Hambacher_Fest" icon="images/circle-pink.png"></event>
+<event start="1835-03-02" title="Franz II. stirbt in Wien."
+    link="http://de.wikipedia.org/wiki/Franz_II._%28HRR%29" icon="images/circle-pink.png"></event>
+<event start="1836" title="Der Bund der Gerechten wird gegründet" link="http://de.wikipedia.org/wiki/Bund_der_Gerechten" icon="images/circle-pink.png"></event>
+<event start="1839" end="1842-08-29" title="Erster Opiumkrieg" link="http://de.wikipedia.org/wiki/Erster_Opiumkrieg" icon="images/circle-pink.png">Erster Opiumkrieg zwischen Großbritannien und dem Kaiserreich China (Qing-Dynastie).</event>
 
-<event start="1840-02-06" title="Vertrag von Waitangi." icon="images/circle-pink.png">Vertrag zwischen dem Vereinigten Königreich und den Maori in Neuseeland.</event>
-<event start="1842-08-09" title="Webster-Ashburton Vertrag." icon="images/circle-pink.png">Vertrag, der den Grenzverlauf zwischen dem US-amerikanischen Bundesstaat Maine
+<event start="1840-02-06" title="Vertrag von Waitangi" link="http://de.wikipedia.org/wiki/Vertrag_von_Waitangi" icon="images/circle-pink.png">Vertrag zwischen dem Vereinigten Königreich und den Maori in Neuseeland.</event>
+<event start="1842-08-09" title="Webster-Ashburton Vertrag"
+    link="http://de.wikipedia.org/wiki/Webster-Ashburton-Treaty" icon="images/circle-pink.png">Vertrag, der den Grenzverlauf zwischen dem US-amerikanischen Bundesstaat Maine
 und der kanadischen Provinz New Brunswick regelt.</event>
-<event start="1842-08-29" title="Vertrag von Nanking." icon="images/circle-pink.png">Der Vertrag von Nanking beendet den ersten Opiumkrieg zwischen Großbritannien und China. Hong Kong wird offiziell an die britischen Besatzer abgetreten und ist erst sei 1997 wieder unter Kontrolle der Volksrepublik China.</event>
-<event start="1846" end="1848" title="Mexikanisch-Amerikanischer Krieg." icon="images/circle-pink.png">Der anschließende Vertrag von Guadalupe Hidalgo führte zu einem großen Gebietszuwachs für die Vereinigten Staaten und dehnte ihr Territorium bis zum Pazifischen Ozean aus.</event>
-<event start="1847" title="Bund der Kommunisten in London." icon="images/circle-pink.png">Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind.</event>
-<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg zwischen Preußen und Dänemark." icon="images/circle-pink.png"></event>
-<event start="1848" title="Deutsche Revolution 1848/49." icon="images/circle-pink.png"></event>
-<event start="1848" end="1849" title="Revolution und Freiheitskampf in Ungarn." icon="images/circle-pink.png"></event>
-<event start="1848" title="Revolution von 1848." icon="images/circle-pink.png"></event>
-<event start="1848" title="Seneca Falls Convention." icon="images/circle-pink.png">Der Kongress und seine Abschlusserklärung gelten als Geburtsstunde der organisierten US-amerikanischen Frauenbewegung.</event>
-<event start="1849-03-28" title="Paulskirchenverfassung" icon="images/circle-pink.png"></event>
+<event start="1842-08-29" title="Vertrag von Nanking"
+    link="http://de.wikipedia.org/wiki/Vertrag_von_Nanking" icon="images/circle-pink.png">Der Vertrag von Nanking beendet den ersten Opiumkrieg zwischen Großbritannien und China. Hong Kong wird offiziell an die britischen Besatzer abgetreten und ist erst sei 1997 wieder unter Kontrolle der Volksrepublik China.</event>
+<event start="1846" end="1848" title="Mexikanisch-Amerikanischer
+    Krieg"
+    link="http://de.wikipedia.org/wiki/Mexikanisch-Amerikanischer_Krieg" icon="images/circle-pink.png">Der anschließende Vertrag von Guadalupe Hidalgo führte zu einem großen Gebietszuwachs für die Vereinigten Staaten und dehnte ihr Territorium bis zum Pazifischen Ozean aus.</event>
+<event start="1847" title="Gründung des Bunds der Kommunisten" link="http://de.wikipedia.org/wiki/Bund_der_Kommunisten" icon="images/circle-pink.png">Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind.</event>
+<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg"
+    link="http://de.wikipedia.org/wiki/Schleswig-Holsteinischer_Krieg_%281848%E2%80%931851%29"
+    icon="images/circle-pink.png">Kriegsparteien im Schleswig-Holsteinischen Krieg waren einerseits die deutsche nationalliberale Bewegung in den Herzogtümern Schleswig und Holstein im Bündnis mit den meisten Staaten des Deutschen Bundes, andererseits das Königreich Dänemark.</event>
+<event start="1848" title="Deutsche Revolution 1848/49" link="http://de.wikipedia.org/wiki/Deutsche_Revolution_1848/49" icon="images/circle-pink.png"></event>
+<event start="1848" end="1849" title="Ungarische Revolution 1848/1849" link="http://de.wikipedia.org/wiki/Ungarische_Revolution_1848/1849" icon="images/circle-pink.png"></event>
+<event start="1848" title="Seneca Falls Convention" icon="images/circle-pink.png">Der Kongress und seine Abschlusserklärung gelten als Geburtsstunde der organisierten US-amerikanischen Frauenbewegung.</event>
+<event start="1849-03-28" title="Paulskirchenverfassung" link="http://de.wikipedia.org/wiki/Paulskirchenverfassung" icon="images/circle-pink.png"></event>
 
+<event start="1850-07-02" title="Frieden von Berlin" icon="images/circle-pink.png">Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark.</event>
+<event start="1852" title="Napoléon III. begründet das Zweite Kaiserreich."
+    link="http://de.wikipedia.org/wiki/Zweites_Kaiserreich" icon="images/circle-pink.png"></event>
+<event start="1853" end="1856" title="Krimkrieg"
+    link="http://de.wikipedia.org/wiki/Krimkrieg" icon="images/circle-pink.png">Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien.</event>
+<event start="1853-07-08" title="Perrys schwarze Schiffe landen in Uraga."
+    link="http://de.wikipedia.org/wiki/Matthew_Calbraith_Perry"
+    icon="images/circle-pink.png">Am 8. Juli 1853 läuft der amerikanische Admiral Matthew C. Perry mit einem Flottenverband Schwarzer Schiffe in den Hafen von Uraga in Japan ein und fordert die Öffnung des seit zweihundert Jahren in Isolation lebenden Landes.</event>
+<event start="1854" end="1859" title="Blutendes Kansas"
+    link="http://de.wikipedia.org/wiki/Bleeding_Kansas" icon="images/circle-pink.png"></event>
+<event start="1856" title="Dritter Pariser Frieden"
+    link="http://de.wikipedia.org/wiki/Dritter_Pariser_Frieden" icon="images/circle-pink.png">Der Pariser Frieden beendet den Krimkrieg führt zu einer Neuordnung Europas.</event>
+<event start="1856-10-08" title="Beginn des zweiten Opiumkriegs."
+    link="http://de.wikipedia.org/wiki/Zweiter_Opiumkrieg" icon="images/circle-pink.png"></event>
+<event start="1857" end="1859" title="Erste Weltwirtschaftskrise" link="http://de.wikipedia.org/wiki/Wirtschaftskrise_von_1857" icon="images/circle-pink.png"></event>
+<event start="1859" title="Sardinischer Krieg" link="http://de.wikipedia.org/wiki/Sardinischer_Krieg" icon="images/circle-pink.png">Auch bekannt als Zweiter Italienischer Unabhängigkeitskrieg.</event>
 
-<event start="1850-07-02" title="Frieden von Berlin." icon="images/circle-pink.png">Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark.</event>
-<event start="1852" title="Kaiser Napoléon III. begründet das Zweite französische Kaiserreich." icon="images/circle-pink.png"></event>
-<event start="1853" end="1856" title="Krimkrieg" icon="images/circle-pink.png">Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien.</event>
-<event start="1853" title="Japanische Häfen werden für den Handel mit dem Westen geöffnet." icon="images/circle-pink.png"></event>
-<event start="1854" end="1859" title="Blutendes Kansas." icon="images/circle-pink.png"></event>
-<event start="1856" title="Pariser Frieden." icon="images/circle-pink.png">Der Pariser Frieden als Folge des Krimkriegs führt zu einer Neuordnung Europas.</event>
-<event start="1856-10-08" title="Beginn des zweiten Opiumkriegs." icon="images/circle-pink.png"></event>
-<event start="1857" end="1859" title="Erste Weltwirtschaftskrise." icon="images/circle-pink.png"></event>
-<event start="1859" title="Zweiter Italienischer Unabhängigkeitskrieg." icon="images/circle-pink.png"></event>
-
-
-<event start="1861-04-12" end="1865-04-09" title="US-amerikanischer Bürgerkrieg" icon="images/circle-pink.png">US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten.</event>
-<event start="1861" end="1867" title="Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko." icon="images/circle-pink.png"></event>
-<event start="1864" title="Deutsch-Dänischer Krieg." icon="images/circle-pink.png"></event>
-<event start="1864" end="1870" title="Tripel-Allianz-Krieg (Argentinien, Brasilien und Uruguay gegen Paraguay)." icon="images/circle-pink.png"></event>
-<event start="1865-04-14" title="Ermordung des US-Präsidenten Abraham Lincoln." icon="images/circle-pink.png"></event>
-<event start="1866" title="Deutscher Krieg zwischen Österreich und Preußen." icon="images/circle-pink.png"></event>
-<event start="1866" title="Gründung des Norddeutschen Bundes, Vorgänger des Deutschen Reiches." icon="images/circle-pink.png"></event>
-<event start="1866" end="1869" title="Meiji Restoration in Japan." icon="images/circle-pink.png"></event>
-<event start="1867-07-01" title="The Dominion of Canada is created by the British North America Act." icon="images/circle-pink.png"></event>
+<event start="1861-04-12" end="1865-04-09" title="Sezessionskrieg"
+    link="http://de.wikipedia.org/wiki/Sezessionskrieg" icon="images/circle-pink.png">US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten.</event>
+<event start="1861" end="1867" title="Französische Intervention in
+    Mexiko" link="http://de.wikipedia.org/wiki/Franz%C3%B6sische_Intervention_in_Mexiko" icon="images/circle-pink.png">Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko.</event>
+<event start="1864" title="Deutsch-Dänischer Krieg" link="http://de.wikipedia.org/wiki/Deutsch-D%C3%A4nischer_Krieg" icon="images/circle-pink.png">Zweiter Schleswig-Holsteinischer
+    Krieg.</event>
+<event start="1864" end="1870" title="Tripel-Allianz-Krieg" link="http://de.wikipedia.org/wiki/Tripel-Allianz-Krieg" icon="images/circle-pink.png">(Argentinien, Brasilien und Uruguay gegen Paraguay)</event>
+<event start="1865-04-14" title="Ermordung des US-Präsidenten Abraham
+    Lincoln." link="http://de.wikipedia.org/wiki/Abraham_Lincoln" icon="images/circle-pink.png"></event>
+<event start="1866" title="Deutscher Krieg"
+    link="http://de.wikipedia.org/wiki/Deutscher_Krieg" icon="images/circle-pink.png">Der Deutsche Krieg von 1866, ursprünglich als Preußisch-Deutscher Krieg[1] bezeichnet, war die kriegerische Auseinandersetzung des Deutschen Bundes unter Führung Österreichs mit dem Königreich Preußen und dessen Verbündeten.</event>
+<event start="1866-08-18" title="Gründung des Norddeutschen Bundes"
+    link="http://de.wikipedia.org/wiki/Norddeutscher_Bund" icon="images/circle-pink.png"></event>
+<event start="1866" end="1869" title="Meiji Restoration" link="http://de.wikipedia.org/wiki/Meiji-Restauration" icon="images/circle-pink.png">Meiji-Restauration bezeichnet den politischen Umbruch im Jahr 1868 und den Beginn
+    einer neuen Regierungsform im Kaiserreich Japan.</event>
+<event start="1867-07-01" title="Kanadische Konförderation" link="http://de.wikipedia.org/wiki/Kanadische_Konf%C3%B6deration" icon="images/circle-pink.png"></event>
 <event start="1869" title="Eröffnung des Suezkanals." icon="images/circle-pink.png"></event>
 
-<event start="1870" end="1871" title="Deutsch-Französischer Krieg." icon="images/circle-pink.png"></event>
-<event start="1871" title="Erste sozialistische Revolution in Frankreich." icon="images/circle-pink.png"></event>
-<event start="1871-01-18" title="Gründung des Deutschen Reichs." icon="images/circle-pink.png"></event>
-<event start="1872" end="1876" title="Dritter Carlistenkrieg in Spanien." icon="images/circle-pink.png"></event>
-<event start="1873" title="Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen." icon="images/circle-pink.png"></event>
-<event start="1875" title="Gründung der SAP" icon="images/circle-pink.png">Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde.</event>
-<event start="1876" title="Schlacht am Little Bighorn River." icon="images/circle-pink.png">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
-<event start="1877" end="1878" title="Russisch-Türkischer Krieg." icon="images/circle-pink.png"></event>
-<event start="1878" title="Sozialistengesetz Bismarcks gegen die Sozialdemokratie." icon="images/circle-pink.png"></event>
-<event start="1878" title="Österreich besetzt Bosnien und Herzegowina." icon="images/circle-pink.png"></event>
-<event start="1878-03-03" title="Unabhängigkeit Bulgariens vom Osmanischen Reich." icon="images/circle-pink.png"></event>
-<event start="1879" end="1884" title="Salpeterkrieg." icon="images/circle-pink.png"></event>
+<event start="1870-07-19" end="1871-05-10" title="Deutsch-Französischer Krieg" link="http://de.wikipedia.org/wiki/Deutsch-Franz%C3%B6sischer_Krieg" icon="images/circle-pink.png"></event>
+<event start="1871-01-18" title="Gründung des Deutschen Reichs"
+    link="http://de.wikipedia.org/wiki/Deutsches_Reich" icon="images/circle-pink.png"></event>
+<event start="1872" end="1876" title="Dritter Carlistenkrieg"
+    link="http://de.wikipedia.org/wiki/Carlistenkrieg#Der_Dritte_Carlistenkrieg" icon="images/circle-pink.png"></event>
+<event start="1873-10-22" title="Dreikaiserabkommen" link="http://de.wikipedia.org/wiki/Dreikaiserabkommen"
+    icon="images/circle-pink.png">Das Dreikaiserabkommen war ein Konsultativpakt zwischen den drei monarchisch regierten Staaten Russland, Österreich-Ungarn und dem Deutschen Reich.</event>
+<event start="1875" title="Gründung der SAP" link="http://de.wikipedia.org/wiki/Sozialistische_Arbeiterpartei_Deutschlands_%281875%29" icon="images/circle-pink.png">Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde.</event>
+<event start="1876" title="Schlacht am Little Bighorn River"
+    link="http://de.wikipedia.org/wiki/Schlacht_am_Little_Bighorn" icon="images/circle-pink.png">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
+<event start="1877" end="1878" title="Russisch-Osmanischer Krieg"
+    link="http://de.wikipedia.org/wiki/Russisch-Osmanischer_Krieg_%281877%E2%80%931878%29" icon="images/circle-pink.png"></event>
+<event start="1878-10-19" title="Bismarcks Sozialistengesetz"
+    link="http://de.wikipedia.org/wiki/Sozialistengesetz" icon="images/circle-pink.png"></event>
+<event start="1878-03-03" title="Frieden von San Stefano"
+    link="http://de.wikipedia.org/wiki/Frieden_von_San_Stefano"
+    icon="images/circle-pink.png">Der Frieden von San Stefano beendete am 3. März 1878 den Russisch-Türkischen Krieg 1877–1878 und brachte Serbien, Montenegro und Rumänien die Unabhängigkeit vom Osmanischen Reich.</event>
+<event start="1879" end="1884" title="Salpeterkrieg" link="http://de.wikipedia.org/wiki/Salpeterkrieg"
+    icon="images/circle-pink.png">Der Salpeterkrieg wurde zwischen Chile, Peru und Bolivien im heutigen Norden Chiles in den Jahren 1879 bis 1884 geführt.</event>
 
 
-<event start="1881" end="1889" title="Bismarcksche Sozialgesetze." icon="images/circle-pink.png">Einführung der Bismarckschen Sozialgesetze in Deutschland: Kranken-, Unfall-, Renten- und Invaliditätsversicherung.</event>
-<event start="1882" title="Dreibund zwischen Deutschland, Österreich und Italien." icon="images/circle-pink.png">Der 1879 zwischen Deutschland und Österreich geschlossene Zweibund wird durch den Beitritt Italiens zum Dreibund erweitert.</event>
-<event start="1884" title="Internationale Meridian Konferenz in Washington D.C." icon="images/circle-pink.png"></event>
-<event start="1884" end="1885" title="Berlin Konferenz." icon="images/circle-pink.png">Aufteilung Afrikas durch die Westmächte.></event>
+<event start="1880" end="1889" title="Bismarcksche Sozialgesetze" link="http://de.wikipedia.org/wiki/Bismarck#Sozialgesetzgebung_und_Staatsstreichpl.C3.A4ne" icon="images/circle-pink.png">Einführung der Bismarckschen Sozialgesetze in Deutschland: Kranken-, Unfall-, Renten- und Invaliditätsversicherung.</event>
+<event start="1882-05-20" title="Dreibund zwischen Deutschland, Österreich und Italien."
+    link="http://de.wikipedia.org/wiki/Dreibund" icon="images/circle-pink.png">Der 1879 zwischen Deutschland und Österreich geschlossene Zweibund wird durch den Beitritt Italiens zum Dreibund erweitert.</event>
+<event start="1884-10-14" title="Internationale Meridian-Konferenz in Washington D.C."
+    link="http://de.wikipedia.org/wiki/Internationale_Meridian-Konferenz#Die_Internationale_Meridian-Konferenz.2C_Washington_1884" icon="images/circle-pink.png"></event>
+<event start="1884-11-15" end="1885-02-26" title="Kongokonferenz"
+    icon="images/circle-pink.png">Die Kongokonferenz fand auf Einladung des deutschen Reichskanzlers Bismarck in Berlin statt und sollte die Handelsfreiheit am Kongo und am Niger regeln.></event>
 
 
 <!-- Politik/Religion -->
