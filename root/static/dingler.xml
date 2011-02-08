@@ -15,7 +15,7 @@
 <event start="1833" title="Uraufführung von Richard Wagners erster Oper (Die Feen)." link="http://de.wikipedia.org/wiki/Die_Feen" icon="images/circle-red.png"></event>
 
 <event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." link="http://de.wikipedia.org/wiki/Kommunistisches_Manifest" icon="images/circle-red.png"></event>
-<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Dartagnan-musketeers.jpg/120px-Dartagnan-musketeers.jpg" icon="images/circle-red.png" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere"></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Dartagnan-musketeers.jpg/120px-Dartagnan-musketeers.jpg" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere" icon="images/circle-red.png"></event>
 
 <event start="1851" title="Herman Melville: Moby Dick." link="http://de.wikipedia.org/wiki/Moby_Dick" icon="images/circle-red.png"></event>
 <event start="1857" title="Gustave Flaubert: Madame Bovary." link="http://de.wikipedia.org/wiki/Madame_Bovary" icon="images/circle-red.png"></event>
@@ -55,7 +55,6 @@
 <event start="1848-06-07" end="1903-05-08" title="Paul Gauguin" link="http://de.wikipedia.org/wiki/Paul_Gauguin" icon="images/circle-red.png"></event>
 <event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch" icon="images/circle-red.png"></event>
 <event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich" link="http://de.wikipedia.org/wiki/Caspar_David_Friedrich" icon="images/circle-red.png"></event>
-<event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch"></event>
 
 
 <!-- Philosophen/Schriftsteller -->
@@ -92,7 +91,6 @@
 <event start="1828-08-28" end="1910-11-07" title="Leo Tolstoi" link="http://de.wikipedia.org/wiki/Leo_Tolstoi" icon="images/circle-red.png"></event>
 <event start="1819-05-31" end="1892-03-26" title="Walt Whitman" link="http://de.wikipedia.org/wiki/Walt_Whitman" icon="images/circle-red.png"></event>
 <event start="1835-11-30" end="1910-04-21" title="Marc Twain" link="http://de.wikipedia.org/wiki/Marc_Twain" icon="images/circle-red.png"></event>
-<event start="1797-12-13" end="1856-02-17" title="Heinrich Heine" link="http://de.wikipedia.org/wiki/Heinrich_Heine"></event>
 
 <!-- Musiker/Komponist -->
 
@@ -136,7 +134,7 @@
 <event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"
     link="http://de.wikipedia.org/wiki/Wiener_Kongre%C3%9F" icon="images/circle-pink.png"></event>
 
-<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück."></event>
+<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück.></event>
 <event start="1815-06-18" title="Schlacht bei Waterloo"
    link="http://de.wikipedia.org/wiki/Schlacht_bei_Waterloo" icon="images/circle-pink.png">Napoleon wird endgültig besiegt.</event>
 <event start="1814-12-24" title="Frieden von Gent"
@@ -406,16 +404,16 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 <event start="1800" title="Erste kommerzielle Nutzung der Lithografie"
-    link="http://de.wikipedia.org/wiki/Lithografie"></event>
+    link="http://de.wikipedia.org/wiki/Lithografie" icon="images/circle-blue.png"></event>
 
 <event start="1804-09-16" title="Ballonaufstieg in 7000m Höhe"
-    link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac">Joseph
+    link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac" icon="images/circle-blue.png">Joseph
     Gay-Lussacs nimmt bei einer Ballonfahrt Luftproben in
     verschiedenen Höhen und steigt bis auf über 7000 Meter
     auf.</event>
 
 <event start="1824" title="Entdeckung des Rotationsmagnetismus"
-    link="http://de.wikipedia.org/wiki/Fran%C3%A7ois_Arago">1824
+    link="http://de.wikipedia.org/wiki/Fran%C3%A7ois_Arago" icon="images/circle-blue.png">1824
     führte François Arago ein Experiment durch, bei dem eine frei
     rotierbare Magnetnadel über einer rotierenden Kupferscheibe
     schwebt und durch die Rotation der Scheibe ebenfalls in Bewegung
@@ -423,12 +421,12 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 <event start="1832" title="Chamisso: Der deutsche Muselalmanach"
-    link="http://de.wikipedia.org/wiki/Adelbert_von_Chamisso">Albert
+    link="http://de.wikipedia.org/wiki/Adelbert_von_Chamisso" icon="images/circle-blue.png">Albert
     von Chamisso ist ab 1832 zusammen mit Gustav Schwab Herausgeber
     des »Deuschen Muselalmanach«.</event>
 
 <event start="1832" title="Phenakistiskop"
-    link="http://de.wikipedia.org/wiki/Phenakistiskop">1832
+    link="http://de.wikipedia.org/wiki/Phenakistiskop" icon="images/circle-blue.png">1832
     entwickelten der Deutschösterreicher Simon Stampfer und der
     Belgier Joseph Plateau unabhängig voneinander das Lebensrad, das
     beim Betrachter den Eindruck bewegter Bilder erzeugte.</event>
@@ -436,42 +434,42 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <event start="1835-08" title="Talbots Erkerfenster von Lacock Abbey"
     link="http://de.wikipedia.org/wiki/William_Fox_Talbot"
-    image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Talbot_Erkerfenster.jpg/120px-Talbot_Erkerfenster.jpg"></event>
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Talbot_Erkerfenster.jpg/120px-Talbot_Erkerfenster.jpg" icon="images/circle-blue.png"></event>
 
-<event start="1837" title="Daguerreotypie" link="http://de.wikipedia.org/wiki/Louis_Daguerre">1837 entstand die älteste erhaltene Daguerreotypie der Welt. Die nach Louis Daguerre benannten Bilder waren bereits fertige Positive.</event>
+<event start="1837" title="Daguerreotypie" link="http://de.wikipedia.org/wiki/Louis_Daguerre" icon="images/circle-blue.png">1837 entstand die älteste erhaltene Daguerreotypie der Welt. Die nach Louis Daguerre benannten Bilder waren bereits fertige Positive.</event>
 
 <event start="1845" title="Nebelbildapparat"
-    link="http://de.wikipedia.org/wiki/Franz_von_Uchatius">Franz von
+    link="http://de.wikipedia.org/wiki/Franz_von_Uchatius" icon="images/circle-blue.png">Franz von
     Uchatius baut einen Apparat zur Darstellung beweglicher
     Bilder.</event>
 
 <event start="1859" title="Mareys Sphygmograph"
     link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey"
-    image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Marey_Sphygmograph.jpg/120px-Marey_Sphygmograph.jpg">Ab
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Marey_Sphygmograph.jpg/120px-Marey_Sphygmograph.jpg" icon="images/circle-blue.png">Ab
     1859 begann Marey mit der Entwicklung eines eigenen graphischen
     Puls-Registriersystems, dem Sphygmographen.</event>
 
 
 <event start="1860" title="Erster Fund jungpaläolithischer Kunst"
-    link="http://de.wikipedia.org/wiki/Arch%C3%A4ologie#Ab_Mitte_des_19._Jahrhunderts">Edouard
+    link="http://de.wikipedia.org/wiki/Arch%C3%A4ologie#Ab_Mitte_des_19._Jahrhunderts" icon="images/circle-blue.png">Edouard
     Lartet (1801-1871) untersucht 1860 eine Fundstätte in den Pyrenäen
     (Massat) und findet dabei auch eine Geweihspitze mit eingraviertem
     Bärenkopf, der erste Fund jungpaläolithischer Kunst.</event>
 
-<event start="1873-05-31" title="Schliemann entdeckt den Schatz des Priamos" link="http://de.wikipedia.org/wiki/Schatz_des_Priamos"></event>
+<event start="1873-05-31" title="Schliemann entdeckt den Schatz des Priamos" link="http://de.wikipedia.org/wiki/Schatz_des_Priamos" icon="images/circle-blue.png"></event>
 
-<event start="1879" title="Entdeckung der Höhlenmalereien in Altamira" link="http://de.wikipedia.org/wiki/H%C3%B6hle_von_Altamira" image="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/AltamiraBison.jpg/120px-AltamiraBison.jpg"></event>
+<event start="1879" title="Entdeckung der Höhlenmalereien in Altamira" link="http://de.wikipedia.org/wiki/H%C3%B6hle_von_Altamira" image="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/AltamiraBison.jpg/120px-AltamiraBison.jpg" icon="images/circle-blue.png"></event>
 
-<event start="1882" title="Chronofotografie eines Pelikanfluges" link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey" image="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Marey_-_birds.jpg/120px-Marey_-_birds.jpg">Étienne-Jules Marey benutzt rotierende photographische Platten in einer gewehrähnlichen Kamera Rekonstruktion von Bewegungsabläufen.</event>
+<event start="1882" title="Chronofotografie eines Pelikanfluges" link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey" image="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Marey_-_birds.jpg/120px-Marey_-_birds.jpg" icon="images/circle-blue.png">Étienne-Jules Marey benutzt rotierende photographische Platten in einer gewehrähnlichen Kamera Rekonstruktion von Bewegungsabläufen.</event>
 
 
-<event start="1884-02-12" title="Watermans Füllfederhalter-Patent" link="http://de.wikipedia.org/wiki/Lewis_Edson_Waterman"></event>
+<event start="1884-02-12" title="Watermans Füllfederhalter-Patent" link="http://de.wikipedia.org/wiki/Lewis_Edson_Waterman" icon="images/circle-blue.png"></event>
 
-<event start="1886-07-03" title="Mergenthalers Linotype" link="http://de.wikipedia.org/wiki/Ottmar_Mergenthaler"></event>
+<event start="1886-07-03" title="Mergenthalers Linotype" link="http://de.wikipedia.org/wiki/Ottmar_Mergenthaler" icon="images/circle-blue.png"></event>
 
-<event start="1892" title="Déménys Photophone" link="http://de.wikipedia.org/wiki/Georges_Emile_Joseph_D%C3%A9m%C3%A9ny">An der Exposition Internationale de Photographie von 1892 zu Paris stellt Georges Emile Joseph Démény sein »Photophone« aus, das 24 Phasenbilder enthielt.</event>
+<event start="1892" title="Déménys Photophone" link="http://de.wikipedia.org/wiki/Georges_Emile_Joseph_D%C3%A9m%C3%A9ny" icon="images/circle-blue.png">An der Exposition Internationale de Photographie von 1892 zu Paris stellt Georges Emile Joseph Démény sein »Photophone« aus, das 24 Phasenbilder enthielt.</event>
 
-<event start="1897" title="Erfindungung der Monotype" link="http://de.wikipedia.org/wiki/Monotype">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
+<event start="1897" title="Erfindungung der Monotype" link="http://de.wikipedia.org/wiki/Monotype" icon="images/circle-blue.png">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
 
 
 
@@ -544,63 +542,63 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 
 <!--  Wissenschaftler, Industrielle -->
 
-<event start="1804-06-23" end="1854-07-06" title="August Borsig" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/August_Borsig"></event>
-<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Friedrich_Harkort"></event>
-<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Alfred_Krupp"></event>
-<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Werner_von_Siemens"></event>
-<event start="1842-05-17" end="1926-04-04" title="August Thyssen" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/August_Thyssen"></event>
-<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Benjamin_Silliman"></event>
-<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Ernst_Abbe"></event>
-<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Charles_Babbage"></event>
-<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Alexandre_Edmond_Becquerel"></event>
-<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Antoine_Henri_Becquerel"></event>
-<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Henry_Bessemer"></event>
-<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Robert_Wilhelm_Bunsen"></event>
-<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Rudolf_Clausius"></event>
-<event start="1785-04-29" end="1851-12-10" title="Karl Drais" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Karl_Drais"></event>
-<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Michael_Faraday"></event>
+<event start="1804-06-23" end="1854-07-06" title="August Borsig" link="http://de.wikipedia.org/wiki/August_Borsig" icon="images/circle-blue.png"></event>
+<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-blue.png"></event>
+<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png"></event>
+<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" link="http://de.wikipedia.org/wiki/Werner_von_Siemens" icon="images/circle-blue.png"></event>
+<event start="1842-05-17" end="1926-04-04" title="August Thyssen" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png"></event>
+<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" link="http://de.wikipedia.org/wiki/Benjamin_Silliman" icon="images/circle-blue.png"></event>
+<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" link="http://de.wikipedia.org/wiki/Ernst_Abbe" icon="images/circle-blue.png"></event>
+<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" link="http://de.wikipedia.org/wiki/Charles_Babbage" icon="images/circle-blue.png"></event>
+<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" link="http://de.wikipedia.org/wiki/Alexandre_Edmond_Becquerel" icon="images/circle-blue.png"></event>
+<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" link="http://de.wikipedia.org/wiki/Antoine_Henri_Becquerel" icon="images/circle-blue.png"></event>
+<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" link="http://de.wikipedia.org/wiki/Henry_Bessemer" icon="images/circle-blue.png"></event>
+<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" link="http://de.wikipedia.org/wiki/Robert_Wilhelm_Bunsen" icon="images/circle-blue.png"></event>
+<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" link="http://de.wikipedia.org/wiki/Rudolf_Clausius" icon="images/circle-blue.png"></event>
+<event start="1785-04-29" end="1851-12-10" title="Karl Drais" link="http://de.wikipedia.org/wiki/Karl_Drais" icon="images/circle-blue.png"></event>
+<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png"></event>
 <event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" link="http://de.wikipedia.org/wiki/Joseph_von_Fraunhofer" icon="images/circle-blue.png"></event>
-<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Carl_Friedrich_Gauß"></event>
-<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac"></event>
-<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Johann_Georg_Halske"></event>
-<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Hermann_von_Helmholtz"></event>
-<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Alexander_von_Humboldt"></event>
-<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Wilhelm_von_Humboldt"></event>
-<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Gustav_Robert_Kirchhoff"></event>
-<event start="1843-12-11" end="1910-05-27" title="Robert Koch" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Robert_Koch"></event>
-<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Justus_Liebig"></event>
-<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Otto_Lilienthal"></event>
-<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Carl_von_Linde"></event>
-<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell"></event>
-<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Franz_Ernst_Neumann"></event>
-<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Georg_Simon_Ohm"></event>
-<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Nikolaus_Otto"></event>
-<event start="1858-04-23" end="1947-10-04" title="Max Planck" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Max_Planck"></event>
-<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Max_von_Pettenkofer"></event>
-<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Philipp_Reis"></event>
-<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann"></event>
-<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Johann_Heinrich_von_Thünen"></event>
-<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Rudolf_Virchow"></event>
-<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Wilhelm_Wundt"></event>
-<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Albert_Einstein"></event>
-<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen"></event>
-<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Charles_Darwin"></event>
-<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison"></event>
-<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Alfred_Nobel"></event>
-<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Louis_Pasteur"></event>
-<event start="1844-11-25" end="1929-04-04" title="Carl Benz" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Carl_Benz"></event>
-<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Gottlieb_Daimler"></event>
-<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Eadweard_Muybridge"></event>
+<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" link="http://de.wikipedia.org/wiki/Carl_Friedrich_Gauß" icon="images/circle-blue.png"></event>
+<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac" icon="images/circle-blue.png"></event>
+<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" link="http://de.wikipedia.org/wiki/Johann_Georg_Halske" icon="images/circle-blue.png"></event>
+<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" link="http://de.wikipedia.org/wiki/Hermann_von_Helmholtz" icon="images/circle-blue.png"></event>
+<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" link="http://de.wikipedia.org/wiki/Alexander_von_Humboldt" icon="images/circle-blue.png"></event>
+<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" link="http://de.wikipedia.org/wiki/Wilhelm_von_Humboldt" icon="images/circle-blue.png"></event>
+<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" link="http://de.wikipedia.org/wiki/Gustav_Robert_Kirchhoff" icon="images/circle-blue.png"></event>
+<event start="1843-12-11" end="1910-05-27" title="Robert Koch" link="http://de.wikipedia.org/wiki/Robert_Koch" icon="images/circle-blue.png"></event>
+<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" link="http://de.wikipedia.org/wiki/Justus_Liebig" icon="images/circle-blue.png"></event>
+<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" link="http://de.wikipedia.org/wiki/Otto_Lilienthal" icon="images/circle-blue.png"></event>
+<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" link="http://de.wikipedia.org/wiki/Carl_von_Linde" icon="images/circle-blue.png"></event>
+<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell" icon="images/circle-blue.png"></event>
+<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" link="http://de.wikipedia.org/wiki/Franz_Ernst_Neumann" icon="images/circle-blue.png"></event>
+<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" link="http://de.wikipedia.org/wiki/Georg_Simon_Ohm" icon="images/circle-blue.png"></event>
+<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" link="http://de.wikipedia.org/wiki/Nikolaus_Otto" icon="images/circle-blue.png"></event>
+<event start="1858-04-23" end="1947-10-04" title="Max Planck" link="http://de.wikipedia.org/wiki/Max_Planck" icon="images/circle-blue.png"></event>
+<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" link="http://de.wikipedia.org/wiki/Max_von_Pettenkofer" icon="images/circle-blue.png"></event>
+<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" link="http://de.wikipedia.org/wiki/Philipp_Reis" icon="images/circle-blue.png"></event>
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" icon="images/circle-blue.png"></event>
+<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" link="http://de.wikipedia.org/wiki/Johann_Heinrich_von_Thünen" icon="images/circle-blue.png"></event>
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
+<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" link="http://de.wikipedia.org/wiki/Wilhelm_Wundt" icon="images/circle-blue.png"></event>
+<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" link="http://de.wikipedia.org/wiki/Albert_Einstein" icon="images/circle-blue.png"></event>
+<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen" icon="images/circle-blue.png"></event>
+<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" link="http://de.wikipedia.org/wiki/Charles_Darwin" icon="images/circle-blue.png"></event>
+<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
+<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" link="http://de.wikipedia.org/wiki/Alfred_Nobel" icon="images/circle-blue.png"></event>
+<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" link="http://de.wikipedia.org/wiki/Louis_Pasteur" icon="images/circle-blue.png"></event>
+<event start="1844-11-25" end="1929-04-04" title="Carl Benz" link="http://de.wikipedia.org/wiki/Carl_Benz" icon="images/circle-blue.png"></event>
+<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" link="http://de.wikipedia.org/wiki/Gottlieb_Daimler" icon="images/circle-blue.png"></event>
+<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" link="http://de.wikipedia.org/wiki/Eadweard_Muybridge" icon="images/circle-blue.png"></event>
 
-<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow"></event>
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
 
-<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg"></event>
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg" icon="images/circle-blue.png"></event>
 
-<event start="1768-01-25" end="1837-06-21" title="Justus Erich Walbaum" link="http://de.wikipedia.org/wiki/Justus_Erich_Walbaum">deutscher Typograf, Schriftgießer und Stempelschneider.</event>
+<event start="1768-01-25" end="1837-06-21" title="Justus Erich Walbaum" link="http://de.wikipedia.org/wiki/Justus_Erich_Walbaum" icon="images/circle-blue.png">deutscher Typograf, Schriftgießer und Stempelschneider.</event>
 
-<event start="1740-02-16" end="1813-11-29" title="Giambattista Bodoni" link="http://de.wikipedia.org/wiki/Giambattista_Bodoni">italienischer Stempelschneider (Graveur), Buchdrucker, Typograf und Verleger.</event>
+<event start="1740-02-16" end="1813-11-29" title="Giambattista Bodoni" link="http://de.wikipedia.org/wiki/Giambattista_Bodoni" icon="images/circle-blue.png">italienischer Stempelschneider (Graveur), Buchdrucker, Typograf und Verleger.</event>
 
-<event start="1771-11-06" end="1834-02-26" title="Alois Senefelder" link="http://de.wikipedia.org/wiki/Alois_Senefelder">österreichisch-deutscher Schauspieler und Theaterschriftsteller; Erfinder der Lithografie.</event>
+<event start="1771-11-06" end="1834-02-26" title="Alois Senefelder" link="http://de.wikipedia.org/wiki/Alois_Senefelder" icon="images/circle-blue.png">österreichisch-deutscher Schauspieler und Theaterschriftsteller; Erfinder der Lithografie.</event>
 
 
 
@@ -665,7 +663,7 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <!-- misc (yellow) -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
-<event start="1803-11-21" title="Johannes Bückler" link="http://de.wikipedia.org/wiki/Johannes_B%C3%BCckler">Der auch als Schinderhannes bekannte deutsche Räuber Johannes Bückler wurde am 21. November 1803 mit der Guillotine zu Tode gerichtet.</event>
+<event start="1803-11-21" title="Johannes Bückler" link="http://de.wikipedia.org/wiki/Johannes_B%C3%BCckler" icon="images/circle-yellow.png">Der auch als Schinderhannes bekannte deutsche Räuber Johannes Bückler wurde am 21. November 1803 mit der Guillotine zu Tode gerichtet.</event>
 
 <event start="1816" title="Jahr ohne Sommer" link="http://de.wikipedia.org/wiki/Jahr_ohne_Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
 <event start="1840-05-01" title="One Penny Black" link="http://de.wikipedia.org/wiki/One_Penny_Black" icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
