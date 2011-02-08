@@ -55,7 +55,7 @@
 <event start="1848-06-07" end="1903-05-08" title="Paul Gauguin" link="http://de.wikipedia.org/wiki/Paul_Gauguin" icon="images/circle-red.png"></event>
 <event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch" icon="images/circle-red.png"></event>
 <event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich" link="http://de.wikipedia.org/wiki/Caspar_David_Friedrich" icon="images/circle-red.png"></event>
-
+<event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch"></event>
 
 
 <!-- Philosophen/Schriftsteller -->
@@ -92,7 +92,7 @@
 <event start="1828-08-28" end="1910-11-07" title="Leo Tolstoi" link="http://de.wikipedia.org/wiki/Leo_Tolstoi" icon="images/circle-red.png"></event>
 <event start="1819-05-31" end="1892-03-26" title="Walt Whitman" link="http://de.wikipedia.org/wiki/Walt_Whitman" icon="images/circle-red.png"></event>
 <event start="1835-11-30" end="1910-04-21" title="Marc Twain" link="http://de.wikipedia.org/wiki/Marc_Twain" icon="images/circle-red.png"></event>
-
+<event start="1797-12-13" end="1856-02-17" title="Heinrich Heine" link="http://de.wikipedia.org/wiki/Heinrich_Heine"></event>
 
 <!-- Musiker/Komponist -->
 
@@ -405,7 +405,76 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1902" title="Eröffnung der Berliner U-Bahn" link="http://de.wikipedia.org/wiki/Berliner_U-Bahn" icon="images/circle-blue.png"></event>
 
 
+<event start="1800" title="Erste kommerzielle Nutzung der Lithografie"
+    link="http://de.wikipedia.org/wiki/Lithografie"></event>
 
+<event start="1804-09-16" title="Ballonaufstieg in 7000m Höhe"
+    link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac">Joseph
+    Gay-Lussacs nimmt bei einer Ballonfahrt Luftproben in
+    verschiedenen Höhen und steigt bis auf über 7000 Meter
+    auf.</event>
+
+<event start="1824" title="Entdeckung des Rotationsmagnetismus"
+    link="http://de.wikipedia.org/wiki/Fran%C3%A7ois_Arago">1824
+    führte François Arago ein Experiment durch, bei dem eine frei
+    rotierbare Magnetnadel über einer rotierenden Kupferscheibe
+    schwebt und durch die Rotation der Scheibe ebenfalls in Bewegung
+    gesetzt wird.</event>
+
+
+<event start="1832" title="Chamisso: Der deutsche Muselalmanach"
+    link="http://de.wikipedia.org/wiki/Adelbert_von_Chamisso">Albert
+    von Chamisso ist ab 1832 zusammen mit Gustav Schwab Herausgeber
+    des »Deuschen Muselalmanach«.</event>
+
+<event start="1832" title="Phenakistiskop"
+    link="http://de.wikipedia.org/wiki/Phenakistiskop">1832
+    entwickelten der Deutschösterreicher Simon Stampfer und der
+    Belgier Joseph Plateau unabhängig voneinander das Lebensrad, das
+    beim Betrachter den Eindruck bewegter Bilder erzeugte.</event>
+
+
+<event start="1835-08" title="Talbots Erkerfenster von Lacock Abbey"
+    link="http://de.wikipedia.org/wiki/William_Fox_Talbot"
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Talbot_Erkerfenster.jpg/120px-Talbot_Erkerfenster.jpg"></event>
+
+<event= start="1837" title="Daguerreotypie"
+    link="http://de.wikipedia.org/wiki/Louis_Daguerre">1837 entstand
+    die älteste erhaltene Daguerreotypie der Welt. Die nach Louis
+    Daguerre benannten Bilder waren bereits fertige Positive.</event>
+
+<event start="1845" title="Nebelbildapparat"
+    link="http://de.wikipedia.org/wiki/Franz_von_Uchatius">Franz von
+    Uchatius baut einen Apparat zur Darstellung beweglicher
+    Bilder.</event>
+
+<event start="1859" title="Mareys Sphygmograph"
+    link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey"
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Marey_Sphygmograph.jpg/120px-Marey_Sphygmograph.jpg">Ab
+    1859 begann Marey mit der Entwicklung eines eigenen graphischen
+    Puls-Registriersystems, dem Sphygmographen.</event>
+
+
+<event start="1860" title="Erster Fund jungpaläolithischer Kunst"
+    link="http://de.wikipedia.org/wiki/Arch%C3%A4ologie#Ab_Mitte_des_19._Jahrhunderts">Edouard
+    Lartet (1801-1871) untersucht 1860 eine Fundstätte in den Pyrenäen
+    (Massat) und findet dabei auch eine Geweihspitze mit eingraviertem
+    Bärenkopf, der erste Fund jungpaläolithischer Kunst.</event>
+
+<event start="1873-05-31" title="Schliemann entdeckt den Schatz des Priamos" link="http://de.wikipedia.org/wiki/Schatz_des_Priamos"></event>
+
+<event start="1879" title="Entdeckung der Höhlenmalereien in Altamira" link="http://de.wikipedia.org/wiki/H%C3%B6hle_von_Altamira" image="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/AltamiraBison.jpg/120px-AltamiraBison.jpg"></event>
+
+<event start="1882" title="Chronofotografie eines Pelikanfluges" link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey" image="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Marey_-_birds.jpg/120px-Marey_-_birds.jpg">Étienne-Jules Marey benutzt rotierende photographische Platten in einer gewehrähnlichen Kamera Rekonstruktion von Bewegungsabläufen.</event>
+
+
+<event start="1884-02-12" title="Watermans Füllfederhalter-Patent" link="http://de.wikipedia.org/wiki/Lewis_Edson_Waterman"></event>
+
+<event start="1886-07-03" title="Mergenthalers Linotype" link="http://de.wikipedia.org/wiki/Ottmar_Mergenthaler"></event>
+
+<event start="1892" title="Déménys Photophone" link="http://de.wikipedia.org/wiki/Georges_Emile_Joseph_D%C3%A9m%C3%A9ny">An der Exposition Internationale de Photographie von 1892 zu Paris stellt Georges Emile Joseph Démény sein »Photophone« aus, das 24 Phasenbilder enthielt.</event>
+
+<event start="1897" title="Erfindungung der Monotype" link="http://de.wikipedia.org/wiki/Monotype">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
 
 
 
@@ -447,7 +516,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     Duterts Maschinenhalle&lt;br&gt; - Jean C. Formigés Palais der
     Schönen Künste&lt;br&gt; - Joseph Bouvards
     Industriepalast&lt;br&gt; - Rekonstruktion der Bastille&lt;br&gt;
-    - mit Wasserstoff gefüllte Fesselballons</event>
+    - mit Wasserstoff gefüllte Fesselballons&lt;br&gt; - Linotype</event>
 <event start="1893" title="Weltausstellung Chicago, 1893"
     link="http://de.wikipedia.org/wiki/World%E2%80%99s_Columbian_Exposition"
     icon="images/circle-orange.png">- Reißverschluss&lt;br&gt; -
@@ -526,6 +595,16 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Gottlieb_Daimler"></event>
 <event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" icon="images/circle-blue.png" link="http://de.wikipedia.org/wiki/Eadweard_Muybridge"></event>
 
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow"></event>
+
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg"></event>
+
+<event start="1768-01-25" end="1837-06-21" title="Justus Erich Walbaum" link="http://de.wikipedia.org/wiki/Justus_Erich_Walbaum">deutscher Typograf, Schriftgießer und Stempelschneider.</event>
+
+<event start="1740-02-16" end="1813-11-29" title="Giambattista Bodoni" link="http://de.wikipedia.org/wiki/Giambattista_Bodoni">italienischer Stempelschneider (Graveur), Buchdrucker, Typograf und Verleger.</event>
+
+<event start="1771-11-06" end="1834-02-26" title="Alois Senefelder" link="http://de.wikipedia.org/wiki/Alois_Senefelder">österreichisch-deutscher Schauspieler und Theaterschriftsteller; Erfinder der Lithografie.</event>
+
 
 
 
@@ -588,6 +667,8 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- misc (yellow) -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+<event start="1803-11-21" title="Johannes Bückler" link="http://de.wikipedia.org/wiki/Johannes_B%C3%BCckler">Der auch als Schinderhannes bekannte deutsche Räuber Johannes Bückler wurde am 21. November 1803 mit der Guillotine zu Tode gerichtet.</event>
 
 <event start="1816" title="Jahr ohne Sommer" link="http://de.wikipedia.org/wiki/Jahr_ohne_Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
 <event start="1840-05-01" title="One Penny Black" link="http://de.wikipedia.org/wiki/One_Penny_Black" icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
