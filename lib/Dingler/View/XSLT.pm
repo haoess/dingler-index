@@ -131,6 +131,15 @@ __PACKAGE__->config(
                     return "http://141.20.150.36/dingler_static/sonderzeichen/$ent.png";
                 }
             },
+            {
+                uri => 'urn:catalyst',
+                name => 'rendition',
+                subref => sub {
+                    my $rend = shift;
+                    my @renditions = map { s/^#//; $_ } split / /, $rend;
+                    return join ' ', @renditions;
+                }
+            },
         ],
     },
 #    DUMP_CONFIG => 1,

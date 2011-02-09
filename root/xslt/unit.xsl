@@ -224,31 +224,41 @@
 
 <xsl:template match="tei:lb"><br /></xsl:template>
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- tables -->
+
 <xsl:template match="tei:table">
   <table style="margin-left:auto; margin-right:auto" class="middlealign">
-  <xsl:for-each select="tei:row">
-    <tr>
-    <xsl:for-each select="tei:cell">
-      <xsl:choose>
-        <xsl:when test="../@role='label'">
-          <xsl:element name="th">
-            <xsl:apply-templates/>
-          </xsl:element>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:element name="td">
-            <xsl:if test="@cols">
-              <xsl:attribute name="colspan"><xsl:value-of select="@cols"/></xsl:attribute>
-            </xsl:if>
-            <xsl:apply-templates/>
-          </xsl:element>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:for-each>
-    </tr>
-  </xsl:for-each>
+  <xsl:apply-templates select="tei:row"/>
   </table>
 </xsl:template>
+
+<xsl:template match="tei:row">
+  <tr>
+    <xsl:apply-templates select="tei:cell"/>
+  </tr>
+</xsl:template>
+
+<xsl:template match="tei:cell">
+  <xsl:choose>
+    <xsl:when test="parent::tei:row[@role='label']">
+      <xsl:element name="th">
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:element name="td">
+        <xsl:if test="@cols">
+          <xsl:attribute name="colspan"><xsl:value-of select="@cols"/></xsl:attribute>
+        </xsl:if>
+        <xsl:attribute name="class"><xsl:value-of select="catalyst:rendition(@rendition)"/></xsl:attribute>
+        <xsl:apply-templates/>
+      </xsl:element>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 <xsl:template match="tei:choice">
   <xsl:choose>
