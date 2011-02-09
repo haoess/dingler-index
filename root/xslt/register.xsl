@@ -190,8 +190,6 @@
       <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="class">figure</xsl:attribute>
     </xsl:element>
-    <br />
-    <xsl:apply-templates select="./tei:figDesc"/>
   </div>
 </xsl:template>
 
