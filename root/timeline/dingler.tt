@@ -1,6 +1,18 @@
 <h1>Zeitliste Polytechnisches Journal</h1>
 
-<div id="my-timeline" style="width:800px;height:600px;border:1px solid #aaa;font-size:.8em"></div>
+<table>
+  <tr>
+    <td><div id="my-timeline" style="width:1000px;height:600px;border:1px solid #aaa;font-size:.8em"></div></td>
+    <td style="white-space:nowrap; padding-left:15px">
+      <img src="static/images/circle-blue.png" /> Wissenschaft, Technologie<br />
+      <img src="static/images/circle-green.png" /> Architektur, Stadtplanung, Städtebau<br />
+      <img src="static/images/circle-orange.png" /> Weltausstellungen<br />
+      <img src="static/images/circle-pink.png" /> Politik, Religion<br />
+      <img src="static/images/circle-red.png" /> Literatur, Philosophie, Kunst, Musik<br />
+      <img src="static/images/circle-yellow.png" /> Anderes
+    </td>
+  </tr>
+</table>
 
 <script type="text/javascript">
   jQuery( document ).ready( onLoad() );
@@ -37,7 +49,7 @@
           elmt.appendChild(elmt.ownerDocument.createTextNode(startString+ " - " + endString));
           elmt.appendChild(elmt.ownerDocument.createElement("br"));
         }
-      } 
+      }
     };
 
     var tl;
@@ -49,7 +61,7 @@
           date:           "Jan 01 [% year || 1820 %] 00:00:00 GMT",
           width:          "80%",
           intervalUnit:   Timeline.DateTime.YEAR,
-          intervalPixels: 50
+          intervalPixels: 100
         }),
         Timeline.createBandInfo({
           overview:       true,
@@ -57,7 +69,7 @@
           date:           "Jan 01 [% year || 1820 %] 00:00:00 GMT",
           width:          "20%",
           intervalUnit:   Timeline.DateTime.DECADE,
-          intervalPixels: 200
+          intervalPixels: 400
         })
       ];
       bandInfos[1].syncWith = 0;

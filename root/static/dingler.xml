@@ -1,259 +1,704 @@
 <data>
 
-<!-- Dingler --> 
-    <event start="1777-01-02" end="1855-05-19" isDuration="true" title="Johann Gottfried Dingler"></event> 
-    <event start="1806-03-10" end="1874-10-09" isDuration="true" title="Emil Maximilian Dingler"></event>
-    
-<!--           -->
-<!-- literatur/kunst/musik -->
-<!--           -->
-
-
-<event start="1820" title="Entdeckung der Venus von Milo"
-    icon="images/circle-red.png"></event>
-<event start="1820" title="John Keats: Ode on Melancholy, one in a series of his famous Odes." icon="images/circle-red.png"></event>
-<event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." icon="images/circle-red.png"></event>
-<event start="1827-03-26" title="Ludwig v. Beethoven stirbt in Wien." icon="images/circle-red.png"></event> 
-
-
-<event start="1833" title="Richard Wagners erste Oper (Die Feen)." icon="images/circle-red.png"></event>
-<event start="1831-11-14" title="Georg Fr. W. Hegel stirbt in Berlin." icon="images/circle-red.png"></event>
-<event start="1832-03-22" title="Johann Wolfgang v. Goethe stirbt in Weimar." icon="images/circle-red.png"></event>
-
-<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." icon="images/circle-red.png"></event>
-<event start="1849-10-17" title="Chopin stirbt mit 39 Jahren in Paris." icon="images/circle-red.png"></event>
-<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." icon="images/circle-red.png"></event>
-
-
-<event start="1851" title="Herman Melville: Moby Dick." icon="images/circle-red.png"></event>
-<event start="1857" title="Gustave Flaubert: Madame Bovary." icon="images/circle-red.png"></event>
-
-<event start="1868" title="Leo Tolstoi: Krieg und Frieden." icon="images/circle-red.png"></event>
-<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne." icon="images/circle-red.png"></event>
-<event start="1863" title="Lewis Carroll: Alice im Wunderland." icon="images/circle-red.png"></event>
-<event start="1867" title="Karl Marx: Das Kapital." icon="images/circle-red.png"></event>
-
-<event start="1871" title="Lewis Carroll: Through the Looking-Glass." icon="images/circle-red.png"></event>
-<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen." icon="images/circle-red.png"></event>
-<event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs« for the purpose of exhibiting their artworks independently." icon="images/circle-red.png">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
-<event start="1879" title="Henrik Ibsen: A Doll's House." icon="images/circle-red.png"></event>
-
-<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra." icon="images/circle-red.png"></event>
-<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn." icon="images/circle-red.png"></event>
-<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow." icon="images/circle-red.png"></event>
-<event start="1888" title="Edward Bellamy: Looking Backward." icon="images/circle-red.png"></event>
-<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde." icon="images/circle-red.png"></event>
-<event start="1884" title="Erste Ausgabe des Oxford English Dictionary publiziert." icon="images/circle-red.png"></event>
-<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." icon="images/circle-red.png"></event>
-<event start="1883-02-13" title="Richard Wagner stirbt in Venedig." icon="images/circle-red.png"></event>
 
 
 
-<!--           -->
-<!-- politik   -->
-<!--           -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- literatur/philosophie/kunst/musik -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
-<event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons."></event>
-<event start="1812-06-18" end="1814-12-24" title="Britisch-Amerikanischer Krieg."></event>
+<event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo" >Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.</event>
+<event start="1819" title="John Keats: Ode on Melancholy." link="http://de.wikipedia.org/wiki/John_Keats" icon="images/circle-red.png" ></event>
+<event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." link="http://de.wikipedia.org/wiki/9._Sinfonie_%28Beethoven%29" icon="images/circle-red.png"></event>
 
-<event start="1813" title="Beginn der Befreiungskriege (Europa gegen Napoleon)."></event>
-<event start="1813-10-16" end="1813-10-19" title="Völkerschlacht bei Leipzig"></event>
+<event start="1833" title="Uraufführung von Richard Wagners erster Oper (Die Feen)." link="http://de.wikipedia.org/wiki/Die_Feen" icon="images/circle-red.png"></event>
 
-<event start="1814-03-31" title="Alliierte besetzen Paris."></event>
-<event start="1814-04" title="Napoleon wird nach Elba verbannt."></event>
-<event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"></event>
+<event start="1848" title="Karl Marx und Friedrich Engels veröffentlichen das Kommunistische Manifest." link="http://de.wikipedia.org/wiki/Kommunistisches_Manifest" icon="images/circle-red.png"></event>
+<event start="1849" title="Alexandre Dumas der Ältere: Die drei Musketiere." image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Dartagnan-musketeers.jpg/120px-Dartagnan-musketeers.jpg" link="http://de.wikipedia.org/wiki/Die_drei_Musketiere" icon="images/circle-red.png"></event>
 
-<event start="1815-03-01" title="Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück."></event>
-<event start="1815-06-18" title="Schlacht bei Waterloo">Napoleon wird endgültig besiegt.</event>
-<event start="1815" title="Napoleons Herrschaft der Hundert Tage."></event>
-<event start="1815" title="zweite Verbannung Napoleons (nach St. Helena)."></event>
-<event start="1815" title="Frieden zwischen Großbritannien und den USA."></event>
-<event start="1815" title="Gründung des Deutschen Bundes."></event>
-<event start="1815" title="erste Burschenschaften"></event>
+<event start="1851" title="Herman Melville: Moby Dick." link="http://de.wikipedia.org/wiki/Moby_Dick" icon="images/circle-red.png"></event>
+<event start="1857" title="Gustave Flaubert: Madame Bovary." link="http://de.wikipedia.org/wiki/Madame_Bovary" icon="images/circle-red.png"></event>
 
-<event start="1817" title="Wartburgfest."></event>
+<event start="1868" title="Leo Tolstoi: Krieg und Frieden." link="http://de.wikipedia.org/wiki/Krieg_und_Frieden" icon="images/circle-red.png"></event>
+<event start="1866" title="Fjodor Dostojewski:Schuld und Sühne." link="http://de.wikipedia.org/wiki/Schuld_und_S%C3%BChne" icon="images/circle-red.png"></event>
+<event start="1863" title="Lewis Carroll: Alice im Wunderland." link="http://de.wikipedia.org/wiki/Alice_im_Wunderland" icon="images/circle-red.png"></event>
+<event start="1867" title="Karl Marx: Das Kapital." link="http://de.wikipedia.org/wiki/Das_Kapital" icon="images/circle-red.png"></event>
 
-<event start="1819" title="Karlsbader Beschlüsse."></event>
+<event start="1871" title="Lewis Carroll: Through the Looking-Glass." link="http://de.wikipedia.org/wiki/Lewis_Carroll#Alice_hinter_den_Spiegeln" icon="images/circle-red.png"></event>
+<event start="1873" title="Jules Verne: Reise um die Erde in 80 Tagen." link="http://de.wikipedia.org/wiki/Reise_um_die_Erde_in_80_Tagen" icon="images/circle-red.png"></event>
+<event start="1873" title="Monet, Renoir, Pissarro, and Sisley organized the »Société Anonyme Coopérative des Artistes Peintres, Sculpteurs, Graveurs«." icon="images/circle-red.png">Members of the association, which soon included Cézanne, Berthe Morisot, and Edgar Degas, were expected to forswear participation in the Salon. In total, thirty artists participated in their first exhibition, held in April 1874 at the studio of the photographer Nadar. The group soon became known as the Impressionists.</event>
+<event start="1876" title="Henrik Ibsen: Peer Gynt Uraufführung." link="http://de.wikipedia.org/wiki/Peer_Gynt" icon="images/circle-red.png"></event>
 
-
-<event start="1820-01-01" title="constitutionalist military insurrection at Cádiz"></event>
-<event start="1820-01-29" title="George IV of the United Kingdom ascends the throne, ending the period known as the British Regency."></event>
-<event start="1820-02-23" title="The Cato Street conspiracy is exposed.">The principals are executed on May 1.</event>
-<event start="1820-03-09" title="King Ferdinand VII of Spain accepts the new constitution, beginning the Liberal Triennium"></event>
-<event start="1820-04" title="The Radical War is fought in Scotland."></event>
-<event start="1820-07" title="A Constitutionalist revolution occurs in the Kingdom of the Two Sicilies."></event>
-<event start="1820-08-24" title="A Constitutionalist insurrection breaks out at Oporto, Portugal."></event>
-<event start="1820-09-15" title="A revolution breaks out in Lisbon."></event>
-<event start="1820-10-25" end="1820-11" title="The Congress of Troppau (Opava) is convened between the rulers of Russia, Austria and Prussia."></event>
-
-<event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg"></event>
-<event start="1821-05-05" title="Emperor Napoléon I dies in exile on Saint Helena."></event>
-<event start="1821-06-19" title="The Philikí Etaireía are decisively defeated by the Ottomans at Drăgăşani (in Wallachia)."></event>
-<event start="1821-07-19" title="George IV is crowned king of the United Kingdom of Great Britain and Ireland."></event>
-
-<event start="1829" end="1829" title="Russisch-türkischer Krieg."></event>
-
-
-<event start="1830" title="Belgische Revolution führt zur Unabhängigkeit von den Niederlanden."></event>
-<event start="1830" title="Julirevolution in Frankreich"></event> 
-<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner; Gründung der New England Anti-Slavery Society"></event> 
-<event start="1832" title="Hambacher Fest"></event> 
-<event start="1835-03-02" title="Franz II. (letzter Kaiser des Heiligen Römischen Reiches Deutscher Nation) stirbt in Wien."></event>
-<event start="1836" title="Der Bund der Gerechten wird gegründet"></event>
-<event start="1839" end="1842-08-29" title="The First Opium War between the United Kingdom and the Qing Empire of China. It would end with the signing of the Treaty of Nanking on 1842-08-29."></event>
-
-
-<event start="1840-06-17" title="Friedrich Wilhelm III. stirbt in Berlin."></event>
-<event start="1840-02-06" title="First signing of the Treaty of Waitangi.">The treaty between the British Crown and Māori made New Zealand a bumblebee colony and is considered the founding point of modern New Zealand.</event>
-<event start="1842-08-09" title="Webster-Ashburton Treaty.">the treaty settled the dispute over the location of the Maine-New Brunswick border between the United States and Canada.</event>
-<event start="1842-08-29" title="the first of two Opium Wars ended between China and Britain with the Treaty of Nanking.">One of the consequences was the cession of parts of modern day Hong Kong to the British. Hong Kong would eventually be returned to China in 1997.</event>
-<event start="1846" end="1848" title="Mexican-American War.">Fought between Mexico and the United States of America. The latter emerged victorious and gained undisputed control over Texas while annexing portions of Arizona, California and New Mexico.</event>
-<event start="1847" title="Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind."></event>
-<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg zwischen Preußen und Dänemark."></event>
-<event start="1848" title="Deutsche Revolution 1848/49."></event>
-<event start="1848" end="1849" title="Revolution und Freiheitskampf in Ungarn."></event>
-<event start="1848" title="Revolution von 1848.">Wave of revolutions in Europe. Collectively known as the Revolution of 1848. This led to mass immigration of these refugees into industrial cities of the United States as well as to other locations around the world.</event>
-<event start="1848" title="Seneca Falls Convention (first convention for women's rights) in Seneca Falls, New York."></event>
-<event start="1849-03-28" title="Paulskirchenverfassung"></event>
-
-
-<event start="1850-07-02" title="Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark."></event>
-<event start="1852" title="Der 1848 zum Staatspräsidenten Frankreichs gewählte Louis Napoleon lässt sich 1852 zum Kaiser Napoléon III. ausrufen und begründet das Zweite französische Kaiserreich."></event>
-<event start="1853" end="1856" title="Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien."></event>
-<event start="1853" title="Japanische Häfen werden für den Handel mit dem Westen geöffnet."></event>
-<event start="1854" end="1856" title="Krimkrieg.">fought between Imperial Russia and an alliance consisting of the United Kingdom of Great Britain and Ireland, the Second French Empire, the Kingdom of Sardinia and the Ottoman Empire."</event>
-<event start="1854" end="1859" title="Bleeding Kansas: battles erupt in Kansas Territory between proslavery and »Free-State« settlers, directly precipitating the American Civil War."></event>
-<event start="1856" title="Der Pariser Frieden als Folge des Krimkriegs führt zu einer Neuordnung Europas."></event>
-<event start="1856-10-08" title="Second Opium War between several western powers and China begins with the Arrow Incident on the Pearl River."></event>
-<event start="1857" end="1859" title="Erste Weltwirtschaftskrise."></event>
-<event start="1859" title="Zweiter Italienischer Unabhängigkeitskrieg.">also known as Franco-Austrian War, or Austro-Sardinian War.</event>
-
-
-<event start="1860-10-18" title="The first Convention of Peking formally ended the Second Opium War."></event>
-<event start="1861-04-12" end="1865-04-09" title="US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten."></event>
-<event start="1861" end="1867" title="Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko."></event>
-<event start="1861-03-17" end="1870-09-20" title="Wars for expansion and national unity continue until the incorporation of the Papal States."></event>
-<event start="1864" title="Deutsch-Dänischer Krieg."></event>
-<event start="1864-07-19" title="the fall of Nanjing formally ended the 14-year Taiping Rebellion."></event>
-<event start="1864" end="1870" title="Tripel-Allianz-Krieg (Argentinien, Brasilien und Uruguay gegen Paraguay)."></event>
-<event start="1865-04-14" title="President of the United States Abraham Lincoln is assassinated by John Wilkes Booth."></event>
-<event start="1866" title="Deutscher Krieg zwischen Österreich und Preußen."></event>
-<event start="1866" title="Gründung des Norddeutschen Bundes, Vorgänger des Deutschen Reiches."></event>
-<event start="1866" end="1869" title="Meiji Restoration in Japan."></event>
-<event start="1867-07-01" title="The Dominion of Canada is created by the British North America Act."></event>
-<event start="1869" title="Eröffnung des Suezkanals, der den Seeweg von Europa nach Indien/Asien so verkürzt, dass man nicht mehr um das Kap der guten Hoffnung fahren muss."></event>
-
-<event start="1870" end="1871" title="Deutsch-Französischer Krieg."></event>
-<event start="1871" title="Erste sozialistische Revolution in Frankreich."></event> 
-<event start="1871-01-18" title="Gründung des Deutschen Reichs."></event>
-<event start="1872" end="1876" title="The Third Carlist War  was the last Carlist War in Spain."></event>
-<event start="1873" title="Dreikaiserabkommen (Deutschland, Österreich, Russland) in Berlin geschlossen."></event>
-<event start="1873" end="1904" title="Aceh War"></event>
-<event start="1875" title="Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde."></event>
-<event start="1876" title="Schlacht am Little Bighorn River.">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
-<event start="1877" end="1878" title="Russisch-Türkischer Krieg."></event>
-<event start="1878" title="Sozialistengesetz Bismarcks gegen die Sozialdemokratie."></event>
-<event start="1878" title="Österreich besetzt Bosnien und Herzegowina."></event>
-<event start="1878-03-03" title="Unabhängigkeit Bulgariens vom Osmanischen Reich."></event>
-<event start="1879" title="Bulgaria and Romania declared independence following a war against the Ottoman Empire."></event>
-<event start="1879" end="1884" title="War of the Pacific."></event>
-
-
-<event start="1881" end="1889" title="Einführung der Bismarckschen Sozialgesetze in Deutschland: Kranken-, Unfall-, Renten- und Invaliditätsversicherung."></event>
-<event start="1881-08-03" title="The Pretoria Convention peace treaty is signed, officially ending the war between the Boers and Britain."></event>
-<event start="1882" title="Der 1879 zwischen Deutschland und Österreich geschlossene Zweibund wird durch den Beitritt Italiens zum Dreibund erweitert."></event>
-<event start="1882" title="Anglo-Egyptian War."></event>
-<event start="1884" title="International Meridian Conference in Washington D.C., held to determine the Prime Meridian of the world."></event>
-<event start="1884" end="1885" title="Berlin Conference, when the western powers divided Africa."></event>
-
-
-<event start="1860" end="1901" title="Viktorianische Ära."></event>
-
-<!--        -->
-<!-- science and technology-->
-<!--        -->
-
-<event start="1820-01-28" title="A Russian expedition led by Fabian Gottlieb von Bellingshausen and Mikhail Petrovich Lazarev approaches the Antarctic coast." icon="images/circle-blue.png"></event>
-<event start="1820-01-30" title="Edward Bransfield lands on the Antarctic mainland." icon="images/circle-blue.png"></event>  
-<event start="1820-04" title="Hans Christian Ørsted discovers the relationship between electricity and magnetism." icon="images/circle-blue.png"></event>
-<event start="1820" title="The 6th edition of the Encyclopædia Britannica appears." icon="images/circle-blue.png"></event>  
-<event start="1825" title="World's first modern railway, the Stockton and Darlington Railway, opens to the public." icon="images/circle-blue.png"></event>
-<event start="1826" title="Invention of the photograph and the first still existing photograph taken." icon="images/circle-blue.png"></event>
-
-
-<event start="1830" end="1839" title="Innovations in roller printing on textiles introduced new dress fabrics." icon="images/circle-blue.png"></event>
-<event start="1831" title="Michael Faraday: Entdeckung der elektromagnetischen Induktion." icon="images/circle-blue.png"></event>
-<event start="1830" end="1839" title="John Herschel entdeckt Robert's Quartet, a group of galaxies." icon="images/circle-blue.png"></event>
-<event start="1831" title="Evolutionary theorist Charles Darwin's expedition on the HMS Beagle." icon="images/circle-blue.png"></event>
-
-
-<event start="1841" title="Der Belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon." icon="images/circle-blue.png"></event>
-<event start="1842-03-30" title="Crawford Williamson Long: First use of general anesthesia in an operation." icon="images/circle-blue.png"></event>
-<event start="1844-05-24" title="The first electrical telegraph sent by Samuel Morse from Baltimore to Washington, D.C." icon="images/circle-blue.png"></event> 
-
-
-<event start="1859" title="Charles Darwin: Die Entstehung der Arten, Theorie der Evolution durch natürliche Selektion." icon="images/circle-blue.png"></event>
-<event start="1854" title="John Snow: entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology." icon="images/circle-blue.png"></event>
-<event start="1856" title="Johann Carl Fuhlrott: Entdeckung von Neandertaler Fossilien im Neanderthal." icon="images/circle-blue.png"></event>
-<event start="1859" title="Richard Christopher Carrington: entdeckt die Sonneneruption der Sonne." icon="images/circle-blue.png"></event>
-
-<event start="1855" title="Henry Bessemer: Production of steel revolutionized by socalled Bessemer process." icon="images/circle-blue.png"></event>
-<event start="1854" title="Benjamin Silliman: first person to fractionate petroleum by distillation." icon="images/circle-blue.png"></event>
-<event start="1854" title="Elisha Otis: First safety elevator." icon="images/circle-blue.png"></event>
-<event start="1851" title="Isaac Singer: First commercially successful sewing machine." icon="images/circle-blue.png"></event>
-
-
-<event start="1864" title="James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist." icon="images/circle-blue.png"></event>
-<event start="1866" title="Erste erfolgreiche Verlegung des Transatlantikkabels." icon="images/circle-blue.png"></event>
-<event start="1866" title="Gregor Mendel: Versuche über Pflanzenhybriden." icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
-<event start="1866" title="J. Norman Lockyer: Spektralanalyse von Sonnenflecken." icon="images/circle-blue.png"></event>
-<event start="1867" title="Alfred Nobel erhält ein Patent auf Dynamit." icon="images/circle-blue.png"></event>
-<event start="1868-08-18" title="Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt." icon="images/circle-blue.png">It was the first eclipse expedition in which a spectroscope was used.</event>
-<event start="1869" title="First Transcontinental Railroad in the USA was completed." icon="images/circle-blue.png"></event>
-<event start="1869" title="Erfindung des Unterwasserboots." icon="images/circle-blue.png"></event>
-<event start="1869" title="Dmitri Iwanowitsch Mendelejew: Periodensystem der Elemente." icon="images/circle-blue.png"></event>
-
-
-<event start="1876" title="The prototype telephone was invented by Alexander Graham Bell." icon="images/circle-blue.png"></event>
-<event start="1879" title="A version of the light bulb was invented by Thomas Edison." icon="images/circle-blue.png"></event>
-<event start="1877-07-18" title="The phonograph is invented by Thomas Edison." icon="images/circle-blue.png"></event>
-<event start="1879" title="The steam drill is invented." icon="images/circle-blue.png"></event>
-
-
-<event start="1885" title="Home Insurance Building, the first skyscraper in history, officially opended." icon="images/circle-blue.png"></event>
-<event start="1886" title="Heinrich Hertz: discovered the photoelectric effect." icon="images/circle-blue.png"></event>
-<event start="1881" title="The Michelson-Morley experiment was undertaken, which suggested that the speed of light is invariant." icon="images/circle-blue.png"></event>
-<event start="1884" title="James-Lange-Theorie der Körperreaktionen." icon="images/circle-blue.png"></event>
-
-<!--           -->
-<!-- Economics -->
-<!--           -->
-
-
-<event start="1830" end="1839" title="A period of economic prosperity in America and Europe, mainly due to increasing trade, the mass production of railroads, and the Erie Canal."></event>
-<event start="1830" end="1839" title="Dutch-speaking farmers known as Voortrekkers emigrate northwards from the Cape Colony."></event>
-<event start="1836" title="The destruction of the Second Bank of the United States."></event>
-<event start="1837" end="1845" title="A Panic triggered by the failing banks in America is followed by a severe depression lasting until 1845."></event>
-
-
-<event start="1840" end="1849" title="Hungerkrisen, soziale Unruhen und Revolutionen in Irland, Polen, Frankreich, Österreich und Deutschland, Chartistenbewegung in England."></event>
-<event start="1840-05-01" title="Introduction of the postage stamp. The first of them is Penny Black, issued by the United Kingdom."></event>
-<event start="1845" end="1849" title="Great Irish Famine">caused a quarter of Ireland's population to die or emigrate to the United States and Canada.</event>
-<event start="1848" end="1855" title="The California Gold Rush">Bringing tens of thousands of immigrants to California and eliminating the United States' dependence on foreign gold.</event>
+<event start="1883" title="Friedrich Nietzsche: Also sprach Zarathustra." link="http://de.wikipedia.org/wiki/Also_sprach_Zarathustra" icon="images/circle-red.png"></event>
+<event start="1884" title="Mark Twain: Die Abenteuer des Huckleberry Finn." link="http://de.wikipedia.org/wiki/Huckleberry_Finn" icon="images/circle-red.png"></event>
+<event start="1880" title="Fjodor Dostojewski: Die Brüder Karamasow." link="http://de.wikipedia.org/wiki/Die_Br%C3%BCder_Karamasow" icon="images/circle-red.png"></event>
+<event start="1888" title="Edward Bellamy: Looking Backward or Life in the Year 2000." link="http://de.wikipedia.org/wiki/Ein_R%C3%BCckblick_aus_dem_Jahre_2000_auf_das_Jahr_1887"  icon="images/circle-red.png"></event>
+<event start="1886" title="Robert Louis Stevenson: Der seltsame Fall des Dr. Jekyll und Mr. Hyde." link="http://de.wikipedia.org/wiki/Der_seltsame_Fall_des_Dr._Jekyll_und_Mr._Hyde" icon="images/circle-red.png"></event>
+<event start="1884" title="Erster Faszikel des Oxford English Dictionary." link="http://de.wikipedia.org/wiki/Oxford_English_Dictionary" icon="images/circle-red.png"></event>
+<event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." link="http://de.wikipedia.org/wiki/Sherlock_Holmes" icon="images/circle-red.png"></event>
 
 
 
-<!--      -->
-<!-- misc -->
-<!--      -->
+<!-- Maler -->
 
-<event start="1860" title="Florence Nightingale founds school for nurses."></event>
-<event start="1862" title="The sport of skiing is invented."></event>
-<event start="1863" title="The Football Association is formed in the United Kingdom of Great Britain and Ireland."></event>
-<event start="1865" title="Gründung der »London Fire Brigade«."></event>
 
-<event start="1886-05-08" title="Coca-Cola was invented."></event>
-<event start="1886" title="Freiheitsstatue eingeweiht."></event>
-<event start="1888" title="Whitechapel murders by the infamous Jack the Ripper."></event>
+<event start="1830-07-10" end="1903-11-12" title="Camille Pissarro" link="http://de.wikipedia.org/wiki/Camille_Pissarro" icon="images/circle-red.png"></event>
+<event start="1832-01-23" end="1883-04-30" title="Édouard Manet" link="http://de.wikipedia.org/wiki/Édouard_Manet" icon="images/circle-red.png"></event>
+<event start="1834-07-19" end="1917-09-27" title="Edgar Degas" link="http://de.wikipedia.org/wiki/Edgar_Degas" icon="images/circle-red.png"></event>
+<event start="1839-01-19" end="1906-10-22" title="Paul Cézanne" link="http://de.wikipedia.org/wiki/Paul_Cézanne" icon="images/circle-red.png"></event>
+<event start="1839-10-30" end="1899-01-29" title="Alfred Sisley" link="http://de.wikipedia.org/wiki/Alfred_Sisley" icon="images/circle-red.png"></event>
+<event start="1840-11-14" end="1926-12-05" title="Claude Monet" link="http://de.wikipedia.org/wiki/Claude_Monet" icon="images/circle-red.png"></event>
+<event start="1841-01-14" end="1895-03-02" title="Berthe Morisot" link="http://de.wikipedia.org/wiki/Berthe_Morisot" icon="images/circle-red.png"></event>
+<event start="1841-02-25" end="1919-12-03" title="Pierre-Auguste Renoir" link="http://de.wikipedia.org/wiki/Pierre-Auguste_Renoir" icon="images/circle-red.png"></event>
+<event start="1853-03-30" end="1890-07-29" title="Vincent van Gogh" link="http://de.wikipedia.org/wiki/Vincent_van_Gogh" icon="images/circle-red.png"></event>
+<event start="1848-06-07" end="1903-05-08" title="Paul Gauguin" link="http://de.wikipedia.org/wiki/Paul_Gauguin" icon="images/circle-red.png"></event>
+<event start="1863-12-12" end="1944-01-23" title="Edvard Munch" link="http://de.wikipedia.org/wiki/Edvard_Munch" icon="images/circle-red.png"></event>
+<event start="1774-09-05" end="1840-05-07" title="Caspar David Friedrich" link="http://de.wikipedia.org/wiki/Caspar_David_Friedrich" icon="images/circle-red.png"></event>
+
+
+<!-- Philosophen/Schriftsteller -->
+
+
+<event start="1770-08-27" end="1831-11-14" title="Georg Wilhelm Friedrich Hegel" link="http://de.wikipedia.org/wiki/Georg_Wilhelm_Friedrich_Hegel" icon="images/circle-red.png"></event>
+<event start="1804-07-28" end="1872-09-13" title="Ludwig Feuerbach" link="http://de.wikipedia.org/wiki/Ludwig_Feuerbach" icon="images/circle-red.png"></event>
+<event start="1820-11-28" end="1895-08-05" title="Friedrich Engels" link="http://de.wikipedia.org/wiki/Friedrich_Engels" icon="images/circle-red.png"></event>
+<event start="1818-05-05" end="1883-03-14" title="Karl Marx" link="http://de.wikipedia.org/wiki/Karl_Marx" icon="images/circle-red.png"></event>
+<event start="1844-10-15" end="1900-08-25" title="Friedrich Nietzsche" link="http://de.wikipedia.org/wiki/Friedrich_Nietzsche" icon="images/circle-red.png"></event>
+<event start="1788-02-22" end="1860-09-21" title="Arthur Schopenhauer" link="http://de.wikipedia.org/wiki/Arthur_Schopenhauer" icon="images/circle-red.png"></event>
+<event start="1821-08-09" end="1867-08-31" title="Charles Baudelaire" link="http://de.wikipedia.org/wiki/Charles_Baudelaire" icon="images/circle-red.png"></event>
+<event start="1826-01-17" end="1893-04-05" title="Wilhelm Lübke" link="http://de.wikipedia.org/wiki/Wilhelm_Lübke" icon="images/circle-red.png">deutscher Kunsthistoriker.</event>
+<event start="1749-08-28" end="1832-03-22" title="Johann Wolfgang von Goethe" link="http://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe" icon="images/circle-red.png"></event>
+<event start="1828-02-08" end="1905-03-24" title="Jules Verne" link="http://de.wikipedia.org/wiki/Jules_Verne" icon="images/circle-red.png"></event>
+<event start="1775-12-16" end="1817-07-18" title="Jane Austen" link="http://de.wikipedia.org/wiki/Jane_Austen" icon="images/circle-red.png"></event>
+<event start="1786-05-06" end="1837-02-12" title="Ludwig Börne" link="http://de.wikipedia.org/wiki/Ludwig_Börne" icon="images/circle-red.png"></event>
+<event start="1818-07-30" end="1848-12-19" title="Emily Brontë" link="http://de.wikipedia.org/wiki/Emily_Brontë" icon="images/circle-red.png"></event>
+<event start="1813-10-17" end="1837-02-19" title="Georg Büchner" link="http://de.wikipedia.org/wiki/Georg_Büchner" icon="images/circle-red.png"></event>
+<event start="1812-02-07" end="1870-06-09" title="Charles Dickens" link="http://de.wikipedia.org/wiki/Charles_Dickens" icon="images/circle-red.png"></event>
+<event start="1804-12-21" end="1881-04-19" title="Benjamin Disraeli" link="http://de.wikipedia.org/wiki/Benjamin_Disraeli" icon="images/circle-red.png"></event>
+<event start="1821-11-11" end="1881-02-09" title="Fjodor Dostojewski" link="http://de.wikipedia.org/wiki/Fjodor_Dostojewski" icon="images/circle-red.png"></event>
+<event start="1821-12-12" end="1880-05-08" title="Gustave Flaubert" link="http://de.wikipedia.org/wiki/Gustave_Flaubert" icon="images/circle-red.png"></event>
+<event start="1819-12-30" end="1898-09-20" title="Theodor Fontane" link="http://de.wikipedia.org/wiki/Theodor_Fontane" icon="images/circle-red.png"></event>
+<event start="1813-03-18" end="1863-12-13" title="Friedrich Hebbel" link="http://de.wikipedia.org/wiki/Friedrich_Hebbel" icon="images/circle-red.png"></event>
+<event start="1797-12-13" end="1856-02-17" title="Heinrich Heine" link="http://de.wikipedia.org/wiki/Heinrich_Heine" icon="images/circle-red.png"></event>
+<event start="1802-02-26" end="1885-05-22" title="Victor Hugo" link="http://de.wikipedia.org/wiki/Victor_Hugo" icon="images/circle-red.png"></event>
+<event start="1828-03-20" end="1906-05-23" title="Henrik Ibsen" link="http://de.wikipedia.org/wiki/Henrik_Ibsen" icon="images/circle-red.png"></event>
+<event start="1809-01-19" end="1849-10-07" title="Edgar Allan Poe" link="http://de.wikipedia.org/wiki/Edgar_Allan_Poe" icon="images/circle-red.png"></event>
+<event start="1799-05-26" end="1837-01-29" title="Alexander Puschkin" link="http://de.wikipedia.org/wiki/Alexander_Puschkin" icon="images/circle-red.png"></event>
+<event start="1854-10-20" end="1891-11-10" title="Arthur Rimbaud" link="http://de.wikipedia.org/wiki/Arthur_Rimbaud" icon="images/circle-red.png"></event>
+<event start="1788-05-16" end="1866-01-31" title="Friedrich Rückert" link="http://de.wikipedia.org/wiki/Friedrich_Rückert" icon="images/circle-red.png"></event>
+<event start="1843-06-09" end="1914-06-21" title="Bertha von Suttner" link="http://de.wikipedia.org/wiki/Bertha_von_Suttner" icon="images/circle-red.png"></event>
+<event start="1828-08-28" end="1910-11-07" title="Leo Tolstoi" link="http://de.wikipedia.org/wiki/Leo_Tolstoi" icon="images/circle-red.png"></event>
+<event start="1819-05-31" end="1892-03-26" title="Walt Whitman" link="http://de.wikipedia.org/wiki/Walt_Whitman" icon="images/circle-red.png"></event>
+<event start="1835-11-30" end="1910-04-21" title="Marc Twain" link="http://de.wikipedia.org/wiki/Marc_Twain" icon="images/circle-red.png"></event>
+
+<!-- Musiker/Komponist -->
+
+<event start="1813-10-10" end="1901-01-27" title="Giuseppe Verdi" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi" icon="images/circle-red.png"></event>
+<event start="1813-05-22" end="1883-02-13" title="Richard Wagner" link="http://de.wikipedia.org/wiki/Richard_Wagner" icon="images/circle-red.png"></event>
+<event start="1770-12-17" end="1827-03-26" title="Ludwig van Beethoven" link="http://de.wikipedia.org/wiki/Ludwig_van_Beethoven" icon="images/circle-red.png"></event>
+<event start="1838-10-25" end="1875-06-03" title="Georges Bizet" link="http://de.wikipedia.org/wiki/Georges_Bizet" icon="images/circle-red.png"></event>
+<event start="1782-10-27" end="1840-05-27" title="Niccolò Paganini" link="http://de.wikipedia.org/wiki/Niccolò_Paganini" icon="images/circle-red.png"></event>
+<event start="1810-02-22" end="1849-10-17" title="Frédéric Chopin" link="http://de.wikipedia.org/wiki/Frédéric_Chopin" icon="images/circle-red.png"></event>
+<event start="1833-05-07" end="1897-04-03" title="Johannes Brahms" link="http://de.wikipedia.org/wiki/Johannes_Brahms" icon="images/circle-red.png"></event>
+<event start="1840-04-25" end="1893-10-25" title="Pjotr Iljitsch Tschaikowski" link="http://de.wikipedia.org/wiki/Pjotr_Iljitsch_Tschaikowski" icon="images/circle-red.png"></event>
+<event start="1810-06-08" end="1856-07-29" title="Robert Schumann" link="http://de.wikipedia.org/wiki/Robert_Schumann" icon="images/circle-red.png"></event>
+<event start="1797-01-31" end="1828-11-19" title="Franz Schubert" link="http://de.wikipedia.org/wiki/Franz_Schubert" icon="images/circle-red.png"></event>
+
+
+
+
+
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- politik/religion (pink)   -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+<event start="1789" end="1799" title="Französische Revolution" link="http://de.wikipedia.org/wiki/Franz%C3%B6sische_Revolution" icon="images/circle-pink.png"></event>
+<event start="1806" title="Ende des Heiligen Römischen Reichs" link="http://de.wikipedia.org/wiki/Heiliges_R%C3%B6misches_Reich" icon="images/circle-pink.png"></event>
+
+<event start="1812-06" end="1812-12" title="Russlandfeldzug Napoleons." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png"></event>
+<event start="1812-06-18" end="1814-12-24" title="Britisch-Amerikanischer Krieg."
+    link="http://de.wikipedia.org/wiki/Britisch-Amerikanischer_Krieg" icon="images/circle-pink.png"></event>
+
+<event start="1813" title="Beginn der Befreiungskriege (Europa gegen
+    Napoleon)." link="http://de.wikipedia.org/wiki/Befreiungskriege" icon="images/circle-pink.png"></event>
+<event start="1813-10-16" end="1813-10-19" title="Völkerschlacht bei
+    Leipzig" link="http://de.wikipedia.org/wiki/V%C3%B6lkerschlacht_bei_Leipzig" icon="images/circle-pink.png"></event>
+
+<event start="1814-03-31" title="Alliierte besetzen Paris."
+    link="http://de.wikipedia.org/wiki/Schlacht_bei_Paris" icon="images/circle-pink.png"></event>
+<event start="1814-04" title="Napoleon wird nach Elba verbannt." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png"></event>
+<event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"
+    link="http://de.wikipedia.org/wiki/Wiener_Kongre%C3%9F" icon="images/circle-pink.png"></event>
+
+<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück.></event>
+<event start="1815-06-18" title="Schlacht bei Waterloo"
+   link="http://de.wikipedia.org/wiki/Schlacht_bei_Waterloo" icon="images/circle-pink.png">Napoleon wird endgültig besiegt.</event>
+<event start="1814-12-24" title="Frieden von Gent"
+    link="http://de.wikipedia.org/wiki/Britisch-Amerikanischer_Krieg"
+    icon="images/circle-pink.png">Der Britisch-Amerikanische Krieg zwischen den USA und Großbritannien, auch bekannt als zweiter Unabhängigkeitskrieg, wird durch den Frieden von Gent beendet.</event>
+<event start="1815-06-08" title="Gründung des Deutschen Bundes" link="http://de.wikipedia.org/wiki/Deutscher_Bund" icon="images/circle-pink.png">Der Deutsche Bund war ein Staatenbund überwiegend deutschsprachiger Staaten zwischen 1815 und 1866. Er wurde am 8. Juni 1815 auf dem Wiener Kongress ins Leben gerufen.</event>
+<event start="1815" title="Gründung der Urburschenschaft in Jena"
+    link="http://de.wikipedia.org/wiki/Burschenschaften" icon="images/circle-pink.png"></event>
+
+<event start="1817-10-18" title="Wartburgfest" link="http://de.wikipedia.org/wiki/Wartburgfest" icon="images/circle-pink.png"></event>
+<event start="1819-09-20" title="Karlsbader Beschlüsse"
+    link="http://de.wikipedia.org/wiki/Karlsbader_Beschl%C3%BCsse" icon="images/circle-pink.png"></event>
+
+<event start="1820-02-23" title="Cato-Street Conspiracy" link="http://en.wikipedia.org/wiki/Cato_Street_Conspiracy" icon="images/circle-pink.png"></event>
+<event start="1821" end="1829" title="Griechischer Unabhängigkeitskrieg" link="http://de.wikipedia.org/wiki/Griechischer_Unabh%C3%A4ngigkeitskrieg" icon="images/circle-pink.png"></event>
+<event start="1821-07-19" title="Krönung Georges IV." link="http://de.wikipedia.org/wiki/Georg_IV._%28Vereinigtes_K%C3%B6nigreich%29"
+    icon="images/circle-pink.png">In der Westminster Abbey findet die Krönung Georgs IV. statt.</event>
+
+<event start="1828" end="1829" title="Russisch-türkischer Krieg"
+    link="http://de.wikipedia.org/wiki/Russisch-T%C3%BCrkischer_Krieg_%281828%E2%80%931829%29" icon="images/circle-pink.png"></event>
+
+<event start="1830" title="Belgische Revolution"
+    link="http://de.wikipedia.org/wiki/Belgische_Revolution" icon="images/circle-pink.png">Die Belgische Revolution von 1830 führt zur Unabhängigkeit von den Niederlanden.</event>
+<event start="1830" title="Julirevolution in Frankreich" link="http://de.wikipedia.org/wiki/Julirevolution_von_1830" icon="images/circle-pink.png"></event>
+<event start="1831" title="Sklavenaufstand in Virginia unter Nat Turner." link="http://de.wikipedia.org/wiki/Nat_Turner" icon="images/circle-pink.png"></event>
+<event start="1831" title="Gründung der New England Anti-Slavery
+    Society."
+    link="http://en.wikipedia.org/wiki/New_England_Anti-Slavery_Society" icon="images/circle-pink.png"></event>
+<event start="1832-05-27" end="1832-05-30" title="Hambacher Fest" link="http://de.wikipedia.org/wiki/Hambacher_Fest" icon="images/circle-pink.png"></event>
+<event start="1835-03-02" title="Franz II. stirbt in Wien."
+    link="http://de.wikipedia.org/wiki/Franz_II._%28HRR%29" icon="images/circle-pink.png"></event>
+<event start="1836" title="Der Bund der Gerechten wird gegründet" link="http://de.wikipedia.org/wiki/Bund_der_Gerechten" icon="images/circle-pink.png"></event>
+<event start="1839" end="1842-08-29" title="Erster Opiumkrieg" link="http://de.wikipedia.org/wiki/Erster_Opiumkrieg" icon="images/circle-pink.png">Erster Opiumkrieg zwischen Großbritannien und dem Kaiserreich China (Qing-Dynastie).</event>
+
+<event start="1840-02-06" title="Vertrag von Waitangi" link="http://de.wikipedia.org/wiki/Vertrag_von_Waitangi" icon="images/circle-pink.png">Vertrag zwischen dem Vereinigten Königreich und den Maori in Neuseeland.</event>
+<event start="1842-08-09" title="Webster-Ashburton Vertrag"
+    link="http://de.wikipedia.org/wiki/Webster-Ashburton-Treaty" icon="images/circle-pink.png">Vertrag, der den Grenzverlauf zwischen dem US-amerikanischen Bundesstaat Maine
+und der kanadischen Provinz New Brunswick regelt.</event>
+<event start="1842-08-29" title="Vertrag von Nanking"
+    link="http://de.wikipedia.org/wiki/Vertrag_von_Nanking" icon="images/circle-pink.png">Der Vertrag von Nanking beendet den ersten Opiumkrieg zwischen Großbritannien und China. Hong Kong wird offiziell an die britischen Besatzer abgetreten und ist erst sei 1997 wieder unter Kontrolle der Volksrepublik China.</event>
+<event start="1846" end="1848" title="Mexikanisch-Amerikanischer
+    Krieg"
+    link="http://de.wikipedia.org/wiki/Mexikanisch-Amerikanischer_Krieg" icon="images/circle-pink.png">Der anschließende Vertrag von Guadalupe Hidalgo führte zu einem großen Gebietszuwachs für die Vereinigten Staaten und dehnte ihr Territorium bis zum Pazifischen Ozean aus.</event>
+<event start="1847" title="Gründung des Bunds der Kommunisten" link="http://de.wikipedia.org/wiki/Bund_der_Kommunisten" icon="images/circle-pink.png">Gründung des Bundes der Kommunisten in London, an dessen Konstituierung Karl Marx und Friedrich Engels maßgeblich beteiligt sind.</event>
+<event start="1848" end="1851" title="Schleswig-Holsteinischer Krieg"
+    link="http://de.wikipedia.org/wiki/Schleswig-Holsteinischer_Krieg_%281848%E2%80%931851%29"
+    icon="images/circle-pink.png">Kriegsparteien im Schleswig-Holsteinischen Krieg waren einerseits die deutsche nationalliberale Bewegung in den Herzogtümern Schleswig und Holstein im Bündnis mit den meisten Staaten des Deutschen Bundes, andererseits das Königreich Dänemark.</event>
+<event start="1848" title="Deutsche Revolution 1848/49" link="http://de.wikipedia.org/wiki/Deutsche_Revolution_1848/49" icon="images/circle-pink.png"></event>
+<event start="1848" end="1849" title="Ungarische Revolution 1848/1849" link="http://de.wikipedia.org/wiki/Ungarische_Revolution_1848/1849" icon="images/circle-pink.png"></event>
+<event start="1848" title="Seneca Falls Convention" icon="images/circle-pink.png">Der Kongress und seine Abschlusserklärung gelten als Geburtsstunde der organisierten US-amerikanischen Frauenbewegung.</event>
+<event start="1849-03-28" title="Paulskirchenverfassung" link="http://de.wikipedia.org/wiki/Paulskirchenverfassung" icon="images/circle-pink.png"></event>
+
+<event start="1850-07-02" title="Frieden von Berlin" icon="images/circle-pink.png">Der Frieden von Berlin beendet den Schleswig-Holsteinischen Krieg zwischen Preußen und Dänemark.</event>
+<event start="1852" title="Napoléon III. begründet das Zweite Kaiserreich."
+    link="http://de.wikipedia.org/wiki/Zweites_Kaiserreich" icon="images/circle-pink.png"></event>
+<event start="1853" end="1856" title="Krimkrieg"
+    link="http://de.wikipedia.org/wiki/Krimkrieg" icon="images/circle-pink.png">Krimkrieg zwischen Russland und dem Osmanischen Reich, Großbritannien, Frankreich und Piemont-Sardinien.</event>
+<event start="1853-07-08" title="Perrys schwarze Schiffe landen in Uraga."
+    link="http://de.wikipedia.org/wiki/Matthew_Calbraith_Perry"
+    icon="images/circle-pink.png">Am 8. Juli 1853 läuft der amerikanische Admiral Matthew C. Perry mit einem Flottenverband Schwarzer Schiffe in den Hafen von Uraga in Japan ein und fordert die Öffnung des seit zweihundert Jahren in Isolation lebenden Landes.</event>
+<event start="1854" end="1859" title="Blutendes Kansas"
+    link="http://de.wikipedia.org/wiki/Bleeding_Kansas" icon="images/circle-pink.png"></event>
+<event start="1856" title="Dritter Pariser Frieden"
+    link="http://de.wikipedia.org/wiki/Dritter_Pariser_Frieden" icon="images/circle-pink.png">Der Pariser Frieden beendet den Krimkrieg führt zu einer Neuordnung Europas.</event>
+<event start="1856-10-08" title="Beginn des zweiten Opiumkriegs."
+    link="http://de.wikipedia.org/wiki/Zweiter_Opiumkrieg" icon="images/circle-pink.png"></event>
+<event start="1857" end="1859" title="Erste Weltwirtschaftskrise" link="http://de.wikipedia.org/wiki/Wirtschaftskrise_von_1857" icon="images/circle-pink.png"></event>
+<event start="1859" title="Sardinischer Krieg" link="http://de.wikipedia.org/wiki/Sardinischer_Krieg" icon="images/circle-pink.png">Auch bekannt als Zweiter Italienischer Unabhängigkeitskrieg.</event>
+
+<event start="1861-04-12" end="1865-04-09" title="Sezessionskrieg"
+    link="http://de.wikipedia.org/wiki/Sezessionskrieg" icon="images/circle-pink.png">US-amerikanischer Bürgerkrieg zwischen den konföderierten Südstaaten der USA und der Union, den Nordstaaten.</event>
+<event start="1861" end="1867" title="Französische Intervention in
+    Mexiko" link="http://de.wikipedia.org/wiki/Franz%C3%B6sische_Intervention_in_Mexiko" icon="images/circle-pink.png">Französische Intervention in Mexiko, Ausrufung des zweiten Kaiserreichs von Mexiko.</event>
+<event start="1864" title="Deutsch-Dänischer Krieg" link="http://de.wikipedia.org/wiki/Deutsch-D%C3%A4nischer_Krieg" icon="images/circle-pink.png">Zweiter Schleswig-Holsteinischer
+    Krieg.</event>
+<event start="1864" end="1870" title="Tripel-Allianz-Krieg" link="http://de.wikipedia.org/wiki/Tripel-Allianz-Krieg" icon="images/circle-pink.png">(Argentinien, Brasilien und Uruguay gegen Paraguay)</event>
+<event start="1865-04-14" title="Ermordung des US-Präsidenten Abraham
+    Lincoln." link="http://de.wikipedia.org/wiki/Abraham_Lincoln" icon="images/circle-pink.png"></event>
+<event start="1866" title="Deutscher Krieg"
+    link="http://de.wikipedia.org/wiki/Deutscher_Krieg" icon="images/circle-pink.png">Der Deutsche Krieg von 1866, ursprünglich als Preußisch-Deutscher Krieg[1] bezeichnet, war die kriegerische Auseinandersetzung des Deutschen Bundes unter Führung Österreichs mit dem Königreich Preußen und dessen Verbündeten.</event>
+<event start="1866-08-18" title="Gründung des Norddeutschen Bundes"
+    link="http://de.wikipedia.org/wiki/Norddeutscher_Bund" icon="images/circle-pink.png"></event>
+<event start="1866" end="1869" title="Meiji Restoration" link="http://de.wikipedia.org/wiki/Meiji-Restauration" icon="images/circle-pink.png">Meiji-Restauration bezeichnet den politischen Umbruch im Jahr 1868 und den Beginn
+    einer neuen Regierungsform im Kaiserreich Japan.</event>
+<event start="1867-07-01" title="Kanadische Konförderation" link="http://de.wikipedia.org/wiki/Kanadische_Konf%C3%B6deration" icon="images/circle-pink.png"></event>
+<event start="1869" title="Eröffnung des Suezkanals." icon="images/circle-pink.png"></event>
+
+<event start="1870-07-19" end="1871-05-10" title="Deutsch-Französischer Krieg" link="http://de.wikipedia.org/wiki/Deutsch-Franz%C3%B6sischer_Krieg" icon="images/circle-pink.png"></event>
+<event start="1871-01-18" title="Gründung des Deutschen Reichs"
+    link="http://de.wikipedia.org/wiki/Deutsches_Reich" icon="images/circle-pink.png"></event>
+<event start="1872" end="1876" title="Dritter Carlistenkrieg"
+    link="http://de.wikipedia.org/wiki/Carlistenkrieg#Der_Dritte_Carlistenkrieg" icon="images/circle-pink.png"></event>
+<event start="1873-10-22" title="Dreikaiserabkommen" link="http://de.wikipedia.org/wiki/Dreikaiserabkommen"
+    icon="images/circle-pink.png">Das Dreikaiserabkommen war ein Konsultativpakt zwischen den drei monarchisch regierten Staaten Russland, Österreich-Ungarn und dem Deutschen Reich.</event>
+<event start="1875" title="Gründung der SAP" link="http://de.wikipedia.org/wiki/Sozialistische_Arbeiterpartei_Deutschlands_%281875%29" icon="images/circle-pink.png">Gründung der Sozialistischen Arbeiterpartei Deutschlands (SAP), die 1890 in Sozialdemokratische Partei Deutschlands (SPD) umbenannt wurde.</event>
+<event start="1876" title="Schlacht am Little Bighorn River"
+    link="http://de.wikipedia.org/wiki/Schlacht_am_Little_Bighorn" icon="images/circle-pink.png">Das siebte US-amerikanische Kavallerieregiment unter George A. Custer wird von Indianern der Sioux und Cheyenne unter ihren Führern Sitting Bull und Crazy Horse geschlagen.</event>
+<event start="1877" end="1878" title="Russisch-Osmanischer Krieg"
+    link="http://de.wikipedia.org/wiki/Russisch-Osmanischer_Krieg_%281877%E2%80%931878%29" icon="images/circle-pink.png"></event>
+<event start="1878-10-19" title="Bismarcks Sozialistengesetz"
+    link="http://de.wikipedia.org/wiki/Sozialistengesetz" icon="images/circle-pink.png"></event>
+<event start="1878-03-03" title="Frieden von San Stefano"
+    link="http://de.wikipedia.org/wiki/Frieden_von_San_Stefano"
+    icon="images/circle-pink.png">Der Frieden von San Stefano beendete am 3. März 1878 den Russisch-Türkischen Krieg 1877–1878 und brachte Serbien, Montenegro und Rumänien die Unabhängigkeit vom Osmanischen Reich.</event>
+<event start="1879" end="1884" title="Salpeterkrieg" link="http://de.wikipedia.org/wiki/Salpeterkrieg"
+    icon="images/circle-pink.png">Der Salpeterkrieg wurde zwischen Chile, Peru und Bolivien im heutigen Norden Chiles in den Jahren 1879 bis 1884 geführt.</event>
+
+
+<event start="1880" end="1889" title="Bismarcksche Sozialgesetze" link="http://de.wikipedia.org/wiki/Bismarck#Sozialgesetzgebung_und_Staatsstreichpl.C3.A4ne" icon="images/circle-pink.png">Einführung der Bismarckschen Sozialgesetze in Deutschland: Kranken-, Unfall-, Renten- und Invaliditätsversicherung.</event>
+<event start="1882-05-20" title="Dreibund zwischen Deutschland, Österreich und Italien."
+    link="http://de.wikipedia.org/wiki/Dreibund" icon="images/circle-pink.png">Der 1879 zwischen Deutschland und Österreich geschlossene Zweibund wird durch den Beitritt Italiens zum Dreibund erweitert.</event>
+<event start="1884-10-14" title="Internationale Meridian-Konferenz in Washington D.C."
+    link="http://de.wikipedia.org/wiki/Internationale_Meridian-Konferenz#Die_Internationale_Meridian-Konferenz.2C_Washington_1884" icon="images/circle-pink.png"></event>
+<event start="1884-11-15" end="1885-02-26" title="Kongokonferenz"
+    icon="images/circle-pink.png">Die Kongokonferenz fand auf Einladung des deutschen Reichskanzlers Bismarck in Berlin statt und sollte die Handelsfreiheit am Kongo und am Niger regeln.></event>
+
+<event start="1914-07-28" title="Österreich-Ungarns Kriegserklärung an Serbien" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg"
+    icon="images/circle-pink.png">Die Kriegserklärung an Serbien markiert den Beginn des 1. Weltkriegs.</event>
+<event start="1914" end="1918" title="Erster Weltkrieg" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg" icon="images/circle-pink.png"></event>
+
+
+
+
+<!-- Politik/Religion -->
+
+<event start="1807-01-09" end="1852" title="Amir Kabir" link="http://de.wikipedia.org/wiki/Amir_Kabir" icon="images/circle-pink.png">Ministerpräsident und bedeutender Reformer Persiens</event>
+<event start="1817-11-12" end="1892-05-29" title="Baha’u’llah" icon="images/circle-pink.png">Religionsstifter der Bahai</event>
+<event start="1814-05-18" end="1876-07-01" title="Michail Bakunin" link="http://de.wikipedia.org/wiki/Michail_Bakunin" icon="images/circle-pink.png">russischer Anarchist</event>
+<event start="1840-02-22" end="1913-08-13" title="August Bebel" link="http://de.wikipedia.org/wiki/August_Bebel" icon="images/circle-pink.png">SPD-Mitbegründer</event>
+<event start="1815-04-01" end="1898-07-30" title="Otto von Bismarck" link="http://de.wikipedia.org/wiki/Otto_von_Bismarck" icon="images/circle-pink.png">deutscher Reichskanzler</event>
+<event start="1811-10-29" end="1882-12-06" title="Louis Blanc" link="http://de.wikipedia.org/wiki/Louis_Blanc" icon="images/circle-pink.png">französischer Sozialist</event>
+<event start="1783-07-24" end="1830-12-17" title="Simón Bolívar" link="http://de.wikipedia.org/wiki/Simón_Bolívar" icon="images/circle-pink.png">lateinamerikanischer Unabhängigkeitskämpfer</event>
+<event start="1769-08-15" end="1821-05-05" title="Napoléon Bonaparte" link="http://de.wikipedia.org/wiki/Napoléon_Bonaparte" icon="images/circle-pink.png">Französischer Kaiser</event>
+<event start="1830-08-18" end="1916-11-21" title="Franz Joseph I." link="http://de.wikipedia.org/wiki/Franz_Joseph_I." icon="images/circle-pink.png">Kaiser von Österreich, König von Ungarn</event>
+<event start="1858-08-21" end="1889-01-30" title="Rudolf Franz Karl Joseph" link="http://de.wikipedia.org/wiki/Rudolf_Franz_Karl_Joseph" icon="images/circle-pink.png">Kronprinz von Österreich-Ungarn</event>
+<event start="1837-12-24" end="1898-09-10" title="Elisabeth von Österreich-Ungarn" link="http://de.wikipedia.org/wiki/Elisabeth_von_Österreich-Ungarn" icon="images/circle-pink.png">Sisi, Kaiserin von Österreich-Ungarn</event>
+<event start="1810-08-10" end="1861-06-06" title="Camillo Benso Graf von Cavour" link="http://de.wikipedia.org/wiki/Camillo_Benso_Graf_von_Cavour" icon="images/circle-pink.png">sardinischer und italienischer Ministerpräsident</event>
+<event start="1829-06-16" end="1909-02-17" title="Geronimo" icon="images/circle-pink.png">Schamane und Apachenhäuptling</event>
+<event start="1807-07-04" end="1882-06-02" title="Giuseppe Garibaldi" link="http://de.wikipedia.org/wiki/Giuseppe_Garibaldi" icon="images/circle-pink.png">italienischer Revolutionär</event>
+<event start="1811-09-28" end="1881-03-24" title="Friedrich Hecker" link="http://de.wikipedia.org/wiki/Friedrich_Hecker" icon="images/circle-pink.png">badischer Revolutionär</event>
+<event start="1783-09-27" end="1824-07-19" title="Agustin de Iturbide" link="http://de.wikipedia.org/wiki/Agustin_de_Iturbide" icon="images/circle-pink.png">Kaiser von Mexiko</event>
+<event start="1859-09-03" end="1914-07-31" title="Jean Jaurès" link="http://de.wikipedia.org/wiki/Jean_Jaurès" icon="images/circle-pink.png">französischer Sozialist und Pazifist</event>
+<event start="1802-09-19" end="1894-03-20" title="Lajos Kossuth" link="http://de.wikipedia.org/wiki/Lajos_Kossuth" icon="images/circle-pink.png">ungarischer Nationalheld</event>
+<event start="1825-04-11" end="1864-08-31" title="Ferdinand Lassalle" link="http://de.wikipedia.org/wiki/Ferdinand_Lassalle" icon="images/circle-pink.png">Gründer des ADAV, der ersten Vorläuferorganisation der SPD</event>
+<event start="1826-03-29" end="1900-08-07" title="Wilhelm Liebknecht" link="http://de.wikipedia.org/wiki/Wilhelm_Liebknecht" icon="images/circle-pink.png">Marxist, Revolutionär und SPD-Mitbegründer</event>
+<event start="1809-02-12" end="1865-04-15" title="Abraham Lincoln" link="http://de.wikipedia.org/wiki/Abraham_Lincoln" icon="images/circle-pink.png">Amerikanischer Präsident</event>
+<event start="1789-08-06" end="1846-11-30" title="Friedrich List" link="http://de.wikipedia.org/wiki/Friedrich_List" icon="images/circle-pink.png">Ökonom und Eisenbahnpionier</event>
+<event start="1805-06-22" end="1872-03-10" title="Giuseppe Mazzini" link="http://de.wikipedia.org/wiki/Giuseppe_Mazzini" icon="images/circle-pink.png">italienischer Revolutionär</event>
+<event start="1773-05-15" end="1859-06-11" title="Klemens Wenzel Lothar von Metternich" link="http://de.wikipedia.org/wiki/Klemens_Wenzel_Lothar_von_Metternich" icon="images/circle-pink.png">österreichischer Diplomat und Staatskanzler</event>
+<event start="1832-07-06" end="1867-06-19" title="Maximilian I." link="http://de.wikipedia.org/wiki/Maximilian_I." icon="images/circle-pink.png">Kaiser von Mexiko</event>
+<event start="1814-01-17" end="1878-11-22" title="Ludwik Mieroslawski" link="http://de.wikipedia.org/wiki/Ludwik_Mieroslawski" icon="images/circle-pink.png">polnischer Revolutionär</event>
+<event start="1808-04-20" end="1873-01-09" title="Napoléon III." link="http://de.wikipedia.org/wiki/Napoléon_III." icon="images/circle-pink.png">französischer Staatspräsident, Diktator und Kaiser von Frankreich</event>
+<event start="1829-03-02" end="1906-05-14" title="Carl Schurz" link="http://de.wikipedia.org/wiki/Carl_Schurz" icon="images/circle-pink.png">badischer Revolutionär, US-Innenminister</event>
+<event start="1820-03-14" end="1878-01-09" title="Viktor Emanuel II." link="http://de.wikipedia.org/wiki/Viktor_Emanuel_II." icon="images/circle-pink.png">König von Sardinien und Italien</event>
+<event start="1779-08-03" end="1840-06-17" title="Friedrich Wilhelm III." link="http://de.wikipedia.org/wiki/Friedrich_Wilhelm_III." icon="images/circle-pink.png"></event>
+
+
+
+
+
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- science and technology (blue)-->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+<event start="1809" title="Soemmerrings elektrischer Telegraf" link="http://de.wikipedia.org/wiki/Samuel_Thomas_von_Soemmerring" icon="images/circle-blue.png"></event>
+
+<event start="1820-01-28" title="Russische Expedition erreicht die Antarktis." link="http://de.wikipedia.org/wiki/Fabian_Gottlieb_von_Bellingshausen" icon="images/circle-blue.png">Expedition unter der Führung von Fabian Gottlieb von Bellingshausen und Mikhail Petrovich Lazarev.</event>
+<event start="1820-04" title="Ørsted entdeckt die magnetische Wirkung
+    des elektrischen Stroms."
+    link="http://de.wikipedia.org/wiki/Hans_Christian_%C3%98rsted"
+    icon="images/circle-blue.png">Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=oersted"&gt;Ørsted&lt;/a&gt;.</event>
+<event start="1820" title="6. Edition der Encyclopædia Britannica" link="http://de.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" icon="images/circle-blue.png"></event>
+<event start="1825-09-27" title="Eröffnung der Stockton and Darlington Railway."
+    link="http://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway"
+    icon="images/circle-blue.png">Suche im Polytechnischen Journal nach: &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/search?q=Stockton"&gt;Stockton&lt;/a&gt;.</event>
+<event start="1826" title="Nicéphore Nièpces Fotografie" link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce"
+    icon="images/circle-blue.png">Erste bekannte Fotografie,
+    angefertigt im Heliografie-Verfahren.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/search?q=Niepces"&gt;Niepces&lt;/a&gt;.</event>
+
+<event start="1831" title="Faraday: Elektromagnetische Induktion."
+    link="http://de.wikipedia.org/wiki/Michael_Faraday"
+    icon="images/circle-blue.png">Michael Faraday entdeckt die
+    elektromagnetische Induktion.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=Faraday"&gt;Faraday&lt;/a&gt;.</event>
+<event start="1830" end="1839" title="John Herschel entdeckt Robert's
+    Quartet" link="http://de.wikipedia.org/wiki/John_Herschel" icon="images/circle-blue.png"></event>
+<event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." link="http://de.wikipedia.org/wiki/HMS_Beagle_%281820%29" icon="images/circle-blue.png"></event>
+<event start="1833" title="Aristide Cavaillé-Coll erfindet Kreissäge."
+    link="http://de.wikipedia.org/wiki/Aristide_Cavaill%C3%A9-Coll" icon="images/circle-blue.png"></event>
+<event start="1835-07-19" title="Erst Fahrt der Minerva."
+    link="http://de.wikipedia.org/wiki/Minerva_%281834%29" icon="images/circle-blue.png">Die Minerva war das erste mit einer Dampfmaschine betriebene Schiff auf dem Zürichsee und das erste mit eiserner Schale in Europa.</event>
+<event start="1839" title="Charles Goodyear: Vulkanisation" link="http://de.wikipedia.org/wiki/Charles_Goodyear" icon="images/circle-blue.png"></event>
+
+<event start="1841" title="Das Saxophon" link="http://de.wikipedia.org/wiki/Adolphe_Sax" icon="images/circle-blue.png">Der belgische Instrumentenmacher Adolphe Sax erfindet das Saxophon.</event>
+<event start="1842-03-30" title="Entdeckung des Narkotikums" link="http://de.wikipedia.org/wiki/Crawford_Williamson_Long" icon="images/circle-blue.png">Crawford Williamson Long: Erste Verwendung von Ätherdämpfen als Narkotikum bei einer Operation.</event>
+<event start="1843" title="Bains elektro-telegrafische Bildzerlegung"
+    link="http://de.wikipedia.org/wiki/Alexander_Bain_%28Uhrmacher%29" icon="images/circle-blue.png">Alexander Bain ein Patent für elektro-telegrafische Bildzerlegung.</event>
+<event start="1844-05-24" title="Morse Telegramm" link="http://de.wikipedia.org/wiki/Samuel_F._B._Morse" icon="images/circle-blue.png">Samuel Morses erstes elektrisches Telegramm von Baltimore nach Washington, D.C.</event>
+<event start="1847" title="Herstellung der ersten kruppschen Gussstahlkanone" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png"></event>
+<event start="1848" title="Bakewells Kopiertelegraph" icon="images/circle-blue.png">F. C. Bakewell einen „Kopiertelegraphen“ nach Bains Prinzip der zeilenweisen Bildabtastung.</event>
+
+<event start="1851" title="Charles Page: Batteriebetriebene
+    Lokomotive"
+    link="http://de.wikipedia.org/wiki/Charles_Grafton_Page" icon="images/circle-blue.png"></event>
+<event start="1851" title="Singer Nähmaschine"
+    link="http://de.wikipedia.org/wiki/Isaac_Merritt_Singer" icon="images/circle-blue.png">Isaac Singer: Erfindet die erste kommerziell erfolgreiche Nähmaschine.</event>
+<event start="1853" title="Sicherheitsfangvorrichtung für Aufzüge."
+    link="http://de.wikipedia.org/wiki/Elisha_Graves_Otis" icon="images/circle-blue.png">Elisha Otis erfindet eine Sicherheitsfangvorrichtung für Aufzüge, welche einen Absturz der Kabine verhindert.</event>
+<event start="1854" title="John Snow: Epidemiology" link="http://de.wikipedia.org/wiki/John_Snow_%28Arzt%29" icon="images/circle-blue.png">John Snow entdeckt die Ursache des Choleraausbruchs in London. Beginn der Epidemiology.</event>
+<event start="1855" title="Bessemer Prozess"
+    link="http://de.wikipedia.org/wiki/Henry_Bessemer" icon="images/circle-blue.png">Henry Bessemer revolutioniert die Stahlherstellung.</event>
+<event start="1856" title="Entdeckung von Fossilien im Neandertal." link="http://de.wikipedia.org/wiki/Neandertaler" icon="images/circle-blue.png"></event>
+<event start="1859" title="Richard Christopher Carrington:
+    Sonneneruption."
+    link="http://de.wikipedia.org/wiki/Richard_Christopher_Carrington" icon="images/circle-blue.png"></event>
+<event start="1859" title="Charles Darwin: Die Entstehung der Arten."
+    link="http://de.wikipedia.org/wiki/Charles_Darwin" icon="images/circle-blue.png"></event>
+
+<event start="1861" title="Reis' Telefon" link="http://de.wikipedia.org/wiki/Philipp_Reis" icon="images/circle-blue.png">Philipp Reis stellt einen dem heutigen Telefon ähnlichen Apparat zur Sprachübertragung der Öffentlichkeit vor.</event>
+<event start="1862" title="Casellis Pantelegraph" link="http://de.wikipedia.org/wiki/Pantelegraph" icon="images/circle-blue.png">Giovanni Caselli überträgt einfache Zeichnungen per Draht von Amiens nach Paris.</event>
+<event start="1863-01-10" title="Eröffnung der London Underground"
+    link="http://de.wikipedia.org/wiki/London_Underground" icon="images/circle-blue.png"></event>
+<event start="1864" title="Maxwells elektromagnetische Gleichungen" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell" icon="images/circle-blue.png">James Clerk Maxwell publiziert die Gleichungen zum Verhältnis von Elektrizität und Magnetismus und zeigt, dass Licht eine Form von elektromagnetischer Strahlung ist.</event>
+<event start="1864-10-02" title="Monturiols Ictineo II" link="http://de.wikipedia.org/wiki/Ict%C3%ADneo_II" icon="images/circle-blue.png">Am 2. Oktober 1864 wurde von Narcís Monturiol mit der Ictíneo II das erste U-Boot mit einem maschinellen Antrieb zu Wasser gelassen.</event>
+<event start="1866" title="Verlegung des Transatlantikkabels"
+    link="http://de.wikipedia.org/wiki/Transatlantisches_Telefonkabel" icon="images/circle-blue.png"></event>
+<event start="1866" title="Gregor Mendel: Versuche über
+    Pflanzenhybriden."
+    link="http://de.wikipedia.org/wiki/Gregor_Mendel" icon="images/circle-blue.png">In dieser kaum beachteten Publikation wurden erstmals die später nach dem Erfinder benannten Mendel'schen Regeln formuliert.</event>
+<event start="1866" title="J. Norman Lockyer: Spektralanalyse von
+    Sonnenflecken."
+    link="http://de.wikipedia.org/wiki/Joseph_Norman_Lockyer" icon="images/circle-blue.png"></event>
+<event start="1867" title="Alfred Nobels Dynamit-Patent"
+    link="http://de.wikipedia.org/wiki/Alfred_Nobel" icon="images/circle-blue.png"></event>
+<event start="1867" title="Muybridges Fotoserie aus dem
+    Yosemite-Nationalpark."
+    link="http://de.wikipedia.org/wiki/Eadweard_Muybridge" icon="images/circle-blue.png"></event>
+<event start="1868-08-18" title="Helium wird entdeckt." link="http://de.wikipedia.org/wiki/Helium" icon="images/circle-blue.png">Während einer totalen Sonnenfinsternis in Indien wird erstmals Helium entdeckt.</event>
+<event start="1869-05-10" title="Fertigstellung der Transkontinentalen Eisenbahn in den USA."
+    link="http://de.wikipedia.org/wiki/Geschichte_der_Eisenbahn_in_Nordamerika" icon="images/circle-blue.png"></event>
+<event start="1869" title="Mendelejew: Periodensystem der Elemente." link="http://de.wikipedia.org/wiki/Dmitri_Iwanowitsch_Mendelejew" icon="images/circle-blue.png"></event>
+
+<event start="1871" title="Mauser Modell 71"
+    link="http://de.wikipedia.org/wiki/Mauser_Modell_71" icon="images/circle-blue.png">Das Mauser Modell 71 war die erste deutsche Repetierbüchse mit Magazin.</event>
+<event start="1876" title="A. G. Bells Telefon-Patent" link="http://de.wikipedia.org/wiki/Alexander_Graham_Bell" icon="images/circle-blue.png">Alexander Graham Bell wird das Patent für das erste Telefon erteilt.</event>
+<event start="1877" title="Erster regelmäßiger Fernsprechdienst" link="http://de.wikipedia.org/wiki/Telefon" icon="images/circle-blue.png">Auf Anordnung des Generalpostmeisters Heinrich von Stephan wird der erste regelmäßige Fernsprechdienst betrieben.</event>
+<event start="1877-07-18" title="Edisons Phonograph" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
+<event start="1879" title="Edisons Glühbirne" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
+
+<event start="1881" title="Michelson-Morley Experiment"
+    link="http://de.wikipedia.org/wiki/Michelson-Morley-Experiment" icon="images/circle-blue.png"></event>
+<event start="1884" title="James-Lange-Theorie der Körperreaktionen"
+    link="http://de.wikipedia.org/wiki/James-Lange-Theorie" icon="images/circle-blue.png"></event>
+<event start="1886" title="Heinrich Hertz: Photoelektrischer Effect"
+    link="http://de.wikipedia.org/wiki/Heinrich_Hertz" icon="images/circle-blue.png"></event>
+<event start="1886-01-29" title="Carl Benz' Motorwagen-Patent (DRP
+    37435)" link="http://de.wikipedia.org/wiki/Carl_Benz" icon="images/circle-blue.png"></event>
+
+<event start="1895-11-08" title="Röntgenstrahlung" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen" icon="images/circle-blue.png">Wilhelm Conrad Röntgen entdeckt die nach ihm benannte Röntgenstrahlung</event>
+<event start="1898-12-21" title="Marie und Pierre Curie entdecken Radium." link="http://de.wikipedia.org/wiki/Radium" icon="images/circle-blue.png"></event>
+
+<event start="1902" title="Eröffnung der Berliner U-Bahn" link="http://de.wikipedia.org/wiki/Berliner_U-Bahn" icon="images/circle-blue.png"></event>
+
+
+<event start="1800" title="Erste kommerzielle Nutzung der Lithografie"
+    link="http://de.wikipedia.org/wiki/Lithografie" icon="images/circle-blue.png"></event>
+
+<event start="1804-09-16" title="Ballonaufstieg in 7000m Höhe"
+    link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac" icon="images/circle-blue.png">Joseph
+    Gay-Lussacs nimmt bei einer Ballonfahrt Luftproben in
+    verschiedenen Höhen und steigt bis auf über 7000 Meter
+    auf.</event>
+
+<event start="1824" title="Entdeckung des Rotationsmagnetismus"
+    link="http://de.wikipedia.org/wiki/Fran%C3%A7ois_Arago" icon="images/circle-blue.png">1824
+    führte François Arago ein Experiment durch, bei dem eine frei
+    rotierbare Magnetnadel über einer rotierenden Kupferscheibe
+    schwebt und durch die Rotation der Scheibe ebenfalls in Bewegung
+    gesetzt wird.</event>
+
+
+<event start="1832" title="Chamisso: Der deutsche Muselalmanach"
+    link="http://de.wikipedia.org/wiki/Adelbert_von_Chamisso" icon="images/circle-blue.png">Albert
+    von Chamisso ist ab 1832 zusammen mit Gustav Schwab Herausgeber
+    des »Deuschen Muselalmanach«.</event>
+
+<event start="1832" title="Phenakistiskop"
+    link="http://de.wikipedia.org/wiki/Phenakistiskop" icon="images/circle-blue.png">1832
+    entwickelten der Deutschösterreicher Simon Stampfer und der
+    Belgier Joseph Plateau unabhängig voneinander das Lebensrad, das
+    beim Betrachter den Eindruck bewegter Bilder erzeugte.</event>
+
+
+<event start="1835-08" title="Talbots Erkerfenster von Lacock Abbey"
+    link="http://de.wikipedia.org/wiki/William_Fox_Talbot"
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Talbot_Erkerfenster.jpg/120px-Talbot_Erkerfenster.jpg" icon="images/circle-blue.png"></event>
+
+<event start="1837" title="Daguerreotypie" link="http://de.wikipedia.org/wiki/Louis_Daguerre" icon="images/circle-blue.png">1837 entstand die älteste erhaltene Daguerreotypie der Welt. Die nach Louis Daguerre benannten Bilder waren bereits fertige Positive.</event>
+
+<event start="1845" title="Nebelbildapparat"
+    link="http://de.wikipedia.org/wiki/Franz_von_Uchatius" icon="images/circle-blue.png">Franz von
+    Uchatius baut einen Apparat zur Darstellung beweglicher
+    Bilder.</event>
+
+<event start="1859" title="Mareys Sphygmograph"
+    link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey"
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Marey_Sphygmograph.jpg/120px-Marey_Sphygmograph.jpg" icon="images/circle-blue.png">Ab
+    1859 begann Marey mit der Entwicklung eines eigenen graphischen
+    Puls-Registriersystems, dem Sphygmographen.</event>
+
+
+<event start="1860" title="Erster Fund jungpaläolithischer Kunst"
+    link="http://de.wikipedia.org/wiki/Arch%C3%A4ologie#Ab_Mitte_des_19._Jahrhunderts" icon="images/circle-blue.png">Edouard
+    Lartet (1801-1871) untersucht 1860 eine Fundstätte in den Pyrenäen
+    (Massat) und findet dabei auch eine Geweihspitze mit eingraviertem
+    Bärenkopf, der erste Fund jungpaläolithischer Kunst.</event>
+
+<event start="1873-05-31" title="Schliemann entdeckt den Schatz des Priamos" link="http://de.wikipedia.org/wiki/Schatz_des_Priamos" icon="images/circle-blue.png"></event>
+
+<event start="1879" title="Entdeckung der Höhlenmalereien in Altamira" link="http://de.wikipedia.org/wiki/H%C3%B6hle_von_Altamira" image="http://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/AltamiraBison.jpg/120px-AltamiraBison.jpg" icon="images/circle-blue.png"></event>
+
+<event start="1882" title="Chronofotografie eines Pelikanfluges" link="http://de.wikipedia.org/wiki/%C3%89tienne-Jules_Marey" image="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Marey_-_birds.jpg/120px-Marey_-_birds.jpg" icon="images/circle-blue.png">Étienne-Jules Marey benutzt rotierende photographische Platten in einer gewehrähnlichen Kamera Rekonstruktion von Bewegungsabläufen.</event>
+
+
+<event start="1884-02-12" title="Watermans Füllfederhalter-Patent" link="http://de.wikipedia.org/wiki/Lewis_Edson_Waterman" icon="images/circle-blue.png"></event>
+
+<event start="1886-07-03" title="Mergenthalers Linotype" link="http://de.wikipedia.org/wiki/Ottmar_Mergenthaler" icon="images/circle-blue.png"></event>
+
+<event start="1892" title="Déménys Photophone" link="http://de.wikipedia.org/wiki/Georges_Emile_Joseph_D%C3%A9m%C3%A9ny" icon="images/circle-blue.png">An der Exposition Internationale de Photographie von 1892 zu Paris stellt Georges Emile Joseph Démény sein »Photophone« aus, das 24 Phasenbilder enthielt.</event>
+
+<event start="1897" title="Erfindungung der Monotype" link="http://de.wikipedia.org/wiki/Monotype" icon="images/circle-blue.png">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
+
+
+
+<!-- Weltausstellungen (orange)-->
+
+<event start="1851" title="Weltausstellung London, 1851"
+    link="http://de.wikipedia.org/wiki/Great_Exhibition"
+    icon="images/circle-orange.png">- &lt;a
+    href="http://de.wikipedia.org/wiki/Crystal_Palace_%28Geb%C3%A4ude%29"&gt;Kristallpalast&lt;/a&gt;</event>
+<event start="1855" title="Weltausstellung Paris, 1855"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1855"
+    icon="images/circle-orange.png">- Betonboot&lt;br&gt; -
+    Espressomaschine&lt;br&gt; - Zündhölzer</event>
+<event start="1862" title="Weltausstellung London, 1862"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_London_1862"
+    icon="images/circle-orange.png">- Nähmaschine&lt;br&gt; - Babbages
+    analytical engine&lt;br&gt; - Kautschuk&lt;br&gt; - Bessemer Prozeß </event>
+<event start="1867" title="Weltausstellung Paris, 1867"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1867"
+    icon="images/circle-orange.png">-Eiscreme-Soda&lt;br&gt; -
+    Saugwind-Harmonium&lt;br&gt; - Flugkolbenmotor&lt;br&gt; -
+    Aluminium&lt;br&gt; - Otis' Sicherheitsaufzug</event>
+<event start="1873" title="Weltausstellung Wien, 1873" link="http://de.wikipedia.org/wiki/Weltausstellung_1873" icon="images/circle-orange.png"></event>
+<event start="1876" title="Weltausstellung Philadelphia, 1876"
+    link="http://de.wikipedia.org/wiki/Centennial_Exhibition"
+    icon="images/circle-orange.png">- Alexander Graham Bells Telefon&lt;br&gt; - Die Remington Typographic Machine (Schreibmaschine) &lt;br&gt; - Heinz Ketchup (H. J. Heinz Company) &lt;br&gt; - Der Wallace-Farmer Electric Dynamo, Vorläufer des elektrischen Lichts &lt;br&gt; - Hires Root Beer
+</event>
+<event start="1878" title="Weltausstellung Paris, 1878"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1878"
+    icon="images/circle-orange.png">- Eisschrank &lt;br&gt; - Bell's
+    Telefon&lt;br&gt; - Felix du Temples Monoplane&lt;br&gt; - Edisons
+    Megaphon und Phonograph&lt;br&gt; - elektrische Lichtbogenlampe</event>
+<event start="1883" title="Weltausstellung Barcelona, 1888"
+    link="http://de.wikipedia.org/wiki/Expo_1888"
+    icon="images/circle-orange.png">- Arc de Triomf</event>
+<event start="1889" title="Weltausstellung Paris, 1889"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1889"
+    icon="images/circle-orange.png">- Eiffelturm&lt;br&gt; - Charles
+    Duterts Maschinenhalle&lt;br&gt; - Jean C. Formigés Palais der
+    Schönen Künste&lt;br&gt; - Joseph Bouvards
+    Industriepalast&lt;br&gt; - Rekonstruktion der Bastille&lt;br&gt;
+    - mit Wasserstoff gefüllte Fesselballons&lt;br&gt; - Linotype</event>
+<event start="1893" title="Weltausstellung Chicago, 1893"
+    link="http://de.wikipedia.org/wiki/World%E2%80%99s_Columbian_Exposition"
+    icon="images/circle-orange.png">- Reißverschluss&lt;br&gt; -
+    Riesenrad&lt;br&gt; - elektrischer Stuhl&lt;br&gt; - Intramural
+    Railway&lt;br&gt; - Stollwercks »Chocolade-Tempel«&lt;br&gt; - Genfer Uhren</event>
+<event start="1900" title="Weltausstellung Paris, 1900"
+    link="http://de.wikipedia.org/wiki/Weltausstellung_Paris_1900"
+    icon="images/circle-orange.png">- Metro&lt;br&gt; - Vorläufer der Rolltreppe&lt;br&gt; - Oberleitungsbus&lt;br&gt; - Lohner-Porsche&lt;br&gt; - Eisenbahnbrücke von Krasnojarsk</event>
+<event start="1904" title="Weltausstellung St. Louis, 1904"
+    link="http://de.wikipedia.org/wiki/Louisiana_Purchase_Exposition"
+    icon="images/circle-orange.png">- Los Angeles Art Organ Company:
+    weltgrößte Orgel&lt;br&gt; - Dr. Pepper</event>
+
+<!-- Firmengründungen -->
+
+<event start="1810" title="Gründung der Gießerei Henschel &amp; Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-blue.png">Die Gießerei Henschel &amp; Sohn produziert ab 1816 Dampfmaschinen.</event>
+<event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
+<event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-blue.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
+<event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-blue.png"></event>
+<event start="1839" title="Gründung der Stollwerck GmbH" link="http://de.wikipedia.org/wiki/Stollwerck" icon="images/circle-blue.png"></event>
+<event start="1847-10-12" title="Gründung der Siemens-Halske AG" icon="images/circle-blue.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die
+Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
+<event start="1865-04-16" title="Gründung der BASF" link="http://de.wikipedia.org/wiki/BASF" icon="images/circle-blue.png">Gründung der Badischen Anilin- und Soda-Fabrik in Ludwigshafen.</event>
+<event start="1867" title="Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
+
+
+
+
+<!--  Wissenschaftler, Industrielle -->
+
+<event start="1804-06-23" end="1854-07-06" title="August Borsig" link="http://de.wikipedia.org/wiki/August_Borsig" icon="images/circle-blue.png"></event>
+<event start="1793-02-22" end="1880-03-06" title="Friedrich Harkort" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-blue.png"></event>
+<event start="1812-04-26" end="1887-07-14" title="Alfred Krupp" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-blue.png"></event>
+<event start="1816-12-13" end="1892-12-06" title="Werner von Siemens" link="http://de.wikipedia.org/wiki/Werner_von_Siemens" icon="images/circle-blue.png"></event>
+<event start="1842-05-17" end="1926-04-04" title="August Thyssen" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-blue.png"></event>
+<event start="1779-08-08" end="1864-11-24" title="Benjamin Silliman" link="http://de.wikipedia.org/wiki/Benjamin_Silliman" icon="images/circle-blue.png"></event>
+<event start="1840-01-23" end="1905-01-14" title="Ernst Abbe" link="http://de.wikipedia.org/wiki/Ernst_Abbe" icon="images/circle-blue.png"></event>
+<event start="1791-12-26" end="1871-10-18" title="Charles Babbage" link="http://de.wikipedia.org/wiki/Charles_Babbage" icon="images/circle-blue.png"></event>
+<event start="1820-03-24" end="1891-05-11" title="Alexandre Edmond Becquerel" link="http://de.wikipedia.org/wiki/Alexandre_Edmond_Becquerel" icon="images/circle-blue.png"></event>
+<event start="1852-12-15" end="1908-08-25" title="Antoine Henri Becquerel" link="http://de.wikipedia.org/wiki/Antoine_Henri_Becquerel" icon="images/circle-blue.png"></event>
+<event start="1813-01-19" end="1898-03-14" title="Henry Bessemer" link="http://de.wikipedia.org/wiki/Henry_Bessemer" icon="images/circle-blue.png"></event>
+<event start="1811-03-30" end="1899-08-16" title="Robert Wilhelm Bunsen" link="http://de.wikipedia.org/wiki/Robert_Wilhelm_Bunsen" icon="images/circle-blue.png"></event>
+<event start="1822-01-02" end="1888-08-24" title="Rudolf Clausius" link="http://de.wikipedia.org/wiki/Rudolf_Clausius" icon="images/circle-blue.png"></event>
+<event start="1785-04-29" end="1851-12-10" title="Karl Drais" link="http://de.wikipedia.org/wiki/Karl_Drais" icon="images/circle-blue.png"></event>
+<event start="1791-09-22" end="1867-08-25" title="Michael Faraday" link="http://de.wikipedia.org/wiki/Michael_Faraday" icon="images/circle-blue.png"></event>
+<event start="1787-03-06" end="1826-06-07" title="Joseph von Fraunhofer" link="http://de.wikipedia.org/wiki/Joseph_von_Fraunhofer" icon="images/circle-blue.png"></event>
+<event start="1777-04-30" end="1855-02-23" title="Carl Friedrich Gauß" link="http://de.wikipedia.org/wiki/Carl_Friedrich_Gauß" icon="images/circle-blue.png"></event>
+<event start="1778-12-06" end="1850-05-09" title="Joseph Louis Gay-Lussac" link="http://de.wikipedia.org/wiki/Joseph_Louis_Gay-Lussac" icon="images/circle-blue.png"></event>
+<event start="1814-07-30" end="1890-03-18" title="Johann Georg Halske" link="http://de.wikipedia.org/wiki/Johann_Georg_Halske" icon="images/circle-blue.png"></event>
+<event start="1821-08-31" end="1894-09-08" title="Hermann von Helmholtz" link="http://de.wikipedia.org/wiki/Hermann_von_Helmholtz" icon="images/circle-blue.png"></event>
+<event start="1769-09-14" end="1859-05-06" title="Alexander von Humboldt" link="http://de.wikipedia.org/wiki/Alexander_von_Humboldt" icon="images/circle-blue.png"></event>
+<event start="1767-06-22" end="1835-04-08" title="Wilhelm von Humboldt" link="http://de.wikipedia.org/wiki/Wilhelm_von_Humboldt" icon="images/circle-blue.png"></event>
+<event start="1824-03-12" end="1887-10-17" title="Gustav Robert Kirchhoff" link="http://de.wikipedia.org/wiki/Gustav_Robert_Kirchhoff" icon="images/circle-blue.png"></event>
+<event start="1843-12-11" end="1910-05-27" title="Robert Koch" link="http://de.wikipedia.org/wiki/Robert_Koch" icon="images/circle-blue.png"></event>
+<event start="1803-05-12" end="1873-04-18" title="Justus Liebig" link="http://de.wikipedia.org/wiki/Justus_Liebig" icon="images/circle-blue.png"></event>
+<event start="1848-05-23" end="1896-08-10" title="Otto Lilienthal" link="http://de.wikipedia.org/wiki/Otto_Lilienthal" icon="images/circle-blue.png"></event>
+<event start="1842-06-11" end="1934-11-16" title="Carl von Linde" link="http://de.wikipedia.org/wiki/Carl_von_Linde" icon="images/circle-blue.png"></event>
+<event start="1831-06-13" end="1879-11-05" title="James Clerk Maxwell" link="http://de.wikipedia.org/wiki/James_Clerk_Maxwell" icon="images/circle-blue.png"></event>
+<event start="1798-09-11" end="1895-05-23" title="Franz Ernst Neumann" link="http://de.wikipedia.org/wiki/Franz_Ernst_Neumann" icon="images/circle-blue.png"></event>
+<event start="1789-03-16" end="1854-07-06" title="Georg Simon Ohm" link="http://de.wikipedia.org/wiki/Georg_Simon_Ohm" icon="images/circle-blue.png"></event>
+<event start="1832-06-10" end="1891-01-26" title="Nikolaus Otto" link="http://de.wikipedia.org/wiki/Nikolaus_Otto" icon="images/circle-blue.png"></event>
+<event start="1858-04-23" end="1947-10-04" title="Max Planck" link="http://de.wikipedia.org/wiki/Max_Planck" icon="images/circle-blue.png"></event>
+<event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" link="http://de.wikipedia.org/wiki/Max_von_Pettenkofer" icon="images/circle-blue.png"></event>
+<event start="1834-01-07" end="1874-01-14" title="Philipp Reis" link="http://de.wikipedia.org/wiki/Philipp_Reis" icon="images/circle-blue.png"></event>
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" icon="images/circle-blue.png"></event>
+<event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" link="http://de.wikipedia.org/wiki/Johann_Heinrich_von_Thünen" icon="images/circle-blue.png"></event>
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
+<event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" link="http://de.wikipedia.org/wiki/Wilhelm_Wundt" icon="images/circle-blue.png"></event>
+<event start="1879-03-14" end="1955-04-18" title="Albert Einstein" link="http://de.wikipedia.org/wiki/Albert_Einstein" icon="images/circle-blue.png"></event>
+<event start="1845-03-27" end="1923-02-10" title="Wilhelm Conrad Röntgen" link="http://de.wikipedia.org/wiki/Wilhelm_Conrad_Röntgen" icon="images/circle-blue.png"></event>
+<event start="1809-02-12" end="1882-04-19" title="Charles Darwin" link="http://de.wikipedia.org/wiki/Charles_Darwin" icon="images/circle-blue.png"></event>
+<event start="1847-02-11" end="1931-10-18" title="Thomas Alva Edison" link="http://de.wikipedia.org/wiki/Thomas_Alva_Edison" icon="images/circle-blue.png"></event>
+<event start="1833-10-21" end="1896-12-10" title="Alfred Nobel" link="http://de.wikipedia.org/wiki/Alfred_Nobel" icon="images/circle-blue.png"></event>
+<event start="1822-12-27" end="1895-09-28" title="Louis Pasteur" link="http://de.wikipedia.org/wiki/Louis_Pasteur" icon="images/circle-blue.png"></event>
+<event start="1844-11-25" end="1929-04-04" title="Carl Benz" link="http://de.wikipedia.org/wiki/Carl_Benz" icon="images/circle-blue.png"></event>
+<event start="1834-03-17" end="1900-03-06" title="Gottlieb Daimler" link="http://de.wikipedia.org/wiki/Gottlieb_Daimler" icon="images/circle-blue.png"></event>
+<event start="1830-04-09" end="1904-05-08" title="Eadweard Muybridge" link="http://de.wikipedia.org/wiki/Eadweard_Muybridge" icon="images/circle-blue.png"></event>
+
+<event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
+
+<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg" icon="images/circle-blue.png"></event>
+
+<event start="1768-01-25" end="1837-06-21" title="Justus Erich Walbaum" link="http://de.wikipedia.org/wiki/Justus_Erich_Walbaum" icon="images/circle-blue.png">deutscher Typograf, Schriftgießer und Stempelschneider.</event>
+
+<event start="1740-02-16" end="1813-11-29" title="Giambattista Bodoni" link="http://de.wikipedia.org/wiki/Giambattista_Bodoni" icon="images/circle-blue.png">italienischer Stempelschneider (Graveur), Buchdrucker, Typograf und Verleger.</event>
+
+<event start="1771-11-06" end="1834-02-26" title="Alois Senefelder" link="http://de.wikipedia.org/wiki/Alois_Senefelder" icon="images/circle-blue.png">österreichisch-deutscher Schauspieler und Theaterschriftsteller; Erfinder der Lithografie.</event>
+
+
+
+
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- Architektur/Stadtplanung/Städtebau (green)-->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+<event start="1884" title="Erstes Hochhaus der Welt: Home Insurance
+    Building" link="http://en.wikipedia.org/wiki/Home_Insurance_Building" icon="images/circle-green.png"></event>
+<event start="1902" title="Fuller Building in New York" link="http://de.wikipedia.org/wiki/Flatiron_Building" icon="images/circle-green.png"></event>
+<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross"
+    link="http://de.wikipedia.org/wiki/Bahnhof_King%E2%80%99s_Cross" icon="images/circle-green.png"></event>
+<event start="1854" title="Eröffnung der Paddington Station" link="http://de.wikipedia.org/wiki/Bahnhof_Paddington" icon="images/circle-green.png"></event>
+<event start="1857" title="Eröffnung des Lesesaals der British
+    Library" link="http://de.wikipedia.org/wiki/British_Library" icon="images/circle-green.png"></event>
+<event start="1845" title="Fertigstellung der ionischen Säulenhalle
+    des British Museums"
+    link="http://de.wikipedia.org/wiki/British_Museum" icon="images/circle-green.png"></event>
+<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St.
+    Petersburg" link="http://de.wikipedia.org/wiki/Nikolai-Palast" icon="images/circle-green.png"></event>
+
+<event start="1840-04-27" title="Grundsteinlegung für das »Houses of
+    Parliament«"
+    link="http://de.wikipedia.org/wiki/Palace_of_Westminster" icon="images/circle-green.png">Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London</event>
+<event start="1821" title="Karl Friedrich Schinkel: Schauspielhaus in
+    Berlin" link="http://de.wikipedia.org/wiki/Konzerthaus_Berlin" icon="images/circle-green.png"></event>
+<event start="1828" title="Schinkel: Altes Museum in Berlin"
+    link="http://de.wikipedia.org/wiki/Altes_Museum_%28Berlin%29" icon="images/circle-green.png"></event>
+<event start="1830" title="Schinkel: Nicolaikirche Potsdam"
+    link="http://de.wikipedia.org/wiki/St._Nikolaikirche_%28Potsdam%29" icon="images/circle-green.png"></event>
+<event start="1835" title="Schinkel: Neue Berliner Sternwarte" link="http://de.wikipedia.org/wiki/Berliner_Sternwarte#Neue_Berliner_Sternwarte" icon="images/circle-green.png"></event>
+<event start="1847" end="1855" title="Gottfried Semper:
+    Gemäldegalerie"
+    link="http://de.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister" icon="images/circle-green.png"></event>
+<event start="1871" end="1878" title="Gottfried Semper: Neues
+    Hoftheater in Dresden (Semperoper)"
+    link="http://de.wikipedia.org/wiki/Semperoper#Der_zweite_Bau" icon="images/circle-green.png"></event>
+<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum
+    in Zürich (ETH)"
+    link="http://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Technische_Hochschule_Z%C3%BCrich" icon="images/circle-green.png"></event>
+
+<event start="1853" title="Neue Pinakothek, München"
+    link="http://de.wikipedia.org/wiki/Neue_Pinakothek" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
+<event start="1864" end="1868" title="Gottfried Neureuther: Polytechnische Schule in München." link="http://de.wikipedia.org/wiki/Technische_Universit%C3%A4t_M%C3%BCnchen" icon="images/circle-green.png"></event>
+<event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)" link="http://de.wikipedia.org/wiki/Martin-Gropius-Bau" icon="images/circle-green.png"></event>
+
+<!-- Architekten -->
+
+<event start="1781-03-13" end="1841-10-09" title="Karl Friedrich Schinkel" link="http://de.wikipedia.org/wiki/Karl_Friedrich_Schinkel" icon="images/circle-green.png"></event>
+<event start="1803-11-29" end="1879-05-15" title="Gottfried Semper" link="http://de.wikipedia.org/wiki/Gottfried_Semper" icon="images/circle-green.png"></event>
+<event start="1852-06-25" end="1926-06-10" title="Anoni Gaudi" link="http://de.wikipedia.org/wiki/Antoni_Gaud%C3%AD" icon="images/circle-green.png"></event>
+
+
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- misc (yellow) -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+<event start="1803-11-21" title="Johannes Bückler" link="http://de.wikipedia.org/wiki/Johannes_B%C3%BCckler" icon="images/circle-yellow.png">Der auch als Schinderhannes bekannte deutsche Räuber Johannes Bückler wurde am 21. November 1803 mit der Guillotine zu Tode gerichtet.</event>
+
+<event start="1816" title="Jahr ohne Sommer" link="http://de.wikipedia.org/wiki/Jahr_ohne_Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
+<event start="1840-05-01" title="One Penny Black" link="http://de.wikipedia.org/wiki/One_Penny_Black" icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
+<event start="1848" end="1855" title="Kalifornischer Goldrausch" link="http://de.wikipedia.org/wiki/Kalifornischer_Goldrausch" icon="images/circle-yellow.png"></event>
+<event start="1860" title="Florence Nightingale gründet die Krankenpflegeschule am St. Thomas Hospital, London." icon="images/circle-yellow.png"></event>
+<event start="1863" title="Gründung der Football Association in Großbritannien." link="http://de.wikipedia.org/wiki/The_Football_Association" icon="images/circle-yellow.png"></event>
+<event start="1865" title="Gründung der »London Fire Brigade«." icon="images/circle-yellow.png"></event>
+
+<event start="1892" title="Gründung der Coca-Cola Company." link="http://de.wikipedia.org/wiki/Coca_Cola#Geschichte" icon="images/circle-yellow.png"></event>
+<event start="1886-10-28" title="Einweihung der Freiheitsstatue in New
+    York." link="http://de.wikipedia.org/wiki/Freiheitsstatue" icon="images/circle-yellow.png"></event>
+<event start="1888" title="Beginn der Mordserie von Jack the Ripper" link="http://de.wikipedia.org/wiki/Jack_the_Ripper" icon="images/circle-yellow.png"></event>
+
+<event start="1830" end="1839" title="Periode wirtschaftlichen Wohlstands in den USA und Europa." icon="images/circle-yellow.png"></event>
+<event start="1836" title="Auflösung der Second Bank der Vereinigten Staaten." icon="images/circle-yellow.png"></event>
+
+<event start="1840" end="1849" title="Hungerkrisen, soziale Unruhen und Revolutionen in Irland, Polen, Frankreich, Österreich und Deutschland." icon="images/circle-yellow.png"></event>
+<event start="1840" end="1849" title="Chartistenbewegung in England." icon="images/circle-yellow.png"></event>
+<event start="1845" end="1849" title="Große Irische Hungersnot" icon="images/circle-yellow.png"></event>
+
+
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+<!-- Dingler -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
+
+
+<event start="1778" end="1855" title="Johann Gottfried Dingler"></event>
+<event start="1806" end="1874" title="Emil Maximilian Dingler"></event>
+<event start="1803-10-17" end="1879-03-24" title="Karl Karmarsch"></event>
+
+
+
+
+
 </data>
