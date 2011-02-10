@@ -43,7 +43,7 @@
 
 <xsl:template match="tei:titlePart">
   <xsl:choose>
-    <xsl:when test='@type="main"'><h1><xsl:apply-templates select='../tei:titlePart[@type="number"]' mode="titlenumber"/>&#160;<xsl:apply-templates/></h1></xsl:when>
+    <xsl:when test='@type="main"'><h1><xsl:if test='../tei:titlePart[@type="number"]'><xsl:apply-templates select='../tei:titlePart[@type="number"]' mode="titlenumber"/>&#160;</xsl:if><xsl:apply-templates/></h1></xsl:when>
     <xsl:when test='@type="sub"'><h2><xsl:apply-templates/></h2></xsl:when>
   </xsl:choose>
 </xsl:template>
