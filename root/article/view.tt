@@ -141,7 +141,7 @@
 
   [% IF !preface AND !register %]
   <div class="rightbox nolab">
-    <div class="rightboxhead">Schlagwortwolke</div>
+    <div class="rightboxhead">Stichwortwolke</div>
     <div class="rightboxcontent">
       <div id="htmltagcloud">
         [% FOREACH tag IN cloud.tags(20) %]

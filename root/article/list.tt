@@ -22,7 +22,7 @@
   [% INCLUDE 'search/form.tt' %]
 
   <div class="rightbox">
-    <div class="rightboxhead">Schlagwortwolke</div>
+    <div class="rightboxhead">Stichwortwolke</div>
     <div class="rightboxcontent">
       <div id="htmltagcloud">
         [% FOREACH tag IN cloud.tags(20) %]
@@ -34,7 +34,7 @@
 
   <div class="rightbox">
     <div class="rightboxhead">Tafeln</div>
-    <div class="rightboxcontent">
+    <div class="rightboxcontent center">
       [% WHILE ( tab = tabulars.next ) %]
         <img src="[% figure_link(tab.ref, journal, 250) %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(tab.ref, journal) %]')" /><br /><br />
       [% END %]

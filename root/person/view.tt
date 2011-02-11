@@ -2,7 +2,7 @@
   <h1>[% person.surname | html %][% IF person.forename %],[% END %] [% person.addname | html %] [% person.forename | html %] [% person.namelink | html %]</h1>
   [% personarticles %]
   <hr />
-  <h2>Schlagworte zur Person</h2>
+  <h2>Stichworte zur Person</h2>
   <div id="htmltagcloud">
     [% FOREACH tag IN cloud.tags(20) %]
       <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
