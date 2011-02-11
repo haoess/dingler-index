@@ -89,8 +89,8 @@ table.journallist { padding-left:40px }
 #ticketlist td.cut { max-width:100px; overflow:hidden }
 .nowrap { white-space:nowrap }
 
-.code { background:#fafafa; font-family:monospace }
-div.code { border:1px solid #eee; padding-left:10px }
+.code, code { background:#D7EDFF; font-family:monospace }
+div.code { border:1px solid #eee; padding:5px; margin:5px }
 
 /* auto completion */
 .ac_results { padding:0px; border:1px solid #000; background:#fff; overflow:hidden; z-index:99999 }

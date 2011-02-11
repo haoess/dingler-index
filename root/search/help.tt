@@ -1,52 +1,64 @@
 <h3>Suchhilfe</h3>
 
 <p>
-  Einzelne Suchworte werden mittels UND-Verknüpfung gesucht. Wenn Sie boolesche
-  Operatoren verwenden möchten, dann wie folgt:
+  Einzelne (per Leerzeichen getrennte) Suchworte werden mittels UND-Verknüpfung gesucht.
+  Die Groß-/Kleinschreibung von Suchanfragen wird grundsätzlich ignoriert.
+  Grundsätzlich werden immer auch flektierte Formen der eingegebenen Wörter gefunden.
 </p>
 
-<p>UND-Verknüpfung mittels <span class="code">&amp;</span> (Standard):</p>
+<p>
+  Wenn Sie boolesche Operatoren verwenden möchten, dann wie folgt:
+</p>
+
+<h4>UND-Verknüpfung mittels <span class="code">&amp;</span> (Standard)</h4>
 <div class="code">
   apfel &amp; kirsche
 </div>
-<br />
+<p>Findet alle Artikel, die <i>Apfel</i> und <i>Kirsche</i> enthalten.</p>
 
-<p>ODER-Verknüpfung mittels <span class="code">|</span>:</p>
+<h4>ODER-Verknüpfung mittels <span class="code">|</span></h4>
 <div class="code">
   apfel | kirsche
 </div>
-<br />
+<p>Findet alle Artikel, die <i>Apfel</i> oder <i>Kirsche</i> enthalten (nicht-ausschließendes ODER).</p>
 
-<p>NEGATION mittels <span class="code">!</span>:</p>
+<h4>NEGATION mittels <span class="code">!</span></h4>
 <div class="code">
   apfel &amp; !kirsche
 </div>
-<br />
+<p>Findet alle Artikel, die <i>Apfel</i>, aber nicht <i>Kirsche</i> enthalten.</p>
 
-<p>GRUPPIERUNG mittels <span class="code">()</span>:</p>
+<h4>GRUPPIERUNG mittels <span class="code">()</span></h4>
 <div class="code">
   apfel &amp; (kirsche | banane)
 </div>
-<br />
+<p>Findet alle Artikel, die <i>Apfel</i> und entweder <i>Kirsche</i> oder <i>Banane</i> enthalten.</p>
 
-<p>PREFIX-Suche mittels <span class="code">*</span>:</p>
+<hr />
+
+<p>
+  Weiterhin stehen folgende linguistische Operatoren zur Verfügung:
+</p>
+
+<h4>PREFIX-Suche mittels <span class="code">*</span></h4>
 <div class="code">
   apfel*
 </div>
-<br />
+<p>Findet alle Artikel, die <i>Apfel</i>, aber auch <i>Apfelmus</i> etc. enthalten.</p>
+<p>Bitte beachten Sie, dass eine Infix-Suche (<i>*kirsche</i> zur Zeit nicht möglich ist).</p>
 
-<p>PHRASEN-Suche mittels <span class="code">""</span>:</p>
+<h4>PHRASEN-Suche mittels <span class="code">""</span></h4>
 <div class="code">
   "roter apfel"
 </div>
-<br />
+<p>Findet alle Artikel mit der Wortfolge <i>roter Apfel</i> (<i>roten Apfels</i> wird auch gefunden).
 
-<p>FELD-Suche mittels <span class="code">@</span>:</p>
+<h4>FELD-Suche mittels <span class="code">@</span></h4>
 <div class="code">
-  @title apfel<br />
-  @content !kirsche
+  @title apfel @content !kirsche
 </div>
-<p>zur Verfügung stehen:</p>
+<p>Findet alle Artikel, die im Titel <i>Apfel</i> enthalten, in deren Artikeltext aber das Wort <i>Kirsche</i> nicht vorkommt.</p>
+<p>Sie können die Suche auf folgende Felder beschränken:</p>
 <ul>
   <li><span class="code">@title</span>: Artikeltitel</li>
   <li><span class="code">@content</span>: Artikelinhalt</li>
@@ -54,19 +66,20 @@
   <li><span class="code">@*</span>: alle Felder</li>
 </ul>
 
-<p>NACHBARSCHAFTs-Suche mittels <span class="code">~</span>:</p>
+<h4>ABSTANDs-Suche mittels <span class="code">~</span></h4>
 <div class="code">
   "roter Apfel"~3
 </div>
-<br />
+<p>Findet alle Artikel, bei denen zwischen <i>roter</i> und <i>Apfel</i> maximal zwei Wörter stehen (Abstand &minus; 1 = max. Anzahl der Wörter zwischen den Suchbegriffen).</p>
 
-<p>STRIKTE REIHENFOLGE mittels <span class="code">&lt;&lt;&lt;</span>:</p>
+<h4>STRIKTE REIHENFOLGE mittels <span class="code">&lt;&lt;</span></h4>
 <div class="code">
-  aaa &lt;&lt;&lt; bbb &lt;&lt;&lt; ccc
+  kirsche &lt;&lt; apfel
 </div>
-<br />
+<p>Findet alle Artikel, in denen <i>kirsche</i> vor <i>apfel</i> steht.</p>
 
-<p>EXAKTe Suche mittels <span class="code">=</span>:</p>
+<h4>EXAKTe Suche mittels <span class="code">=</span></h4>
 <div class="code">
   =Apfel
 </div>
+<p>Findet alle Artikel, in denen das Wort <i>Apfel</i> vorkommt. Ohne den <code>=</code>-Operator werden auch flektierte Formen (z. B. <i>Apfels</i>) gefunden. Beachten Sie, dass jedoch die Groß- und Kleinschreibung der Suchbegriffe ignoriert wird, die Ergebnismengen für <code>=Apfel</code> und <code>=apfel</code> sind immer identisch.</p>
