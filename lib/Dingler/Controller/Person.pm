@@ -60,6 +60,11 @@ sub index :Path :Args(2) {
     );
 }
 
+sub view :Local {
+    my ( $self, $c, $id ) = @_;
+    $c->forward('index', [ $id, '' ]);
+}
+
 =head2 list
 
 =cut
