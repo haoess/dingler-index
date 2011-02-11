@@ -4,7 +4,7 @@
   <ul>
     <li><a href="#tab-text">Texte</a></li>
     <li><a href="#tab-person">Personen</a></li>
-    <li><a href="#tab-patent">Patente</a></li>
+    [% IF 0 %]<li><a href="#tab-patent">Patente</a></li>[% END %]
     <li><a href="#tab-help">Hilfe</a></li>
   </ul>
   <div id="tab-text">
@@ -15,9 +15,11 @@
     [% INCLUDE 'search/person.tt' %]
   </div>
 
+[% IF 0 %]
   <div id="tab-patent">
     [% INCLUDE 'search/patent.tt' %]
   </div>
+[% END %]
 
   <div id="tab-help">
     [% INCLUDE 'search/help.tt' %]
