@@ -117,7 +117,8 @@ sub set_meta :Private {
     my @authors;
     foreach my $author ( $ar->personrefs ) {
         next unless $author->role eq 'author' or
-                    $author->role eq 'translator' or # only if no author
+                    $author->role eq 'translator' or
+                    ($author->role eq 'patent_app' && $ar->type eq 'art_patent') or # only if no author
                     $author->role eq 'author_orig';
         push @authors, Dingler::Util::fullname( $author->id );
     }
