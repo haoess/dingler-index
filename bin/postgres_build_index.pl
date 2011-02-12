@@ -162,7 +162,7 @@ sub prepare_article {
         my @origs = $xpc->findnodes('tei:orig', $choice);
         $choice->removeChild($_) for @origs;
     }
-    $title = Dingler::Util::uml( normalize($title->to_literal) );
+    $title = Dingler::Util::uml( $title ? normalize($title->to_literal) : '' );
 
     my $front = $xpc->find( 'tei:front', $article );
     $front = Dingler::Util::uml( normalize($front->to_literal) );

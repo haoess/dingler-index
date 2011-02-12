@@ -5,6 +5,7 @@ use namespace::autoclean;
 BEGIN {extends 'Catalyst::Controller'; }
 
 use DateTime;
+use MIME::Lite;
 use XML::Feed;
 
 =head1 NAME
@@ -73,8 +74,30 @@ sub report :Local {
         comment => undef,
     });
 
-    $c->res->content_type('text/plain');
-    $c->res->body("Ticket #" . $ticket->id ." angelegt.");
+    my $msg = MIME::Lite->new(
+        From    => sprintf( "Dingler-Ticket <%s>", $c->config->{mail_from} ),
+        To      => $c->config->{mail_to},
+        Subject => sprintf( '[Dingler-Ticket #%d]', $ticket->id ),
+        Data    => <<"EOT",
+dingler.culture.hu-berlin.de -- Ticket #@{[ $ticket->id ]}
+
+Bugtyp:    $bugtype
+
+Artikel:   $article <http://dinglr.de/$article>
+OCR-Wort:  $ocrword
+
+E-Mail:    $email
+Anmerkung: $note
+
+-- 
+automatisch gesendet von dingler.culture.hu-berlin.de
+Keine Replys an die Absender-Adresse moeglich!
+EOT
+    );
+    $msg->send( 'sendmail', 'sendmail -t -oi -oem -f' . $c->config->{mail_from} );
+
+    $c->res->content_type('text/html');
+    $c->res->body("Danke! Ein Ticket wurde angelegt, wir k&uuml;mmern uns darum.");
 }
 
 __PACKAGE__->meta->make_immutable;

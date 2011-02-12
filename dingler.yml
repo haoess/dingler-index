@@ -2,3 +2,7 @@
 name: Dingler
 # Pfad zum XML-Repository
 svn: /home/fw/src/kuwi/dingler
+# Absender Mails
+mail_from: ticket@dingler.culture.hu-berlin.de
+# Empfaenger Mails
+mail_to: frank.wiegand@gmail.com
