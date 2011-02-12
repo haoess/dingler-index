@@ -23,7 +23,33 @@
 
 <div class="personlist">
 
-  <p style="margin-bottom:20px">[% names.count %] Person[% 'en' UNLESS names.count == 1 %], deren Nachname mit <b>[% letter | html %]</b> beginnt</p>
+  <p style="margin-bottom:20px">
+    [% pager.total_entries %] Person[% 'en' UNLESS pager.total_entries == 1 %], deren Nachname mit <b>[% letter | html %]</b> beginnt
+    ([% pager.first %]&ndash;[% pager.last %] angezeigt)
+    <br />
+    Seite:
+    [% IF pager.current_page != pager.first_page %]
+      <a href="[% c.req.uri_with({ p => pager.first_page }) %]">«</a>
+    [% END %]
+    [% IF pager.current_page != pager.first_page %]
+      <a href="[% c.req.uri_with({ p => pager.previous_page }) %]">‹</a>
+    [% END %]
+    [% first = ( pager.current_page > 7 ? (pager.current_page - 7) : 1 )%]
+    [% last  = ( pager.current_page + 7 < pager.last_page ? (pager.current_page + 7) : pager.last_page ) %]
+    [% FOREACH page IN  [first .. last] %]
+      [% IF pager.current_page == page %]
+        [% page %]
+      [% ELSE %]
+        <a href="[% c.req.uri_with({ p => page }) %]">[% page %]</a>
+      [% END %]
+    [% END %]
+    [% IF pager.current_page != pager.last_page %]
+      <a href="[% c.req.uri_with({ p => pager.next_page })%]">›</a>
+    [% END %]
+    [% IF pager.current_page != pager.last_page %]
+      <a href="[% c.req.uri_with({ p => pager.last_page })%]">»</a>
+    [% END %]
+  </p>
 
 [% WHILE (name = names.next) %]
   <h2>[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</h2>

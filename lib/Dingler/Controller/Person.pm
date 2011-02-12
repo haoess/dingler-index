@@ -73,6 +73,14 @@ sub list :Local {
     my ( $self, $c, $letter ) = @_;
     $letter ||= 'A';
 
+    ###################################
+    # paging
+    my $limit = 50;
+    my $page = $c->req->params->{p} || 1;
+    $page = 1 if $page !~ /\A[0-9]+\z/;
+
+    ###################################
+    # filtering
     my $filter = $c->req->params->{filter} || '';
     my %search = $filter eq 'author'     ? ( 'personrefs.role' => { '=' => ['author', 'author_orig'] } )
                : $filter eq 'patent_app' ? ( 'personrefs.role' => 'patent_app')
@@ -94,12 +102,14 @@ sub list :Local {
             order_by => 'surname, forename',
             join     => [ 'personrefs' ],
             prefetch => [ 'personrefs' ],
+            page     => $page,
+            rows     => $limit,
         }
     );
 
-    $Template::Directive::WHILE_MAX = 2000; # XXX better: page results
     $c->stash(
         names      => $names,
+        pager      => $names->pager,
         personarticles => \&Dingler::Util::personarticles,
         author     => $c->model('Dingler::Personref')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
         patent_app => $c->model('Dingler::Personref')->search_rs({ role => 'patent_app' }),
