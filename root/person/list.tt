@@ -69,6 +69,7 @@
 [% PROCESS alphabet %]
 
 [% BLOCK right %]
+  [% INCLUDE 'person/form.tt' %]
   <div class="rightbox nolab">
     <div class="rightboxhead">Einschränkung</div>
     <div class="rightboxcontent">
