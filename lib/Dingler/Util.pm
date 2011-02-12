@@ -115,7 +115,12 @@ sub personarticles {
     my $out = '';
     if ( $rs->count ) {
         $out = '<h3>Fundstellen im Polytechnischen Journal</h3><ul style="margin-top:0">';
+        my $i = 0;
         while ( my $person = $rs->next ) {
+            if ( $i == 10 && @skip ) {
+                $out .= sprintf '<li><a href="person/view/%s">weitere Artikel &hellip;</a></li>', $id;
+                last;
+            }
             $out .= sprintf '<li><a href="article/%s/%s">%s</a> <span class="small">(Jg.&nbsp;%s, Bd.&nbsp;%s, Nr.&nbsp;%s, S.&nbsp;%s)</span></li>',
                     $person->ref->journal->id,
                     $person->ref->id,
@@ -125,6 +130,7 @@ sub personarticles {
                     $person->ref->number,
                     $person->ref->pagestart eq $person->ref->pageend ? $person->ref->pagestart
                                                                      : $person->ref->pagestart.'&ndash;'.$person->ref->pageend;
+            $i++;
         }
         $out .= '</ul>';
     }
