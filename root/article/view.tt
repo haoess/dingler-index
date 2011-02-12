@@ -46,6 +46,7 @@
       [% ELSE %]
         <a href="journal/[% journal | html %]">Band [% volume | html %]</a> &rarr;
         [% IF number %]Artikel [% number | html %][% END %][% IF misc && number  %]/[% END; IF misc %]Miszelle [% item.position %][% END %]
+        [% IF !number && !misc; 'S. '_ p_start | html; END %]
       [% END %]
       </td>
       <td class="right">
@@ -81,10 +82,10 @@
           [% journal_rs.year | html %], Band [% journal_rs.volume | html %]
         [% ELSE %]
           [% year | html %],
-          Band [% volume | html %],
-          [% IF number %]Nr. [% number | html %][% END -%]
+          Band [% volume | html %]
+          [% IF number %], Nr. [% number | html %][% END -%]
           [%- '/' IF misc AND number -%]
-          [%- IF misc %]Miszelle[% END %]
+          [%- IF misc %], Miszelle[% END %]
           (S. [% IF p_start != p_end %][% p_start | html %]&ndash;[% p_end | html %][% ELSE; p_start | html; END %])
         [% END %]
       </td>
