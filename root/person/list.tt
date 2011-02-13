@@ -8,13 +8,13 @@
     [% IF l == letter %]
       [% l %]
     [% ELSE %]
-      <a href="[% c.action %]/[% l %]">[% l %]</a>
+      <a href="person/list/[% l %]">[% l %]</a>
     [% END %]
   [% END %]
   [% IF letter == '~' %]
     ~
   [% ELSE %]
-    <a href="[% c.action %]/~">~</a>
+    <a href="person/list/~">~</a>
   [% END %]
   </p>
 [% END %]
