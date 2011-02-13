@@ -496,6 +496,7 @@ sub end :Private {
             errors   => \@errors,
         );
         $c->response->status(500);
+        $c->res->content_type( 'text/html' );
         $c->forward( $c->view('TT') );
     }
 }
