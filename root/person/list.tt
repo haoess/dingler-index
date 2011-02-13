@@ -24,7 +24,12 @@
 <div class="personlist">
 
   <p style="margin-bottom:20px">
-    [% pager.total_entries %] Person[% 'en' UNLESS pager.total_entries == 1 %], deren Nachname mit <b>[% letter | html %]</b> beginnt
+    [% pager.total_entries %] Person[% 'en' UNLESS pager.total_entries == 1 %],
+    [% IF letter %]
+      deren Nachname mit <b>[% letter | html %]</b> beginnt
+    [% ELSE %]
+      deren Name auf <b>[% q | html %]</b> passt
+    [% END %]
     ([% pager.first %]&ndash;[% pager.last %] angezeigt)
     <br />
     Seite:
@@ -70,6 +75,8 @@
 
 [% BLOCK right %]
   [% INCLUDE 'person/form.tt' %]
+
+[% IF 0 %]
   <div class="rightbox nolab">
     <div class="rightboxhead">Einschränkung</div>
     <div class="rightboxcontent">
@@ -89,6 +96,7 @@
       </table>
     </div>
   </div>
+[% END %]
 [% END %]
 
 [% BLOCK head %]

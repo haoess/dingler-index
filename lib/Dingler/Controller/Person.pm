@@ -169,6 +169,12 @@ sub search :Local {
     my ( $self, $c ) = @_;
     my $q = $c->req->params->{q} || '';
 
+    ###################################
+    # paging
+    my $limit = 50;
+    my $page = $c->req->params->{p} || 1;
+    $page = 1 if $page !~ /\A[0-9]+\z/;
+
     my @filters = grep { defined } ref $c->req->params->{filter} ? @{$c->req->params->{filter}} : $c->req->params->{filter};
 
 =for pod
@@ -181,13 +187,17 @@ sub search :Local {
     my %cond = _prepare_cond( $q );
     my %attrs = (
         order_by => 'surname, forename',
+        page     => $page,
+        rows     => $limit,
     );
     my $names = $c->model('Dingler::Person')->search( \%cond, \%attrs );
 
     $c->stash(
-        names    => $names,
+        q              => $q,
+        names          => $names,
+        pager          => $names->pager,
         personarticles => \&Dingler::Util::personarticles,
-        template => 'person/list.tt',
+        template       => 'person/list.tt',
     );
 }
 
