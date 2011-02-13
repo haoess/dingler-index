@@ -1,0 +1,11 @@
+<div class="rightbox">
+  <div class="rightboxhead">
+    Suche nach Personen
+  </div>
+  <div class="rightboxcontent">
+    <form method="get" action="[% base %]person/search">
+      <input type="text" name="q" class="ui-widget-content ui-corner-all qbox" value="[% q | html %]" />
+      <input type="submit" value="finden" class="ui-widget-content ui-corner-all" />
+    </form>
+  </div>
+</div>
