@@ -104,7 +104,7 @@
         [% IF c.req.params.from OR c.req.params.to %](<a href="[% c.req.uri_with({ from => undef, to => undef }) | html %]">Filter aufheben</a>)[% END %]
       </p>
       <table>
-        [% FOREACH i IN [ 182, 184, 186, 188, 190, 192 ] %]
+        [% FOREACH i IN [ 182, 184, 186 ] %]
         <tr>
           <td>[% i %]0er:</td>
           <td class="right">
@@ -132,14 +132,14 @@
         <caption>Verteilung nach Dekade</caption>
         <thead>
           <tr>
-            [% FOREACH i IN [ 1820, '', 1840, '', 1860, '', 1880, '', 1900 ] %]
+            [% FOREACH i IN [ 1820, '', 1840, '', 1860, '', 1880 ] %]
               <th>[% i %]</th>
             [% END %]
           </tr>
         </thead>
         <tbody>
           <tr>
-            [% FOREACH i IN [ 182 .. 190 ] %]
+            [% FOREACH i IN [ 182 .. 188 ] %]
               <td>[% facet.decade.$i %]</td>
             [% END %]
           </tr>
@@ -153,15 +153,14 @@
             [% FOREACH i IN [ 1820, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
                               1840, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
                               1860, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-                              1880, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-                              1900 ] %]
+                              1880 ] %]
               <th>[% i %]</th>
             [% END %]
           </tr>
         </thead>
         <tbody>
           <tr>
-            [% FOREACH i IN [ 1820 .. 1900 ] %]
+            [% FOREACH i IN [ 1820 .. 1880 ] %]
               <td>[% facet.year.$i %]</td>
             [% END %]
           </tr>
