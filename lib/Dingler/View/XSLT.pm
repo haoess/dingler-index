@@ -83,6 +83,18 @@ __PACKAGE__->config(
             },
             {
                 uri => 'urn:catalyst',
+                name => 'facthumb',
+                subref => sub {
+                    my $facs = shift;
+                    # 32258227Z/00000051
+                    #  =>
+                    # http://www.polytechnischesjournal.de/fileadmin/data/32258227Z/32258227Z_tif/jpegs/00000051.tif.thumbnail.jpg
+                    $facs =~ /(\w+)\/(\w+)/;
+                    return sprintf "http://www.polytechnischesjournal.de/fileadmin/data/%s/%s_tif/jpegs/%s.tif.thumbnail.jpg", $1, $1, $2;
+                },
+            },
+            {
+                uri => 'urn:catalyst',
                 name => 'art2jour',
                 subref => sub {
                     my $article = shift;
