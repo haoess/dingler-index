@@ -1,15 +1,12 @@
 <data>
 
-
-
-
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 <!-- literatur/philosophie/kunst/musik -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
-<event start="1820-04-08" title="Entdeckung der Venus von Milo" icon="images/circle-red.png" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo" >Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.</event>
-<event start="1819" title="John Keats: Ode on Melancholy." link="http://de.wikipedia.org/wiki/John_Keats" icon="images/circle-red.png" ></event>
+<event start="1820-04-08" title="Entdeckung der Venus von Milo" image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Wenuszmf.jpg/44px-Wenuszmf.jpg" link="http://de.wikipedia.org/wiki/Venus_von_Milo" icon="images/circle-red.png">Die „Venus von Milo“ ist neben der Laokoon-Gruppe eines der bekanntesten Beispiele der hellenistischen Kunst.</event>
+<event start="1819" title="John Keats: Ode on Melancholy." link="http://de.wikipedia.org/wiki/John_Keats" icon="images/circle-red.png"></event>
 <event start="1824-05-07" title="Premiere von Beethovens 9. Symphony im Kärntnertortheater in Wien." link="http://de.wikipedia.org/wiki/9._Sinfonie_%28Beethoven%29" icon="images/circle-red.png"></event>
 
 <event start="1833" title="Uraufführung von Richard Wagners erster Oper (Die Feen)." link="http://de.wikipedia.org/wiki/Die_Feen" icon="images/circle-red.png"></event>
@@ -38,7 +35,7 @@
 <event start="1884" title="Erster Faszikel des Oxford English Dictionary." link="http://de.wikipedia.org/wiki/Oxford_English_Dictionary" icon="images/circle-red.png"></event>
 <event start="1887" title="Arthur Conan Doyle: erste Ausgabe von Sherlock Holmes." link="http://de.wikipedia.org/wiki/Sherlock_Holmes" icon="images/circle-red.png"></event>
 <event start="1892" title="Félix Vallotton: Das Bad" link="http://de.wikipedia.org/wiki/F%C3%A9lix_Vallotton"
-    image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vallotton_Das_Bad_Sommerabend_1892.jpg/120px-Vallotton_Das_Bad_Sommerabend_1892.jpg"></event>
+    image="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vallotton_Das_Bad_Sommerabend_1892.jpg/120px-Vallotton_Das_Bad_Sommerabend_1892.jpg" icon="images/circle-red.png"></event>
 
 
 <!-- Maler -->
@@ -135,7 +132,7 @@
 <event start="1814-09-18" end="1815-06-09" title="Wiener Kongress"
     link="http://de.wikipedia.org/wiki/Wiener_Kongre%C3%9F" icon="images/circle-pink.png"></event>
 
-<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück.></event>
+<event start="1815-03-01" title="Napoleon kehrt nach Frankreich zurück." link="http://de.wikipedia.org/wiki/Napoleon" icon="images/circle-pink.png">Napoleon kehrt aus der Verbannung auf der Mittelmeerinsel Elba nach Frankreich zurück.</event>
 <event start="1815-06-18" title="Schlacht bei Waterloo"
    link="http://de.wikipedia.org/wiki/Schlacht_bei_Waterloo" icon="images/circle-pink.png">Napoleon wird endgültig besiegt.</event>
 <event start="1814-12-24" title="Frieden von Gent"
@@ -250,7 +247,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1884-10-14" title="Internationale Meridian-Konferenz in Washington D.C."
     link="http://de.wikipedia.org/wiki/Internationale_Meridian-Konferenz#Die_Internationale_Meridian-Konferenz.2C_Washington_1884" icon="images/circle-pink.png"></event>
 <event start="1884-11-15" end="1885-02-26" title="Kongokonferenz"
-    icon="images/circle-pink.png">Die Kongokonferenz fand auf Einladung des deutschen Reichskanzlers Bismarck in Berlin statt und sollte die Handelsfreiheit am Kongo und am Niger regeln.></event>
+    icon="images/circle-pink.png">Die Kongokonferenz fand auf Einladung des deutschen Reichskanzlers Bismarck in Berlin statt und sollte die Handelsfreiheit am Kongo und am Niger regeln.</event>
 
 <event start="1914-07-28" title="Österreich-Ungarns Kriegserklärung an Serbien" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg"
     icon="images/circle-pink.png">Die Kriegserklärung an Serbien markiert den Beginn des 1. Weltkriegs.</event>
@@ -470,11 +467,217 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <event start="1892" title="Déménys Photophone" link="http://de.wikipedia.org/wiki/Georges_Emile_Joseph_D%C3%A9m%C3%A9ny" icon="images/circle-blue.png">An der Exposition Internationale de Photographie von 1892 zu Paris stellt Georges Emile Joseph Démény sein »Photophone« aus, das 24 Phasenbilder enthielt.</event>
 
-<event start="1897" title="Erfindungung der Monotype" link="http://de.wikipedia.org/wiki/Monotype" icon="images/circle-blue.png">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
+<event start="1897" title="Erfindung der Monotype" link="http://de.wikipedia.org/wiki/Monotype" icon="images/circle-blue.png">Tolbert Lanston (1844–1913) erfindet 1897 eine Setzmaschine, die Monotype.</event>
+
+<event start="1895-12-28" title="Erste öffentliche Filmvorführung in
+    Frankreich"
+    link="http://de.wikipedia.org/wiki/Auguste_Marie_Louis_Nicolas_Lumi%C3%A8re" icon="images/circle-blue.png">Am 28. Dezember 1895 fand im Grand Café am Boulevard des Capucines in Paris die erste öffentliche Filmvorführung Frankreichs vor zahlendem Publikum statt, in der Angestellte der Brüder Lumière mit dem Cinématographe zehn selbstgedrehte Kurzfilme zeigten, darunter „Ankunft eines Zuges in La Ciotat“, „Der begossene Gärtner“ und „Abbruch einer Mauer“ zeigten.</event>
+
+
+
+<event start="1800" title="Erste funktionierende Batterie"
+    link="http://de.wikipedia.org/wiki/Alessandro_Volta"
+    icon="images/circle-blue.png">Alessandro Volta konstruiert die
+    sogenannte Voltasche Säule, die erste chemische Batterie.</event>
+
+<event start="1804" title="Gründung der weltweit ersten
+    Konservenfabrik"
+    link="http://de.wikipedia.org/wiki/Nicolas_Appert"
+    icon="images/circle-blue.png">Nicolas Appert erfindet die
+    Konservierung durch Kochen und luftdichte Verpackung und gründet
+    die weltweit erste Konservenfabrik.</event>
+
+<event start="1809" title="Fultons Patent-Dampfschiff"
+    link="http://de.wikipedia.org/wiki/Robert_Fulton"
+    icon="images/circle-blue.png">Robert Fulton baut das erste
+    kommerziell erfolgreiche Dampfschiff, das eine Geschwindigkeit von
+    ca. 8 km/h erreichte.</event>
+
+<event start="1808" title="Turris Schreibmaschine"
+    link="http://de.wikipedia.org/wiki/Schreibmaschine"
+    icon="images/circle-blue.png">Pellegrino Turri baut eine
+    Schreibmaschine. Ein darauf geschriebener Brief ist noch heute
+    erhalten.</event>
+
+<event start="1812" title="Donkins Konservenindustrie" link="http://de.wikipedia.org/wiki/Bryan_Donkin"
+    icon="images/circle-blue.png">Bryan Donkin verbessert eine
+    Erfindung von Nicolas Appert zur Haltbarmachung von Lebensmitteln
+    mit verschlossenen Dosen anstelle von Gläsern und eröffnete 1812
+    eine Konservenindustrie.</event>
+
+<event start="1809" title="Davys Bogenlampe"
+    link="http://de.wikipedia.org/wiki/Humphry_Davy"
+    icon="images/circle-blue.png">Humphry Davy erfindet die
+    Sicherheitslampe für Grubenarbeiter. &lt;br&gt; Suche im
+    Polytechnischen Journal nach &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/search?q=Humphrey+Davy"&gt;Davy&lt;/a&gt;.</event>
+
+<event start="1817-06-12" title="Erste Fahrt einer Draisine"
+    link="http://de.wikipedia.org/wiki/Karl_Drais"
+    icon="images/circle-blue.png">Am 12. Juni 1817 unternimmt Karl von
+    Drais die erste Fahrt auf einer von ihm erfundenen Laufmaschine,
+    der Draisine, einem Vorläufer des Fahrrads ohne Pedale.</event>
+
+<event start="1820" title="Entdeckung des Chinins"
+    link="http://de.wikipedia.org/wiki/Chinin"
+    icon="images/circle-blue.png">Pierre Joseph Pelletier und Joseph
+    Bienaimé Caventon isolieren erstmals das fiebersenkende Mittel
+    Chinin aus der Chinarinde.</event>
+
+<event start="1826" title="Niepce' Fotografie" link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce"
+    icon="images/circle-blue.png">Joseph N. Niepce macht die
+    vermutlich erste dauerhafte photographische Aufnahme.</event>
+
+<event start="1823-06-17" title="Macintoshs Regenmantel"
+    icon="images/circle-blue.png">Charles Macintosh erfindet den
+    wasserundurchlässigen Regenmantel und erhält ein Patent (GB4804)
+    auf sein Herstellungsverfahren.</event>
+
+<event start="1825-09-27" title="Einweihung der Stockton und
+    Darlington Railway"
+    link="http://de.wikipedia.org/wiki/George_Stephenson"
+    icon="images/circle-blue.png">Unter der Leitung Stephensons wurde
+    am 27. September 1825 zwischen Stockton und Darlington die erste
+    öffentliche Eisenbahn der Welt eingeweiht.</event>
+
+<event start="1825" title="Brailles Blindenschrift"
+    link="http://de.wikipedia.org/wiki/Louis_Braille"
+    icon="images/circle-blue.png">Der 16-jähringe Louis Braille
+    erfindet die Blindenschrift.</event>
+
+<event start="1830-07-17" title="Thimonniers Nähmaschine"
+    link="http://de.wikipedia.org/wiki/Barth%C3%A9lemy_Thimonnier"
+    icon="images/circle-blue.png">Barthélemy Thimonnier entwickelte
+    1829 ein am 17. Juli 1830 patentiertes Basismodell der heutigen
+    Nähmaschine.</event>
+
+<event start="1830-08-31" title="Buddings Rasenmäher-Patent"
+    link="http://de.wikipedia.org/wiki/Edwin_Beard_Budding"
+    icon="images/circle-blue.png">Edwin Budding erhält ein Patent (GB
+    5990) auf eine Maschine zum Rasenmähen.</event>
+
+<event start="1827-07-04" title="Hancocks dampfbetriebenes Fahrzeug"
+    link="http://de.wikipedia.org/wiki/Dampfomnibus"
+    icon="images/circle-blue.png">Walter Hancock erhält ein Patent (GB
+    5514) auf ein dampfbetriebenes Straßenfahrzeug und gilt als einer
+    der Erfinder des ersten dampfbetriebenen Busses.</event>
+
+<event start="1834" title="Chalmers Briefmarken"
+    link="http://de.wikipedia.org/wiki/James_Chalmers_%28Verleger%29"
+    icon="images/circle-blue.png">James Chalmers beginnt im August
+    1834 mit der Herstellung von kleinen aufklebbaren Zettelchen mit
+    einem Wertstempeleindruck, die uns heute als Briefmarken bekannt
+    sind.</event>
+
+<event start="1839" title="Becquerel: Entdeckung des photoelektrischen Effekts."
+    link="http://de.wikipedia.org/wiki/Alexandre_Edmond_Becquerel"
+    icon="images/circle-blue.png">Alexandre Edmond Becquerel, Vater
+    des späteren Nobelpreisträgers Antoine Becquerel, entdeckt den
+    photoelektrischen Effekt, ein Phänomen das Grundlage der heutigen
+    Solarzellen ist.</event>
+
+<event start="1838-06-12" title="Erfindung der Rotationsdruckmaschine"
+    link="http://de.wikipedia.org/wiki/Richard_March_Hoe"
+    icon="images/circle-blue.png">Richard March Hoe erfindet die
+    Rotationspresse (Patent: GB 7683 und GB7684).</event>
+
+<event start="1847" title="Entdeckung des Nitroglyzerins"
+    link="http://de.wikipedia.org/wiki/Ascanio_Sobrero"
+    icon="images/circle-blue.png">Der italienische Chemiker Ascanio
+    Sobrero entdeckt bei Experimenten mit Schießbaumwolle das
+    Nitroglyzerin.</event>
+
+<event start="1840" end="1849" title="Einführung der Desinfektion in
+    Krankenhäusern"
+    link="http://de.wikipedia.org/wiki/Ignaz_Semmelweis"
+    icon="images/circle-blue.png">Ignaz Semmelweis gelang in den
+    1840er Jahren erstmals der Nachweis, dass Desinfektion die
+    Übertragung von Krankheiten eindämmen kann.</event>
+
+<event start="1853" title="Synthetisierung der Acetylsalicylsäure"
+    link="http://de.wikipedia.org/wiki/Charles_Fr%C3%A9d%C3%A9ric_Gerhardt"
+    icon="images/circle-blue.png">Charles Gerhardt synthetisiert
+    erstmals Acetylsalicylsäure (Aspirin).</event>
+
+<event start="1863-02-17" title="Gründung des Roten Kreuzes"
+    link="http://de.wikipedia.org/wiki/Henri_Dunant"
+    icon="images/circle-blue.png">Henri Dunant gründet das
+    Internationale Komitee der Hilfsgesellschaften für die
+    Verwundetenpflege, das seit 1876 den Namen Internationales Komitee
+    vom Roten Kreuz (IKRK) trägt.</event>
+
+<event start="1869-12-28" title="Kaugummi-Patent" link=""
+    icon="images/circle-blue.png">William Semple erhält ein Patent (US
+    98304) auf »Gum Chewing«.</event>
+
+<event start="1871-07-17" title="Erfindung des Dynamos" link=""
+    icon="images/circle-blue.png">Zénobe Gramme führt vor
+    Wissenschaftlern in Paris seine Erfindung des dynamoelektrischen
+    Motors mit kontinuierlicher Induktion (Dynamo) vor, am 17. Juli
+    1871  vor.</event>
+
+<event start="1867-12-07" title="Morrisons Patent-Zahnarztstuhl"
+    icon="images/circle-blue.png">James Beall Morrison erhält ein
+    Patent (GB 3484) auf Improvements in the construction of operating
+    chairs more especially designed for dentists, parts of which
+    improvements being applicable for other purposes.</event>
+
+<event start="1883-01-30" title="Erfindung der Registrierkasse"
+    link="http://de.wikipedia.org/wiki/James_Ritty"
+    icon="images/circle-blue.png">James Jacob Ritty erfindet die erste
+    Registrierkasse und erhält am 30. Jan. 1883 ein Patent
+    darauf.</event>
+
+<event start="1885" title="Entwicklung der Tollwutimpfung"
+    link="http://de.wikipedia.org/wiki/Louis_Pasteur"
+    icon="images/circle-blue.png">Louis Pasteur entwickelt die
+    Tollwutimpfung.</event>
+
+<event start="1885-01-10" title="Burroughs Rechenmaschine"
+    link="http://en.wikipedia.org/wiki/William_Seward_Burroughs_I"
+    icon="images/circle-blue.png">William S. Burroughs konstruiert die
+    erste kommerziell erfolgreiche Rechenmaschine und sichert sich die
+    Patentrechte daran (US 388116, 388117, 388118, 388119).</event>
+
+<event start="1888" title="Elektrische Straßenbahn"
+    link="http://de.wikipedia.org/wiki/Frank_J._Sprague"
+    icon="images/circle-blue.png">Frank J. Sprague entwickelte 1888
+    einen Straßenbahnwagen, der seine Energie aus einer Oberleitung
+    bezog und baute damit das erste erfolgreiche größere elektrische
+    Straßenbahnsystem in Richmond, Virginia auf.</event>
+
+<event start="1882" title="Elektrisches Bügeleisen"
+    link="http://en.wikipedia.org/wiki/Electric_iron"
+    icon="images/circle-blue.png">Henri W. Seely erfindet das
+    elektrische Bügeleisen.</event>
+
+<event start="1892-09-24" title="Cromptons elektrischer Radiator"
+    icon="images/circle-blue.png">R. E. Bell Crompton erhält (zus. mit
+    H. J. Dowsing) ein Patent (GB 17092) ein Patent auf den ersten
+    elektrischen Radiator.</event>
+
+<event start="1893-08-29" title=""
+    link="http://de.wikipedia.org/wiki/Whitcomb_Judson"
+    icon="images/circle-blue.png">Whitcomb Judson erhält ein Patent
+    auf den Reissverschluss, der zu einer der Hauptattraktionen auf
+    der Weltausstellung in Chicago 1893 wurde.</event>
+
+<event start="1899-03-27" title="Erste drahtlose Telegraphie"
+    link="http://de.wikipedia.org/wiki/Guglielmo_Marconi"
+    icon="images/circle-blue.png">Guglielmo Marconi erfindet die
+    drahtlose Telegraphie. Am 27. März 1899 gelingt die erste
+    drahtlose Verbindung über den Ärmelkanal.</event>
+
+
+
+
+
+
 
 
 
 <!-- Weltausstellungen (orange)-->
+
 
 <event start="1851" title="Weltausstellung London, 1851"
     link="http://de.wikipedia.org/wiki/Great_Exhibition"
@@ -667,7 +870,7 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <event start="1803-11-21" title="Johannes Bückler" link="http://de.wikipedia.org/wiki/Johannes_B%C3%BCckler" icon="images/circle-yellow.png">Der auch als Schinderhannes bekannte deutsche Räuber Johannes Bückler wurde am 21. November 1803 mit der Guillotine zu Tode gerichtet.</event>
 
 <event start="1816" title="Jahr ohne Sommer" link="http://de.wikipedia.org/wiki/Jahr_ohne_Sommer" icon="images/circle-yellow.png">Der Ausbruch des Vulkans Tambora in Indonesien im April 1815 hat zur Folge, dass in Nordamerika und Europa im Juli und August de Jahres 1816 Temperaturen von  unter Null Grad herrschten.</event>
-<event start="1840-05-01" title="One Penny Black" link="http://de.wikipedia.org/wiki/One_Penny_Black" icon="images/circle-yellow.png">Erste Briefmarke der Welt.></event>
+<event start="1840-05-01" title="One Penny Black" link="http://de.wikipedia.org/wiki/One_Penny_Black" icon="images/circle-yellow.png">Erste Briefmarke der Welt.</event>
 <event start="1848" end="1855" title="Kalifornischer Goldrausch" link="http://de.wikipedia.org/wiki/Kalifornischer_Goldrausch" icon="images/circle-yellow.png"></event>
 <event start="1860" title="Florence Nightingale gründet die Krankenpflegeschule am St. Thomas Hospital, London." icon="images/circle-yellow.png"></event>
 <event start="1863" title="Gründung der Football Association in Großbritannien." link="http://de.wikipedia.org/wiki/The_Football_Association" icon="images/circle-yellow.png"></event>
@@ -694,9 +897,9 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
 
-<event start="1778" end="1855" title="Johann Gottfried Dingler"></event>
-<event start="1806" end="1874" title="Emil Maximilian Dingler"></event>
-<event start="1803-10-17" end="1879-03-24" title="Karl Karmarsch"></event>
+<event start="1778" end="1855" title="Johann Gottfried Dingler" icon="images/circle-grey.png"></event>
+<event start="1806" end="1874" title="Emil Maximilian Dingler" icon="images/circle-grey.png"></event>
+<event start="1803-10-17" end="1879-03-24" title="Karl Karmarsch" icon="images/circle-grey.png"></event>
 
 
 
