@@ -310,7 +310,9 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1820" title="6. Edition der Encyclopædia Britannica" link="http://de.wikipedia.org/wiki/Encyclop%C3%A6dia_Britannica" icon="images/circle-blue.png"></event>
 <event start="1825-09-27" title="Eröffnung der Stockton and Darlington Railway."
     link="http://de.wikipedia.org/wiki/Stockton_and_Darlington_Railway"
-    icon="images/circle-blue.png">Suche im Polytechnischen Journal nach: &lt;a
+    icon="images/circle-blue.png">Unter der Leitung Stephensons wurde
+    am 27. September 1825 zwischen Stockton und Darlington die erste
+    öffentliche Eisenbahn der Welt eingeweiht.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a
     href="http://www.culture.hu-berlin.de/dingler_test/search?q=Stockton"&gt;Stockton&lt;/a&gt;.</event>
 <event start="1826" title="Nicéphore Nièpces Fotografie" link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce"
     icon="images/circle-blue.png">Erste bekannte Fotografie,
@@ -524,21 +526,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     Bienaimé Caventon isolieren erstmals das fiebersenkende Mittel
     Chinin aus der Chinarinde.</event>
 
-<event start="1826" title="Niepce' Fotografie" link="http://de.wikipedia.org/wiki/Joseph_Nic%C3%A9phore_Ni%C3%A8pce"
-    icon="images/circle-blue.png">Joseph N. Niepce macht die
-    vermutlich erste dauerhafte photographische Aufnahme.</event>
-
 <event start="1823-06-17" title="Macintoshs Regenmantel"
     icon="images/circle-blue.png">Charles Macintosh erfindet den
     wasserundurchlässigen Regenmantel und erhält ein Patent (GB4804)
     auf sein Herstellungsverfahren.</event>
-
-<event start="1825-09-27" title="Einweihung der Stockton und
-    Darlington Railway"
-    link="http://de.wikipedia.org/wiki/George_Stephenson"
-    icon="images/circle-blue.png">Unter der Leitung Stephensons wurde
-    am 27. September 1825 zwischen Stockton und Darlington die erste
-    öffentliche Eisenbahn der Welt eingeweiht.</event>
 
 <event start="1825" title="Brailles Blindenschrift"
     link="http://de.wikipedia.org/wiki/Louis_Braille"
@@ -606,21 +597,20 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     Verwundetenpflege, das seit 1876 den Namen Internationales Komitee
     vom Roten Kreuz (IKRK) trägt.</event>
 
-<event start="1869-12-28" title="Kaugummi-Patent" link=""
+<event start="1869-12-28" title="Kaugummi-Patent"
     icon="images/circle-blue.png">William Semple erhält ein Patent (US
     98304) auf »Gum Chewing«.</event>
 
-<event start="1871-07-17" title="Erfindung des Dynamos" link=""
+<event start="1871-07-17" title="Erfindung des Dynamos"
     icon="images/circle-blue.png">Zénobe Gramme führt vor
     Wissenschaftlern in Paris seine Erfindung des dynamoelektrischen
-    Motors mit kontinuierlicher Induktion (Dynamo) vor, am 17. Juli
-    1871  vor.</event>
+    Motors mit kontinuierlicher Induktion (Dynamo) vor.</event>
 
 <event start="1867-12-07" title="Morrisons Patent-Zahnarztstuhl"
     icon="images/circle-blue.png">James Beall Morrison erhält ein
-    Patent (GB 3484) auf Improvements in the construction of operating
+    Patent (GB 3484) auf »Improvements in the construction of operating
     chairs more especially designed for dentists, parts of which
-    improvements being applicable for other purposes.</event>
+    improvements being applicable for other purposes«.</event>
 
 <event start="1883-01-30" title="Erfindung der Registrierkasse"
     link="http://de.wikipedia.org/wiki/James_Ritty"
@@ -656,7 +646,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     H. J. Dowsing) ein Patent (GB 17092) ein Patent auf den ersten
     elektrischen Radiator.</event>
 
-<event start="1893-08-29" title=""
+<event start="1893-08-29" title="Reissverschluss-Patent"
     link="http://de.wikipedia.org/wiki/Whitcomb_Judson"
     icon="images/circle-blue.png">Whitcomb Judson erhält ein Patent
     auf den Reissverschluss, der zu einer der Hauptattraktionen auf
@@ -780,7 +770,6 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <event start="1858-04-23" end="1947-10-04" title="Max Planck" link="http://de.wikipedia.org/wiki/Max_Planck" icon="images/circle-blue.png"></event>
 <event start="1818-12-03" end="1901-02-10" title="Max von Pettenkofer" link="http://de.wikipedia.org/wiki/Max_von_Pettenkofer" icon="images/circle-blue.png"></event>
 <event start="1834-01-07" end="1874-01-14" title="Philipp Reis" link="http://de.wikipedia.org/wiki/Philipp_Reis" icon="images/circle-blue.png"></event>
-<event start="1822-01-06" end="1890-12-26" title="Heinrich Schliemann" link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" icon="images/circle-blue.png"></event>
 <event start="1783-06-24" end="1850-09-22" title="Johann Heinrich von Thünen" link="http://de.wikipedia.org/wiki/Johann_Heinrich_von_Thünen" icon="images/circle-blue.png"></event>
 <event start="1821-10-13" end="1902-09-05" title="Rudolf Virchow" link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
 <event start="1832-08-16" end="1920-08-31" title="Wilhelm Wundt" link="http://de.wikipedia.org/wiki/Wilhelm_Wundt" icon="images/circle-blue.png"></event>
