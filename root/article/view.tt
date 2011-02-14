@@ -83,9 +83,8 @@
         [% ELSE %]
           [% year | html %],
           Band [% volume | html %]
-          [% IF number %], Nr. [% number | html %][% END -%]
-          [%- '/' IF misc AND number -%]
-          [%- IF misc %], Miszelle[% END %]
+          [%- IF number %], Nr. [% number | html %][% END -%]
+          [%- IF misc -%]/Miszelle [% item.position %][% END %]
           (S. [% IF p_start != p_end %][% p_start | html %]&ndash;[% p_end | html %][% ELSE; p_start | html; END %])
         [% END %]
       </td>
