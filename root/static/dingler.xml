@@ -658,6 +658,29 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 
 
+<event start="1864-12-21" title="Erste Sofortbildkamera"
+    icon="images/circle-blue.png">Am 21. Dezember 1864 meldet Jules
+    Bourdin in England ein Patent (GB 3175) an, für einen Apparat, den
+    er «Taschenfotograf» Dubroni (ein Anagramm seines Familiennamens)
+    nennt.&lt;br&gt; Suche im Polytechnischen Journal nach &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/article/pj185/ar185106"&gt;Dubroni&lt;/a&gt;</event>
+
+
+<event start="1888-09-04" title="Kodaks Rollfilm-Boxkamera"
+    link="http://de.wikipedia.org/wiki/George_Eastman"
+    icon="images/circle-blue.png">Am 4. Sept. 188 8 erhält George
+    Eastman ein Patent (US 388850) auf seine Erfindung der
+    Rollfilm-Kamera und lässt die Handelsmarke »Kodak«
+    registrieren.</event>
+
+
+<event start="1840" title="Petzvals vierlinsiges Portraitobjektiv"
+    link="http://de.wikipedia.org/wiki/Josef_Maximilian_Petzval"
+    icon="images/circle-blue.png">
+    Suche im Polytechnischen Journal nach &lt;a
+    href="http://www.culture.hu-berlin.de/dingler_test/article/pj079/mi079032_8"&gt;Petzval&lt;/a&gt;
+</event>
+
 
 
 
@@ -790,6 +813,9 @@ Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
 <event start="1740-02-16" end="1813-11-29" isDuration="true" title="Giambattista Bodoni" link="http://de.wikipedia.org/wiki/Giambattista_Bodoni" icon="images/circle-blue.png">italienischer Stempelschneider (Graveur), Buchdrucker, Typograf und Verleger.</event>
 
 <event start="1771-11-06" end="1834-02-26" isDuration="true" title="Alois Senefelder" link="http://de.wikipedia.org/wiki/Alois_Senefelder" icon="images/circle-blue.png">österreichisch-deutscher Schauspieler und Theaterschriftsteller; Erfinder der Lithografie.</event>
+
+
+<event start="1812-11-17" end="1878-04-08" isDuration="true" title="Peter Wilhelm Friedrich von Voigtländer" link="http://de.wikipedia.org/wiki/Peter_Wilhelm_Friedrich_von_Voigtl%C3%A4nder" icon="images/circle-blue.png">Österreichischer Optiker und Fotopionier.</event>
 
 
 
