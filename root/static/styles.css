@@ -8,6 +8,8 @@ q:before { content:"" }
 q:after  { content:"" }
 td { vertical-align:top }
 
+.fn { max-height:400px; overflow:scroll }
+
 sup.fnref { cursor:pointer }
 a.fnref { color:#07a }
 a, .ui-widget-content a, .clickable { text-decoration:none; color:#07a }

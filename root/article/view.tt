@@ -99,6 +99,7 @@
 [% IF !preface AND !register %]
   <span><a href="[% facsimile | html %]" target="_blank">[Faksimile]</a></span>
   <a href="" onclick="showxml('[% article %]'); return false">[XML]</a>
+  <a href="[% c.uri_for('/article/plain', journal, article) %]">[Textversion]</a>
 
   <div id="xmlsnippet">
     <div id="xmlsnippethead">
@@ -254,13 +255,6 @@
         </tr>
       </table>
     </form>
-  </div>
-
-  <div class="rightbox">
-    <div class="rightboxhead">Formate</div>
-    <div class="rightboxcontent">
-      <a href="[% c.uri_for('/article/plain', journal, article) %]">Textversion</a>
-    </div>
   </div>
 
   <script type="text/javascript">

@@ -24,6 +24,8 @@
 </xsl:template>
 
 <xsl:template match='tei:front/tei:pb'></xsl:template>
+<xsl:template match='tei:body//tei:note//tei:pb'></xsl:template>
+<xsl:template match='tei:body//tei:note//tei:p//tei:pb'></xsl:template>
 
 <xsl:template match='tei:ab'></xsl:template>
 

@@ -5,7 +5,7 @@
   <base href="[% base %]" />
   <link rel="stylesheet" type="text/css" href="static/jquery/jquery-ui-1.8.1.custom.css" />
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
   <script type="text/javascript" src="static/jquery/jquery.tablesorter.min.js"></script>
   <script type="text/javascript" src="static/jquery/jquery.metadata.js"></script>
   <!-- see http://docs.jquery.com/Plugins/Autocomplete/autocomplete -->
