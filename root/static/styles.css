@@ -63,8 +63,7 @@ td.mainright  { padding-top:0px }
 .figure { max-width:600px }
 table.middlealign td { vertical-align:middle }
 
-.person { cursor:pointer; color:#07a }
-.person:hover { text-decoration:underline }
+.person { color:#07a }
 img.portrait { float:right }
 
 table.journallist { padding-left:40px }
