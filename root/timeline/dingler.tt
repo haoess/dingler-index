@@ -1,13 +1,14 @@
-<h1>Zeitliste Polytechnisches Journal</h1>
+<h1>Zeitliste 19. Jahrhundert</h1>
 
 <table>
   <tr>
     <td><div id="my-timeline" style="width:800px;height:600px;border:1px solid #aaa;font-size:.8em"></div></td>
     <td style="white-space:nowrap; padding-left:15px">
       <img src="static/images/circle-blue.png" /> Wissenschaft, Technologie<br />
-      <img src="static/images/circle-green.png" /> Architektur, Stadtplanung, Städtebau<br />
-      <img src="static/images/circle-orange.png" /> Weltausstellungen<br />
+      <img src="static/images/circle-lightblue.png" /> Weltausstellungen<br />
+      <img src="static/images/circle-grey.png" /> Firmengründungen<br />
       <img src="static/images/circle-pink.png" /> Politik, Religion<br />
+      <img src="static/images/circle-green.png" /> Architektur, Städtebau<br />
       <img src="static/images/circle-red.png" /> Literatur, Philosophie, Kunst, Musik<br />
       <img src="static/images/circle-yellow.png" /> Anderes
     </td>
