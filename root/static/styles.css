@@ -8,6 +8,8 @@ q:before { content:"" }
 q:after  { content:"" }
 td { vertical-align:top }
 
+.fn { max-height:400px; overflow:scroll }
+
 sup.fnref { cursor:pointer }
 a.fnref { color:#07a }
 a, .ui-widget-content a, .clickable { text-decoration:none; color:#07a }
@@ -58,13 +60,14 @@ td.mainright  { padding-top:0px }
 .wide { letter-spacing:0.1em; margin-right:-0.2em; font-family:'Inconsolata',monospace,serif; font-size:1em }
 .roman { font-style:italic }
 .corr { border-bottom:dotted 1px #900 }
-.indent { text-indent:2em }
+/* .indent { text-indent:2em } */
+
+.pagebreak { font-size:.8em }
 
 .figure { max-width:600px }
 table.middlealign td { vertical-align:middle }
 
-.person { cursor:pointer; color:#07a }
-.person:hover { text-decoration:underline }
+.person { color:#07a }
 img.portrait { float:right }
 
 table.journallist { padding-left:40px }

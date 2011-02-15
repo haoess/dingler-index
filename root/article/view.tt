@@ -83,9 +83,8 @@
         [% ELSE %]
           [% year | html %],
           Band [% volume | html %]
-          [% IF number %], Nr. [% number | html %][% END -%]
-          [%- '/' IF misc AND number -%]
-          [%- IF misc %], Miszelle[% END %]
+          [%- IF number %], Nr. [% number | html %][% END -%]
+          [%- IF misc -%]/Miszelle [% item.position %][% END %]
           (S. [% IF p_start != p_end %][% p_start | html %]&ndash;[% p_end | html %][% ELSE; p_start | html; END %])
         [% END %]
       </td>
@@ -100,6 +99,7 @@
 [% IF !preface AND !register %]
   <span><a href="[% facsimile | html %]" target="_blank">[Faksimile]</a></span>
   <a href="" onclick="showxml('[% article %]'); return false">[XML]</a>
+  <a href="[% c.uri_for('/article/plain', journal, article) %]">[Textversion]</a>
 
   <div id="xmlsnippet">
     <div id="xmlsnippethead">
@@ -255,13 +255,6 @@
         </tr>
       </table>
     </form>
-  </div>
-
-  <div class="rightbox">
-    <div class="rightboxhead">Formate</div>
-    <div class="rightboxcontent">
-      <a href="[% c.uri_for('/article/plain', journal, article) %]">Textversion</a>
-    </div>
   </div>
 
   <script type="text/javascript">

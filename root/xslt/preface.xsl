@@ -21,18 +21,29 @@
 
 <xsl:template match='tei:ab'></xsl:template>
 
-<xsl:template match='tei:pb'>
+<xsl:template match='tei:body//tei:pb'>
   <xsl:element name="span">
     <xsl:attribute name="id"><xsl:value-of select="@xml:id"/></xsl:attribute>
+    <xsl:attribute name="class">pagebreak</xsl:attribute>
+    <xsl:text> |</xsl:text>
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
       <xsl:attribute name="target">_blank</xsl:attribute>
-      <xsl:element name="img">
-        <xsl:attribute name="src">static/images/pb.gif</xsl:attribute>
-        <xsl:attribute name="title">Orig. S. <xsl:value-of select="@n"/></xsl:attribute>
-      </xsl:element>
+      <xsl:value-of select="@n"/>
     </xsl:element>
+    <xsl:text>| </xsl:text>
   </xsl:element>
+  <xsl:if test="name(..) != 'note'">
+    <span style="position:absolute; left:20px;">
+      <xsl:element name="a">
+        <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
+        <xsl:attribute name="target">_blank</xsl:attribute>
+        <xsl:element name="img">
+          <xsl:attribute name="src"><xsl:value-of select="catalyst:facthumb(@facs)"/></xsl:attribute>
+        </xsl:element>
+      </xsl:element>
+    </span>
+  </xsl:if>
 </xsl:template>
 
 <xsl:template match="tei:titlePart">
@@ -115,10 +126,15 @@
 
 <xsl:template match="tei:persName">
   <xsl:element name="span">
-    <xsl:attribute name="class">person</xsl:attribute>
-    <xsl:if test="string-length(catalyst:personref(./@ref)) > 0">
-      <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />', '<xsl:value-of select="$article"/>'); return false;</xsl:attribute>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="string-length(catalyst:personref(./@ref)) > 4 and not(@type)">
+        <xsl:attribute name="class">person pointer</xsl:attribute>
+        <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />', '<xsl:value-of select="$article"/>'); return false;</xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:attribute name="class">person</xsl:attribute>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:apply-templates/>
   </xsl:element>
 </xsl:template>
