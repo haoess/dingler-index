@@ -140,7 +140,7 @@
 <xsl:template match="tei:persName">
   <xsl:element name="span">
     <xsl:choose>
-      <xsl:when test="string-length(catalyst:personref(./@ref)) > 4 and @type != 'misc'">
+      <xsl:when test="string-length(catalyst:personref(./@ref)) > 4 and not(./@type)">
         <xsl:attribute name="class">person pointer</xsl:attribute>
         <xsl:attribute name="onclick">showperson('<xsl:value-of select="catalyst:personref(./@ref)" />', '<xsl:value-of select="$id"/>'); return false;</xsl:attribute>
       </xsl:when>
