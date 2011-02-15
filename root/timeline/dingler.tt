@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><div id="my-timeline" style="width:1000px;height:600px;border:1px solid #aaa;font-size:.8em"></div></td>
+    <td><div id="my-timeline" style="width:800px;height:600px;border:1px solid #aaa;font-size:.8em"></div></td>
     <td style="white-space:nowrap; padding-left:15px">
       <img src="static/images/circle-blue.png" /> Wissenschaft, Technologie<br />
       <img src="static/images/circle-green.png" /> Architektur, Stadtplanung, Städtebau<br />
