@@ -75,13 +75,19 @@ sub grundform {
         Enden => 'Ende',
         Explosionen => 'Explosion',
         Farben => 'Farbe',
+        Federn => 'Feder',
         Fixsternes => 'Fixstern',
+        Fuhrwerke => 'Fuhrwerk',
+        Fuhrwerkes => 'Fuhrwerk',
         Gase => 'Gas',
         Gases => 'Gas',
         Grade => 'Grad',
         Gebäuden => 'Gebäude',
         Gefäßes => 'Gefäß',
         Gegenstandes => 'Gegenstand',
+        Geschüze => 'Geschüz',
+        Geschüzen => 'Geschüz',
+        Geschüzes => 'Geschüz',
         Gewichte => 'Gewicht',
         Gräben => 'Graben',
         Grundsazes => 'Grundsaz',
@@ -91,6 +97,7 @@ sub grundform {
         Instrumente => 'Instrument',
         Jahre => 'Jahr',
         Jahren => 'Jahr',
+        Kastens => 'Kasten',
         Kautschuks => 'Kautschuk',
         Kessels => 'Kessel',
         Ketten => 'Kette',
@@ -136,6 +143,7 @@ sub grundform {
         Schiebers => 'Schieber',
         Schrauben => 'Schraube',
         Schwierigkeiten => 'Schwierigkeit',
+        Schwingungen => 'Schwingung',
         Seile => 'Seil',
         Seiten => 'Seite',
         Stechrollen => 'Stechrolle',
@@ -152,11 +160,14 @@ sub grundform {
         Teleskopes => 'Teleskop',
         Theile => 'Theil',
         Thores => 'Thor',
+        Tons => 'Ton',
         Unzen => 'Unze',
         Ventile => 'Ventil',
+        Veränderungen => 'Veränderung',
         Verbesserungen => 'Verbesserung',
         Verhältniße => 'Verhältniß',
         Versuche => 'Versuch',
+        Vibrationen => 'Vibration',
         Viereke => 'Vierek',
         Volum => 'Volumen',
         Vortheile => 'Vortheil',
@@ -183,6 +194,7 @@ __PACKAGE__->meta->make_immutable;
 1;
 __DATA__
 aber
+allein
 als
 also
 am
@@ -203,6 +215,7 @@ die
 diese
 dieser
 dieses
+dieß
 durch
 ein
 eine
@@ -219,6 +232,7 @@ gegen
 hat
 hrn
 hier
+hinten
 ich
 in
 indem
