@@ -35,7 +35,22 @@ sub index :Path :Args(2) {
         $c->stash->{personarticles} = Dingler::Util::personarticles( $persid, $article->uid );
     }
     else {
+        # forward from view, this should be factored out into a separate action
         $c->stash->{personarticles} = Dingler::Util::personarticles( $persid );
+        if ( $person->pnd ) {
+            my %info;
+            my $info = $c->model('Dingler::Gnd')->search({ subject => 'http://d-nb.info/gnd/' . $person->pnd });
+            while ( my $row = $info->next ) {
+                push @{ $info{bio}{text} }, $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/biographicalInformation';
+                $info{bio}{date_of_birth}  = $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/dateOfBirth';
+                $info{bio}{place_of_birth} = $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/placeOfBirth';
+                $info{bio}{date_of_death}  = $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/dateOfDeath';
+                $info{bio}{place_of_death} = $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/placeOfDeath';
+                push @{ $info{urls} }, $row->object if $row->predicate eq 'http://xmlns.com/foaf/0.1/page';
+                push @{ $info{urls} }, $row->object if $row->predicate eq 'http://www.w3.org/2002/07/owl#sameAs';
+            }
+            $c->stash->{info} = \%info;
+        }
     }
 
     # the person's tag cloud

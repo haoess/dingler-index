@@ -1,7 +1,48 @@
 <div id="data">
   <h1>[% person.surname | html %][% IF person.forename %],[% END %] [% person.addname | html %] [% person.forename | html %] [% person.namelink | html %]</h1>
+
+  [% IF info.keys %]
+  <h2>Informationen</h2>
+
+  <table>
+    [% IF info.bio %]
+    <tr>
+      <td>Biographische Information:</td>
+      <td>
+        [% IF info.bio.date_of_birth %]
+          geb. [% info.bio.date_of_birth %] [% IF info.bio.place_of_birth; '('; info.bio.place_of_birth | html; ')'; END %]<br />
+        [% END %]
+        [% IF info.bio.date_of_death %]
+          gest. [% info.bio.date_of_death %] [% IF info.bio.place_of_death; '('; info.bio.place_of_death | html; ')'; END %]<br />
+        [% END %]
+        [% FOREACH i IN info.bio.text %]
+          [% i | html %][% '<br />' UNLESS loop.last %]
+        [% END %]
+      </td>
+    </tr>
+    [% END %]
+    <tr>
+      <td>Links:</td>
+      <td>
+        [% IF info.urls OR person.pnd %]
+          <ul style="margin:0">
+            [% IF person.pnd %]
+              <li><a href="http://d-nb.info/gnd/[% person.pnd %]">Eintrag bei der DNB</a> (PND [% person.pnd %])</li>
+            [% END %]
+            [% IF info.urls %]
+              [% FOREACH i IN info.urls %]
+                <li><a href="[% i %]">[% i %]</a></li>
+              [% END %]
+            [% END %]
+          </ul>
+        [% END %]
+      </td>
+    </tr>
+  </table>
+  [% END %]
+  
   [% personarticles %]
-  <hr />
+  
   <h2>Stichworte zur Person</h2>
   <div id="htmltagcloud">
     [% FOREACH tag IN cloud.tags(20) %]
