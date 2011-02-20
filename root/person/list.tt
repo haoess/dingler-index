@@ -77,7 +77,7 @@
   [% INCLUDE 'person/form.tt' %]
 
 [% IF 0 %]
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Einschränkung</div>
     <div class="rightboxcontent">
       <table>
