@@ -32,7 +32,8 @@ a:hover, .ui-widget-content a:hover, .clickable:hover { text-decoration:underlin
 
 .labtitle { display:none }
 
-#maintable { width:935px; margin-left:150px; margin-right:auto }
+/*#maintable { width:935px; margin-left:150px; margin-right:auto }*/
+#maintable { width:96em; margin:auto }
 
 .maincol { width:620px }
 .rightcol { width:315px }
@@ -74,8 +75,6 @@ table.journallist { padding-left:40px }
 
 .personlist h2 { font-family:'Cardo',Georgia,Times,serif,Times-New-Roman; font-size:1.4em; font-weight:normal; margin:0 0 0.5em 0 }
 .personlist h3 { font-weight:bold; font-size:1.1em; margin:1em 0 0 0 !important }
-
-.faclink { color:r69 }
 
 .ui-dialog { font-size:1em }
 
