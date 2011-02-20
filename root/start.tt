@@ -13,7 +13,7 @@
 
 <br />
 <p>Folgende Bände liegen bereits texterkannt vor:</p>
-
+[% IF 0 %]
 <div id="coverflow" class="ContentFlow" style="">
   <div class="loadIndicator"><div class="indicator"></div></div>
   <div class="flow">
@@ -32,8 +32,8 @@
 [% BLOCK head %]
   <script type="text/javascript" src="static/jquery/contentflow/contentflow.js" load="white"></script>
 [% END %]
-
 <br />
+[% END %]
 
 <div style="text-align:center">
 <form method="post" action="[% base %]journal/view">
@@ -104,11 +104,11 @@
           <td class="right">[% patents %]</td>
           <td><a href="patent">Patente</a></td>
         </tr>
-        <tr class="nolab">
+        <tr>
           <td class="right">[% persons %]</td>
           <td><a href="person/list">Personen</a></td>
         </tr>
-        <tr class="nolab">
+        <tr>
           <td class="right">[% sources %]</td>
           <td><a href="source/list">Quellen</a></td>
         </tr>
