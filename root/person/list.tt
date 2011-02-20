@@ -67,6 +67,7 @@
       </ul>
     [% END %]
     [% personarticles(name.id) %]
+    <p><a href="person/view/[% name.id %]">weitere Informationen zur Person &hellip;</a></p>
   </div>
 [% END %]
 </div>

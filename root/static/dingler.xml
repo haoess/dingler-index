@@ -366,7 +366,8 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Politik/Religion -->
 
-<event start="1807-01-09" end="1852" title="Amir Kabir" link="http://de.wikipedia.org/wiki/Amir_Kabir" icon="images/circle-pink.png">Ministerpräsident und bedeutender Reformer Persiens</event>
+<event start="1807-01-09" title="Amir Kabir *" link="http://de.wikipedia.org/wiki/Amir_Kabir" icon="images/circle-pink.png">Ministerpräsident und bedeutender Reformer Persiens</event>
+<event start="1852" title="Amir Kabir †" link="http://de.wikipedia.org/wiki/Amir_Kabir" icon="images/circle-pink.png">Ministerpräsident und bedeutender Reformer Persiens</event>
 <event start="1817-11-12" title="Baha’u’llah *"  icon="images/circle-pink.png">Religionsstifter der Bahai</event>
 <event start="1892-05-29" title="Baha’u’llah †"  icon="images/circle-pink.png">Religionsstifter der Bahai</event>
 
@@ -489,8 +490,6 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     link="http://de.wikipedia.org/wiki/Michael_Faraday"
     icon="images/circle-blue.png">Michael Faraday entdeckt die
     elektromagnetische Induktion.&lt;br&gt; Suche im Polytechnischen Journal nach: &lt;a href="http://www.culture.hu-berlin.de/dingler_test/search?q=Faraday"&gt;Faraday&lt;/a&gt;.</event>
-<event start="1830" end="1839" title="John Herschel entdeckt Robert's
-    Quartet" link="http://de.wikipedia.org/wiki/John_Herschel" icon="images/circle-blue.png"></event>
 <event start="1831" title="Charles Darwins Expedition auf der HMS Beagle." link="http://de.wikipedia.org/wiki/HMS_Beagle_%281820%29" icon="images/circle-blue.png"></event>
 <event start="1833" title="Aristide Cavaillé-Coll erfindet Kreissäge."
     link="http://de.wikipedia.org/wiki/Aristide_Cavaill%C3%A9-Coll" icon="images/circle-blue.png"></event>
@@ -936,14 +935,14 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <!-- Firmengründungen -->
 
-<event start="1810" title="Gründung der Gießerei Henschel &amp; Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-grey.png">Die Gießerei Henschel &amp; Sohn produziert ab 1816 Dampfmaschinen.</event>
-<event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-grey.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
-<event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-grey.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
-<event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-grey.png"></event>
-<event start="1839" title="Gründung der Stollwerck GmbH" link="http://de.wikipedia.org/wiki/Stollwerck" icon="images/circle-grey.png"></event>
-<event start="1847-10-12" title="Gründung der Siemens-Halske AG" icon="images/circle-grey.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
-<event start="1865-04-16" title="Gründung der BASF" link="http://de.wikipedia.org/wiki/BASF" icon="images/circle-grey.png">Gründung der Badischen Anilin- und Soda-Fabrik in Ludwigshafen.</event>
-<event start="1867" title="Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-grey.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
+<event start="1810" title="Gründung der Gießerei Henschel &amp; Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-black.png">Die Gießerei Henschel &amp; Sohn produziert ab 1816 Dampfmaschinen.</event>
+<event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-black.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
+<event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-black.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
+<event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-black.png"></event>
+<event start="1839" title="Gründung der Stollwerck GmbH" link="http://de.wikipedia.org/wiki/Stollwerck" icon="images/circle-black.png"></event>
+<event start="1847-10-12" title="Gründung der Siemens-Halske AG" icon="images/circle-black.png">Am 12. Oktober 1847 gründet Werner Siemens mit dem Mechaniker Johann Georg Halske in Berlin die Telegraphenbau-Anstalt von Siemens &amp; Halske.</event>
+<event start="1865-04-16" title="Gründung der BASF" link="http://de.wikipedia.org/wiki/BASF" icon="images/circle-black.png">Gründung der Badischen Anilin- und Soda-Fabrik in Ludwigshafen.</event>
+<event start="1867" title="Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-black.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
 
 
 
@@ -1092,10 +1091,6 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1904-05-08" title="Eadweard Muybridge †"  link="http://de.wikipedia.org/wiki/Eadweard_Muybridge" icon="images/circle-blue.png"></event>
 
 
-<event start="1821-10-13" title="Rudolf Virchow *"  link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
-<event start="1902-09-05" title="Rudolf Virchow †"  link="http://de.wikipedia.org/wiki/Rudolf_Virchow" icon="images/circle-blue.png"></event>
-
-
 <event start="1822-01-06" title="Heinrich Schliemann *"  link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg" icon="images/circle-blue.png"></event>
 <event start="1890-12-26" title="Heinrich Schliemann †"  link="http://de.wikipedia.org/wiki/Heinrich_Schliemann" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Heinrich_Schliemann.jpg/120px-Heinrich_Schliemann.jpg" icon="images/circle-blue.png"></event>
 
@@ -1127,42 +1122,27 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <!-- Architektur/Stadtplanung/Städtebau (green)-->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  -->
 
-<event start="1884" title="Erstes Hochhaus der Welt: Home Insurance
-    Building" link="http://en.wikipedia.org/wiki/Home_Insurance_Building" icon="images/circle-green.png"></event>
-<event start="1902" title="Fuller Building in New York" link="http://de.wikipedia.org/wiki/Flatiron_Building" icon="images/circle-green.png"></event>
-<event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross"
+<event start="1884" title="Erstes Hochhaus der Welt: Home Insurance Building" link="http://en.wikipedia.org/wiki/Home_Insurance_Building" icon="images/circle-green.png"></event>
+<event start="1902" title="Fuller Building in New York" link="http://de.wikipedia.org/wiki/Flatiron_Building" icon="images/circle-green.png"></event> <event start="1852-10-14" title="Eröffnung des Bahnhofs King's Cross"
     link="http://de.wikipedia.org/wiki/Bahnhof_King%E2%80%99s_Cross" icon="images/circle-green.png"></event>
 <event start="1854" title="Eröffnung der Paddington Station" link="http://de.wikipedia.org/wiki/Bahnhof_Paddington" icon="images/circle-green.png"></event>
-<event start="1857" title="Eröffnung des Lesesaals der British
-    Library" link="http://de.wikipedia.org/wiki/British_Library" icon="images/circle-green.png"></event>
-<event start="1845" title="Fertigstellung der ionischen Säulenhalle
-    des British Museums"
+<event start="1857" title="Eröffnung des Lesesaals der British Library" link="http://de.wikipedia.org/wiki/British_Library" icon="images/circle-green.png"></event>
+<event start="1845" title="Fertigstellung der ionischen Säulenhalle des British Museums"
     link="http://de.wikipedia.org/wiki/British_Museum" icon="images/circle-green.png"></event>
-<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St.
-    Petersburg" link="http://de.wikipedia.org/wiki/Nikolai-Palast" icon="images/circle-green.png"></event>
+<event start="1861-12" title="Fertigstellung des Nikolai Palastes, St.  Petersburg" link="http://de.wikipedia.org/wiki/Nikolai-Palast" icon="images/circle-green.png"></event>
 
-<event start="1840-04-27" title="Grundsteinlegung für das »Houses of
-    Parliament«"
+<event start="1840-04-27" title="Grundsteinlegung für das »Houses of Parliament«"
     link="http://de.wikipedia.org/wiki/Palace_of_Westminster" icon="images/circle-green.png">Charles Barry und Augustus Pugin: Grundsteinlegung für das »Houses of Parliament« in London</event>
-<event start="1821" title="Karl Friedrich Schinkel: Schauspielhaus in
-    Berlin" link="http://de.wikipedia.org/wiki/Konzerthaus_Berlin" icon="images/circle-green.png"></event>
-<event start="1828" title="Schinkel: Altes Museum in Berlin"
-    link="http://de.wikipedia.org/wiki/Altes_Museum_%28Berlin%29" icon="images/circle-green.png"></event>
-<event start="1830" title="Schinkel: Nicolaikirche Potsdam"
-    link="http://de.wikipedia.org/wiki/St._Nikolaikirche_%28Potsdam%29" icon="images/circle-green.png"></event>
+<event start="1821" title="Karl Friedrich Schinkel: Schauspielhaus in Berlin" link="http://de.wikipedia.org/wiki/Konzerthaus_Berlin" icon="images/circle-green.png"></event>
+<event start="1828" title="Schinkel: Altes Museum in Berlin" link="http://de.wikipedia.org/wiki/Altes_Museum_%28Berlin%29" icon="images/circle-green.png"></event>
+<event start="1830" title="Schinkel: Nicolaikirche Potsdam" link="http://de.wikipedia.org/wiki/St._Nikolaikirche_%28Potsdam%29" icon="images/circle-green.png"></event>
 <event start="1835" title="Schinkel: Neue Berliner Sternwarte" link="http://de.wikipedia.org/wiki/Berliner_Sternwarte#Neue_Berliner_Sternwarte" icon="images/circle-green.png"></event>
-<event start="1847" end="1855" title="Gottfried Semper:
-    Gemäldegalerie"
-    link="http://de.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister" icon="images/circle-green.png"></event>
-<event start="1871" end="1878" title="Gottfried Semper: Neues
-    Hoftheater in Dresden (Semperoper)"
-    link="http://de.wikipedia.org/wiki/Semperoper#Der_zweite_Bau" icon="images/circle-green.png"></event>
-<event start="1858" end="1864" title="Gottfried Semper: Polytechnikum
-    in Zürich (ETH)"
-    link="http://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Technische_Hochschule_Z%C3%BCrich" icon="images/circle-green.png"></event>
+<event start="1855" title="Gottfried Semper: Fertigstellung der Gemäldegalerie" link="http://de.wikipedia.org/wiki/Gem%C3%A4ldegalerie_Alte_Meister" icon="images/circle-green.png"></event>
+<event start="1878" title="Gottfried Semper: Fertigstellung des Neuen
+    Hoftheaters in Dresden (Semperoper)" link="http://de.wikipedia.org/wiki/Semperoper#Der_zweite_Bau" icon="images/circle-green.png"></event>
+<event start="1858" title="Gottfried Semper: Baubeginn des Polytechnikums in Zürich (ETH)" link="http://de.wikipedia.org/wiki/Eidgen%C3%B6ssische_Technische_Hochschule_Z%C3%BCrich" icon="images/circle-green.png"></event>
 
-<event start="1853" title="Neue Pinakothek, München"
-    link="http://de.wikipedia.org/wiki/Neue_Pinakothek" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
+<event start="1853" title="Neue Pinakothek, München" link="http://de.wikipedia.org/wiki/Neue_Pinakothek" icon="images/circle-green.png">Neue Pinakothek in München (Friedrich von Gärtners und August von Voit).</event>
 <event start="1864" end="1868" title="Gottfried Neureuther: Polytechnische Schule in München." link="http://de.wikipedia.org/wiki/Technische_Universit%C3%A4t_M%C3%BCnchen" icon="images/circle-green.png"></event>
 <event start="1877" end="1881" title="Martin Gropius: Kunstgewerbemuseum in Berlin (Martin-Gropius-Bau)" link="http://de.wikipedia.org/wiki/Martin-Gropius-Bau" icon="images/circle-green.png"></event>
 
