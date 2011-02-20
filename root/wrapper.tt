@@ -61,7 +61,7 @@
 
 <!-- Piwik --> 
 <script type="text/javascript">
-  var pkBaseURL = "http://141.20.150.36/piwik/";
+  var pkBaseURL = "http://dingler.culture.hu-berlin.de/piwik/";
   document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
@@ -72,7 +72,7 @@
   }
   catch( err ) {}
 </script>
-<noscript><p><img src="http://141.20.150.36/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<noscript><p><img src="http://dingler.culture.hu-berlin.de/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
 <!-- End Piwik Tracking Tag -->
 
 </body>
