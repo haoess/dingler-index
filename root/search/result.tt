@@ -71,7 +71,7 @@
 [% BLOCK right %]
   [% INCLUDE 'search/form.tt' %]
 
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Treffersortierung</div>
     <div class="rightboxcontent">
       [% IF sort == 'rank' %]
@@ -94,7 +94,7 @@
     </div>
   </div>
 
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Trefferverteilung</div>
     <div class="rightboxcontent">
       <div>Probieren Sie auch unsere <a href="[% c.uri_for('/search/trendsearch', { q => q }) %]">Trendsuche</a>!</div>
