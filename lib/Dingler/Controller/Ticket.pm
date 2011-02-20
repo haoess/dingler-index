@@ -94,7 +94,7 @@ automatisch gesendet von dingler.culture.hu-berlin.de
 Keine Replys an die Absender-Adresse moeglich!
 EOT
     );
-    $msg->send( 'sendmail', 'sendmail -t -oi -oem -f' . $c->config->{mail_from} );
+    #$msg->send( 'sendmail', 'sendmail -t -oi -oem -f' . $c->config->{mail_from} );
 
     $c->res->content_type('text/html');
     $c->res->body("Danke! Ein Ticket wurde angelegt, wir k&uuml;mmern uns darum.");
