@@ -194,7 +194,7 @@
 <xsl:template match="tei:figure">
   <div class="center small" style="margin:10px 0">
     <xsl:element name="img">
-      <xsl:attribute name="src">http://141.20.150.36/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+      <xsl:attribute name="src">http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
       <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
       <xsl:attribute name="class">figure</xsl:attribute>

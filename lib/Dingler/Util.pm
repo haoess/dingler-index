@@ -91,7 +91,7 @@ sub figlink {
     elsif ( $figure =~ /image_markup\/(tab\d+)\.xml/ ) {
         $target = $1;
     }
-    my $ret = sprintf 'http://141.20.150.36/dingler_static/%s/image_markup/%s_wv_%s.jpg', $journal, $target, $target;
+    my $ret = sprintf 'http://dingler.culture-hu-berlin.de/dingler_static/%s/image_markup/%s_wv_%s.jpg', $journal, $target, $target;
     return $ret;
 }
 

@@ -164,7 +164,7 @@
     <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
       <xsl:element name="a">
 <!--    <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/>'); return false;</xsl:attribute>-->
-        <xsl:attribute name="onclick">showfigure('http://141.20.150.36/dingler_static/<xsl:value-of select="$journal"/>/figures/<xsl:value-of select="substring-after(@target, '#')"/>.jpg'); return false;</xsl:attribute>
+        <xsl:attribute name="onclick">showfigure('http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/figures/<xsl:value-of select="substring-after(@target, '#')"/>.jpg'); return false;</xsl:attribute>
         <xsl:attribute name="class">pointer</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
@@ -213,7 +213,7 @@
     <xsl:when test="./tei:p">
       <span style="float:left; margin:10px 10px 10px 0">
       <xsl:element name="img">
-        <xsl:attribute name="src">http://141.20.150.36/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+        <xsl:attribute name="src">http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
         <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
         <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
         <xsl:attribute name="class">figure</xsl:attribute>
@@ -223,7 +223,7 @@
     <xsl:otherwise>
       <div class="center small" style="margin:10px 0">
         <xsl:element name="img">
-          <xsl:attribute name="src">http://141.20.150.36/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+          <xsl:attribute name="src">http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
           <xsl:attribute name="alt"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
           <xsl:attribute name="title"><xsl:apply-templates select="./tei:figDesc"/></xsl:attribute>
           <xsl:attribute name="class">figure</xsl:attribute>
