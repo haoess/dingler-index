@@ -2,13 +2,13 @@
 
 <h1>Dingler Tools</h1>
 
-<h2><a href="tools/calc">Einheitenrechner</a></h2>
+[% IF 0 %]<h2><a href="tools/calc">Einheitenrechner</a></h2>
 
 <p>
   Mit dem <a href="tools/calc">Einheitenrechner</a> können Sie alte, historische
   bzw. ungebräuchliche Einheiten in moderne, vorzugsweise metrische Angaben
   umrechnen.
-</p>
+</p>[% END %]
 
 <h2><a href="search/trend">Dingler Trends</a></h2>
 
