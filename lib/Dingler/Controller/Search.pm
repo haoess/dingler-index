@@ -202,6 +202,7 @@ sub search :Global {
         matches  => $matches,
         excerpt  => sub {
             my $content = shift;
+            return unless $content; # applies to complete miscellanea articles TODO: don't index them 
             my $excerpt = $sph->BuildExcerpts( [$content], 'dingler', join( ' ', @query_words ) );
             return $excerpt->[0];
         },
