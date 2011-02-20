@@ -30,6 +30,7 @@ dingler_fastcgi.pl [options]
                  or empty string to disable
    -e --keeperr  send error messages to STDOUT, not
                  to the webserver
+   --proc_title  Set the process title (is possible)
 
 =head1 DESCRIPTION
 
