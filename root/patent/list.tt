@@ -38,7 +38,7 @@
 <!-- //common! -->
 
 [% BLOCK right %]
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Treffergruppierung</div>
     <div class="rightboxcontent">
       <p>
