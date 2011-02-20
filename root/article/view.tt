@@ -141,7 +141,7 @@
   [% INCLUDE 'search/form.tt' %]
 
   [% IF !preface AND !register %]
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Stichwortwolke</div>
     <div class="rightboxcontent">
       <div id="htmltagcloud">
@@ -152,7 +152,7 @@
     </div>
   </div>
 
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Zitierangaben</div>
     <div class="rightboxcontent center">
       <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
@@ -215,7 +215,7 @@
     }
   </script>
 
-  <div class="rightbox nolab">
+  <div class="rightbox">
     <div class="rightboxhead">Feedback</div>
     <div class="rightboxcontent center">
       <button onclick="bugform()">Ihr Feedback</button><br />
