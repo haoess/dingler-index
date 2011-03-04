@@ -8,6 +8,7 @@ temperature:
       fahrenheit: x * 1.8 + 32
       kelvin: x + 273.15
       reaumur: x * 0.8
+      rankine: x * 1.8 + 491.67
   fahrenheit:
     name: Grad Fahrenheit
     unit: °F
@@ -16,6 +17,7 @@ temperature:
       celsius: (x - 32) * 5/9
       kelvin: (x + 459.67) * 5/9
       reaumur: (x - 32) * 4/9
+      rankine: x + 459.67
   kelvin:
     name: Kelvin
     unit: K
@@ -24,14 +26,25 @@ temperature:
       celsius: x - 273.15
       fahrenheit: x * 1.8 - 459.67
       reaumur: (x - 273.15) * 0.8
+      rankine: x * 1.8
   reaumur:
     name: Grad Réaumur
-    unit: °R
+    unit: °Ré
     wp: http://de.wikipedia.org/wiki/R%C3%A9aumur-Skala
     conversions:
       celsius: x * 1.25
       kelvin: x * 1.25 + 273.15
-      fahrenheit: x * 1.8 + 32
+      fahrenheit: x * 2.25 + 32
+      rankine: x * 2.25 + 491.67
+  rankine:
+    name: Grad Rankine
+    unit: °R
+    wp: http://de.wikipedia.org/wiki/Rankine-Skala 
+    conversions:
+      celsius: x * 5 / 9 - 273.15
+      kelvin: x * 5 / 9
+      fahrenheit: x - 459.67
+      reaumur: x * 4 / 9 - 218.52
 area:
   squarefoot:
     name: Quadratfuß
@@ -136,279 +149,279 @@ mass:
     unit: lb.
     wp: http://de.wikipedia.org/wiki/Avoirdupois
     conversions:
-      gramm: x / 453.592370
-      kilogramm: x / 0.453592370
+      gramm: x * 453.592370
+      kilogramm: x * 0.453592370
   ounce:
     name: Unze
     unit: oz.
     wp: http://de.wikipedia.org/wiki/Unze
     conversions:
-      gramm: x / 28.349523125
+      gramm: x * 28.349523125
   grain:
     name: Englisches Gran
     unit: grain
     wp: http://de.wikipedia.org/wiki/Gran_(Einheit)
     conversions:
-      gramm: x * 15.432358
+      milligramm: x * 64.79891
   tonne:
     name: Tonne
     unit: t
     wp: http://de.wikipedia.org/wiki/Tonne_(Einheit)
     conversions:
-      kilogramm: x / 1000
+      kilogramm: x * 1000
   centner:
     name: Zentner
     unit: Ztr.
     wp: http://de.wikipedia.org/wiki/Zentner
     conversions:
-      kilogramm: x / 50
+      kilogramm: x * 50
   braunschweigerzentner:
     name: Braunschweiger Zentner
     unit: Braunschw. Ztr.
     conversions:
-      kilogramm: x / 46.77
+      kilogramm: x * 46.77
   sachsenzentner:
     name: Sachsener Zentner
     unit: Sachs. Ztr.
     conversions:
-      kilogramm: x / 51.4
+      kilogramm: x * 51.4
   preussischerzentner:
     name: Preussischer Zentner
     unit: Preus. Ztr.
     conversions:
-      kilogramm: x / 51.45
+      kilogramm: x * 51.45
   bayrischerzentner:
     name: Bayrischer Zentner
     unit: Bayr. Ztr.
     conversions:
-      kilogramm: x / 56
+      kilogramm: x * 56
   kilogramm:
     name: Kilogramm
     unit: kg
     wp: http://de.wikipedia.org/wiki/Kilogramm
     conversions:
-      gramm: x / 1000
+      gramm: x * 1000
   pfund:
     name: Pfund
     unit: Pf.
     wp: http://de.wikipedia.org/wiki/Pfund
     conversions:
-      gramm: x / 500
+      gramm: x * 500
   gramm:
     name: Gramm
     unit: g
     wp: http://de.wikipedia.org/wiki/Gramm
     conversions:
-      kilogramm: x * 1000
+      kilogramm: x / 1000
   drachme:
     name: Drachme
     unit: dr.
     wp: http://de.wikipedia.org/wiki/Avoirdupois
     conversions:
-      kilogramm: x / 0.0017718451953125
+      kilogramm: x * 0.0017718451953125
   frankfurterpfund:
     name: Frankfurter Pfund
     unit: Frankf. Pf.
     conversions:
-      avoirdupois: x * 0.96923077
+      avoirdupois: x / 0.96923077
   quint:
     name: Quint
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      gramm: x / 3.65
+      gramm: x * 3.65
   loth:
     name: Loth
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      gramm: x / 14.606
+      gramm: x * 14.606
 length:
   englischemeile:
     name: Englische Meile
     unit: stat. mi.
     wp: http://de.wikipedia.org/wiki/Englische_Meile
     conversions:
-      meter: x / 1609.344
+      meter: x * 1609.344
   bayerischemeile1:
     name: Bayerische Meile (vor 1811)
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
     conversions:
-      kilometer: x / 7.414975
+      kilometer: x * 7.414975
   bayerischemeile2:
     name: Bayerische Meile (1811–1871)
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
     conversions:
-      kilometer: x / 7.470903
+      kilometer: x * 7.470903
   bayerischemeile3:
     name: Bayerische Meile (ab 1872)
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Bayern)
     conversions:
-      kilometer: x / 7.2
+      kilometer: x * 7.2
   oesterreichischepostmeile:
     name: Österreichische Postmeile
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
     conversions:
-      kilometer: x / 7.585935360
+      kilometer: x * 7.585935360
   furlong:
     name: Furlong
     unit: fur
     wp: http://de.wikipedia.org/wiki/Furlong
     conversions:
-      meter: x / 201.168
+      meter: x * 201.168
   yard:
     name: Yard
     unit: yd
     wp: http://de.wikipedia.org/wiki/Yard
     conversions:
-      meter: x / 0.9144
+      meter: x * 0.9144
   englischerfuss:
     name: Englischer Fuß
     unit: ft
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
     conversions:
-      meter: x / 0.3048
+      meter: x * 0.3048
   bayrischerfuss:
     name: Bayrischer Fuß
     unit: Bayr. Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
     conversions:
-      millimeter: x / 291.86
+      millimeter: x * 291.86
   wienerfuss:
     name: Wiener Fuß
     unit: Wiener Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
     conversions:
-      millimeter: x / 316.08
+      millimeter: x * 316.08
   frankfurterfuss:
     name: Frankfurter Fuß
     unit: Frankf. Fuß
     wp: http://de.wikipedia.org/wiki/Fuß_(Einheit)
     conversions:
-      millimeter: x / 284.61
+      millimeter: x * 284.61
   oesterreichischerfuss:
     name: Österreichischer Fuß
     unit: Öster. Fuß
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
     conversions:
-      millimeter: x / 316.08
+      millimeter: x * 316.08
   bayerischeelle:
     name: Bayerische Elle
     unit: Bayer. Elle
     wp: http://de.wikipedia.org/wiki/Elle_(Einheit)
     conversions:
-      meter: x / 0.833
+      meter: x * 0.833
   badischeelle:
     name: Badische Elle
     unit: Bad. Elle
     wp: http://de.wikipedia.org/wiki/Elle_(Einheit)
     conversions:
-      meter: x / 0.6
+      meter: x * 0.6
   preussischerklafter:
     name: Preussischer Klafter
     wp: http://de.wikipedia.org/wiki/Klafter
     conversions:
-      meter: x / 1.88
+      meter: x * 1.88
   bayerischerklafter:
     name: Bayerischer Klafter
     wp: http://de.wikipedia.org/wiki/Klafter
     conversions:
-      meter: x / 1.75
+      meter: x * 1.75
   oesterreichischerklafter:
     name: Österreichischer Klafter
     unit: Öster. Klafter
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Österreich)
     conversions:
-      meter: x / 1.896483840
+      meter: x * 1.896483840
   linie:
     name: Linie
     wp: http://de.wikipedia.org/wiki/Linie_(Einheit)
     conversions:
-      millimeter: x / 2.195004
+      millimeter: x * 2.195004
   zoll:
     name: Zoll
     unit: “
     wp: http://de.wikipedia.org/wiki/Zoll_(Einheit)
     conversions:
-      zentimeter: x / 2.54
+      zentimeter: x * 2.54
   inch:
     name: Inch
     unit: in.
     wp: http://de.wikipedia.org/wiki/Inch
     conversions:
-      zentimeter: x / 2.54
+      zentimeter: x * 2.54
   kilometer:
     name: Kilometer
     unit: km
     wp: http://de.wikipedia.org/wiki/Kilometer#km
     conversions:
-      meter: x / 1000
+      meter: x * 1000
   meter:
     name: Meter
     unit: m
     wp: http://de.wikipedia.org/wiki/Meter#m
     conversions:
-      kilometer: x * 1000
+      kilometer: x / 1000
   dezimeter:
     name: Dezimeter
     unit: dm
     wp: http://de.wikipedia.org/wiki/Dezimeter#dm
     conversions:
-      meter: x * 10
+      meter: x / 10
   zentimeter:
     name: Zentimeter
     unit: cm
     wp: http://de.wikipedia.org/wiki/Zentimeter#cm
     conversions:
-      meter: x * 100
+      meter: x / 100
   millimeter:
     name: Millimeter
     wp: http://de.wikipedia.org/wiki/Millimeter#mm
     conversions:
-      zentimeter: x * 10
-      meter: x * 1000
+      zentimeter: x / 10
+      meter: x / 1000
 volume:
   chaldron:
     name: Chaldron (Tschadern)
     unit: Chaldron
     wp: http://de.wikipedia.org/wiki/Chaldron
     conversions:
-      liter: x / 1309.2732
+      liter: x * 1163.125
   englischersack:
     name: Englischer Sack
     unit: Engl. Sack
     wp: http://de.wikipedia.org/wiki/Sack_(Einheit)
     conversions:
-      chaldron: x * 12
-      bushel: x / 3
-      liter: x / 109.106
+      chaldron: x / 12
+      bushel: x * 3
+      liter: x * 109.106
   imperialbushel:
     name: Buschel (Scheffel)
     unit: Imp.bsh.
     wp: http://de.wikipedia.org/wiki/Bushel
     conversions:
-      liter: x / 36.3687222559584
+      liter: x * 36.3687222559584
   imperialgallon:
     name: Imperiale Gallone
     unit: Imp.gal
     wp: http://de.wikipedia.org/wiki/Gallone
     conersions:
-      liter: x / 4.54609
+      liter: x * 4.54609
   imperialpeck:
     name: Peck
     unit: Imp.pk
     wp: http://de.wikipedia.org/wiki/Peck_(Maßeinheit)
     conversions:
-      liter: x / 9.0921805639896
+      liter: x * 9.0921805639896
   quarter:
     name: Quarter
     unit: qr.
     wp: http://de.wikipedia.org/wiki/Quarter_(Maßeinheit)
     conversions:
-      liter: x / 209.9
+      liter: x * 209.9
   frankfurtermalter:
     name: Frankfurter Malter
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte_(Hessen)
     conversions:
-      liter: x / 114.729
+      liter: x * 114.729
   kubikmeter:
     name: Kubikmeter
     unit: m3
@@ -420,19 +433,19 @@ volume:
     unit: cin
     wp: http://de.wikipedia.org/wiki/Kubikzoll
     conversions:
-      liter: x / 0.000016387064
+      liter: x * 0.000016387064
   kubikzentimeter:
     name: Kubikzentimeter
     unit: cm3
     wp: http://de.wikipedia.org/wiki/Kubikmeter
     conversions:
-      liter: x / 0.001
+      liter: x * 0.001
   hektoliter:
     name: Hektoliter
     unit: hl
     wp: http://de.wikipedia.org/wiki/Liter
     conversions:
-      liter: x / 100
+      liter: x * 100
   liter:
     name: Liter
     unit: l
@@ -441,22 +454,22 @@ volume:
     name: Bayerisches Quart
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      liter: x / 0.267
+      liter: x * 0.267
   preussischesquart:
     name: Preussisches Quart
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      liter: x / 1.145
+      liter: x * 1.145
   schoppen:
     name: Schoppen
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      liter: x / 0.5
+      liter: x * 0.5
   badischesmaass:
     name: Badisches Maaß
     wp: http://de.wikipedia.org/wiki/Alte_Maße_und_Gewichte#Raumma.C3.9Fe
     conversions:
-      liter: x / 1.5
+      liter: x * 1.5
 
 time:
 amount:
@@ -477,7 +490,7 @@ money:
     name: Groschen
     wp: http://de.wikipedia.org/wiki/Groschen
     conversions:
-      pfennig: x / 12
+      pfennig: x * 12
   silbergroschen:
     name: Silbergroschen (Preußen)
     unit: Sgr.
