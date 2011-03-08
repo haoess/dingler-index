@@ -114,7 +114,7 @@ sub personarticles {
     );
     my $out = '';
     if ( $rs->count ) {
-        $out = '<h2>Fundstellen im Polytechnischen Journal</h2><ul style="margin-top:0">';
+        $out = '<h3>Fundstellen im Polytechnischen Journal</h3><ul style="margin-top:0">';
         my $i = 0;
         while ( my $person = $rs->next ) {
             last if $i == 10;
