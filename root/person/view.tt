@@ -7,7 +7,7 @@
   <table>
     [% IF info.bio %]
     <tr>
-      <td>Biographische Information:</td>
+      <td><b>Biographische Information:</b></td>
       <td>
         [% IF info.bio.date_of_birth %]
           geb. [% info.bio.date_of_birth %] [% IF info.bio.place_of_birth; '('; info.bio.place_of_birth | html; ')'; END %]<br />
@@ -22,7 +22,7 @@
     </tr>
     [% END %]
     <tr>
-      <td>Links:</td>
+      <td><b>Links:</b></td>
       <td>
         [% IF info.urls OR person.pnd %]
           <ul style="margin:0">
