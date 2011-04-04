@@ -39,7 +39,7 @@ sub index :Path :Args(2) {
         $c->stash->{personarticles} = Dingler::Util::personarticles( $persid );
         if ( $person->pnd ) {
             my %info;
-            my $info = $c->model('Dingler::Gnd')->search({ subject => 'http://d-nb.info/gnd/' . $person->pnd });
+            my $info = $c->model('GND::Gnd')->search({ subject => 'http://d-nb.info/gnd/' . $person->pnd });
             while ( my $row = $info->next ) {
                 push @{ $info{bio}{text} }, $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/biographicalInformation';
                 $info{bio}{date_of_birth}  = $row->object if $row->predicate eq 'http://RDVocab.info/ElementsGr2/dateOfBirth';
