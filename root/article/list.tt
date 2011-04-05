@@ -51,7 +51,7 @@
   <div class="rightbox">
     <div class="rightboxhead">Formate</div>
     <div class="rightboxcontent">
-      <a href="[% c.uri_for('/journal/plain', journal) %]">Textversion</a>
+      <a href="[% c.uri_for('/journal/plain', journal) %]">Textversion</a>, <a href="http://digital.slub-dresden.de/fileadmin/data/[% item.barcode %]/[% item.barcode %]_tif/jpegs/[% item.barcode %].pdf">PDF (Faksimile)</a>
     </div>
   </div>
 [% END %]
