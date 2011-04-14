@@ -362,6 +362,10 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1914" end="1918" title="Erster Weltkrieg" link="http://de.wikipedia.org/wiki/Erster_Weltkrieg" icon="images/circle-pink.png"></event>
 
 
+<event start="1848-04-12" title="Hecker In Konstanz proklamiert Friedrich die erste deutsche Republik" link="http://de.wikipedia.org/wiki/Friedrich_Hecker" icon="images/circle-pink.png"></event>
+
+
+
 
 
 <!-- Politik/Religion -->
@@ -455,11 +459,37 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1779-08-03" title="Friedrich Wilhelm III. *"  link="http://de.wikipedia.org/wiki/Friedrich_Wilhelm_III." icon="images/circle-pink.png"></event>
 <event start="1840-06-17" title="Friedrich Wilhelm III. †"  link="http://de.wikipedia.org/wiki/Friedrich_Wilhelm_III." icon="images/circle-pink.png"></event>
 
+<event start="1811-09-28" title="Friedrich Hecker *" link="http://de.wikipedia.org/wiki/Friedrich_Hecker" icon="images/circle-pink.png"></event>
+<event start="1881-03-24" title="Friedrich Hecker †" link="http://de.wikipedia.org/wiki/Friedrich_Hecker" icon="images/circle-pink.png"></event>
 
 
 
 
+<!--                  -->
+<!-- patentrecht - D  -->
+<!--                  -->
 
+<event start="1858" title="Gründung des Kongress' Deutscher Volkswirte" icon="images/circle-orange.png"></event>
+<event start="1874" title="Gründung des Deutschen Patentschutzvereins" icon="images/circle-orange.png"></event>
+<event start="1877-05-25" title="Erstes deutsches Patentgesetz" icon="images/circle-orange.png"></event>
+<event start="1877-07-10" title="Gründung des Kaiserlichen Patentamts, Berlin" icon="images/circle-orange.png"></event>
+<event start="1891-04-07" title="Neufassung des Patentgesetzes" icon="images/circle-orange.png"></event>
+<event start="1900-05-21" title="»Gesetz, betreffend die Patentanwälte«" icon="images/circle-orange.png"></event>
+<event start="1917-03-09" title="»Bekanntmachung über Vereinfachungen im Patentamt«" icon="images/circle-orange.png"></event>
+
+
+<!--                  -->
+<!-- patentrecht - GB -->
+<!--                  -->
+
+<event start="1828" title="William Newton: campaign for patent law reform"  icon="images/circle-orange.png">»reform of the costly, cumbrous and largely useless procedure by which alone patents could be obtained.«</event>
+<event start="1829" title="Select Committee on patents"  icon="images/circle-orange.png">Untersuchungsausschusses mit dem Auftrag, den damaligen Stand der ,Patentpratiken‘ zu untersuchen bzw. Vorschläge für eine Patentreform zu erarbeiten.</event>
+<event start="1835" title="Lord Brougham's Act"  icon="images/circle-orange.png">Auf Initiative von Henry Brougham wird ein Gesetz erlassen, dass auch ein nachträgliches Korrigieren am Patent (Beschreibung und Zeichnung) erlaubt.</event>
+<event start="1843" title="Act for Registering Designs of Utility"  icon="images/circle-orange.png"></event>
+<event start="1850-09-04" title="Committee on Inventions"  icon="images/circle-orange.png">Gründung des Committee on Inventions mit der Aufgabe »to prepare a treatise on Jurisprudence connected with Inventions, and a Summary of the opinions given before the House of Commons«.</event>
+<event start="1850-10-19" title="Charles Dickens: A Poor Man’s Tale of a Patent"  icon="images/circle-orange.png"></event>
+<event start="1852" title="Patent Amendment Act"  icon="images/circle-orange.png">Nach dem Patent Amendment Act muss bereits bei der Anmeldung eines Patents eine kurze Beschreibung eingereicht werden musste, mit welcher die später eingereichte ,speciﬁcation‘ verglichen werden konnte.</event>
+<event start="1883" title="Patent, Design and Trade Marks Act" icon="images/circle-orange.png"></event>
 
 
 
@@ -875,6 +905,21 @@ und der kanadischen Provinz New Brunswick regelt.</event>
     bewegende Kraft des Feuers und die zur Entwicklung dieser Kraft
     geeigneten Maschinen" icon="images/circle-blue.png"></event>
 
+<event start="1834" title="Oberbergrat Julius Albert in Clausthal: Drahtseil" icon="images/circle-blue.png"></event>
+<event start="1817" title="Carl Justus Heckmann: Destillier- und Rektfizierapparat, DRP 1817" link="http://de.wikipedia.org/wiki/Carl_Justus_Heckmann" icon="images/circle-blue.png"></event>
+<event start="1882-05-26" title="Karl F.A. Wienke: Hebelkorkenzieher (DRP 20815)" icon="images/circle-blue.png"></event>
+<event start="1826-11-27" title="John Walker: Erstes modernes Streichholz" icon="images/circle-blue.png">Am 27. November 1826 erfand der englische Apotheker John Walker das erste moderne Streichholz. Zum Patent wurde die Mischung 1828 von Samuel Jones unter dem Namen Luzifer angemeldet.</event>
+<event start="1833" title="Industrielle Herstellung von Phosphorstreichhölzern" icon="images/circle-blue.png"></event>
+<event start="1836" title="János Irinyi: Patentierte lautlose, explosionsschwache Streichhölzer" icon="images/circle-blue.png"></event>
+<event start="1848" title="Rudolf Christian Boettger: Sicherheitszündhölzer" icon="images/circle-blue.png">Die Verlagerung des Phosphors aus dem Zündkopf in die Reibfläche führte 1848 zur Entwicklung der Sicherheitszündhölzer durch. Rudolf Christian Boettger verkaufte sein Patent an die schwedische Zündholzindustrie.</event>
+<event start="1865" title="Taschenfeuerzeug-Patent (US)" icon="images/circle-blue.png">Die US-Firma Repeating Light Co. in Springfield erhielt 1865 ein Patent auf von ihr entwickelte Taschenfeuerzeuge.</event>
+<event start="1885" title="Erfindung des Glühstrumpfes" icon="images/circle-blue.png">Carl Auer erfindet 1885 den Glühstrumpf, auch als Auerstrumpf bekannt, der die damals schon bekannte Gasbeleuchtung wesentlich verbesserte, da man mit geringerem Gasverbrauch wesentlich bessere Lichtausbeuten erhalten konnte.</event>
+<event start="1898" title="Carl Auer: Metallfadenlampe (DRP )" link="http://de.wikipedia.org/wiki/Carl_Auer_von_Welsbach" icon="images/circle-blue.png"></event>
+<event start="1907" title="Markteinführung von Feuerzeugen mit Zündstein" link="http://de.wikipedia.org/wiki/Carl_Auer_von_Welsbach" icon="images/circle-blue.png"></event>
+<event start="1907-03-10" title="OSRAM" link="http://de.wikipedia.org/wiki/Carl_Auer_von_Welsbach" icon="images/circle-blue.png">Am 10. März 1906 meldete Carl Auer von Welsbach (für die Deutsche Gasglühlicht-Anstalt) das Warenzeichen OSRAM für die Waren „Elektrische Glüh- und Bogenlichtlampen“ beim damaligen Kaiserlichen Patentamt in Berlin an.</event>
+<event start="1826-09-19" title="Inbetriebnahme der ersten Gaslaternen in Berlin (Unter den Linden)." icon="images/circle-blue.png"></event>
+
+
 
 
 
@@ -948,7 +993,7 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 
 <event start="1810" title="Gründung der Gießerei Henschel &amp; Sohn" link="http://de.wikipedia.org/wiki/Henschel-Werke" icon="images/circle-black.png">Die Gießerei Henschel &amp; Sohn produziert ab 1816 Dampfmaschinen.</event>
 <event start="1812" title="Friedrich Krupp gründet Gussstahlfabrik" link="http://de.wikipedia.org/wiki/Alfred_Krupp" icon="images/circle-black.png">Friedrich Krupp, der Vater von Alfred, gründet nördlich von Essen eine Gussstahlfabrik.</event>
-<event start="1814" title="Gründung der Ed. Wüsthof Dreizackwerk KG, Solingen"></event>
+<event start="1814" title="Gründung der Ed. Wüsthof Dreizackwerk KG, Solingen" icon="images/circle-black.png"></event>
 <event start="1832" title="Gründung der Prinz-Wilhelm-Eisenbahn-Gesellschaft" link="http://de.wikipedia.org/wiki/Friedrich_Harkort" icon="images/circle-black.png">Erste Eisenbahn-Aktiengesellschaft auf deutschem Boden.</event>
 <event start="1837-07-22" title="Gründung der Borsig-Werke" link="http://de.wikipedia.org/wiki/Borsig_%28Unternehmen%29" icon="images/circle-black.png"></event>
 <event start="1839" title="Gründung der Stollwerck GmbH" link="http://de.wikipedia.org/wiki/Stollwerck" icon="images/circle-black.png"></event>
@@ -956,8 +1001,14 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1865-04-16" title="Gründung der BASF" link="http://de.wikipedia.org/wiki/BASF" icon="images/circle-black.png">Gründung der Badischen Anilin- und Soda-Fabrik in Ludwigshafen.</event>
 <event start="1867" title="Gründung der Thyssen-Foussol &amp; Co" link="http://de.wikipedia.org/wiki/August_Thyssen" icon="images/circle-black.png">1867 gründet August Thyssen mit mehreren Verwandten in Duisburg in der damaligen preußischen Rheinprovinz das Eisenwerk „Thyssen-Foussol &amp; Co“.</event>
 
-<event start="1872" title="Gründung der Firma Robert Herder, Solingen"></event>
+<event start="1872" title="Gründung der Firma Robert Herder, Solingen" icon="images/circle-black.png"></event>
 <event start="1887" title="Gründung der Allgeminen Elektricitäts-Gesellschaft (AEG)" link="http://de.wikipedia.org/wiki/AEG" icon="images/circle-black.png"></event>
+
+
+<event start="1885" title="Eröffnung des »Veloziped-Depot«" link="http://de.wikipedia.org/wiki/Wanderer_%28Unternehmen%29" icon="images/circle-black.png">1885 eröffneten mit Richard Adolf Jaenicke und Johann Baptist Winklhofer zwei Fahrradpioniere ihr »Veloziped-Depot« als Technik- und Ideenschmiede in Chemnitz. Bereits ein Jahr später stellten sie ihr erstes Hochrad vor: ein Fahrrad namens Wanderer.</event>
+<event start="1866" title="Gründung der J.B. Brooks &amp; Co." link="http://de.wikipedia.org/wiki/Brooks_England" icon="images/circle-black.png"></event>
+<event start="1880" title="Gründung der Manufaktur Steiff" icon="images/circle-black.png"></event>
+<event start="1881-05-14" title="Karstadt-Gründung" icon="images/circle-black.png">Am 14. Mai 1881 gründete der Einzelhandelskaufmann Rudolph Karstadt mit der Hilfe seiner Geschwister und seinem Vater das »Tuch-, Manufactor- und Confectionsgeschäft C. Karstadt« in Wismar.</event>
 
 
 <!--  Wissenschaftler, Industrielle -->
@@ -1124,7 +1175,8 @@ und der kanadischen Provinz New Brunswick regelt.</event>
 <event start="1812-11-17" title="Peter Wilhelm Friedrich von Voigtländer *" link="http://de.wikipedia.org/wiki/Peter_Wilhelm_Friedrich_von_Voigtl%C3%A4nder" image="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Friedrich_von_Voigtlaender.jpg/80px-Friedrich_von_Voigtlaender.jpg" icon="images/circle-blue.png">Österreichischer Optiker und Fotopionier.</event>
 <event start="1878-04-08" title="Peter Wilhelm Friedrich von Voigtländer †" link="http://de.wikipedia.org/wiki/Peter_Wilhelm_Friedrich_von_Voigtl%C3%A4nder" image="http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Friedrich_von_Voigtlaender.jpg/80px-Friedrich_von_Voigtlaender.jpg" icon="images/circle-blue.png">Österreichischer Optiker und Fotopionier.</event>
 
-
+<event start="1858-09-01" title="Carl Auer von Welsbach *" link="http://de.wikipedia.org/wiki/Carl_Auer_von_Welsbach" icon="images/circle-blue.png"></event>
+<event start="1929-08-04" title="Carl Auer von Welsbach †" link="http://de.wikipedia.org/wiki/Carl_Auer_von_Welsbach" icon="images/circle-blue.png"></event>
 
 
 
