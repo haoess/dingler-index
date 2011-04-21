@@ -1,0 +1,33 @@
+<data>
+
+<event start="1813-10-10" title="Giuseppe Verdi *" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi" image="http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Verdi-1899.jpg/120px-Verdi-1899.jpg" icon="images/circle-red.png"></event>
+<event start="1901-01-27" title="Giuseppe Verdi †" link="http://de.wikipedia.org/wiki/Giuseppe_Verdi" image="http://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Verdi-1899.jpg/120px-Verdi-1899.jpg" icon="images/circle-red.png"></event>
+
+<event start="1813-05-22" title="Richard Wagner *" link="http://de.wikipedia.org/wiki/Richard_Wagner" image="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Richard_Wagner_by_Caesar_Willich_ca_1862.jpg/120px-Richard_Wagner_by_Caesar_Willich_ca_1862.jpg" icon="images/circle-red.png"></event>
+<event start="1883-02-13" title="Richard Wagner †" link="http://de.wikipedia.org/wiki/Richard_Wagner" image="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Richard_Wagner_by_Caesar_Willich_ca_1862.jpg/120px-Richard_Wagner_by_Caesar_Willich_ca_1862.jpg" icon="images/circle-red.png"></event>
+
+<event start="1770-12-17" title="Ludwig van Beethoven *" link="http://de.wikipedia.org/wiki/Ludwig_van_Beethoven" image="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/120px-Beethoven.jpg" icon="images/circle-red.png"></event>
+<event start="1827-03-26" title="Ludwig van Beethoven †" link="http://de.wikipedia.org/wiki/Ludwig_van_Beethoven" image="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/120px-Beethoven.jpg" icon="images/circle-red.png"></event>
+
+<event start="1838-10-25" title="Georges Bizet *" link="http://de.wikipedia.org/wiki/Georges_Bizet" image="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Georges_bizet.jpg/120px-Georges_bizet.jpg" icon="images/circle-red.png"></event>
+<event start="1875-06-03" title="Georges Bizet †" link="http://de.wikipedia.org/wiki/Georges_Bizet" image="http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Georges_bizet.jpg/120px-Georges_bizet.jpg" icon="images/circle-red.png"></event>
+
+<event start="1782-10-27" title="Niccolò Paganini *" link="http://de.wikipedia.org/wiki/Niccolò_Paganini" image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Eug%C3%A8ne_Ferdinand_Victor_Delacroix_045.jpg/80px-Eug%C3%A8ne_Ferdinand_Victor_Delacroix_045.jpg" icon="images/circle-red.png"></event>
+<event start="1840-05-27" title="Niccolò Paganini †" link="http://de.wikipedia.org/wiki/Niccolò_Paganini" image="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Eug%C3%A8ne_Ferdinand_Victor_Delacroix_045.jpg/80px-Eug%C3%A8ne_Ferdinand_Victor_Delacroix_045.jpg" icon="images/circle-red.png"></event>
+
+<event start="1810-02-22" title="Frédéric Chopin *" link="http://de.wikipedia.org/wiki/Frédéric_Chopin" image="http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Chopin%2C_by_Wodzinska.JPG/120px-Chopin%2C_by_Wodzinska.JPG" icon="images/circle-red.png"></event>
+<event start="1849-10-17" title="Frédéric Chopin †" link="http://de.wikipedia.org/wiki/Frédéric_Chopin" image="http://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Chopin%2C_by_Wodzinska.JPG/120px-Chopin%2C_by_Wodzinska.JPG" icon="images/circle-red.png"></event>
+
+<event start="1833-05-07" title="Johannes Brahms *" link="http://de.wikipedia.org/wiki/Johannes_Brahms" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Johannes_Brahms.gif/120px-Johannes_Brahms.gif" icon="images/circle-red.png"></event>
+<event start="1897-04-03" title="Johannes Brahms †" link="http://de.wikipedia.org/wiki/Johannes_Brahms" image="http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Johannes_Brahms.gif/120px-Johannes_Brahms.gif" icon="images/circle-red.png"></event>
+
+<event start="1840-04-25" title="Pjotr Iljitsch Tschaikowski *" link="http://de.wikipedia.org/wiki/Pjotr_Iljitsch_Tschaikowski" image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Portr%C3%A4t_des_Komponisten_Pjotr_I._Tschaikowski_%281840-1893%29.jpg/120px-Portr%C3%A4t_des_Komponisten_Pjotr_I._Tschaikowski_%281840-1893%29.jpg" icon="images/circle-red.png"></event>
+<event start="1893-10-25" title="Pjotr Iljitsch Tschaikowski †" link="http://de.wikipedia.org/wiki/Pjotr_Iljitsch_Tschaikowski" image="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Portr%C3%A4t_des_Komponisten_Pjotr_I._Tschaikowski_%281840-1893%29.jpg/120px-Portr%C3%A4t_des_Komponisten_Pjotr_I._Tschaikowski_%281840-1893%29.jpg" icon="images/circle-red.png"></event>
+
+<event start="1810-06-08" title="Robert Schumann *" link="http://de.wikipedia.org/wiki/Robert_Schumann" icon="images/circle-red.png"></event>
+<event start="1856-07-29" title="Robert Schumann †" link="http://de.wikipedia.org/wiki/Robert_Schumann" icon="images/circle-red.png"></event>
+
+<event start="1797-01-31" title="Franz Schubert *" link="http://de.wikipedia.org/wiki/Franz_Schubert" image="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg/120px-Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg" icon="images/circle-red.png"></event>
+<event start="1828-11-19" title="Franz Schubert †" link="http://de.wikipedia.org/wiki/Franz_Schubert" image="http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg/120px-Franz_Schubert_by_Wilhelm_August_Rieder_1875.jpg" icon="images/circle-red.png"></event>
+
+</data>
