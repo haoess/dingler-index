@@ -115,8 +115,7 @@ sub list :Local {
         },
         {
             order_by => 'surname, forename',
-            join     => [ 'personrefs' ],
-            prefetch => [ 'personrefs' ],
+            prefetch => [ { 'personrefs' => { 'ref' => 'journal' } } ],
             page     => $page,
             rows     => $limit,
         }
@@ -125,7 +124,6 @@ sub list :Local {
     $c->stash(
         names      => $names,
         pager      => $names->pager,
-        personarticles => \&Dingler::Util::personarticles,
         author     => $c->model('Dingler::Personref')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
         patent_app => $c->model('Dingler::Personref')->search_rs({ role => 'patent_app' }),
         other      => $c->model('Dingler::Personref')->search_rs({ role => { -not_in => ['author',  'author_orig', 'patent_app'] } }),

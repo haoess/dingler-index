@@ -57,7 +57,9 @@
   </p>
 
 [% WHILE (name = names.next) %]
-  <h2>[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</h2>
+  <h2>
+    <a href="person/view/[% name.id %]">[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</a>
+  </h2>
   <div style="margin-left:2em; margin-bottom:1em">
     [% IF name.pnd || name.viaf %]
       <h3>Andere Quellen</h3>
@@ -66,8 +68,21 @@
         [% IF name.viaf %]<li><a href="http://viaf.org/viaf/[% name.viaf | html %]" target="_blank">VIAF [% name.viaf | html %]</a></li>[% END %]
       </ul>
     [% END %]
-    [% personarticles(name.id) %]
-    <p><a href="person/view/[% name.id %]">weitere Informationen zur Person &hellip;</a></p>
+    [% IF name.personrefs_rs.count %]
+      <h3>Fundstellen im Polytechnischen Journal</h3>
+      <ul style="margin-top:0">
+      [% FOREACH pref IN name.personrefs_rs.all %]
+        <li>
+          <a href="article/[% pref.ref.journal.id %]/[% pref.ref.id %]">[% pref.ref.title | html %]</a>
+          <span class="small">(Jg.&nbsp;[% pref.ref.journal.year %], Bd.&nbsp;[% pref.ref.journal.volume %], Nr.&nbsp;[% pref.ref.number %], S.&nbsp;[% pref.ref.pagestart == pref.ref.pageend ? pref.ref.pagestart : pref.ref.pagestart _ '&ndash;' _ pref.ref.pageend %])</span>
+        </li>
+      [% END %]
+      </ul>
+    [% END %]
+    [% IF 0 %]
+      [% personarticles(name.id) %]
+      <p><a href="person/view/[% name.id %]">weitere Informationen zur Person &hellip;</a></p>
+    [% END %]
   </div>
 [% END %]
 </div>
