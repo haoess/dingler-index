@@ -1,0 +1,89 @@
+<style type="text/css">
+  .category { padding:1px 5px; background:#09f; color:#fff; font-size:.9em; border-radius:5px }
+</style>
+
+<h1>Administration :: Timeline</h1>
+
+<h2>Übersicht</h2>
+
+<p>[% events.size %] Einträge vorhanden.</p>
+
+<table style="width:100%">
+  <tr style="background:#eee">
+    <th>Start</th>
+    <th>Ende</th>
+    <th>Titel</th>
+  </tr>
+  [% FOREACH event IN events %]
+    <tr style="background:[% loop.count % 2 == 0 ? '#fafafa' : '#fff' %]">
+      <td style="white-space:pre">[% event.start %]</td>
+      <td style="white-space:pre">[% event.end %]</td>
+      <td>
+        [% event.title | html %]
+        [% IF event.link %][<a href="[% event.link | html %]">Link</a>][% END %]
+        <br />
+        [% FOREACH category IN event.categories %]
+          <span class="category">[% category.name | html %]</span>
+        [% END %]
+      </td>
+    </tr>
+  [% END %]
+</table>
+
+<h2>Neuer Eintrag</h2>
+
+<form method="post" action="[% base %]admin/timeline/create">
+  <table>
+    <tr>
+      <td>Start:</td>
+      <td><input type="text" name="start" /></td>
+    </tr>
+    <tr>
+      <td>Ende:</td>
+      <td><input type="text" name="end" /></td>
+    </tr>
+    <tr>
+      <td>Titel:</td>
+      <td><input type="text" name="title" /></td>
+    </tr>
+    <tr>
+      <td>Beschreibung (HTML):</td>
+      <td><textarea name="description" rows="5" cols="" style="width:100%"></textarea></td>
+    </tr>
+    <tr>
+      <td>Bild (URL):</td>
+      <td><input type="text" name="image" /></td>
+    </tr>
+    <tr>
+      <td>Link:</td>
+      <td><input type="text" name="link" /></td>
+    </tr>
+    <tr>
+      <td>Kategorien (durch ; getrennt):</td>
+      <td><input type="text" name="categories" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="speichern" /></td>
+    </tr>
+  </table>
+</form>
+
+<h2>Upload XML</h2>
+
+<form method="post" enctype="multipart/form-data" action="[% base %]admin/timeline/upload">
+  <table>
+    <tr>
+      <td>XML-Datei:</td>
+      <td><input type="file" name="file" /></td>
+    </tr>
+    <tr>
+      <td>Kategorien (durch ; getrennt):</td>
+      <td><input type="text" name="tags" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Upload" /></td>
+    </tr>
+  </table>
+</form>

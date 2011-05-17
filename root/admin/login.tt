@@ -1,0 +1,16 @@
+<form method="post" action="[% base %]admin/do_login">
+  <table>
+    <tr>
+      <td>Benutzername:</td>
+      <td><input type="text" name="username" /></td>
+    </tr>
+    <tr>
+      <td>Passwort:</td>
+      <td><input type="password" name="password" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="einloggen" /></td>
+    </tr>
+  </table>
+</form>

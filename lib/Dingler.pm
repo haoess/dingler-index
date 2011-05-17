@@ -14,6 +14,13 @@ use Catalyst::Runtime 5.80;
 
 use Catalyst qw/
     ConfigLoader
+    Authentication
+
+    Session::DynamicExpiry
+    Session
+    Session::Store::File
+    Session::State::Cookie
+
     AccessLog
     Static::Simple
     Unicode::Encoding
@@ -46,6 +53,24 @@ __PACKAGE__->config(
         formatter => {
             time_format => '%c',
             time_zone => 'Europe/Berlin',
+        },
+    },
+    'Plugin::Authentication' => {
+        default_realm => 'admins',
+        realms => {
+            admins => {
+                credential => {
+                    class              => 'Password',
+                    password_field     => 'passwd',
+                    password_type      => 'hashed',
+                    password_hash_type => 'SHA-1',
+                },
+                store => {
+                    class      => 'DBIx::Class',
+                    user_class => 'DinglerWeb::Admin',
+                    id_field   => 'id',
+                },
+            },
         },
     },
     static => {

@@ -1,0 +1,1 @@
+<div id="admin-status">[% c.user.username %] (<a href="admin/logout">log out</a>)</div>

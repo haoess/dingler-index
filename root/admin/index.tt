@@ -1,0 +1,5 @@
+[% INCLUDE 'admin/status.tt' %]
+
+<h1>Dingler &ndash; Administration</h1>
+
+<h2><a href="admin/timeline">Timeline</a></h2>

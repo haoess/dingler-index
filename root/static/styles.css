@@ -45,6 +45,8 @@ td.mainright  { padding-top:0px }
 .nav { position:relative; border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#eee; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
 .nav table { width:100% }
 
+#admin-status { text-align:right; background:#aad; padding:2px; margin:10px }
+
 .meta { border-top:1px solid #ccc; border-bottom:1px solid #ccc; background:#fafafa; padding:2px 3em; width:500px; margin-bottom:20px; font-size:.8em }
 .meta table { padding-left:10px; padding-right:10px }
 .meta table .caption { color:#046 }

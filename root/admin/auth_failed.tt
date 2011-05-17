@@ -1,0 +1,5 @@
+<h1>Fehler</h1>
+
+<p>Die Authentifizierung ist fehlgeschlagen.</p>
+
+[% INCLUDE 'admin/login.tt' %]
