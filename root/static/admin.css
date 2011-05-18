@@ -1,0 +1,16 @@
+.category { padding:1px 5px; color:#fff; font-size:.9em; border-radius:5px }
+
+.colorSelector {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: url(colorpicker/images/select.png);
+}
+.colorSelector div {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: url(colorpicker/images/select.png) center;
+}
