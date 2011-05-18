@@ -1,6 +1,8 @@
-<style type="text/css">
-  .category { padding:1px 5px; background:#09f; color:#fff; font-size:.9em; border-radius:5px }
-</style>
+[% BLOCK head %]
+  <link rel="stylesheet" type="text/css" href="static/admin.css" />
+  <link rel="stylesheet" type="text/css" href="static/colorpicker/css/colorpicker.css" />
+  <script type="text/javascript" src="static/colorpicker/colorpicker.js"></script>
+[% END %]
 
 <h1>Administration :: Timeline</h1>
 
@@ -23,7 +25,7 @@
         [% IF event.link %][<a href="[% event.link | html %]">Link</a>][% END %]
         <br />
         [% FOREACH category IN event.categories %]
-          <span class="category">[% category.name | html %]</span>
+          <span class="category category[% category.id %]" style="background:[% category.color OR '#000000' | html %]">[% category.name | html %]</span>
         [% END %]
       </td>
     </tr>
@@ -87,3 +89,39 @@
     </tr>
   </table>
 </form>
+
+[% BLOCK right %]
+  <h2>Kategorien</h2>
+  <table>
+  [% FOREACH category IN categories %]
+    <tr>
+      <td style="text-align:right; vertical-align:middle">[% category.event_categories.size %]</td>
+      <td style="vertical-align:middle"><a href="admin/timeline/category/[% category.name | html %]" style="background:[% category.color OR '#000000' | html %]" class="category">[% category.name | html %]</a></td>
+      <td style="padding-left:5px">
+        <div id="colorpicker[% loop.count %]" class="colorSelector"><div style="background:[% category.color OR '#000000' | html %]"></div></div>
+        <script type="text/javascript">
+          jQuery('#colorpicker[% loop.count %]').ColorPicker({    
+            color: '[% category.color OR "#000000" %]',
+            onShow: function (colpkr) {
+              jQuery(colpkr).fadeIn(500);
+              return false;
+            },
+            onHide: function (colpkr) {
+              jQuery.post( '[% c.uri_for("/admin/timeline/categorycolor") %]', {
+                category: '[% category.id %]',
+                color:    jQuery('#colorpicker[% loop.count %] div').css('backgroundColor')
+              });
+              jQuery(colpkr).fadeOut(500);
+              return false;
+            },
+            onChange: function (hsb, hex, rgb) {
+              jQuery('.category[% category.id %]').css('backgroundColor', '#' + hex);
+              jQuery('#colorpicker[% loop.count %] div').css('backgroundColor', '#' + hex);
+            }
+          });
+        </script>
+      </td>
+    </tr>
+    [% END %]
+  </table>
+[% END %]

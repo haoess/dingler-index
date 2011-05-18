@@ -36,6 +36,7 @@ sub auto : Private {
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
     $c->stash(
+        categories => [ $c->model('DinglerWeb::Category')->search( undef, { order_by => 'name' } ) ],
         events => [ $c->model('DinglerWeb::Event')->search( undef, {
             prefetch => [ { event_categories => 'category' } ],
             order_by => 'startyear, startmonth, startday',
@@ -116,6 +117,21 @@ sub upload : Local {
         }
     }
     $c->res->redirect( $c->uri_for('/admin/timeline') );
+}
+
+=head2 categorycolor
+
+=cut
+
+sub categorycolor : Local {
+    my ( $self, $c ) = @_;
+    my $category = $c->req->params->{category};
+    my $color    = $c->req->params->{color};
+
+    my $item = $c->model('DinglerWeb::Category')->find({ id => $category });
+    $item->color( $color );
+    $item->update;
+    $c->res->output( '' );
 }
 
 __PACKAGE__->meta->make_immutable;

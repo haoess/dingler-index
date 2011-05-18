@@ -131,8 +131,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07010 @ 2011-05-17 20:35:33
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:SrSyZG3wKD1nUylZZ+/N0w
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2011-05-18 22:28:08
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:APSG4e22e6GtItpwAAvdmw
 
 __PACKAGE__->many_to_many( categories => 'event_categories', 'category' );
 

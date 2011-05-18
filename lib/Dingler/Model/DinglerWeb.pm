@@ -10,7 +10,7 @@ __PACKAGE__->config(
         dsn => 'dbi:Pg:dbname=dingweb',
         user => '',
         password => '',
-        pg_enable_utf8 => 1,
+        pg_enable_utf8 => q{1},
     }
 );
 

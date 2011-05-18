@@ -28,8 +28,9 @@ CREATE TABLE event (
 );
 
 CREATE TABLE category (
-  id   SERIAL PRIMARY KEY,
-  name TEXT
+  id    SERIAL PRIMARY KEY,
+  name  TEXT,
+  color TEXT
 );
 
 CREATE TABLE event_category (

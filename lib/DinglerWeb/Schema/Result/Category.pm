@@ -35,6 +35,11 @@ __PACKAGE__->table("category");
   data_type: 'text'
   is_nullable: 1
 
+=head2 color
+
+  data_type: 'text'
+  is_nullable: 1
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -46,6 +51,8 @@ __PACKAGE__->add_columns(
     sequence          => "category_id_seq",
   },
   "name",
+  { data_type => "text", is_nullable => 1 },
+  "color",
   { data_type => "text", is_nullable => 1 },
 );
 __PACKAGE__->set_primary_key("id");
@@ -68,8 +75,8 @@ __PACKAGE__->has_many(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07010 @ 2011-05-17 20:35:33
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Nk6seMHrrxmTTEQJITOd5g
+# Created by DBIx::Class::Schema::Loader v0.07010 @ 2011-05-18 22:28:08
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:OHthI8WnjTpaocFwcqB/Lg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
