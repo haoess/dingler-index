@@ -42,6 +42,7 @@ requires 'Roman';
 requires 'YAML::XS';
 requires 'Text::Wrap';
 requires 'MIME::Lite';
+requires 'MooseX::NonMoose';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
