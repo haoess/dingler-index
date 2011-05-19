@@ -90,13 +90,44 @@
   </table>
 </form>
 
+<script type="text/javascript">
+  function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+      return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    return hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+  }
+
+  jQuery( function() {
+    jQuery('.category').each( function() {
+      elm = jQuery(this);
+      bdiff = brightdiff( rgb2hex(elm.css('backgroundColor')), 'ffffff');
+      if ( bdiff < 125 )
+        elm.css('color', '#000');
+      else
+        elm.css('color', '#fff');
+    });
+  });
+</script>
+
 [% BLOCK right %]
+  <script type="text/javascript">
+    /* http://www.splitbrain.org/blog/2008-09/18-calculating_color_contrast_with_php */
+    function brightdiff (rgb1, rgb2) {
+      rgb1 = rgb1.match(/../g);
+      rgb2 = rgb2.match(/../g);
+      var br1 = (299 * parseInt("0x"+rgb1[0]) + 587 * parseInt("0x"+rgb1[1]) + 114 * parseInt("0x"+rgb1[2])) / 1000;
+      var br2 = (299 * parseInt("0x"+rgb2[0]) + 587 * parseInt("0x"+rgb2[1]) + 114 * parseInt("0x"+rgb2[2])) / 1000;
+      return Math.abs(br1 - br2);
+    }
+  </script>
   <h2>Kategorien</h2>
   <table>
   [% FOREACH category IN categories %]
     <tr>
       <td style="text-align:right; vertical-align:middle">[% category.event_categories.size %]</td>
-      <td style="vertical-align:middle"><a href="admin/timeline/category/[% category.name | html %]" style="background:[% category.color OR '#000000' | html %]" class="category">[% category.name | html %]</a></td>
+      <td style="vertical-align:middle"><a href="admin/timeline/category/[% category.name | html %]" style="background:[% category.color OR '#000000' | html %]" class="category category[% category.id %]">[% category.name | html %]</a></td>
       <td style="padding-left:5px">
         <div id="colorpicker[% loop.count %]" class="colorSelector"><div style="background:[% category.color OR '#000000' | html %]"></div></div>
         <script type="text/javascript">
@@ -116,6 +147,11 @@
             },
             onChange: function (hsb, hex, rgb) {
               jQuery('.category[% category.id %]').css('backgroundColor', '#' + hex);
+              bdiff = brightdiff(hex, 'ffffff');
+              if ( bdiff < 125 )
+                jQuery('.category[% category.id %]').css('color', '#000');
+              else
+                jQuery('.category[% category.id %]').css('color', '#fff'); 
               jQuery('#colorpicker[% loop.count %] div').css('backgroundColor', '#' + hex);
             }
           });
