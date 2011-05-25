@@ -267,6 +267,7 @@ jeder
 kann
 man
 mehr
+meine
 mit
 nach
 nicht
