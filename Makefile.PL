@@ -43,6 +43,7 @@ requires 'YAML::XS';
 requires 'Text::Wrap';
 requires 'MIME::Lite';
 requires 'MooseX::NonMoose';
+requires 'Catalyst::Plugin::Session::DynamicExpiry';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
