@@ -11,11 +11,14 @@
       <img src="static/images/circle-pink.png" /> Politik, Religion<br />
       <img src="static/images/circle-green.png" /> Architektur, Städtebau<br />
       <img src="static/images/circle-red.png" /> Literatur, Philosophie, Kunst, Musik<br />
-      <img src="static/images/circle-orange.png" /> Patentrecht<br />
+      <img src="static/images/circle-orange.png" /> Patentrecht<br /> 
       <img src="static/images/circle-yellow.png" /> Anderes
     </td>
   </tr>
 </table>
+<div class="controls" id="controls">
+</div>
+
 
 <script type="text/javascript">
   jQuery( document ).ready( onLoad() );
@@ -23,6 +26,9 @@
 
 [% BLOCK head %]
   <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
+   <script type="text/javascript" src="static/jquery/filter-advanced.js"></script>
+     <link rel="stylesheet" type="text/css" href="static/filter.css" />
+
   <script type="text/javascript">
 
     Timeline.DefaultEventSource.Event.prototype.fillTime = function(elmt, labeller) {
@@ -79,6 +85,10 @@
       bandInfos[1].highlight = true;
       tl = Timeline.create(document.getElementById("my-timeline"), bandInfos);
       Timeline.loadXML("[% base %]static/dingler.xml", function(xml, url) { eventSource.loadXML(xml, url); });
+
+      var theme = Timeline.ClassicTheme.create();
+      setupFilterHighlightControls(document.getElementById("controls"), tl, [0,1], theme);
+
     }
     var resizeTimerID = null;
     function onResize() {
