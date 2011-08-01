@@ -27,9 +27,10 @@
 [% BLOCK head %]
   <script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script>
    <script type="text/javascript" src="static/jquery/filter-advanced.js"></script>
-     <link rel="stylesheet" type="text/css" href="static/filter.css" />
+   <script type="text/javascript" src="static/jquery/timeline-bundle.js"></script>
+   <link rel="stylesheet" type="text/css" href="static/filter.css" />
 
-  <script type="text/javascript">
+   <script type="text/javascript">
 
     Timeline.DefaultEventSource.Event.prototype.fillTime = function(elmt, labeller) {
       var sDate = this._start;
