@@ -5,74 +5,96 @@ function centerTimeline(date) {
 }
 
 
-var numOfFilters = 9;
 var nameOfFilters = new Array('Dingler Events','Wissenschaft, Technologie','Weltausstellungen','Firmengründungen','Politik, Religion','Architektur, Städtebau','Literatur, Philosophie, Kunst, Musik','Patentrecht','Anderes');
 var valOfFilters =  new Array('grey','blue','lightblue','black','pink','green','red','orange','yellow');
+var numOfFilters = nameOfFilters.length;
 
 function setupFilterHighlightControls(div, timeline, bandIndices, theme) {
    
     // Init Handler
     var handler = function(elmt, evt, target) {
-        onKeyPress(timeline, bandIndices, table);
+        onKeyPress(timeline, bandIndices, div, theme);
     };
    
-   
+    // Create Filter Div
+    var filterDiv = document.createElement("div");
+    filterDiv.className = "rightbox";
+
+    // Filter Div Head
+    var filterDivHead = document.createElement("div");
+    filterDivHead.className = "rightboxhead";
+    filterDivHead.innerHTML = "Themen:";
+    filterDiv.appendChild(filterDivHead);
+    
+    // Filter Div Content
+    var filterDivContent = document.createElement("div");
+    filterDivContent.className = "rightboxcontent";
+
     // Create Table
-    var table = document.createElement("table");
-   
-    // First Row
-    var tr = table.insertRow(0);
-    var td = tr.insertCell(0);
-    td.innerHTML = "Filters:";
-   
-      
-    // Second Row
-    tr = table.insertRow(1);
-    tr.style.verticalAlign = "top";
-   
+    var filterDivTable = document.createElement("table");
+    
     /* Create the text inputs for the filters and add eventListeners */
-    for(var i=0; i<numOfFilters; i++) {     
-        td = tr.insertCell(i); 
+    for(var i=0; i < numOfFilters; i++) {
+        //New Row for each filter cat
+	tr = filterDivTable.insertRow(i);
+    	tr.style.verticalAlign = "top";
+
+	td = tr.insertCell(0); 
         var input = document.createElement("input");
         input.type = "checkbox";
 	input.value = valOfFilters[i];
 	//input.checked = "checked";
-        //SimileAjax.DOM.registerEvent(input, "keypress", handler);
+        SimileAjax.DOM.registerEvent(input, "keypress", handler);
         td.appendChild(input);
-	$(td).append("<img src='circles/circle-"+valOfFilters[i]+".png'><br />"+nameOfFilters[i]);
-        input.id = "filter"+i;     
+	$(td).append("<img src='../../static/images/circle-"+valOfFilters[i]+".png'>"+nameOfFilters[i]); // jquery @ToDo rewrite in pure JS
+        input.id = "filter"+i;
     }
+    filterDivContent.appendChild(filterDivTable);
+    filterDiv.appendChild(filterDivContent);
+    div.appendChild(filterDiv);
+
+    // Create Highlight Div
+    var highlightDiv = document.createElement("div");
+    highlightDiv.className = "rightbox";
+
+    // Highlight Div Head
+    var highlightDivHead = document.createElement("div");
+    highlightDivHead.className = "rightboxhead";
+    highlightDivHead.innerHTML = "Suche:";
+    highlightDiv.appendChild(highlightDivHead);
+
+    // highlight Div Content
+    var highlightDivContent = document.createElement("div");
+    highlightDivContent.className = "rightboxcontent";
+
+    // Create Table
+    var highlightDivTable = document.createElement("table");
    
-    // Third Row
-    tr = table.insertRow(2);
-    td = tr.insertCell(0);
-       td.innerHTML = "Highlights:";
-   
-   
-    // Fourth Row
-       tr = table.insertRow(3);
-   
+    // Highlight Rows   
        /* Create the text inputs for the highlights and add event listeners */
        for (var i = 0; i < theme.event.highlightColors.length; i++) {
-           td = tr.insertCell(i);
+           tr = highlightDivTable.insertRow(i);
+           td = tr.insertCell(0);
        
            input = document.createElement("input");
            input.type = "text";
            SimileAjax.DOM.registerEvent(input, "keypress", handler);
            td.appendChild(input);
        
-        input.id = "highlight"+i;
+           input.id = "highlight"+i;
        
-        var divColor = document.createElement("div");
-        divColor.style.height = "0.5em";
-        divColor.style.background = theme.event.highlightColors[i];
-        td.appendChild(divColor);
+           var divColor = document.createElement("div");
+           divColor.style.height = "0.5em";
+ 	   divColor.className = "input_border";
+           divColor.style.background = theme.event.highlightColors[i];
+           td.appendChild(divColor);
     }
+    highlightDivContent.appendChild(highlightDivTable);
+    highlightDiv.appendChild(highlightDivContent);
+    div.appendChild(highlightDiv);
    
-    // Fifth Row
-      
-    tr = table.insertRow(4);
-    td = tr.insertCell(0);
+    // Create Button Div
+    var buttonDiv = document.createElement("div");
    
     // create the filter button
     var filterButton = document.createElement("button");
@@ -80,35 +102,31 @@ function setupFilterHighlightControls(div, timeline, bandIndices, theme) {
     filterButton.id = "filter"
     filterButton.className = "buttons"
     SimileAjax.DOM.registerEvent(filterButton, "click", handler);
-    td.appendChild(filterButton);
-   
+    buttonDiv.appendChild(filterButton);
    
     // create the clear all button
-    td = tr.insertCell(1);
     var highlightButton = document.createElement("button");
     highlightButton.innerHTML = "Clear All";
     highlightButton.id = "clearAll"
     highlightButton.className = "buttons"
     SimileAjax.DOM.registerEvent(highlightButton, "click", function() {
-        clearCatAll(timeline, bandIndices, table); //changed to clearCatAll
+        clearCatAll(timeline, bandIndices, div, theme); //changed to clearCatAll
     });
-    td.appendChild(highlightButton);
+    buttonDiv.appendChild(highlightButton);
    
-   
-    // Append the table to the div
-    div.appendChild(table);
+    div.appendChild(buttonDiv);
 }
 
 var timerID = null;
 var filterMatcherGlobal = null;
 var highlightMatcherGlobal = null;
 
-function onKeyPress(timeline, bandIndices, table) {
+function onKeyPress(timeline, bandIndices, div, theme) {
     if (timerID != null) {
         window.clearTimeout(timerID);
     }
     timerID = window.setTimeout(function() {
-        performCatFiltering(timeline, bandIndices, table); // changed to performCatFiltering
+        performCatFiltering(timeline, bandIndices, div, theme); // changed to performCatFiltering
     }, 300);
 }
 function cleanString(s) {
@@ -189,15 +207,15 @@ function performFiltering(timeline, bandIndices, table) {
 }
 
 // perform Filtering hack for Category Filtering, maybe better integrated in performFiltering funtion with extra attribut
-function performCatFiltering(timeline, bandIndices, table) {
+function performCatFiltering(timeline, bandIndices, div, theme) {
     timerID = null;
-    var tr = table.rows[1];
    
     // Add all filter inputs to a new array
     var filterInputs = new Array();
-    for(var i=0; i<numOfFilters; i++) {
-	if($(tr.cells[i].firstChild).attr('checked')){   //check for checkbox selection
-		filterInputs.push(cleanString(tr.cells[i].firstChild.value));
+    for(var i=0; i < numOfFilters; i++) {
+	var tr = div.firstChild.childNodes[1].firstChild.rows[i];// wander through DOM to table
+	if($(tr.cells[0].firstChild).attr('checked')){   //check for checkbox selection
+		filterInputs.push(cleanString(tr.cells[0].firstChild.value));
 	}
     }
    
@@ -229,9 +247,9 @@ function performCatFiltering(timeline, bandIndices, table) {
    
     var regexes = [];
     var hasHighlights = false;
-    tr=table.rows[3];
-    for (var x = 0; x < tr.cells.length; x++) {
-        var input = tr.cells[x].firstChild;
+    for (var x = 0; x < theme.event.highlightColors.length; x++) {
+        var tr = div.childNodes[1].childNodes[1].firstChild.rows[x];// wander through DOM to table
+        var input = tr.cells[0].firstChild;
         var text2 = cleanString(input.value);
         if (text2.length > 0) {
             hasHighlights = true;
@@ -267,11 +285,12 @@ function performCatFiltering(timeline, bandIndices, table) {
 
 
 function clearAll(timeline, bandIndices, table) {
-   
+    var tr = table.rows[0];
+    
     // First clear the filters
-    var tr = table.rows[1];
     for (var x = 0; x < tr.cells.length; x++) {
-        tr.cells[x].firstChild.value = "";
+        
+	tr.cells[0].firstChild.value = "";
     }
    
     // Then clear the highlights
@@ -290,18 +309,18 @@ function clearAll(timeline, bandIndices, table) {
 }
 
 // clearAll hack for Category Filtering, maybe better integrated in clearAll funtion
-function clearCatAll(timeline, bandIndices, table) {
+function clearCatAll(timeline, bandIndices, div, theme) {
    
     // First clear the filters
-    var tr = table.rows[1];
-    for (var x = 0; x < tr.cells.length; x++) {
-        tr.cells[x].firstChild.checked = "checked";
+    for (var x = 0; x < numOfFilters; x++) {
+        var tr = div.firstChild.childNodes[1].firstChild.rows[x];// wander through DOM to table
+        tr.cells[0].firstChild.checked = "checked";
     }
    
     // Then clear the highlights
-    var tr = table.rows[3];
-    for (var x = 0; x < tr.cells.length; x++) {
-        tr.cells[x].firstChild.value = "";
+    for (var x = 0; x < theme.event.highlightColors.length; x++) {
+        var tr = div.childNodes[1].childNodes[1].firstChild.rows[x]; // wander through DOM to table;
+        tr.cells[0].firstChild.value = "";
     }
    
     // Then re-init the filters and repaint the timeline
