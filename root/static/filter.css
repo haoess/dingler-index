@@ -1,7 +1,26 @@
-#controls td {
-	width:120px;
+#controls input {
+	width:100px;
 }
 
-#controls input {
-	width:120px;
+#controls .input_border {
+	width:105px;
 }
+
+/*
+ * Dingler Styles
+ * können entfernt werden, wenn Filter in Dinglerumgebung integriert
+ */
+.rightboxhead {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    font-weight: bold;
+    padding: 2px 1em;
+}
+
+.rightboxcontent {
+    background: none repeat scroll 0 0 #FAFAFA;
+    padding: 1em;
+}
+
+/* Dingler Styles End */
