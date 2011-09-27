@@ -13,7 +13,7 @@ use XML::LibXML;
 
 my $teins = 'http://www.tei-c.org/ns/1.0';
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 0 } ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler2', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 0 } ) or die $DBI::errstr;
 
 my $sth_journal = $dbh->prepare( 'INSERT INTO journal(id, volume, barcode, year, facsimile) VALUES (?, ?, ?, ?, ?)' );
 my $sth_article = $dbh->prepare( 'INSERT INTO article(id, parent, journal, type, subtype, volume, number, title, pagestart, pageend, facsimile, front, content, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)' );

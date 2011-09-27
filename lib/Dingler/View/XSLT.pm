@@ -72,11 +72,11 @@ __PACKAGE__->config(
                     my $id = shift;
                     # 32258227Z/00000051
                     #  =>
-                    # http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=32258227Z&tx_slubdigitallibrary[image]=51
+                    # http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
                     $id =~ /(\w+)(?:\/(\w+))?/;
-                    my $ret = "http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=$1";
+                    my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
                     if ( defined $2 ) {
-                        $ret .= "&tx_slubdigitallibrary[image]=$2";
+                        $ret .= "&tx_dlf[page]=$2";
                     }
                     return $ret;
                 },
@@ -131,6 +131,10 @@ __PACKAGE__->config(
                     }
                     elsif ( $target =~ /#((?:ar|mi)[0-9]{6}(?:_[0-9]+)?)\z/ ) {
                         my $rs = Dingler->model('Dingler::Article')->find({ id => $1 });
+                        if ( !$rs ) {
+                            print STDERR "could not resolve $target in catalyst:resolveref\n";
+                            return;
+                        }
                         return sprintf 'article/%s/%s', $rs->get_column('journal'), $rs->id;
                     }
                 },

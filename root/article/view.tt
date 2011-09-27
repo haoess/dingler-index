@@ -115,7 +115,7 @@
 <script type="text/javascript">
   function showperson(id, article) {
     jQuery('#dialog').html( '' );
-    jQuery('#dialog').load('[% base %]person/' + id + '/' + article +' #data');
+    jQuery('#dialog').load('[% base %]person/' + id + '/' + article +'?preview=1 #data');
     jQuery("#dialog").dialog({
       width: 600,
       title: 'Personeninformationen',

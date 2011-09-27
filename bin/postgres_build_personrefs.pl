@@ -13,7 +13,7 @@ use XML::LibXML;
 
 my $teins = 'http://www.tei-c.org/ns/1.0';
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 1 } ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler2', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 1 } ) or die $DBI::errstr;
 
 my $sth_article = $dbh->prepare( 'SELECT uid, id, type FROM article WHERE id = ?' );
 my $sth_person = $dbh->prepare( 'INSERT INTO personref (id, ref, role) VALUES (?, ?, ?)' );

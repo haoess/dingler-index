@@ -125,6 +125,41 @@
     </div>
   </div>
 
+  <div class="rightbox">
+    <div class="rightboxhead">Aktuelles</div>
+    <div class="rightboxcontent">
+      <a href="javascript:retro2010()">Studie zur Retrodigitalisierung des kulturellen Erbes (»Retro2010«)</a>
+    </div>
+  </div>
+
+  <div id="retro2010" style="display:none; font-size:1.2em">
+    <p>Sehr geehrte Nutzer des Polytechnischen Journals,</p>
+    <p>
+      die Professur für <a href="http://www.hki.uni-koeln.de/">Historisch-Kulturwissenschaftliche
+      Informationsverarbeitung (HKI)</a>
+      an der Universität zu Köln arbeitet gerade an einer von der DFG
+      finanzierten Studie
+      zur Retrodigitalisierung des kulturellen Erbes.
+    </p>
+    <p>
+      Wenn Sie grundsätzlich bereit sind, Fragen zur Benutzung der digitalen
+      Ressource Dingler-Online zu beantworten &ndash; per E-Mail oder ggf. in einem
+      persönlichen Gespräch &ndash; können Sie <a href="mailto:sgoerl0@uni-koeln.de">hier</a>
+      Kontakt aufnehmen.
+    </p>
+    <p>Herzlichen Dank.</p>
+  </div>
+
+  <script type="text/javascript">
+    function retro2010() {
+      jQuery('#retro2010').dialog({
+        modal: true,
+        width: 400,
+        height: 300
+      });
+    }
+  </script>
+
   [% IF dev %]
   <div class="rightbox nolab">
     <div class="rightboxhead">Mein Dingler</div>

@@ -69,11 +69,11 @@ sub faclink {
     my $id = shift;
     # 32258227Z/00000051
     #  =>
-    # http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=32258227Z&tx_slubdigitallibrary[image]=51
+    # http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
     $id =~ /(\w+)(?:\/(\w+))?/;
-    my $ret = "http://www.polytechnischesjournal.de/journal/dinger-online/?tx_slubdigitallibrary[ppn]=$1";
+    my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
     if ( defined $2 ) {
-        $ret .= "&tx_slubdigitallibrary[image]=$2";
+        $ret .= "&tx_dlf[page]=$2";
     }
     return $ret;
 }
@@ -102,7 +102,7 @@ sub fullname {
 }
 
 sub personarticles {
-    my ( $id, @skip ) = @_;
+    my ( $id, @skip, $full ) = @_;
     my $rs = Dingler->model('Dingler::Personref')->search(
         {
             'me.id'  => $id,
@@ -117,7 +117,7 @@ sub personarticles {
         $out = '<h3>Fundstellen im Polytechnischen Journal</h3><ul style="margin-top:0">';
         my $i = 0;
         while ( my $person = $rs->next ) {
-            last if $i == 10;
+            last if $full and $i == 10;
             $out .= sprintf '<li><a href="article/%s/%s">%s</a> <span class="small">(Jg.&nbsp;%s, Bd.&nbsp;%s, Nr.&nbsp;%s, S.&nbsp;%s)</span></li>',
                     $person->ref->journal->id,
                     $person->ref->id,

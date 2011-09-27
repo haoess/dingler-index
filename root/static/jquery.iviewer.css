@@ -1,0 +1,14 @@
+.iviewer_common         { position:absolute; bottom:10px; border:1px solid #5ab; height:20px; z-index:5000; color:#378; background:#fff; text-align:center }
+.iviewer_cursor         { cursor:-moz-grab }
+.iviewer_drag_cursor    { cursor:-moz-grabbing }
+.iviewer_button         { min-width:15px; height:15px; top:2px; cursor:pointer }
+
+.iviewer_zoom_in          { left:5px }
+.iviewer_zoom_in:before   { content:'+' }
+.iviewer_zoom_out         { left:26px }
+.iviewer_zoom_out:before  { content:'-' }
+.iviewer_zoom_zero        { left:50px; padding:0 3px }
+.iviewer_zoom_zero:before { content:'1:1' }
+.iviewer_zoom_fit         { left:90px; padding:0 3px }
+.iviewer_zoom_fit:before  { content:'fit' }
+.iviewer_zoom_status      { left:120px; top:2px; font-size:9pt; color:#666; min-width:15px; height:15px; padding:0 3px }

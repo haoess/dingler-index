@@ -200,6 +200,47 @@ sub register :Local {
     );
 }
 
+=head2 page
+
+=cut
+
+sub page :Local {
+    my ( $self, $c, $vol ) = @_;
+    
+    my $page = $c->req->params->{p} || 1;
+    if ( $vol !~ /\Apj[0-9]{3}\z/ or $page !~ /\A[0-9]+\z/ ) {
+        $c->detach( '/default' );
+    }
+
+    my $xml = sprintf "/home/fw/dingler-pages/%s/%04d.xml", $vol, $page;
+    if ( !-e $xml ) {
+        $c->detach( '/default' );
+    }
+
+    my $journal = $c->model('Dingler::Journal')->find($vol);
+
+    $c->stash(
+        journal  => $vol,
+        template => 'page.xsl',
+        xml      => $xml,
+    );
+    $c->forward('Dingler::View::XSLT');
+    my $xsl = $c->res->body;
+    utf8::decode( $xsl );
+    $c->res->body( undef );
+    $c->stash(
+        facs     => sprintf( "http://www.polytechnischesjournal.de/fileadmin/data/%s/%s_tif/jpegs/%08d.tif.medium.jpg", $journal->barcode, $journal->barcode, $page ),
+        page     => $page,
+        pages    => [
+            map { /([0-9]+)\.xml$/; $1 }
+            glob sprintf( '/home/fw/dingler-pages/%s/*.xml', $vol )
+        ],
+        xsl      => $xsl,
+        volume   => $journal->volume,
+        template => 'journal/page.tt',
+    );
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;

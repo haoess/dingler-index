@@ -56,7 +56,7 @@
     [% END %]
   </p>
 
-[% WHILE (name = names.next) %]
+[% FOREACH name IN names %]
   <h2>
     <a href="person/view/[% name.id %]">[% name.surname | html %][% IF name.forename %],[% END %] [% name.addname | html %] [% name.forename | html %] [% name.namelink | html %]</a>
   </h2>
@@ -92,27 +92,27 @@
 [% BLOCK right %]
   [% INCLUDE 'person/form.tt' %]
 
-[% IF 0 %]
+  [% MACRO mk_person_filter(group, arg) BLOCK %]
+    <tr>
+    [% IF c.req.params.filter == arg %]
+      <td><b>[% group | html %]:</b></td>
+      <td>[% $arg.count + 0 %] (<a href="[% c.req.uri_with({ filter => undef }) %]">Filter aufheben</a>)</td>
+    [% ELSE %]
+      <td>[% group | html %]:</td>
+      <td><a href="[% c.req.uri_with({ filter => arg }) %]">[% $arg.count + 0 %]</a></td>
+    [% END %]
+  [% END %]
+
   <div class="rightbox">
     <div class="rightboxhead">Einschränkung</div>
     <div class="rightboxcontent">
       <table>
-        <tr>
-          <td>Autoren:</td>
-          <td><a href="[% c.req.uri_with({ filter => 'author' }) %]">[% author.count + 0 %]</a></td>
-        </tr>
-        <tr>
-          <td>Patentträger:</td>
-          <td><a href="[% c.req.uri_with({ filter => 'patent_app' }) %]">[% patent_app.count + 0 %]</a></td>
-        </tr>
-        <tr>
-          <td>Rest:</td>
-          <td><a href="[% c.req.uri_with({ filter => 'other' }) %]">[% other.count + 0 %]</a></td>
-        </tr>
+        [% mk_person_filter('Autoren', 'author') %]
+        [% mk_person_filter('Patentträger', 'patent_app') %]
+        [% mk_person_filter('Rest', 'other') %]
       </table>
     </div>
   </div>
-[% END %]
 [% END %]
 
 [% BLOCK head %]

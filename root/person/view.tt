@@ -41,12 +41,32 @@
   </table>
   [% END %]
   
-  [% personarticles %]
-  
-  <h2>Stichworte zur Person</h2>
-  <div id="htmltagcloud">
-    [% FOREACH tag IN cloud.tags(20) %]
-      <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
+  <h2>Fundstellen im Polytechnischen Journal</h2>
+  <ul style="margin-top:0">
+    [% seen = {}; FOREACH pref IN person.personrefs_rs.all %]
+      [% NEXT IF seen.${pref.ref.id}; seen.${pref.ref.id} = 1 %]
+      <li>
+        <a href="article/[% pref.ref.journal.id %]/[% pref.ref.id %]">[% pref.ref.title | html %]</a>
+        <span class="small">(Jg.&nbsp;[% pref.ref.journal.year %], Bd.&nbsp;[% pref.ref.journal.volume %], Nr.&nbsp;[% pref.ref.number %], S.&nbsp;[% pref.ref.pagestart == pref.ref.pageend ? pref.ref.pagestart : pref.ref.pagestart _ '&ndash;' _ pref.ref.pageend %])</span>
+      </li>
+      [% LAST IF loop.count == 10 AND c.req.params.preview %]
     [% END %]
-  </div>
+  </ul>
+
+  [% IF c.req.params.preview %]
+    <p><a href="[% base %]person/view/[% person.id %]">mehr &hellip;</a></p>
+  [% END %]
 </div>
+
+[% BLOCK right %]
+  <div class="rightbox">
+    <div class="rightboxhead">Stichwortwolke zur Person</div>
+    <div class="rightboxcontent">
+      <div id="htmltagcloud">
+        [% FOREACH tag IN cloud.tags(20) %]
+          <span class="tagcloud[% tag.level %]"><a href="[% c.uri_for('/search', { q => '=' _ tag.name }) %]">[% tag.name | html %]</a></span>
+        [% END %]
+      </div>
+    </div>
+  </div>
+[% END %]

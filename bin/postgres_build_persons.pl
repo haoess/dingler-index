@@ -13,7 +13,7 @@ use XML::LibXML;
 
 my $teins = 'http://www.tei-c.org/ns/1.0';
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 1 } ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler2', 'fw', 'dingler', { pg_server_prepare => 1, PrintError => 1 } ) or die $DBI::errstr;
 
 my $xml; eval { $xml = XML::LibXML->new->parse_file( '/home/fw/src/kuwi/dingler/database/persons/persons.xml' ); 1 };
 die $@ if $@;

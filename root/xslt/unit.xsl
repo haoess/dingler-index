@@ -41,7 +41,7 @@
     </xsl:element>
     <xsl:text>| </xsl:text>
   </xsl:element>
-  <xsl:if test="name(..) != 'note'">
+  <xsl:if test="not(ancestor::tei:note)">
     <span style="position:absolute; left:20px;">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>

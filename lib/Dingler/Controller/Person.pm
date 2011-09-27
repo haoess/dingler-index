@@ -114,7 +114,7 @@ sub list :Local {
             %search,
         },
         {
-            order_by => 'surname, forename',
+            order_by => [ qw(surname forename) ],
             prefetch => [ { 'personrefs' => { 'ref' => 'journal' } } ],
             page     => $page,
             rows     => $limit,
@@ -122,7 +122,7 @@ sub list :Local {
     );
 
     $c->stash(
-        names      => $names,
+        names      => [ $names->all ],
         pager      => $names->pager,
         author     => $c->model('Dingler::Personref')->search_rs({ role => { '=' => ['author', 'author_orig'] } }),
         patent_app => $c->model('Dingler::Personref')->search_rs({ role => 'patent_app' }),
@@ -190,13 +190,11 @@ sub search :Local {
 
     my @filters = grep { defined } ref $c->req->params->{filter} ? @{$c->req->params->{filter}} : $c->req->params->{filter};
 
-=for pod
     my $filter = $c->req->params->{filter} || '';
     my %search = $filter eq 'author'     ? ( 'personrefs.role' => { '=' => ['author', 'author_orig'] } )
                : $filter eq 'patent_app' ? ( 'personrefs.role' => 'patent_app')
                : $filter eq 'other'      ? ( 'personrefs.role' => { -not_in => ['author',  'author_orig', 'patent_app'] } )
                :                           ();
-=cut
     my %cond = _prepare_cond( $q );
     my %attrs = (
         order_by => 'surname, forename',
@@ -207,7 +205,7 @@ sub search :Local {
 
     $c->stash(
         q              => $q,
-        names          => $names,
+        names          => [ $names->all ],
         pager          => $names->pager,
         personarticles => \&Dingler::Util::personarticles,
         template       => 'person/list.tt',

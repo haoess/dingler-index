@@ -11,7 +11,7 @@ use Dingler::Util;
 use DBI;
 use XML::LibXML;
 
-my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler', 'fw', 'dingler' ) or die $DBI::errstr;
+my $dbh = DBI->connect( 'dbi:Pg:dbname=dingler2', 'fw', 'dingler' ) or die $DBI::errstr;
 
 ###########################
 # map article xml:id' to internal uid's
