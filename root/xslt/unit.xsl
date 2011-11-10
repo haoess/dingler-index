@@ -108,10 +108,10 @@
 <xsl:template match="tei:p">
   <xsl:element name="p">
     <xsl:attribute name="class">
-      <xsl:if test="contains(@rendition,'#small')">small</xsl:if>
-      <xsl:if test="not(contains(@rendition,'#no_indent')) and not(contains(@rendition,'#center')) and not(contains(@rendition,'#right'))">indent</xsl:if>
-      <xsl:if test="contains(@rendition,'#center')">center</xsl:if>
-      <xsl:if test="contains(@rendition,'#right')">right</xsl:if>
+      <xsl:if test="contains(@rendition,'#small')">small </xsl:if>
+      <xsl:if test="not(contains(@rendition,'#no_indent')) and not(contains(@rendition,'#center')) and not(contains(@rendition,'#right'))">indent </xsl:if>
+      <xsl:if test="contains(@rendition,'#center')">center </xsl:if>
+      <xsl:if test="contains(@rendition,'#right')">right </xsl:if>
     </xsl:attribute>
     <xsl:apply-templates/>
   </xsl:element>
@@ -154,17 +154,16 @@
 
 <xsl:template match="tei:ref">
   <xsl:choose>
-    <xsl:when test="@target and starts-with(@target, '#tab')">
+    <xsl:when test="@target and contains(@target, '#tab')">
       <xsl:element name="a">
-        <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/image_markup/<xsl:value-of select="substring-after(@target, '#')"/>.html'); return false;</xsl:attribute>
+        <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="catalyst:resolvetab(@target)"/>.html'); return false;</xsl:attribute>
         <xsl:attribute name="class">pointer</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
     </xsl:when>
-    <xsl:when test="@target and starts-with(@target, 'image_markup/tab')">
+    <xsl:when test="@target and contains(@target, 'image_markup/tab')">
       <xsl:element name="a">
-<!--    <xsl:attribute name="onclick">showtab('<xsl:value-of select="$base"/><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(@target, '.xml')"/>.html#Ann_<xsl:value-of select="substring-after(@target, '#')"/>'); return false;</xsl:attribute>-->
-        <xsl:attribute name="onclick">showfigure('http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/figures/<xsl:value-of select="substring-after(@target, '#')"/>.jpg'); return false;</xsl:attribute>
+        <xsl:attribute name="onclick">showfigure('http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="catalyst:resolvefig(@target)"/>.jpg'); return false;</xsl:attribute>
         <xsl:attribute name="class">pointer</xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
@@ -200,11 +199,24 @@
 </xsl:template>
 
 <xsl:template match="tei:formula">
-  <div class="center">
-  <xsl:element name="img">
-    <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
-  </xsl:element>
-  </div>
+  <span class="formula">
+    <xsl:element name="img">
+      <xsl:attribute name="style">vertical-align:middle</xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="@rendition">
+          <xsl:call-template name="applyRendition"/>
+          <xsl:attribute name="src">
+            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="src">
+            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+          </xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:element>
+  </span>
 </xsl:template>
 
 <xsl:template match="tei:figure">
@@ -247,7 +259,7 @@
 <!-- tables -->
 
 <xsl:template match="tei:table">
-  <table style="margin-left:auto; margin-right:auto" class="middlealign">
+  <table class="middlealign pjtable">
   <xsl:apply-templates select="tei:row"/>
   </table>
 </xsl:template>
@@ -273,6 +285,72 @@
         <xsl:attribute name="class"><xsl:value-of select="catalyst:rendition(@rendition)"/></xsl:attribute>
         <xsl:apply-templates/>
       </xsl:element>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- renditions -->
+<xsl:template name="applyRendition">
+  <xsl:attribute name="class">
+    <xsl:choose>
+      <xsl:when test="@rendition=''"/>
+      <xsl:when test="contains(normalize-space(@rendition),' ')">
+        <xsl:call-template name="splitRendition">
+          <xsl:with-param name="value">
+            <xsl:value-of select="normalize-space(@rendition)"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="findRendition">
+          <xsl:with-param name="value">
+            <xsl:value-of select="@rendition"/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
+</xsl:template>
+
+<xsl:template name="splitRendition">
+  <xsl:param name="value"/>
+  <xsl:choose>
+    <xsl:when test="$value=''"/>
+    <xsl:when test="contains($value,' ')">
+      <xsl:call-template name="findRendition">
+        <xsl:with-param name="value">
+          <xsl:value-of select="substring-before($value,' ')"/>
+        </xsl:with-param>
+      </xsl:call-template>
+      <xsl:call-template name="splitRendition">
+        <xsl:with-param name="value">
+          <xsl:value-of select="substring-after($value,' ')"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:call-template name="findRendition">
+        <xsl:with-param name="value">
+          <xsl:value-of select="$value"/>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template name="findRendition">
+  <xsl:param name="value"/>
+  <xsl:choose>
+    <xsl:when test="starts-with($value,'#')">
+      <xsl:text>rend-</xsl:text><xsl:value-of select="substring-after($value,'#')"/>
+      <xsl:text> </xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:for-each select="document($value)">
+        <xsl:apply-templates select="@xml:id"/>
+        <xsl:text> </xsl:text>
+      </xsl:for-each>
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>

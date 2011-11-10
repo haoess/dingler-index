@@ -118,6 +118,10 @@
   <br />
 </xsl:template>
 
+<xsl:template match='//tei:div[@type="index"]/tei:head//tei:lb'>
+  <xsl:text> </xsl:text>
+</xsl:template>
+
 <xsl:template match="tei:hi[contains(@rendition, '#wide')]">
   <span class="wide"><xsl:apply-templates/></span>
 </xsl:template>

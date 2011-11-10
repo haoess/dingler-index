@@ -125,6 +125,7 @@
     </div>
   </div>
 
+<!--
   <div class="rightbox">
     <div class="rightboxhead">Aktuelles</div>
     <div class="rightboxcontent">
@@ -168,4 +169,6 @@
     </div>
   </div>
   [% END %]
+-->
+
 [% END %]

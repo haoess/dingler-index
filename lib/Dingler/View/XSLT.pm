@@ -7,6 +7,7 @@ use warnings;
 use strict;
 
 use Dingler::Util;
+use URI::Escape;
 
 __PACKAGE__->config(
     INCLUDE_PATH => [
@@ -19,6 +20,21 @@ __PACKAGE__->config(
                 uri => 'urn:catalyst',
                 name => 'uml',
                 subref => \&Dingler::Util::uml,
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'urlencode',
+                subref => sub {
+                    my $str = shift;
+                    $str = uri_escape($str);
+                    for ( $str ) {
+                        s/&/&amp;/g;
+                        s/"/&quot;/g;
+                        s/</&lt;/g;
+                        s/>/&gt;/g;
+                    }
+                    return $str;
+                },
             },
             {
                 uri => 'urn:catalyst',
@@ -125,7 +141,6 @@ __PACKAGE__->config(
                 name => 'resolveref',
                 subref => sub {
                     my $target = shift->to_literal;
-
                     if ( $target =~ /#(.*)_pb(.*)/ ) {
                         return sprintf 'page/%s/%s', $1, $2;
                     }
@@ -137,6 +152,24 @@ __PACKAGE__->config(
                         }
                         return sprintf 'article/%s/%s', $rs->get_column('journal'), $rs->id;
                     }
+                },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'resolvefig',
+                subref => sub {
+                    my $target = shift->to_literal;
+                    my ( $fig, $journal ) = $target =~ /(fig(\d{3}a?).*$)/;
+                    return sprintf 'pj%s/figures/%s', $journal, $fig;
+                },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'resolvetab',
+                subref => sub {
+                    my $target = shift->to_literal;
+                    my ( $tab, $journal ) = $target =~ /(tab(\d{3}a?).*$)/;
+                    return sprintf 'pj%s/image_markup/%s', $journal, $tab;
                 },
             },
             {
