@@ -10,6 +10,7 @@
   method="xml" media-type="text/html"
   cdata-section-elements="script style"
   indent="yes"
+  omit-xml-declaration="yes"
   encoding="utf-8"/>
 
 <xsl:template match="/">
@@ -33,6 +34,28 @@
         </td>
       </tr>
     </xsl:if>
+    <xsl:choose>
+      <xsl:when test="//tei:body/tei:div[@type='tab']">
+        <xsl:for-each select='//tei:figure'>
+          <tr>
+            <td>      
+              <div class="center small" style="margin:10px 0">
+                <xsl:element name="a">
+                  <xsl:attribute name="href">http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/<xsl:value-of select="./tei:graphic/@url"/>.png</xsl:attribute>
+                  <xsl:element name="img">
+                    <xsl:attribute name="src">http://dingler.culture.hu-berlin.de/dingler_static/<xsl:value-of select="$journal"/>/thumbs/<xsl:value-of select="substring-after(./tei:graphic/@url, '/')"/>_250.jpg</xsl:attribute>
+                    <xsl:attribute name="alt"><xsl:apply-templates select="./tei:head"/></xsl:attribute>
+                    <xsl:attribute name="title"><xsl:apply-templates select="./tei:head"/></xsl:attribute>
+                    <xsl:attribute name="class">figure</xsl:attribute>
+                  </xsl:element><br />
+                  <xsl:value-of select="./tei:head"/>
+                </xsl:element>
+              </div>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </xsl:when>
+      <xsl:otherwise>
     <xsl:for-each select='//tei:text[@type="art_undef" or @type="art_patent" or @type="art_miscellanea" or @type="art_patents" or @type="art_literature"]'>
     <tr>
       <td class="right"><xsl:apply-templates select='tei:front/tei:titlePart[@type="number"]'/></td>
@@ -83,6 +106,8 @@
         </td>
       </tr>
     </xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
   </table>
 </xsl:template>
 
