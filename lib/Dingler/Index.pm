@@ -179,6 +179,7 @@ sub grundform {
         Systeme => 'System',
         Teleskope => 'Teleskop',
         Teleskopes => 'Teleskop',
+        Theil => 'Teil',
         Theile => 'Theil',
         Thores => 'Thor',
         Tons => 'Ton',
@@ -275,6 +276,7 @@ noch
 nun
 nur
 oder
+proc
 sein
 seine
 seiner
@@ -283,6 +285,7 @@ sich
 sie
 so
 tab
+taf
 über
 um
 und
@@ -297,3 +300,4 @@ wird
 wodurch
 zu
 zum
+zur

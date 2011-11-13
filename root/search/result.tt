@@ -50,7 +50,7 @@
         </p>
         <p class="small">
           [% figure = match.figures_rs.search({ reftype => 'tabular' }).first; IF figure %]
-            <img src="[% figure_link(figure.ref, match.journal.id, 250) %]" width="100" style="float:left; margin-right:10px" />
+            <img src="[% figure_link(figure.ref, 250) %]" width="100" style="float:left; margin-right:10px" />
           [% END %]
           [% excerpt(match.content) %]
           [<a href="article/[% match.journal.id %]/[% match.id %]">mehr</a>]

@@ -36,13 +36,7 @@
     <div class="rightboxhead">Tafeln</div>
     <div class="rightboxcontent center">
       [% WHILE ( tab = tabulars.next ) %]
-        <a href="http://dingler.culture.hu-berlin.de/dingler_static/[% journal %]/[% item.barcode %]/[% tab.ref %].png"><img src="[% figure_link(tab.ref, journal, 250) %]" width="250" /></a><br /><br />
-      [% END %]
-      [% IF 0 %]
-        [%# old version -- but imt is borked %]
-        [% WHILE ( tab = tabulars.next ) %]
-          <img src="[% figure_link(tab.ref, journal, 250) %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(tab.ref, journal) %]')" /><br /><br />
-        [% END %]
+        <a href="[% figure_link(tab.ref) %]"><img src="[% figure_link(tab.ref, 250) %]" width="250" /></a><br /><br />
       [% END %]
     </div>
   </div>

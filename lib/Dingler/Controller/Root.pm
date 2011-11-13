@@ -51,9 +51,14 @@ sub auto :Private {
     };
 
     $c->stash->{ figure_link } = sub {
-        my ( $ref, $journal, $size ) = @_;
+        my ( $ref, $size ) = @_;
+        my ( $journal ) = $ref =~ /^[a-z]+(\d{3}a?)/;
         if ( $size ) {
-            return sprintf 'http://dingler.culture.hu-berlin.de/dingler_static/%s/thumbs/%s_%s.jpg', $journal, $ref, $size;
+            return sprintf 'http://dingler.culture.hu-berlin.de/dingler_static/pj%s/thumbs/%s_%s.jpg', $journal, $ref, $size;
+        }
+        else {
+            my $barcode = $c->model('Dingler::Journal')->find( "pj$journal" )->barcode;
+            return sprintf 'http://dingler.culture.hu-berlin.de/dingler_static/pj%s/%s/%s.png', $journal, $barcode, $ref;
         }
     };
 

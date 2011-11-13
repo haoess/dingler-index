@@ -71,14 +71,14 @@
 
 <p>
   Die Tafel [% tabulars.most_figures %] hat [% tabulars.most_figures_count %] Figuren.<br />
-  <img src="[% figure_link(tabulars.most_figures, tabulars.most_figures_journal, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.most_figures, tabulars.most_figures_journal) %]')" /><br /><br />
+  <img src="[% figure_link(tabulars.most_figures, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.most_figures, tabulars.most_figures_journal) %]')" /><br /><br />
 </p>
 
 <h3>Die größte Tafel</h3>
 
 <p>
   Die Tafel [% tabulars.biggest_tab %] ist [% tabulars.biggest_tab_size.0 | format("%.2f") %] &times; [% tabulars.biggest_tab_size.1 | format("%.2f") %] cm groß.<br />
-  <img src="[% figure_link(tabulars.biggest_tab, tabulars.biggest_tab_journal, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.biggest_tab, tabulars.biggest_tab_journal) %]')" /><br /><br />
+  <img src="[% figure_link(tabulars.biggest_tab, 800) %]" class="pointer" onclick="showtab('[% figure_to_markup(tabulars.biggest_tab, tabulars.biggest_tab_journal) %]')" /><br /><br />
 </p>
 
 <script type="text/javascript">

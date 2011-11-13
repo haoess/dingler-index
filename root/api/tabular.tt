@@ -9,8 +9,8 @@
      <title>[% item.name | html %]</title>
      <media:description>[% item.name | html %]</media:description>
      <link>[% c.uri_for('/journal', item.journal) | url %]</link>
-     <media:thumbnail url="[% figure_link(item.ref, item.journal, 250) | url %]"/>
-     <media:content url="[% figure_link(item.ref, item.journal, 800) | url %]"/>
+     <media:thumbnail url="[% figure_link(item.ref, 250) | url %]"/>
+     <media:content url="[% figure_link(item.ref, 800) | url %]"/>
   </item>
   [% END %]
 </channel>

@@ -31,9 +31,9 @@ JOURNAL:
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
     $xpc->registerNs( 'tei', $teins );
 
-    my ($jid)   = $journal =~ /(pj[0-9]{3})/;
+    my ($jid, $volume)   = $journal =~ /(pj([0-9]{3}a?))/;
+    $volume =~ s/^0+//;
     my $year    = $xpc->find( '//tei:imprint/tei:date' );
-    my $volume  = $xpc->find( '//tei:imprint/tei:biblScope' );
     my $barcode = $xpc->find( '//tei:sourceDesc//tei:idno' );
     my $j_facsimile = Dingler::Util::faclink($barcode);
 
@@ -81,13 +81,13 @@ JOURNAL:
         }
 
         # links to tabulars
-        foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "#tab")]', $article) ) {
-            my ($ref) = $xpc->find('@target', $figure) =~ /^#(.+)/;
+        foreach my $figure ( $xpc->findnodes('.//tei:ref[contains(@target, "#tab")]', $article) ) {
+            my ($ref) = $xpc->find('@target', $figure) =~ /#(.+)/;
             $sth_figure->execute( $last_id, $ref, 'tabular' );
         }
 
         # links to figures on tabulars
-        foreach my $figure ( $xpc->findnodes('.//tei:ref[starts-with(@target, "image_markup/")]', $article) ) {
+        foreach my $figure ( $xpc->findnodes('.//tei:ref[contains(@target, "image_markup/")]', $article) ) {
             my ($ref) = $xpc->find('@target', $figure) =~ /#(fig.+)/;
             $sth_figure->execute( $last_id, $ref, 'figure' );
         }

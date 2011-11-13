@@ -177,7 +177,7 @@
     <div class="rightboxhead">Tafeln</div>
     <div class="rightboxcontent center">
       [% FOREACH figure IN figures %]
-        <img src="[% figure_link(figure, journal, 250) %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(figure, journal) %]')" /><br /><br />
+        <img src="[% figure_link(figure, 250) %]" width="250" class="pointer" onclick="showtab('[% figure_to_markup(figure, journal) %]')" /><br /><br />
       [% END %]
     </div>
   </div>
