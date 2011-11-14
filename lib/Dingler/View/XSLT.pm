@@ -26,7 +26,7 @@ __PACKAGE__->config(
                 name => 'urlencode',
                 subref => sub {
                     my $str = shift;
-                    $str = uri_escape($str);
+                    $str = uri_escape_utf8($str);
                     for ( $str ) {
                         s/&/&amp;/g;
                         s/"/&quot;/g;
