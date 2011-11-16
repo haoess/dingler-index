@@ -46,8 +46,9 @@ sub auto :Private {
 
     my $base = $c->req->base;
     $c->stash->{ figure_to_markup } = sub {
-        my ( $ref, $journal ) = @_;
-        return sprintf '%s%s/image_markup/%s.html', $base, $journal, $ref;
+        my $ref = shift;
+        my ( $journal ) = $ref =~ /[a-z]+(\d{3}a?)/;
+        return sprintf '%spj%s/image_markup/%s.html', $base, $journal, $ref;
     };
 
     $c->stash->{ figure_link } = sub {

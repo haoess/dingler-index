@@ -24,6 +24,8 @@
 </xsl:template>
 
 <xsl:template match='tei:ab'></xsl:template>
+<xsl:template match='tei:body//tei:note//tei:pb'></xsl:template>
+<xsl:template match='tei:body//tei:note//tei:p//tei:pb'></xsl:template>
 
 <xsl:template match='tei:body//tei:pb'>
   <xsl:element name="span">
@@ -184,11 +186,24 @@
 </xsl:template>
 
 <xsl:template match="tei:formula">
-  <div class="center">
-  <xsl:element name="img">
-    <xsl:attribute name="src"><xsl:value-of select="$journal"/>/<xsl:value-of select="substring-before(tei:graphic/@url, '/')"/>/<xsl:value-of select="substring-after(tei:graphic/@url, '/')"/>.png</xsl:attribute>
-  </xsl:element>
-  </div>
+  <span class="formula">
+    <xsl:element name="img">
+      <xsl:attribute name="style">vertical-align:middle</xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="@rendition">
+          <xsl:call-template name="applyRendition"/>
+          <xsl:attribute name="src">
+            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="src">
+            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+          </xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:element>
+  </span>
 </xsl:template>
 
 <xsl:template match="tei:figure">

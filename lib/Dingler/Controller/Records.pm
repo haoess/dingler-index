@@ -281,18 +281,14 @@ sub tabulars :Private {
         }
 
         my $most_tabs = reduce { $figures{$a} > $figures{$b} ? $a : $b } keys %figures;
-        my ($most_figures_journal) = $most_tabs =~ /tab([0-9]{3})/;
 
         %sizes = map { s/px// for @{ $sizes{$_} }; $_ => $sizes{$_} } keys %sizes;
         my $biggest_tab = reduce { $sizes{$a}->[0]*$sizes{$a}->[1] > $sizes{$b}->[0]*$sizes{$b}->[1] ? $a : $b } keys %sizes;
-        my ($biggest_tab_journal) = $biggest_tab =~ /tab([0-9]{3})/;
         $records = {
             most_figures         => $most_tabs,
             most_figures_count   => $figures{$most_tabs},
-            most_figures_journal => "pj$most_figures_journal",
             biggest_tab          => $biggest_tab,
             biggest_tab_size     => [$sizes{$biggest_tab}->[0] * 4 * 0.0042335, $sizes{$biggest_tab}->[1] * 4 * 0.0042335],
-            biggest_tab_journal  => "pj$biggest_tab_journal",
         };
         $cache->set( 'tabulars', $records );
     }
