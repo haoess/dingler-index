@@ -71,7 +71,7 @@ sub faclink {
     #  =>
     # http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
     $id =~ /(\w+)(?:\/(\w+))?/;
-    my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
+    my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/cache.off?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
     if ( defined $2 ) {
         $ret .= "&tx_dlf[page]=$2";
     }
