@@ -115,7 +115,9 @@ CREATE TABLE patent (
   subtype TEXT,
   date    DATE,
   xml     TEXT,
-  content TEXT
+  content TEXT,
+  title   TEXT,
+  place   TEXT
 );
 
 -- --------------------------
