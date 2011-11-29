@@ -17,6 +17,7 @@ Dingler::Util - Some widely used utility functions.
 
 sub uml {
     my $str = shift || '';
+    my $nospaces = shift;
     for ($str) {
         s/a\x{0364}/ä/g;
         s/o\x{0364}/ö/g;
@@ -25,6 +26,9 @@ sub uml {
         s/O\x{0364}/Ö/g;
         s/U\x{0364}/Ü/g;
         s/&#x2010;/-/g;
+    }
+
+    if ( not defined $nospaces ) {
         s/\s+/ /g;
     }
     return $str;
