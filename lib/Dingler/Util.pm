@@ -29,7 +29,7 @@ sub uml {
     }
 
     if ( not defined $nospaces ) {
-        s/\s+/ /g;
+        $str =~ s/\s+/ /g;
     }
     return $str;
 }
