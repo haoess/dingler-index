@@ -25,7 +25,7 @@ sub view :Local {
     my $vol = $c->req->params->{v};
     my $journal = $c->model('Dingler::Journal')->find({ volume => $vol });
     if ( $journal ) {
-        $c->forward('index', [$journal->id]);
+        $c->res->redirect( $c->uri_for('/journal', $journal->id) );
     }
     else {
         $c->detach('/default');
