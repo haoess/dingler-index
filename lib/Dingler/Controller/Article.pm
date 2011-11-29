@@ -322,6 +322,9 @@ sub xml :Local {
     my $xpc = XML::LibXML::XPathContext->new( $xmldoc ) or die $!;
     $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
     my $snippet = $xpc->findnodes( "//*[\@xml:id='$id']" )->shift->toString;
+    
+    $snippet = Dingler::Util::uml( $snippet, 1 );
+    
     my $syntax = Dingler::Highlight::parse( $snippet );
 
     # idea: grep the indentation ($sign) of the second line
