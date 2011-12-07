@@ -128,3 +128,13 @@ CREATE TABLE patent_app (
   personid TEXT,
   name     TEXT
 );
+
+-- --------------------------
+
+CREATE TABLE place (
+  id        SERIAL PRIMARY KEY,
+  plid      TEXT,
+  place     TEXT,
+  latitude  REAL,
+  longitude REAL
+);

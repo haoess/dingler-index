@@ -52,6 +52,10 @@ dropdb dingler
 createdb -T dingler2 dingler
 psql -d dingler < db/grant.sql
 
+psql -d dingler < db/post_process.sql
+/home/fw/src/kuwi/dingler/scripts/import-patent-titles.pl /home/fw/src/kuwi/dingler/database/patent_titles/patent-id_title.txt
+/home/fw/src/kuwi/dingler/scripts/import-patent-places.pl
+
 #################################################
 
 ./start
