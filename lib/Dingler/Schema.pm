@@ -1,3 +1,4 @@
+use utf8;
 package Dingler::Schema;
 
 # Created by DBIx::Class::Schema::Loader
@@ -8,13 +9,11 @@ use warnings;
 
 use base 'DBIx::Class::Schema';
 
-__PACKAGE__->load_namespaces(
-    result_namespace => 'Result',
-);
+__PACKAGE__->load_namespaces;
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-06-18 10:27:31
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:O8joIVDu1CPWc/MawoJkdQ
+# Created by DBIx::Class::Schema::Loader v0.05003 @ 2012-01-25 13:04:50
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:qjBZKJTSfKkk7NqCS1bWOQ
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

@@ -1,18 +1,33 @@
+use utf8;
 package Dingler::Schema::Result::Figure;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
+
+=head1 NAME
+
+Dingler::Schema::Result::Figure
+
+=cut
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class::Core';
 
+=head1 COMPONENTS LOADED
+
+=over 4
+
+=item * L<DBIx::Class::InflateColumn::DateTime>
+
+=back
+
+=cut
+
 __PACKAGE__->load_components("InflateColumn::DateTime");
 
-=head1 NAME
-
-Dingler::Schema::Result::Figure
+=head1 TABLE: C<figure>
 
 =cut
 
@@ -22,38 +37,43 @@ __PACKAGE__->table("figure");
 
 =head2 article
 
-  data_type: integer
-  default_value: undef
+  data_type: 'integer'
   is_foreign_key: 1
   is_nullable: 0
 
 =head2 ref
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 0
 
 =head2 reftype
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 1
 
 =cut
 
 __PACKAGE__->add_columns(
   "article",
-  {
-    data_type      => "integer",
-    default_value  => undef,
-    is_foreign_key => 1,
-    is_nullable    => 0,
-  },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "ref",
-  { data_type => "text", default_value => undef, is_nullable => 0 },
+  { data_type => "text", is_nullable => 0 },
   "reftype",
-  { data_type => "text", default_value => undef, is_nullable => 1 },
+  { data_type => "text", is_nullable => 1 },
 );
+
+=head1 PRIMARY KEY
+
+=over 4
+
+=item * L</article>
+
+=item * L</ref>
+
+=back
+
+=cut
+
 __PACKAGE__->set_primary_key("article", "ref");
 
 =head1 RELATIONS
@@ -74,8 +94,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-09 20:34:48
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+brNDQ2PWam3TQDUCNtBYg
+# Created by DBIx::Class::Schema::Loader v0.07015 @ 2012-01-25 13:04:50
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:2xc7OazC/+uia03hWGNt6g
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

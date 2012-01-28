@@ -1,18 +1,33 @@
+use utf8;
 package Dingler::Schema::Result::PatentApp;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
+
+=head1 NAME
+
+Dingler::Schema::Result::PatentApp
+
+=cut
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class::Core';
 
+=head1 COMPONENTS LOADED
+
+=over 4
+
+=item * L<DBIx::Class::InflateColumn::DateTime>
+
+=back
+
+=cut
+
 __PACKAGE__->load_components("InflateColumn::DateTime");
 
-=head1 NAME
-
-Dingler::Schema::Result::PatentApp
+=head1 TABLE: C<patent_app>
 
 =cut
 
@@ -22,28 +37,25 @@ __PACKAGE__->table("patent_app");
 
 =head2 id
 
-  data_type: integer
-  default_value: nextval('patent_app_id_seq'::regclass)
+  data_type: 'integer'
   is_auto_increment: 1
   is_nullable: 0
+  sequence: 'patent_app_id_seq'
 
 =head2 patent
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_foreign_key: 1
   is_nullable: 1
 
 =head2 personid
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 1
 
 =head2 name
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 1
 
 =cut
@@ -52,22 +64,28 @@ __PACKAGE__->add_columns(
   "id",
   {
     data_type         => "integer",
-    default_value     => \"nextval('patent_app_id_seq'::regclass)",
     is_auto_increment => 1,
     is_nullable       => 0,
+    sequence          => "patent_app_id_seq",
   },
   "patent",
-  {
-    data_type      => "text",
-    default_value  => undef,
-    is_foreign_key => 1,
-    is_nullable    => 1,
-  },
+  { data_type => "text", is_foreign_key => 1, is_nullable => 1 },
   "personid",
-  { data_type => "text", default_value => undef, is_nullable => 1 },
+  { data_type => "text", is_nullable => 1 },
   "name",
-  { data_type => "text", default_value => undef, is_nullable => 1 },
+  { data_type => "text", is_nullable => 1 },
 );
+
+=head1 PRIMARY KEY
+
+=over 4
+
+=item * L</id>
+
+=back
+
+=cut
+
 __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
@@ -88,8 +106,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-07-29 21:38:39
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:mJGcmzua1Y3QQEV8oraArw
+# Created by DBIx::Class::Schema::Loader v0.07015 @ 2012-01-25 13:04:50
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:5wHh9G/ctKyqF+TBG7sBIA
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration

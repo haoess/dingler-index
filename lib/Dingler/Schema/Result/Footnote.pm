@@ -1,18 +1,33 @@
+use utf8;
 package Dingler::Schema::Result::Footnote;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
+
+=head1 NAME
+
+Dingler::Schema::Result::Footnote
+
+=cut
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class::Core';
 
+=head1 COMPONENTS LOADED
+
+=over 4
+
+=item * L<DBIx::Class::InflateColumn::DateTime>
+
+=back
+
+=cut
+
 __PACKAGE__->load_components("InflateColumn::DateTime");
 
-=head1 NAME
-
-Dingler::Schema::Result::Footnote
+=head1 TABLE: C<footnote>
 
 =cut
 
@@ -22,28 +37,25 @@ __PACKAGE__->table("footnote");
 
 =head2 id
 
-  data_type: integer
-  default_value: nextval('footnote_id_seq'::regclass)
+  data_type: 'integer'
   is_auto_increment: 1
   is_nullable: 0
+  sequence: 'footnote_id_seq'
 
 =head2 n
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 1
 
 =head2 article
 
-  data_type: integer
-  default_value: undef
+  data_type: 'integer'
   is_foreign_key: 1
   is_nullable: 1
 
 =head2 content
 
-  data_type: text
-  default_value: undef
+  data_type: 'text'
   is_nullable: 1
 
 =cut
@@ -52,22 +64,28 @@ __PACKAGE__->add_columns(
   "id",
   {
     data_type         => "integer",
-    default_value     => \"nextval('footnote_id_seq'::regclass)",
     is_auto_increment => 1,
     is_nullable       => 0,
+    sequence          => "footnote_id_seq",
   },
   "n",
-  { data_type => "text", default_value => undef, is_nullable => 1 },
+  { data_type => "text", is_nullable => 1 },
   "article",
-  {
-    data_type      => "integer",
-    default_value  => undef,
-    is_foreign_key => 1,
-    is_nullable    => 1,
-  },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 1 },
   "content",
-  { data_type => "text", default_value => undef, is_nullable => 1 },
+  { data_type => "text", is_nullable => 1 },
 );
+
+=head1 PRIMARY KEY
+
+=over 4
+
+=item * L</id>
+
+=back
+
+=cut
+
 __PACKAGE__->set_primary_key("id");
 
 =head1 RELATIONS
@@ -88,8 +106,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.05003 @ 2010-10-12 19:45:37
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:DzFTnGWCJ4ru82/9oGWvxw
+# Created by DBIx::Class::Schema::Loader v0.07015 @ 2012-01-25 13:04:50
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:O61HEkhm49cOSvf0atHw8Q
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration
