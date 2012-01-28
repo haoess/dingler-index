@@ -44,6 +44,13 @@ requires 'Text::Wrap';
 requires 'MIME::Lite';
 requires 'MooseX::NonMoose';
 requires 'Catalyst::Plugin::Session::DynamicExpiry';
+requires 'Catalyst::Plugin::Session::State::Cookie';
+requires 'Catalyst::Plugin::Session::Store::File';
+requires 'Catalyst::Plugin::Authentication';
+requires 'Catalyst::Authentication::Store::DBIx::Class';
+requires 'Catalyst::View::TT';
+requires 'Sphinx::Search';
+requires 'JSON';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
