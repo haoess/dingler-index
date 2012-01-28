@@ -183,6 +183,24 @@
   </div>
   [% END %]
 
+  [% IF places.size %]
+  <div class="rightbox">
+    <div class="rightboxhead">Orte</div>
+    <div class="rightboxcontent center">
+      [% FOREACH place IN places;
+        markers = markers _ 'markers=' _ place.latitude _ ',' _ place.longitude;
+        UNLESS loop.last;
+          markers = markers _ '&amp;';
+        END;
+        IF places.size == 1;
+          markers = markers _ '&amp;zoom=6';
+        END;
+      END %]
+      <img src="http://maps.google.com/maps/api/staticmap?sensor=false&amp;size=250x300&amp;maptype=hybrid&amp;[% markers %]" />
+    </div>
+  </div>
+  [% END %]
+
   <div id="figuredialog" style="display:none">
     <div style="position:relative">
       <img id="figurecontextimage" src="" style="opacity:0.1" />

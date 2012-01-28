@@ -53,6 +53,7 @@ sub index :Path :Args(2) {
         })->first;
     }
 
+    $c->forward('places', [$article]);
     $c->forward('set_meta', [$journal, $article]);
     $c->forward('article_xslt', [$journal, $article]);
     $c->forward('article_plain', [$journal, $article]);
@@ -85,6 +86,32 @@ sub index :Path :Args(2) {
         next_article => $next_article,
         template     => 'article/view.tt',
     );
+}
+
+=head2 places
+
+=cut
+
+sub places :Private {
+    my ( $self, $c, $id ) = @_;
+
+    my $item = $c->model('Dingler::Article')->find({ id => $id });
+    $c->detach('/default') if !$item;
+
+    my ($xml) = glob $c->config->{svn} . "/" . $item->journal->id . "/*Z.xml";
+
+    my $parser = XML::LibXML->new;
+    $parser->expand_entities(0);
+
+    my $xmldoc; eval { $xmldoc = $parser->parse_file( $xml ); 1 };
+    my $xpc = XML::LibXML::XPathContext->new( $xmldoc ) or die $!;
+    $xpc->registerNs( 'tei', 'http://www.tei-c.org/ns/1.0' );
+
+    foreach my $place ( $xpc->findnodes( "//*[\@xml:id='$id']//tei:placeName" ) ) {
+        my $placeid = $place->find( '@ref', $place )."";
+        $placeid =~ s/.*#//;
+        push @{$c->stash->{places}}, $c->model('Dingler::Place')->find({ plid => $placeid });
+    }
 }
 
 =head2 set_meta
