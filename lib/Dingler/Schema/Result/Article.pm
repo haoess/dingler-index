@@ -273,9 +273,24 @@ __PACKAGE__->has_many(
   {},
 );
 
+=head2 placerefs
 
-# Created by DBIx::Class::Schema::Loader v0.07015 @ 2012-01-25 13:04:50
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:APcUTVwJWR81NC9Z4O8lkQ
+Type: has_many
+
+Related object: L<Dingler::Schema::Result::Placeref>
+
+=cut
+
+__PACKAGE__->has_many(
+  "placerefs",
+  "Dingler::Schema::Result::Placeref",
+  { "foreign.article" => "self.uid" },
+  {},
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07015 @ 2012-01-29 18:05:08
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:t0YniQrpy01IM/HM1Z7hIg
 
 
 # You can replace this text with custom content, and it will be preserved on regeneration
