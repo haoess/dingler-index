@@ -60,10 +60,21 @@ td.mainright  { padding-top:0px }
 .center { text-align:center }
 .right { text-align:right }
 .small { font-size:0.8em }
-.wide { letter-spacing:0.1em; margin-right:-0.2em; font-family:'Inconsolata',monospace,serif; font-size:1em }
-.roman { font-style:italic }
 .corr { border-bottom:dotted 1px #900 }
-/* .indent { text-indent:2em } */
+
+.rend-bold { font-weight:bold }
+.rend-center { text-align:center }
+.rend-indent { text-indent:2em }
+.rend-indent-1 { text-indent:2em }
+.rend-italic { font-style:italic }
+.rend-no_indent { text-indent:none }
+.rend-left { text-align:left }
+.rend-right { text-align:right }
+.rend-roman { font-style:italic }
+.rend-small { font-size:.8em }
+.rend-subscript { font-size:.7em; vertical-align:sub }
+.rend-superscript { font-size:.7em; vertical-align:super }
+.rend-wide { letter-spacing:2pt }
 
 .pagebreak { font-size:.8em }
 
