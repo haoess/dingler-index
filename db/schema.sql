@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS footnote CASCADE;
 DROP TABLE IF EXISTS patent CASCADE;
 DROP TABLE IF EXISTS patent_app CASCADE;
 DROP TABLE IF EXISTS place CASCADE;
+DROP TABLE IF EXISTS placeref CASCADE;
 
 CREATE OR REPLACE FUNCTION hex_to_int(hexval varchar) RETURNS integer AS $$
 DECLARE
@@ -134,8 +135,16 @@ CREATE TABLE patent_app (
 
 CREATE TABLE place (
   id        SERIAL PRIMARY KEY,
-  plid      TEXT,
+  plid      TEXT UNIQUE,
   place     TEXT,
   latitude  REAL,
   longitude REAL
+);
+
+-- --------------------------
+
+CREATE TABLE placeref (
+  id      SERIAL PRIMARY KEY,
+  article INTEGER REFERENCES article (uid),
+  place   TEXT REFERENCES place (plid)
 );

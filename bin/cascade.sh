@@ -62,6 +62,15 @@ echo "import-patent-titles.pl ..."
 echo "update-patent-places.pl ..."
 /home/fw/src/kuwi/dingler/scripts/update-patent-places.pl
 
+echo "map place references ..."
+if [ $HAVE_PARALLEL -eq 0 ]; then
+  parallel -j-1 bin/postgres_build_placerefs.pl ::: $@
+else
+  for i in "$@"; do
+    bin/postgres_build_placerefs.pl "$i"
+  done
+fi
+
 #################################################
 
 ./start

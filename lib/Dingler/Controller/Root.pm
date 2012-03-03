@@ -74,7 +74,7 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'year, volume' });
+    my $journals = $c->model('Dingler::Journal')->search({}, { order_by => 'id' });
     my $covers = <<"EOT";
 #1-9
 05

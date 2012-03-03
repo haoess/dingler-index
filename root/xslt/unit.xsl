@@ -107,18 +107,20 @@
 
 <xsl:template match="tei:p">
   <xsl:element name="p">
-    <xsl:attribute name="class">
-      <xsl:if test="contains(@rendition,'#small')">small </xsl:if>
-      <xsl:if test="not(contains(@rendition,'#no_indent')) and not(contains(@rendition,'#center')) and not(contains(@rendition,'#right'))">indent </xsl:if>
-      <xsl:if test="contains(@rendition,'#center')">center </xsl:if>
-      <xsl:if test="contains(@rendition,'#right')">right </xsl:if>
-    </xsl:attribute>
+    <xsl:if test="@rendition">
+      <xsl:call-template name="applyRendition"/>
+    </xsl:if>
     <xsl:apply-templates/>
   </xsl:element>
 </xsl:template>
 
 <xsl:template match="tei:head">
-  <h2><xsl:apply-templates/></h2>
+  <h2>
+    <xsl:if test="@rendition">
+      <xsl:call-template name="applyRendition"/>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </h2>
 </xsl:template>
 
 <xsl:template match="tei:list">
@@ -186,16 +188,13 @@
   </xsl:choose>
 </xsl:template>
 
-<xsl:template match="tei:hi[contains(@rendition, '#wide')]">
-  <span class="wide"><xsl:apply-templates/></span>
-</xsl:template>
-
-<xsl:template match="tei:hi[contains(@rendition, '#roman')]">
-  <span class="roman"><xsl:apply-templates/></span>
-</xsl:template>
-
-<xsl:template match="tei:hi[contains(@rendition, '#superscript')]">
-  <sup><xsl:apply-templates/></sup>
+<xsl:template match="tei:hi">
+  <xsl:element name="span">
+    <xsl:if test="@rendition">
+      <xsl:call-template name="applyRendition"/>
+    </xsl:if>
+    <xsl:apply-templates/>
+  </xsl:element>
 </xsl:template>
 
 <xsl:template match="tei:formula">

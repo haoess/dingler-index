@@ -108,7 +108,11 @@
     <div id="xmlsnippetcode"></div>
   </div>
 [% END %]
-[% xsl || 'Der angeforderte Artikel steht nicht zur Verfügung.' %]
+[% IF xsl %]
+  <div id="xsl-text">[% xsl %]</div>
+[% ELSE %]
+  Der angeforderte Artikel steht nicht zur Verfügung.
+[% END %]
 
 <div id="dialog"></div>
 

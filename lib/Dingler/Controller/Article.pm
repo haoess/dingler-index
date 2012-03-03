@@ -197,13 +197,8 @@ sub article_xslt :Private {
         namespace  => 'dingler-articles'
     });
     my $xsl = $cache->get( $article );
-    if ( not defined $xsl ) {
-        if ( $c->stash->{misc} ) {
-            $c->stash->{template} = 'misc.xsl';
-        }
-        else {
-            $c->stash->{template} = 'unit.xsl';
-        }
+    if ( not defined $xsl or $c->debug ) {
+        $c->stash->{template} = 'unit.xsl';
         $c->forward('Dingler::View::XSLT');
         $xsl = $c->res->body;
     }
@@ -255,13 +250,8 @@ sub article_plain :Private {
         namespace  => 'dingler-articles-plain'
     });
     my $plain = $cache->get( $article );
-    if ( not defined $plain ) {
-        if ( $c->stash->{misc} ) {
-            $c->stash->{template} = 'misc-plain.xsl';
-        }
-        else {
-            $c->stash->{template} = 'article-plain.xsl';
-        }
+    if ( not defined $plain or $c->debug ) {
+        $c->stash->{template} = 'unit-plain.xsl';
         $c->forward('Dingler::View::XSLT');
         $plain = $c->res->body;
     }
