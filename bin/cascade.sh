@@ -12,6 +12,9 @@ psql -d dingler2 < db/schema.sql
 echo "persons.xml to sql ..."
 bin/postgres_build_persons.pl
 
+echo "places.xml to sql ..."
+bin/postgres_build_places.pl
+
 echo "start basic database build ..."
 if [ $HAVE_PARALLEL -eq 0 ]; then
   parallel -j-1 bin/postgres_build_index.pl ::: $@
