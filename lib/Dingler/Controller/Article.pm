@@ -110,6 +110,7 @@ sub places :Private {
     foreach my $place ( $xpc->findnodes( "//*[\@xml:id='$id']//tei:placeName" ) ) {
         my $placeid = $place->find( '@ref', $place )."";
         $placeid =~ s/.*#//;
+        next unless $placeid;
         push @{$c->stash->{places}}, $c->model('Dingler::Place')->find({ plid => $placeid });
     }
 }
