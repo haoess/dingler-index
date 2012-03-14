@@ -226,7 +226,7 @@ sub plain :Local {
     $c->stash(
         id       => $article,
         xml      => $xml,
-        template => 'article-plain.xsl',
+        template => 'unit-plain.xsl',
     );
     $c->forward('Dingler::View::XSLT');
     my $body = $c->res->body;
