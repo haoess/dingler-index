@@ -1,9 +1,14 @@
 #!/bin/bash
 
-echo "removing doubled pb's ..."
-bin/remove-doubled-pbs.pl -o ~/dingler-pages ~/src/kuwi/dingler/pj*/*.xml
+PAGEDIR=/home/fw/dingler-pages
 
+echo "removing doubled pb's ..."
+bin/remove-doubled-pbs.pl -o "$PAGEDIR" ~/src/kuwi/dingler/pj*/*.xml
+
+echo
 echo "splitting pages ..."
-for i in ~/dingler-pages/*.xml; do
-  bin/split-pages.pl -f $i -o ~/dingler-pages/`basename $i .xml`
+for i in $PAGEDIR/*.xml; do
+  echo
+  echo "splitting up $i ..."
+  bin/split-pages.pl -f $i -o "$PAGEDIR"/`basename $i .xml`
 done
