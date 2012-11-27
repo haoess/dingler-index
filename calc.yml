@@ -374,6 +374,7 @@ length:
       meter: x / 100
   millimeter:
     name: Millimeter
+    unit: mm
     wp: http://de.wikipedia.org/wiki/Millimeter#mm
     conversions:
       zentimeter: x / 10
