@@ -22,15 +22,7 @@
       <ul>
         <li id="b_start"><a href="http://www.polytechnischesjournal.de/startseite/" title="Startseite (ALT+S)" accesskey="S">Startseite</a></li>
         <li id="b_journal" class="act">
-          <a href="http://www.polytechnischesjournal.de/journal/" title="Journal (ALT+O)" accesskey="O">Journal</a>
-          <div class="subnav">
-            <div class="subnavbg"></div>
-            <ul>
-              <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/" title="Faksimile (ALT+A)" accesskey="A">Faksimile</a></li>
-              <li><a href="http://www.polytechnischesjournal.de/journal/viewer/" title="DFG-Viewer (ALT+D)" accesskey="D">DFG-Viewer</a></li>
-              <li><a href="http://dingler.culture.hu-berlin.de/" title="Volltext (ALT+V)" accesskey="V">Volltext</a></li>
-            </ul>
-          </div>
+          <a href="http://dingler.culture.hu-berlin.de/" title="Journal (ALT+O)" accesskey="O">Journal</a>
         </li>
         <li id="b_projekt">
           <a href="http://www.polytechnischesjournal.de/projekt/" title="Projekt (ALT+R)" accesskey="R">Projekt</a>
