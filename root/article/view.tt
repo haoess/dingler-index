@@ -96,18 +96,8 @@
   </table>
 </div>
 
-[% IF !preface AND !register %]
-  <span><a href="[% facsimile | html %]" target="_blank">[Faksimile]</a></span>
-  <a href="" onclick="showxml('[% article %]'); return false">[XML]</a>
-  <a href="[% c.uri_for('/article/plain', journal, article) %]">[Textversion]</a>
+  <span class="left-facs"><a href="journal/page/[% item.journal.id %]?p=[% item.facsimile.replace('.+=(\d+)$', '$1') %]"><img src="http://www.polytechnischesjournal.de/fileadmin/data/[% item.journal.barcode %]/[% item.journal.barcode %]_tif/jpegs/[% item.facsimile.replace('.+=(\d+)$', '$1') %].tif.thumbnail.jpg" /></a></span>
 
-  <div id="xmlsnippet">
-    <div id="xmlsnippethead">
-      Dieser XML-Auszug (TEI P5) stellt die Grundlage für diesen Artikel.
-    </div>
-    <div id="xmlsnippetcode"></div>
-  </div>
-[% END %]
 [% IF xsl %]
   <div id="xsl-text">[% xsl %]</div>
 [% ELSE %]
@@ -139,6 +129,39 @@
       modal: true
     });
   }
+
+  jQuery( function() {
+    jQuery( '.rend-v' ).each( function() {
+      jQuery(this).html( '<div>' + jQuery(this).html() + '<\/div>' );
+    });
+
+    jQuery( '.rend-v' ).css({
+      'margin':'0',
+      'padding':'0',
+    });
+
+    jQuery( '.rend-v > div' ).css({
+      'position':'relative',
+      'margin':'0',
+      'padding':'0',
+      'white-space': 'nowrap',
+      '-webkit-transform': 'rotate(-90deg)',
+      'writing-mode': 'tb-rl',
+      '-moz-transform': 'rotate(-90deg)',
+      '-ms-transform': 'rotate(-90deg)',
+      '-o-transform': 'rotate(-90deg)',
+      'transform': 'rotate(-90deg)'
+    });
+
+    jQuery( '.rend-v' ).removeAttr( 'valign' );
+
+    jQuery('.rend-v > div').each( function() {
+      jQuery( this ).css( 'min-width', jQuery( this ).width() );
+      jQuery( this ).parent().height( jQuery(this).width() );
+      jQuery( this ).parent().css( 'max-width', jQuery(this).height() );
+      jQuery( this ).css( 'left', -1 * (jQuery(this).width() / 2 ) + jQuery(this).parent().width()/2 );
+    });
+  });
 </script>
 
 [% BLOCK right %]
@@ -156,13 +179,29 @@
     </div>
   </div>
 
+  [% IF !preface AND !register %]
   <div class="rightbox">
-    <div class="rightboxhead">Zitierangaben</div>
-    <div class="rightboxcontent center">
-      <button onclick="showbibtex()"><img src="static/images/bibtex.png" alt="BibTeX" /></button>
-      <div id="bibtex"><textarea style="width:90%;height:90%" rows="10" cols="50">[% bibtex | html %]</textarea></div>
+    <div class="rightboxhead">Alternative Artikelansichten</div>
+    <div class="rightboxcontent">
+      <ul>
+        <li><a href="" onclick="showxml('[% article %]'); return false">XML</a></li>
+        <li>
+          <a href="[% c.uri_for('/article/plain', journal, article) %]">Textversion</a>
+          <div id="xmlsnippet">
+            <div id="xmlsnippethead">
+              Dieser XML-Auszug (TEI P5) stellt die Grundlage für diesen Artikel.
+            </div>
+            <div id="xmlsnippetcode"></div>
+          </div>
+        </li>
+        <li>
+          <a href="#" onclick="showbibtex(); return false">BibTeX</a>
+          <div id="bibtex"><textarea style="width:90%;height:90%" rows="10" cols="50">[% bibtex | html %]</textarea></div>
+        </li>
+      </ul>
     </div>
   </div>
+  [% END %]
 
   <script type="text/javascript">
     function showbibtex() {
@@ -211,28 +250,51 @@
       <img id="figureimage" src="" style="position:absolute;left:50px;top:50px" />
     </div>
   </div>
+  <div id="figuredialog-without-ctx" style="display:none">
+    <div style="position:relative">
+      <img id="figureimage-without-ctx" src="" />
+    </div>
+  </div>
   <script type="text/javascript">
     function showtab(tab) {
       window.open(tab, '_blank', 'height=600,location=yes,menubar=no,resizable=yes,status=no,toolbar=no,width1000');
       return false;
     }
 
-    function showfigure(figure) {
-      var context = figure.replace(/\/([^\/]+)$/, '/context_$1');
-      figureDialog = jQuery('#figuredialog');
-      figureContextImage = jQuery('#figurecontextimage');
-      figureContextImage.attr( 'src', context );
-      figureImage = jQuery('#figureimage');
-      figureImage.attr( 'src', figure );
-      figureImage.load( function() {
-        figureDialog.dialog({
-          modal: true,
-          resizable: false,
-          draggable: false,
-          width: 'auto',
-          hide: 'explode'
+    function showfigure(figure, noctx) {
+      var context = figure;
+      if (noctx) {
+        figureDialog = jQuery('#figuredialog-without-ctx');
+        figureImage = jQuery('#figureimage-without-ctx');
+        figureImage.attr( 'src', figure );
+        figureImage.load( function() {
+          figureDialog.dialog({
+            modal: true,
+            resizable: false,
+            draggable: true,
+            width: figureImage.width() + 50,
+            height: figureImage.height() + 50,
+            hide: 'explode'
+          });
         });
-      } );
+      }
+      else {
+        context = context.replace(/\/([^\/]+)$/, '/context_$1');
+        figureContextImage = jQuery('#figurecontextimage');
+        figureContextImage.attr( 'src', context );
+        figureDialog = jQuery('#figuredialog');
+        figureImage = jQuery('#figureimage');
+        figureImage.attr( 'src', figure );
+        figureImage.load( function() {
+          figureDialog.dialog({
+            modal: true,
+            resizable: false,
+            draggable: true,
+            width: 'auto',
+            hide: 'explode'
+          });
+        } );
+      }
       return false;
     }
   </script>

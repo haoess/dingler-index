@@ -196,11 +196,15 @@ sub article_xslt :Private {
         cache_root => $c->path_to( 'var', 'cache' )."",
         namespace  => 'dingler-articles'
     });
+
     my $xsl = $cache->get( $article );
     if ( not defined $xsl or $c->debug ) {
         $c->stash->{template} = 'unit.xsl';
         $c->forward('Dingler::View::XSLT');
         $xsl = $c->res->body;
+
+        my $req_uri = $c->req->uri."";
+        $xsl =~ s/(href=")#/$1$req_uri#/g;
     }
     $cache->set( $article, $xsl );
 

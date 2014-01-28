@@ -208,11 +208,29 @@ sub page :Local {
     my ( $self, $c, $vol ) = @_;
     
     my $page = $c->req->params->{p} || 1;
+
+    $vol ||= $c->req->params->{v} || 1;
+    
+    if ( $vol =~ /Z$/ ) {
+        my $id = $c->model('Dingler::Journal')->search({ barcode => $vol })->first;
+        $c->detach('/default') unless $id;
+        $vol = $id->id;
+    }
+
+    if ( $vol !~ /^pj/ ) {
+        $vol = sprintf "pj%03d", $vol;
+    }
+
     if ( $vol !~ /\Apj[0-9]{3}\z/ or $page !~ /\A[0-9]+\z/ ) {
         $c->detach( '/default' );
     }
 
+    for ( $page ) {
+        s/^0+//g;
+    }
+
     my $xml = sprintf "/home/fw/dingler-pages/%s/%04d.xml", $vol, $page;
+    
     if ( !-e $xml ) {
         $c->detach( '/default' );
     }
@@ -236,7 +254,7 @@ sub page :Local {
             glob sprintf( '/home/fw/dingler-pages/%s/*.xml', $vol )
         ],
         xsl      => $xsl,
-        volume   => $journal->volume,
+        journal  => $journal,
         template => 'journal/page.tt',
     );
 }

@@ -23,7 +23,7 @@
 <script type="text/javascript" src="static/pages.js"></script>
 [% END %]
 
-<h1>Seitenweise Ansicht Band [% volume %]</h1>
+<h1>Text-Bild-Ansicht Band [% journal.volume %]</h1>
 
 [% fpage = page | format('%04d') %]
 <div class="col">
@@ -39,7 +39,7 @@
     [% IF pages.first == fpage %]
       erste Seite
     [% ELSE %]
-    <a href="[% c.req.uri_with({ p => page - 1 }) %]" accesskey="p">&lt;&lt; vorherige Seite</a>
+    <a href="[% base %]journal/page/[% journal.id %]?p=[% page - 1 %]" accesskey="p">&lt;&lt; vorherige Seite</a>
     [% END %]
   </div>
   <div id="view-col-1"><div id="scan"></div></div>
@@ -50,7 +50,7 @@
     [% IF pages.last == fpage %]
       letzte Seite
     [% ELSE %]
-      <a href="[% c.req.uri_with({ p => page + 1 }) %]" accesskey="n">nächste Seite &gt;&gt;</a>
+      <a href="[% base %]journal/page/[% journal.id %]?p=[% page + 1 %]" accesskey="n">nächste Seite &gt;&gt;</a>
     [% END %]
   </div>
   <div id="view-col-2" style="position:relative">

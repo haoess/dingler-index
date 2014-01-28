@@ -36,6 +36,7 @@
     <div class="rightboxhead">Alternative Bandansichten</div>
     <div class="rightboxcontent">
       <ul>
+        <li><a href="[% base %]journal/page/[% item.id %]?p=1">Text-Bild-Ansicht</a></li>
         <li><a href="http://dfg-viewer.de/demo/viewer/?set%5Bmets%5D=http%3A%2F%2Fdingler.culture.hu-berlin.de%2F[% item.id %]%2F[% item.barcode %]_mets.xml">DFG-Viewer</a></li>
         <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-[% item.barcode %]">Goobi.Presentation</a></li>
         <li><a href="http://digital.slub-dresden.de/fileadmin/data/[% item.barcode %]/[% item.barcode   %]_tif/jpegs/[% item.barcode %].pdf">PDF (Faksimile)</li>

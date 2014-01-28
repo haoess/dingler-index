@@ -47,7 +47,7 @@ fi
 echo "killing dingler web apps ..."
 kill `cat /tmp/dingler.pid`
 kill `cat /tmp/dingler-beta.pid`
-sleep 5
+sleep 10
 
 #################################################
 

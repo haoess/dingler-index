@@ -40,7 +40,7 @@
     <xsl:text>| </xsl:text>
   </xsl:element>
   <xsl:if test="not(ancestor::tei:note)">
-    <span style="position:absolute; left:20px;">
+    <span class="left-facs">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
         <xsl:attribute name="target">_blank</xsl:attribute>
@@ -187,22 +187,29 @@
 
 <xsl:template match="tei:formula">
   <span class="formula">
-    <xsl:element name="img">
-      <xsl:attribute name="style">vertical-align:middle</xsl:attribute>
-      <xsl:choose>
-        <xsl:when test="@rendition">
-          <xsl:call-template name="applyRendition"/>
-          <xsl:attribute name="src">
-            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
-          </xsl:attribute>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:attribute name="src">
-            <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
-          </xsl:attribute>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:element>
+    <xsl:choose>
+      <xsl:when test="text()!=''">
+        <xsl:element name="img">
+          <xsl:attribute name="style">vertical-align:middle</xsl:attribute>
+          <xsl:choose>
+            <xsl:when test="@rendition">
+              <xsl:call-template name="applyRendition"/>
+              <xsl:attribute name="src">
+                <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+              </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="src">
+                <xsl:text>http://dinglr.de/formula/</xsl:text><xsl:value-of select="catalyst:urlencode(.)"/>
+              </xsl:attribute>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:element>
+      </xsl:when>
+      <xsl:otherwise>
+        <span style="color:#666">[Formelnotation ist momentan in Bearbeitung]</span>
+      </xsl:otherwise>
+    </xsl:choose>
   </span>
 </xsl:template>
 

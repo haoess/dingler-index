@@ -1,67 +1,43 @@
+[%- MACRO volname(arg) BLOCK -%]
+  [%- arg | format('%03d') -%][%- IF arg.search('a$') -%]&nbsp;(Atlas)[% END -%]
+[%- END -%]
+
 <h1 class="nolab">Dingler Online | Das digitalisierte Polytechnische Journal</h1>
-<h1 class="labtitle">Textdigitalisate</h1>
-<div style="font-size:0.9em">
+<h1 class="labtitle" style="font-size:2.4em">Dingler Online</h1>
+<div style="font-size:1em; margin-bottom:40px">
 <p>
-  Hier haben Sie Zugriff auf alle Bände des »Polytechnischen
-  Journals«, die bereits texterfasst wurden und im XML-Format
-  vorliegen. Die Zahlen in der Seitenleiste werden dynamisch generiert
+  Hier finden Sie alle Bände des digitalisierten »Polytechnischen
+  Journals«. Die Zahlen in der Seitenleiste werden dynamisch generiert
   und entsprechen so dem aktuellen Arbeitsstand, wobei <a
   href="records">Dingler Records</a> Informationen zu ganz
   unterschiedlichen Kategorien enthält, wie etwa: Längster
   Artikel, meist genannte Person etc.</p>
 </div>
 
-<br />
-<p>Folgende Bände liegen bereits texterkannt vor:</p>
-[% IF 0 %]
-<div id="coverflow" class="ContentFlow" style="">
-  <div class="loadIndicator"><div class="indicator"></div></div>
-  <div class="flow">
-    [% WHILE (journal = journals.next) %]
-      <a class="item" href="journal/[% journal.id %]"><img class="content" src="http://www.polytechnischesjournal.de/fileadmin/data/[% journal.barcode %]/[% journal.barcode %]_tif/jpegs/[% covers.item(journal.volume - 1) | format('%08d') %].tif.thumbnail.jpg" /><div class="caption">Band [% journal.volume %] ([% journal.year %])</div></a>
-    [% END %]
-  </div>
-  <div class="globalCaption"></div>
-  <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
-</div>
-
-<script type="text/javascript">
-  var coverFlow = new ContentFlow('coverflow', { circularFlow: false, startItem: 0 });
-</script>
-
-[% BLOCK head %]
-  <script type="text/javascript" src="static/jquery/contentflow/contentflow.js" load="white"></script>
-[% END %]
-<br />
-[% END %]
-
-<div style="text-align:center">
-<form method="post" action="[% base %]journal/view">
-  Band
-  <select name="v" class="ui-widget-content ui-corner-all">
-    [% foo = journals.reset; WHILE ( journal = journals.next ) %]
-      <option>[% journal.volume | html %]</option>
-    [% END %]
-  </select>
-  <input type="submit" value="anschauen" />
+<form method="post" action="[% base %]journal/page" style="margin-bottom:40px">
+  <h2>Direktzugriff</h2>
+  Band: <input type="text" name="v" size="4" class="ui-widget-content ui-corner-all" />
+  Seite: <input type="text" name="p" size="4" class="ui-widget-content ui-corner-all" />
+  <input type="submit" value="anzeigen" class="ui-widget-content ui-corner-all" />
 </form>
-</div>
 
-<div style="margin:20px 0"><a href="#" onclick="jQuery('.journallist').show(); return false">Komplette Bandliste anzeigen &hellip;</a></div>
-
-<table class="journallist" style="display:none">
-[% foo = journals.reset; WHILE ( journal = journals.next ) %]
-  <tr>
-    <td class="right">
-      <a href="journal/[% journal.id %]">Band [% journal.volume %]</a>
-    </td>
-    <td>([% journal.year %])</td>
-    <td style="padding-left:20px">
-      <a href="[% journal.facsimile %]" target="_blank"> &#x2192; Faksimile</a>
-    </td>
-  </tr>
-[% END %]
-</table>
+[% foo = journals.reset;
+   SET last_year = 0;
+   SET loop_count = 0;
+   WHILE ( journal = journals.next )
+%]
+  [% IF journal.year.search('0$') && journal.year > last_year %]
+    [% last_year = journal.year %]
+    [% '</td></tr></table>' UNLESS loop_count == 0 %]
+    <h2 style="margin-top:20px">[% journal.year %]&ndash;[% journal.year >= 1930 ? 1931 : (journal.year + 9) %]</h2>
+    <table>
+      <tr>
+        <td style="padding-right:20px">Band:</td>
+        <td style="width:30em">
+  [% END %]
+    <span style="padding-right:10px"><a href="journal/[% journal.id %]">[% volname(journal.volume).replace('^(0+)', '<span style="visibility:hidden">$1</span>') %]</a></span>
+[% loop_count = loop_count + 1; END %]
+</td></tr></table>
 
 <div style="height:20px"></div>
 
@@ -120,6 +96,10 @@
         <tr>
           <td></td>
           <td><a href="tools">Dingler Tools</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><a href="download">Dingler Download</a></td>
         </tr>
       </table>
     </div>

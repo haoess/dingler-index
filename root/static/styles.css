@@ -57,6 +57,8 @@ td.mainright  { padding-top:0px }
 .rightboxhead    { padding:2px 1em; border-top:1px solid #ccc; border-bottom:1px solid #ccc; font-weight:bold; background:#eee }
 .rightboxcontent { padding:1em 1em; background:#fafafa }
 
+.left-facs { position:absolute; left:20px }
+
 .center { text-align:center }
 .right { text-align:right }
 .small { font-size:0.8em }
@@ -78,10 +80,14 @@ td.mainright  { padding-top:0px }
 
 .pagebreak { font-size:.8em }
 
+.dingler-g { height:1.5em }
+
 .figure { max-width:600px }
 table.middlealign td { vertical-align:middle }
+table.boxed { border-collapse:collapse }
+table.boxed td { border:1px solid #aaa }
 .pjtable { display:block; margin-left:auto; margin-right:auto; margin-bottom:15px; max-width:600px; overflow:auto }
-.pjtable th, .pjtable td { white-space:nowrap }
+.pjtable td { white-space:nowrap; padding:4px }
 
 .person { color:#07a }
 img.portrait { float:right }

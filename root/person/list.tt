@@ -96,7 +96,7 @@
     <tr>
     [% IF c.req.params.filter == arg %]
       <td><b>[% group | html %]:</b></td>
-      <td>[% $arg.count + 0 %] (<a href="[% c.req.uri_with({ filter => undef }) %]">Filter aufheben</a>)</td>
+      <td>[% $arg.count + 0 %] (<a href="[% c.req.uri_with({ filter => undef, p => undef }) %]">Filter aufheben</a>)</td>
     [% ELSE %]
       <td>[% group | html %]:</td>
       <td><a href="[% c.req.uri_with({ filter => arg }) %]">[% $arg.count + 0 %]</a></td>

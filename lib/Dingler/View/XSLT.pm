@@ -90,9 +90,10 @@ __PACKAGE__->config(
                     #  =>
                     # http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
                     $id =~ /(\w+)(?:\/(\w+))?/;
-                    my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/cache.off?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
+                    #my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/cache.off?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
+                    my $ret = "http://dingler.culture.hu-berlin.de/journal/page/$1";
                     if ( defined $2 ) {
-                        $ret .= "&tx_dlf[page]=$2";
+                        $ret .= "?p=$2";
                     }
                     return $ret;
                 },
@@ -161,6 +162,16 @@ __PACKAGE__->config(
                     my $target = shift->to_literal;
                     my ( $fig, $journal ) = $target =~ /(fig(\d{3}a?).*$)/;
                     return sprintf 'pj%s/figures/%s', $journal, $fig;
+                },
+            },
+            {
+                uri => 'urn:catalyst',
+                name => 'resolvetx',
+                subref => sub {
+                    my $target = shift->to_literal;
+                    my ( $fig, $journal ) = $target =~ /(tx(\d{3}a?).*$)/;
+                    my $rs = Dingler->model('Dingler::Journal')->find({ id => "pj$2" });
+                    return sprintf 'pj%s/%s/%s', $journal, $rs->get_column('barcode'), $fig;
                 },
             },
             {

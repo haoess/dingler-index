@@ -34,7 +34,7 @@
     <xsl:text>| </xsl:text>
   </xsl:element>
   <xsl:if test="name(..) != 'note'">
-    <span style="position:absolute; left:20px;">
+    <span class="left-facs">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="catalyst:faclink(@facs)"/></xsl:attribute>
         <xsl:attribute name="target">_blank</xsl:attribute>

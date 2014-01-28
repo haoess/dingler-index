@@ -43,7 +43,7 @@
     <div class="rightboxcontent">
       <p>
         <b>Länder</b>
-        [% IF c.req.params.subtype %](<a href="[% c.req.uri_with({ subtype => undef }) %]">Filter aufheben</a>)[% END %]
+        [% IF c.req.params.subtype %](<a href="[% c.req.uri_with({ subtype => undef, p => undef }) %]">Filter aufheben</a>)[% END %]
       </p>
       <table>
         [% FOREACH lang IN langmap %]
@@ -62,7 +62,7 @@
       <br />
       <p>
         <b>Dekade</b>
-        [% IF c.req.params.decade %](<a href="[% c.req.uri_with({ decade => undef }) %]">Filter aufheben</a>)[% END %]
+        [% IF c.req.params.decade %](<a href="[% c.req.uri_with({ decade => undef, p => undef }) %]">Filter aufheben</a>)[% END %]
       </p>
       <table>
         [% FOREACH i IN [ 181 .. 193 ] %]

@@ -16,7 +16,7 @@ make_path( $outdir );
 my %pb_seen;
 
 foreach my $file ( @ARGV ) {
-    my ( $journal ) = $file =~ /(pj\d+)/;
+    my ( $journal ) = $file =~ /(pj\d+a?)/;
     open( my $infh, '<:utf8', $file ) or die $!;
     my $xml = do { local $/; <$infh> };
     close $infh;

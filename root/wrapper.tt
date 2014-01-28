@@ -14,6 +14,27 @@
   <link rel="stylesheet" type="text/css" href="static/styles.css" />
   <link rel="stylesheet" type="text/css" href="static/custom.css" />
   [% TRY; PROCESS head; CATCH; ''; END %]
+
+  <script type="text/javascript">
+    jQuery( function() {
+      var ml = parseInt( $('#maintable').css('margin-left') )
+      if ( ml < 90 ) {
+        hideThumbs();
+        $('.left-facs').hover(
+          function() { showThumbs() },
+          function() { hideThumbs() }
+        );
+      }
+    } );
+
+    function hideThumbs() {
+      $('.left-facs').css( 'opacity', .3 );
+    }
+
+    function showThumbs() {
+      $('.left-facs').css( 'opacity', 1 ); 
+    }
+  </script>
 </head>
 
 <body>
