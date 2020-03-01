@@ -45,8 +45,7 @@
       <ul>
         <li><a href="http://dfg-viewer.de/show/?set%5Bmets%5D=http%3A%2F%2Fdingler.culture.hu-berlin.de%2F[% item.id %]%2F[% item.barcode %]_mets.xml">DFG-Viewer</a></li>
         <li><a href="http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-[% item.barcode %]">Goobi.Presentation</a></li>
-        <li><a href="http://digital.slub-dresden.de/fileadmin/data/[% item.barcode %]/[% item.barcode   %]_tif/jpegs/[% item.barcode %].pdf">PDF (Faksimile)</li>
-        <!-- <li><a href="">XML/TEI</a></li> -->
+        <li><a href="https://digital.slub-dresden.de/data/kitodo/polyjo_[% item.barcode %]_[% item.volume | format('%04d') %]/polyjo_[% item.barcode %]_[% item.volume | format('%04d') %]_tif/jpegs/polyjo_[% item.barcode %]_[% item.volume | format('%04d') %].pdf">PDF (Faksimile)</a></li>
     </div>
   </div>
 
