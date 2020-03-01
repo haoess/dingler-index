@@ -1,7 +1,7 @@
 <h1>Dingler Download</h1>
 
 <ul>
-  <li>Schema als <a href="Schema/dingler.rnc">RNC</a> und <a href="Schema/dingler.xml">ODD</a>, <a href="Schema/dingler.html">Schemadokumentation</a> (Arbeitsfassung vom 7. Mai 2013)</li>
+  <li>Schema als <a href="Schema/dingler.rnc">RNC</a> und <a href="Schema/dingler.xml">ODD</a>, <a href="Schema/dingler.html">Schemadokumentation</a> (Stand April 2014, <a href="Schema/dingler.xml">XML-Version</a>)</li>
   <!--<li><a href="http://kaskade.dwds.de/~wiegand/dingler/dingler.zip">alle Artikel als TEI</a></li>
   <li><a href="http://kaskade.dwds.de/~wiegand/dingler/dingler-articles-norm.zip">alle Artikel mit normierten Wortformen als TEI</li>-->
 </ul>
