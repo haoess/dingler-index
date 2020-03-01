@@ -261,8 +261,11 @@ sub page :Local {
     my $xsl = $c->res->body;
     utf8::decode( $xsl );
     $c->res->body( undef );
+
+    my ( $id ) = $journal->id =~ /(\d+)/;
+
     $c->stash(
-        facs     => sprintf( "http://digital.slub-dresden.de/fileadmin/data/%s/%s_tif/jpegs/%s.tif.medium.jpg", $journal->barcode, $journal->barcode, $facs ),
+        facs     => sprintf( "https://digital.slub-dresden.de/data/kitodo/polyjo_%s_%04d/polyjo_%s_%04d_tif/jpegs/%s.tif.medium.jpg", $journal->barcode, $id, $journal->barcode, $id, $facs ),
         page     => $page,
         pages    => [
             map { /([0-9]+)\.xml$/; $1 }
