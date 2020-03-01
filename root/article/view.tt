@@ -96,7 +96,7 @@
   </table>
 </div>
 
-  <span class="left-facs"><a href="journal/page/[% item.journal.id %]?p=[% item.facsimile.replace('.+=(\d+)$', '$1') %]"><img src="http://www.polytechnischesjournal.de/fileadmin/data/[% item.journal.barcode %]/[% item.journal.barcode %]_tif/jpegs/[% item.facsimile.replace('.+=(\d+)$', '$1') %].tif.thumbnail.jpg" /></a></span>
+  <span class="left-facs"><a href="journal/page/[% item.journal.id %]?p=[% item.facsimile.replace('.+=(\d+)$', '$1') %]"><img src="https://digital.slub-dresden.de/data/kitodo/polyjo_[% item.journal.barcode %]_[% volume | format('%04d') %]/polyjo_[% item.journal.barcode %]_[% volume | format('%04d') %]_tif/jpegs/[% item.facsimile.replace('.+=(\d+)$', '$1') %].tif.thumbnail.jpg" /></a></span>
 
 [% IF xsl %]
   <div id="xsl-text">[% xsl %]</div>
@@ -226,6 +226,13 @@
   </div>
   [% END %]
 
+  [% IF 0 %]
+  <!--
+
+    Google changed it's maps API:
+    The Google Maps Platform server rejected your request. You must use an API key to authenticate each request to Google Maps Platform APIs. For additional information, please refer to http://g.co/dev/maps-no-account
+
+  -->
   [% IF places.size %]
   <div class="rightbox">
     <div class="rightboxhead">Orte</div>
@@ -242,6 +249,7 @@
       <img src="http://maps.google.com/maps/api/staticmap?sensor=false&amp;size=250x300&amp;maptype=hybrid&amp;[% markers %]" />
     </div>
   </div>
+  [% END %]
   [% END %]
 
   <div id="figuredialog" style="display:none">

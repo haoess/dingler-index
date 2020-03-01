@@ -88,9 +88,9 @@ __PACKAGE__->config(
                     my $id = shift;
                     # 32258227Z/00000051
                     #  =>
-                    # http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
+                    # http://digital.slub-dresden.de/journal/faksimile/werkansicht/?tx_dlf[recordId]=oai:de:slub-dresden:db:id-32258227Z&tx_dlf[page]=51
                     $id =~ /(\w+)(?:\/(\w+))?/;
-                    #my $ret = "http://www.polytechnischesjournal.de/journal/faksimile/werkansicht/cache.off?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
+                    #my $ret = "http://digital.slub-dresden.de/journal/faksimile/werkansicht/cache.off?tx_dlf[recordId]=oai:de:slub-dresden:db:id-$1";
                     my $ret = "http://dingler.culture.hu-berlin.de/journal/page/$1";
                     if ( defined $2 ) {
                         $ret .= "?p=$2";
@@ -105,9 +105,11 @@ __PACKAGE__->config(
                     my $facs = shift;
                     # 32258227Z/00000051
                     #  =>
-                    # http://www.polytechnischesjournal.de/fileadmin/data/32258227Z/32258227Z_tif/jpegs/00000051.tif.thumbnail.jpg
-                    $facs =~ /(\w+)\/(\w+)/;
-                    return sprintf "http://www.polytechnischesjournal.de/fileadmin/data/%s/%s_tif/jpegs/%s.tif.thumbnail.jpg", $1, $1, $2;
+                    # http://digital.slub-dresden.de/fileadmin/data/32258227Z/32258227Z_tif/jpegs/00000051.tif.thumbnail.jpg
+                    my ( $barcode, $page ) = $facs =~ /(\w+)\/(\w+)/;
+                    my $id = Dingler->model('Dingler::Journal')->find({ barcode => $barcode })->id;
+                    $id =~ s/\D+//g;
+                    return sprintf "https://digital.slub-dresden.de/data/kitodo/polyjo_%s_%04d/polyjo_%s_%04d_tif/jpegs/%s.tif.thumbnail.jpg", $barcode, $id, $barcode, $id, $page;
                 },
             },
             {

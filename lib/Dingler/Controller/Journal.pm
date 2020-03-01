@@ -123,6 +123,14 @@ TODO:
 sub plain :Local {
     my ( $self, $c, $journal ) = @_;
 
+    my $cache_dir = $c->path_to( 'var/dingler-journals-plain' );
+    if ( -e "$cache_dir/$journal.txt" ) {
+        open( my $fh, '<', "$cache_dir/$journal.txt" ) or die $!;
+        $c->res->body( $fh );
+        $c->res->content_type( 'text/plain' );
+        close $fh;
+        return;
+    }
     my ($xml) = glob $c->config->{svn} . "/$journal/*Z.xml";
     $c->stash(
         xml      => $xml,
@@ -235,6 +243,13 @@ sub page :Local {
         $c->detach( '/default' );
     }
 
+    open( my $fh, '<', $xml ) or die $!;
+    my $xml_content = do { local $/; <$fh> };
+    close $fh;
+
+    $xml_content =~ /<pb\b.*?facs=(["']).*?\/(.*?)\1/s;
+    my $facs = $2;
+
     my $journal = $c->model('Dingler::Journal')->find($vol);
 
     $c->stash(
@@ -247,7 +262,7 @@ sub page :Local {
     utf8::decode( $xsl );
     $c->res->body( undef );
     $c->stash(
-        facs     => sprintf( "http://www.polytechnischesjournal.de/fileadmin/data/%s/%s_tif/jpegs/%08d.tif.medium.jpg", $journal->barcode, $journal->barcode, $page ),
+        facs     => sprintf( "http://digital.slub-dresden.de/fileadmin/data/%s/%s_tif/jpegs/%s.tif.medium.jpg", $journal->barcode, $journal->barcode, $facs ),
         page     => $page,
         pages    => [
             map { /([0-9]+)\.xml$/; $1 }
